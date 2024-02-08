@@ -5,7 +5,11 @@ project:
   preview:
     port: 7771
     browser: false
+  resources:
+    - "data/*.mp3"
   render:
+    - "*.qmd"
+    - "!*.Rmd"
     - "!to_do.qmd"
 
 lang: ko-KR
@@ -41,8 +45,52 @@ book:
 
     - part: "시작을 위한 준비"
       chapters:
+        - whole_game.qmd                 # OK
         - setup.qmd
 
+    # - part: "글쓰기 환경"
+    #   chapters:
+    #     - history.qmd                # OK
+    #     - editor.qmd                 # OK
+    #     - unicode.qmd                # OK
+    #     - latex_pdf.qmd              # OK
+    #     - quarto.qmd                 # OK
+
+    # - part: "글쓰기"
+    #   chapters:
+    #     - markdown_mess.qmd          # OK
+    #     - writing.qmd                # OK
+    # 
+    # - part: "기본요소"
+    #   chapters:
+    #     - components.qmd          # OK
+    #     - markdown.qmd            # OK -- 방법론 , # 수정
+    #     - document_class.qmd      # OK
+    #     - about_book.qmd          # OK
+    # 
+    # - part: "템플릿과 테마"
+    #   chapters:
+    #     - fonts.qmd                # OK
+    #     - colors.qmd               # OK
+    #     - themes_ggplot.qmd        # OK
+    #     - themes_gt.qmd            # OK
+    #     - templates.qmd            # OK
+    # 
+    # - part: "출판물"
+    #   chapters:
+    #   - publishing.qmd          # OK
+    #   - dw_book.qmd             # OK
+    #   - dw_website.qmd          # OK
+    #   - dw_slideshow.qmd        # OK
+    #   - dw_dashboard.qmd        # OK
+    # 
+    # - part: "챗GPT"
+    #   chapters:
+    #     - chatGPT.qmd           # OK
+    #     - prompt.qmd            # OK
+    #     - text_to_X.qmd         # OK -- 한글 깨짐
+    #     - plugin.qmd            # OK
+        
 
     - references.qmd     # O
 
