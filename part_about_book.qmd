@@ -1,0 +1,542 @@
+---
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r}
+#| include: false
+
+source("_common.R")
+```
+
+
+# 책과 문서구조
+
+책의 명칭과 편집 일반용어가 필요한 곳은 일반 **책**을 비롯하여 신문, 잡지, 교과서, 사전, 리플릿, 문서, 인쇄 광고물 등 **종이 출판물**과 웹북, 웹진, 모바일 콘텐츠 등 **전자적 표기에 널리 쓰이는 모든 표현 매체**를 아우른다. 책은 일반적으로 앞/뒤 표지, 전문, 본문, 후문 4개 주요 부분으로 구성된다. [@KCI2009]
+
+앞표지는 책 가장 첫 부분으로, 책 제목, 부제목, 저자 이름, 출판사 로고 등이 주로 표시된다. 앞표지는 책을 처음 접하는 독자에게 책의 주제나 내용, 품질에 대한 첫인상을 전달하기 때문에 디자인이나 색상, 이미지 등 책의 내용이나 장르, 대상 독자층을 고려하여 결정되며, 마케팅 측면에서도 중요한 역할을 한다. 앞표지가 독자 눈길을 끌면, 책을 집어보거나 구매할 확률을 높일 수 있기 때문에 앞표지는 책의 성공에 큰 영향을 미치는 부분이라 많은 시간과 노력을 투여해야 한다.
+
+뒷표지는 책 마지막 부분에 위치하며, 주로 책 요약, 저자 소개, 출판사 정보, 바코드, 가격 등이 표시되는데 경우에 따라 책에 대한 추천문이나 리뷰, 수상 내역 등이 포함될 수 있다. 뒷표지도 독자가 책을 선택하는 데 중요한 역할을 하기 때문에, 책의 내용을 정확하고 간결하게 전달하는 것이 중요하기 때문에 여러 요소를 고려하여 전문가와 상의하여 신중하게 구성한다.
+
+전문은 책 시작 부분으로 속표지, 판권지, 바치는 글, 감사 글, 목차, 머리말, 추천사로 구성된다. 
+전문은 책의 본문 앞에 위치하며 독자에게 책의 기본 정보를 제공하며 제목, 저자, 출판사, 판권 정보 등이 포함되어 책의 신뢰성과 전문성을 높이는데 기여한다. 목차도 전문에서 책의 전체 구조를 미리 파악할 수 있게 도와주고, 머리말과 서문을 통해 저자는 책을 작성한 목적이나 의도를 명확히 전달할 수 있다. 바치는 글과 감사 글에는 책 제작 과정에 참여한 이들에게 감사의 의미를 표현하며, 추천사는 책의 내용이나 저자의 신뢰성을 독자에게 전달하고, 판권 정보와 같은 법적 내용은 저작권 침해를 방지하기 위해 필수적으로 포함된다.
+
+본문은 책의 핵심 내용을 담고 있는 부분으로 일반적으로 본문은 여러 장으로 구성되며, 각 장은 특정 주제나 아이디어에 집중합니다. 장들은 서로 연결되어 전체적인 흐름을 이루거나 독립적인 단위로 구성될 수도 있다. 본문에서 주제에 대한 깊은 분석, 설명, 논증이 이루어지며, 필요한 경우 그림, 표, 그래프, 수식, 도표 등 시각적 요소를 포함하여 정보를 더욱 명확하게 전달하는 역할을 수행한다. 본문의 구성은 독자가 책의 주제를 체계적이고 깊게 이해할 수 있도록 기여한다.
+
+후문은 책 마지막 부분에서 찾을 수 있으며, 본문이 끝난 후에 추가적인 정보나 설명을 제공한다. 후문에는 보통 부록, 용어 풀이, 참고문헌, 찾아보기 등이 포함된다. 부록은 본문에서 다루지 않은 추가적인 정보나 자료를 제공하며, 용어 풀이는 책에서 사용된 전문 용어나 약어에 대한 설명을 담고 있으며 참고문헌은 책 작성 시 참조한 문헌이나 자료 목록을 나열하고, 찾아보기는 책 속의 주요 키워드나 주제를 쉽게 찾을 수 있도록 페이지 번호와 함께 나열된다. 또한, 후문에는 저자의 마치는 말이나 후기가 포함되어 저자가 책을 통해 전하고자 하는 메시지를 다시 한번 강조하거나, 책을 쓰는 과정에서 뒷 이야기, 감사의 말 등을 담을 수 있다.
+
+```{mermaid}
+%%| eval: false
+%%| echo: false
+
+graph TD
+    classDef default fill:#ffff,stroke:#333,stroke-width:2px;
+    class Book,Cover,FrontMatter,Content,BackMatter,TitlePage,Copyright,Dedication,Acknowledgments,Contents,Preface,Chapter1,Chapter2,ChapterN,Appendix,Glossary,Bibliography,Index default;
+    
+    %% Main Book Structure
+    Book["일반적인 책구조"] --> Cover
+    Book --> FrontMatter
+    Book --> Content
+    Book --> BackMatter
+
+    %% Cover Section
+    subgraph Cover["앞표지"]
+        direction LR
+        CoverPage["표제"]
+    end
+
+    %% Front Matter Section
+    subgraph FrontMatter["전문"]
+        direction LR
+        TitlePage["속표지"]
+        Copyright["판권지"]
+        Dedication["바치는 글"]
+        Acknowledgments["감사 글"]
+        Contents["목차(ToC)"]
+        Preface["머리말(서문)"]
+        Foreword["추천사"]
+    end
+
+    %% Content Section
+    subgraph Content["본문"]
+        direction LR
+        Chapter1["제1장"]
+        Chapter2["제2장"]
+        Chapter3["..."]
+        ChapterN["제N장"]
+    end
+
+    %% Back Matter Section
+    subgraph BackMatter["후문"]
+        direction LR
+        afterword["후기"]        
+        Appendix["부록"]
+        Glossary["용어풀이"]
+        Bibliography["참고문헌"]
+        Index["찾아보기"]
+    end
+```
+
+![책 해부도](images/anatomy_of_book.png)
+
+## 책 외부명칭 {#book-outer-extract}
+
+책에 대한 한국어 표준용어를 정확하게 이해하기 위해서 국가기술표준원에서 발표한 ["책의 명칭 및 편집 일반 용어"]((https://www.standard.go.kr/KSCI/standardIntro/getStandardSearchView.do?menuId=919&topMenuId=502&upperMenuId=503&ksNo=KSX0003&tmprKsNo=KSX0003&reformNo=03))를 참조할 수 있다. 책과 관련된 다양한 용어와 그 의미를 명확하게 표준 문서에 설명되어 있어 책을 이해하고 분석하는 데 도움이 된다.
+
+![책 외부명칭](images/book_cover.jpeg)
+
+"책의 명칭 및 편집 일반 용어"에서 PDF 파일에서 표를 직접 추출할 경우, 표 형태가 뭉개져 제대로 사용할 수 없는 경우, PDF 파일을 워드 파일로 변환한 후에 표를 추출하는 방법을 사용할 수 있다. 워드 파일로 변환한 후에는 `officer` 패키지를 사용하여 표를 추출하면 표 형태를 보존하면서 데이터를 정확하게 추출할 수 있다. 워드 파일에서 표 뿐만 아니라 이미지도 추출할 수 있다. 이미지를 추출하는 방식은 워드 파일 압축을 풀면 된다. 예를 들어 PDF 파일을 변환시킨  `KSX0003_20091228.docx` 파일에서 확장자를 바꿔 `KSX0003_20091228.zip`와 같이 변경시킨 후에 압축을 풀다. 그러면 압축이 풀린 `word/media` 디렉토리에 이미지가 별도 저장된다. 책 외부명칭은 @tbl-book-outer 에서 확인할 수 있다.
+
+```{r}
+#| label: tbl-book-outer
+#| echo: false
+#| tbl-cap: "책 외부명칭"
+
+library(tidyverse)
+library(officer)
+library(reactable)
+library(gt)
+
+book_docx <- officer::read_docx("data/KSX0003_20091228.docx")
+book_content <- docx_summary(book_docx) %>% as_tibble()
+
+# book_content
+
+table_cells <- book_content %>% 
+  filter(content_type %in% "table cell") %>% 
+  as_tibble()
+
+cover_tbl <- table_cells %>% 
+  filter(doc_index == 89) %>% 
+  select(text, row_id, cell_id) %>% 
+  pivot_wider(names_from = cell_id, values_from = text) %>% 
+  select(-row_id) 
+
+cover_first_tbl <- cover_tbl %>% 
+  set_names(cover_tbl %>% slice(1)) %>% 
+  filter(row_number() != 1) %>% 
+  select(1,2,4,3) 
+
+cover_first_tbl |> 
+  gt() |> 
+  gt_theme_hangul() |>
+  cols_width(순 ~ px(10),
+             `용 어` ~ px(70),
+             `대응 영어` ~ px(70))
+```
+
+## 책 내부 명칭 {#book-outer-content}
+
+책은 단순히 글, 표, 그림, 그래프, 도형, 수식을 모은 것이 아니라, 정교하게 구성된 정보 체계라고 볼 수 있다. 책 내부 순서와 명칭을 보면 정교하게 구성된 정보체계가 드러난다. 책 각부분은 특별한 명칭을 지니고 있으며, 세부 명칭은 해당 부분에 대한 역할과 중요성을 암시한다. 예를 들어, '판권지', '머리말', '본문', '참고문헌' 등은 모두 책을 구성하는 핵심 요소이며, 이러한 명칭을 숙지하고 있으면 책 구조와 내용을 더욱 효과적으로 이해할 수 있다. 책의 내부 순서 및 명칭이 다음 @tbl-glossary 에 자세히 나와 있다.
+
+```{r first-cover-tbl-main}
+#| echo: false
+#| label: tbl-glossary
+#| tbl-cap: "책 내부명칭"
+
+content_144_tbl <- table_cells %>% 
+  filter(doc_index == 144) %>% 
+  select(text, row_id, cell_id) %>% 
+  pivot_wider(names_from = cell_id, values_from = text) %>% 
+  select(-row_id) 
+
+content_147_tbl <- table_cells %>% 
+  filter(doc_index == 147) %>% 
+  select(text, row_id, cell_id) %>%  
+  pivot_wider(names_from = cell_id, values_from = text) %>% 
+  select(-row_id) 
+
+content_tbl <- bind_rows(content_144_tbl, content_147_tbl)
+
+content_tbl <- content_tbl %>% 
+  set_names(cover_tbl %>% slice(1)) %>% 
+  filter(row_number() != 1) %>% 
+  select(1,2,4,3) 
+
+content_tbl |> 
+  gt() |> 
+  gt_theme_hangul() |> 
+  cols_align(columns = c(순, `용 어`, `대응 영어`), align = "center") |>
+  cols_width(순 ~ px(10),
+             `용 어` ~ px(100),
+             `대응 영어` ~ px(100))  
+```
+
+
+## 책 속지 명칭 {#book-outer-II}
+
+책을 저작하거나 읽을 때, 단순히 '표지'와 '본문'으로만 이해하기엔 너무나도 많은 세부 요소가 있다. '속표지'는 본문 바로 앞에 위치하며, 표제와 저자, 출판사 정보를 담고 있다. '면지'는 표지와 본문 속장을 결속시키는 역할을 하며, 종종 두꺼운 종이를 사용한다. '반표제지'는 속표지 앞에 위치하고 책의 제목만을 표시한다. 이 외에도 '저자명', '출판사', '붙인면지', '매는쪽' 등 다양한 명칭이 존재하며, 각각이 책의 구조와 디자인, 정보 전달에 중요한 역할을 한다. 책의 속지 명칭은 다음 @tbl-glossary-II 에 자세히 나와 있다.
+
+```{r first-cover-tbl-II}
+#| echo: false
+#| label: tbl-glossary-II
+#| tbl-cap: "책 속지명칭"
+
+cover_ii_tbl <- table_cells %>% 
+  filter(doc_index == 116) %>% 
+  select(text, row_id, cell_id) %>% 
+  pivot_wider(names_from = cell_id, values_from = text) %>% 
+  select(-row_id) 
+
+cover_second_tbl <- cover_ii_tbl %>% 
+  set_names(cover_tbl %>% slice(1)) %>% 
+  filter(row_number() != 1) %>% 
+  select(1,2,4,3) 
+
+cover_second_tbl %>% 
+  gt() |> 
+  gt_theme_hangul() |> 
+  cols_align(columns = c(순, `용 어`, `대응 영어`), align = "center") |>
+  cols_width(순 ~ px(10),
+             `용 어` ~ px(100),
+             `대응 영어` ~ px(100))  
+  # reactable::reactable(
+  #   defaultColDef = colDef(
+  #   header = function(value) gsub(".", " ", value, fixed = TRUE),
+  #   cell = function(value) format(value, nsmall = 1),
+  #   align = "center",
+  #   minWidth = 70,
+  #   headerStyle = list(background = "#f7f7f8")
+  #   ),
+  #   columns = list(
+  #   순 = colDef(minWidth = 40),   # 50% width, 200px minimum
+  #   `용 어` = colDef(minWidth = 100),   # 25% width, 100px minimum
+  #   `대응 영어` = colDef(minWidth = 150),   # 25% width, 100px minimum    
+  #   `용어 정의` = colDef(minWidth = 500)  # 25% width, 100px minimum
+  #   ),
+  #   bordered = TRUE,
+  #   highlight = TRUE,
+  #   filterable = TRUE
+  # )
+```
+
+워드 파일에서 이미지를 추출하는 방식은 워드 파일 압축을 풀면된다. 그렇게 하기 위해서 `KSX0003_20091228.docx` 파일명을 `KSX0003_20091228.zip`으로 바꾼 후에 압축을 풀어준다. 그러면 `word/media` 디렉토리에 이미지가 저장된다.
+
+![](images/book_cover_inside.jpeg)
+
+## 논문 구성
+
+책과 논문은 차이점이 명확하다. 책은 광범위한 주제를 다루고 다양한 독자에게 정보나 지식을 전달하는 데 중점을 두는 반면, 논문은 특정한 학문적 주제에 깊이 있게 접근하며, 주로 학계나 전문가를 대상으로 한다. 책은 장/절/항으로 구성되고 저자 취향에 따라 다양한 형식을 취할 수 있지만, 논문은 일반적으로 정해진 구조를 가지며, 서론, 선행문헌 연구, 연구 방법론, 결과, 논의, 결론 등으로 구성되어 큰 차이가 난다.
+
+저작 과정 뿐만 아니라 출판 과정에서도 책과 논문은 큰 차이가 난다. 책이 출판사를 통해 출판되는 반면, 논문은 학술지에 실리기 전에 동료검토 과정을 거친다. 책이 정보 제공이나 이야기 전달이 주된 목적이지만, 논문은 새로운 지식을 창출하거나 기존 지식에 대한 새로운 시각을 제시하는 것이 주된 목적이라는 점에서도 다르다. 논문에서는 사용된 모든 자료와 출처를 명확하게 밝혀야 하지만, 책에서는 이러한 요구가 상대적으로 덜 엄격하여 참고문헌과 인용에 대한 접근 방식에서도 차이가 난다. 
+
+
+```{mermaid}
+%%| eval: false
+%%| echo: false
+graph TD
+    classDef default fill:#ffff,stroke:#333,stroke-width:2px;
+    class Thesis,TitlePage,Abstract,Acknowledgments,TableOfContents,ListOfFigures,ListOfTables,MainBody,References,Appendices default;
+
+    %% Main Thesis Structure
+    Thesis["논문 구성"] --> TitlePage
+    Thesis --> Abstract
+    Thesis --> Acknowledgments
+    Thesis --> TableOfContents
+    Thesis --> MainBody
+    Thesis --> References
+    Thesis --> Appendices
+
+    %% Title Page
+    subgraph TitlePage["표지"]
+        direction LR
+        Title["제목"]
+        Author["저자"]
+        Affiliation["소속"]
+    end
+
+    %% Abstract
+    subgraph Abstract["초록"]
+        direction LR
+        Summary["요약"]
+        Keywords["키워드"]
+    end
+
+    %% Acknowledgments
+    subgraph Acknowledgments["감사의 글"]
+        direction LR
+        Thanks["감사 인사"]
+    end
+
+    %% Table of Contents
+    subgraph TableOfContents["목차"]
+        direction LR
+        Chapters["장/절"]
+        Figures["그림 목록"]
+        Tables["표 목록"]
+    end
+
+    %% Main Body
+    subgraph MainBody["주요 본문"]
+        direction TB
+        Introduction["서론"] --> Literature
+        Literature["선행연구"] --> Methodology
+        Methodology["방법론"] --> Results
+        Results["결과"] --> Discussion
+        Discussion["논의"] --> Conclusion
+        Conclusion["결론"]
+    end
+
+    %% References
+    subgraph References["참고문헌"]
+        direction LR
+        CitedWorks["인용 문헌"]
+    end
+
+    %% Appendices
+    subgraph Appendices["부록"]
+        direction LR
+        AdditionalData["추가 데이터<br>코드"]
+    end
+```
+
+논문은 학문적 연구나 주제에 대한 깊은 분석을 제공하는 학술 문서다. 논문을 통해 저자는 특정 주제에 대한 자신의 연구 결과나 견해를 체계적으로 정리하여 학계나 일반 대중에게 소개한다. 논문도 책과 마찬가지로 다음과 같은 구성요소를 갖는다. 
+
+
+![논문 구성](images/mermaid_thesis.png)
+
+- 표지: 논문의 첫 페이지로, 논문의 제목, 저자, 소속 기관 등이 표시된다.
+- 초록: 논문의 주요 내용을 간략하게 요약한 부분으로 연구 목적, 방법, 결과, 기여 등에 대해 함축적으로 요약한다.
+- 감사의 글: 논문 작성 과정에서 도움을 준 사람이나 기관에 대한 감사의 마음을 표현한다.
+- 목차: 논문의 전체 구성을 한눈에 볼 수 있도록 장과 절, 소절의 목록과 페이지 번호가 나열된다.
+- 그림 목록과 표 목록: 논문에 사용된 그림과 표의 목록을 제공한다.
+- 본문
+  - 서론: 논문의 시작 부분에서 가장 중요한 부분으로 연구 배경을 상세히 설명하고, 연구의 목적과 필요성을 명확히 한다. 또한, 연구 가설 또는 연구 질문을 제시하여 독자가 이후 내용을 더 잘 이해할 수 있게 한다. 이 부분에서는 선행 연구와 관련된 문헌도 언급하여, 본 연구가 어떤 학문적 공백을 채우려는지를 명확히 해야 한다.
+  - 방법론: 연구를 어떻게 수행했는지를 상세히 기술한다. 연구 설계, 표본 선정, 변수 정의, 데이터 수집 방법, 통계 분석 방법 등을 체계적으로 설명하여 연구 신뢰성을 높이고, 다른 연구자가 같은 연구를 재현할 수 있게 하는 기초를 제공한다.
+  - 결과: 연구에서 얻은 결과를 정밀하게 분석하고 해석한다. 통계적 분석 결과는 표나 그래프 등으로 시각적으로 표현하여, 독자가 쉽게 이해할 수 있도록 한다.
+  - 논의: 결과의 의미를 깊게 파고들어 연구결과가 어떤 의미를 가지는지, 기존 연구나 이론과 어떻게 일치하거나 다른지를 분석한다. 또한, 연구의 한계와 향후 연구의 방향도 제시한다.
+  - 결론: 논문의 마지막 부분으로, 연구의 주요 발견과 그 의미를 요약한다. 연구의 가치를 한눈에 보여주는 중요한 마무리 부분으로 명확하고 간결하게 작성해야 한다. 필요한 경우, 연구가 학계나 사회에 미칠 영향에 대해서도 간략히 언급한다.
+- 참고문헌: 논문에서 인용한 모든 자료의 목록을 제공한다.
+- 부록: 논문의 본문에서 다루지 않았지만, 연구에 사용된 원시 데이터, 코드, 패키지와 도구, 운영체제 등 연구재현과 관련된 정보를 제공한다.
+
+## 연구 보고서 구성
+
+연구보고서와 논문은 학술적이거나 전문적인 연구 결과를 정리하고 발표하는 문서라는 공통점이 있지만 차이점도 존재한다. 논문이 학문 분야에 새로운 지식이나 이론을 기여하는 것을 주된 목적으로 하는 반면, 연구보고서는 특정 연구 프로젝트나 과제의 결과를 제시하며, 그 결과를 실용적으로 활용할 방안을 제시하는 경우가 많다. 따라서, 연구보고서는 논문보다는 더 실용적인 측면이 강하다.
+
+연구보고서가 주로 프로젝트를 의뢰한 기관, 정부, 기업 등에 제공되는 경우가 많은 반면, 논문은 학계나 전문가 커뮤니티를 대상으로 한다는 면에서 대비된다. 논문이 서론, 선행문헌조사, 연구 방법, 결과, 논의, 결론으로 구성되는 반면, 연구보고서는 논문 구성요소 외에도 요약정보(Executive Summary), 예산, 추진일정표, 대안 및 대안 추천 등이 추가된다.
+
+논문이 학술지나 학회에서 심사를 거쳐 공개적으로 출판되지만, 연구보고서는 대체로 의뢰자나 관련 기관 내부에서만 내부적으로 활용되고, 특정한 경우에만 외부로 공개된다. 
+
+논문이 엄격한 학술적 양식과 언어를 선호하는 반면, 연구보고서는 논문보다 실용성이 강조되어 연구보고서에서 의뢰기관 배경에 따라 용어과 문체도 달라진다. 논문은 학술적인 내용을 다루기 때문에, 연구자가 연구수행 과정에서 발생한 모든 사항을 기록해야 하지만, 연구보고서는 연구 결과를 중심으로 작성되기 때문에, 연구 과정에서 발생한 모든 사항을 기록하면 좋지만 꼭 그럴 필요는 없다.
+
+논문은 해당 분야의 선행 연구와 이론을 깊게 다루고 이를 바탕으로 새로운 연구 질문을 설정하기 때문에 연결고리를 중시하는 반면, 연구보고서는 선행 연구를 참고하기는 하지만, 그 깊이가 논문만큼은 아니기 때문에 연구보고서는 연구 결과에 중심을 두고 작성된다.
+
+```{mermaid}
+%%| eval: false
+%%| echo: false
+
+graph TD
+    classDef default fill:#ffff,stroke:#333,stroke-width:2px;
+    class ResearchReport,ExecutiveSummary,Introduction,Methodology,Results,Discussion,Conclusion,References,Appendices default;
+    
+    %% Main Research Report Structure
+    ResearchReport["연구보고서"] --> ExecutiveSummary
+    ResearchReport --> Introduction
+    ResearchReport --> Methodology
+    ResearchReport --> Results
+    ResearchReport --> Discussion
+    ResearchReport --> Conclusion
+    ResearchReport --> References
+    ResearchReport --> Appendices
+
+    %% Executive Summary Section
+    subgraph ExecutiveSummary["요약 정보"]
+        direction LR
+        SummaryContent["요약 내용"]
+    end
+
+    %% Introduction Section
+    subgraph Introduction["서론"]
+        direction LR
+        Background["배경"]
+        Objectives["목표"]
+        Hypothesis["가설"]
+    end
+
+    %% Methodology Section
+    subgraph Methodology["방법론"]
+        direction LR
+        ResearchDesign["연구 설계"]
+        DataCollection["데이터 수집"]
+        AnalysisMethods["분석 방법"]
+    end
+
+    %% Results Section
+    subgraph Results["결과"]
+        direction LR
+        Findings["주요 발견"]
+    end
+
+    %% Discussion Section
+    subgraph Discussion["논의"]
+        direction LR
+        Interpretation["해석"]
+        Implications["시사점"]
+    end
+
+    %% Conclusion Section
+    subgraph Conclusion["결론"]
+        direction LR
+        Summary["요약"]
+        FutureResearch["향후 연구"]
+    end
+
+    %% References Section
+    subgraph References["참고문헌"]
+        direction LR
+        CitedWorks["인용 문헌"]
+    end
+
+    %% Appendices Section
+    subgraph Appendices["부록"]
+        direction LR
+        AdditionalData["추가 데이터<br>코드"]
+    end
+```
+
+
+![연구보고서 구성요소](images/mermaid_report.png)
+
+연구보고서도 논문과 마찬자기로 몇가지 구성요소가 핵심을 이룬다. 먼저, 요약정보(Executive Summary) 부분에서 연구보고서 주요 내용과 결론, 추천 사항을 한 페이지로 간략하게 요약한다. 서론에서 연구 배경, 목적, 연구 질문을 소개하고, 선행 문헌조사에서 관련된 이론과 선행 연구를 검토하고 분석한다. 연구 방법론에서 연구 설계, 데이터 수집 및 분석 방법에 대해 설명한다.
+
+결과 부분에서 연구의 주요 성과와 발견을 제시하고, 논의에서 발견 성과를 해석하고, 그 의미나 중요성을 설명한다. 결론에서 연구의 주요 발견과 성과, 연구의 함의, 추후 연구에 대한 제언을 정리한다. 참고문헌에서 보고서 작성에 사용된 모든 출처를 나열하고 부록에서 필요한 경우 추가 데이터나 코드, 자료를 담을 수 있다. 연구보고서는 예산, 일정, 위험, 대안, 대안 추천 등이 포함될 수 있다.
+
+## PPT 슬라이드 구성
+
+PPT 슬라이드는 주로 발표나 강의 보조 수단으로 사용되기 때문에 책, 논문, 연구보고서와 다르게 주로 시각적 요소와 간결한 텍스트를 중심으로 구성된다. 즉, PPT는 정보를 빠르고 효과적으로 전달하기 위해 디자인 요소가 강조되는 문서다.
+
+PPT 슬라이드에 디자인적 요소가 강조되다보니 그래프, 이미지, 동영상 등 다양한 멀티미디어 요소를 발표자료에 담아 독자나 청중의 주의를 끌고 정보를 더욱 효과적으로 전달할 수 있지만, 책이나 논문에서는 PPT 슬라이드만큼 강력한 시각적 전달 매체를 문서에 담아내는 것이 구조적으로 불가능하다.
+
+책, 논문, 연구보고서가 깊이 있는 내용과 자세한 분석, 풍부한 참고문헌을 제공하는 반면, PPT 슬라이드는 핵심 포인트만을 강조하고 자세한 설명은 생략한다. 책과 논문은 독자가 자신의 속도로 읽을 수 있도록 설계되어 있지만, PPT는 발표자의 속도와 리듬에 맞춰 정보가 전달된다는 점에서 전혀 다른 문서라고 볼 수 있다.
+
+
+PPT 슬라이드는 상호작용도 문서에 담아낼 수 있어 발표자가 청중의 질문에 즉시 답변하거나 설문조사, 퀴즈 등을 통해 청중과 즉각적으로 소통할 수 있다. 책이나 논문, 연구보고서는 실시간 의사소통보다는 턴제 의사소통을 지향한다.
+
+```{mermaid}
+%%| eval: false
+%%| echo: false
+graph TD
+    classDef default fill:#ffff,stroke:#333,stroke-width:2px;
+    class ProjectPresentation,TitleSlide,Agenda,ProjectOverview,TeamIntroduction,GoalsAndObjectives,ProjectTimeline,ChallengesAndSolutions,Financials,ResultsAndImpact,FinalSection default;
+
+    %% Main Presentation Structure
+    ProjectPresentation["프로젝트 발표 슬라이드"] --> TitleSlide
+    ProjectPresentation --> Agenda
+    ProjectPresentation --> ProjectOverview
+    ProjectPresentation --> TeamIntroduction
+    ProjectPresentation --> GoalsAndObjectives
+    ProjectPresentation --> ProjectTimeline
+    ProjectPresentation --> ChallengesAndSolutions
+    ProjectPresentation --> Financials
+    ProjectPresentation --> ResultsAndImpact
+    ProjectPresentation --> FinalSection
+
+    %% Title Slide
+    subgraph TitleSlide["제목 슬라이드"]
+        direction LR
+        Title["제목"]
+        Subtitle["부제목"]
+        Author["저자"]
+        Date["날짜"]
+    end
+
+    %% Agenda
+    subgraph Agenda["안건"]
+        direction LR
+        AgendaItems["안건 항목"]
+    end
+
+    %% Project Overview
+    subgraph ProjectOverview["프로젝트 개요"]
+        direction LR
+        Background["배경"]
+        Scope["범위"]
+    end
+
+    %% Team Introduction
+    subgraph TeamIntroduction["팀 소개"]
+        direction LR
+        TeamMembers["팀 멤버"]
+        Roles["역할"]
+    end
+
+    %% Goals and Objectives
+    subgraph GoalsAndObjectives["목표 및 목적"]
+        direction LR
+        Goals["목표"]
+        Objectives["목적"]
+    end
+
+    %% Project Timeline
+    subgraph ProjectTimeline["프로젝트 타임라인"]
+        direction LR
+        Milestones["중요 이정표"]
+        Deadlines["마감일"]
+    end
+
+    %% Challenges and Solutions
+    subgraph ChallengesAndSolutions["도전과 해결"]
+        direction LR
+        Challenges["도전"]
+        Solutions["해결책"]
+    end
+
+    %% Financials
+    subgraph Financials["재정"]
+        direction LR
+        Budget["예산"]
+        Expenditure["지출"]
+    end
+
+    %% Results and Impact
+    subgraph ResultsAndImpact["결과 및 영향"]
+        direction LR
+        Results["결과"]
+        Impact["영향"]
+    end
+
+    %% Final Section (Conclusion, Questions, References)
+    subgraph FinalSection["최종 섹션(결론, 질문, 참고문헌)"]
+        direction LR
+        Summary["요약"]
+        QnA["질의응답"]
+        Citation["인용"]
+    end
+
+```
+
+
+![발표자료 문서 구성요소](images/mermaid_ppt.png)
+
+PPT 발표자료 작성 목적이 실시간으로 정보를 전달하고 청중과 상호작용하는 것이기 때문에, 문서 구성요소와 전개방식이 책, 논문, 연구보고서와는 다르게 설계된다. 예를 들어, 프로젝트 발표자료에서 복잡한 데이터나 개념을 그래프나 도표를 통해 시각적으로 단순화시켜 청중이 쉽게 이해할 수 있도록 하고, 동영상, 음악 등 다양한 미디어 요소를 활용하여 청중의 관심을 끌고 정보를 더 효과적으로 전달한다. 실시간 상호작용은 PPT 발표자료의 또 다른 중요한 특징으로 실시간 설문조사나 퀴즈를 통해 청중의 의견을 즉시 얻어 발표나 강의가 더 적절하고 효과적으로 이뤄지도록 하는데 반해, 책이나 논문, 연구보고서와는 다른 방식으로 정보나 이야기를 전달하는데 적합하다.
+
+
+## 판형
+
+종이 크기는 다양한데 우리나라는 국제 표준인 ISO A형(A4 등 A 계열)을
+채택하고 있는데 제조 효율에서는 표준으로 설계된 크기인 ISO A형이
+활용성과 효율이 가장 좋은 것으로 알려져 있다. A형 전지는 A0로 표기하며
+이를 접어서 절단할 때마다 숫자를 늘려 표기한다. A1은 한번 접어서 자른
+크기이며, 흔히 사용하는 A4는 A0를 네 번 접어서 자른 종이 크기다.
+
+A계열로 일명 A0판이라고 부르는 841`*`1189mm 종이를 가로 세로로
+접어가면서 자르는 방식으로 A4는 A1을 8조각으로 자른 것이다. '국배판'으로
+불리는 A4판(210`*`297mm)은 학습지 등 문제풀이나 필기가 필요한 서적에
+주로 사용되고, 신국판으로 불리는 A5판의 변형본은 148`*`210mm인 A5보다
+약간 큰 152`*`225mm 으로 한국 출판계에서 가장 흔한 사이즈다.
+
+B계열은 JIS B규격으로써 4`*`6전지나 B0이라고 부르는 1030`*`1456mm 종이를
+가로 세로로 접어가면서 자르는 방식으로 A4와 마찬가지로 B4는 B1을
+8조각으로 자른 것이다. 소설, 자서전, 전문서적에는 신국판(152`*`225mm)을
+많이 사용하고, 46배판은 B5(16절) 182 x 257(4x6배판)과 같은 크기로 대학
+전공서적 등에 주로 사용된다.
+
+::: {#fig-paper-size layout="[[45,-5,45]]"}
+![](images/paper_A0.png)
+
+![](images/paper_B0.png)
+
+종이크기(A0, B0)
+:::
+

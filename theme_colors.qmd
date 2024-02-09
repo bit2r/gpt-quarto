@@ -1,0 +1,499 @@
+---
+output: html_document
+editor_options: 
+  chunk_output_type: console
+editor: 
+  markdown: 
+    wrap: sentence
+---
+
+# 색상
+
+## 시각화 메커니즘 [^viz-mechanism] {#color-mechanism}
+
+[^viz-mechanism]: [A Better Default Colormap for Matplotlib, SciPy 2015, Nathaniel Smith and Stéfan van der Walt](https://www.youtube.com/watch?v=xAoljeRJ3lU&feature=youtu.be)
+
+크게 보면 기계 즉, 컴퓨터가 색을 이해하고 표현하는 **RGB 체계**와 사람이 색을 인지하고 이해하는 **HCL 체계**로 나누어 진다. 2진수로 표현된 시각적 데이터는 RGB 16진수로 변환되어 모니터에 표시되고,
+물리적 광자(photon)로 사람눈에 위치한 망막에 꽂히게 되고,
+사람은 뇌에서 인지한 후에 이를 처리하여 시각적인 정보를 인식하게 된다.
+
+따라서, 사람뇌에 인식할 수 있는 시각적인 정보로 데이터를 구성해야만 다양한 종류의 모니터를 통해 
+효율적이고 효과적으로 정보가 전달될 수 있다.
+
+![시각적 인지 메커니즘](images/color-viz-mechanism.png){width="100%"}
+
+
+### 16진수 RGB 표색법 {#color-dataviz-mechanism-rgb}
+
+양수 숫자나 크레파스 명칭 대신에, 일반적이고 컴퓨터가 읽어들일 수 있는 색상 표색법이 16진수 팔레트다.
+Cynthia Brewer 는 펜실베니아 대학에서 교수로 색상이론과 시각화에 관련된 전문분야를 갖고 있으며 특히,
+ColorBrewer 으로 알려진 색생체계는 웹, 출판, 색맹을 고려하여 널리 쓰이고 있다.
+ColorBrewer 색상체계를 R에서 시각화를 할 때 사용될 수 있게 만든 것이 [RColorBrewer](https://cran.r-project.org/web/packages/RColorBrewer/index.html) 패키지다.
+RColorBrewer Dark2 팔레트를 통해 실제로 구현된 색상체계를 살펴보자.
+
+``` {r dataviz-rgb, echo = TRUE}
+library(RColorBrewer)
+brewer.pal(n = 8, name = "Dark2")
+```
+
+`#` 기호는 관례로 붙이는 것이고, 16진수 문자열을 다음과 같이 파싱한다:
+`#rrggbb`에서 `rr`, `gg`, `bb` 각각은 적색, 녹색, 청색 채널에 대한 생상농도를 나타낸다.
+각 색상은 2를 밑으로 하는 16개 숫자를 나타내고, "16진수(hexadecimal)" 혹은 줄여서 헥스(hex)로 부른다.
+다음에 밑을 10으로 하는 십진수와 16진수 비교표가 다음에 나와 있다.
+
+```{r dataviz-rgb-table, results = 'asis', echo = FALSE}
+library(kableExtra)
+library(xtable)
+library(tidyverse)
+
+hex_raw <- tibble( hex = c(as.character(0:9), LETTERS[1:6]),
+                   decimal = as.character(0:15)
+                  )
+
+hex_tbl <- hex_raw %>% 
+  pivot_wider(names_from = hex, values_from = decimal)
+  
+hex_tbl %>% 
+  kableExtra::kbl() %>% 
+  kableExtra::kable_styling( latex_options = c("striped", "hold_position", "repeat_header"))
+
+```
+
+예를 들어, 팔렛트 첫 색상이 `#1B9E77`으로 명세되어 있다. 따라서, 녹색 채널 색상농도는 `9E`가 된다.
+
+$$ 9E = 9 * 16^1 + 14 * 16^0 = 9 * 16 + 14 = 158 $$
+
+무슨 뜻일까? 해당 채널의 가장 낮은 값은 `00`=0 이 되고, 
+가장 높은 값은 `FF`=255 가 된다.
+
+도움이 되는 기억해야될 중요한 사례가 다음에 나타나 있다.
+적색, 녹색, 청색에 대한 강렬한 RGB 색상은 다음과 같다.
+
+```{r dataviz-rgb-table2, results = 'asis', echo = FALSE}
+rgb_tbl <- tibble(색상 = c("blue", "green", "red"),
+                  헥스코드 = c("#0000FF", "#00FF00", "#FF0000"),
+                  붉은색 = c(0, 0, 255),
+                  녹색 = c(0, 255, 0),
+                  파란색 = c(255, 0, 0))
+
+rgb_tbl %>% 
+  kableExtra::kbl() %>% 
+  kableExtra::kable_styling( latex_options = c("striped", "hold_position", "repeat_header"))
+```
+
+
+다음에 흑백, 회색을 표현한 것이 나타나 있다.
+
+```{r dataviz-rgb-intensity, results = 'asis', echo = FALSE}
+
+j_intensity <- c(255, 171, 84, 0)
+bw_tbl <- tibble(색상 = c("white, gray100", "gray67",
+                                 "gray33", "black, gray0"),
+                  헥스코드 = c("#FFFFFF", "#ABABAB", "#545454", "#000000"),
+                  붉은색 = j_intensity,
+                  녹색 = j_intensity,
+                  파란색 = j_intensity)
+
+bw_tbl %>% 
+  kableExtra::kbl() %>% 
+  kableExtra::kable_styling( latex_options = c("striped", "hold_position", "repeat_header"))
+```
+
+"gray" 회색으로 치환하게 되면, "gray"를 보게되는 어느 곳에서나 동일한 결과를 얻게 됨에 주목한다.
+모든 채널을 최대값으로 하면 흰색, 모든 채널을 최소값으로 하면 검정색이 된다.
+
+<style>
+div.blue { background-color:#e6f0ff; border-radius: 5px; padding: 10px;}
+</style>
+<div class = "blue">
+
+**R에서 색상을 지정하는 방법**
+
+- **양의 정수**: `palette()`함수로 조작하거나 검색한 현재 색상 팔레트에 인덱스를 사용.
+- **색상 명칭**: `colors()` 함수로 검색된 색상
+- **16진수 문자열**: 16진수로 구성된 3개조에 추가해서, 알파 투명도를 나타내는 네번째 채널을 넣어  16진수 4개조로 구성된 생상표로 확장하기도 한다.
+
+</div>
+
+
+`rgb()`, `col2rgb()`, `convertColor()` 함수도 유용하니, 자세한 내용은 도움말을 참조한다.
+
+## RGB 색상모형 대안 - **HCL** {#dataviz-mechanism-hcl}
+
+RGB 색공간과 색상모형이 유일무이하고 가장 최고는 아니다.
+컴퓨터 화면에 색상을 표현하는데는 자연스럽지만, 일부 영역에서 색상을 선택하는 
+작업에는 이런 모형을 적용하기 어렵다.
+예를 들어, 사람이 구별하기는 쉽지만, 인지적으로 색상별로 비교되는 생각으로 구성된
+정성적인 팔레트를 만들어 내는 방법은 명확하지 않다.
+컴퓨터에 사용되는 색상을 기술하는데 RGB를 사용하지만, 
+**사람이 색상체계를 구축하는 색공간에 RGB체계를 사용할 이유는 없다.**
+이점은 사람과 컴퓨터가 다른 것이고, 이를 인정해야만 된다.
+
+색상모형은 일반적으로 RGB와 마찬가지로 세가지 차원으로 구성된다.
+이는 망막에 세가지 다른 수용체를 인간이 갖는 생리적 사실에 기인한다.
+RGB와 인간 시각 체계에 대한 자세한 정보는 [블로그](http://manyworldstheory.com/2013/01/15/my-favorite-rgb-color/)를
+참고한다.
+색상모형의 차원이 사람이 인식할 수 있는 식별가능한 정보량에 더 가까이 부합되면 될수록, 더욱 유용하다.
+이런 부합성이 사려깊게 작성된 팔레트 생성을 가능하게 하고, 더불어 특정한 특성을 갖는 색공간에 대한 길을 연다.
+RGB 색체계는 인간의 인식체계와 일치성이 떨어진다.
+적색, 녹색, 청색광을 탐지할 수 있는 광수용체를 갖기 때문에, 
+색을 *인지하는 체험*이 RGB 방식으로 분해된다는 것을 의미하지 않는다.
+적색과 녹색을 섞은 것으로 황색을 인식하는 체험을 했는가?
+물론 아니다. 생리학적인 현실은 그렇다.
+또다른 RGB 대안 모형이 **HSV(Hue-Saturation-Value, 색상-채도-명도)모형**이다.
+불행하게도, 색을 선택하는데 문제가 많은데, 이유는 색상이 서로 중첩되는 차원을 갖기 때문이다.
+
+사람이 인지하기 좋은 색모형은 무엇일까? CIELUV 와 CIELAB 이 가장 잘 알려진 사례다.
+CIELUV의 변종인 **HCL(Hue-Chroma-Luminance, 색상-채도-휘도) 모형**을 좀더 살펴보자.
+Zeileis와 동료들이 R 사용자를 위한 팩키지로 멋지게 작성했다.[^dt-hcl]
+`colorspace` R 팩키지에 딸려있고, HCL 색상모형을 탐색하고 이용하는데 도움을 준다.
+마지막으로, HCL 색모형이 `ggplot2`에 `RColorBrewer`와 마찬가지로 잘 녹여져있다.
+
+[^dt-hcl]: [알아봅시다 - 디스플레이 화질 구성 요소](http://www.dt.co.kr/contents.html?article_no=2014110702101832742001)
+
+<style>
+div.blue { background-color:#e6f0ff; border-radius: 5px; padding: 10px;}
+</style>
+<div class = "blue">
+
+**HCL 색상모형의 세가지 차원**
+ 
+- **색상(Hue)** : 색상은 일반적으로 "색상이 뭐지?"라고 생각할 때 생각나는 것이다. 이해가 바로되는 쉬운 것이다! 각도로 주어지고 따라서 0 에서 360 까지 값을 갖는데, 무지개 도넛을 상상하면 된다.
+- **채도(Chroma)** : 채도는 색상이 얼마나 순수한지 혹은 생생한지 나타낸다. 특정 색상이 회색과 섞일 수록, 채도는 떨어진다. 가장 낮은 값은 0 으로 회색 그자체에 대응되고, 최대값은 휘도에 따라 변한다.
+- **휘도(Lumiance)** : 휘도는 명도(brightness), 명도(Lightness), 광도(intensity), 명도(value)와 관련된다. 낮은 휘도는 어두움을 의미하고, 진짜 검정색은 휘도가 0 이다. 높은 휘도는 밝음을 의미하고, 진짜 흰색은 휘도가 1 이다.
+
+</div>
+
+
+저자는 채도와 휘도를 이해하고 구별하는데 힘든 시간을 보냈다. 위에서 살펴봤듯이, 색체계는 서로 독립된 것이 아니고, 3차원 HCL 공간에 기이한 모형으로 정보를 제공하고 있다.
+
+위캠의 `ggplot2` 책에 나온 6.6 그림이 HCL 색공간을 이해하는데 도움이 된다.
+
+![`ggplot2` HCL 색공간](images/color-viz-ggplot2book-fig6.6.png){width="100%"}
+
+위캠 책에 언급된 내용을 다시 적으면 다음과 같다: 각 측면, 창은 휘도에 따라 가장 낮은 값에서 높은 값 순으로 HCL 공간을 슬라이스로 나누어 도식화한 것을 보여주고 있다. 0 과 100 극단 휘도값은 생략되었는데, 이유는 각각 검은 점과 흰점으로 나타나기 때문이다.
+슬라이스 내부에, 중심은 채도가 0 으로, 회색에 대응된다. 슬라이스 끝쪽으로 이동하면, 
+채도가 증가하고, 색상이 더 순색에 가까워지고 농도가 짖어진다. 색상은 각도로 매핑된다.
+
+[`colorspace`](https://cran.r-project.org/web/packages/colorspace/) 팩키지에 가치있는 기여는 아마도 함수를 사용해서 색상공간을 합리적 방식으로 색공간을 이리저리 돌아다닐 수 있게 만든 것이다.
+이와는 대조적으로 `RColorBrewer` 팩키지가 제공하는 팔레트는 정교하게 제작되었지만, 불행히도 고정이다.
+
+인지기반 색상체계를 사용하는 것에 대한 옹호 사례와 더불어 색공간에 0 이 자리하는 것을 알려주는 중요성을 시연하고 있다.
+
+- ["Why Should Engineers and Scientists Be Worried About Color?"](http://www.research.ibm.com/people/l/lloydt/color/color.HTM)
+
+## 프린터 색상모형: CMYK [^wiki-cmyk] [^cmyk-blog] {#viz-printer-cmyk}
+
+[^wiki-cmyk]: [위키백과, "CMYK color model"](https://en.wikipedia.org/wiki/CMYK_color_model)
+
+[^cmyk-blog]: [블로그 아이디어, "CMYK 색상표"](https://blogidea.tistory.com/101)
+
+CMYK 색상표는 시안(**C**yan), 마젠타(**M**agenta), 옐로(**Y**ellow), 블랙(Black = **K**ey)를 원색으로 하여 명도가 낮아지는 감산혼합으로 주로 출력물 인쇄 혹은 사진 필림 현상에 사용되며 쿼크익스프레스, 일러스트레이터, 포토샵 등에서 CMYK 감산혼합을 지원한다. 현실적인 문제 때문에 RGB나 HSB(HSV)보다 표현 가능한 색이 적은 것으로 알려져 있다.
+
+학창시절 감산혼합의 색의 3원색은 빨강, 노랑, 파랑인데,  CMYK는 생뚱맞게도 시안(**C**yan), 마젠타(**M**agenta), 옐로(**Y**ellow), 블랙(Black = **K**ey)을 원색으로 하는데 이유는 빨강은 사실 자홍색(마젠타), 파랑은 청록색(시안)이라 정확한 색상이 후자가 맞다. 우리가 잘못 배운 탓이 크다.  
+
+RGB 생상과 CMYK 생상을 PDF 파일로 찍어 상호 비교해보자. [^rgb-cmyk-comp]
+
+[^rgb-cmyk-comp]: [One Tipe Per Day, "draw figures in CMYK mode in R"](http://onetipperday.sterding.com/2012/10/draw-figures-in-cmyk-mode-in-r.html)
+
+::::: columns
+::: column
+
+**RGB 색상 출력**
+
+```{r color-rgb, eval = FALSE}
+
+pdf("data/color_rgb.pdf")
+RColorBrewer::display.brewer.all(type="qual")
+dev.off()
+```
+
+![](data/color_rgb.pdf){#id .class height="300px" width="300px"}
+
+:::
+
+::: column
+
+**CMYK 색상 출력**
+
+```{r color-cmyk, eval = FALSE}
+pdf("data/color_cmyk.pdf", colormodel = "cmyk")
+RColorBrewer::display.brewer.all(type="qual")
+dev.off()
+```
+
+![](data/color_cmyk.pdf){#id .class height="300px" width="300px"}
+
+:::
+:::::
+
+## `RColorBrewer` 와 `viridis` {#dataviz-color-brewer-viridis}
+
+### RColorBrewer {#dataviz-color-brewer}
+
+색상선택이 가장 논란이 많고, 이리저리 만지작 거리면서 정말 많은 시간을 보내는 분야다.
+지리학자이며 생상 전문가 [Cynthia Brewer](http://en.wikipedia.org/wiki/Cynthia_Brewer) 교수가 출판과 웹에서 사용되는 색상표를 제작했고, 이는 [RColorBrewer](http://cran.r-project.org/web/packages/RColorBrewer/index.html)
+팩키지에 반영되어 있다. 팩키지를 설치하고 사용하면 된다. 연관된 전체 팔레트를 살펴보는 명령어는 `display.brewer.all()` 이다.
+
+``` {r dataviz-brewer, fig.height=10}
+library(RColorBrewer) # install.packages("RColorBrewer")
+display.brewer.all()
+```
+
+팔레트는 종류가 많지만 다음 세가지 범주에 속한다. 위에서 아래부터 다음과 같다.
+
+- **순차적(sequential)** : 낮은 것에서 높은 것으로 한쪽 극단이 흥미롭고 반대쪽 극단이 재미없는 것을 시각화하는데 매우 좋다.
+  예를 들어 p-값, 상관계수 (주의: 상관계수 1 이 흥미로운 것은 양수를 가정했다)
+- **정량적(quantitative)** : 순서가 없는 범주형 자료를 시각화할 때 유용하다. 예를 들어, 국가나 대륙.
+  특수한 "쌍을 이룬" 팔레트가 있다; 예를 들어, 곡물 밀 유형같이 실험이 아닌 요인, 실험군과 대조군 같은 이진 실험 요인.
+- **발산하는(diverging)** : 극단의 음수에서 극단의 양수까지 범위를 같는 것을 시각화하는데 유용한다.
+  이런 데이터는 극단의 값이 중간에 위치한 덜 흥미로운 지점을 지난다. 예를 들어, t-통계량, z-점수, 상관계수가 이에 속한다.
+
+명칭을 명세해서 RColorBrewer 팔렛트 하나만 볼 수 있다.
+
+``` {r dataviz-brewer-palette, echo = TRUE}
+display.brewer.pal(n = 8, name = 'Dark2')
+```
+
+
+### viridis {#dataviz-viridis}
+
+2015년 Stéfan van der Walt 와 Nathaniel Smith는 파이썬 `matplotlib` 팩키지에 사용될
+새로운 색상 지도를 설계했고, [SciPy 2015](https://www.youtube.com/watch?v=xAoljeRJ3lU&feature=youtu.be)에서 발표했다.
+`viridis` 팩키지로 인해 R에 4가지 신규 팔레트가 추가되었다. [CRAN](https://cran.r-project.org/web/packages/viridis/index.html)과,
+[GitHub](https://github.com/sjmgarnier/viridis)에서 팩키지를 만날 수 있다.
+
+
+
+:::{.callout-note}
+
+`viridis` 색상표는 완벽하게 균등하게 지각되도록 설계되었고, 정규형식에서나 흑백으로 전환되었을 때도 마찬가지다. 또한 색망을 갖는 독자도 올바르게 지각될 수 있도록 설계되었다.
+
+:::
+
+
+아직 나온지 얼마되지 않아서, 자세한 사항은 `viridis` 팩키지를 설치하고 [소품문](https://cran.r-project.org/web/packages/viridis/vignettes/intro-to-viridis.html_document)을
+읽고 직접 경험하기 바란다.
+
+### 색맹을 갖는 사람 {#dataviz-viridis-blind}
+
+`dichromat` 팩키지([CRAN](http://cran.r-project.org/web/packages/dichromat/))는 
+2색시자에 대한 효과적인 색상조합을 선택하는데 도움이 된다.
+
+```{r dataviz-viridis-blind, echo = TRUE}
+library(dichromat) # install.packages("dichromat")
+```
+
+`colorschems` 목록에는 `r length(colorschemes)` 가지 색상조합이 담겨있는데, 적색과 녹색을 구별하는 능력이 없거나 예외적인 시력을 갖는 2색시자에게 적합하다.
+
+```{r dichromat-colorschemes, echo = FALSE}
+library(ggplot2)
+x_boundaries <-
+  lapply(colorschemes,
+         function(x) seq(from = 0, to = 1, length = length(x) + 1))
+df <- data.frame(
+  xmin = unlist(lapply(x_boundaries, function(x) rev(rev(x)[-1]))),
+  xmax = unlist(lapply(x_boundaries, function(x) x[-1])),
+  ymax = rep(seq_along(colorschemes), sapply(colorschemes, length)))
+anno_df <- data.frame(
+  scheme = names(colorschemes),
+  num = seq_along(colorschemes))
+ggplot(df, aes(xmin = xmin, xmax = xmax, ymin = ymax - 0.85, ymax = ymax)) +
+  geom_rect(fill = unlist(colorschemes)) + xlim(c(-0.6, 1)) + 
+  annotate("text", x = -0.05, y = anno_df$num - 0.5, label = anno_df$scheme,
+           hjust = 1) + 
+  theme_bw() +
+  theme(panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.border = element_blank(),
+        axis.text = element_blank(),
+        axis.ticks = element_blank(),
+        axis.title = element_blank())
+```
+
+`dichmat()` 함수는 색상을 변환해서 다른 형태의 색맹에 근사적인 효과를 구현할 수 있어서,
+후보 색상조합에 대한 효과를 평가할 수 있게 한다. 
+`data("dalton")` 명령어는 256 색상 팔레트를 표현하는 객체를 생성하는데,
+정상 시야로 표현되는 것과, 적록(red-green) 색맹과 청녹(green-blue) 생맹으로 표현되는 것이다.[@rogowitz1996ibm]
+
+
+
+```{r}
+#| eval: false
+pal_name <- names(tvthemes:::stevenUniverse_palette)
+
+show_all_pal <- function(pal_name) {
+  exp_pal <- paste0("tvthemes:::stevenUniverse_palette$", pal_name)
+  
+  pal_call <- eval(expr = parse(text = exp_pal))
+  
+  return(scales::show_col(pal_call))
+}
+
+purrr::walk(pal_name, ~ show_all_pal(pal_name = .x))
+```
+
+`RColorBrewer`는 [ColorBrewer 2.0](https://colorbrewer2.org/)에서 제공하는 색상 팔레트에 기반한 R 색상 패키지다. 데이터 시각화를 위한 다양한 색상 조합을 제공하며, 데이터 시각화 가독성과 해석력을 향상을 위한 발산(diverging), 연속(sequential), 범주형(qualitive) 데이터 유형에 대한 적합한 색상 팔레트가 포함되어 있다. 
+
+
+```{r}
+library(RColorBrewer)
+
+par(mfrow=c(1 ,3))
+display.brewer.all(type="div")  # 양쪽발산(diverging)
+display.brewer.all(type="seq")  # 연속형(sequential)
+display.brewer.all(type="qual") # 범주형(qualitive)
+dev.off()
+```
+
+`penguins` 데이터셋을 활용하여 각 섬별로 펭귄의 수를 집계한 다음, 
+Torgersen 섬의 이름을 NA(결측값)으로 변경한다. 변경된 데이터를 바탕으로 `ggplot2` 패키지를 사용해 막대 그래프를 생성하며, 섬의 이름을 x축에, 각 섬의 펭귄 수를 y축에 배치하고, 각 막대는 해당 섬의 이름에 따라 다른 색상으로 채워운다. 결측값(여기서는 Torgersen 섬)은 회색으로 표시되며, 나머지 색상은 RColorBrewer의 "Accent" 팔레트를 사용하여 색을 채워넣는다.
+
+```{r}
+library(palmerpenguins)
+library(tidyverse)
+
+penguins |> 
+  count(island) |> 
+  mutate(island = if_else(island ==  "Torgersen", NA_character_, island)) |> 
+  ggplot(aes( x = island, y = n, fill = island)) +
+    geom_col() +
+    scale_fill_brewer(palette="Accent", na.value="grey50")
+```
+
+
+## 정당 색상
+
+[더블어민주당](https://www.peoplepowerparty.kr/about/logo), [국민의힘](https://www.peoplepowerparty.kr/about/logo),
+[정의당](https://www.justice21.org/newhome/about/info021.html) 웹사이트에서 각 정당 로고 및 주된 로고 색상을 확인할 수 있다. 이를 바탕으로 정당별 시각화 제작에 사용될 색상으로 팔레트를 생성하여 활용한다.
+
+```{r}
+# 각 정당별 색상
+민주당_2색상 <- c("#00A0E2", "#004EA1")
+민주당_4색상 <- c("#8AC452", "#00AA7D", "#008CCD", "#004EA1")
+
+국힘_3색상 <- c("#FFFFFF", "#E61E2B", "#00B5E2")
+국힘_6색상 <- c("#EDB19D", "#F18070", "#BDE4F8", "#004C7E", "#112C56")
+
+정의당_3색상 <- c("#ffed00", "#e8306d", "#00a366", "#623e91")
+
+무소속_색상 <- "#999999"
+
+# 정당, 색상코드, 시각화
+party_palette <- c("민주당" = 민주당_2색상[2], 
+                   "국민의힘" = 국힘_3색상[2], 
+                   "정의당" = 정의당_3색상[1], 
+                   "무소속" = 무소속_색상)
+
+df_colors <- data.frame(
+  party = names(party_palette),
+  color = party_palette
+)
+
+ggplot(df_colors, aes(x = 1, y = party, fill = color)) +
+  geom_tile() +
+  scale_fill_identity() +
+  theme_void() +
+  coord_fixed(ratio = 0.1) +
+  geom_text(aes(label = str_glue("{party} - {color}")))
+```
+
+정당별 색상을 반영한 데이터 시각화 그래프 제작을 위해서 
+난수를 생성한 정당별 지지율 데이터를 만든 후에 정당색상을 반영한 그래프를 제작한다.
+
+```{r}
+party_name <- c("민주당", "국민의힘", "정의당", "무소속")
+votes <- c(runif(1, min=.4, max=.5),
+           runif(1, min=.4, max=.5),
+           runif(1, min=.0, max=.05),
+           runif(1, min=.0, max=.05))
+
+tibble(party_name, votes) |> 
+  mutate(party_name = factor(party_name, levels = c("민주당", "국민의힘", "정의당", "무소속"))) |> 
+  ggplot(aes(x = party_name, y = votes, fill = party_name)) +
+    geom_col() +
+    scale_fill_manual(values = party_palette) +
+    scale_y_continuous(labels = scales::percent) +
+    labs(x = "",
+         y = "지지율",
+         fill = "정당명",
+         title = "정당별 지지율") 
+```
+
+
+## 이미지 &rarr; 색상
+
+이미지에서 색상을 출력한 후에 이를 팔레트로 만들어서 시각화한 사례를 만들어보자.
+태극기에서 가장 많은 색상을 선택하여 16진수 색상코드를 추출한다.
+`magick` 패키지와 생상에서 데이터프레임 변환을 위해 `imager` 패키지를 사용해서 변환한다. [^image2hex]
+
+[^image2hex]: [extracting colours from your images with image quantization](https://chichacha.netlify.app/2019/01/19/extracting-colours-from-your-images-with-image-quantization/)
+
+
+```{r}
+library(scales)
+library(imager)
+library(magick)
+
+flag_svg <- image_read_svg("images/korean_flag.svg")
+
+flag_palette <- flag_svg |> 
+  image_resize("500") |> 
+  image_quantize(max = 4, colorspace="RGB") |> 
+  magick2cimg() |> 
+  RGBtoHSV() |> 
+  as.data.frame(wide="c") %>%  #3 making it wide makes it easier to output hex colour
+  mutate(hex=hsv(rescale(c.1, from=c(0,360)),c.2,c.3),
+         hue = c.1,
+         sat = c.2,
+         value = c.3) %>%
+  count(hex, hue, sat,value, sort=T) %>% 
+  mutate(colorspace = "RGB") |> 
+  pull(hex)
+
+flag_colors_gg <- tibble(colors = flag_palette) |> 
+  ggplot(aes(x = 1, y = 1:length(flag_palette), fill = colors)) + 
+    geom_tile() +
+    scale_fill_identity() +
+    theme_void() + 
+    coord_fixed(ratio = 0.2) +
+    geom_text(aes(label = str_glue("{colors}")))  
+```
+
+태극기 이미지를 `ggplot`으로 시각화한다.
+
+```{r}
+library(ggimage)
+
+flag_image_gg <- ggplot() +
+  geom_image(aes(x=0, y=0, image="images/korean_flag.svg"), size=1) +
+  coord_cartesian(xlim=c(-1, 1), ylim=c(-1, 1)) +
+  theme_void()  
+```
+
+
+태극기에서 추출한 색상을 바탕으로 막대그래프에 색상을 입혀 시각화한다.
+
+```{r}
+#| label: color_penguins
+
+flag_penguin_gg <- penguins |> 
+  count(island) |> 
+  mutate(island = if_else(island ==  "Torgersen", NA_character_, island)) |> 
+  ggplot(aes( x = island, y = n, fill = island)) +
+    geom_col() +
+    scale_fill_manual(values = flag_palette[2:4], na.value="grey50") +
+    theme(legend.position = "top")
+```
+
+태극기, 태극기 색상, 막대그래프 시각화를 한번에 요약하여 시각화한다.
+
+```{r}
+#| eval: true
+library(patchwork)
+
+print((flag_image_gg + flag_colors_gg) / flag_penguin_gg)
+
+```
+
+

@@ -1,0 +1,1161 @@
+---
+output: html_document
+editor_options: 
+  chunk_output_type: console
+editor: 
+  markdown: 
+    wrap: 72
+---
+
+# 문서 구성요소
+
+![디지털 문서 구성요소](images/writing_document.jpg)
+
+## 그림
+
+그림은 책 내용을 이해하는 데 도움을 주는 중요한 요소이다. 그림은 과거
+실제 사물을 촬영한 사진과 사물이나 생각을 그려서 표현한 것이 전부였다면,
+이제는 데이터를 기반으로 다양한 그래프도 만들어낼 수 있고 생성형 AI
+기술을 사용해서 시각적 표현을 만들어낼 수도 있다.
+
+그림은 문서에서 텍스트만으로 설명이 어려운 개념이나 데이터를 시각적으로
+표현함으로써 이해를 돕고 문서구조를 논리적으로 구성하는 데도 기여한다.
+그림 위치는 그림이 설명하려는 내용과 얼마나 밀접하게 연관되어 있는지에
+따라 달라지는데 일반적으로 그림은 관련된 텍스트 바로 다음이나 전에
+위치하는 것이 일반적이고, 그림에 대한 참조를 본문에서 명확히 하는
+것이다.
+
+그림과 같은 시각적 객체가 준비되면 문서와 조화를 이룰 수 있도록 그림
+크기, 정렬, 레이아웃, 캡션, 상호참조 등을 고려해야 한다. 특히, 문서의
+최종 출력 형태를 고려해야 하는데 많이 사용되는 대표적으로 HTML, PDF,
+아래한글에 각각 그림이 문서에 포함되면 다음과 같다.
+
+|          아래한글          |            HTML            |             PDF             |
+|:----------------------:|:----------------------:|:----------------------:|
+| ![](images/figure_hwp.jpg) | ![](images/figure_pdf.png) | ![](images/figure_html.png) |
+
+그림을 문서에 삽입할 때 그림이 문서의 전체 흐름과 내용에 잘 맞춰
+물흐르듯 자연스럽게 구성한다. 그림을 단순히 장식적인 목적으로 넣어서는
+안 되며, 본문의 내용을 보충하거나 설명하는 데 도움이 되어야 한다. 그림
+크기가 너무 크거나 작으면 읽기 어렵고, 해상도가 낮으면 조약해 보여 글의
+품격도 떨어뜨린다. 그림 번호(레이블)는 문서 내에서 그림을 참조할 때
+사용되고 그림 설명글(캡션)은 그림 내용을 간략하게 설명하는 기능을 한다.
+저작권 관련하여 그림 출처나 저작권 정보도 명기해야 하고, 그림 색상과
+스타일이 문서 전체 디자인과 잘 어울리게 조화를 이루어야 한다.
+
+```{r}
+#| eval: false
+library(tidyverse)
+library(openai)
+
+extrafont::loadfonts()
+
+Sys.setenv(OPENAI_API_KEY = Sys.getenv("OPENAI_API_KEY"))
+
+x <- create_image("강원도 설악산 멋진 풍경")
+
+download.file(url = x$data$url, destfile = "images/dalle_mountain.png", mode = "wb")
+```
+
+특히 생성형 AI 기술의 눈부신 발전으로 인해 사람이 그린 것 같은 정교한
+이미지를 문서에 넣는 것도 비용이 많이 들지 않고 쉽게 가능하다. 이제는
+텍스트로 작성되는 문단과 문단 사이 적절한 곳에 "프롬프트"를 넣어
+이미지를 넣는 것이 큰 어려움 없이 가능하게 되었다. 다음은 최근에 공개된
+OpenAI 달리3(DALL·E 3) 모델을 사용해서 '강원도 설악산 멋진 풍경'이라는
+프롬프트로 생성한 이미지다.
+
+![AI 생성 이미지](images/dalle_mountain.png){width="350"}
+
+## 지도
+
+지리학(Geography)은 가장 오래된 과학 중 하나로 꼽히며, 학생때부터 교실
+여기저기에서 볼 수 있는 지도가 아마도 처음 접한 데이터 시각화 산출물일
+것이다. 지리학은 지구의 곡률을 정확히 파악하여 지구의 크기와 모양,
+중력에 대한 이해를 높이는 데 중요한 역할을 수행했을 뿐만 아니라 대항해
+시대 지도가 매우 큰 기여를 했고, 현대에 와서 지리학 데이터 응용 범위는
+더욱 확장되어, 민간과 국방 범위를 가리지 않고 상업적으로 입점위치 선정,
+우주 탐사, 군사 작전, 인구이동 패턴 분석 등 다방면에서 요긴한 역할을
+수행하고 있다.
+
+지도는 글쓰기에서 중요한 구성요소 중 하나로, 특히 학술 논문, 보고서,
+여행기, 지리나 역사 분야에서 지도는 필수적이다. 지도는 텍스트로만
+설명하기 어려운 공간적 관계나 지리적 배치를 명확하게 시각화함으로써
+저자의 주장이나 설명을 더 쉽고 정확하게 이해시킬 수 있고 문서의 전문성과
+신뢰성을 높힘으로서 효과적인 커뮤니케이션을 가능하게 한다.
+
+한가지 사례를 들어 보자. 2023년 7월 기준 대한민국 시도별 인구수를 문서의
+한 구성요로서 글쓰기를 할 때, 텍스트로 설명하거나 표로 정리하는 방법,
+막대그래프로 시각화하는 방법이 경우에 따라 유용할 수 있지만, 시도라는
+지리적인 정보를 지도에 녹여 표현하는 것이 가장 효과적이다.
+
+예를 들어, 서울과 부산 인구수가 얼마나 차이가 나는지 텍스트나 표,
+그래프로만 보면 그 차이를 알 수는 있지만, 두 도시가 어디에 위치해
+있는지, 주변 지역과 어떤 공간적 관계를 가지고 있는지 쉽게 파악하기
+어렵다. 반면 지도를 사용하면, 서울과 부산이 어디에 위치해 있는지, 각
+지역 인구수가 어떻게 분포되어 있는지를 한눈에 볼 수 있다. 지도를 통해
+제공되는 공간적 맥락은 텍스트나 표, 그래프만으로는 얻을 수 없는 근본적인
+이해와 통찰력을 제공한다는 점에서 지도를 통한 시각화는 정보 전달과
+이해에 있어서 훨씬 더 우위를 차지한다고 할 수 있다.
+
+```{r}
+#| eval: false
+
+library(sf)
+library(tidyverse)
+sf_use_s2(FALSE)
+
+## 지도
+korea_map <- read_sf("data/HangJeongDong_ver20230401.geojson")
+
+sido_map <- korea_map |> 
+  group_by(sidonm) |> 
+  summarise(geometry = sf::st_union(geometry))
+
+## 23년 7월 인구수(KOSIS) 행정구역별, 성별 인구수
+pop_tbl <- read_csv("data/행정구역_시군구_별__성별_인구수_20230831223248.csv",
+         locale=locale(encoding="euc-kr"), skip = 1) |> 
+  set_names(c("sidonm", "인구수")) |> 
+  mutate(sidonm = if_else(sidonm == "강원특별자치도", "강원도", sidonm))
+
+sigo_gg <- sido_map |> 
+  left_join(pop_tbl) |> 
+  ggplot() +
+    geom_sf(aes(geometry = geometry, fill = cut(인구수, 10)), show.legend = FALSE) +
+    ggrepel::geom_label_repel(aes(label = sidonm, geometry = geometry), 
+                              size = 20, stat = "sf_coordinates") +
+    theme_void() +
+    scale_fill_brewer(palette = "OrRd")
+
+ragg::agg_jpeg("images/GIS_tools.jpeg",
+               width = 10, height = 7, units = "in", res = 600)
+sigo_gg
+dev.off()
+```
+
+![](images/GIS_tools.jpeg)
+
+## 그래프
+
+데이터를 시각적으로 표현하는 그래프는 증거기반 문서작성에 중요한 역할을
+담당한다. 데이터 시각화를 위한 그래프 생성 프로그래밍 언어는 다양한데
+"방법(how)"에 초점을 둔 명령형(imperative) Processing, OpenGL, prefuse
+언어 계열과 "무엇(what)"에 초점 선언형(declarative) D3, ggplot2,
+Protovis 등로 나뉜다. R은 통계분석을 위한 프로그래밍 언어로서 데이터
+시각화에 강점을 가지고 있다.
+
+그래프는 복잡한 데이터나 패턴을 빠르고 명확하게 전달할 수 있는 수단이기
+때문에 데이터를 시각적으로 표현하는 그래프는 증거기반 문서 작성에서
+중요한 역할을 한다. 그래프를 생성하기 위한 프로그래밍 언어나 패키지는
+크게 두 가지 접근 방식으로 나뉜다. 하나는 "방법(how)"에 초점을 둔
+명령형(imperative) 언어로, Processing, OpenGL, prefuse 등으로 그래프 각
+요소를 어떻게 표현할 것인지를 명시적으로 지시한다. 다른 하나는
+"무엇(what)"에 초점을 둔 선언형(declarative) 언어로, D3, ggplot2,
+Protovis 등으로 무엇을 그릴 것인지를 중심으로 설계되어 있어, 사용자가
+원하는 결과에 더 집중한다.
+
+R 언어는 통계 분석뿐만 아니라 데이터 시각화에도 강점이 있고, 크게 3가지
+R 언어기반 시각화 시스템이 존재한다. Base 시각화 시스템은 R 기본
+패키지에 포함되어 있는 기본적인 그래프 생성 도구다. 래티스(`lattice`)
+시각화 시스템은 클리블랜드(Cleveland)의 격자 그래픽(Trellis
+Graphics)에서 영감을 받아 개발되어 특히, 다변량 데이터를 효과적으로
+시각화할 수 있다. `ggplot` 시각화 시스템은 SPSS 윌킨스(Wilkinson)의
+그래프 문법(Grammar of Graphics)에 기반하여 탄탄한 이론적 토대를 갖고
+있으여 파이프 연산자를 `+`도 `ggplot2`에 도입되어 의식의 흐름에 맞춰
+그래프를 생성할 수 있다는 장점이 있다.
+
+```{r}
+#| eval: false
+#| echo: false
+
+## Base 그래프 -----------------
+
+# 팔머 펭귄 데이터 불러오기
+data("penguins", package = "palmerpenguins")
+
+# 데이터를 종(species)에 따라 분리하기
+adelie <- subset(penguins, species == "Adelie")
+chinstrap <- subset(penguins, species == "Chinstrap")
+gentoo <- subset(penguins, species == "Gentoo")
+
+# 그래프 생성 시작
+plot(x = adelie$flipper_length_mm, y = adelie$body_mass_g, 
+     xlim = c(min(penguins$flipper_length_mm, na.rm = TRUE), max(penguins$flipper_length_mm, na.rm = TRUE)),
+     ylim = c(min(penguins$body_mass_g, na.rm = TRUE), max(penguins$body_mass_g, na.rm = TRUE)),
+     xlab = "", 
+     ylab = "",
+     col = "red", pch = 16, cex.axis = 1.5)
+
+# 다른 종의 펭귄 데이터 추가
+points(x = chinstrap$flipper_length_mm, y = chinstrap$body_mass_g, col = "green", pch = 16)
+points(x = gentoo$flipper_length_mm, y = gentoo$body_mass_g, col = "blue", pch = 16)
+
+# 범례 추가
+legend("bottomright", legend = c("Adelie", "Chinstrap", "Gentoo"), col = c("red", "green", "blue"), 
+       pch = 16, cex = 0.5, pt.cex = 3, inset=.02, text.font = 3) 
+
+# Add main title
+title(main = "팔머 관측소 LTER 서식 펭귄 크기", cex.main = 3)
+
+# Add subtitle just below the main title
+mtext("Adelie, Chinstrap, Gentoo 펭귄에 대한 물갈퀴 길이와 체질량", 
+      side = 3, # top side
+      line = 0.5, # distance from the plot region
+      cex = 2)  # size of the text
+
+# Add x and y-axis labels with text 3 times larger
+title(xlab = "물갈퀴 길이(Flipper length) (mm)", cex.lab = 2)
+title(ylab = "체질량(Body mass) (g)", cex.lab = 2)
+
+## Trellis 그래프 -----------------
+
+# 팔머 펭귄 데이터 불러오기
+data("penguins", package = "palmerpenguins")
+
+# 그래프 생성 시작
+xyplot(body_mass_g ~ flipper_length_mm, 
+       data = penguins, 
+       groups = species,
+       auto.key = list(columns = 3, title = "Species"),
+       main = list("팔머 관측소 LTER 서식 펭귄 크기", cex = 3),
+       sub = list("Adelie, Chinstrap, Gentoo 펭귄에 대한 물갈퀴 길이와 체질량", cex = 2),
+       xlab = list("물갈퀴 길이(Flipper length) (mm)", cex = 2),
+       ylab = list("체질량(Body mass) (g)", cex = 2),
+       scales = list(tck = c(1, 0), cex = 1.5),
+       pch = 16,
+       col = c("red", "green", "blue"))
+
+# 다른 종의 펭귄 데이터 추가
+points(x = chinstrap$flipper_length_mm, y = chinstrap$body_mass_g, col = "green", pch = 16)
+points(x = gentoo$flipper_length_mm, y = gentoo$body_mass_g, col = "blue", pch = 16)
+
+# 범례 추가
+legend("bottomright", legend = c("Adelie", "Chinstrap", "Gentoo"), col = c("red", "green", "blue"), 
+       pch = 16, cex = 0.5, pt.cex = 3, inset=.02, text.font = 3) 
+
+# Add main title
+title(main = "팔머 관측소 LTER 서식 펭귄 크기", cex.main = 3)
+
+# Add subtitle just below the main title
+mtext("Adelie, Chinstrap, Gentoo 펭귄에 대한 물갈퀴 길이와 체질량", 
+      side = 3, # top side
+      line = 0.5, # distance from the plot region
+      cex = 2)  # size of the text
+
+# Add x and y-axis labels with text 3 times larger
+title(xlab = "물갈퀴 길이(Flipper length) (mm)", cex.lab = 2)
+title(ylab = "체질량(Body mass) (g)", cex.lab = 2)
+
+```
+
+::: {#fig-graphics layout-ncol="3"}
+![Base 시스템](images/graphics_base.jpg)
+
+![Trellis 시스템](images/graphics_trellis.jpg)
+
+![ggplot2 시스템](images/graphics_ggplot2.jpeg)
+
+R 그래프 시스템
+:::
+
+팔머 관측소 펭귄 데이터를 시각화하는 예제를 통해 일반적인 데이터 시각화
+구성요소와 작업흐름을 일별해보자. 데이터 시각화에 필요한
+패키지(`tidyverse`, `showtext`, `palmerpenguins`)를 불러온다.\
+그래프에 필요한 글꼴("Nanum Pen Script", "Jua" 글꼴)을 `showtext`
+패키지를 사용하여 구글 폰트 사이트에서 가져와서 설치하고, 그래프 제목과
+부제목 글꼴, 크기, 색상 등을 `theme_quarto` 테마로 설정하여 R에서 사용할
+수 있도록 준비한다.
+
+`palmerpenguins` 데이터 패키지에서 팔머 관측소 펭귄 데이터프레임을
+불러오고, `ggplot`을 사용하여 펭귄 물갈퀴 길이(`flipper_length_mm`)와
+체질량(`body_mass_g`)을 x축과 y축에 각각 매핑하고, 펭귄 종(`species`)에
+따라 색상을 다르게 표시하는 산점도를 생성하고, 그래프 제목, 부제목,
+x축과 y축 제목도 넣고 `theme_quarto` 테마도 반영하여 시각화 객체를
+완성한다.
+
+```{r}
+#| echo: true
+library(tidyverse)
+library(showtext)
+library(palmerpenguins)
+
+font_add_google("Nanum Pen Script", "nanum_pen_script")
+font_add_google("Jua", "Jua")
+showtext_auto()
+
+theme_quarto <- theme(
+  text = element_text(family = 'Jua', size = 25),
+  plot.title.position = 'plot',
+  plot.title = element_text(
+    family = 'nanum_pen_script', size = 55,
+    face = 'bold', 
+    colour = thematic::okabe_ito(8)[3],
+    margin = margin(t = 2, r = 0, b = 3, l = 0, unit = "mm")
+  ),
+  plot.subtitle = element_text(
+    family = 'Jua', size = 25,
+    face = 'bold', 
+    colour = thematic::okabe_ito(8)[5],
+    margin = margin(t = 0, r = 0, b = 0, l = 0, unit = "mm")
+  )
+  
+)
+
+theme_set(theme_minimal() + theme_quarto)
+
+mass_flipper <- ggplot(data = penguins,
+                       aes(x = flipper_length_mm,
+                           y = body_mass_g,
+                           color = species)) +
+  geom_point(size = 3,
+             alpha = 0.8) +
+  labs(title = "팔머 관측소 LTER 서식 펭귄 크기",
+       subtitle = "Adelie, Chinstrap, Gentoo 펭귄에 대한 물갈퀴 길이와 체질량",
+       x = "물갈퀴 길이(Flipper length) (mm)",
+       y = "체질량(Body mass) (g)")
+
+mass_flipper
+```
+
+## 표
+
+문서에 표를 넣게 되면 정보를 효과적으로 요약할 뿐만 아니라 가독성을
+높이는 중요한 커뮤니케이션 도구 중 하나다. 마크다운(Markdown), `gt`
+패키지, 라텍는 자료를 표 형식으로 표현할 때 각각의 장점이 있다.
+마크다운은 기본적이며 간단한 방법으로, 복잡한 설치나 추가 패키지 없이도
+빠르게 내용에 충실한 기본표를 작성할 수 있다. `gt` 패키지는 그래프
+문법을 참고하여 표문법을 충실히 준수하며 데이터에 기반한 표제작에 필요한
+거의 모든 기능을 제공한다. 라텍는 가장 전문적인 표를 만들 수 있는
+도구로, 논문이나 학술 자료에 적합한 고품질의 표를 제작하는데 유용하다.
+
+![표제작 세가지 방식](images/table_three.jpg)
+
+### 마크다운 표 {#rmarkdown-kable-table}
+
+`mtcars` 데이터프레임에서 시연목적으로 관측점 5개와 열 4개를 뽑아내서
+`kable()`함수에 넣고 출력형식을 `markdown`으로 지정한다.
+`markdown`외에도 `html`, `pandoc`, `latex`, `rst`등으로 출력형식을
+지정할 수 있다.
+
+::: columns
+::: {.column width="45%"}
+```{r}
+#| label: knitr-kable-table
+#| eval: false
+library(tidyverse)
+library(knitr)
+
+mtcars %>% 
+  sample_n(5) %>% 
+  select(mpg, cyl, disp) %>% 
+  kable("markdown")
+```
+:::
+
+::: {.column width="5%"}
+:::
+
+::: column
+```{r}
+#| echo: false
+library(tidyverse)
+library(knitr)
+
+mtcars %>% 
+  sample_n(5) %>% 
+  select(mpg, cyl, disp) %>% 
+  kable("markdown")
+```
+:::
+:::
+
+### `gt` {#rmd-gt}
+
+그래프 문법(grammar of graphics)처럼 표 문법(grammar of table)
+[`gt`](https://github.com/rstudio/gt/) 팩키지가 등장했다. 표를 분해하면
+다음과 같고 이를 `tibble` 혹은 데이터프레임을 입력받아 GT 객체로
+변환시킨 후에 GT 표를 HTML로 출력하는 작업흐름을 갖는다.
+
+```{r}
+#| label: gt-image
+#| eval: false
+#| echo: false
+webshot2::webshot("https://gt.rstudio.com/", selector = "#main > div:nth-child(3) > p > img", "images/gt-concept.png")
+```
+
+![표 해부도](images/gt_parts_of_a_table.svg)
+
+`gt` 팩키지에 내장된 `exibble` 데이터셋은 $8 \times 9$ 구조를 갖는
+단순한 데이터셋이지만 표와 관련된 다양한 형태를 개발에 사용할 주요한
+정보를 담고 있다. [^components-1]
+
+[^components-1]: [Richard Iannone (2020-04-08), "Great Looking Tables:
+    gt
+    (v0.2)"](https://blog.rstudio.com/2020/04/08/great-looking-tables-gt-0-2/)
+
+::: columns
+::: {.column width="45%"}
+```{r}
+#| label: rmd-gt-taste-dataset
+#| eval: false
+library(gt)
+
+mtcars %>% 
+  sample_n(5) %>% 
+  select(mpg, cyl, disp) %>% 
+  gt() |> 
+  tab_header(
+    title = md("**mtcars** 데이터셋 표"),
+    subtitle = md("디지털 글쓰기 `gt` 패키지")
+  ) %>%
+  tab_source_note("표제작: 한국 R 사용자회 오픈소스 소프트웨어 개발자")
+```
+:::
+
+::: {.column width="5%"}
+:::
+
+::: column
+```{r}
+#| echo: false
+library(gt)
+
+mtcars %>% 
+  sample_n(5) %>% 
+  select(mpg, cyl, disp) %>% 
+  gt() |> 
+  tab_header(
+    title = md("**mtcars** 데이터셋 표"),
+    subtitle = md("디지털 글쓰기 `gt` 패키지")
+  ) %>%
+  tab_source_note("표제작: 한국 R 사용자회 오픈소스 소프트웨어 개발자")
+```
+:::
+:::
+
+### 라텍 표
+
+라텍은 수식 뿐만 아니라 복잡하고 미려한 표도 코드를 통해 제작할 수 있다.
+쿼토에서 라텍 표를 제작하기 위해서는 먼저 표제작을 위한 라텍 표코드를
+준비하고, GitHub에서 팬독-필터
+[tarleb/parse-latex](https://github.com/tarleb/parse-latex)를 다음
+명령어로 설치한다.
+
+``` bash
+$ quarto install extension tarleb/parse-latex
+```
+
+쿼토 확장팩이 설치되면 YAML에 다음과 같이 `parse-latex`을 등록하여
+사용한다.
+
+``` yaml
+---
+filters:
+  - parse-latex
+---
+```
+
+::: columns
+::: {.column width="45%"}
+```{latex}
+\begin{table}[h]
+\centering
+\begin{tabular}{|l|c|c|c|}
+\hline
+Car Model & mpg & cyl & disp \\
+\hline
+Lotus Europa & 30.4 & 4 & 95.1 \\
+Merc 230 & 22.8 & 4 & 140.8 \\
+Fiat 128 & 32.4 & 4 & 78.7 \\
+Pontiac Firebird & 19.2 & 8 & 400.0 \\
+Merc 450SL & 17.3 & 8 & 275.8 \\
+\hline
+\end{tabular}
+\caption{mtcars 데이터셋}
+\end{table}
+```
+:::
+
+::: {.column width="5%"}
+:::
+
+::: column
+```{=latex}
+\begin{table}[h]
+\centering
+\begin{tabular}{|l|c|c|c|}
+\hline
+Car Model & mpg & cyl & disp \\
+\hline
+Lotus Europa & 30.4 & 4 & 95.1 \\
+Merc 230 & 22.8 & 4 & 140.8 \\
+Fiat 128 & 32.4 & 4 & 78.7 \\
+Pontiac Firebird & 19.2 & 8 & 400.0 \\
+Merc 450SL & 17.3 & 8 & 275.8 \\
+\hline
+\end{tabular}
+\caption{mtcars 데이터셋}
+\end{table}
+```
+:::
+:::
+
+### 표 제작 사례
+
+펭귄 데이터를 기반으로 `gt` 패키지를 사용하여 표 제목, 칼럼명, 셀값에
+다양한 글꼴, 크기, 색상, 굵기를 적용한 사례가 @tbl-gt-penguins 에 코드로
+나와 있다. 미국 웨스 앤더슨 영화 색상(`Darjeeling1`)을 표에 적용하고,
+글꼴로 웹글꼴 구글 글꼴을 활용하여 `gt` 패키지로 다양한 글꼴을 적용하고,
+`fmt_integer()` 함수를 사용해서 숫자 가독성을 높이기 위해 천단위
+구분자를 넣고 부가적인 디자인도 표에 적용한다.
+
+```{r}
+#| label: tbl-gt-penguins
+#| tbl-cap: "글꼴, 색상, 서식을 반영한 표 제작 사례"
+library(gt)
+
+basic_theme <- function(data, ...){
+  data %>% 
+    tab_options(
+      column_labels.background.color = "#F98400",
+      table.font.size = px(12),
+      column_labels.font.size = px(20),
+      row.striping.background_color = "#F2AD00",
+      heading.align = "left",
+      heading.title.font.size = px(30)
+  )
+}
+
+palmerpenguins::penguins %>% 
+  select( 펭귄종=species, 섬=island, bill_length_mm, body_mass_g) %>% 
+  slice_sample(n = 10) %>% 
+  gt() %>% 
+    tab_header(title = md("팔머 펭귄 표본 **10 마리** 측정 정보")) %>% 
+    tab_source_note(source_note = "데이터: Kristen Gorman 박사와 남국 팔머 관측소(Palmer Station, Antarctica LTER)에서 수집") %>% 
+    cols_label(bill_length_mm = "부리 길이 (mm)",
+               body_mass_g    = "체질량 (g)") %>% 
+  tab_style(
+    style = cell_text(
+      font = c(
+        google_font(name = "Nanum Pen Script"),
+        default_fonts()
+      ),
+      size = "xx-large",
+      color = "gray35",
+      weight = "bolder"
+    ),
+    locations = cells_body(columns = bill_length_mm)
+  ) %>% 
+  # 체질량 칼럼  ---------------
+  tab_style(
+    style = cell_text(
+      font = c(
+        google_font(name = "Black Han Sans"),
+        default_fonts()
+      ),
+      size = "large",
+      color = "#00A08A",
+      weight = "bolder"
+    ),
+    locations = cells_body(columns = body_mass_g)
+  ) %>% 
+  fmt_integer(body_mass_g) |> 
+  # 표 Header 와 첫번째 칼럼  ---------------
+  tab_style(
+    style = cell_text(
+      font = google_font("Do Hyeon"), 
+      size = "large"
+    ),
+    locations = list(
+      cells_column_labels(everything()), 
+      cells_body(columns = 1)
+    )
+  ) %>%   
+  # 표 제목 ---------------
+  tab_style(
+    style = cell_text(
+      font = google_font("Dokdo"), 
+      align = "left", 
+      size = "xx-large",
+      color = "#FF0000"
+    ),
+    locations = cells_title("title")
+  ) %>%   
+  basic_theme() 
+```
+
+## 웹문서
+
+웹 문서 구성요소는 크게 HTML, CSS, 자바스크립트로 구분된다.
+HTML(HyperText Markup Language)은 웹 페이지의 기본 구조와 내용을
+정의하고, 다양한 태그를 사용하여 텍스트, 이미지, 링크, 리스트, 테이블
+등을 웹 페이지에 배치한다. 주요 HTML 태그로 `<head>`, `<body>`, `<h1>`,
+`<p>`, `<a>`, `<img>` 등을 들 수 있다. CSS(Cascading Style Sheets)는 웹
+페이지 레이아웃과 디자인을 담당한다. 색상, 폰트, 여백, 정렬 등을
+지정하여 웹 페이지의 외관을 꾸미는 역할을 한다. CSS는 HTML 문서 내에
+`<style>` 태그를 사용하여 삽입할 수 있고, 외부 저장된 CSS 파일을
+연결하여 사용할 수도 있다. 자바스크립트는 웹 페이지에 동적인 기능을
+부여한다. 사용자와 상호작용, 데이터 처리, 동적인 요소 변경 등을
+담당하고, HTML 문서 내에 `<script>` 태그를 사용하여 삽입할 수 있다.
+
+```{mermaid}
+%%| eval: false
+%%| echo: false
+
+graph TD
+
+    WebDocument["웹 문서"] --> HTML
+    WebDocument --> CSS
+    WebDocument --> JavaScript
+
+    subgraph HTML["HTML"]
+        direction LR
+        Structure["구조"] --> Tags["태그"]
+        Structure --> Text["텍스트"]
+        Structure --> Links["링크"]
+        Structure --> Lists["리스트"]
+        Structure --> Tables["테이블"]
+    end
+
+    subgraph CSS["CSS"]
+        direction LR
+        Styling["스타일링"] --> Colors["색상"]
+        Styling --> Fonts["폰트"]
+        Styling --> Margins["여백"]
+        Styling --> Alignment["정렬"]
+    end
+
+    subgraph JavaScript["자바스크립트"]
+        direction LR
+        Dynamic["동적 기능"] --> UserInteraction["사용자 상호작용"]
+        Dynamic --> DataProcessing["데이터 처리"]
+        Dynamic --> ElementChange["요소 변경"]
+    end
+
+    style WebDocument fill:#f5f5f5,stroke:#333,stroke-width:3px
+    style HTML fill:#d3d3d3,stroke:#333,stroke-width:1px
+    style CSS fill:#d3d3d3,stroke:#333,stroke-width:1px
+    style JavaScript fill:#d3d3d3,stroke:#333,stroke-width:1px
+```
+
+![](images/components_web_document.png)
+
+웹 문서는 HTML, CSS, 자바스크립트를 사용하여 복잡한 구조와 디자인,
+인터랙티브한 요소를 제공하기 위해서 개발이 필요한 반면에 아래한글과 워드
+같은 워드 프로세서는 GUI 기반 문서 편집기로 사용자가 메뉴와 버튼을 통해
+쉽게 문서를 서식을 지정하여 작성한다. 마크다운은 두가지 문서 저작방식의
+장점을 취해 가장 단순한 형태 텍스트 기반 마크업 언어로 특수 문자를
+사용하여 서식을 지정한다.
+
+| 기능/저작 도구  | 웹 문서 (HTML/CSS)  |    아래한글/워드     |           마크다운            |
+|:------------:|:----------------:|:----------------:|:------------------:|
+|   텍스트 입력   |  HTML 태그를 사용   |   GUI를 통해 입력    |       일반 텍스트 입력        |
+|    서식 지정    |      CSS 사용       |    메뉴에서 선택     |        특수 문자 사용         |
+|   이미지 삽입   |  `<img>` 태그 사용  |    드래그 앤 드롭    |      `![alt](url)` 형식       |
+|     표 작성     | `<table>` 태그 사용 |     표 메뉴 사용     | 파이프(`|`), 하이픈(`-`) 사용 |
+|   하이퍼링크    |   `<a>` 태그 사용   | 하이퍼링크 메뉴 사용 |      `[text](url)` 형식       |
+|    문서 구조    |   HTML 태그 사용    |  스타일과 목차 사용  |           `#` 사용            |
+|  반응형 디자인  |  미디어 쿼리 사용   |         없음         |             없음              |
+| 인터랙티브 요소 |  자바스크립트 사용  |     매크로 사용      |             없음              |
+|      배포       |    웹 서버 사용     |  `.hwpx` 파일 배포   |        `.md` 파일 저장        |
+|     접근성      |      ARIA 사용      |        제한적        |             없음              |
+
+
+
+## 다이어그램
+
+다이어그램(diagram, 도표)는 복잡한 정보나 개념을 단순화하고 시각적으로
+표현하여 텍스트만으로 설명하기 어려운 복잡한 데이터나 구조, 관계를
+명확히 전달할 수 있어 독자가 문서를 빠르고 정확하게 이해하는 데 도움을
+준다. 학술 논문, 보고서, 설명서 등에 포함된 다이어그램은 문서 전문성과
+신뢰성을 높혀 효과적인 커뮤니케이션을 가능하게 한다.
+
+다이어그램 저작 방식은 도구를 직접 사용하는 방식과 프로그래밍 언어처럼
+다이어그램 전용 언어를 사용하는 방식으로 나뉜다. 잘 알려진 다이어그램
+저작 도구로 마이크로소프트 비지오(Microsoft Visio),
+루시드차드(Lucidchart), 드로아이오(Draw.io) 등으로 주로 GUI를 통해
+다이어그램을 직관적으로 그릴 수 있고 다이어그램 전용 언어로
+그래프비즈(Graphviz)와 머메이드(Mermaid)가 대표적이다. Graphviz는 DOT
+언어를 사용해 다양한 네트워크 다이어그램, 플로우 차트, 조직도, 의존성
+그래프를 제작하는 반면, Mermaid는 마크다운과 유사한 문법으로 웹에서
+다이어그램과 차트를 생성하는 자바스크립트 라이브러리로 HTML과
+자바스크립트를 사용하는 모든 웹 페이지나 앱과 쉽게 통합된다는 장점이
+있다.
+
+챗GPT를 활용한 디지털 글쓰기 과정을 Mermaid 코드를 이용하여
+다이어그램으로 표현하면 다음과 같다. 다이어그램은 글쓰기, 구조와 외양,
+배포와 공유 세가지 영역에서 챗GPT가 부기장(Copilot)으로 역할을 수행하는
+것을 명확히 보여준다. 디지털 글쓰기가 글감, 표, 그래프, 코드, 그림, 도형
+등 다양한 요소로 구성되며, 구조와 외양에서는 문서의 구조, 서식,
+레이아웃, 참조 등이 중요하고, 배포와 공유에서는 다양한 대상, 즉 독자,
+저자, 기계에게 문서가 전달되는 과정을 빠르고 명확하게 이해할 수 있도록
+도와준다.
+
+비지오 같은 유명 GUI 도구보다 다이어그램 전용 언어를 사용하게 되면 높은
+수준 사용자 정의와 자동화가 가능할 뿐만 아니라 복잡한 다이어그램도
+정확하게 그릴 수 있고, 코드를 재사용함으로써 시간과 비용도 절약할 수
+있다. 특히, 버전 관리 시스템에 쉽게 통합할 수 있어 팀원들과 공유와
+협업이 용이하다.
+
+```{mermaid}
+%%| echo: true
+%%| eval: false
+
+graph LR
+
+    chatGPT["챗GPT"] --> Contents
+
+    subgraph Contents["디지털 글쓰기"]
+        direction LR
+        Writing["글감"] --> Table["표"]
+        Writing --> Graph["그래프"]
+        Writing --> Code["파이썬/R/SQL<br>코드"]
+        Writing --> Figure["그림"]
+        Writing --> Diagram["도형"]        
+    end
+
+    chatGPT --> Format
+    Contents --> Format
+
+    subgraph Format["구조와 외양"]
+        direction LR
+        Theme["구조와 외양"] --> Title["문서 구조"]
+        Theme               --> Formatting["문서 서식"]
+        Theme               --> Layout["문서 레이아웃"]
+        Theme               --> reference["문서 참조"]
+    end
+
+    chatGPT --> Deployment
+    Format --> Deployment
+
+    subgraph Deployment["배포와 공유"]
+        direction LR
+        Deploy --> Reader["독자(사람)"]
+        Deploy --> Author["독자(저작자)"]
+        Deploy --> Machine["독자(기계)"]
+    end
+
+    style chatGPT fill:#d3d3d3,stroke:#333,stroke-width:3px
+    style Contents fill:#d3d3d3,stroke:#333,stroke-width:1px
+    style Format fill:#d3d3d3,stroke:#333,stroke-width:1px
+    style Deployment fill:#d3d3d3,stroke:#333,stroke-width:1px
+```
+
+![](images/components_diagram.png)
+
+## 수식
+
+수학은 공학, 물리학, 컴퓨터 과학, 경제학 등 다양한 분야에서 중심 역할을
+하는 학문으로 정확하고 명료한 수학적 표기는 매우 중요하다. 라텍은 수학적
+표현을 깔끔하고 정확하게 표현할 수 있는 도구 중 하나로 라텍를 이용해
+다양한 수학적 표현법을 살펴보자.
+
+라텍은 기본적인 사칙연산에서부터 지수, 삼각함수, 적분, 행렬, 그리스
+문자, 무한대 등 광범위한 수학적 표현이 가능하여 전문가 느낌의 문서나
+논문, 프레젠테이션에 즉시 적용할 수 있는 고급스럽고 미련한 수식표현이
+가능하다.
+
+기본적인 덧셈과 뺄셈은 `a + b = c`처럼
+표현할 수 있고, 복잡한 적분도
+`\int_{0}^{\infty} e^{-x^2} dx = \frac{\sqrt{\pi}}{2}`와
+같이 명료하게 표현할 수 있을 뿐만 아니라, 행렬이나 그리스 문자도
+`\begin{pmatrix} a & b \\ c & d \end{pmatrix}`와
+`\alpha, \beta, \gamma, \Gamma, \pi, \Pi, \phi, \Phi, \mu` 등의 명령어를
+통해 표현할 수 있다.
+
+### 기본 연산자와 수
+
+::: columns
+::: column
+``` tex
+a^2 + b^2 = c^2
+```
+:::
+
+::: column
+
+
+$$
+a^2 + b^2 = c^2
+$$
+
+:::
+:::
+
+### 제곱근과 지수
+
+::: columns
+::: column
+``` tex
+\sqrt{a^2 + b^2} = c
+```
+:::
+
+::: column
+
+
+$$
+\sqrt{a^2 + b^2} = c
+$$
+
+:::
+:::
+
+### 삼각함수
+
+::: columns
+::: column
+``` tex
+\sin^2 \theta + \cos^2 \theta = 1
+```
+:::
+
+::: column
+
+
+$$
+\sin^2 \theta + \cos^2 \theta = 1
+$$
+
+:::
+:::
+
+### 적분
+
+::: columns
+::: column
+``` tex
+\int_{0}^{\infty} e^{-x^2} dx = \frac{\sqrt{\pi}}{2}
+```
+:::
+
+::: column
+
+
+$$
+\int_{0}^{\infty} e^{-x^2} dx = \frac{\sqrt{\pi}}{2}
+$$
+
+:::
+:::
+
+### 행렬
+
+::: columns
+::: column
+``` tex
+\begin{pmatrix}
+a & b \\
+c & d
+\end{pmatrix}
+```
+:::
+
+::: column
+
+
+$$
+\begin{pmatrix}
+a & b \\
+c & d
+\end{pmatrix}
+$$
+:::
+:::
+
+### 그리스 문자
+
+::: columns
+::: column
+``` tex
+\alpha, \beta, \gamma, \Gamma, \pi, \Pi, \phi, \Phi, \mu
+```
+:::
+
+::: column
+
+
+$$
+\alpha, \beta, \gamma, \Gamma, \pi, \Pi, \phi, \Phi, \mu
+$$
+:::
+:::
+
+### 무한대
+
+::: columns
+::: column
+``` tex
+\lim_{{n \to \infty}} \frac{1}{n} = 0
+```
+:::
+
+::: column
+
+
+$$
+\lim_{{n \to \infty}} \frac{1}{n} = 0
+$$
+
+:::
+:::
+
+### 합과 곱
+
+`MathJax`에서 줄바꿈(`\\`)이 반영되지 않아 `aligned`를 사용했지만,
+
+`MathJax` v4 에서 기능이 구현되어 구문이 훨씬 간결해질 것으로 보인다.
+
+::: columns
+
+::: column
+``` tex
+\begin{aligned}[t]
+\sum_{n=1}^{\infty} \frac{1}{n^2} = \frac{\pi^2}{6} \\
+\prod_{i=1}^{n} a_i = a_1 \times a_2 \times \cdots \times a_n
+\end{aligned}
+```
+:::
+
+::: column
+
+
+$$
+\sum_{n=1}^{\infty} \frac{1}{n^2} = \frac{\pi^2}{6}
+$$
+
+$$
+\prod_{i=1}^{n} a_i = a_1 \times a_2 \times \cdots \times a_n
+$$
+
+:::
+
+:::
+
+이 외에도 라텍로 더 복잡한 수식표현도 얼마든지 가능하다.
+
+## 참고문헌
+
+라텍 문서 컴파일 과정은 몇 단계에 걸쳐 이뤄진다. 먼저 `xelatex` 명령을
+사용하여 원본 라텍 코드를 컴파일하면 `.aux`와 `.log` 파일이 생성되고,
+`biber` 또는 `bibtex` 명령을 실행하여 참고문헌 정보를 처리하면서 `.bbl`
+및 `.blg` 파일이 생성된다. 그 다음 다시 `xelatex`을 두 번 실행하여
+참고문헌과 인용 정보를 최종적으로 처리하고 완성된 PDF 파일이 생성된다.
+
+```{mermaid}
+%%| eval: false
+%%| echo: false
+graph LR;
+    style A fill:#f9d71c,stroke:#333,stroke-width:2px;
+    style B fill:#42f5e6,stroke:#333,stroke-width:2px;
+    style C fill:#f542e9,stroke:#333,stroke-width:2px;
+    style D fill:#42f54b,stroke:#333,stroke-width:2px;
+    style E fill:#f54242,stroke:#333,stroke-width:2px;
+
+    A[LaTeX<br>소스코드] -->|xelatex| B{.aux,<br> .log}
+    B -->|biber <br> bibtex| C{.bbl,<br> .blg}
+    C -->|xelatex| D{.aux,<br> .log,<br>.pdf}
+    D -->|xelatex| E[PDF]
+```
+
+![](images/mermaid_latex_workflow.png)
+
+### `.bib` 파일
+
+`.bib` 파일은 BibTeX "서지 데이터베이스"로 쿼토, R마크다운, 주피터
+노트북, 라텍 문서에서 참고문헌을 관리하는 데 사용된다. `.bib` 파일은
+다양한 참고문헌(예: 논문, 책, 인터넷 자료 등)에 대한 메타데이터를 담고
+있는데 제목, 저자, 출판일 등의 정보가 담겨있다.
+
+라텍으로 작성한 `.tex` 소스파일을 `references.bib` 서지 파일과 연결시켜
+컴파일하여 `.pdf` 파일로 작업한다. 한가지 여기서 다루지 않는 사항으로
+`.csl` 파일이 있다. `.cls`는 인용 스타일 언어(Citation Style Language)
+파일로 XML 형식으로 작성되며, 참고문헌 서식규칙을 정의한다. 학술지,
+출판사마다 각기 다른 참고문헌 스타일을 요구하기 때문에, `.csl` 파일에
+다양한 스타일을 표현하다. 따라서, 참고문헌 콘텐츠가 담긴 `.bib` 파일과
+참고문헌 스타일이 담긴 `.cls` 두파일이 멋진 참고문헌 출력을 위해
+짝꿍처럼 함께 다닌다.
+
+다음 라텍 저작 파일은 서지 데이터가 담긴 `references.bib` 파일에
+`Kim2017`과 `xie2020r` 두 개의 참고문헌이 들어있다.
+
+라텍 문서는 `biblatex` 패키지를 사용하여 이 `references.bib` 파일을
+불러오고, `\cite` 명령어로 특정된 참고문헌을 인용한다. 참고문헌 목록은
+`\printbibliography[title=참고문헌]` 명령어 출력되는데 `title` 옵션으로
+참고문헌목록 제목을 "References"에서 "참고문헌"으로 변경하고 라텍
+문서에서 인용된 참고문헌을 기본설정 `.csl`에 맞춰 출력한다. 만약, 특정
+참고문헌 스타일을 반영하고자 한다면 라텍 파일에 `.csl` 파일을 지정하면
+된다.
+
+::: columns
+::: {.column width="45%"}
+#### `.tex` 소스파일
+
+``` tex
+\documentclass{oblivoir}
+
+% 한글 글꼴 적용 ---------------------------
+\usepackage{fontspec}
+\setmainfont{NanumGothic} % NanumGothic 글꼴이 설치되어야 함
+
+% 참고문헌 설정 ----------------------------
+\usepackage[backend=biber, style=numeric]{biblatex} % bibtex을 백엔드로 설정
+\addbibresource{references.bib}
+
+\begin{document}
+    
+    \section{서론}
+    텍과 관련된 교육 현장에서의 활용에 대한 연구가 있습니다~\cite{Kim2017}. 
+    또한, R markdown에 대한 다양한 정보와 사용법이 소개된 책도 있습니다~\cite{xie2020r}.
+    
+    \printbibliography[title=참고문헌]
+    
+\end{document}
+```
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="45%"}
+#### `.bib` 서지 파일
+
+``` bibtex
+@article{Kim2017,  
+    author = {김영록},  
+    title = {교육 현장에서의 텍의 활용},  
+    journal = {TeX: 조판, 그 이상의 가능성},  
+    year = {2017}
+}
+
+@book{xie2020r,  
+    title={R markdown cookbook},  
+    author={Xie, Yihui and Dervieux, Christophe and Riederer, Emily},  
+    year={2020},  
+    publisher={CRC Press}
+}
+```
+:::
+:::
+
+![서식파일 참고문헌](images/bibtex_reference.jpg){fig-align="center"
+width="635"}
+
+### 영문 참고문헌
+
+한글이 포함된 PDF 문서를 작성할 때 디버깅은 생각보다 복잡할 수 있다.
+따라서 대개는 문서 기본 구조를 영어로 먼저 정확히 작동하는지 확인한 후,
+한글로 전환하여 개발을 진행한다. 아래 라텍 문서 예시에서 전체적인 내용을
+파악하기 쉽도록 `lipsum` 패키지로 텍스트를 채웠으며, 2단 편집과 참고문헌
+관리 기능을 구현했다. `biblatex` 패키지와
+`\addbibresource{references.bib}` 명령어를 사용하여 참고문헌파일을
+지정하고, 본문에서 `\cite` 명령어를 통해 참고문헌을 인용했다. 마지막으로
+`\printbibliography` 명령어로 참고문헌 목록을 출력했다.
+
+::: columns
+::: {.column width="55%"}
+``` tex
+\documentclass[twocolumn]{article}
+\usepackage{lipsum} % lipsum 패키지 불러오기
+
+% 참고문헌
+\usepackage[backend=biber]{biblatex}
+\addbibresource{references.bib}
+
+% 문서 전문
+\title{Two-Sided Lipsum Example}
+\author{John Lee}
+\date{\today}
+
+
+\begin{document}    
+    
+    \maketitle
+    
+    \section{Introduction}
+    
+    This is a citation~\cite{dummy2023}.
+    \lipsum[11] % 첫 번째 로렘 입숨 문단 생성  
+    
+    \section{Main Body}
+    \lipsum[2-3] % 2~3 번째 로렘 입숨 문단 생성
+    
+    \section{Conclusion}
+    This is a book citation~\cite{ipsum2021}.
+    \lipsum[4] % 4번째 로렘 입숨 문단 생성
+
+\printbibliography
+    
+\end{document}
+```
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="40%"}
+![영문 참고문헌 사례](images/pdf_english_reference.jpg)
+:::
+:::
+
+### 국문 참고문헌
+
+영문으로 작성한 작업 흐름을 그대로 이용할 수 있지만, 몇 가지 수정이
+필요하다. 첫째, 영문 채우기 텍스트 패키지 `ipsum`을 `jiwonlipsum`으로
+변경하여 한글 텍스트로 국문 문서임을 명확히 구성한다. 둘째, 라텍에서
+한글 글꼴을 적용하지 않으면 한글 표현이 깨지거나 전혀 출력되지 않을 수
+있으므로, 한글 글꼴 적용 절차를 포함한다. 참고문헌 부제목이 영문
+'Reference'에서 '참고문헌'으로 변경하여 기본적인 한글문서 외양을
+확인한다.
+
+::: columns
+::: {.column width="55%"}
+``` tex
+\documentclass[twocolumn]{oblivoir}
+
+% 한글 글꼴 적용 ---------------------------
+\usepackage{fontspec}
+\setmainfont{NanumGothic} % NanumGothic 글꼴이 설치되어야 함
+
+% 채우기 텍스트 입숨 적용 ------------------
+\usepackage{jiwonlipsum}
+
+% 참고문헌 설정 ----------------------------
+\usepackage[backend=biber, style=numeric]{biblatex} % biber 백엔드로 설정
+\addbibresource{references.bib}
+
+
+% 문서의 제목, 저자, 날짜 설정
+\title{한글 입숨 예제}
+\author{홍길동}
+\date{\today}
+
+\begin{document}    
+    
+    \maketitle
+    
+    \section{서론}
+    
+    참고문헌을 연구를 했습니다.~\cite{kim2023}
+    \jiwon[11] % 첫 번째 로렘 입숨 문단을 생성한다.
+    
+    \section{본문}
+    또 영문 참고문헌 보고서를 연구했습니다.~\cite{ipsum2021}
+    \jiwon[1] % 두 번째와 세 번째 로렘 입숨 문단을 생성한다.
+    
+    \section{결론}
+    마지막 연구했습니다.~\cite{lee2021}
+    \jiwon[25] % 네 번째 로렘 입숨 문단을 생성한다.
+    
+    \printbibliography[title=참고문헌]
+    
+\end{document}
+```
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="40%"}
+![한글 참고문헌 사례](images/pdf_korean_reference.jpg)
+:::
+:::

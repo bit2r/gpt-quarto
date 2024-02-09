@@ -1,0 +1,334 @@
+
+# 문서 클래스
+
+
+## 로렘 입숨  {#lorem-ipsum}
+
+
+로렘 입숨(Lorem Ipsum, 줄여서 립숨, lipsum)은 출판과 그래픽 디자인 분야에서 널리 사용되는 **채우기 텍스트(dummy text)**로 글꼴, 타이포그래피, 레이아웃과 같은 그래픽 요소나 시각적 연출을 검토하고 싶을 때 유용하게 쓰인다. 로렘 입숨은 최종 결과물에 들어갈 실제 텍스트가 아직 준비되지 않았을 때, 기계적으로 디자인 전반적인 느낌을 파악하기 위한 임시 채움 글로 활용된다. 
+
+사람들은 텍스트가 보일 경우 그 내용에 집중하는 경향 때문에 로렘 입숨이 특히 진가를 발휘한다. 전형적인 로렘 입숨 텍스트는 라틴어 문장의 일부를 변형한 "Lorem ipsum dolor sit amet, consectetur adipiscing elit..."와 같은 형태로 시작된다. 디자인의 '보이는' 부분을 검토할 때 방해가 되지 않는 중립적인 내용을 제공하여 디자인이나 서체 특성을 강조하고자 할 때, 로렘 입숨을 사용하면 사람들이 디자인 자체에 더 집중할 수 있게 되어, 출판사나 디자이너가 인쇄출판 시각적 요소에만 초점을 맞출 때 매우 유용하다. [^lpsum]
+
+[^lpsum]: [위키백과, "로렘 입숨"](https://ko.wikipedia.org/wiki/%EB%A1%9C%EB%A0%98_%EC%9E%85%EC%88%A8)
+
+
+::: {.callout-note}
+### 로렘 입숨 (영문) 사례
+
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+:::
+
+
+
+### 영문 입숨 {#english-lipsum}
+
+영문 입숨 [\LaTeX](http://example.org) 패키지로 `lipsum`, `blindtext`, `kantlipsum`, `mwe` 등이 있다. 
+`lipsum` 패키지는 로렘 입숨(Lorem Ipsum) 텍스트를 쉽게 생성할 수 있어서 가장 널리 사용되는 텍스트 채우기 패키지 중 하나다. 특히, 문단 수를 지정할 수 있는 기능이 있어서 문서의 길이나 복잡성에 따라 유연하게 적용할 수 있다. 예를 들어, `\lipsum[1-5]` 명령어를 사용하면 5개의 로렘 입숨 문단을 생성한다.
+
+:::::{.columns}
+:::{.column width=55%}
+```latex
+\documentclass[twocolumn]{article}
+\usepackage{lipsum} % lipsum 패키지 불러오기
+
+\begin{document}
+
+\title{Two-Sided Lipsum Example}
+\author{Example Author}
+\date{\today}
+
+\maketitle
+
+\section{Introduction}
+\lipsum[1] % 첫 번째 로렘 입숨 문단 생성
+
+\section{Main Body}
+\lipsum[2-3] % 2~3 번째 로렘 입숨 문단 생성
+
+\section{Conclusion}
+\lipsum[4] % 4번째 로렘 입숨 문단 생성
+
+\end{document}
+
+```
+
+:::
+
+:::{.column width=5%}
+
+:::
+
+:::{.column width=40%}
+![영문 입숨 2단 문서 사례](images/pdf_ipsum_eng.jpg)
+:::
+:::::
+
+
+### 한글 입숨 {#korean-lipsum}
+
+[`jiwonlipsum`](http://wiki.ktug.org/wiki/wiki.php/jiwonlipsum) 패키지는 라틴 계열 문자를 위한 `lipsum` 패키지와 동일한 목표를 갖지만, 한글 및 한자에 특화된 글꼴, 레이아웃 등 타이포그래피의 요소를 예제로 채우기 텍스트(dummy text)를 생성하는 패키지로 김강수님이 제작했다. `jiwonlipsum` 팩키지는 [KTUG Private Repository](http://wiki.ktug.org/wiki/wiki.php/KtugPrivateRepository)에 저장되어 있어 이를 설치한 후 한글 lipsum을 사용할 수 있다. `jiwonlipsum` 팩키지가 저장된 [KTUG Private Repository](http://wiki.ktug.org/wiki/wiki.php/KtugPrivateRepository) 저장소를 활용하는 방식은 다음과 같다.
+
+1. **저장소 추가**: TeX Live 또는 MiKTeX의 패키지 관리자에서 KTUG Private Repository를 추가한다.
+
+2. **패키지 설치**: 패키지 관리자를 통해 `jiwonlipsum` 패키지를 검색하고 설치한다.
+
+3. **LaTeX 문서에 적용**: 설치가 완료되면, LaTeX 문서의 preamble(서문) 부분에 `\usepackage{jiwonlipsum}`을 추가한다.
+
+4. **텍스트 생성**: 문서 내에서 `\jiwonlipsum` 명령어를 사용하여 한글로 된 로렘 입숨 텍스트를 생성한다.
+
+
+``` bash
+$ tlmgr repository add http://ftp.ktug.org/KTUG/texlive/tlnet/ ktug
+$ tlmgr pinning add ktug "*"
+$ tlmgr install jiwonlipsum
+tlmgr.pl: package repositories
+        main = https://mirror.navercorp.com/CTAN/systems/texlive/tlnet (verified)
+        ktug = http://ftp.ktug.org/KTUG/texlive/tlnet/ (not verified: pubkey missing)
+For more about verification, see https://texlive.info/verification.html.
+[1/1, ??:??/??:??] install: jiwonlipsum @ktug [245k]
+running mktexlsr ...
+done running mktexlsr.
+running mtxrun --generate ...
+done running mtxrun --generate.
+tlmgr.pl: package log updated: C:/texlive/2020/texmf-var/web2c/tlmgr.log
+```
+
+`jiwonlipsum` 패키지를 사용하여 한글로 된 채우기 텍스트 사례를 보여주는 예제다. 
+문서형식을 두 칼럼 형식 짧은 보고서(article) 형식으로 지정하고 나서, 'NanumGothic' 글꼴을 사용해서 한글을 표현하기 위한 준비를 한다. 제목, 저자, 수정일 정보를 포함한 제목 페이지를 만든 후, `jiwonlipsum` 패키지를 활용해 한 문단의 요약(abstract)과 '들어가며' 섹션에 채우기 텍스트로 텍스트를 삽입한다. 
+
+:::::{.columns}
+:::{.column width=55%}
+
+```latex
+\documentclass[twocolumn]{article}
+
+\usepackage{fontspec}
+\setmainfont{NanumGothic} % NanumGothic 글꼴이 설치되어야 함
+
+\usepackage{jiwonlipsum}
+
+\title{멋진 \LaTeX 제목 페이지}
+\author{홍길동}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+
+\jiwon[1]
+
+\end{abstract}
+
+\section{들어가며}
+
+\jiwon
+
+\end{document}
+```
+
+:::
+
+:::{.column width=5%}
+
+:::
+
+:::{.column width=40%}
+
+![한글 입숨 2단 문서 사례](images/pdf_ipsum_kor.jpg)
+
+:::
+:::::
+
+
+## 문서 클래스
+
+[\LaTeX](http://example.org) 문서 클래스(document class)로 `article`, `report`, `book` 이 기본으로 제공되는 문서 클래스다. KOMA-Script는 또다른 [\LaTeX](http://example.org) 패키지 모음으로 기본 [\LaTeX](http://example.org) 문서 클래스(`article`, `report`, `book` 등) 확장 버전으로, 주로 유럽에서 널리 사용되며, 유럽의 타이포그래피와 문서 규격에 더 적합하게 설계되었다.
+
+1. `scrartcl`: `article` 문서 클래스 확장이며, 과학 학술지, 프리젠테이션, 짧은 보고서, 프로그램 문서, 초대장 등에 쓰이며 1~30페이지 정도 분량을 갖는 문서 작성에 좋다. 추가적인 사용자 설정 옵션과 유럽 스타일 레이아웃을 지원한다.
+
+2. `scrreprt`: `report` 문서 클래스 확장이며 중간 길이 보고서나 학위 논문 작성에 적합하고, 대략 30~200 페이지 문서 작성에 좋다. `scrartcl`와 마찬가지로 추가적인 사용자 설정 옵션과 유럽 스타일 레이아웃을 제공한다.
+
+3. `scrbook`: `book` 문서 클래스 확장으로, 책이나 큰 프로젝트에 적합하고, 대략 200 페이지 이상 문서 작성에 적합하다. 양쪽 페이지 레이아웃과 추가적인 사용자 설정 옵션도 지원한다.
+
+```{r}
+#| echo: false
+
+library(tidyverse)
+library(gt)
+library(gtExtras)
+
+latex_tbl <- data.frame(
+  FeatureGroup = c("명령어와 환경", "명령어와 환경", "명령어와 환경", "명령어와 환경", "명령어와 환경",
+                   "기본 설정", "기본 설정", "기본 설정", "기본 설정", "기본 설정", "기본 설정", "기본 설정", "기본 설정"),
+  
+  FeatureKorean = c("장(Chapter) 명령어", "부록(Appendix) 스타일링", "부분(Parts)에 대한 새 페이지", 
+                    "전문/본문/후문(Front/Main/Back matter)", "요약(Abstract) 환경", 
+                    "양면 옵션(Twoside vs Oneside)", "열기 위치(Openright vs Openany)", 
+                    "페이지 스타일(Pagestyle)", "제목 페이지(Titlepage)", "최하위 섹션(Lowest-level sectioning)",
+                    "상단 제목(Running headings)", "번호 매김(Numbering scope)", 
+                    "참고문헌 표시(Bibliography heading)"),
+  
+  Book = c("사용 가능", "부록 X", "새 페이지", "사용 가능", 
+           "사용 불가", "양면(Twoside)", "열기 위치: 오른쪽(Openright)", "헤딩(Headings)",
+           "제목 페이지 사용", "하위 섹션(Subsection)", "장과 섹션", "장 단위",
+           "Bibliography"),
+  
+  Report = c("사용 가능", "부록 X", "새 페이지", "사용 불가",
+             "사용 가능", "단면(Oneside)", "열기 위치: 어디든(Openany)", "일반(Plain)",
+             "제목 페이지 사용", "하위 섹션(Subsection)", "장과 섹션", "장 단위",
+             "Bibliography"),
+             
+  Article = c("사용 불가", "해당 없음", "새 페이지 없음", "사용 불가",
+              "사용 가능", "단면(Oneside)", "해당 없음", "일반(Plain)",
+              "제목 페이지 없음", "하위-하위 섹션(Subsubsection)", "섹션과 하위 섹션", "연속적",
+              "References")
+)
+
+latex_tbl |> 
+  select(FeatureGroup, FeatureKorean, Article, Report, Book) |> 
+  gt(groupname_col = "FeatureGroup") |> 
+    cols_label(
+    FeatureKorean = "기능",
+    Article = "짧은 보고서(article)",
+    Report  = "보고서(report)",
+    Book    = "책(book)"
+    ) |> 
+    gt_theme_pff() |> 
+    cols_align(columns = FeatureKorean,
+               "center") |> 
+    cols_align(columns = -FeatureKorean,
+               "center") |> 
+    fmt_markdown() |> 
+  tab_options(
+    table.width = "100%",
+    heading.title.font.size = px(12)
+  )
+```
+
+
+
+### 짧은 보고서
+
+짧은 보고서는 `article` 문서 클래스(`documentclass`)로 다음과 같은 구문을 갇고 컴파일하게 되면 짧은 보고서 문서형식을 갖는 PDF 파일을 얻게 된다.
+
+
+```{r}
+#| echo: false
+library(magick)
+library(tidyverse)
+
+article_pdf <- magick::image_read_pdf("data/class_article.pdf")
+
+article_pdf |> 
+  image_resize(geometry = "500x") |> 
+  image_crop(geometry = "500x525+90+75") |>    
+  image_crop(geometry = "-85+0") |> 
+  image_border("blue", "3x3") |>   
+  image_append(stack=FALSE)
+
+```
+
+
+### 보고서
+
+보고서는 `report` 문서 클래스(`documentclass`)로 다음과 같은 구문을 갇고 컴파일하게 되면 보고서 문서형식을 갖는 PDF 파일을 얻게 된다.
+
+
+```{r}
+#| echo: false
+
+report_pdf <- magick::image_read_pdf("data/class_report.pdf")
+
+report_front_pdf <- report_pdf[1:4]
+report_back_pdf <- report_pdf[5:7]
+
+report_front_stack <- report_front_pdf |> 
+  image_resize(geometry = "500x") |> 
+  image_crop(geometry = "500x525+90+75") |>    
+  image_crop(geometry = "-85+0") |> 
+  image_border("blue", "1.5x1.5") |>   
+  image_append(stack=FALSE)
+
+report_back_stack <- report_back_pdf |> 
+  image_resize(geometry = "500x") |> 
+  image_crop(geometry = "500x525+90+75") |>    
+  image_crop(geometry = "-85+0") |> 
+  image_border("blue", "1.5x3") |>   
+  image_append(stack=FALSE)
+
+image_append(c(report_front_stack, report_back_stack), stack=TRUE)
+
+```
+
+### 책
+
+책은 `book` 문서 클래스(`documentclass`)로 다음과 같은 구문을 갇고 컴파일하게 되면 보고서 문서형식을 갖는 PDF 파일을 얻게 된다.
+
+
+```{r}
+#| echo: false
+
+book_pdf <- magick::image_read_pdf("data/class_book.pdf")
+
+book_front_pdf <- book_pdf[1:8]
+book_middle_pdf <- book_pdf[9:16]
+book_back_pdf <- book_pdf[17:24]
+
+book_front_stack <- book_middle_pdf |> 
+  image_resize(geometry = "500x") |> 
+  image_crop(geometry = "500x525+90+75") |>    
+  image_crop(geometry = "-85+0") |> 
+  image_border("blue", "1.5x1.5") |>   
+
+  image_append(stack=FALSE)
+
+book_middle_stack <- book_front_pdf |> 
+  image_resize(geometry = "500x") |> 
+  image_crop(geometry = "500x525+90+75") |>    
+  image_crop(geometry = "-85+0") |> 
+  image_border("blue", "1.5x1.5") |>   
+  image_append(stack=FALSE)
+
+book_back_stack <- book_back_pdf |> 
+  image_resize(geometry = "500x") |> 
+  image_crop(geometry = "500x525+90+75") |>    
+  image_crop(geometry = "-85+0") |> 
+  image_border("blue", "1.5x1.5") |>   
+  image_append(stack=FALSE)
+
+image_append(c(book_front_stack, book_middle_stack, book_back_stack), stack=TRUE)
+```
+
+
+## 한글문서 클래스
+
+`oblivoir`는 `memoir` 클래스를 기반으로 개발된 LaTeX 문서 클래스 중 하나로, 주로 한글 문서를 작성할 때 사용되며 한글 타이포그래피와 관련된 여러 가지 기능이 포함되어 있다. `oblivoir`와 후속 `xoblivoir` 문서 클래스는 한글문서 작성을 쉽고 편리하게 지원한다.
+
+`oblivoir`와 후속 `xoblivoir` 문서 클래스(`documentclass`)는 한글 문서 특성을 잘 반영하기 때문에 별도 설정없이 다음과 같은 구문을 갇고 컴파일하게 되면 한글 문서형식을 갖는 PDF 파일을 얻게 된다. 국내에서 학술 논문, 보고서, 책 등 다양한 문서를 작성할 때 널리 사용된다. [@2007oblivoir; @Kim2011]
+
+
+```{r}
+#| echo: false
+
+hangul_pdf <- magick::image_read_pdf("data/class_oblivoir.pdf")
+
+hangul_pdf |> 
+  image_resize(geometry = "500x") |> 
+  image_crop(geometry = "500x525+90+75") |>    
+  image_crop(geometry = "-85+0") |> 
+  image_border("blue", "1.5x1.5") |>   
+  image_append(stack=FALSE)
+```
+
+라텍(LaTex)은 문서 모양새에 신경쓸 필용없이 문서의 논리적 구조와 내용에 집중할 수 있게 함으로써 글쓰기 본질에 집중할 수 있다는 약속을 하지만 현실에서 용지 크기, 여백, 행간 등 초심자가 신경쓸 것이 한둘이 아니다. 이러한 문제를 해결하기 위해 `oblivoir`라는 라텍 문서 클래스가 개발되었다. `oblivoir`는 기본 한글 문서 서식을 미리 설정해 놓아, 라텍을 처음 사용하는 한글 사용자에게 진입 장벽을 대폭 낮췄다는 평가를 받고 있다.
+
+![`oblivoir` 문서 클래스](images/oblivoir.jpg)
+
+워드 프로세서에 용지설정과 관련하여 '공급 용지'와 '편집 용지'라는 개념이 있다. 공급 용지는 인쇄를 위해 인쇄기에 공급되는 용지를 말하며, 편집 용지는 문서를 작성할 때 사용하는 용지를 말한다. 일반 저작자가 보통 공급 용지로 프린터에 A4 용지를 사용하고, 편집 용지는 전문서적, 만화책, 잡지 등 인쇄출판 목적에 맞춰 사륙배판, 국판, 신국판 등을 사용한다.
+
+![A4 공급 용지를 기준으로 편집용지](images/a4paper.jpg)
+
+

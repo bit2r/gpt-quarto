@@ -1,0 +1,14 @@
+연도,link,개발자
+1978,<a href=https://en.wikipedia.org/wiki/TeX>TeX</a>,Donald Knuth
+1984,<a href=https://en.wikipedia.org/wiki/Literate_programming>Literate Programming</a>,Donald Knuth
+1988,<a href=https://www.wolfram.com/mathematica/scrapbook/>Mathematica Notebooks</a>,Stephen Wolfram
+2001,<a href=https://ipython.org>IPython</a>,Fernando Perez
+2003,<a href=https://en.wikipedia.org/wiki/Org-mode>Emacs org-mode</a>,Carsten Dominik
+2004,<a href=https://en.wikipedia.org/wiki/Markdown>Markdown</a>,John Gruber
+2005,<a href=https://doc.sagemath.org/html/en/reference/index.html>Sage Notebook</a>,William Stein
+2006,<a href=https://en.wikipedia.org/wiki/Pandoc>Pandoc</a>,John MacFarlane
+2009,<a href=https://github.github.com/gfm/>GitHub Flavored Markdown</a>,Tom Preston-Werner
+2011,<a href=https://ipython.org/ipython-doc/3/notebook/>iPython Notebook</a>,Fernando Perez
+2012,<a href=http://yihui.name/knitr/>knitr</a>,Yihui Xie
+2014,<a href=https://juypter.org>Project Jupyter</a>,Fernando Perez
+2020,<a href=https://quarto.org>Quarto</a>,J.J. Allaire

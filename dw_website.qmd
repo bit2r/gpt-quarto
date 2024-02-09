@@ -1,0 +1,224 @@
+---
+output: html_document
+editor_options: 
+  chunk_output_type: console
+editor: 
+  markdown: 
+    wrap: 72
+---
+
+# 웹사이트와 블로그
+
+저작물을 파일형태 뿐만 아니라 웹사이트에 공유하는 것은 코로나19로 촉발된
+디지털 전환(Digital Transformation) 시대에 과학기술 종사자 뿐만 아니라
+현대를 사는 누구나 갖춰야 하는 보편적인 기술로 자리잡아 가고 있다. 통상
+<http://netlify.com/> 혹은 <https://github.com/> 웹사이트에서 제공하는
+정적 웹사이트(Static Website) 기능을 활용하여 제작된 블로그를 공유하는
+것이 과거 **데이터 과학자** 사이에 일반화되어 사용됐다.
+
+과학기술 저작물을 정적 웹사이트에 호스팅하여 공유한다는 것은
+지금까지와는 다른 기술적 배경을 가지기 때문에 이러한 문제를 해결하기
+위해 몇년전 [`distill`](https://rstudio.github.io/distill/) 팩키지가
+방향을 제시했다. [`distill`](https://rstudio.github.io/distill/)
+팩키지로 블로그 혹은 웹사이트 과학기술 콘텐츠 공유를 공유한 웹사이트를
+종종 구글링 과정에서 살펴봤을 것이다.
+
+저작 웹사이트를 RStudio + [쿼토(`quarto`)](https://quarto.org/) 를
+조합하여 로컬에서 정적 웹사이트를 먼저 제작하고 공유와 배포는 [GitHub
+Pages](https://pages.github.com/), [Netlify](http://netlify.com/), [쿼토
+펍(Quarto Pub)](https://quartopub.com/) 등으로 별다른 비용없이 무료로
+출판한다.
+
+![(정적) 웹사이트 배포](images/dw_website.jpg){fig-align="center"
+width="450"}
+
+## 프로젝트 생성 {#project-setup}
+
+[쿼토(`quarto`)](https://quarto.org/) 설치하고 정적 웹사이트 제작을 위한
+프로젝트를 준비한다. 문서로 웹사이트 개발을 위한 RStudio IDE를
+통합개발환경으로 선택한 경우 `File` → `New Project ...` → `Project Type`
+에서 **Quarto Website**를 선택한다.
+
+::: {#fig-website-setup layout="[[47.5,-1,47.5]]"}
+
+![](images/tutorial_webiste_01.jpg) 
+
+![](images/tutorial_webiste_02.jpg)
+
+(정적) 웹사이트 프로젝트 선택과정
+:::
+
+다음 단계로 웹사이트가 담길 디렉토리를 지정하고 웹사이트 디렉토리를
+생성하고 `Create Project` 버튼을 를 클릭한다. 쿼토 웹사이트 프로젝트가
+생성되면 웹사이트 제작을 위한 기본 골격이 제시된다. `_quarto.yml` 파일에
+웹사이트 기본 정보가 담겨지고 각 웹페이지는 `index.qmd`, `about.qmd`
+파일로 저작한다.
+
+::: {#fig-website-open layout="[[30,-1,67.5]]"}
+
+![](images/tutorial_webiste_03.jpg) 
+
+![](images/tutorial_webiste_04.jpg)
+
+쿼토 웹사이트 프로젝트 생성
+:::
+
+## 웹사이트 저작 {#project-writing}
+
+문서의 구조를 정의하는 `_quarto.yml` 파일에 웹사이트 문법을 적용하여
+웹페이지는 `.qmd` 파일, 외양은 `.css` 혹은 `.scss` 파일에 정리한다.
+관련하여 웹사이트를 구성하는 이미지, 동영상, 소리를 비롯한 각종
+자산(assets)도 웹페이지에 잘 담기도록 저작한다.
+
+쿼토 웹사이트 프로젝트는 웹사이트 기본골격을 다음 파일과 디렉토리를 통해
+제공된다. `_site/` 디렉토리는 쿼토 웹사이트를 컴파일하게 되면 자동
+생성된다. `_site/` 디렉토리에 `index.qmd` 파일을 컴파일한 `index.html`
+파일을 비롯한 정적 웹사이트 저작을 위한 각종 파일과 디렉토리로 채워진다.
+
+쿼토 웹사이트를 컴파일하는 방식은 `Ctrl + Shift + K` 단축키를 누르거나,
+상단 `Render` 버튼을 클릭하거나, `CTRL + SHIFT + B` 단축키를 누르거나,
+`Build`에 `Render Website`를 클릭한다.
+
+-   `_quarto.yml`
+-   `index.rmd`
+-   `about.rmd`
+-   `_site/`
+
+::: {#fig-website-compile layout="[[47.5,-1,47.5]]"}
+
+![](images/tutorial_webiste_05.jpg)
+
+![](images/tutorial_webiste_06.jpg)
+
+로컬 웹사이트 컴파일
+:::
+
+`_site/` 디렉토리는 정적 웹사이트가 배포되는 디렉토리로,\
+기본적으로 <http://netlify.com/>를 상정한 경우 `_site/`를 사용하지만,
+`docs/`로 바꿔주게 되면 `GitHub Pages` 웹호스팅으로 사용하여 배포할 수
+있게 된다. `GitHub Pages` 배포를 위해 `_quarto.yaml` 파일에
+`output-dir: docs`을 추가하게 되면 정적 웹사이트가 `_docs` 폴더에 담기게
+된다.
+
+요약하면 `_quarto.yml` 파일을 열어 `output_dir:` 설정이 없는 경우
+`output_dir: docs`로 지정하고, 이미 존재하는 경우 `output_dir:` 값을
+`_site` → `docs`으로 변경한다. 그리고 나서 쿼토 웹사이트를 빌드시키면
+웹사이트 전체가 `docs/` 디렉토리에 저장된다. 이것을 GitHub 저장소에
+업로드하거나 `push` 해서 올리게 되면 블로그 웹사이트가
+`https://<사용자명>.github.io/<저장소명>/index.html`을 통해 배포된다.
+
+::: columns
+::: {.column width="45%"}
+``` yaml
+project:
+  type: website
+```
+:::
+
+::: {.column width="5%"}
+:::
+
+::: column
+``` yaml
+project:
+  type: website
+  output-dir: docs
+```
+:::
+:::
+
+## 외양 - 폰트, 색상 등 {#theme-distill}
+
+지금까지 전반적인 웹사이트 생성과 웹페이지 콘텐츠 작성과 관련된 전반적인
+작업흐름에 집중했다면 글꼴, 색상 등 외양을 바꾸면 근사한 웹사이트로
+탈바꿈시킬 수 있다. 특히 쿼토는 부츠트랩 5(Bootstrap 5)를 지원하기
+때문에 [SCSS
+변수](https://github.com/twbs/bootstrap/blob/main/scss/_variables.scss)
+설정을 통해 멋진 웹사이트를 꾸밀 수 있다.
+
+글꼴만 한글로 바꿔 `tidyverse.css`를 저장한다. 기본 아이디어는 구글 글꼴
+웹사이트 <https://fonts.google.com/> 에서 한글 글꼴을 가져와서 웹사이트
+제목과 텍스트에 글꼴을 저작자의 선택에 맞춰 반영한다. 수정한
+`tidyverse.css` 파일 일부는 다음과 같다.
+
+```{css}
+@import url('https://fonts.googleapis.com/css2?family=Sunflower');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR');
+@import url('https://fonts.googleapis.com/css2?family=Gaegu');
+
+html {
+  /*-- Main font sizes --*/
+  --title-size:      50px;
+  --body-size:       1.06rem;
+  --code-size:       14px;
+  --aside-size:      12px;
+  --fig-cap-size:    13px;
+  /*-- Main font colors --*/
+  --title-color:     #000000;
+  --header-color:    rgba(0, 0, 0, 0.8);
+  --body-color:      rgba(0, 0, 0, 0.8);
+  --aside-color:     rgba(0, 0, 0, 0.6);
+  --fig-cap-color:   rgba(0, 0, 0, 0.6);
+  /*-- Specify custom fonts ~~~ must be imported above   --*/
+  --heading-font:    'Sunflower', sans-serif;
+  --mono-font:       "DM Mono", monospace;
+  --body-font:       'Noto Sans KR', sans-serif;
+  --navbar-font:     'Gaegu', cursive;
+}
+```
+
+## 웹사이트 배포 {#deployment-setup}
+
+### `GitHub Pages` 출판
+
+`https://<사용자명>.github.io/` 저장소는 매우 특별한 GitHub 저장소다.
+따라서, GitHub 저장소 명칭을 `<사용자명>.github.io` 으로 생성해야 한다.
+예를 들어, `statkclee.github.io` 와 같이 사용자계정을 `github.io`와 붙여
+먼저 판다. 그리고 나서, 상단 `Settings`로 들어간 다음 **GitHub Pages**
+설정을 한다. 이때 GitHub 저장소의 특정 디렉토리 `docs/` 디렉토리에 담긴
+내용 전부가 정적 웹사이트에 게시되는 내용이 된다. 즉, `docs/index.html`
+→ `https://<사용자명>.github.io/<저장소명>/index.html`로 바뀌어 웹사이트
+생성 및 배포가 완료된다.
+
+![정적 웹사이트 GitHub Pages 연결](images/tutorial_website_pages.png)
+
+### Quarto Pub 출판
+
+[`Quarto Pub`](https://quartopub.com/) 출판과정은 Quarto CLI를 통해 이뤄진다. `RStudio`의 내부 터미널을 사용하는 것을 권장하는데, 이유는 `RStudio`와 `Quarto`가 잘 통합되어 있어, 간편하게 출판 작업을 진행할 수 있기 때문이다. [^editor-4]
+
+[^editor-4]: [Quarto Pub](https://quarto.org/docs/publishing/quarto-pub.html)
+
+```{bash}
+#| eval: false
+$ quarto publish quarto-pub
+? Authorize (Y/n) › 
+❯ In order to publish to Quarto Pub you need to
+  authorize your account. Please be sure you are
+  logged into the correct Quarto Pub account in 
+  your default web browser, then press Enter or 
+  'Y' to authorize.
+```
+
+첫번째 출판하게 되면 인증작업을 수행하고 나면 `_publish.yml` 파일이 하나 생성된다.
+
+```{yaml}
+#| eval: false
+- source: project
+  quarto-pub:
+    - id: 1fa3ab1f-c010-453a-aaf2-f462bd074a66
+      url: 'https://quartopub.com/sites/statkclee/quarto-ds'
+```
+
+이제 모든 준비가 되었기 때문에 다음 명령어로 작성한 출판 문서를 포함한 웹사이트를 로컬에서 미리 확인 한 후에 [`Quarto Pub`](https://quartopub.com/)으로 전자출판한다. 윈도우에서는 **RStudio 내부 Terminal CLI**를 사용하는 것을 권장한다.
+
+```{bash}
+#| eval: false
+$ quarto preview
+$ quarto publish quarto-pub
+```
+
+
+## 블로그
+
+
+

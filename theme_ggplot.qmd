@@ -1,0 +1,331 @@
+---
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+# 그래프 테마
+
+`ggplot2`는 그래프 문법에 맞춰 데이터프레임을 입력으로 받아 그래프를 생성하는 
+대표적인 시각화 패키지다. `ggplot2`에서 기본으로 제공되는 테마(`theme`)는 9개가 있어, 
+다양한 테마별로 최소의 코딩으로 시각화 하고 가장 적합한 그래프 테마를 선정한다.
+먼저, 각 테마를 달리 적용하여 비교할 수 있는 기본 `ggplot` 그래프를 준비한다.
+
+```{r}
+#| label: ggplot_base
+#| eval: false
+
+library(tidyverse)
+library(palmerpenguins)
+
+extrafont::loadfonts(quiet = TRUE)
+
+base_penguins_gg <- penguins |> 
+  drop_na() |> 
+  ggplot(aes(x = flipper_length_mm, y = body_mass_g)) +
+    geom_point(aes(color = species, shape = species), size = 3) +
+    geom_smooth(method = "lm", se = FALSE, color = "black")  +
+    labs(
+      title = "기본 테마",
+      subtitle = "물갈퀴 길이와 체중 회귀분석",
+      x = "물갈퀴 길이 (mm)",
+      y = "체중 (g)",
+      color = "펭귄종",
+    ) +
+    guides(shape = "none") +
+    theme_classic(base_family = "MaruBuri Bold") +
+    theme(legend.position = c(0.90, 0.25))
+
+base_penguins_gg
+```
+
+![](images/penguin_ggplot_base.png)
+
+펭귄 데이터셋을 사용하여 물갈퀴 길이와 체중 사이의 관계를 시각화하는 그래프를 
+`draw_themes()` 함수로 테마를 달리 적용하여 `ggplot` 그래프를 생성한 후에
+리스트 객체로 저장한다.
+
+다양한 테마를 `draw_themes()` 함수에 인자로 넘기기 위해 `themes_name`과 `themes_vector`에 테마명과 테마 함수를 저장장 한 후  `map2()` 함수로 테마를 달리한 `ggplot` 그래프를 저장한다. 마지막으로, `patchwork::wrap_plots()` 함수를 사용하여 모든 그래프를 결합하여 하나의 그래프로 출력한다.
+
+```{r}
+#| label: ggplot_theme
+#| eval: false
+
+draw_themes <- function(theme_name, theme_choice) {
+  penguins |> 
+    ggplot(aes(x = flipper_length_mm, y = body_mass_g)) +
+      geom_point(aes(color = species, shape = species), size = 1) +
+      geom_smooth(method = "lm", se = FALSE, color = "black")  +
+      labs(
+        title = theme_name,
+        subtitle = "물갈퀴 길이와 체중 회귀분석",
+        x = "물갈퀴 길이 (mm)",
+        y = "체중 (g)",
+        color = "펭귄종",
+      ) +
+      guides(shape = "none") +
+      theme_choice() +
+      theme(legend.position = c(0.90, 0.15))    
+}
+
+## 테마명과 벡터
+themes_name <- c("theme_gray", "theme_bw", "theme_linedraw", 
+                 "theme_light", "theme_dark", "theme_minimal", "theme_classic", 
+                 "theme_void", "theme_test")
+
+themes_vector <- c(theme_gray , theme_bw , theme_linedraw , 
+                  theme_light , theme_dark , theme_minimal , theme_classic , 
+                  theme_void , theme_test )
+
+theme_output <- map2(themes_name, themes_vector, draw_themes)
+
+patchwork::wrap_plots(theme_output)
+```
+
+![](images/penguin_ggplot_theme.png)
+
+### `hrbrthemes`
+
+밥 루디스가 제작한 `hrbrthemes` 테마 패키지는 특히 텍스트가 많은 비즈니스 유형의 프레젠테이션에 적합한 테마와 테마 구성 요소를 제공한다.
+
+```{r}
+#| label: ggplot_hrbrtheme
+#| eval: false
+
+library(hrbrthemes)
+
+hrbr_themes_name <- c("theme_ipsum", "theme_ipsum_ps", "theme_ipsum_es", "theme_ipsum_rc", "theme_ipsum_ps", "theme_ipsum_pub", "theme_ipsum_tw", "theme_modern_rc", "theme_ft_rc")
+
+hrbr_themes_vector <- c(theme_ipsum, theme_ipsum_ps, theme_ipsum_es, theme_ipsum_rc, theme_ipsum_ps, theme_ipsum_pub, theme_ipsum_tw, theme_modern_rc, theme_ft_rc)
+
+hrbr_theme_output <- map2(hrbr_themes_name, hrbr_themes_vector, draw_themes)
+
+hrbrtheme_gg <- patchwork::wrap_plots(hrbr_theme_output)
+
+hrbrtheme_gg
+
+ragg::agg_jpeg("images/hrbrtheme_gg.jpeg",
+               width = 10, height = 7, units = "in", res = 600)
+hrbrtheme_gg
+dev.off()
+
+```
+
+![](images/hrbrtheme_gg.jpeg)
+
+
+### `ggthemes`
+
+제프리 아놀드(Jeffrey Arnold)가 제작한 `ggthemes` 테마 패키지는 소프트웨어, 데이터 시각화 선구자 및 다양한 곳에서 영감을 얻은 다양한 테마를 제공한다.
+
+```{r}
+#| label: ggplot_ggthemes
+#| eval: false
+
+library(ggthemes)
+
+ggthemes_name <- c("theme_base()","theme_calc()","theme_clean()","theme_economist()",
+                   "theme_economist_white()","theme_excel()","theme_excel_new()",
+                   "theme_few()","theme_fivethirtyeight()","theme_foundation()",
+                   "theme_gdocs()","theme_hc()","theme_igray()","theme_map()",
+                   "theme_pander()","theme_solarized_2()","theme_solid()",
+                   "theme_stata()","theme_tufte()","theme_wsj()")
+
+ggthemes_vector <- c(theme_base, theme_calc, theme_clean, theme_economist, theme_economist_white,
+                     theme_excel, theme_excel_new, theme_few, theme_fivethirtyeight,
+                     theme_foundation, theme_gdocs, theme_hc, theme_igray, theme_map,
+                     theme_pander, theme_solarized_2, theme_solid, theme_stata, theme_tufte, 
+                     theme_wsj)
+
+ggtheme_output <- map2(ggthemes_name, ggthemes_vector, draw_themes)
+
+ggtheme_gg <- patchwork::wrap_plots(ggtheme_output)
+
+ggtheme_gg
+
+ragg::agg_jpeg("images/ggtheme_gg.jpeg",
+               width = 10, height = 7, units = "in", res = 600)
+ggtheme_gg
+dev.off()
+```
+
+![](images/ggtheme_gg.jpeg)
+
+### `wesanderson`
+
+웨스 앤더슨(Wes Anderson) 영화의 독특하고 눈에 띄는 스타일을 기반으로 한 색상 팔레트를 제공하는 패키지다.
+
+```{r}
+#| label: ggplot_wesanderson
+#| eval: false
+
+library(wesanderson)
+
+draw_wesanderson <- function(palette_name, wesanderson_palette ="Darjeeling1") {
+  penguins |> 
+    ggplot(aes(x = flipper_length_mm, y = body_mass_g)) +
+      geom_point(aes(color = species, shape = species), size = 1) +
+      geom_smooth(method = "lm", se = FALSE, color = "black")  +
+      labs(
+        title = palette_name,
+        subtitle = "물갈퀴 길이와 체중 회귀분석",
+        x = "물갈퀴 길이 (mm)",
+        y = "체중 (g)",
+        color = "펭귄종",
+      ) +
+      guides(shape = "none") +
+      theme_minimal() +
+      theme(legend.position = c(0.90, 0.15)) +  
+      scale_color_manual(values= wes_palette(wesanderson_palette, n = 3))
+}
+
+wes_theme_output <- map2(names(wes_palettes), names(wes_palettes), draw_wesanderson)
+
+wes_theme_gg <- patchwork::wrap_plots(wes_theme_output)
+
+wes_theme_gg
+
+ragg::agg_jpeg("images/wes_theme_gg.jpeg",
+               width = 10, height = 7, units = "in", res = 600)
+wes_theme_gg
+dev.off()
+```
+
+![](images/wes_theme_gg.jpeg)
+
+
+## 사용자 테마
+
+설치한 한글 글꼴과 색상을 매칭하여 사용자 맞춤 테마(`theme_penguin`)을 생성하고
+색상은 `wesanderson` 패키지에서 `Darjeeling1` 5가지 색상을 사용하여 시각화한다.
+
+```{r}
+#| label: ggplot_penguins
+#| eval: false
+
+extrafont::loadfonts("win")
+
+theme_penguin <- function() {
+  
+  # ggthemes::theme_tufte() +
+  theme_minimal() +
+    
+  theme(
+      plot.title     = element_text(family = "NanumSquare", size = 18, face = "bold"),
+      plot.subtitle  = element_text(family = "MaruBuri", size = 13),
+      axis.title.x   = element_text(family = "MaruBuri"),
+      axis.title.y   = element_text(family = "MaruBuri"),
+      axis.text.x    = element_text(family = "MaruBuri", size = 11),
+      axis.text.y    = element_text(family = "MaruBuri", size = 11),
+      legend.title   = element_text(family = "MaruBuri", size=13),
+      plot.caption   = element_text(family = "NanumSquare", color = "gray20")
+  )
+}
+
+darjeeling1_palette <- wes_palette("Darjeeling1", n = 5)
+
+ggplot_penguins_gg <- penguins |> 
+  ggplot(aes(x = flipper_length_mm, y = body_mass_g)) +
+    geom_point(aes(color = species, shape = species), size = 3) +
+    geom_smooth(method = "lm", se = FALSE, color = "black")  +
+    labs(
+      title = "물갈퀴 길이와 체중 회귀분석",
+      subtitle = "남극 파머 펭귄 데이터셋",
+      x = "물갈퀴 길이 (mm)",
+      y = "체중 (g)",
+      color = "펭귄종",
+      caption = "자료출처: palmerpenguins 패키지"
+    ) +
+  guides(shape = "none") +
+  scale_color_manual(values =  darjeeling1_palette) +
+  theme_penguin()
+
+ggplot_penguins_gg
+
+ggsave("images/ggplot_penguins_gg.png")
+```
+
+
+![](images/ggplot_penguins_gg.png)
+
+## 그래프 자동 설정
+
+작성한 테마를 매번 코드를 "복사하여 붙여넣기" 하여 사용하는 대신 `.Rprofile` 파일에 반영하여
+매번 `ggplot` 시각화를 할 때 사용하는 방법을 살펴보자. `usethis` 패키지 `edit_r_profile()` 함수를
+호출하여 앞서 작성한 테마를 반영한다.
+
+```{r}
+#| eval: false
+usethis::edit_r_profile()
+```
+
+`theme_penguin()` 테마를 `ggplot2` 패키지 `theme_set()`으로 설정하고 기본 색상을 정의하면 시각화 그래프에 반영하여 사용할 수 있다.
+
+```{r}
+#| eval: false
+
+suppressWarnings(suppressMessages({
+
+  extrafont::loadfonts("win")
+
+
+  ## 테마 (글꼴) -----------------------------
+  theme_penguin <- function() {
+
+    # ggthemes::theme_tufte() +
+    ggplot2::theme_minimal() +
+
+      ggplot2::theme(
+        plot.title     = ggplot2::element_text(family = "NanumSquare", size = 18, face = "bold"),
+        plot.subtitle  = ggplot2::element_text(family = "MaruBuri", size = 13),
+        axis.title.x   = ggplot2::element_text(family = "MaruBuri"),
+        axis.title.y   = ggplot2::element_text(family = "MaruBuri"),
+        axis.text.x    = ggplot2::element_text(family = "MaruBuri", size = 11),
+        axis.text.y    = ggplot2::element_text(family = "MaruBuri", size = 11),
+        legend.title   = ggplot2::element_text(family = "MaruBuri", size=13),
+        plot.caption   = ggplot2::element_text(family = "NanumSquare", color = "gray20")
+      )
+  }
+
+  ## 색상
+  ### 웨스 앤더슨
+  color_palette <- wesanderson::wes_palette("Darjeeling1", n = 5)
+
+  ggplot2::theme_set(theme_penguin())
+
+}))
+```
+
+`.Rprofile` 파일에 `ggplot()` 사용자 정의 테마가 지정되어 있기 때문에 새로 R 세션을 시작하면 
+`theme_penguin()` 테마 및 웨스 앤더스 `color_palette` 색상 팔레트도 사용할 수 있다.
+
+```{r}
+#| eval: false
+
+library(tidyverse)
+library(palmerpenguins)
+
+penguins_theme_gg <- penguins |> 
+  ggplot(aes(x = flipper_length_mm, y = body_mass_g)) +
+    geom_point(aes(color = species, shape = species), size = 3) +
+    geom_smooth(method = "lm", se = FALSE, color = "black")  +
+    labs(
+      title = "물갈퀴 길이와 체중 회귀분석",
+      subtitle = "남극 파머 펭귄 데이터셋",
+      x = "물갈퀴 길이 (mm)",
+      y = "체중 (g)",
+      color = "펭귄종",
+      caption = "자료출처: palmerpenguins 패키지"
+    ) +
+  guides(shape = "none") +
+  scale_color_manual(values =  color_palette) +
+  theme_penguin()
+
+ragg::agg_jpeg("images/penguins_theme_gg.jpg",
+              width = 10, height = 7, units = "in", res = 600)
+penguins_theme_gg
+dev.off()
+```
+
+![펭귄 데이터 사용자 테마 적용 그래프](images/penguins_theme_gg.jpg)
+

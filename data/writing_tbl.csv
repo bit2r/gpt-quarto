@@ -1,0 +1,31 @@
+스크립트_명칭,문자유형,인구수
+Latin Latin,Alphabet,4900000000
+Chinese 汉字 漢字,Logographic,1541000000
+Arabic العربية,Abjad or Abugida (when diacritics are used),828000000
+Devanagari देवनागरी,Abugida,480500000
+Cyrillic Кирилица,Alphabet,289000000
+Bengali–Assamese বাংলা-অসমীয়া,Abugida,234000000
+Kana かな カナ,Syllabary,123000000
+Telugu తెలుగు,Abugida,83000000
+Hangul 한글 조선글,"Alphabet, featural",81700000
+Tamil தமிழ்,Abugida,78600000
+Thai ไทย,Abugida,70000000
+Gujarati ગુજરાતી,Abugida,57100000
+Kannada ಕನ್ನಡ,Abugida,45000000
+Geʽez ግዕዝ,Abugida,41849999.99999999
+Burmese မြန်မာ,Abugida,39000000
+Malayalam മലയാളം,Abugida,38000000
+Odia ଓଡ଼ିଆ,Abugida,35000000
+Gurmukhi ਗੁਰਮੁਖੀ,Abugida,27743000
+Sinhala සිංහල,Abugida,16000000
+Khmer ខ្មែរ,Abugida,16000000
+Greek Ελληνικά,Alphabet,13500000
+Lao ລາວ,Abugida,7000000
+Hebrew עברית,Abjad (or rarely Abugida when diacritics are used),6500000
+Tibetan བོད་,Abugida,6241000.000000001
+Armenian Հայոց,Alphabet,5400000
+"Mongolian .mw-parser-output .font-mong{font-family:""Menk Hawang Tig"",""Menk Qagan Tig"",""Menk Garqag Tig"",""Menk Har_a Tig"",""Menk Scnin Tig"",""Oyun Gurban Ulus Tig"",""Oyun Qagan Tig"",""Oyun Garqag Tig"",""Oyun Har_a Tig"",""Oyun Scnin Tig"",""Oyun Agula Tig"",""Mongolian Baiti"",""Noto Sans Mongolian"",""Mongolian Universal White"",""Mongol Usug"",""Mongolian White"",""MongolianScript"",""Code2000"",""Menksoft Qagan""}.mw-parser-output .font-mong-mnc,.mw-parser-output .font-mong:lang(mnc-Mong),.mw-parser-output .font-mong:lang(dta-Mong),.mw-parser-output .font-mong:lang(sjo-Mong){font-family:""Abkai Xanyan"",""Abkai Xanyan LA"",""Abkai Xanyan VT"",""Abkai Xanyan XX"",""Abkai Xanyan SC"",""Abkai Buleku"",""Daicing White"",""Mongolian Baiti"",""Noto Sans Mongolian"",""Mongolian Universal White""}ᠮᠣᠩᠭᠣᠯ",Alphabet,5200000
+Georgian ქართული,Alphabet,3700000
+"Meitei .mw-parser-output .script-Cprt{font-size:1.25em;font-family:""Segoe UI Historic"",""Noto Sans Cypriot"",Code2001}.mw-parser-output .script-Hano{font-size:125%;font-family:""Noto Sans Hanunoo"",FreeSerif,Quivira}.mw-parser-output .script-Latf,.mw-parser-output .script-de-Latf{font-size:1.25em;font-family:""Breitkopf Fraktur"",UnifrakturCook,UniFrakturMaguntia,MarsFraktur,""MarsFraktur OT"",KochFraktur,""KochFraktur OT"",OffenbacherSchwabOT,""LOB.AlteSchwabacher"",""LOV.AlteSchwabacher"",""LOB.AtlantisFraktur"",""LOV.AtlantisFraktur"",""LOB.BreitkopfFraktur"",""LOV.BreitkopfFraktur"",""LOB.FetteFraktur"",""LOV.FetteFraktur"",""LOB.Fraktur3"",""LOV.Fraktur3"",""LOB.RochFraktur"",""LOV.RochFraktur"",""LOB.PostFraktur"",""LOV.PostFraktur"",""LOB.RuelhscheFraktur"",""LOV.RuelhscheFraktur"",""LOB.RungholtFraktur"",""LOV.RungholtFraktur"",""LOB.TheuerbankFraktur"",""LOV.TheuerbankFraktur"",""LOB.VinetaFraktur"",""LOV.VinetaFraktur"",""LOB.WalbaumFraktur"",""LOV.WalbaumFraktur"",""LOB.WeberMainzerFraktur"",""LOV.WeberMainzerFraktur"",""LOB.WieynckFraktur"",""LOV.WieynckFraktur"",""LOB.ZentenarFraktur"",""LOV.ZentenarFraktur""}.mw-parser-output .script-en-Latf{font-size:1.25em;font-family:Cankama,""Old English Text MT"",""Textura Libera"",""Textura Libera Tenuis"",London}.mw-parser-output .script-it-Latf{font-size:1.25em;font-family:""Rotunda Pommerania"",Rotunda,""Typographer Rotunda""}.mw-parser-output .script-Lina{font-size:1.25em;font-family:""Noto Sans Linear A""}.mw-parser-output .script-Linb{font-size:1.25em;font-family:""Noto Sans Linear B""}.mw-parser-output .script-Ugar{font-size:1.25em;font-family:""Segoe UI Historic"",""Noto Sans Ugaritic"",Aegean}.mw-parser-output .script-Xpeo{font-size:1.25em;font-family:""Segoe UI Historic"",""Noto Sans Old Persian"",Artaxerxes,Xerxes,Aegean}ꯃꯩꯇꯩ ꯃꯌꯦꯛ",Abugida,2000000
+Thaana ދިވެހި,Abugida,339999.99999999994
+Canadian Syllabics ᖃᓂᐅᔮᖅᐸᐃᑦ ᒐᐦᑲᓯᓇᐦᐃᑫᐤ ᑯᖾᖹ ᖿᐟᖻ ᓱᖽᐧᖿ ᑐᑊᘁᗕᑋᗸ,Abugida,70000
