@@ -222,15 +222,23 @@ window.Quarto = {
   <li><a href="#%EC%BF%BC%ED%86%A0-cli" id="toc-쿼토-cli" class="nav-link" data-scroll-target="#%EC%BF%BC%ED%86%A0-cli"><span class="header-section-number">1.1.4</span> 쿼토 CLI</a></li>
   </ul>
 </li>
-  <li><a href="#%EB%B6%80%EC%A1%B0%EC%A2%85%EC%82%AC" id="toc-부조종사" class="nav-link" data-scroll-target="#%EB%B6%80%EC%A1%B0%EC%A2%85%EC%82%AC"><span class="header-section-number">1.2</span> 부조종사</a></li>
   <li>
-<a href="#rstudio-ide" id="toc-rstudio-ide" class="nav-link" data-scroll-target="#rstudio-ide"><span class="header-section-number">1.3</span> RStudio IDE</a>
+<a href="#rstudio-ide" id="toc-rstudio-ide" class="nav-link" data-scroll-target="#rstudio-ide"><span class="header-section-number">1.2</span> RStudio IDE</a>
   <ul class="collapse">
-<li><a href="#visual-markdown-main-features" id="toc-visual-markdown-main-features" class="nav-link" data-scroll-target="#visual-markdown-main-features"><span class="header-section-number">1.3.1</span> 비주얼 마크다운 편집기</a></li>
-  <li><a href="#%EB%8B%A8%EC%B6%95%ED%82%A4" id="toc-단축키" class="nav-link" data-scroll-target="#%EB%8B%A8%EC%B6%95%ED%82%A4"><span class="header-section-number">1.3.2</span> 단축키</a></li>
+<li><a href="#visual-markdown-main-features" id="toc-visual-markdown-main-features" class="nav-link" data-scroll-target="#visual-markdown-main-features"><span class="header-section-number">1.2.1</span> 비주얼 마크다운 편집기</a></li>
+  <li><a href="#%EB%8B%A8%EC%B6%95%ED%82%A4" id="toc-단축키" class="nav-link" data-scroll-target="#%EB%8B%A8%EC%B6%95%ED%82%A4"><span class="header-section-number">1.2.2</span> 단축키</a></li>
   </ul>
 </li>
-  <li><a href="#%EC%B6%9C%ED%8C%90-%ED%94%8C%EB%9E%AB%ED%8F%BC" id="toc-출판-플랫폼" class="nav-link" data-scroll-target="#%EC%B6%9C%ED%8C%90-%ED%94%8C%EB%9E%AB%ED%8F%BC"><span class="header-section-number">1.4</span> 출판 플랫폼</a></li>
+  <li><a href="#%EC%B6%9C%ED%8C%90-%ED%94%8C%EB%9E%AB%ED%8F%BC" id="toc-출판-플랫폼" class="nav-link" data-scroll-target="#%EC%B6%9C%ED%8C%90-%ED%94%8C%EB%9E%AB%ED%8F%BC"><span class="header-section-number">1.3</span> 출판 플랫폼</a></li>
+  <li>
+<a href="#%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-%EC%96%B8%EC%96%B4" id="toc-프로그래밍-언어" class="nav-link" data-scroll-target="#%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-%EC%96%B8%EC%96%B4"><span class="header-section-number">1.4</span> 프로그래밍 언어</a>
+  <ul class="collapse">
+<li><a href="#r-%EC%96%B8%EC%96%B4" id="toc-r-언어" class="nav-link" data-scroll-target="#r-%EC%96%B8%EC%96%B4"><span class="header-section-number">1.4.1</span> R 언어</a></li>
+  <li><a href="#%ED%8C%8C%EC%9D%B4%EC%8D%AC" id="toc-파이썬" class="nav-link" data-scroll-target="#%ED%8C%8C%EC%9D%B4%EC%8D%AC"><span class="header-section-number">1.4.2</span> 파이썬</a></li>
+  </ul>
+</li>
+  <li><a href="#latex-%EC%84%A4%EC%B9%98" id="toc-latex-설치" class="nav-link" data-scroll-target="#latex-%EC%84%A4%EC%B9%98"><span class="header-section-number">1.5</span> <span class="math inline">\(\LaTeX\)</span> 설치</a></li>
+  <li><a href="#%EB%B6%80%EC%A1%B0%EC%A2%85%EC%82%AC" id="toc-부조종사" class="nav-link" data-scroll-target="#%EB%B6%80%EC%A1%B0%EC%A2%85%EC%82%AC"><span class="header-section-number">1.6</span> 부조종사</a></li>
   </ul><div class="toc-actions"><ul><li><a href="https://github.com/bit2r/gpt-sql/edit/main/setup.qmd" class="toc-action"><i class="bi bi-github"></i>편집</a></li><li><a href="https://github.com/bit2r/gpt-sql/issues/new" class="toc-action"><i class="bi empty"></i>이슈 보고</a></li></ul></div></nav>
     </div>
 <!-- main -->
@@ -339,57 +347,41 @@ window.Quarto = {
 </div>
 </div>
 </div>
-</section></section><section id="부조종사" class="level2" data-number="1.2"><h2 data-number="1.2" class="anchored" data-anchor-id="부조종사">
-<span class="header-section-number">1.2</span> 부조종사</h2>
-<p>RStudio에서 GitHub 부조종사(Copilot) 기능을 활용할 수 있도록 저자를 포함하여 수많은 개발자들이 요청하여 2021년 11월 28일 최초 등록된 <a href="https://github.com/rstudio/rstudio/issues/10148">이슈(<code>#10148</code>)</a>가 2023년 7월 18일 베타버전으로 Rstudio <a href="https://dailies.rstudio.com/">일일 빌드 (Daily Builds)</a>를 통해 첫 공개되었다. <a href="https://github.com/features/copilot">GitHub 부조종사(Copilot)</a>를 Rstudio에서 사용하기 위해서는 특별한 버전 Rstudio, 즉 <a href="https://dailies.rstudio.com/">일일 빌드 (Daily Builds)</a>가 필요하였으나 현재는 각자 운영체제에 맞는 RStudio Desktop 버전을 다운로드한 후 설치하게 되면 기본적으로 부조종사 기능을 사용할 수 있다. 기본적으로 <a href="https://github.com/features/copilot/">GitHub 부조종사</a> 기능은 구독서비스로 매월 일정액($10)을 지불해야 사용할 수 있다.</p>
-<blockquote class="blockquote">
-<p><code>Tools -&gt; Global Options -&gt; Copilot -&gt; Enable Github Copilot</code></p>
-</blockquote>
-<p>설치가 완료되면 Rstudio를 실행하고 상단 메뉴에서 ‘Tools’를 선택한 다음 ’Global Options’을 클릭하면, 왼쪽 사이드바에서 ’Copilot’을 선택하고 ’Enable GitHub Copilot’ 체크박스를 선택한 다음 ’Sign In’을 클릭하고 나타나는 링크에서 인증 코드를 입력한다. ’Authorize Github Copilot Plugin’을 클릭하여 인증 과정을 완료하면 설정이 완료된다.</p>
-<div id="fig-copilot" class="quarto-figure quarto-figure-center quarto-float anchored">
-<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-copilot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="images/rstudio_copilot.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="그림&nbsp;1.6: GitHub 부주종사 설치과정"><img src="images/rstudio_copilot.jpg" class="img-fluid figure-img"></a>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-copilot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-그림&nbsp;1.6: GitHub 부주종사 설치과정
-</figcaption></figure>
-</div>
-<p>GitHub Copilot를 Rstudio에서 사용해보면, 작성하려는 코드(Ghost Text)가 회색으로 예측되어 나타난다. ‘Tab’ 키를 눌러 탭완성(Tab Completion) 기능으로 제시한 코드를 수락하여 개발을 이어간다.</p>
-</section><section id="rstudio-ide" class="level2" data-number="1.3"><h2 data-number="1.3" class="anchored" data-anchor-id="rstudio-ide">
-<span class="header-section-number">1.3</span> RStudio IDE</h2>
+</section></section><section id="rstudio-ide" class="level2" data-number="1.2"><h2 data-number="1.2" class="anchored" data-anchor-id="rstudio-ide">
+<span class="header-section-number">1.2</span> RStudio IDE</h2>
 <p>RStudio IDE는 처음 데이터 과학 R 프로그래밍 언어를 위한 통합개발환경으로 시작하였으나 이제는 파이썬을 비롯하여 SQL, Observable JS 등 데이터 과학 전분야를 담당하고 있다. 특히, 데이터 분석, 시각화 및 문서 작업을 간편하게 할 수 있도록 다양한 도구와 기능을 제공할 뿐만 아니라, Shiny 웹 애플리케이션 개발, Plumber를 통한 API 개발, 쿼토(Quarto)/R 마크다운을 활용해 다양한 데이터 과학 산출물을 제작할 수 있다. 또한, Git 버전 관리 시스템과 통합되어 코드 이력을 쉽게 추적하고 관리할 수 있고 GitHub과 연결하여 협업기능도 지원한다. 앞서 살펴본 GitHub 부조종사(Copilot) 유료구독을 한 경우 Rstudio와 연결하여 챗GPT로 유명한 생성형 AI를 통해 텍스트 및 다양한 프로그래밍 언어로 코드를 생성할 수 있다.</p>
-<p><a href="#fig-rstudio-ide" class="quarto-xref">그림&nbsp;<span>1.7</span></a> 에 RStudio IDE 설치과정이 나와 있다. 먼저, R 프로그래밍 언어 공식 웹사이트인 <a href="https://cran.r-project.org/">CRAN</a>에서 R을 다운로드하여 설치한다. 그 다음, <a href="https://posit.co/download/rstudio-desktop/">RStudio 공식 웹사이트</a>에서 사용자의 운영 체제에 맞는 RStudio IDE 버전을 다운로드한다. 다운로드한 설치 파일을 실행하여 설치 과정을 진행하며, 일반적으로 기본 설정으로 설치하는 것이 좋다. 설치가 완료되면 RStudio를 실행하여 R과 함께 사용한다.</p>
+<p><a href="#fig-rstudio-ide" class="quarto-xref">그림&nbsp;<span>1.6</span></a> 에 RStudio IDE 설치과정이 나와 있다. 먼저, R 프로그래밍 언어 공식 웹사이트인 <a href="https://cran.r-project.org/">CRAN</a>에서 R을 다운로드하여 설치한다. 그 다음, <a href="https://posit.co/download/rstudio-desktop/">RStudio 공식 웹사이트</a>에서 사용자의 운영 체제에 맞는 RStudio IDE 버전을 다운로드한다. 다운로드한 설치 파일을 실행하여 설치 과정을 진행하며, 일반적으로 기본 설정으로 설치하는 것이 좋다. 설치가 완료되면 RStudio를 실행하여 R과 함께 사용한다.</p>
 <div id="fig-rstudio-ide" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-rstudio-ide-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="images/rstudio-ide-install.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="그림&nbsp;1.7: RStudio IDE 설치과정"><img src="images/rstudio-ide-install.png" class="img-fluid figure-img"></a>
+<a href="images/rstudio-ide-install.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="그림&nbsp;1.6: RStudio IDE 설치과정"><img src="images/rstudio-ide-install.png" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-rstudio-ide-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-그림&nbsp;1.7: RStudio IDE 설치과정
+그림&nbsp;1.6: RStudio IDE 설치과정
 </figcaption></figure>
 </div>
 <p>RStudio 코드 편집기는 자동 완성, 구문 강조, 맞춤법 검사 등 기능을 제공하여 개발자 편의를 향상시켰고, GUI 데이터 뷰어를 통해 데이터프레임과 데이터 객체를 직접적으로 시각적으로 살펴볼 수 있으며, 내장 패키지 관리 시스템을 통해 R 패키지도 손쉽게 설치하고 관리할 수 있다.</p>
 <p>웹앱 Shiny 애플리케이션 개발과 테스트도 가능하고, 문서화 프로그래밍을 차세대 R 마크다운 쿼토(Quarto)를 이용하여 코드, 데이터, 그래프를 하나의 문서로 통합하여 구현할 수 있을 뿐만 아니라 팬독(Pandoc)을 통해 다양한 형태 문서를 자동으로 생성할 수 있다.</p>
 <div id="fig-quarto-markdown" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-quarto-markdown-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="images/rstudio-screenshot.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8" title="그림&nbsp;1.8: RStudio 문서화 프로그래밍 사례"><img src="images/rstudio-screenshot.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="450"></a>
+<a href="images/rstudio-screenshot.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="그림&nbsp;1.7: RStudio 문서화 프로그래밍 사례"><img src="images/rstudio-screenshot.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="450"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-quarto-markdown-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-그림&nbsp;1.8: RStudio 문서화 프로그래밍 사례
+그림&nbsp;1.7: RStudio 문서화 프로그래밍 사례
 </figcaption></figure>
 </div>
-<section id="visual-markdown-main-features" class="level3" data-number="1.3.1"><h3 data-number="1.3.1" class="anchored" data-anchor-id="visual-markdown-main-features">
-<span class="header-section-number">1.3.1</span> 비주얼 마크다운 편집기</h3>
+<section id="visual-markdown-main-features" class="level3" data-number="1.2.1"><h3 data-number="1.2.1" class="anchored" data-anchor-id="visual-markdown-main-features">
+<span class="header-section-number">1.2.1</span> 비주얼 마크다운 편집기</h3>
 <p><a href="https://rstudio.github.io/visual-markdown-editing">비주얼(visual) 마크다운</a> 기능을 사용하게 되면 과학/기술 문서 작성의 용이성 뿐만 아니라 인용(Citation), 문학적 프로그래밍(literate programming) 을 통한 재현가능한 과학문서 구현, 팬독(<code>Pandoc</code>)을 사용하여 텍스트와 코드로 PDF, HTML, 워드 등 다양한 문서 동시 생성이 가능하다.</p>
 <div id="fig-rstudio-visual" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-rstudio-visual-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="images/visual-edit-execute-code.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9" title="그림&nbsp;1.9: RStudio 비주얼 마크다운 편집기능"><img src="images/visual-edit-execute-code.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="450"></a>
+<a href="images/visual-edit-execute-code.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8" title="그림&nbsp;1.8: RStudio 비주얼 마크다운 편집기능"><img src="images/visual-edit-execute-code.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="450"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-rstudio-visual-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-그림&nbsp;1.9: RStudio 비주얼 마크다운 편집기능
+그림&nbsp;1.8: RStudio 비주얼 마크다운 편집기능
 </figcaption></figure>
 </div>
-</section><section id="단축키" class="level3" data-number="1.3.2"><h3 data-number="1.3.2" class="anchored" data-anchor-id="단축키">
-<span class="header-section-number">1.3.2</span> 단축키</h3>
+</section><section id="단축키" class="level3" data-number="1.2.2"><h3 data-number="1.2.2" class="anchored" data-anchor-id="단축키">
+<span class="header-section-number">1.2.2</span> 단축키</h3>
 <p>데이터 과학에서 통합개발환경(Integrated Development Environment, IDE)은 코드 기반의 제품과 서비스 개발 효율성과 효과성을 극대화에 매우 큰 기여를 한다. IDE는 코딩, 디버깅, 컴파일, 배포 등 프로그램 개발에 필요한 다양한 작업을 한 곳에서 수행할 수 있게 통합함으로써 개발자가 보다 집중하고 효율적으로 작업할 수 있는 환경을 제공한다. 단축키를 통해 개발자는 반복적인 작업을 빠르고 효율적으로 수행함으로써 전체적인 작업 속도와 생산성을 크게 높일 수 있다.</p>
 <p>특히, RStudio는 데이터 과학 분야에서 널리 사용되는 프로그래밍 언어인 R을 위한 특화된 통합 개발환경을 제공한다. RStudio는 R 언어 특성에 맞춰진 다양한 기능과 도구를 통합하여, 데이터 과학자와 연구자들이 데이터 분석, 시각화, 모형개발 작업을 보다 효율적으로 수행할 수 있도록 돕는다. RStudio에서 코드 작성, 편집 및 실행을 보다 빠르고 효율적으로 수행하기 위해 많이 사용되는 단축키는 다음과 같다.</p>
 <div id="tbl-rstudio-shortcut" class="quarto-float anchored">
@@ -543,17 +535,142 @@ window.Quarto = {
 </div>
 </figure>
 </div>
-</section></section><section id="출판-플랫폼" class="level2" data-number="1.4"><h2 data-number="1.4" class="anchored" data-anchor-id="출판-플랫폼">
-<span class="header-section-number">1.4</span> 출판 플랫폼</h2>
+</section></section><section id="출판-플랫폼" class="level2" data-number="1.3"><h2 data-number="1.3" class="anchored" data-anchor-id="출판-플랫폼">
+<span class="header-section-number">1.3</span> 출판 플랫폼</h2>
 <p>데이터 과학 분야에서 산출물을 공유하고 출판하는 것은 매우 중요한 단계로 효과적인 출판과 비용적인 면을 고려하여 최적 플랫폼과 도구를 선정한다. 데이터 과학 분야를 개척한 RStudio IDE로 과거 R 마크다운 산출물을 <a href="https://rpubs.com/">RPubs</a>에 출판한 경험이 있다면, <a href="https://quartopub.com/"><code>Quarto Pub</code></a>은 그와 유사한 경험을 제공한다. 다른 대안으로는 <a href="https://netlify.com/">netlify</a>, <a href="https://github.com/">GitHub Pages</a>, <a href="https://www.rstudio.com/products/connect/">RStudio Connect</a> 등이 있다.</p>
 <div id="fig-quarto-publishing" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-quarto-publishing-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="images/quarto-publishing.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10" title="그림&nbsp;1.10: 쿼토 출판"><img src="images/quarto-publishing.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="300"></a>
+<a href="images/quarto-publishing.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9" title="그림&nbsp;1.9: 쿼토 출판"><img src="images/quarto-publishing.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="300"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-quarto-publishing-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-그림&nbsp;1.10: 쿼토 출판
+그림&nbsp;1.9: 쿼토 출판
 </figcaption></figure>
 </div>
+</section><section id="프로그래밍-언어" class="level2" data-number="1.4"><h2 data-number="1.4" class="anchored" data-anchor-id="프로그래밍-언어">
+<span class="header-section-number">1.4</span> 프로그래밍 언어</h2>
+<p><span class="math inline">\(\LaTeX\)</span>, <code>Sweave</code>, R마크다운을 사용한 경험이 있다면 재현가능하고 추적가능한 과학기술 문서 제작의 장점을 경험했을 것이다. 쿼토는 기존 문서 <span class="math inline">\(\LaTeX\)</span>, 프로그래밍 언어 R 언어 뿐만 아니라 파이썬, 자바스크립트, 줄리아(Julia) 언어도 지원한다.</p>
+<section id="r-언어" class="level3" data-number="1.4.1"><h3 data-number="1.4.1" class="anchored" data-anchor-id="r-언어">
+<span class="header-section-number">1.4.1</span> R 언어</h3>
+<p>R 언어를 공식 웹사이트인 <a href="https://cran.r-project.org/">CRAN</a>에서 사용하는 운영 체제에 맞는 R 버전을 선택하여 다운로드 받는다. <a href="#fig-install-r" class="quarto-xref">그림&nbsp;<span>1.10</span></a> 처럼 설치과정은 기본 옵션을 따르며, 필요에 따라 추가 옵션을 조정할 수 있다. 설치가 완료되면 R 언어만 사용할 수 있고, R 언어 전용 편집기 RStudio를 설치하고 엔진으로 방금 설치한 R 언어를 선택하면 수월하게 R 프로그래밍을 시작할 수 있다.</p>
+<div id="fig-install-r" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-install-r-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/install_r.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10" title="그림&nbsp;1.10: R 설치 과정"><img src="images/install_r.png" class="img-fluid figure-img" style="width:100.0%"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-install-r-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+그림&nbsp;1.10: R 설치 과정
+</figcaption></figure>
+</div>
+</section><section id="파이썬" class="level3" data-number="1.4.2"><h3 data-number="1.4.2" class="anchored" data-anchor-id="파이썬">
+<span class="header-section-number">1.4.2</span> 파이썬</h3>
+<p>파이썬을 설치하는 과정은 먼저 <a href="https://www.python.org/">파이썬 공식 웹사이트</a>에 접속해 운영 체제에 맞는 파이썬 설치 파일을 다운로드한다. 파이썬 버전은 RStudio에서 <code>reticulate</code>를 통해 검증된 <strong>파이썬 3.11 버전</strong> 사용을 권장한다. 다운로드한 설치 파일을 실행한 후, 설치 과정에서 ‘Add Python to PATH’ 옵션을 선택하는 것이 좋다. 안내에 따라 설치를 진행하면 설치를 완료할 수 있다.</p>
+<div id="fig-install-python" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-install-python-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/install_python.png" class="lightbox" data-gallery="quarto-lightbox-gallery-11" title="그림&nbsp;1.11: 파이썬 설치 과정"><img src="images/install_python.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-install-python-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+그림&nbsp;1.11: 파이썬 설치 과정
+</figcaption></figure>
+</div>
+<p>파이썬을 설치한 이유는 파이썬 프로그래밍 언어로 작업한 결과물을 문서에 자동으로 넣고 재현가능하고 추적가능한 과학기술 문서를 만들기 위함이다. RStudio에서 파이썬 코드를 사용하려면 코드 덩어리(code chunk)에 파이썬 코드를 넣고 다음과 같이 설치한 파이썬을 <code>Python Interpreter</code>에 지정한다. 바닐라 파이썬 뿐만 아니라 가상환경에서 파이썬, 콘다 환경에서 파이썬을 지정할 수 있다.</p>
+<blockquote class="blockquote">
+<p><code>Tools -&gt; Global Options -&gt; Python -&gt; Python Interpreter</code></p>
+</blockquote>
+<div id="fig-install-python-rstudio" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-install-python-rstudio-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/install_python_rstudio.png" class="lightbox" data-gallery="quarto-lightbox-gallery-12" title="그림&nbsp;1.12: 파이썬 RStudio 연결"><img src="images/install_python_rstudio.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-install-python-rstudio-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+그림&nbsp;1.12: 파이썬 RStudio 연결
+</figcaption></figure>
+</div>
+<p>파이썬 프로그램이 제대로 실행되는지 쿼토 문서(<code>.qmd</code>)를 하나 만들어 다음과 같은 파이썬 코드 덩어리를 넣고 실행해본다.</p>
+</section><div class="columns">
+<div class="column">
+<section id="파이썬-코드-덩어리" class="level3 unnumbered"><h3 class="unnumbered anchored" data-anchor-id="파이썬-코드-덩어리">파이썬 코드 덩어리</h3>
+<div class="sourceCode" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="in">print("Hello, 파이썬!")</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</div><div class="column">
+<section id="실행-결과" class="level3 unnumbered"><h3 class="unnumbered anchored" data-anchor-id="실행-결과">실행 결과</h3>
+<div class="cell">
+<pre><code>#&gt; Hello, 파이썬!</code></pre>
+</div>
+</section>
+</div>
+</div>
+</section><section id="latex-설치" class="level2" data-number="1.5"><h2 data-number="1.5" class="anchored" data-anchor-id="latex-설치">
+<span class="header-section-number">1.5</span> <span class="math inline">\(\LaTeX\)</span> 설치</h2>
+<p>라텍(<span class="math inline">\(\LaTeX\)</span>) 설치와 사용은 처음에는 다소 복잡하게 느껴질 수 있다. 일반적으로 라텍 배포판(예: TeX Live, MiKTeX)을 설치한 뒤, 텍스트 에디터(예: TeXShop, TeXworks)를 선택하여 작업환경을 구성한다. 설치가 완료되면, <code>.tex</code> 파일을 생성하고 라텍 명령을 통해 PDF를 컴파일한다.</p>
+<p>환경변수 설정, 패키지 관리, 글꼴 설정 등 세부적인 환경설정이 필요하다. 특히 한글 문서를 처리할 경우에는 <code>ko.TeX</code>나 <code>CTeX</code>와 같은 한글을 지원하는 패키지를 별도로 설치하고 한글 글꼴도 설정해야 한다.</p>
+<p><code>TinyTeX</code>은 <code>TeX Live</code>를 기반으로 한 경량, 이식성 좋고, 사용하기 쉬운 라텍 배포판으로 라텍 설치와 관련된 일반적인 불편함을 해결하기 위해 만들어졌고, 특히 “이휘 쉬에(Yihui Xie)”가 개발하여 R과 R 마크다운 통합이 잘 되어 있다.</p>
+<p>다른 라텍 배포판들이 수 기가바이트(GB)의 크기를 갖지만, <code>TinyTeX</code>은 설치 크기가 작고 간단한 설치 과정을 제공으로 쉽지만 미려한 문서를 원하는 사용자들에게 인기가 많다. 특히, R과의 통합도 잘 이루어져 있어, 라텍 문서를 컴파일할 때 누락된 라텍 패키지도 자동으로 설치해주는 기능이 많은 사랑을 받고 있다.</p>
+<p>보통 TexLive에 기반을 둔 <code>tinytex</code> 를 사용하는데 한글을 사용하는 입장에서는 <code>kotex</code>를 설치하는 방법도 모색이 필요하다. 유니코드 문자를 처리하기 위해서 <code>xelatex</code>을 쿼토 라텍 기본엔진으로 지정하면 <code>xelatex</code>을 통해 CJK 문자가 포함된 PDF 파일 제작이 가능하다.</p>
+<p>쿼토를 설치하면 <code>quarto install tinytex</code> 명령어로 <code>TinyTeX</code>을 쉽게 설치할 수 있고, 설치 정보는 <code>quarto tools info tinytex</code>으로 파악이 가능하다.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> quarto install tinytex</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="ex">Installing</span> tinytex</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="ex">[✓]</span> Downloading TinyTex v2023.09</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="ex">[✓]</span> Unzipping TinyTeX-v2023.09.tar.gz</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="ex">[✓]</span> Moving files</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="ex">[✓]</span> Verifying tlgpg support</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="ex">[✓]</span> Default Repository: https://mirrors.rit.edu/CTAN/systems/texlive/tlnet/</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="ex">Installation</span> successful</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> quarto tools info tinytex</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="kw">{</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>  <span class="st">"name"</span><span class="ex">:</span> <span class="st">"TinyTeX"</span>,</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>  <span class="st">"installed"</span><span class="ex">:</span> true,</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>  <span class="st">"version"</span><span class="ex">:</span> <span class="st">"v2023.09"</span>,</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>  <span class="st">"directory"</span><span class="ex">:</span> <span class="st">"/home/statkclee/.TinyTeX"</span>,</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>  <span class="st">"bin-directory"</span><span class="ex">:</span> <span class="st">"/home/statkclee/.TinyTeX/bin/x86_64-linux"</span>,</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>  <span class="st">"configuration"</span><span class="ex">:</span> {</span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>    <span class="st">"status"</span><span class="ex">:</span> <span class="st">"ok"</span></span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>  <span class="kw">}</span></span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a><span class="er">}</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><code>kotex</code> 패키지 주요 장점 중 하나는 한글 관련 문제를 해결할 수 있는 다양한 라텍 패키지와 기본 한글 글꼴을 내장하고 있어 한글 문서 작성이 훨씬 편리하다. 하지만, <code>tinytex</code>를 기본 라텍 엔진으로 사용할 경우, 누락된 패키지로 인해 추가 작업이 어려울 수 있다. 이러한 문제를 해결하기 위해 <code><a href="https://rdrr.io/pkg/tinytex/man/parse_install.html">tinytex::parse_install()</a></code> 함수를 사용하면, 오류가 발생한 텍스트를 붙여넣을 때 자동으로 필요한 패키지를 설치해 준다. 설치과정에서 오류 사항이 담긴 <code>.log</code> 파일을 <code><a href="https://rdrr.io/pkg/tinytex/man/parse_install.html">tinytex::parse_install()</a></code> 함수에 인자로 넣어주면, 자동으로 필요한 패키지를 설치해 준다.</p>
+<div class="cell">
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># log 파일이 hello_world.log</span></span>
+<span><span class="fu">tinytex</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/tinytex/man/parse_install.html">parse_install</a></span><span class="op">(</span><span class="st">"hello_world.log"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">tinytex</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/tinytex/man/parse_install.html">parse_install</a></span><span class="op">(</span></span>
+<span>  text <span class="op">=</span> <span class="st">"! LaTeX Error: File `titlepic.sty' not found."</span></span>
+<span><span class="op">)</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<code>tinytex</code> 설치
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>윈도우 환경에서 쿼토로 PDF 파일 생성할 때 다음과 같은 오류가 발생하여 로그에 기록될 경우 <code>tinytex</code> R 패키지를 설치하고 <code><a href="https://rdrr.io/pkg/tinytex/man/install_tinytex.html">tinytex::install_tinytex()</a></code> 명령어로 <code>tinytex</code>를 다시 설치한다.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">running</span> xelatex <span class="at">-</span> 1</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="ex">No</span> TeX installation was detected.</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="ex">Please</span> run <span class="st">'quarto install tinytex'</span> to install TinyTex.</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="ex">If</span> you prefer, you may install TexLive or another TeX distribution.</span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</section><section id="부조종사" class="level2" data-number="1.6"><h2 data-number="1.6" class="anchored" data-anchor-id="부조종사">
+<span class="header-section-number">1.6</span> 부조종사</h2>
+<p>RStudio에서 GitHub 부조종사(Copilot) 기능을 활용할 수 있도록 저자를 포함하여 수많은 개발자들이 요청하여 2021년 11월 28일 최초 등록된 <a href="https://github.com/rstudio/rstudio/issues/10148">이슈(<code>#10148</code>)</a>가 2023년 7월 18일 베타버전으로 Rstudio <a href="https://dailies.rstudio.com/">일일 빌드 (Daily Builds)</a>를 통해 첫 공개되었다. <a href="https://github.com/features/copilot">GitHub 부조종사(Copilot)</a>를 Rstudio에서 사용하기 위해서는 특별한 버전 Rstudio, 즉 <a href="https://dailies.rstudio.com/">일일 빌드 (Daily Builds)</a>가 필요하였으나 현재는 각자 운영체제에 맞는 RStudio Desktop 버전을 다운로드한 후 설치하게 되면 기본적으로 부조종사 기능을 사용할 수 있다. 기본적으로 <a href="https://github.com/features/copilot/">GitHub 부조종사</a> 기능은 구독서비스로 매월 일정액($10)을 지불해야 사용할 수 있다.</p>
+<blockquote class="blockquote">
+<p><code>Tools -&gt; Global Options -&gt; Copilot -&gt; Enable Github Copilot</code></p>
+</blockquote>
+<p>설치가 완료되면 Rstudio를 실행하고 상단 메뉴에서 ‘Tools’를 선택한 다음 ’Global Options’을 클릭하면, 왼쪽 사이드바에서 ’Copilot’을 선택하고 ’Enable GitHub Copilot’ 체크박스를 선택한 다음 ’Sign In’을 클릭하고 나타나는 링크에서 인증 코드를 입력한다. ’Authorize Github Copilot Plugin’을 클릭하여 인증 과정을 완료하면 설정이 완료된다.</p>
+<div id="fig-copilot" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-copilot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/rstudio_copilot.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-13" title="그림&nbsp;1.13: GitHub 부주종사 설치과정"><img src="images/rstudio_copilot.jpg" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-copilot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+그림&nbsp;1.13: GitHub 부주종사 설치과정
+</figcaption></figure>
+</div>
+<p>GitHub Copilot를 Rstudio에서 사용해보면, 작성하려는 코드(Ghost Text)가 회색으로 예측되어 나타난다. ‘Tab’ 키를 눌러 탭완성(Tab Completion) 기능으로 제시한 코드를 수락하여 개발을 이어간다.</p>
 
 
 </section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
@@ -965,7 +1082,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <p>순수하게 <a href="https://quarto.org/">쿼토(Quarto)</a>로 제작되었습니다.</p>
 </div>
   </div>
-</footer><script>var lightboxQuarto = GLightbox({"selector":".lightbox","loop":false,"openEffect":"zoom","descPosition":"bottom","closeEffect":"zoom"});
+</footer><script>var lightboxQuarto = GLightbox({"loop":false,"openEffect":"zoom","descPosition":"bottom","selector":".lightbox","closeEffect":"zoom"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;

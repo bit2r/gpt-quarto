@@ -46,7 +46,7 @@ book:
       chapters:
         # - setup_whole_game.qmd                 # OK      
         # - setup_quarto.qmd                 # OK
-        - setup.qmd                    # TO-DO
+        - setup.qmd                    # OK
 
     # - part: "글쓰기 환경"
     #   chapters:
