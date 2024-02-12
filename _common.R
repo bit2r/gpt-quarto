@@ -1,13 +1,18 @@
 library(tidyverse)
 library(gt)
 library(gtExtras)
+library(rvest)
 
 set.seed(1014)
 
-library(tidyverse)
-library(rvest)
-library(gt)
-library(gtExtras)
+# https://github.com/rstudio/rmarkdown/issues/2420
+
+if (knitr::is_html_output()){
+  latexString <- "$\\LaTeX$"
+} else {
+  latexString<- r"(\LaTeX)"
+}
+
 
 knitr::opts_chunk$set(
   comment = "#>",

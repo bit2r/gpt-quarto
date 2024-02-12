@@ -1,0 +1,331 @@
+/*##############################################################################
+## defind infobox 
+##############################################################################*/
+.infobox {
+  padding: 1em 1em 0em 4.5em;
+  margin-bottom: 5px;
+  border-radius: 10px;  
+  background: transparent 10px center/3em no-repeat;
+}
+
+.information {
+  border: 4px solid #0091EA;    
+  background-image: url("images/circle-info-solid.svg");
+}
+
+
+.caution {
+  border: 4px solid #F9A825;  
+  background-image: url("images/triangle-exclamation-solid.svg");
+}
+
+
+.warning {
+  border: 4px solid #D32F2F;    
+  background-image: url("images/bomb-solid.svg");
+}
+
+
+.tip {
+  border: 4px solid #4CAF50;    
+  background-image: url("images/lightbulb-regular.svg");
+}
+
+
+/*##############################################################################
+## defind blockquote 
+##############################################################################*/
+/* https://codepen.io/jimmycow/pen/LmjVaz */
+.blockquote {
+    padding: 60px 80px 40px;
+    position: relative;
+}
+.blockquote p {
+/*    font-family: "Utopia-italic"; */
+    font-size: 35px;
+    font-weight: 700px;
+    text-align: center;
+}
+
+/*blockquote p::before {
+    content: "\f095"; 
+    font-family: FontAwesome;
+   display: inline-block;
+   padding-right: 6px;
+   vertical-align: middle;
+  font-size: 180px;
+ }*/
+
+.blockquote:before {
+  position: absolute;
+  font-family: 'FontAwesome';
+  top: 0;
+  
+  content:"\f10d";
+  font-size: 200px;
+  color: rgba(0,0,0,0.1);
+   
+}
+
+.blockquote::after {
+    content: "";
+    top: 20px;
+    left: 50%;
+    margin-left: -100px;
+    position: absolute;
+    height: 3px;
+    width: 200px;
+}
+
+@import url(https://fonts.googleapis.com/css?family=Noto+Sans+KR:400italic);
+.otro-blockquote{
+  font-size: 1.1em;
+  width:100%;
+  margin:50px auto;
+  font-family:Noto Sans KR;
+  font-style:italic;
+  color: #555555;
+  padding:1.2em 30px 1.2em 75px;
+  border-left:8px solid #78C0A8 ;
+  line-height:1.6;
+  position: relative;
+  background:#EDEDED;
+}
+
+.otro-blockquote::before{
+  font-family:Noto Sans KR;
+  content: "\201C";
+  color:#78C0A8;
+  font-size:4em;
+  position: absolute;
+  left: 10px;
+  top:-10px;
+}
+
+.otro-blockquote::after{
+  content: '';
+}
+
+.otro-blockquote span{
+  display:block;
+  color:#333333;
+  font-style: normal;
+  font-weight: bold;
+  margin-top:1em;
+}
+
+
+/*##############################################################################
+## defind titlebox 
+##############################################################################*/
+/* https://codepen.io/iPawan/pen/emrPKP */
+/* 
+// 12 - CSS3 Blockquote Effects Demo
+// Made with ❤ by @Pawan_Mall
+// http://www.pawanmall.net 
+*/
+
+@import url('https://fonts.googleapis.com/css?family=Montez');
+@import url(https://fonts.googleapis.com/css?family=Francois+One);
+
+body{
+  background: #f5f7fa;
+  margin:10px;
+  padding:10px;  
+}
+
+.titlebox{
+  display:block;
+  background: #fff;
+  padding: 15px 20px 15px 45px;
+  margin: 0 0 20px;
+  position: relative;
+  
+  /*Font*/
+  font-family: Noto Sans KR, serif;
+  font-size: 14px;
+  line-height: 1.2;
+  color: #666;
+
+  /*Box Shadow - (Optional)*/
+  -moz-box-shadow: 2px 2px 15px #ccc;
+  -webkit-box-shadow: 2px 2px 15px #ccc;
+  box-shadow: 2px 2px 15px #ccc;
+
+  /*Borders - (Optional)*/
+  border-left-style: solid;
+  border-left-width: 15px;
+  border-right-style: solid;
+  border-right-width: 2px;    
+}
+
+.titlebox::before{
+  content: "\201C"; /*Unicode for Left Double Quote*/
+  
+  /*Font*/
+  font-family: Noto Sans KR, serif;
+  font-size: 60px;
+  font-weight: bold;
+  color: #999;
+  
+  /*Positioning*/
+  position: absolute;
+  left: 10px;
+  top:5px;
+  
+}
+
+.titlebox::after{
+  /*Reset to make sure*/
+  content: "";
+}
+
+.titlebox a{
+  text-decoration: none;
+  background: #eee;
+  cursor: pointer;
+  padding: 0 3px;
+  color: #c76c0c;
+}
+
+.titlebox a:hover{
+ color: #666;
+}
+
+.titlebox em{
+  font-style: italic;
+}
+
+  /*Default Color Palette*/
+.titlebox.night{ 
+  border-left-color: #656d77;
+  border-right-color: #434a53;  
+}
+
+/*Grapefruit Color Palette*/
+.titlebox.grapefruit{
+  border-left-color: #ed5565;
+  border-right-color: #da4453;
+}
+
+/*Bittersweet Color Palette*/
+.titlebox.bittersweet{
+  border-left-color: #fc6d58;
+  border-right-color: #e95546;
+}
+
+/*Sunflower Color Palette*/
+.titlebox.sunflower{
+  border-left-color: #ffcd69;
+  border-right-color: #f6ba59;
+}
+
+/*Grass Color Palette*/
+.titlebox.grass{
+  border-left-color: #9fd477;
+  border-right-color: #8bc163;
+}
+
+/*Mint Color Palette*/
+.titlebox.mint{
+  border-left-color: #46cfb0;
+  border-right-color: #34bc9d;
+}
+
+/*Aqua Color Palette*/
+.titlebox.aqua{
+  border-left-color: #4fc2e5;
+  border-right-color: #3bb0d6;
+}
+
+/*Blue Jeans Color Palette*/
+.titlebox.bluejeans{
+  border-left-color: #5e9de6;
+  border-right-color: #4b8ad6;
+}
+
+/*Lavander Color Palette*/
+.titlebox.lavander{
+  border-left-color: #ad93e6;
+  border-right-color: #977bd5;
+}
+
+/*Pinkrose Color Palette*/
+.titlebox.pinkrose{
+  border-left-color: #ed87bd;
+  border-right-color: #d870a9;
+}
+
+/*Light Color Palette*/
+.titlebox.light{
+  border-left-color: #f5f7fa;
+  border-right-color: #e6e9ed;
+}
+
+/*Gray Color Palette*/
+.titlebox.gray{
+  border-left-color: #ccd1d8;
+  border-right-color: #aab2bc;
+}
+
+
+/* These CSS classes used just for Demo purpose */
+.heading{
+   font-family:Montez;
+   text-align:center;
+   font-size:30px;
+}
+code{
+  color:#da4453;
+}
+span{
+  font-weight:bolder;
+  
+}
+
+h1{
+  text-align:left;
+  font-size:16px;
+  font-family: 'Francois One', sans-serif;
+}
+
+span.Cnight{
+  color:#434a53;
+}
+span.Cgrapefruit{
+  color:#da4453;
+}
+span.Cbittersweet{
+  color:#e95546;
+}
+span.Csunflower{
+  color:#f6ba59;
+}
+span.Cgrass{
+  color:#8bc163;
+}
+span.Cmint{
+  color:#34bc9d;
+}
+span.Caqua{
+  color:#3bb0d6;
+}
+span.Cbluejeans{
+  color:#4b8ad6;
+}
+span.Clavander{
+  color:#977bd5;
+}
+span.Cpinkrose{
+  color:#d870a9;
+}
+span.Clight{
+  color:#e6e9ed;
+}
+span.Cgray{
+  color:#aab2bc;
+}
+
+
+
+

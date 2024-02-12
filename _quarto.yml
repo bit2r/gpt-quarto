@@ -31,7 +31,6 @@ book:
   repo-url: https://github.com/bit2r/gpt-sql/
   repo-branch: main
   repo-actions: [edit, issue]
-  
 
   google-analytics: "UA-229551680-1"
   author:
@@ -45,7 +44,8 @@ book:
 
     - part: "시작을 위한 준비"
       chapters:
-        - whole_game.qmd                 # OK
+        # - setup_whole_game.qmd                 # OK      
+        # - setup_quarto.qmd                 # OK
         - setup.qmd                    # TO-DO
 
     # - part: "글쓰기 환경"
@@ -61,28 +61,28 @@ book:
     #     - markdown_mess.qmd          # OK
     #     - writing.qmd                # OK
 
-    - part: "기본요소"
-      chapters:
-        - part_components.qmd          # OK
-        - part_markdown.qmd            # OK -- 방법론 , # 수정
-        - part_document_class.qmd      # OK
-        - part_about_book.qmd          # OK
-
-    - part: "템플릿과 테마"
-      chapters:
-        - theme_fonts.qmd                # OK
-        - theme_colors.qmd               # OK
-        - theme_ggplot.qmd        # OK
-        - theme_gt.qmd            # OK
-        - theme_template.qmd            # OK
-
-    - part: "저작물"
-      chapters:
-      - dw_publishing.qmd          # OK
-      - dw_book.qmd             # OK
-      - dw_website.qmd          # OK
-      - dw_slideshow.qmd        # OK
-      - dw_dashboard.qmd        # OK
+    # - part: "기본요소"
+    #   chapters:
+    #     - part_components.qmd          # OK
+    #     - part_markdown.qmd            # OK -- 방법론 , # 수정
+    #     - part_document_class.qmd      # OK
+    #     - part_about_book.qmd          # OK
+    # 
+    # - part: "템플릿과 테마"
+    #   chapters:
+    #     - theme_fonts.qmd                # OK
+    #     - theme_colors.qmd               # OK
+    #     - theme_ggplot.qmd        # OK
+    #     - theme_gt.qmd            # OK
+    #     - theme_template.qmd            # OK
+    # 
+    # - part: "저작물"
+    #   chapters:
+    #   - dw_publishing.qmd          # OK
+    #   - dw_book.qmd             # OK
+    #   - dw_website.qmd          # OK
+    #   - dw_slideshow.qmd        # OK
+    #   - dw_dashboard.qmd        # OK
 
     # - part: "챗GPT"
     #   chapters:
