@@ -45,7 +45,7 @@ book:
     - part: "시작을 위한 준비"
       chapters:
         # - setup_whole_game.qmd                 # OK      
-        # - setup_quarto.qmd                 # OK
+        - setup_quarto.qmd                 # OK
         - setup.qmd                    # OK
 
     # - part: "글쓰기 환경"

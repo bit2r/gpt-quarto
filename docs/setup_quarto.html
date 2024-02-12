@@ -1,0 +1,1098 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko-KR" xml:lang="ko-KR"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.9">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="이광춘">
+
+<title>챗GPT 쿼토(Quarto) – 1&nbsp; 쿼토(Quarto)</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./setup.html" rel="next">
+<link href="./index.html" rel="prev">
+<link href="./images/logo.png" rel="icon" type="image/png">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "일치 없음",
+    "search-matching-documents-text": "일치된 문서",
+    "search-copy-link-title": "검색 링크 복사",
+    "search-hide-matches-text": "추가 검색 결과 숨기기",
+    "search-more-match-text": "추가 검색결과",
+    "search-more-matches-text": "추가 검색결과",
+    "search-clear-button-title": "제거",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "취소",
+    "search-submit-button-title": "검색",
+    "search-label": "검색"
+  }
+}</script>
+
+<script type="text/javascript">
+
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-229551680-1', 'auto');
+
+ga('send', {
+  hitType: 'pageview',
+  'anonymizeIp': true,
+});
+</script>
+<script defer="" data-domain="r2bit.com/gpt-quarto" src="https://plausible.io/js/script.js"></script>
+<script src="site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
+
+
+</head>
+
+<body class="nav-sidebar floating slimcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./setup_quarto.html">시작을 위한 준비</a></li><li class="breadcrumb-item"><a href="./setup_quarto.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">쿼토(Quarto)</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">챗GPT 쿼토(Quarto)</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/bit2r/gpt-sql/" title="소스 코드" class="quarto-navigation-tool px-1" aria-label="소스 코드"><i class="bi bi-github"></i></a>
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="리더 모드 전환">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="검색"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">서문</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">시작을 위한 준비</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="토글 섹션">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./setup_quarto.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">쿼토(Quarto)</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./setup.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">저작환경 설정</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">참고문헌</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">목차</h2>
+   
+  <ul>
+  <li><a href="#싱글-소싱-출판저작" id="toc-싱글-소싱-출판저작" class="nav-link active" data-scroll-target="#싱글-소싱-출판저작"><span class="header-section-number">1.1</span> 싱글 소싱 출판저작</a></li>
+  <li><a href="#작업흐름" id="toc-작업흐름" class="nav-link" data-scroll-target="#작업흐름"><span class="header-section-number">1.2</span> 작업흐름</a></li>
+  <li><a href="#쿼토-해부" id="toc-쿼토-해부" class="nav-link" data-scroll-target="#쿼토-해부"><span class="header-section-number">1.3</span> 쿼토 해부</a>
+  <ul class="collapse">
+  <li><a href="#yaml" id="toc-yaml" class="nav-link" data-scroll-target="#yaml"><span class="header-section-number">1.3.1</span> YAML</a></li>
+  <li><a href="#탭-자동완성" id="toc-탭-자동완성" class="nav-link" data-scroll-target="#탭-자동완성"><span class="header-section-number">1.3.2</span> 탭 자동완성</a></li>
+  </ul></li>
+  <li><a href="#r-마크다운과-쿼토" id="toc-r-마크다운과-쿼토" class="nav-link" data-scroll-target="#r-마크다운과-쿼토"><span class="header-section-number">1.4</span> R 마크다운과 쿼토</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/bit2r/gpt-sql/edit/main/setup_quarto.qmd" class="toc-action"><i class="bi bi-github"></i>편집</a></li><li><a href="https://github.com/bit2r/gpt-sql/issues/new" class="toc-action"><i class="bi empty"></i>이슈 보고</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content page-columns page-full" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./setup_quarto.html">시작을 위한 준비</a></li><li class="breadcrumb-item"><a href="./setup_quarto.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">쿼토(Quarto)</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">쿼토(Quarto)</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>앨리슨 호스트(Allison Horst)는 복잡하고 어려운 R 관련 그래픽을 제작해 공유하며, <a href="#fig-quarto-workflow" class="quarto-xref">그림&nbsp;<span>1.1</span></a> 을 통해 쿼토 작업 흐름을 설명하고 있다. R, 파이썬, 줄리아, Observable JS 등 다양한 프로그래밍 언어를 사용하여 쿼토가 PDF, HTML, Word, 웹사이트와 같은 여러 형식의 출판물을 생성하는 방법을 직관적이고 친근한 방식으로 소개하고 있다.</p>
+<div id="fig-quarto-workflow" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-quarto-workflow-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/horst_quarto_schematic.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="그림&nbsp;1.1: 쿼토 작업흐름"><img src="images/horst_quarto_schematic.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-quarto-workflow-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+그림&nbsp;1.1: 쿼토 작업흐름
+</figcaption>
+</figure>
+</div>
+<p>쿼토(Quarto)는 다양한 프로그래밍 언어를 지원하는 오픈소스 출판 시스템으로, <a href="https://pandoc.org/">Pandoc</a>에 기반을 두고 있다. 쿼토는 R, 파이썬, 줄리아, 자바스크립트(Observable JS) 등의 프로그래밍 언어를 지원하며, 사용자는 싱글 소싱(Single Sourcing)을 통해 신속하게 다양한 출판 저작물을 생성할 수 있다. “차세대 R마크다운(Next-Generation R Markdown)”이라는 별명을 가진 쿼토는 약 10년 동안의 R 마크다운의 성공과 실패 경험을 바탕으로 새로운 아키텍처로 재탄생했다. 개발 및 유지보수 팀이 잘 구성되어 있어, 프로젝트의 지속 가능성과 신뢰성이 높고, 무료로 제공되므로 누구나 쉽게 접근할 수 있을 뿐만 아니라 누구나 오픈소스 프로젝트에 기여할 수 있다. <span class="citation" data-cites="hyde2021single">(Hyde 2021)</span> 디지털 글쓰기와 출판에 대한 고민은 콘텐츠, 디자인, 형식의 세 가지로 나뉜다.</p>
+<ul>
+<li><strong>콘텐츠(Content)</strong>: 저작물의 실질적인 내용으로 글쓰기 핵심이며, 정보 정확성, 완전성, 통찰력을 제공해야 한다.</li>
+<li><strong>디자인(Design)</strong>: 저작물의 외양이나 ’Look and Feel’을 의미하며 사용자 경험에 큰 영향을 미치며, 정보를 효과적으로 전달하는 데 중요한 역할을 한다.</li>
+<li><strong>형식(Format)</strong>: 저작물의 최종 형태나 산출물이 담기는 매체(디지털, 인쇄 등)를 의미하며, 어떻게 배포되고 소비될 것인지 결정한다.</li>
+</ul>
+<p>쿼토는 세 가지 요소를 충족시키기 위한 다양한 기능을 제공한다. 팬독(Pandoc)과 마크다운을 활용해 수식, 인용, 서지 관리, 콜아웃, 고급 레이아웃 기능 등을 고품질 논문, 보고서, 발표 슬라이드(PPT), 웹사이트, 블로그, 전자책 등 다양한 형태 출판 산출물로 저작하여 인쇄매체 뿐만 아니라 HTML, PDF, MS 워드, ePub 등 다양한 디지털 매체를 통해 독자에게 전달할 수 있다. 특히, 쿼토는 프로그래밍 언어(R, 파이썬 등)와 문서 저작, 출판 산출물 사이 핵심 연결고리로 동작하여 버전 제어, 협업, 재현 가능한 과학기술 문서나 비즈니스에서 자동화된 생산성 높은 문서 저작에 큰 장점을 제공한다.</p>
+<table class="table">
+<caption>쿼토를 구성하는 핵심 요소{#tbl-quarto-core-elements}</caption>
+<thead>
+<tr class="header">
+<th style="text-align: center;">프로그래밍(계산)</th>
+<th style="text-align: center;">문서 저작</th>
+<th style="text-align: center;">출력물</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Python, R, Julia, Observable JS</td>
+<td style="text-align: center;">Pandoc, 마크다운, <a href="http://example.org"></a></td>
+<td style="text-align: center;">문서, 웹사이트, PPT, (전자)책, 블로그 등</td>
+</tr>
+</tbody>
+</table>
+<section id="싱글-소싱-출판저작" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="싱글-소싱-출판저작"><span class="header-section-number">1.1</span> 싱글 소싱 출판저작</h2>
+<p>데이터 과학을 비롯한 과학기술 분야 출판저작이 다른 분야와 약간 다를 수 있지만, 출판의 기본적인 접근 방식은 대체로 유사하다고 볼 수 있다. 특히, 싱글 소싱(Single Sourcing)<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> 방식을 통해 콘텐츠 저작부터 디자인, 협업, 검수, 최종 출판물 관리까지 일원화하고 자동화한다면, 중복작업과 낭비를 줄이는 동시에 재현 가능성을 높일 수 있어 과학기술 출판저작물에 있어 가장 이상적인 방법으로 평가받고 있다.</p>
+<p>싱글 소싱 저작 방식은 데이터, 코드, 수식, 다이어그램, 텍스트 등 다양한 저작물 구성요소를 하나의 소스에서 관리함으로써, 수정이나 업데이트가 필요할 때 일관성을 유지하면서 효율적으로 저작작업을 수행할 수 있어 연구 결과의 정확성과 신뢰성을 높이기 위한 재현가능한 글쓰기를 중시하는 과학기술 분야에서 특히 강조되고 있으며, 싱글 소싱을 통한 자동화 생산성을 중시하는 비즈니스 글쓰기에서도 점차 글로벌 표준으로 자리를 잡아가고 있다.</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">graph LR;
+    style A fill:#f9d71c,stroke:#333,stroke-width:2px;
+    style B fill:#f9d71c,stroke:#333,stroke-width:2px;
+    style C fill:#ff6b6b,stroke:#333,stroke-width:2px;
+    style J fill:#c4e17f,stroke:#333,stroke-width:2px;
+    style K fill:#c4e17f,stroke:#333,stroke-width:2px;
+    style L fill:#c4e17f,stroke:#333,stroke-width:2px;
+
+    classDef officeStyle fill:#f9d71c,stroke:#333,stroke-width:2px;
+    class AA,AB officeStyle;
+
+    A[콘텐츠 저작] --&gt; B[디자인]
+    B --&gt; C[출판]
+    
+    C --&gt; J[PDF]
+    C --&gt; K[HTML]
+    C --&gt; L[워드/한글/PPT]
+  
+   
+    J --&gt; W[논문/보고서]
+    J --&gt; X["(전자)책"]
+    
+    K --&gt; Y[웹사이트/블로그]
+    K --&gt; Z[대쉬보드]
+    
+    L --&gt; AA[비즈니스 문서]
+    L --&gt; AB[과학기술 문서]
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+</section>
+<section id="작업흐름" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="작업흐름"><span class="header-section-number">1.2</span> 작업흐름</h2>
+<p>기존 R <code>.Rmd</code> 파일과 파이썬 <code>.ipynb</code> 파일을 <code>.qmd</code> 파일로 통일시킨 것은 쿼토의 주요 특징 중 하나이다. 이러한 통합은 다양한 프로그래밍 언어를 사용하는 복잡한 작업 흐름을 단순화시킬 수 있고 협업을 촉진한다. 저작자는 마크다운을 사용하여 콘텐츠를 작성하고, 프로그래밍 코드는 R, 파이썬, 자바스크립트, 줄리아 등 프로그래밍 언어로 작성한다. 텍스트와 프로그래밍 코드는 팬독(pandoc)을 통해 마크다운 변환이 자동으로 이루어지기 때문에 후속 작업에 대해 걱정할 필요가 없다. 싱글 소싱 개념이 팬독을 통해 자동화되어 원하는 저작 결과물을 효율적이고 빠르게 얻을 수 있어 저작작업 생산성을 크게 향상시키는 장점이 있다.</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" aria-current="page">R</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">파이썬</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<div id="fig-quarto-r" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-quarto-r-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/qmd-knitr.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="그림&nbsp;1.2: 쿼토 - R"><img src="images/qmd-knitr.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-quarto-r-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+그림&nbsp;1.2: 쿼토 - R
+</figcaption>
+</figure>
+</div>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<div id="fig-quarto-python" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-quarto-python-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/qmd-jupyter.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="그림&nbsp;1.3: 쿼토 - 파이썬"><img src="images/qmd-jupyter.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-quarto-python-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+그림&nbsp;1.3: 쿼토 - 파이썬
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="쿼토-해부" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="쿼토-해부"><span class="header-section-number">1.3</span> 쿼토 해부</h2>
+<p>쿼토는 데이터 과학 문서 작성의 새로운 패러다임을 제시하며, R마크다운의 후속임을 자처하고 있다. 10년 이상의 <code>knitr</code> 경험을 바탕으로 개발되었고, 최근에는 RStudio <strong>Visual 편집</strong> 기능을 통해 위지위그(What You See Is What You Get) 패러다임도 적극 수용함으로써 저작자는 복잡한 코드 작성 없이도 직관적으로 문서를 작성할 수 있게 되었다.</p>
+<p>쿼토는 다양한 통합개발환경(IDE)과 호환성을 지원하고 있다. R 사용자는 RStudio IDE를, 파이썬 경험이 풍부한 사용자는 파이참, 범용 소프트웨어 개발 경험을 가지신 분은 VS코드, 이맥스/VIM 등과 통합하여 사용할 수 있고, 쿼토 CLI를 통해 IDE에서 쉽게 저작물을 다양한 형태로 출판할 수 있다.</p>
+<p>쿼토는 다양한 프로그래밍 언어를 지원하여 문서 내에 계산(Computation) 기능을 쉽게 통합할 수 있는 현존하는 얼마 안되는 문학적 프로그래밍 저작도구다. R, 파이썬, SQL, 자바스크립트 등을 활용해 그래프, 표, 다이어그램, 인터랙티브 산출물을 문서에 반영하여 한층 진화된 디지털 문서 저작을 지원한다.</p>
+<p>쿼토는 데이터 과학자, 개발자, 과학기술 연구원, 사무노동자 등 다양한 분야의 종사자분들로부터 챗GPT 인공지능 시대 자동화를 통한 사무업무 생산성 도구로 자리매김하고 있다.</p>
+<div id="fig-quarto-wysiwym" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-quarto-wysiwym-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/quarto-unification.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="그림&nbsp;1.4: 쿼토 작업흐름"><img src="images/quarto-unification.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-quarto-wysiwym-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+그림&nbsp;1.4: 쿼토 작업흐름
+</figcaption>
+</figure>
+</div>
+<p>쿼토 저작은 메타데이터(전문, front matter), 텍스트, 코드라는 세 가지 주요 구성요소로 이뤄진다. 쿼토는 문학적 프로그래밍과 자동화 패러다임을 적극 반영하여 데이터 과학 프로그래밍과 과학기술 문서 작성을 더 효율적이고 일관된 방식으로 저작하고 출판할 수 있도록 지원한다.</p>
+<ul>
+<li><strong>메타데이터 (YAML)</strong>: YAML은 “YAML Ain’t Markup Language”의 약자로, 데이터를 구조화하는 언어이다. 쿼토에서 이를 활용하여 문서 전문(Front Matter)을 구성한다. 문서 상단에 위치하며 문서 제목, 작성자, 날짜, 문서 형식 등을 포함하며 문서의 전반적인 설정과 구성을 담당한다.</li>
+<li><strong>텍스트 (마크다운)</strong>: 마크다운은 2004년에 아론 스워츠와 존 그루버에 의해 개발된 언어로, HTML과 같은 복잡한 마크업 언어 대신 사용되는 간단한 형식의 문서 작성 도구다. 복잡한 디자인보다 콘텐츠 구조와 의미에 중점을 두기 때문에, 문서 저작자는 외양보다 내용에 더 집중할 수 있다.</li>
+<li><strong>코드 (<code>knitr</code>, <code>jupyter</code>)</strong>: <code>knitr</code>는 R 코드를 문서에 통합할 수 있는 패키지, <code>jupyter</code>는 파이썬 사용자에게 인기 있는 패키지이다. 쿼토에서는 이 두 패키지를 활용하여 작성된 코드를 문서에 포함시킬 수 있다. 데이터 분석, 통계값, 그래프, 다이어그램, 지도 등 다양한 코딩 결과물을 문서에 반영시킬 수 있다.</li>
+</ul>
+<div id="fig-quarto-component" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-quarto-component-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/quarto-anatomy.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="그림&nbsp;1.5: 쿼토 문서 구성요소"><img src="images/quarto-anatomy.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="450"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-quarto-component-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+그림&nbsp;1.5: 쿼토 문서 구성요소
+</figcaption>
+</figure>
+</div>
+<section id="yaml" class="level3" data-number="1.3.1">
+<h3 data-number="1.3.1" class="anchored" data-anchor-id="yaml"><span class="header-section-number">1.3.1</span> YAML</h3>
+<p>YAML(발음은 야믈)은 R 마크다운과 쿼토에서 주로 사용되는 경량언어다. YAML은 문서 전문(front matter) 부분에 위치해 코드와 텍스트로 구성된 문서 본문보다 먼저 위치하며, 문서 메타데이터를 설정하는 역할을 수행한다. 쿼토에서 YAML을 이용해 문서 제목, 작성자, 날짜, 문서 형식, 레이아웃 등을 정의한다. YAML은 키와 값이 콜론(:)으로 구분되는 키값(key-value) 쌍을 사용해 각종 문서 설정정보를 표현하여 전반적인 문서 설정과 구성을 쉽게 관리한다.</p>
+</section>
+<div class="columns">
+<div class="column" style="width:45%;">
+<section id="키값-쌍" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="키값-쌍">키값 쌍</h3>
+<div class="sourceCode" id="cb1"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">key</span><span class="kw">:</span><span class="at"> value</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</div><div class="column" style="width:5%;">
+
+</div><div class="column">
+<section id="문서출력형식-pdf-지정" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="문서출력형식-pdf-지정">문서출력형식 PDF 지정</h3>
+<div class="sourceCode" id="cb2"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span><span class="at"> pdf</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</div>
+</div>
+<p>YAML을 이용한 문서 전문 작성은 가독성이 뛰어나 읽고 이해하기 쉽다는 장점이 있다. 특히 복잡한 문서 구조나 설정을 지정할 때 유용하며, 중첩된 선택옵션 같은 복잡한 구조도 들여쓰기를 통해 명확하게 표현할 수 있다. YAML은 재사용성이 뛰어나서 같은 설정 값을 여러 곳에서 사용해야 할 경우, 하나의 YAML 파일만 수정하면 모든 곳에 적용될 수 있어 시간과 노력을 크게 절약할 수 있다. 텍스트 기반인 만큼 Git과 같은 버전 제어 시스템과도 잘 통합되어, 여러 저자가 공동으로 작업할 때 진가를 발휘하지만, 들여쓰기에 민감하여 실수로 공백을 잘못 넣었을 경우 오류가 발생할 수 있어 주의가 필요하다.</p>
+<p>YAML은 기본적으로 <code>KEY: Value</code> 형태로 구성되어 있지만, 이러한 단순한 구조 덕분에 매우 편리하고 유용하다. YAML을 통한 문서 저작을 경험하게 되면 YAML의 편리성과 유용함을 더 깊게 이해하게 된다.</p>
+<div class="columns">
+<div class="column" style="width:45%;">
+<section id="cli-pdf-지정" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="cli-pdf-지정">CLI PDF 지정</h3>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> quarto render document.qmd <span class="at">--to</span> pdf</span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</div><div class="column" style="width:5%;">
+
+</div><div class="column">
+<section id="yaml-문서형식-pdf" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="yaml-문서형식-pdf">YAML 문서형식 PDF</h3>
+<div class="sourceCode" id="cb4"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span><span class="at"> pdf</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</div>
+</div>
+<p><code>quarto render</code> 명령을 사용하여 <code>document.qmd</code> 파일을 <code>HTML</code> 형식으로 제작하는 예시에서 CLI 옵션 <code>-M code fold:true</code>을 사용하여 코드 섹션을 접을 수 있게 만들었다. 이러한 설정을 <code>YAML</code>로 바꾸면, 설정 파일 내에 <code>format</code> 섹션을 생성하고 그 안에 <code>html</code>을 정의한다. 그 후, <code>html</code> 포맷 설정에 목차 생성(<code>toc: true</code>)과 코드 접기 기능(<code>code-fold: true</code>)을 추가한다.</p>
+<p>CLI 옵션을 직접 입력하는 것과 비교하여 <code>YAML</code> 파일에 설정을 담는 것이 훨씬 깔끔하고 우아하다. CLI에서 많은 선택옵션을 직접 입력하면 명령어가 길어져 가독성이 떨어지고, 나중에 어떤 옵션을 사용했는지 확인하기 어렵다. 하지만 <code>YAML</code> 파일을 사용하면, 모든 설정을 한 곳에서 명확하게 관리할 수 있어 유지보수가 쉽고, 공동 저작자들과 공유와 협업에도 유리하다.</p>
+<div class="columns">
+<div class="column" style="width:45%;">
+<section id="cli-코드접기" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="cli-코드접기">CLI 코드접기</h3>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> quarto render document.qmd <span class="at">--to</span> html <span class="at">-M</span> code fold:true</span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</div><div class="column" style="width:5%;">
+
+</div><div class="column">
+<section id="yaml-코드접기" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="yaml-코드접기">YAML 코드접기</h3>
+<div class="sourceCode" id="cb6"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span><span class="at"> </span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html</span><span class="kw">:</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">toc</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">code-fold</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</div>
+</div>
+<section id="탭-자동완성" class="level3" data-number="1.3.2">
+<h3 data-number="1.3.2" class="anchored" data-anchor-id="탭-자동완성"><span class="header-section-number">1.3.2</span> 탭 자동완성</h3>
+<p>RStudio나 VSCode와 같은 통합개발환경(IDE)에서 제공하는 탭-자동완성(Tab Completion) 기능은 YAML 전문코드를 작성할 때 매우 유용하다. 이 기능을 사용하면, 저작자는 첫 글자나 몇몇 글자를 타이핑한 후에 탭 키를 눌러 가능한 모든 명령어, 변수, 함수 이름 등을 볼 수 있다. 이로 인해 오타의 가능성이 줄어들고 문서 저작 속도가 향상된다. 특히 RStudio에서는 <code>Ctrl + space</code> 단축키를 사용하여 YAML 전문코드를 작성할 때 가능한 키값을 선택할 수 있는 목록을 제공한다. 이러한 기능은 문서 저작 과정을 효율적으로 만들어 준다.</p>
+<div id="fig-yaml" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-yaml-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 47.4%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/yaml_before.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="YAML 키 설정"><img src="images/yaml_before.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></a></p>
+<figcaption>YAML 키 설정</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-figure-spacer quarto-layout-cell" style="flex-basis: 5.3%;justify-content: flex-start;">
+<p>&nbsp;</p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 47.4%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/yaml_after.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="탭 자동완성 선택확정"><img src="images/yaml_after.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></a></p>
+<figcaption>탭 자동완성 선택확정</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-yaml-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+그림&nbsp;1.6: RStudio YAML 자동완성
+</figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="r-마크다운과-쿼토" class="level2 page-columns page-full" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="r-마크다운과-쿼토"><span class="header-section-number">1.4</span> R 마크다운과 쿼토</h2>
+<div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="margin-aside"><a href="https://quarto.org/docs/faq/rmarkdown.html">FAQ for R Markdown Users</a></span></div></div>
+<p>쿼토는 “차세대 R 마크다운”이라는 별명에 걸맞게 R 마크다운의 다양한 패키지와 기능을 지원하고 있다. 그러나 쿼토의 개발 기간이 R 마크다운보다 상대적으로 짧기 때문에 아직은 R 마크다운의 모든 기능을 지원하지 않는다. 그럼에도 불구하고, 쿼토는 지속적으로 지원 범위를 확장하고 있으며, 고유한 기능도 추가하고 있다. 이러한 점들은 쿼토가 R 마크다운 생태계에 어떤 새로운 가치를 더하고 있는지를 잘 보여준다. 쿼토 1.4 버전에 대쉬보드(dashboards)가 추가되어 R 마크다운 기능 대부분을 지원하게 되었다. 다음 <a href="#tbl-quarto-rmarkdown" class="quarto-xref">표&nbsp;<span>1.1</span></a> 에서 쿼토와 R 마크다운을 다양한 문서 기능별로 비교하고 있다.</p>
+<div id="tbl-quarto-rmarkdown" class="quarto-float anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-quarto-rmarkdown-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+표&nbsp;1.1: R 마크다운과 쿼토 비교
+</figcaption>
+<div aria-describedby="tbl-quarto-rmarkdown-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="table">
+<thead>
+<tr class="header">
+<th style="text-align: center;">기능</th>
+<th style="text-align: left;">R 마크다운</th>
+<th style="text-align: left;">쿼토(Quarto)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">파일형식</td>
+<td style="text-align: left;"><a href="https://pkgs.rstudio.com/rmarkdown/reference/html_document.html">html_document</a> / <a href="https://pkgs.rstudio.com/rmarkdown/reference/pdf_document.html">pdf_document</a> / <a href="https://pkgs.rstudio.com/rmarkdown/reference/word_document.html">word_document</a></td>
+<td style="text-align: left;"><a href="https://quarto.org/docs/output-formats/html-basics.html">html</a> / <a href="https://quarto.org/docs/output-formats/pdf-basics.html">pdf</a> / <a href="https://quarto.org/docs/output-formats/ms-word.html">docx</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">비머(Beamer)</td>
+<td style="text-align: left;"><a href="https://pkgs.rstudio.com/rmarkdown/reference/beamer_presentation.html">beamer_presentation</a></td>
+<td style="text-align: left;"><a href="https://quarto.org/docs/presentations/beamer.html">beamer</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">파워포인트(PPT)</td>
+<td style="text-align: left;"><a href="https://pkgs.rstudio.com/rmarkdown/reference/powerpoint_presentation.html">powerpoint_presentation</a></td>
+<td style="text-align: left;"><a href="https://quarto.org/docs/presentations/powerpoint.html">pptx</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">웹 슬라이드</td>
+<td style="text-align: left;"><a href="https://bookdown.org/yihui/rmarkdown/xaringan.html">xaringan</a> / <a href="https://bookdown.org/yihui/rmarkdown/ioslides-presentation.html">ioslides</a> / <a href="https://bookdown.org/yihui/rmarkdown/revealjs.html">revealjs</a></td>
+<td style="text-align: left;"><a href="https://quarto.org/docs/presentations/revealjs/">revealjs</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">고급 레이아웃</td>
+<td style="text-align: left;"><a href="https://bookdown.org/yihui/rmarkdown/tufte-handouts.html">tufte</a> / <a href="https://rstudio.github.io/distill/figures.html">distill</a></td>
+<td style="text-align: left;"><a href="https://quarto.org/docs/authoring/article-layout.html">Quarto Article Layout</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">상호 참조</td>
+<td style="text-align: left;"><a href="https://bookdown.org/yihui/bookdown/a-single-document.html">html_document2</a> / <a href="https://bookdown.org/yihui/bookdown/a-single-document.html">pdf_document2</a> / <a href="https://bookdown.org/yihui/bookdown/a-single-document.html">word_document2</a></td>
+<td style="text-align: left;"><a href="https://quarto.org/docs/authoring/cross-references.html">Quarto Crossrefs</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">웹사이트/블로그</td>
+<td style="text-align: left;"><a href="https://pkgs.rstudio.com/blogdown/">blogdown</a> / <a href="https://pkgs.rstudio.com/distill/">distill</a></td>
+<td style="text-align: left;"><a href="https://quarto.org/docs/websites/">Quarto Websites</a> / <a href="https://quarto.org/docs/websites/website-blog.html">Quarto Blogs</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">책</td>
+<td style="text-align: left;"><a href="https://pkgs.rstudio.com/bookdown/">bookdown</a></td>
+<td style="text-align: left;"><a href="https://quarto.org/docs/books/">Quarto Books</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">인터랙티브 문서</td>
+<td style="text-align: left;"><a href="https://bookdown.org/yihui/rmarkdown/shiny-documents.html">Shiny Documents</a></td>
+<td style="text-align: left;"><a href="https://quarto.org/docs/interactive/shiny/">Quarto Interactive Documents</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">페이지 HTML</td>
+<td style="text-align: left;"><a href="https://github.com/rstudio/pagedown">pagedown</a></td>
+<td style="text-align: left;">출시 예정</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">학술 논문</td>
+<td style="text-align: left;"><a href="https://pkgs.rstudio.com/rticles/">rticles</a></td>
+<td style="text-align: left;"><a href="https://quarto.org/docs/journals/">Quarto Journal Articles</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">대쉬보드</td>
+<td style="text-align: left;"><a href="https://pkgs.rstudio.com/flexdashboard/">flexdashboard</a></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">인터랙티브 자습서</td>
+<td style="text-align: left;"><a href="https://pkgs.rstudio.com/learnr/">learnr</a></td>
+<td style="text-align: left;">계획 없음</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+위지위그 vs 위지윔
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>위지위그(WYSIWYG: What You See Is What You Get)</strong>는 “보는 대로 얻는다”는 의미로, 사용자가 문서를 편집할 때 화면에 보이는 형태가 최종 출력물과 동일하게 나오는 편집 방식이다. 대다수 현대 워드 프로세서에서 위지위그 방식을 사용하고 있다. 사용자에게 직관적이고 쉽게 접근할 수 있는 인터페이스를 제공하기 때문이다.</p>
+<p>그러나 위지위그 방식에도 단점은 있다. 마크다운, TeX 같은 텍스트 기반 편집 방식은 문서 호환성과 범용성을 위해 쓰이는 반면, 위지위그 저작방식은 호환성과 범용성을 다소 희생할 수 밖에 없다. 특히 복잡한 문서나 웹 페이지를 작성하는 경우, 코딩방식으로 전환하여 수작업으로 최적화를 시도하더라도 완벽한 해결이 어렵다. 예를 들어, 위지위그 편집기에서 문서를 작성하면 뒷단에 불필요한 코드나 태그가 자동으로 생성되어 문서 최적화를 방해하며, 시간이 지남에 따라 누적되어 호환성과 재현성에 심각한 문제를 야기한다. <a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> <a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
+<p><strong>위지윔(WYSIWYM: What You See Is What You Mean)</strong>은 “당신이 보는 것은 당신이 뜻하는 것이다”라는 의미로, 위지위그(WYSIWYG) 방식의 한계를 극복하기 위해 나온 대안 편집 방식이다. 위지윔 방식에서는 사용자가 무엇을 의미하는지를 중점으로 두어, 본래의 코드 구조를 더 명확하게 알 수 있다. 코드 의미를 직접적으로 반영하여, 불필요한 요소 없이 효율적으로 문서를 작성할 수 있는 장점이 있다.</p>
+<p>RStudio의 Visual 편집 기능은 위지윔 지향점을 잘 반영하고 있다. 사용자는 복잡한 코드나 태그 없이도 의미 있는 문서 구조를 쉽게 생성하고 관리할 수 있어 문서 최적화와 호환성을 높일 수 있으며, 더욱 높은 문서 저작 생산성을 달성할 수 있다.</p>
+<p>오픈 소스 LaTeX 편집기인 <a href="https://www.lyx.org/">LyX</a>는 위지윔 방식을 초기부터 채택하여 사용자에게 코드 본래 구조와 의미를 명확하게 파악할 수 있는 인터페이스를 제공했다. 이러한 접근법은 복잡한 수식이나 과학적인 문서를 작성할 때 특히 유용하며, <a href="http://example.org"></a> 복잡성을 낮추면서도 강력한 기능을 최대한 활용할 수 함으로써 위지위그 한계를 극복했다는 평가를 받고 있다.</p>
+<table class="table">
+<colgroup>
+<col style="width: 52%">
+<col style="width: 47%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">문서 컴파일</th>
+<th style="text-align: center;">위지위그</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><img src="images/wyswig-wikipedia.png" class="img-fluid" width="250"></td>
+<td style="text-align: center;"><img src="images/wyswyg-word.png" class="img-fluid" width="250"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-hyde2021single" class="csl-entry" role="listitem">
+Hyde, Adam. 2021. <span>“Single Source Publishing - A investigation of what Single Source Publishing is and how this <span>‘holy grail’</span> can be achieved”</span>. <a href="https://coko.foundation/articles/single-source-publishing.html">https://coko.foundation/articles/single-source-publishing.html</a>.
+</div>
+</div>
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>“싱글 소싱(Single Sourcing)”은 하나의 원본 콘텐츠를 여러 형식이나 채널에 적용할 수 있도록 하는 문서 작성 및 관리 방법이다. 콘텐츠를 한 번만 작성하고 다양한 출력 형식(예: PDF, 웹 페이지, PPT, 모바일 앱 등)으로 변환하게 되면, 콘텐츠 일관성 유지 및 업데이트와 관리가 훨씬 효율적이다.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p><a href="https://ko.wikipedia.org/wiki/%EC%9C%84%EC%A7%80%EC%9C%84%EA%B7%B8">위키백과, “위지위그”</a><a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p><a href="https://namu.wiki/w/WYSIWYG">나무위키, “WYSIWYG”</a><a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "복사완료!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "복사완료!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./index.html" class="pagination-link" aria-label="서문">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">서문</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./setup.html" class="pagination-link" aria-label="저작환경 설정">
+        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">저작환경 설정</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>챗GPT 쿼토 책은 소프트웨어 카펜트리 Introduction to Reproducible Publications with Quarto 번역한 것이 포함되어 있습니다.</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/bit2r/gpt-sql/edit/main/setup_quarto.qmd" class="toc-action"><i class="bi bi-github"></i>편집</a></li><li><a href="https://github.com/bit2r/gpt-sql/issues/new" class="toc-action"><i class="bi empty"></i>이슈 보고</a></li></ul></div></div>
+    <div class="nav-footer-right">
+<p>순수하게 <a href="https://quarto.org/">쿼토(Quarto)</a>로 제작되었습니다.</p>
+</div>
+  </div>
+</footer>
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","openEffect":"zoom","descPosition":"bottom","loop":false,"selector":".lightbox"});
+window.onload = () => {
+  lightboxQuarto.on('slide_before_load', (data) => {
+    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+    const href = trigger.getAttribute('href');
+    if (href !== null) {
+      const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+      if (imgEl !== null) {
+        const srcAttr = imgEl.getAttribute("src");
+        if (srcAttr && srcAttr.startsWith("data:")) {
+          slideConfig.href = srcAttr;
+        }
+      }
+    } 
+  });
+
+  lightboxQuarto.on('slide_after_load', (data) => {
+    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+    if (window.Quarto?.typesetMath) {
+      window.Quarto.typesetMath(slideNode);
+    }
+  });
+
+};
+          </script>
+
+
+
+
+</body></html>

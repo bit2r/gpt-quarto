@@ -7,21 +7,22 @@ editor:
     wrap: sentence
 ---
 
-![](images/horst_quarto_schematic.png)
 
 # 쿼토(Quarto)
+
+앨리슨 호스트(Allison Horst)는 복잡하고 어려운 R 관련 그래픽을 제작해 공유하며, @fig-quarto-workflow 을 통해 쿼토 작업 흐름을 설명하고 있다. R, 파이썬, 줄리아, Observable JS 등 다양한 프로그래밍 언어를 사용하여 쿼토가 PDF, HTML, Word, 웹사이트와 같은 여러 형식의 출판물을 생성하는 방법을 직관적이고 친근한 방식으로 소개하고 있다.
+
+![쿼토 작업흐름](images/horst_quarto_schematic.png){#fig-quarto-workflow} 
 
 쿼토(Quarto)는 다양한 프로그래밍 언어를 지원하는 오픈소스 출판 시스템으로, [Pandoc](https://pandoc.org/)에 기반을 두고 있다.
 쿼토는 R, 파이썬, 줄리아, 자바스크립트(Observable JS) 등의 프로그래밍 언어를 지원하며, 사용자는 싱글 소싱(Single Sourcing)을 통해 신속하게 다양한 출판 저작물을 생성할 수 있다.
 "차세대 R마크다운(Next-Generation R Markdown)"이라는 별명을 가진 쿼토는 약 10년 동안의 R 마크다운의 성공과 실패 경험을 바탕으로 새로운 아키텍처로 재탄생했다.
-개발 및 유지보수 팀이 잘 구성되어 있어, 프로젝트의 지속 가능성과 신뢰성이 높고, 무료로 제공되므로 누구나 쉽게 접근할 수 있을 뿐만 아니라 누구나 오픈소스 프로젝트에 기여할 수 있다.
-[@hyde2021single]
-
-디지털 글쓰기와 출판에 대한 고민은 콘텐츠, 디자인, 형식의 세 가지로 나뉜다.
+개발 및 유지보수 팀이 잘 구성되어 있어, 프로젝트의 지속 가능성과 신뢰성이 높고, 무료로 제공되므로 누구나 쉽게 접근할 수 있을 뿐만 아니라 누구나 오픈소스 프로젝트에 기여할 수 있다. [@hyde2021single] 디지털 글쓰기와 출판에 대한 고민은 콘텐츠, 디자인, 형식의 세 가지로 나뉜다.
 
 -   **콘텐츠(Content)**: 저작물의 실질적인 내용으로 글쓰기 핵심이며, 정보 정확성, 완전성, 통찰력을 제공해야 한다.
 -   **디자인(Design)**: 저작물의 외양이나 'Look and Feel'을 의미하며 사용자 경험에 큰 영향을 미치며, 정보를 효과적으로 전달하는 데 중요한 역할을 한다.
 -   **형식(Format)**: 저작물의 최종 형태나 산출물이 담기는 매체(디지털, 인쇄 등)를 의미하며, 어떻게 배포되고 소비될 것인지 결정한다.
+
 
 쿼토는 세 가지 요소를 충족시키기 위한 다양한 기능을 제공한다.
 팬독(Pandoc)과 마크다운을 활용해 수식, 인용, 서지 관리, 콜아웃, 고급 레이아웃 기능 등을 고품질 논문, 보고서, 발표 슬라이드(PPT), 웹사이트, 블로그, 전자책 등 다양한 형태 출판 산출물로 저작하여 인쇄매체 뿐만 아니라 HTML, PDF, MS 워드, ePub 등 다양한 디지털 매체를 통해 독자에게 전달할 수 있다.
@@ -30,6 +31,8 @@ editor:
 |        프로그래밍(계산)         |                   문서 저작                    |                  출력물                  |
 |:------------------:|:--------------------------:|:----------------------:|
 | Python, R, Julia, Observable JS | Pandoc, 마크다운, [\LaTeX](http://example.org) | 문서, 웹사이트, PPT, (전자)책, 블로그 등 |
+
+: 쿼토를 구성하는 핵심 요소{#tbl-quarto-core-elements}
 
 ## 싱글 소싱 출판저작
 
@@ -44,14 +47,14 @@ editor:
 ```{mermaid}
 graph LR;
     style A fill:#f9d71c,stroke:#333,stroke-width:2px;
-    style B fill:#1fc8db,stroke:#333,stroke-width:2px;
+    style B fill:#f9d71c,stroke:#333,stroke-width:2px;
     style C fill:#ff6b6b,stroke:#333,stroke-width:2px;
     style J fill:#c4e17f,stroke:#333,stroke-width:2px;
-    style K fill:#1c8adb,stroke:#333,stroke-width:2px;
-    style L fill:#8e44ad,stroke:#333,stroke-width:2px;
+    style K fill:#c4e17f,stroke:#333,stroke-width:2px;
+    style L fill:#c4e17f,stroke:#333,stroke-width:2px;
 
     classDef officeStyle fill:#f9d71c,stroke:#333,stroke-width:2px;
-    class L,AA,AB officeStyle;
+    class AA,AB officeStyle;
 
     A[콘텐츠 저작] --> B[디자인]
     B --> C[출판]
@@ -79,12 +82,32 @@ graph LR;
 텍스트와 프로그래밍 코드는 팬독(pandoc)을 통해 마크다운 변환이 자동으로 이루어지기 때문에 후속 작업에 대해 걱정할 필요가 없다.
 싱글 소싱 개념이 팬독을 통해 자동화되어 원하는 저작 결과물을 효율적이고 빠르게 얻을 수 있어 저작작업 생산성을 크게 향상시키는 장점이 있다.
 
+::: {.content-visible when-format="html"}
+
+::: {.panel-tabset}
+### R {.unnumbered}
+
+![쿼토 - R](images/qmd-knitr.png){#fig-quarto-r}
+
+### 파이썬 {.unnumbered}
+
+![쿼토 - 파이썬](images/qmd-jupyter.png){#fig-quarto-python}
+
+:::
+
+:::
+
+
+::: {.content-visible when-format="pdf"}
+
 ::: {#fig-single-sourcing layout-nrow="2"}
 ![쿼토 - R](images/qmd-knitr.png)
 
 ![쿼토 - 파이썬](images/qmd-jupyter.png)
 
 쿼토 R, 파이썬 싱글소싱
+:::
+
 :::
 
 ## 쿼토 해부
@@ -100,7 +123,7 @@ R, 파이썬, SQL, 자바스크립트 등을 활용해 그래프, 표, 다이어
 
 쿼토는 데이터 과학자, 개발자, 과학기술 연구원, 사무노동자 등 다양한 분야의 종사자분들로부터 챗GPT 인공지능 시대 자동화를 통한 사무업무 생산성 도구로 자리매김하고 있다.
 
-![쿼토 작업흐름](images/quarto-unification.png)
+![쿼토 작업흐름](images/quarto-unification.png){#fig-quarto-wysiwym}
 
 쿼토 저작은 메타데이터(전문, front matter), 텍스트, 코드라는 세 가지 주요 구성요소로 이뤄진다.
 쿼토는 문학적 프로그래밍과 자동화 패러다임을 적극 반영하여 데이터 과학 프로그래밍과 과학기술 문서 작성을 더 효율적이고 일관된 방식으로 저작하고 출판할 수 있도록 지원한다.
@@ -109,7 +132,7 @@ R, 파이썬, SQL, 자바스크립트 등을 활용해 그래프, 표, 다이어
 -   **텍스트 (마크다운)**: 마크다운은 2004년에 아론 스워츠와 존 그루버에 의해 개발된 언어로, HTML과 같은 복잡한 마크업 언어 대신 사용되는 간단한 형식의 문서 작성 도구다. 복잡한 디자인보다 콘텐츠 구조와 의미에 중점을 두기 때문에, 문서 저작자는 외양보다 내용에 더 집중할 수 있다.
 -   **코드 (`knitr`, `jupyter`)**: `knitr`는 R 코드를 문서에 통합할 수 있는 패키지, `jupyter`는 파이썬 사용자에게 인기 있는 패키지이다. 쿼토에서는 이 두 패키지를 활용하여 작성된 코드를 문서에 포함시킬 수 있다. 데이터 분석, 통계값, 그래프, 다이어그램, 지도 등 다양한 코딩 결과물을 문서에 반영시킬 수 있다.
 
-![쿼토 문서 구성요소](images/quarto-anatomy.png){fig-align="center" width="450"}
+![쿼토 문서 구성요소](images/quarto-anatomy.png){#fig-quarto-component fig-align="center" width="450"}
 
 ### YAML
 
@@ -208,6 +231,8 @@ format:
 :::
 :::
 
+### 탭 자동완성
+
 RStudio나 VSCode와 같은 통합개발환경(IDE)에서 제공하는 탭-자동완성(Tab Completion) 기능은 YAML 전문코드를 작성할 때 매우 유용하다.
 이 기능을 사용하면, 저작자는 첫 글자나 몇몇 글자를 타이핑한 후에 탭 키를 눌러 가능한 모든 명령어, 변수, 함수 이름 등을 볼 수 있다.
 이로 인해 오타의 가능성이 줄어들고 문서 저작 속도가 향상된다.
@@ -229,8 +254,7 @@ RStudio YAML 자동완성
 쿼토는 "차세대 R 마크다운"이라는 별명에 걸맞게 R 마크다운의 다양한 패키지와 기능을 지원하고 있다.
 그러나 쿼토의 개발 기간이 R 마크다운보다 상대적으로 짧기 때문에 아직은 R 마크다운의 모든 기능을 지원하지 않는다.
 그럼에도 불구하고, 쿼토는 지속적으로 지원 범위를 확장하고 있으며, 고유한 기능도 추가하고 있다.
-이러한 점들은 쿼토가 R 마크다운 생태계에 어떤 새로운 가치를 더하고 있는지를 잘 보여준다.
-다음 @tbl-quarto-rmarkdown 에서 쿼토와 R 마크다운을 다양한 문서 기능별로 비교하고 있다.
+이러한 점들은 쿼토가 R 마크다운 생태계에 어떤 새로운 가치를 더하고 있는지를 잘 보여준다. 쿼토 1.4 버전에 대쉬보드(dashboards)가 추가되어 R 마크다운 기능 대부분을 지원하게 되었다. 다음 @tbl-quarto-rmarkdown 에서 쿼토와 R 마크다운을 다양한 문서 기능별로 비교하고 있다. 
 
 |       기능        | R 마크다운                                                                                                                                                                                                                                           | 쿼토(Quarto)                                                                                                                                                                                  |
 |:-------------:|:-------------------------------|:------------------------|
@@ -245,13 +269,14 @@ RStudio YAML 자동완성
 |  인터랙티브 문서  | [Shiny Documents](https://bookdown.org/yihui/rmarkdown/shiny-documents.html)                                                                                                                                                                         | [Quarto Interactive Documents](https://quarto.org/docs/interactive/shiny/)                                                                                                                    |
 |    페이지 HTML    | [pagedown](https://github.com/rstudio/pagedown)                                                                                                                                                                                                      | 출시 예정                                                                                                                                                                                     |
 |     학술 논문     | [rticles](https://pkgs.rstudio.com/rticles/)                                                                                                                                                                                                         | [Quarto Journal Articles](https://quarto.org/docs/journals/)                                                                                                                                  |
-|     대쉬보드      | [flexdashboard](https://pkgs.rstudio.com/flexdashboard/) \|                                                                                                                                                                                          | 출시 예정                                                                                                                                                                                     |
+|     대쉬보드      | [flexdashboard](https://pkgs.rstudio.com/flexdashboard/) |                                                                                                                                                                                          | [Quarto Dashboards](https://quarto.org/docs/dashboards/)                                                                                                                                                                                     |
 | 인터랙티브 자습서 | [learnr](https://pkgs.rstudio.com/learnr/)                                                                                                                                                                                                           | 계획 없음                                                                                                                                                                                     |
 
 : R 마크다운과 쿼토 비교 {#tbl-quarto-rmarkdown}
 
 
-## 저작방식 패러다임 {#paradigm}
+:::{.callout-note}
+### 위지위그 vs 위지윔 {.unnumbered}
 
 **위지위그(WYSIWYG: What You See Is What You Get)**는 "보는 대로 얻는다"는 의미로, 사용자가 문서를 편집할 때 화면에 보이는 형태가 최종 출력물과 동일하게 나오는 편집 방식이다. 대다수 현대 워드 프로세서에서 위지위그 방식을 사용하고 있다. 사용자에게 직관적이고 쉽게 접근할 수 있는 인터페이스를 제공하기 때문이다.
 
@@ -271,28 +296,5 @@ RStudio의 Visual 편집 기능은 위지윔 지향점을 잘 반영하고 있�
 |:------------------------------------:|:--------------------------------:|
 | ![](images/wyswig-wikipedia.png){width="250"} | ![](images/wyswyg-word.png){width="250"} |
 
-## 워드 프로세서 [^editor-3] {#main-features}
+:::
 
-[^editor-3]: [Jesal Shethna, "Microsoft Word Features", EDUCBA](https://www.educba.com/microsoft-word-features/)
-
-**워드 프로세서(Word Processor)**는 문서 제작을 위한 소프트웨어로, 시각적으로 잘 구성된 인터페이스와 다양한 편집 기능을 제공한다. 사용자는 이러한 기능을 통해 원하는 형태와 구조를 갖는 문서를 쉽게 저작할 수 있다. 워드 프로세서는 글자 스타일, 문단 구성, 이미지 삽입, 표 만들기 등 다양한 기능이 포괄적으로 제공되며, 윈도우에 기본 제공되는 메모장(Notepad) 텍스트 편집기보다 훨씬 더 풍부한 문서 작성이 가능하다. 2023년 9월 1일부로 윈도우에서 무료로 제공되던 워드패드(WordPad)에 대한 지원도 없어지고 윈도우에서도 제거될 것이라는 발표가 있었다. 따라서, 서식이 필요한 문서를 저작할 경우 MS 워드(Word)나 아래한글과 같은 워드 프로세서를 사용해야 된다.
-
-아래한글은 국내에서 널리 사용되는 워드 프로세서 중 하나로, 한국 문화와 업무 환경에 맞춰 특화된 기능을 제공한다. 정부나 공공기관에서 사용하는 특별한 문서 양식을 미리 저장해 두어, 사용자가 양식을 찾는 데 시간을 쓰지 않고 글쓰기에 바로 집중할 수 있도록 큰 도움을 주었다.
-
-|                        국산 워드 프로세서                        |                      해외 워드 프로세서                       |
-|:------------------------------------:|:--------------------------------:|
-| ![아래 한글 워드 프로세서](images/hangul_word.jpg){width="500"} | ![마이크로소프트 워드(Word)](images/word_ms.jpg){width="500"} |
-
-## [\LaTeX](http://example.org) 편집기 {#latex-editor}
-
-[\LaTeX](http://example.org) 편집기는 운영체제나 사용자의 필요에 따라 다양한 선택옵션이 존재한다. 특히, 클라우드 기반 [Overleaf](https://www.overleaf.com/), 설치형 [TeXstudio](https://www.texstudio.org/), 데이터 과학에 특화된 RStudio IDE가 대표적이다. 편집기들은 [\LaTeX](http://example.org)에 특화되었거나, 일부 [\LaTeX](http://example.org) 기능을 분리하여 사용자 요구에 맞춰 활용할 수 있다.
-
-![[\LaTeX](http://example.org) 편집기 다양성](images/latex-editor.png){fig-align="center" width="1151"}
-
-[Overleaf](https://www.overleaf.com/)는 초기에 `ShareLaTeX` 서비스로 시작해 현재는 클라우드 기반의 [\LaTeX](http://example.org) 편집 기능을 제공한다. 클라우드 특성을 살려 문서의 공유와 협업이 용이하다는 점이 큰 장점이다.
-
-`TeXstudio`는 `Texmaker` 후속으로 오픈 소스 [\LaTeX](http://example.org) 편집기로 제공된다. 사용자는 [TeXstudio](https://www.texstudio.org/) 웹사이트에서 다운로드 받아 설치할 수 있으며, GitHub [`texstudio`](https://github.com/texstudio-org/texstudio) 저장소를 통해 한국어 현지화 작업에도 참여할 수 있다.
-
-|                                   클라우드 편집기                                    |                                     설치형 편집기                                      |
-|:------------------------------------:|:--------------------------------:|
-| ![Overleaf 스크린샷](images/overleaf-screenshot.png){fig-align="center" width="500"} | ![TeXstudio 스크린샷](images/texstudio-screenshot.png){fig-align="center" width="500"} |
