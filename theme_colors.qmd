@@ -1,5 +1,4 @@
 ---
-output: html_document
 editor_options: 
   chunk_output_type: console
 editor: 
@@ -7,18 +6,27 @@ editor:
     wrap: sentence
 ---
 
+```{r}
+#| include: false
+
+source("_common.R")
+```
+
+
 # 색상
 
-## 시각화 메커니즘 [^viz-mechanism] {#color-mechanism}
+색상(Color)에 관심을 가져야하는 이유는 데이터와 정보를 시각적으로 전달하는 데 핵심적인 역할을 담당하기 때문이다. 컴퓨터는 RGB 체계로 색을 인식하고 표현하는 반면, 인간은 HCL 체계로 색을 인지하고 이해한다. 뿐만 아니라 데이터를 그래프 등을 통해 시각적으로 표현하고 문서를 인쇄 출판, 빔프로젝트, 모니터 등 다양한 매체를 통해 효율적이고 효과적으로 정보를 전달하는 데 중요하다.
 
-[^viz-mechanism]: [A Better Default Colormap for Matplotlib, SciPy 2015, Nathaniel Smith and Stéfan van der Walt](https://www.youtube.com/watch?v=xAoljeRJ3lU&feature=youtu.be)
+## 시각화 메커니즘  {#color-mechanism}
 
 크게 보면 기계 즉, 컴퓨터가 색을 이해하고 표현하는 **RGB 체계**와 사람이 색을 인지하고 이해하는 **HCL 체계**로 나누어 진다. 2진수로 표현된 시각적 데이터는 RGB 16진수로 변환되어 모니터에 표시되고,
 물리적 광자(photon)로 사람눈에 위치한 망막에 꽂히게 되고,
-사람은 뇌에서 인지한 후에 이를 처리하여 시각적인 정보를 인식하게 된다.
-
+사람은 뇌에서 인지한 후에 이를 처리하여 시각적인 정보를 인식하게 된다. 
 따라서, 사람뇌에 인식할 수 있는 시각적인 정보로 데이터를 구성해야만 다양한 종류의 모니터를 통해 
-효율적이고 효과적으로 정보가 전달될 수 있다.
+효율적이고 효과적으로 정보가 전달될 수 있다. [^viz-mechanism]
+
+[^viz-mechanism]: [A Better Default Colormap for Matplotlib, SciPy 2015, Nathaniel Smith and Stéfan van der Walt](https://www.youtube.com/watch?v=xAoljeRJ3lU&feature=youtu.be)
+
 
 ![시각적 인지 메커니즘](images/color-viz-mechanism.png){width="100%"}
 
@@ -118,7 +126,7 @@ div.blue { background-color:#e6f0ff; border-radius: 5px; padding: 10px;}
 
 `rgb()`, `col2rgb()`, `convertColor()` 함수도 유용하니, 자세한 내용은 도움말을 참조한다.
 
-## RGB 색상모형 대안 - **HCL** {#dataviz-mechanism-hcl}
+### RGB 색상모형 대안 - **HCL** {#dataviz-mechanism-hcl}
 
 RGB 색공간과 색상모형이 유일무이하고 가장 최고는 아니다.
 컴퓨터 화면에 색상을 표현하는데는 자연스럽지만, 일부 영역에서 색상을 선택하는 
@@ -126,7 +134,7 @@ RGB 색공간과 색상모형이 유일무이하고 가장 최고는 아니다.
 예를 들어, 사람이 구별하기는 쉽지만, 인지적으로 색상별로 비교되는 생각으로 구성된
 정성적인 팔레트를 만들어 내는 방법은 명확하지 않다.
 컴퓨터에 사용되는 색상을 기술하는데 RGB를 사용하지만, 
-**사람이 색상체계를 구축하는 색공간에 RGB체계를 사용할 이유는 없다.**
+**사람이 색상체계를 구축하는 색공간에 RGB체계만 사용할 이유는 없다.**
 이점은 사람과 컴퓨터가 다른 것이고, 이를 인정해야만 된다.
 
 색상모형은 일반적으로 RGB와 마찬가지로 세가지 차원으로 구성된다.
@@ -145,7 +153,7 @@ RGB 색체계는 인간의 인식체계와 일치성이 떨어진다.
 
 사람이 인지하기 좋은 색모형은 무엇일까? CIELUV 와 CIELAB 이 가장 잘 알려진 사례다.
 CIELUV의 변종인 **HCL(Hue-Chroma-Luminance, 색상-채도-휘도) 모형**을 좀더 살펴보자.
-Zeileis와 동료들이 R 사용자를 위한 팩키지로 멋지게 작성했다.[^dt-hcl]
+Zeileis와 동료들이 R 사용자를 위한 팩키지로 멋지게 작성했다. [@zeileis2009escaping] [^dt-hcl]
 `colorspace` R 팩키지에 딸려있고, HCL 색상모형을 탐색하고 이용하는데 도움을 준다.
 마지막으로, HCL 색모형이 `ggplot2`에 `RColorBrewer`와 마찬가지로 잘 녹여져있다.
 
@@ -165,24 +173,19 @@ div.blue { background-color:#e6f0ff; border-radius: 5px; padding: 10px;}
 </div>
 
 
-저자는 채도와 휘도를 이해하고 구별하는데 힘든 시간을 보냈다. 위에서 살펴봤듯이, 색체계는 서로 독립된 것이 아니고, 3차원 HCL 공간에 기이한 모형으로 정보를 제공하고 있다.
+저자는 채도와 휘도를 이해하고 구별하는데 힘든 시간을 보냈다. 위에서 살펴봤듯이, 색체계는 서로 독립된 것이 아니고, 3차원 HCL 공간에 기이한 모형으로 정보를 제공하고 있다. 위컴의 `ggplot2` 책[@wilkinson2011ggplot2]에 나온 @fig-hcl 이 HCL 색공간을 이해하는데 도움이 된다.
 
-위캠의 `ggplot2` 책에 나온 6.6 그림이 HCL 색공간을 이해하는데 도움이 된다.
+![`ggplot2` HCL 색공간](images/color-viz-ggplot2book-fig6.6.png){#fig-hcl width="100%"}
 
-![`ggplot2` HCL 색공간](images/color-viz-ggplot2book-fig6.6.png){width="100%"}
-
-위캠 책에 언급된 내용을 다시 적으면 다음과 같다: 각 측면, 창은 휘도에 따라 가장 낮은 값에서 높은 값 순으로 HCL 공간을 슬라이스로 나누어 도식화한 것을 보여주고 있다. 0 과 100 극단 휘도값은 생략되었는데, 이유는 각각 검은 점과 흰점으로 나타나기 때문이다.
+위컴 책에 언급된 내용을 다시 적으면 다음과 같다: 각 측면, 창은 휘도에 따라 가장 낮은 값에서 높은 값 순으로 HCL 공간을 슬라이스로 나누어 도식화한 것을 보여주고 있다. 0 과 100 극단 휘도값은 생략되었는데, 이유는 각각 검은 점과 흰점으로 나타나기 때문이다.
 슬라이스 내부에, 중심은 채도가 0 으로, 회색에 대응된다. 슬라이스 끝쪽으로 이동하면, 
 채도가 증가하고, 색상이 더 순색에 가까워지고 농도가 짖어진다. 색상은 각도로 매핑된다.
 
 [`colorspace`](https://cran.r-project.org/web/packages/colorspace/) 팩키지에 가치있는 기여는 아마도 함수를 사용해서 색상공간을 합리적 방식으로 색공간을 이리저리 돌아다닐 수 있게 만든 것이다.
-이와는 대조적으로 `RColorBrewer` 팩키지가 제공하는 팔레트는 정교하게 제작되었지만, 불행히도 고정이다.
+이와는 대조적으로 `RColorBrewer` 팩키지가 제공하는 팔레트는 정교하게 제작되었지만, 불행히도 고정이다. 인지기반 색상체계를 사용하는 것에 대한 옹호 사례와 더불어 색공간에 0 이 자리하는 것을 알려주는 중요성을 시연하고 있다.[@zeileis2009escaping]
 
-인지기반 색상체계를 사용하는 것에 대한 옹호 사례와 더불어 색공간에 0 이 자리하는 것을 알려주는 중요성을 시연하고 있다.
 
-- ["Why Should Engineers and Scientists Be Worried About Color?"](http://www.research.ibm.com/people/l/lloydt/color/color.HTM)
-
-## 프린터 색상모형: CMYK [^wiki-cmyk] [^cmyk-blog] {#viz-printer-cmyk}
+### 프린터 색상모형: CMYK [^wiki-cmyk] [^cmyk-blog] {#viz-printer-cmyk}
 
 [^wiki-cmyk]: [위키백과, "CMYK color model"](https://en.wikipedia.org/wiki/CMYK_color_model)
 
@@ -190,9 +193,7 @@ div.blue { background-color:#e6f0ff; border-radius: 5px; padding: 10px;}
 
 CMYK 색상표는 시안(**C**yan), 마젠타(**M**agenta), 옐로(**Y**ellow), 블랙(Black = **K**ey)를 원색으로 하여 명도가 낮아지는 감산혼합으로 주로 출력물 인쇄 혹은 사진 필림 현상에 사용되며 쿼크익스프레스, 일러스트레이터, 포토샵 등에서 CMYK 감산혼합을 지원한다. 현실적인 문제 때문에 RGB나 HSB(HSV)보다 표현 가능한 색이 적은 것으로 알려져 있다.
 
-학창시절 감산혼합의 색의 3원색은 빨강, 노랑, 파랑인데,  CMYK는 생뚱맞게도 시안(**C**yan), 마젠타(**M**agenta), 옐로(**Y**ellow), 블랙(Black = **K**ey)을 원색으로 하는데 이유는 빨강은 사실 자홍색(마젠타), 파랑은 청록색(시안)이라 정확한 색상이 후자가 맞다. 우리가 잘못 배운 탓이 크다.  
-
-RGB 생상과 CMYK 생상을 PDF 파일로 찍어 상호 비교해보자. [^rgb-cmyk-comp]
+학창시절 감산혼합의 색의 3원색은 빨강, 노랑, 파랑인데,  CMYK는 생뚱맞게도 시안(**C**yan), 마젠타(**M**agenta), 옐로(**Y**ellow), 블랙(Black = **K**ey)을 원색으로 하는데 이유는 빨강은 사실 자홍색(마젠타), 파랑은 청록색(시안)이라 정확한 색상이 후자가 맞다. 우리가 잘못 배운 탓이 크다.  RGB 생상과 CMYK 생상을 PDF 파일로 찍어 상호 비교해보자. [^rgb-cmyk-comp]
 
 [^rgb-cmyk-comp]: [One Tipe Per Day, "draw figures in CMYK mode in R"](http://onetipperday.sterding.com/2012/10/draw-figures-in-cmyk-mode-in-r.html)
 
@@ -232,13 +233,19 @@ dev.off()
 ### RColorBrewer {#dataviz-color-brewer}
 
 색상선택이 가장 논란이 많고, 이리저리 만지작 거리면서 정말 많은 시간을 보내는 분야다.
-지리학자이며 생상 전문가 [Cynthia Brewer](http://en.wikipedia.org/wiki/Cynthia_Brewer) 교수가 출판과 웹에서 사용되는 색상표를 제작했고, 이는 [RColorBrewer](http://cran.r-project.org/web/packages/RColorBrewer/index.html)
+지리학자이며 색상 전문가 [Cynthia Brewer](http://en.wikipedia.org/wiki/Cynthia_Brewer) 교수가 출판과 웹에서 사용되는 색상표를 제작했고, 이는 [RColorBrewer](http://cran.r-project.org/web/packages/RColorBrewer/index.html)
 팩키지에 반영되어 있다. 팩키지를 설치하고 사용하면 된다. 연관된 전체 팔레트를 살펴보는 명령어는 `display.brewer.all()` 이다.
 
-``` {r dataviz-brewer, fig.height=10}
+``` {r}
+#| eval: false
+#| label: dataviz-brewer
+#| fig-height: 25
+
 library(RColorBrewer) # install.packages("RColorBrewer")
 display.brewer.all()
 ```
+
+![RColorBrewer 전체 색상표](images/brewer_palette.jpg){#fig-brewer-palette}
 
 팔레트는 종류가 많지만 다음 세가지 범주에 속한다. 위에서 아래부터 다음과 같다.
 
@@ -251,7 +258,10 @@ display.brewer.all()
 
 명칭을 명세해서 RColorBrewer 팔렛트 하나만 볼 수 있다.
 
-``` {r dataviz-brewer-palette, echo = TRUE}
+``` {r}
+#| label: fig-brewer-dark2
+#| fig-cap: "RColorBrewer 중 Dark2 팔렛트"
+
 display.brewer.pal(n = 8, name = 'Dark2')
 ```
 
@@ -262,8 +272,7 @@ display.brewer.pal(n = 8, name = 'Dark2')
 새로운 색상 지도를 설계했고, [SciPy 2015](https://www.youtube.com/watch?v=xAoljeRJ3lU&feature=youtu.be)에서 발표했다.
 `viridis` 팩키지로 인해 R에 4가지 신규 팔레트가 추가되었다. [CRAN](https://cran.r-project.org/web/packages/viridis/index.html)과,
 [GitHub](https://github.com/sjmgarnier/viridis)에서 팩키지를 만날 수 있다.
-
-
+아직 나온지 얼마되지 않아서, 자세한 사항은 `viridis` 팩키지를 설치하고 [소품문](https://cran.r-project.org/web/packages/viridis/vignettes/intro-to-viridis.html_document)을 읽고 직접 경험하기 바란다.
 
 :::{.callout-note}
 
@@ -272,25 +281,24 @@ display.brewer.pal(n = 8, name = 'Dark2')
 :::
 
 
-아직 나온지 얼마되지 않아서, 자세한 사항은 `viridis` 팩키지를 설치하고 [소품문](https://cran.r-project.org/web/packages/viridis/vignettes/intro-to-viridis.html_document)을
-읽고 직접 경험하기 바란다.
+### 색각 이상 {#dataviz-viridis-blind}
 
-### 색맹을 갖는 사람 {#dataviz-viridis-blind}
-
+색각 이상은 비색각 이상자와 원추세포의 차이로 인해 색상을 잘 구분하지 못하는 증상으로 색맹과 색약으로 구분된다. 색맹은 삼원색 중 특정 색상을 완전히 감지하지 못하는 것이며, 색약은 수용체에 문제로 감지는 할 수 있지만 다르게 보이게 된다.
 `dichromat` 팩키지([CRAN](http://cran.r-project.org/web/packages/dichromat/))는 
-2색시자에 대한 효과적인 색상조합을 선택하는데 도움이 된다.
+2색시자에 대한 효과적인 색상조합을 선택하는데 도움이 된다. `colorschems` 목록에는 `r library(dichromat); length(colorschemes)` 가지 색상조합이 담겨있는데, 적색과 녹색을 구별하는 능력이 없거나 예외적인 시력을 갖는 2색시자에게 적합하다.
 
-```{r dataviz-viridis-blind, echo = TRUE}
+
+```{r}
+#| label: fig-dichromat-colorschemes
+#| fig-cap: 색각 이상 dichromat 색상표
+
 library(dichromat) # install.packages("dichromat")
-```
-
-`colorschems` 목록에는 `r length(colorschemes)` 가지 색상조합이 담겨있는데, 적색과 녹색을 구별하는 능력이 없거나 예외적인 시력을 갖는 2색시자에게 적합하다.
-
-```{r dichromat-colorschemes, echo = FALSE}
 library(ggplot2)
+
 x_boundaries <-
   lapply(colorschemes,
          function(x) seq(from = 0, to = 1, length = length(x) + 1))
+
 df <- data.frame(
   xmin = unlist(lapply(x_boundaries, function(x) rev(rev(x)[-1]))),
   xmax = unlist(lapply(x_boundaries, function(x) x[-1])),
@@ -311,15 +319,15 @@ ggplot(df, aes(xmin = xmin, xmax = xmax, ymin = ymax - 0.85, ymax = ymax)) +
         axis.title = element_blank())
 ```
 
-`dichmat()` 함수는 색상을 변환해서 다른 형태의 색맹에 근사적인 효과를 구현할 수 있어서,
-후보 색상조합에 대한 효과를 평가할 수 있게 한다. 
+`dichmat()` 함수는 색상을 변환해서 다른 형태의 색맹에 근사적인 효과를 구현할 수 있어서, 후보 색상조합에 대한 효과를 평가할 수 있게 한다. 
 `data("dalton")` 명령어는 256 색상 팔레트를 표현하는 객체를 생성하는데,
-정상 시야로 표현되는 것과, 적록(red-green) 색맹과 청녹(green-blue) 생맹으로 표현되는 것이다.[@rogowitz1996ibm]
-
+정상 시야로 표현되는 것과, 적록(red-green) 색맹과 청녹(green-blue) 생맹으로 표현되는 것이다.[@rogowitz1996should]
 
 
 ```{r}
 #| eval: false
+#| echo: false
+
 pal_name <- names(tvthemes:::stevenUniverse_palette)
 
 show_all_pal <- function(pal_name) {
@@ -337,6 +345,8 @@ purrr::walk(pal_name, ~ show_all_pal(pal_name = .x))
 
 
 ```{r}
+#| fig-cap: 유형별 색상 팔레트
+#| label: fig-brewer-type
 library(RColorBrewer)
 
 par(mfrow=c(1 ,3))
@@ -350,6 +360,8 @@ dev.off()
 Torgersen 섬의 이름을 NA(결측값)으로 변경한다. 변경된 데이터를 바탕으로 `ggplot2` 패키지를 사용해 막대 그래프를 생성하며, 섬의 이름을 x축에, 각 섬의 펭귄 수를 y축에 배치하고, 각 막대는 해당 섬의 이름에 따라 다른 색상으로 채워운다. 결측값(여기서는 Torgersen 섬)은 회색으로 표시되며, 나머지 색상은 RColorBrewer의 "Accent" 팔레트를 사용하여 색을 채워넣는다.
 
 ```{r}
+#| label: fig-palmer-penguins
+#| fig-cap: 팔머 펭귄 데이터 RColorBrewer Accent 팔렛트 적용트
 library(palmerpenguins)
 library(tidyverse)
 
@@ -362,12 +374,19 @@ penguins |>
 ```
 
 
-## 정당 색상
+## 색상적용 사례
+
+색상을 지정하여 그래프를 제작하는 방법과 이미지에서 색상을 추출하여 그래프에 적용하는 기법을 살펴보면, 데이터 시각화에 깊이와 매력을 더한다. 정당 로고에서 추출한 색상으로 정당별 지지율 그래프를 만드는 것과 태극기 이미지에서 추출한 색상을 사용하여 데이터 시각화를 수행하는 사례는 색상의 선택과 적용이 시각적 표현에 어떻게 영향을 미칠 수 있는지를 가늠할 수 있다.
+
+### 정당 색상
 
 [더블어민주당](https://www.peoplepowerparty.kr/about/logo), [국민의힘](https://www.peoplepowerparty.kr/about/logo),
 [정의당](https://www.justice21.org/newhome/about/info021.html) 웹사이트에서 각 정당 로고 및 주된 로고 색상을 확인할 수 있다. 이를 바탕으로 정당별 시각화 제작에 사용될 색상으로 팔레트를 생성하여 활용한다.
 
 ```{r}
+#| label: fig-party-color
+#| fig-cap: 정당별 색상 팔레트
+
 # 각 정당별 색상
 민주당_2색상 <- c("#00A0E2", "#004EA1")
 민주당_4색상 <- c("#8AC452", "#00AA7D", "#008CCD", "#004EA1")
@@ -402,7 +421,11 @@ ggplot(df_colors, aes(x = 1, y = party, fill = color)) +
 난수를 생성한 정당별 지지율 데이터를 만든 후에 정당색상을 반영한 그래프를 제작한다.
 
 ```{r}
+#| label: fig-party-color-bar
+#| fig-cap: 정당별 색상 팔레트를 적용한 막대 그래프
+
 party_name <- c("민주당", "국민의힘", "정의당", "무소속")
+
 votes <- c(runif(1, min=.4, max=.5),
            runif(1, min=.4, max=.5),
            runif(1, min=.0, max=.05),
@@ -421,7 +444,7 @@ tibble(party_name, votes) |>
 ```
 
 
-## 이미지 &rarr; 색상
+### 이미지 &rarr; 색상
 
 이미지에서 색상을 출력한 후에 이를 팔레트로 만들어서 시각화한 사례를 만들어보자.
 태극기에서 가장 많은 색상을 선택하여 16진수 색상코드를 추출한다.
@@ -475,7 +498,7 @@ flag_image_gg <- ggplot() +
 태극기에서 추출한 색상을 바탕으로 막대그래프에 색상을 입혀 시각화한다.
 
 ```{r}
-#| label: color_penguins
+#| label: fig-color_penguins
 
 flag_penguin_gg <- penguins |> 
   count(island) |> 
@@ -490,6 +513,9 @@ flag_penguin_gg <- penguins |>
 
 ```{r}
 #| eval: true
+#| label: fig-color-from-image
+#| fig-cap: 태극기 이미지에서 추출한 색상을 활용한 시각화 그래프
+
 library(patchwork)
 
 print((flag_image_gg + flag_colors_gg) / flag_penguin_gg)

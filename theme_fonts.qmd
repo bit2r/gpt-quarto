@@ -1,11 +1,17 @@
 ---
-output: html_document
 editor_options: 
   chunk_output_type: console
 editor: 
   markdown: 
     wrap: sentence
 ---
+
+```{r}
+#| include: false
+
+source("_common.R")
+```
+
 
 # 글꼴
 
@@ -25,7 +31,7 @@ editor:
 글꼴은 데이터 과학 산출물에 해당되는 PDF, 워드 문서, 대시보드, 웹사이트, 이력서, 팜플렛 제작에도 활용된다.
 보고서 PDF 문서 작성에 글꼴은 전문성을 높이고, 대쉬보드와 웹사이트 제작에 색상, 레이아웃과 함께 사용자 경험 향상에 큰 부분을 담당한다.
 
-![글꼴 적용 분야](images/fonts_application.jpg)
+![글꼴 적용 분야](images/fonts_application.jpg){#fig-fonts-application}
 
 ## 용어 설명
 
@@ -48,16 +54,18 @@ editor:
 
 일반적으로 본문에는 세리프나 산세리프 글꼴이 사용되고, 제목에는 더 화려하거나 눈에 띄는 글꼴이 사용되고 증거기반 문서 행정문서가 늘어나고 과학기술 문서에 필수적인 수식 등에도 타이포그래피 중요성이 늘어나고 있다.
 
-![문서에 담긴 디지털 글쓰기 글꼴](images/document_fonts.jpg)
+![문서에 담긴 디지털 글쓰기 글꼴](images/document_fonts.jpg){#fig-document-fonts}
 
 ::: callout-note
 ## 서체와 글꼴 {#typeface-vs-font}
 
-`typeface`는 서체로 번역되고 `font`는 글꼴로 번역된다.
-하나의 `typeface`에 다수 `font`가 포함될 수 있고, [**팬그램(Pangram)**](https://ko.wikipedia.org/wiki/팬그램)은 '모든 글자'라는 뜻으로 주어진 모든 문자를 적어도 한 번 이상 사용하여 만든 문장을 뜻한다.
-팬그램은 로렘 입숨처럼 글꼴 샘플을 보여주거나 장비를 테스트하는 데 사용된다.
-영어 팬그램으로 가장 유명한 **'The quick brown fox jumps over the lazy dog'**는 19세기부터 사용되어 왔다.
-유사하게 한글에서는 **"다람쥐 헌 쳇바퀴에 타고파"**가 사용되고 있다.
+`typeface`는 서체로 번역되고 `font`는 글꼴로 번역된다. 
+하나의 `typeface`에는 여러 `font`가 포함될 수 있으며, 이를 검증하는 데에는 팬그램이 유용하게 사용된다. 팬그램은 모든 문자를 최소 한 번 이상 사용하여 만든 문장으로, 
+제작된 서체와 글꼴이 모든 글자에 대해 어떻게 표현되는지 확인하는 데 필요하다.
+
+[**팬그램(Pangram)**](https://ko.wikipedia.org/wiki/팬그램)은 '모든 글자'라는 뜻으로 주어진 모든 문자를 적어도 한 번 이상 사용하여 만든 문장을 뜻한다. 팬그램은 로렘 입숨처럼 글꼴 샘플을 보여주거나 장비를 테스트하는 데 사용된다. 
+영어 팬그램으로 가장 유명한 **'The quick brown fox jumps over the lazy dog'**는 19세기부터 사용되어 왔다. 유사하게 한글에서는 **"다람쥐 헌 쳇바퀴에 타고파"**가 사용되고 있다.
+
 :::
 
 ## 두가지 형태 글꼴
@@ -115,36 +123,90 @@ fonts_list |>
 @fig-nanumsquare 에서 "모든 사용자용으로 설치(A)"하게 되면 글꼴이 `C:\Windows\Fonts\` 디렉토리에 설치된다.
 운영체제에 설치작업이 완료되면 R에서 사용할 수 있으나, 몇 가지 추가 작업이 필요하다.
 우선, `fs` 패키지 `file_exists()` 함수를 사용하여 'NanumSquare.ttf' 파일이 정상적으로 설치되었는지 확인한다.
-이후 `font_import()` 명령어를 사용하여 R에서 해당 글꼴을 사용할 수 있도록 설정한다.
-이 때, `path=`로 글꼴 파일의 경로를 직접 지정할 수 있으며, `pattern=`을 사용해서 특정 패턴에 맞는 글꼴을 일괄적으로 등록할 수도 있다.
+만약 `extrafont` 패키지를 사용한다면 `font_import()` 명령어를 사용하여 글꼴을 등록하고,
+`path=`로 글꼴 파일의 경로를 직접 지정할 수 있으며, `pattern=`을 사용해서 특정 패턴에 맞는 글꼴을 일괄적으로 등록할 수도 있다.
+최근에 많이 사용되고 있는 `sysfonts` 패키지를 사용한다면 `font_add()` 명령어를 사용하여 글꼴을 등록한다.
 선택한 방식에 따라 글꼴을 설치하면 이후 R 프로젝트에서 네이버 나눔스퀘어 글꼴을 자유롭게 사용할 수 있다.
 
 ![윈도우 나눔스퀘어 글꼴 설치](images/fonts_nanumsquare.jpg){#fig-nanumsquare}
 
 ```{r}
 #| eval: false
-library(extrafont)
+# library(extrafont)
+library(sysfonts)
 
 fs::file_exists("C:/Windows/Fonts/NanumSquare.ttf")
 
-# font_import(paths = "C:/Windows/Fonts/NanumSquare.ttf")
-font_import(pattern = "NanumSquare.ttf", prompt = FALSE)
+# font_import(pattern = "NanumSquare.ttf", prompt = FALSE)
+font_add("NanumSquare", "C:/Windows/Fonts/NanumSquare.ttf")
 ```
 
-동일한 방식으로 [마루부리 글꼴](https://hangeul.naver.com/maruproject_11)도 설치한다.
+네이버에서 최근에 공개한 [마루부리 글꼴](https://hangeul.naver.com/maruproject_11)도 동일한 방식으로 설치한다.
 
 ```{r}
 #| eval: false
 
-font_import(pattern = "MaruBuri-ExtraLight.ttf", prompt = FALSE)
-font_import(pattern = "MaruBuri-Regular.ttf", prompt = FALSE)
-font_import(pattern = "MaruBuri-Bold.ttf", prompt = FALSE)
-font_import(pattern = "MaruBuri-Light.ttf", prompt = FALSE)
+# MaruBuri 글꼴 설치
+font_add("MaruBuri-ExtraLight", "C:/Windows/Fonts/MaruBuri-ExtraLight.ttf")
+font_add("MaruBuri-Regular", "C:/Windows/Fonts/MaruBuri-Regular.ttf")
+font_add("MaruBuri-Bold", "C:/Windows/Fonts/MaruBuri-Bold.ttf")
+font_add("MaruBuri-Light", "C:/Windows/Fonts/MaruBuri-Light.ttf")
 ```
 
+코딩전용 글꼴은 앞서 소개한 글꼴과 차이가 있지만 설치방식은 동일하다.
 동일한 방식으로 [D2 Coding 글꼴](https://github.com/naver/d2codingfont)도 설치하고 RStudio IDE에서 "Tools" → "Global Options..."를 클릭하면 "Options"창이 열리고, `Appearance`에서 **Editor font:**에서 설치한 코딩전용 글꼴을 선택하고 **Editor theme:**도 지정한다.
 
 ![D2 코딩폰트 설치](images/font_d2coding.png){fig-align="center"}
 
 글꼴 선택은 문서나 프로젝트의 특성과 목적에 따라 크게 영향을 미친다.
 제목에는 삐침이 없어 깔끔한 느낌을 주기 위해 나눔스퀘어 글꼴을 설치했고, 본문에는 삐침이 있는 마루부리 글꼴을 설치하여 가독성을 높였고, 코딩 작업에 특별히 설계된 D2코딩 글꼴을 선택하여 전체적인 글쓰기 환경을 효율적이고 편안하게 준비했다.
+
+## 글꼴 적용 사례
+
+예제로 `ggplot2`와 `sysfonts` 패키지를 사용해 다른 글꼴을 그래프 주요 요소에 반영한 데이터 시각화 R 코드를 살펴보자.
+먼저 `ggplot2` 데이터 시각화를 위한 패키지와 `sysfonts` 글꼴 관리를 위한 라이브러리를 가져온다. `font_add` 함수를 사용해 NanumSquare, MaruBuri-Regular, MaruBuri-Bold 글꼴을 시스템에 등록한다. 이후 `data.frame`을 사용해 x값이 1부터 10까지, y값이 정규 분포를 따르는 데이터를 생성한다. 
+`ggplot` 함수로 기본 그래프를 설정하고 `geom_point`를 사용해 산점도를 그린다.
+`labs` 함수로 그래프 제목과 x, y축 레이블을 설정하고, 
+`theme` 함수로 큰 제목에는 NanumSquare, x축과 y축 레이블에는 MaruBuri-Regular 글꼴을 적용한다. `annotate` 함수로 "다른 글꼴"이라는 텍스트를 MaruBuri-Bold 글꼴로 그래프에 추가하여 다른 글꼴을 적용한 그래프를 생성한다.
+
+
+```{r}
+#| eval: false
+library(ggplot2)
+library(sysfonts)
+
+# 글꼴 시스템 등록
+font_add("NanumSquare", "C:/Windows/Fonts/NanumSquare.ttf")
+font_add("MaruBuri-Regular", "C:/Windows/Fonts/MaruBuri-Regular.ttf")
+font_add("MaruBuri-Bold", "C:/Windows/Fonts/MaruBuri-Bold.ttf")
+
+# 글꼴 캐시를 새로고침
+font_families()
+
+# 데이터 생성
+data <- data.frame(
+  x = 1:10,
+  y = rnorm(10)
+)
+
+# ggplot 그래프 생성
+fonts_gg <- ggplot(data, aes(x, y)) +
+  geom_point() +
+  labs(title = "큰 제목",
+       x = "x 축",
+       y = "y 축") +
+  theme(
+    plot.title = element_text(family = "NanumSquare", size = 37),
+    axis.title.x = element_text(family = "MaruBuri-Regular", size = 30),
+    axis.title.y = element_text(family = "MaruBuri-Regular", size = 30)
+  ) +
+  annotate("text", x = 5, y = max(data$y)-0.1, label = "다른 글꼴", 
+           size = 10, family = "MaruBuri-Bold")
+
+ragg::agg_jpeg("images/fonts_example.jpeg", width = 3, height = 2, units = "in", res = 600)
+fonts_gg
+dev.off()
+```
+
+
+![다양한 글꼴을 적용한 `ggplot` 사례](images/fonts_example.jpeg){#fig-fonts-ggplot}

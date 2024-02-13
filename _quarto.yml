@@ -42,28 +42,28 @@ book:
     # - acknowledgments.qmd
     - index.qmd
 
-    - part: "시작을 위한 준비"
-      chapters:
-        # - setup_whole_game.qmd                 # OK
-        - setup_quarto.qmd                 # OK
-        - setup.qmd                    # OK
-
-    # - part: "글쓰기"
+    # - part: "시작을 위한 준비"
     #   chapters:
-    #     - markdown_mess.qmd          # OK
-    #     - writing.qmd                # OK
-
-    - part: "기본요소"
-      chapters:
-        - part_components.qmd          # OK
-        - part_markdown.qmd            # OK -- 방법론 , # 수정
-    #     - part_document_class.qmd      # OK
-    #     - part_about_book.qmd          # OK
+    #     # - setup_whole_game.qmd                 # 
+    #     - setup_quarto.qmd                 # OK
+    #     - setup.qmd                    # OK
     # 
-    # - part: "템플릿과 테마"
+    # # - part: "글쓰기"
+    # #   chapters:
+    # #     - markdown_mess.qmd          # 
+    # #     - writing.qmd                # 
+    # 
+    # - part: "기본요소"
     #   chapters:
-    #     - theme_fonts.qmd                # OK
-    #     - theme_colors.qmd               # OK
+    #     - part_components.qmd          # OK
+    #     - part_markdown.qmd            # OK
+    #     - part_document_class.qmd      # 
+    #     - part_about_book.qmd          # 
+    # 
+    - part: "템플릿과 테마"
+      chapters:
+        - theme_fonts.qmd                # OK
+        - theme_colors.qmd               # OK
     #     - theme_ggplot.qmd        # OK
     #     - theme_gt.qmd            # OK
     #     - theme_template.qmd            # OK
