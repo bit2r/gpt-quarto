@@ -44,27 +44,19 @@ book:
 
     - part: "시작을 위한 준비"
       chapters:
-        # - setup_whole_game.qmd                 # OK      
+        # - setup_whole_game.qmd                 # OK
         - setup_quarto.qmd                 # OK
         - setup.qmd                    # OK
-
-    # - part: "글쓰기 환경"
-    #   chapters:
-    #     - history.qmd                # OK
-    #     - editor.qmd                 # OK
-    #     - unicode.qmd                # OK
-    #     - latex_pdf.qmd              # OK
-    #     - quarto.qmd                 # OK
 
     # - part: "글쓰기"
     #   chapters:
     #     - markdown_mess.qmd          # OK
     #     - writing.qmd                # OK
 
-    # - part: "기본요소"
-    #   chapters:
-    #     - part_components.qmd          # OK
-    #     - part_markdown.qmd            # OK -- 방법론 , # 수정
+    - part: "기본요소"
+      chapters:
+        - part_components.qmd          # OK
+        - part_markdown.qmd            # OK -- 방법론 , # 수정
     #     - part_document_class.qmd      # OK
     #     - part_about_book.qmd          # OK
     # 
@@ -116,6 +108,7 @@ engine: knitr
 
 filters:
    - lightbox
+   - parse-latex   
 lightbox: auto
 
 knitr:

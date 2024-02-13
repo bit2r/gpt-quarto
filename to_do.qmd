@@ -2,28 +2,61 @@
 title: "Untitled"
 ---
 
-## 워드 프로세서 [^editor-3] {#main-features}
+## 워드 프로세서 [^to_do-1] {#main-features}
 
-[^editor-3]: [Jesal Shethna, "Microsoft Word Features", EDUCBA](https://www.educba.com/microsoft-word-features/)
+[^to_do-1]: [Jesal Shethna, "Microsoft Word Features",
+    EDUCBA](https://www.educba.com/microsoft-word-features/)
 
-**워드 프로세서(Word Processor)**는 문서 제작을 위한 소프트웨어로, 시각적으로 잘 구성된 인터페이스와 다양한 편집 기능을 제공한다. 사용자는 이러한 기능을 통해 원하는 형태와 구조를 갖는 문서를 쉽게 저작할 수 있다. 워드 프로세서는 글자 스타일, 문단 구성, 이미지 삽입, 표 만들기 등 다양한 기능이 포괄적으로 제공되며, 윈도우에 기본 제공되는 메모장(Notepad) 텍스트 편집기보다 훨씬 더 풍부한 문서 작성이 가능하다. 2023년 9월 1일부로 윈도우에서 무료로 제공되던 워드패드(WordPad)에 대한 지원도 없어지고 윈도우에서도 제거될 것이라는 발표가 있었다. 따라서, 서식이 필요한 문서를 저작할 경우 MS 워드(Word)나 아래한글과 같은 워드 프로세서를 사용해야 된다.
+**워드 프로세서(Word Processor)**는 문서 제작을 위한 소프트웨어로,
+시각적으로 잘 구성된 인터페이스와 다양한 편집 기능을 제공한다. 사용자는
+이러한 기능을 통해 원하는 형태와 구조를 갖는 문서를 쉽게 저작할 수 있다.
+워드 프로세서는 글자 스타일, 문단 구성, 이미지 삽입, 표 만들기 등 다양한
+기능이 포괄적으로 제공되며, 윈도우에 기본 제공되는 메모장(Notepad)
+텍스트 편집기보다 훨씬 더 풍부한 문서 작성이 가능하다. 2023년 9월
+1일부로 윈도우에서 무료로 제공되던 워드패드(WordPad)에 대한 지원도
+없어지고 윈도우에서도 제거될 것이라는 발표가 있었다. 따라서, 서식이
+필요한 문서를 저작할 경우 MS 워드(Word)나 아래한글과 같은 워드
+프로세서를 사용해야 된다.
 
-아래한글은 국내에서 널리 사용되는 워드 프로세서 중 하나로, 한국 문화와 업무 환경에 맞춰 특화된 기능을 제공한다. 정부나 공공기관에서 사용하는 특별한 문서 양식을 미리 저장해 두어, 사용자가 양식을 찾는 데 시간을 쓰지 않고 글쓰기에 바로 집중할 수 있도록 큰 도움을 주었다.
+아래한글은 국내에서 널리 사용되는 워드 프로세서 중 하나로, 한국 문화와
+업무 환경에 맞춰 특화된 기능을 제공한다. 정부나 공공기관에서 사용하는
+특별한 문서 양식을 미리 저장해 두어, 사용자가 양식을 찾는 데 시간을 쓰지
+않고 글쓰기에 바로 집중할 수 있도록 큰 도움을 주었다.
 
-|                        국산 워드 프로세서                        |                      해외 워드 프로세서                       |
-|:------------------------------------:|:--------------------------------:|
+|                       국산 워드 프로세서                        |                      해외 워드 프로세서                       |
+|:---------------------------------------------------------------:|:-------------------------------------------------------------:|
 | ![아래 한글 워드 프로세서](images/hangul_word.jpg){width="500"} | ![마이크로소프트 워드(Word)](images/word_ms.jpg){width="500"} |
 
 ## [\LaTeX](http://example.org) 편집기 {#latex-editor}
 
-[\LaTeX](http://example.org) 편집기는 운영체제나 사용자의 필요에 따라 다양한 선택옵션이 존재한다. 특히, 클라우드 기반 [Overleaf](https://www.overleaf.com/), 설치형 [TeXstudio](https://www.texstudio.org/), 데이터 과학에 특화된 RStudio IDE가 대표적이다. 편집기들은 [\LaTeX](http://example.org)에 특화되었거나, 일부 [\LaTeX](http://example.org) 기능을 분리하여 사용자 요구에 맞춰 활용할 수 있다.
+[\LaTeX](http://example.org) 편집기는 운영체제나 사용자의 필요에 따라
+다양한 선택옵션이 존재한다. 특히, 클라우드 기반
+[Overleaf](https://www.overleaf.com/), 설치형
+[TeXstudio](https://www.texstudio.org/), 데이터 과학에 특화된 RStudio
+IDE가 대표적이다. 편집기들은 [\LaTeX](http://example.org)에
+특화되었거나, 일부 [\LaTeX](http://example.org) 기능을 분리하여 사용자
+요구에 맞춰 활용할 수 있다.
 
-![[\LaTeX](http://example.org) 편집기 다양성](images/latex-editor.png){fig-align="center" width="1151"}
+![[\LaTeX](http://example.org) 편집기
+다양성](images/latex-editor.png){fig-align="center" width="1151"}
 
-[Overleaf](https://www.overleaf.com/)는 초기에 `ShareLaTeX` 서비스로 시작해 현재는 클라우드 기반의 [\LaTeX](http://example.org) 편집 기능을 제공한다. 클라우드 특성을 살려 문서의 공유와 협업이 용이하다는 점이 큰 장점이다.
+[Overleaf](https://www.overleaf.com/)는 초기에 `ShareLaTeX` 서비스로
+시작해 현재는 클라우드 기반의 [\LaTeX](http://example.org) 편집 기능을
+제공한다. 클라우드 특성을 살려 문서의 공유와 협업이 용이하다는 점이 큰
+장점이다.
 
-`TeXstudio`는 `Texmaker` 후속으로 오픈 소스 [\LaTeX](http://example.org) 편집기로 제공된다. 사용자는 [TeXstudio](https://www.texstudio.org/) 웹사이트에서 다운로드 받아 설치할 수 있으며, GitHub [`texstudio`](https://github.com/texstudio-org/texstudio) 저장소를 통해 한국어 현지화 작업에도 참여할 수 있다.
+`TeXstudio`는 `Texmaker` 후속으로 오픈 소스 [\LaTeX](http://example.org)
+편집기로 제공된다. 사용자는 [TeXstudio](https://www.texstudio.org/)
+웹사이트에서 다운로드 받아 설치할 수 있으며, GitHub
+[`texstudio`](https://github.com/texstudio-org/texstudio) 저장소를 통해
+한국어 현지화 작업에도 참여할 수 있다.
 
 |                                   클라우드 편집기                                    |                                     설치형 편집기                                      |
-|:------------------------------------:|:--------------------------------:|
+|:------------------------------------------------------------------------------------:|:--------------------------------------------------------------------------------------:|
 | ![Overleaf 스크린샷](images/overleaf-screenshot.png){fig-align="center" width="500"} | ![TeXstudio 스크린샷](images/texstudio-screenshot.png){fig-align="center" width="500"} |
+
+# 들어가며
+
+# 방법론
+
+## 동적 인구 모형

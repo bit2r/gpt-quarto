@@ -220,6 +220,29 @@ ga('send', {
 </li>
       </ul>
   </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+ <span class="menu-text">기본요소</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="토글 섹션">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./part_components.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">문서 구성요소</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./part_markdown.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">마크다운</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./references.html" class="sidebar-item-text sidebar-link">
@@ -299,7 +322,7 @@ ga('send', {
 <tbody>
 <tr class="odd">
 <td style="text-align: center;">Python, R, Julia, Observable JS</td>
-<td style="text-align: center;">Pandoc, 마크다운, <a href="http://example.org"></a></td>
+<td style="text-align: center;">Pandoc, 마크다운, <a href="http://example.org">LaTeX</a></td>
 <td style="text-align: center;">문서, 웹사이트, PPT, (전자)책, 블로그 등</td>
 </tr>
 </tbody>
@@ -614,7 +637,7 @@ ga('send', {
 <p>그러나 위지위그 방식에도 단점은 있다. 마크다운, TeX 같은 텍스트 기반 편집 방식은 문서 호환성과 범용성을 위해 쓰이는 반면, 위지위그 저작방식은 호환성과 범용성을 다소 희생할 수 밖에 없다. 특히 복잡한 문서나 웹 페이지를 작성하는 경우, 코딩방식으로 전환하여 수작업으로 최적화를 시도하더라도 완벽한 해결이 어렵다. 예를 들어, 위지위그 편집기에서 문서를 작성하면 뒷단에 불필요한 코드나 태그가 자동으로 생성되어 문서 최적화를 방해하며, 시간이 지남에 따라 누적되어 호환성과 재현성에 심각한 문제를 야기한다. <a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> <a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
 <p><strong>위지윔(WYSIWYM: What You See Is What You Mean)</strong>은 “당신이 보는 것은 당신이 뜻하는 것이다”라는 의미로, 위지위그(WYSIWYG) 방식의 한계를 극복하기 위해 나온 대안 편집 방식이다. 위지윔 방식에서는 사용자가 무엇을 의미하는지를 중점으로 두어, 본래의 코드 구조를 더 명확하게 알 수 있다. 코드 의미를 직접적으로 반영하여, 불필요한 요소 없이 효율적으로 문서를 작성할 수 있는 장점이 있다.</p>
 <p>RStudio의 Visual 편집 기능은 위지윔 지향점을 잘 반영하고 있다. 사용자는 복잡한 코드나 태그 없이도 의미 있는 문서 구조를 쉽게 생성하고 관리할 수 있어 문서 최적화와 호환성을 높일 수 있으며, 더욱 높은 문서 저작 생산성을 달성할 수 있다.</p>
-<p>오픈 소스 LaTeX 편집기인 <a href="https://www.lyx.org/">LyX</a>는 위지윔 방식을 초기부터 채택하여 사용자에게 코드 본래 구조와 의미를 명확하게 파악할 수 있는 인터페이스를 제공했다. 이러한 접근법은 복잡한 수식이나 과학적인 문서를 작성할 때 특히 유용하며, <a href="http://example.org"></a> 복잡성을 낮추면서도 강력한 기능을 최대한 활용할 수 함으로써 위지위그 한계를 극복했다는 평가를 받고 있다.</p>
+<p>오픈 소스 LaTeX 편집기인 <a href="https://www.lyx.org/">LyX</a>는 위지윔 방식을 초기부터 채택하여 사용자에게 코드 본래 구조와 의미를 명확하게 파악할 수 있는 인터페이스를 제공했다. 이러한 접근법은 복잡한 수식이나 과학적인 문서를 작성할 때 특히 유용하며, <a href="http://example.org">LaTeX</a> 복잡성을 낮추면서도 강력한 기능을 최대한 활용할 수 함으로써 위지위그 한계를 극복했다는 평가를 받고 있다.</p>
 <table class="table">
 <colgroup>
 <col style="width: 52%">
@@ -1066,7 +1089,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","openEffect":"zoom","descPosition":"bottom","loop":false,"selector":".lightbox"});
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","openEffect":"zoom","loop":false,"descPosition":"bottom","selector":".lightbox"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;

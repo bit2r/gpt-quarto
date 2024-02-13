@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://r2bit.com/gpt-sql/setup.html</loc>
-    <lastmod>2024-02-12T11:16:28.599Z</lastmod>
+    <loc>https://r2bit.com/gpt-sql/part_components.html</loc>
+    <lastmod>2024-02-13T01:58:41.755Z</lastmod>
   </url>
   <url>
     <loc>https://r2bit.com/gpt-sql/references.html</loc>
@@ -11,5 +11,13 @@
   <url>
     <loc>https://r2bit.com/gpt-sql/setup_quarto.html</loc>
     <lastmod>2024-02-12T13:26:09.943Z</lastmod>
+  </url>
+  <url>
+    <loc>https://r2bit.com/gpt-sql/setup.html</loc>
+    <lastmod>2024-02-12T11:16:28.599Z</lastmod>
+  </url>
+  <url>
+    <loc>https://r2bit.com/gpt-sql/part_markdown.html</loc>
+    <lastmod>2024-02-12T13:52:00.136Z</lastmod>
   </url>
 </urlset>
