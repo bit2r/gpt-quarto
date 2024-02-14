@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://r2bit.com/gpt-sql/theme_fonts.html</loc>
-    <lastmod>2024-02-13T04:17:06.089Z</lastmod>
+    <lastmod>2024-02-13T04:18:55.285Z</lastmod>
   </url>
   <url>
     <loc>https://r2bit.com/gpt-sql/references.html</loc>
@@ -11,5 +11,13 @@
   <url>
     <loc>https://r2bit.com/gpt-sql/theme_colors.html</loc>
     <lastmod>2024-02-13T05:35:52.919Z</lastmod>
+  </url>
+  <url>
+    <loc>https://r2bit.com/gpt-sql/theme_ggplot.html</loc>
+    <lastmod>2024-02-14T00:30:18.494Z</lastmod>
+  </url>
+  <url>
+    <loc>https://r2bit.com/gpt-sql/theme_gt.html</loc>
+    <lastmod>2024-02-14T00:30:22.975Z</lastmod>
   </url>
 </urlset>

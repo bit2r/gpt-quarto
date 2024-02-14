@@ -57,24 +57,25 @@ book:
     #   chapters:
     #     - part_components.qmd          # OK
     #     - part_markdown.qmd            # OK
-    #     - part_document_class.qmd      # 
-    #     - part_about_book.qmd          # 
+    #     - part_computation.qmd         # New
+    #     - part_document_class.qmd      # X
+    #     - part_about_book.qmd          # X
     # 
-    - part: "템플릿과 테마"
-      chapters:
-        - theme_fonts.qmd                # OK
-        - theme_colors.qmd               # OK
+    # - part: "템플릿과 테마"
+    #   chapters:
+    #     - theme_fonts.qmd                # OK
+    #     - theme_colors.qmd               # OK
     #     - theme_ggplot.qmd        # OK
     #     - theme_gt.qmd            # OK
-    #     - theme_template.qmd            # OK
+    #     - theme_template.qmd            # X
     # 
-    # - part: "저작물"
-    #   chapters:
-    #   - dw_publishing.qmd          # OK
-    #   - dw_book.qmd             # OK
-    #   - dw_website.qmd          # OK
-    #   - dw_slideshow.qmd        # OK
-    #   - dw_dashboard.qmd        # OK
+    - part: "저작물"
+      chapters:
+    #   - dw_publishing.qmd       # X
+      - dw_book.qmd             # OK
+    #   - dw_website.qmd          # 
+    #   - dw_slideshow.qmd        # 
+    #   - dw_dashboard.qmd        # 
 
     # - part: "챗GPT"
     #   chapters:

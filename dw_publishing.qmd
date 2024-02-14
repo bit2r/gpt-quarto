@@ -4,6 +4,12 @@ editor:
     wrap: 72
 ---
 
+```{r}
+#| include: false
+
+source("_common.R")
+```
+
 # 인쇄출판
 
 저작, 인쇄출판, 유통은 책을 비롯한 각종 출판물이 독자에게 도달하기까지

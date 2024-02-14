@@ -4,7 +4,27 @@ editor_options:
   chunk_output_type: console
 ---
 
+
+```{r}
+#| include: false
+
+source("_common.R")
+```
+
 # 그래프 테마
+
+문서 구성요소 중 하나인 그래프는 데이터를 시각화하여 복잡한 정보를 간결하고 
+이해하기 쉽게 전달하는데 중요한 역할을 한다. 
+초기 데이터를 시각화하여 전달할 수 있는 다양한 그래프가 제시되었지만, 
+너무나 많고 다양한 그래프가 제시되면서 이를 학술적으로 정리한
+그래프 문법(grammar of graphics)이 제시되면서 큰 전환점을 맞게 되었다.
+
+SPSS 그래픽이 그 효시로 알려졌고 대략 10년 후 해들리 위컴이 
+`ggplot2` 패키지를 개발하여 그래픽 문법을 R에 적용하였다.
+이후 `ggplot2`는 R에서 가장 많이 사용되는 그래픽 패키지로 자리매김하였을 
+다. 그래프 문법을 따르는 ggplot2 패키지가 데이터 시각화의 표준으로 자리매김하면서 
+파이썬에서도 그래프 문법을 따르는 `plotnine`가 개발되어 그래프 문법을 익히게 되면
+R과 파이썬에서 동일한 그래프 문법을 사용하여 데이터 시각화를 할 수 있게 되었다.
 
 `ggplot2`는 그래프 문법에 맞춰 데이터프레임을 입력으로 받아 그래프를 생성하는 
 대표적인 시각화 패키지다. `ggplot2`에서 기본으로 제공되는 테마(`theme`)는 9개가 있어, 
@@ -12,13 +32,15 @@ editor_options:
 먼저, 각 테마를 달리 적용하여 비교할 수 있는 기본 `ggplot` 그래프를 준비한다.
 
 ```{r}
-#| label: ggplot_base
+#| label: fig-ggplot-base
 #| eval: false
+#| fig-cap: 기본 테마를 적용한 펭귄 데이터셋 그래프
 
 library(tidyverse)
 library(palmerpenguins)
+library(sysfonts)
 
-extrafont::loadfonts(quiet = TRUE)
+font_families()
 
 base_penguins_gg <- penguins |> 
   drop_na() |> 
@@ -33,13 +55,13 @@ base_penguins_gg <- penguins |>
       color = "펭귄종",
     ) +
     guides(shape = "none") +
-    theme_classic(base_family = "MaruBuri Bold") +
+    theme_classic(base_family = "MaruBuri-Bold") +
     theme(legend.position = c(0.90, 0.25))
 
 base_penguins_gg
 ```
 
-![](images/penguin_ggplot_base.png)
+![ggplot 기본 테마를 적용한 그래프](images/penguin_ggplot_base.png){#fig-ggplot-default}
 
 펭귄 데이터셋을 사용하여 물갈퀴 길이와 체중 사이의 관계를 시각화하는 그래프를 
 `draw_themes()` 함수로 테마를 달리 적용하여 `ggplot` 그래프를 생성한 후에
