@@ -9,7 +9,22 @@ editor:
 
 # 쿼토 책
 
-## 작업흐름
+쿼토로 블로그 토막글, 보고서, 논문 등 다양한 형식 문서를 작성했다면 좀더 구조화되고 통합된 형태의 책 집필 및 도서출판에 대한 관심이 생길 수 있다. 
+R마크다운 `bookdown`은 특히 복잡한 구조를 갖는 책이나 긴 문서를 효과적으로 작성하고 관리하기 위한 도구로 개발된 패키지다.
+R마크다운 `bookdown`을 활용하여 작성된 개별 문서들을 하나의 큰 프로젝트나 책으로 연결할 수 있으며, 교차 참조, 자동 번호 매기기, 목차 생성 등의 기능이 제공된다.
+쿼토는 R마크다운 `bookdown` 기능을 별도 패키지 설치없이 내장하고 있으며 
+R 뿐만 아니라 파이썬, 줄리아 등 언어를 지원하며, HTML, PDF, ePub 등 다양한  출력 형식으로 책을 생성할 수 있다.
+
+## 전자책 헬로 월드
+
+쿼토에서 책을 저작하는 가장 간단한 방법은 RStudio 에서 우측 상단 'New Project' 메뉴를 통해 'New Directory' -> 'Quarto Book'을 선택하고 책을 집필할 디렉토리를 지정한다. 버전제어를 위해 `Create a git repository`를 선택할 것을 추천한다. 책 저작환경도 버전제어로 관리하고자 할 경우 `Use renv with this project`를 선택하고 소스 코드 방식으로 저작하고자 하면 `Use visual markdown editor`를 선택하지 않고 워드나 아래한글처럼 위지윅 방식 편집기를 사용하고자 하면 `Use visual markdown editor`를 선택한다. 그리고 나서 `Create Project`를 클릭하면 쿼토 책 저작환경이 구축된다.
+
+책 저작을 위한 기본환경이 구축되어 있기 때문에 `_quarto.yml` 파일에 책 저작에 대한 모든 내용이 담겨져 있기 때문에 이를 유심히 살펴보면 대략 문서 구조를 이해할 수 있다. 그리고 나서 상단 `Render` 버튼을 클릭하면 웹사이트에 책이 생성된다.
+
+![쿼토 책(Book) 저작과정](images/quarto_book_project.jpg){#fig-quarto-project-start}
+
+
+## 한국 도서 출판
 
 디지털 저작 언어 마크다운(markdown)를 기반으로 하면 증거기반 데이터 과학
 글쓰기를 R과 파이썬으로 표, 그래프 등 다양한 문서 요소 통합이 수월하다.
@@ -17,8 +32,9 @@ editor:
 무리없이 통합적인 글쓰기가 가능해져 저작 속도도 빨라지고, 품질은
 높아지며, 대폭 비용은 절감된다.
 
-챗GPT 디지털 글쓰기 작업이 마무리된 후 디지털 출판 과정이 이어진다. 한국
-R 사용자회가 개발한 [bitPublish](https://github.com/bit2r/bitPublish)
+도서 집필이 마무리된 후 디지털 출판 과정이 이어진다. 
+쿼토 책(book)이 영문 도서출판에 초점이 맞춰져 있어 
+한국 R 사용자회가 개발한 [bitPublish](https://github.com/bit2r/bitPublish)
 도구를 활용하면 한글 출판에 필요한 모든 요소를 대부분 담고 있어 출판
 시간을 크게 단축시킬 수 있다.
 
@@ -26,9 +42,11 @@ R 사용자회가 개발한 [bitPublish](https://github.com/bit2r/bitPublish)
 작품을 컴파일시키면 출판 준비가 완료된 `.pdf` 파일을 즉시 얻을 수 있어,
 전자책 형태로, 또는 인쇄를 통한 대량 출판으로도 즉시 활용이 가능하다.
 
-![쿼토 도서 출판 작업흐름](images/bitPublish_workflow.jpg)
+한국 R 사용자회는 쿼토로 "챗GPT 유닉스 쉘"을 2023년 7월 출판함으로써 가능성을 확인했고 이어서 축적된 경험을 바탕으로 두번째 "챗GPT SQL" 책을 2024년 2월 출판했다. 
 
-## 환경설정
+![쿼토 도서 출판 작업흐름](images/bitPublish_workflow.jpg){#fig-quarto-book}
+
+### 환경설정
 
 최신 [Download Quarto CLI](https://quarto.org/docs/get-started/)를
 운영체제에 맞춰 설치하고, 도서출판을 위해서 `PDF` 엔진이 필요하기
@@ -78,7 +96,7 @@ Files created:
 
 ![`bitPublish` 구성요소와 출판 생태계](images/publishing_toolchain.jpg)
 
-### 살펴보기
+#### 살펴보기
 
 `_extensions/` 디렉토리 아래 한국 R 사용자회 (`bit2r`)에서 개발한
 [bitPublish](https://github.com/bit2r/bitPublish) 템플릿이 포함되어 있어
@@ -147,7 +165,7 @@ Files created:
 ## └── _quarto.yml
 ```
 
-### 헬로월드
+#### 헬로월드
 
 `quarto preview` 명령어로 미리보기, `quarto render` 명령어로 `.pdf`
 파일을 생성하게 된다.
@@ -324,7 +342,7 @@ image_append(c(bp_front_stack, bp_back_stack), stack=TRUE)
 
 
 
-## [bitPublish](https://github.com/bit2r/bitPublish) 소개
+### [bitPublish](https://github.com/bit2r/bitPublish) 소개
 
 `Quarto`를 이용해서 책으로 만들 수 있는 포맷에는 `HTML`, `PDF`,
 `MS Word`, `EPUB`, `AsciiDoc`이 있습니다. `bitPublish`는 이중에서 `PDF`
@@ -333,7 +351,7 @@ image_append(c(bp_front_stack, bp_back_stack), stack=TRUE)
 현재 bitPublish의 기본 설정에서는 $4\times6$ 배판 판형을, 갖는 영어를
 포함한 라틴계열 언어와 한국어, 중국어를 혼용한 책을 저작할 수 있습니다.
 
-### 용지규격
+#### 용지규격
 
 현재 bitPublish의 기본 페이지 레이아웃\index{페이지 레이아웃} 설정은
 $4\times6$ 배판으로 설계되었습니다. $4\times6$ 배판 `판형`\index{판형}의
@@ -342,7 +360,7 @@ $4\times6$ 배판으로 설계되었습니다. $4\times6$ 배판 `판형`\index{
 수정합니다. `LaTeX`의 `geometry`\index{geometry} 패키지를 사용합니다.
 
 ::: callout-note
-### $4\times6$ 배판
+#### $4\times6$ 배판
 
 `bitPublish` 패키지에서 학습 및 참고서를 상정하고 기본 채택한 용지크기는
 4x6 배판이다.
@@ -371,7 +389,7 @@ $4\times6$ 배판으로 설계되었습니다. $4\times6$ 배판 `판형`\index{
 -   레터(Letter): 해외대학 학위논문, 해외서적 등
 :::
 
-### 글꼴
+#### 글꼴
 
 bitPublish는 전자책이 아닌 종이에 출력되는 책의 저작을 목적으로
 만들어졌기 때문에, 폰트의 선택에서
@@ -379,7 +397,7 @@ bitPublish는 전자책이 아닌 종이에 출력되는 책의 저작을 목적
 `OTF`(`Open Type Font`)\index{OTF}\index{Open Type Font}를 선택했다.
 
 ::: callout-warning
-#### 글꼴(폰트) 선정 기준
+##### 글꼴(폰트) 선정 기준 {.unnumbered}
 
 -   출판 시 발생할 라이센스 이슈
     -   **모든 글꼴을 상업적으로 이용이 가능한 글꼴로 선정**
@@ -405,7 +423,7 @@ bitPublish는 전자책이 아닌 종이에 출력되는 책의 저작을 목적
     `로만체`, 한국어의 경우에는 과거에 `명조체`라는 이름으로 통용되던
     `바탕체`\index{바탕체} 서체를 의미합니다.
 
-[^dw_book-2]: serif 폰트는 `돋움체`\index{돋움체} 폰트를 의미합니다.
+[^dw_book-2]: sans-serif 폰트는 `돋움체`\index{돋움체} 폰트를 의미합니다.
     프랑스어로 sans는 "\~가 없이"라는 뜻으로,
     `sans-serif`\index{sans-serif}는 세리프가 없는 서체입니다. 한국어의
     경우에는 과거에 `고딕체`라는 이름으로 통용되던
@@ -437,7 +455,7 @@ bitPublish는 전자책이 아닌 종이에 출력되는 책의 저작을 목적
 문서](https://www.kopus.org/wp-content/uploads/2021/04/서체_라이센스.pdf)
 일독을 권장한다.
 
-### 머리글 바닥글
+#### 머리글 바닥글
 
 `머리글`(`header`)\index{머리글}\index{header}과
 `바닥글`(`footer`)\index{바닥글}\index{footer}는
@@ -466,7 +484,7 @@ bitPublish는 전자책이 아닌 종이에 출력되는 책의 저작을 목적
 한다. 책 제목을 바꾸기 위해서는 `fancyhead`\index{fancyhead}의
 `EL`\index{EL}과 `OR`\index{OR}을 변경한다.
 
-### 글줄 사이
+#### 글줄 사이
 
 줄간격, 행간 등으로 부르는 글줄 사이\index{글줄 사이}(line
 spacing\index{line spacing})는 1.5로 설정되어있다. 수정이 필요하다면,
@@ -477,7 +495,7 @@ spacing\index{line spacing})는 1.5로 설정되어있다. 수정이 필요하�
 \linespread{1.5}
 ```
 
-### `bitPublish` 서식
+#### `bitPublish` 서식
 
 `bitPublish`는 본문에서 예제, 연습문제, 주의, 정보, 인용 등을 표현할 수
 있는 여러 LaTeX 서식을 지원한다. 서식은 다음과 같은 구조의 라텍
@@ -495,7 +513,7 @@ spacing\index{line spacing})는 1.5로 설정되어있다. 수정이 필요하�
 \command name[optional argument]{main argument} 
 ```
 
-### 사용자 정의 블록
+#### 사용자 정의 블록
 
 bitPublish 서식의 대표적인 기능에
 `커스텀 블록`(`custom blocks`)\index{사용자 정의 블록}\index{custom blocks}[@rmcook]이
@@ -540,7 +558,7 @@ We show some <em>verbatim</em> text here.
 :::
 :::
 
-### 정보 블록
+#### 정보 블록
 
 정보 블록\index{정보 블록}은 멀티 아웃 포맷을 지원하는데, 다음과 같은 네
 개의 유형을 지원한다. 네 개의 유형은 HTML과 LaTeX에서 우주 똑같은 모양은
@@ -613,7 +631,7 @@ information은 독자에게 전하고 싶은 정보나 아이디어를 기술하
 :::
 
 
-### 이야기 박스
+#### 이야기 박스
 
 `shadequote` 환경을 이용하는데 이야기 박스 구문은 다음과 같다.
 
@@ -646,7 +664,7 @@ r로 표기합니다. 각각 왼쪽, 가운데, 오른쪽 정렬을 의미합니
 ![](images/quote_ahn.jpg)
 
 
-### 타이틀 박스
+#### 타이틀 박스
 
 앞의 예제에서 '학습목표'를 정의한 박스 서식을 타이틀 박스라
 부르기로 한다. 이유는 여러 용도로 사용될 수 있어 목적으로 이름을 특정할 수 없기
@@ -667,7 +685,7 @@ r로 표기합니다. 각각 왼쪽, 가운데, 오른쪽 정렬을 의미합니
 
 ![](images/titlebox.jpg)
 
-### 예제
+#### 예제
 
 `example` 환경을 이용하고 인용 구문은 다음과 같다.
 
@@ -717,7 +735,7 @@ bitPublish의 서식 중에서 예제, 연습문제, 주의, 정보, 인용을 �
 
 예제 `2.1`를 레퍼런스하기 위해서 레퍼런스 명령 `\ref{}`를 사용한다.
 
-### 연습문제
+#### 연습문제
 
 기술서나 학습서의 경우에는 연습문제를 제공하는 경우가 많다.
 bitPublish에서 연습문제 서식은 `Exercise` 환경을 이용한다.
@@ -762,7 +780,7 @@ bitPublish에서 연습문제 서식은 `Exercise` 환경을 이용한다.
 만약에 연습문제를 별도의 페이지에서 시각하고 싶다면 `\\clearpage`
 명령어를 사용하면 됩니다.
 
-## bitPublish 팁
+### bitPublish 팁
 
 `bitPublish`는 `LaTeX` 기반 솔루션이기 때문에, 좀더 유용하게 사용하기
 위해서 `LaTeX`에 대한 지식과 R 환경에서는 `knitr` 패키지를
@@ -773,7 +791,7 @@ bitPublish에서 연습문제 서식은 `Exercise` 환경을 이용한다.
 프롬프트로 전달하면 대부분의 문제는 도움을 받을 수 있다. 
 필자가 책을 저작할 때 자주 사용되는 `LaTeX` 팁을 공유한다. 
 
-### 이미지 삽입
+#### 이미지 삽입
 
 이미지 파일을 삽입하기 위해서는 다음처럼 `knitr`\index{knitr} 패키지의
 `include_graphics()`\index{include\_graphics()} 함수를 사용하는 것을
@@ -828,7 +846,7 @@ knitr::include_graphics("이미지 파일이름.png")
     설정을 전제로 한다.
 
 ::: {.callout-note}
-### fig-pos과 label
+#### fig-pos과 label
 
 웹 페이지로 배포하는 문서는 페이지로 구분되지 않기 때문에 이미지는 항상
 그(here) 자리에 출력되기 때문에
@@ -842,7 +860,7 @@ knitr::include_graphics("이미지 파일이름.png")
 권장된다.
 :::
 
-### R 그래픽스
+#### R 그래픽스
 
 R 스크립트로 그리는 R 그래픽스는 `knitr` `청크`(`chunk`)를 이용해서, R
 스크립트를 실행하여 삽입한다.
@@ -919,7 +937,7 @@ hist(rnorm(500), col = 'lightblue', main = '정규분포의 히스토그램')
 `Nimbus Sans L` 글꼴을 사용하려면, `nimbus` 옵션의 값을 true로 추가하면
 된다.
 
-### ggplot2 그래픽스
+#### ggplot2 그래픽스
 
 ggplot2 그래픽스도 별도의 설정없이 한글이 출력된다. 테마는
 `hrbrthemes`\index{hrbrthemes} 패키지의
@@ -964,7 +982,7 @@ ggplot(random_norm, aes(x = rnd)) +
        subtitle = "500개 정규분포 난수")
 ```
 
-### 표 삽입
+#### 표 삽입
 
 본문에 표를 삽입하는 방법에 다음처럼 3가지 방법을 사용할 수 있다.
 
@@ -976,7 +994,7 @@ ggplot(random_norm, aes(x = rnd)) +
 -   R을 이용한 표
     -   R에 익숙하면 쉽게 사용할 수 있음
 
-#### 마크다운을 이용한 표
+##### 마크다운을 이용한 표
 
 마크다운\index{마크다운}을 이용한 표 생성의 경우에는 캡션이 표 내부에
 위치하고, 라벨을 지정할 수 없어서 표를 삽입하는 방법으로 적절하지
@@ -1003,7 +1021,7 @@ Table: 마크다운 기반 표
 
 : 마크다운 기반 표
 
-#### LaTeX을 이용한 표
+##### LaTeX을 이용한 표
 
 LaTeX을 이용한 표를 삽입하는 방법은 LaTeX 스크립트를 기술하는 것이다.
 다음처럼 테이블을 생성하는 LaTeX 스크립트를 기술한다.
@@ -1026,7 +1044,7 @@ LaTeX을 이용한 표를 삽입하는 방법은 LaTeX 스크립트를 기술하
 \end{table}
 ```
 
-#### R을 이용한 표
+##### R을 이용한 표
 
 R을 이용해서 표를 만드는 방법에 대표적인 것이 `knitr`\index{knitr}
 패키지 `kable()`\index{kable()} 함수와 `kableExtra`\index{kableExtra}
@@ -1058,7 +1076,7 @@ tab |>
   as_latex_with_caption(label = "tab-r", caption = "R 기반 표")
 ```
 
-### 수식 입력
+#### 수식 입력
 
 수식 입력은 Latex의 수학 공식을 입력하는 TeX 문법을 따른다.
 
@@ -1082,7 +1100,9 @@ $$
 
 누적상대도수: $$
 C F_k=\sum_{i=1}^k f_i^R=\frac{F_k}{n}
-$$ \## 찾아보기 등록
+$$ 
+
+### 찾아보기 등록
 
 LaTeX의 찾아보기(인덱싱) 기능을 활성화하기 위해, 이미 bitPublish는
 프리엠블에 다음처럼 `makeidx`\index{makeidx} 패키지를 로드하고 있다.
@@ -1129,7 +1149,7 @@ include-after-body:
 ```
 
 ::: {.callout-note}
-### 찾아보기에서의 언더라인의 표현
+#### 찾아보기에서의 언더라인의 표현 R마크다운 `bookdown`
 
 LaTeX에서는 언더라인(\_)은 특수문자로 인식된다. 그래서 문자로서
 언더라인을 입력하려면 역슬래시(\\)를 붙여야 한다. 그러므로
@@ -1139,7 +1159,7 @@ LaTeX에서는 언더라인(\_)은 특수문자로 인식된다. 그래서 문�
 \\index{include\\\_graphics()}
 :::
 
-### 자동조사 처리
+#### 자동조사 처리
 
 예제, 그림, 표 등에 라벨을 지정해서 크로스-레퍼런스를 구현하면 저작자는
 번호의 증감에 신경쓸 필요가 없다. 그림과 그림 사이에 또 하나의
@@ -1187,7 +1207,7 @@ LaTeX이 크로스-레퍼런스에서 계산되는 아라비아 숫자의 한글
 
 그림 2.3\\과 그림 2.4\\는 같이 정규분포를 따르는 히스토그램을 그린다.
 
-### 참고문헌 등록
+#### 참고문헌 등록
 
 참고문헌\index{참고문헌}(`bibliography`\index{bibliography}) 등록은
 LaTeX의 `biblatex`\index{biblatex} 패키지를 이용한다. 이 패키지를
@@ -1212,7 +1232,7 @@ link-citations: false
 이 설정은 참고문헌을 나타내는 시작 페이지의 제목을
 "참고문헌"으로 표기한다.
 
-![](images/quarto_reference.png)
+![`bitPublish` 참고문헌](images/quarto_reference.png){#fig-bitPublish-reference}
 
 그리고 참고문헌에 등록하기 위해서는 `YAML` 헤더에 `bibliography` 옵션에
 기술된 'references.bib' 파일에 참고문헌을 정의한다.
@@ -1266,7 +1286,7 @@ Quarto 홈페이지의 Quarto에 대한 소개\cite{quarto}는 다음과 같다.
 Quarto 홈페이지의 Quarto에 대한 소개[@quarto]는 다음과 같다. 이러쿵 저러쿵...
 ```
 
-![](images/quarto_quote.jpg)
+![`bitPublish` 인용](images/quarto_quote.jpg){#fig-bitPublish-quote}
 
 ``` bash
 \begin{shadequote}{}

@@ -1,5 +1,4 @@
 ---
-output: html_document
 editor_options: 
   chunk_output_type: console
 editor: 
@@ -14,7 +13,7 @@ editor:
 현대를 사는 누구나 갖춰야 하는 보편적인 기술로 자리잡아 가고 있다. 통상
 <http://netlify.com/> 혹은 <https://github.com/> 웹사이트에서 제공하는
 정적 웹사이트(Static Website) 기능을 활용하여 제작된 블로그를 공유하는
-것이 과거 **데이터 과학자** 사이에 일반화되어 사용됐다.
+것이 **데이터 과학자** 사이에 어느새 일반화되었다.
 
 과학기술 저작물을 정적 웹사이트에 호스팅하여 공유한다는 것은
 지금까지와는 다른 기술적 배경을 가지기 때문에 이러한 문제를 해결하기
@@ -109,7 +108,7 @@ width="450"}
 
 ::: columns
 ::: {.column width="45%"}
-``` yaml
+``` {{yaml}}
 project:
   type: website
 ```
@@ -119,7 +118,7 @@ project:
 :::
 
 ::: column
-``` yaml
+``` {{yaml}}
 project:
   type: website
   output-dir: docs
@@ -141,7 +140,9 @@ project:
 제목과 텍스트에 글꼴을 저작자의 선택에 맞춰 반영한다. 수정한
 `tidyverse.css` 파일 일부는 다음과 같다.
 
-```{css}
+```{{css}}
+#| eval: false
+
 @import url('https://fonts.googleapis.com/css2?family=Sunflower');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR');
 @import url('https://fonts.googleapis.com/css2?family=Gaegu');
@@ -188,8 +189,7 @@ html {
 
 [^editor-4]: [Quarto Pub](https://quarto.org/docs/publishing/quarto-pub.html)
 
-```{bash}
-#| eval: false
+````sh
 $ quarto publish quarto-pub
 ? Authorize (Y/n) › 
 ❯ In order to publish to Quarto Pub you need to
@@ -197,12 +197,11 @@ $ quarto publish quarto-pub
   logged into the correct Quarto Pub account in 
   your default web browser, then press Enter or 
   'Y' to authorize.
-```
+````
 
 첫번째 출판하게 되면 인증작업을 수행하고 나면 `_publish.yml` 파일이 하나 생성된다.
 
-```{yaml}
-#| eval: false
+```sh
 - source: project
   quarto-pub:
     - id: 1fa3ab1f-c010-453a-aaf2-f462bd074a66
@@ -211,14 +210,9 @@ $ quarto publish quarto-pub
 
 이제 모든 준비가 되었기 때문에 다음 명령어로 작성한 출판 문서를 포함한 웹사이트를 로컬에서 미리 확인 한 후에 [`Quarto Pub`](https://quartopub.com/)으로 전자출판한다. 윈도우에서는 **RStudio 내부 Terminal CLI**를 사용하는 것을 권장한다.
 
-```{bash}
-#| eval: false
+```sh
 $ quarto preview
 $ quarto publish quarto-pub
 ```
-
-
-## 블로그
-
 
 
