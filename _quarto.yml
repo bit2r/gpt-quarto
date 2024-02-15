@@ -42,40 +42,40 @@ book:
     # - acknowledgments.qmd
     - index.qmd
 
-    # - part: "시작을 위한 준비"
-    #   chapters:
-    #     # - setup_whole_game.qmd                 # 
-    #     - setup_quarto.qmd                 # OK
-    #     - setup.qmd                    # OK
+    - part: "시작을 위한 준비"
+      chapters:
+        # - setup_whole_game.qmd                 #
+        - setup_quarto.qmd                 # OK
+        - setup.qmd                    # OK
     # 
     # # - part: "글쓰기"
     # #   chapters:
     # #     - markdown_mess.qmd          # 
     # #     - writing.qmd                # 
     # 
-    # - part: "기본요소"
-    #   chapters:
-    #     - part_components.qmd          # OK
-    #     - part_markdown.qmd            # OK
+    - part: "기본요소"
+      chapters:
+        - part_components.qmd          # OK
+        - part_markdown.qmd            # OK
     #     - part_computation.qmd         # New
     #     - part_document_class.qmd      # X
     #     - part_about_book.qmd          # X
     # 
-    # - part: "템플릿과 테마"
-    #   chapters:
-    #     - theme_fonts.qmd                # OK
-    #     - theme_colors.qmd               # OK
-    #     - theme_ggplot.qmd        # OK
-    #     - theme_gt.qmd            # OK
+    - part: "템플릿과 테마"
+      chapters:
+        - theme_fonts.qmd         # OK
+        - theme_colors.qmd        # OK
+        - theme_ggplot.qmd        # OK
+        - theme_gt.qmd            # OK
     #     - theme_template.qmd            # X
     # 
     - part: "저작물"
       chapters:
     #   - dw_publishing.qmd       # X
-      # - dw_book.qmd             # OK
+      - dw_book.qmd             # OK
       - dw_website.qmd          # Blog 추가
-      - dw_slideshow.qmd        #
-    #   - dw_dashboard.qmd        # 
+      - dw_slideshow.qmd        # OK
+      - dw_dashboard.qmd        # flexdashboard 변환
 
     # - part: "챗GPT"
     #   chapters:

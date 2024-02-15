@@ -1,0 +1,1118 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko-KR" xml:lang="ko-KR"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.9">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<meta name="author" content="이광춘">
+<title>챗GPT 쿼토(Quarto) – 12&nbsp; 대쉬보드</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./references.html" rel="next">
+<link href="./dw_slideshow.html" rel="prev">
+<link href="./images/logo.png" rel="icon" type="image/png">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet"><script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "일치 없음",
+    "search-matching-documents-text": "일치된 문서",
+    "search-copy-link-title": "검색 링크 복사",
+    "search-hide-matches-text": "추가 검색 결과 숨기기",
+    "search-more-match-text": "추가 검색결과",
+    "search-more-matches-text": "추가 검색결과",
+    "search-clear-button-title": "제거",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "취소",
+    "search-submit-button-title": "검색",
+    "search-label": "검색"
+  }
+}</script><script type="text/javascript">
+
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-229551680-1', 'auto');
+
+ga('send', {
+  hitType: 'pageview',
+  'anonymizeIp': true,
+});
+</script><script defer="" data-domain="r2bit.com/gpt-quarto" src="https://plausible.io/js/script.js"></script>
+</head>
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./dw_book.html">저작물</a></li><li class="breadcrumb-item"><a href="./dw_dashboard.html"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">대쉬보드</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">챗GPT 쿼토(Quarto)</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/bit2r/gpt-sql/" title="소스 코드" class="quarto-navigation-tool px-1" aria-label="소스 코드"><i class="bi bi-github"></i></a>
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="리더 모드 전환">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="검색"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">서문</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">시작을 위한 준비</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="토글 섹션">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./setup_quarto.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">쿼토(Quarto)</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./setup.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">저작환경 설정</span></span></a>
+  </div>
+</li>
+      </ul>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+ <span class="menu-text">기본요소</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="토글 섹션">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./part_components.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">문서 구성요소</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./part_markdown.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">마크다운</span></span></a>
+  </div>
+</li>
+      </ul>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+ <span class="menu-text">템플릿과 테마</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="토글 섹션">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./theme_fonts.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">글꼴</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./theme_colors.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">색상</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./theme_ggplot.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">그래프 테마</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./theme_gt.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">표 테마</span></span></a>
+  </div>
+</li>
+      </ul>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+ <span class="menu-text">저작물</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="토글 섹션">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./dw_book.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">쿼토 책</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./dw_website.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">웹사이트와 블로그</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./dw_slideshow.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">PPT 슬라이드</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./dw_dashboard.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">대쉬보드</span></span></a>
+  </div>
+</li>
+      </ul>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">참고문헌</span></a>
+  </div>
+</li>
+    </ul>
+</div>
+</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">목차</h2>
+   
+  <ul>
+<li><a href="#%EB%8C%80%EC%89%AC%EB%B3%B4%EB%93%9C-%EC%A0%9C%EC%9E%91%EA%B3%BC%EC%A0%95" id="toc-대쉬보드-제작과정" class="nav-link active" data-scroll-target="#%EB%8C%80%EC%89%AC%EB%B3%B4%EB%93%9C-%EC%A0%9C%EC%9E%91%EA%B3%BC%EC%A0%95"><span class="header-section-number">12.1</span> 대쉬보드 제작과정</a></li>
+  <li>
+<a href="#corona-virus-dashboard" id="toc-corona-virus-dashboard" class="nav-link" data-scroll-target="#corona-virus-dashboard"><span class="header-section-number">12.2</span> 코로나19 대쉬보드</a>
+  <ul class="collapse">
+<li><a href="#corona-dashboard-dataset" id="toc-corona-dashboard-dataset" class="nav-link" data-scroll-target="#corona-dashboard-dataset"><span class="header-section-number">12.2.1</span> 데이터셋</a></li>
+  <li><a href="#corona-dashboard-design" id="toc-corona-dashboard-design" class="nav-link" data-scroll-target="#corona-dashboard-design"><span class="header-section-number">12.2.2</span> 대쉬보드 디자인</a></li>
+  <li><a href="#dashboard-graph" id="toc-dashboard-graph" class="nav-link" data-scroll-target="#dashboard-graph"><span class="header-section-number">12.2.3</span> 시각화 구성요소</a></li>
+  <li><a href="#corona-19-leaflet" id="toc-corona-19-leaflet" class="nav-link" data-scroll-target="#corona-19-leaflet"><span class="header-section-number">12.2.4</span> 공간정보 시각화</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#corona-korea" id="toc-corona-korea" class="nav-link" data-scroll-target="#corona-korea"><span class="header-section-number">12.3</span> 한국 대쉬보드</a>
+  <ul class="collapse">
+<li><a href="#corona-korea-dataset" id="toc-corona-korea-dataset" class="nav-link" data-scroll-target="#corona-korea-dataset"><span class="header-section-number">12.3.1</span> 데이터셋</a></li>
+  <li><a href="#corona-korea-dashboard" id="toc-corona-korea-dashboard" class="nav-link" data-scroll-target="#corona-korea-dashboard"><span class="header-section-number">12.3.2</span> 대쉬보드 구성</a></li>
+  <li><a href="#corona-korea-dashboard-component" id="toc-corona-korea-dashboard-component" class="nav-link" data-scroll-target="#corona-korea-dashboard-component"><span class="header-section-number">12.3.3</span> 시각화 구성요소</a></li>
+  <li><a href="#corona-korea-valueBox" id="toc-corona-korea-valueBox" class="nav-link" data-scroll-target="#corona-korea-valueBox"><span class="header-section-number">12.3.4</span> <code>valueBox()</code></a></li>
+  <li><a href="#corona-korea-table" id="toc-corona-korea-table" class="nav-link" data-scroll-target="#corona-korea-table"><span class="header-section-number">12.3.5</span> 표와 그래프</a></li>
+  </ul>
+</li>
+  <li><a href="#%EB%B0%B0%ED%8F%AC-%EB%8C%80%EC%89%AC%EB%B3%B4%EB%93%9C" id="toc-배포-대쉬보드" class="nav-link" data-scroll-target="#%EB%B0%B0%ED%8F%AC-%EB%8C%80%EC%89%AC%EB%B3%B4%EB%93%9C"><span class="header-section-number">12.4</span> 배포 대쉬보드</a></li>
+  </ul><div class="toc-actions"><ul><li><a href="https://github.com/bit2r/gpt-sql/edit/main/dw_dashboard.qmd" class="toc-action"><i class="bi bi-github"></i>편집</a></li><li><a href="https://github.com/bit2r/gpt-sql/issues/new" class="toc-action"><i class="bi empty"></i>이슈 보고</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./dw_book.html">저작물</a></li><li class="breadcrumb-item"><a href="./dw_dashboard.html"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">대쉬보드</span></a></li></ol></nav><div class="quarto-title">
+<h1 class="title">
+<span class="chapter-number">12</span>&nbsp; <span class="chapter-title">대쉬보드</span>
+</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header><p>저자가 디지털 글쓰기를 하면서 가장 충격을 받은 사례 중 하나가 <code>flexdashboard</code> 패키지를 접하면서다. 고정관념으로 대쉬보드(Dashboard) 제작은 웹사이트를 제작하는 것이라 소프트웨어 개발자가 아니면 불가능하다고 생각했다. 즉, HTML, CSS, JavaScript 등을 활용하여 웹사이트를 제작하는데 그래프와 표, Value 박스 등 데이터 과학 구성요소가 필요하기 때문에 통계전공 데이터 과학자와 공동으로 작업을 해야 한다고 생각했다. 하지만, <code>flexdashboard</code>패키지로 R 마크다운을 활용해 쉽게 대시보드를 만들 수 있어 HTML, CSS, JavaScript에 대한 지식이 없어도 대시보드를 제작할 수 있다는 점이다.</p>
+<p>지금은 잊혀져가고 있지만, 몇년전 코로나19가 전세계를 휩쓸고 있을 때 국내 및 해외 코로나 진행현황을 대쉬보드로 필자가 제작한 사례가 있다. 이 대쉬보드는 <code>flexdashboard</code> 패키지를 활용하여 제작되었으며, 데이터셋은 <code>coronavirus</code> 패키지를 통해 자동으로 최신 데이터가 갱신되기 때문에 대쉬보드 개발 노력을 상당부분 절감시킬 수 있으며 <code>flexdashboard</code>에서 제공하는 다양한 레이아웃 기능을 통해 대시보드 설계를 수월히 진행할 수 있으며 <code>DT</code>, <code>highcharter</code>, <code>leaflet</code>, <code>plotly</code> 등 인터랙티브 패키지로 미려한 시각화 산출물도 제작이 가능하다. 마지막으로 <code>gh-pages</code>를 통해 무료지만 안정성이 가장 뛰어난 웹사이트에 배포도 했다.</p>
+<section id="대쉬보드-제작과정" class="level2" data-number="12.1"><h2 data-number="12.1" class="anchored" data-anchor-id="대쉬보드-제작과정">
+<span class="header-section-number">12.1</span> 대쉬보드 제작과정</h2>
+<p>대쉬보드 제작을 순차적으로 진행할 수도 있지만 경우에 따라서는 병렬도 동시작업도 가능하다. 가장 일반적인 순차적 대쉬보드 제작과정은 다음과 같다. 먼저, 전세계와 한국의 코로나19 데이터를 수집하고 수집된 데이터를 분석 가능한 형태로 데이터를 전처리하여 대쉬보드 각 구성요소에 맞게 데이터셋을 맞춘다. 대시보드 UI/UX 디자인을 계획하면서 적절한 시각화 도구(<code>highcharter</code>, <code>leaflet</code>, <code>plotly</code>)에 대한 기술적인 검토도 함께 진행한다. <span class="citation" data-cites="kulkarni2019building">(<strong>kulkarni2019building?</strong>)</span></p>
+<p>데이터와 UI/UX 디자인과 기술검토가 마무리된 다음, 대시보드 구성요소를 본격적으로 highcharter, ValueBox, DT 테이블, Plotly 그래프 등으로 개발한다. 대쉬보드 외양을 정의하는 대시보드 브랜딩과 디자인 작업은 CSS/SCSS 스타일링 작업을 통해 진행된다. 대시보드 테스트 단계는 모든 구성요소가 올바르게 작동하는지 테스트하고, 완성된 대시보드를 깃헙 페이지 웹사이트에 배포한다. 이후 자동화 및 업데이트 운영 및 유지보수 단계에서 데이터가 실시간으로 갱신되도록 자동화시키고 신규 개발 코드와 UI/UX 코드도 CI/CD를 통해 자동화한다.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><a href="images/corona-flexdashboard.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="대쉬보드 제작 흐름"><img src="images/corona-flexdashboard.png" class="img-fluid figure-img" alt="대쉬보드 제작 흐름"></a></p>
+<figcaption>대쉬보드 제작 흐름</figcaption></figure>
+</div>
+</section><section id="corona-virus-dashboard" class="level2" data-number="12.2"><h2 data-number="12.2" class="anchored" data-anchor-id="corona-virus-dashboard">
+<span class="header-section-number">12.2</span> 코로나19 대쉬보드</h2>
+<p>코로나19 대시보드 제작은 여러 단계로 구성된다. 먼저, <a href="https://github.com/RamiKrispin/coronavirus">코로나19 데이터</a>를 사용할 수 있는데 데이터는 <code>coronavirus</code> 데이터 팩키지로 제작되어 데이터 수집 과정이 간소화되고 이미 잘 구성되어 있어 데이터 수집에 따른 공수를 크게 줄일 수 있다. 데이터를 수집한 후, <a href="https://rmarkdown.rstudio.com/flexdashboard/"><code>flexdashboard</code></a>를 주요 엔진으로 사용하여 대시보드를 제작한다. <code>flexdashboard</code>는 R 마크다운을 기반으로 하며, 다양한 시각화 도구와 통합이 쉽다.</p>
+<section id="corona-dashboard-dataset" class="level3" data-number="12.2.1"><h3 data-number="12.2.1" class="anchored" data-anchor-id="corona-dashboard-dataset">
+<span class="header-section-number">12.2.1</span> 데이터셋</h3>
+<p>코로나 19 데이터셋은 존스 홉킨스 대학(Johns Hopkins University)과 세계보건기구(WHO)에서 제공되는 두가지 형태로 제공되고 있지만 존스 홉킨스 대학 데이터셋이 WHO 데이터셋 보다 더 많은 호응을 받아 <code>coronavirus</code> 데이터 패키지를 사용한다.</p>
+<ul>
+<li>
+<a href="https://github.com/RamiKrispin/coronavirus"><code>coronavirus</code>: The coronavirus dataset</a>
+<ul>
+<li><a href="https://github.com/CSSEGISandData/COVID-19"><code>COVID-19</code>: Novel Coronavirus (COVID-19) Cases, provided by JHU CSSE</a></li>
+</ul>
+</li>
+<li>
+<a href="https://github.com/javierluraschi/covid"><code>covid</code>: Novel Coronavirus(2019-nCoV) updates from WHO daily reports</a>
+<ul>
+<li><a href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019/situation-reports">PDF WHO 보고서</a></li>
+</ul>
+</li>
+</ul>
+<div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r install-dataset}</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="in">library(tidyverse)</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="in"># install.packages("coronavirus") </span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="in"># devtools::install_github("RamiKrispin/coronavirus")</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="in">library(coronavirus)</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="in">data("coronavirus")</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="in">coronavirus &lt;- coronavirus %&gt;% </span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="in">  janitor::clean_names() %&gt;% </span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="in">  rename(country = country_region,</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="in">         province = province_state)</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section><section id="corona-dashboard-design" class="level3" data-number="12.2.2"><h3 data-number="12.2.2" class="anchored" data-anchor-id="corona-dashboard-design">
+<span class="header-section-number">12.2.2</span> 대쉬보드 디자인</h3>
+<p>데이터 과학 요소가 들어간 대쉬보드 제작을 위한 UI 설계안을 작성한다. 디자인 작업을 완료한 후, 와이어프레임(wireframe)을 중심으로 데이터 과학 요소가 포함된 대시보드 UI 설계작업을 진행한다.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><a href="images/corona-dashboard-ui.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="코로나19 대쉬보드 UI 설계"><img src="images/corona-dashboard-ui.png" class="class img-fluid figure-img" style="width:77.0%" alt="코로나19 대쉬보드 UI 설계"></a></p>
+<figcaption>코로나19 대쉬보드 UI 설계</figcaption></figure>
+</div>
+<p>아이콘과 디자인 요소를 위해 <a href="https://fontawesome.com/icons?from=io">Font Awesome</a>, <a href="https://ionicons.com/">Ionicons</a>, <a href="https://getbootstrap.com/docs/4.4/components/alerts/">Bootstrap</a>, Bootstrap과 같은 라이브러리를 활용하여 다양한 아이콘과 UI 컴포넌트를 통해 대시보드 시각적 표현을 풍부하게 한다.</p>
+<p>작성한 wireframe을 기반으로 flexdashboard 문법에 맞춰 대시보드 구성요소를 적절히 배치하고 R 마크다운 코드로 대시보드를 구현한다. 전체적으로 ValueBox를 대시보드 상단에 배치하고, 아래 두 그래프 영역에 필요한 그래프를 삽입하고 전세계와 한국을 탭(tabset)으로 구분하여 표현하여 대쉬보드 복잡성을 단순화한다.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><a href="images/flexdashboard-layout.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="flexdashboard 배치도(layout)"><img src="images/flexdashboard-layout.png" class="img-fluid figure-img" alt="flexdashboard 배치도(layout)"></a></p>
+<figcaption><code>flexdashboard</code> 배치도(layout)</figcaption></figure>
+</div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>layout: page</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>title: "데이터 과학을 위한 저작도구: Computational Documents"</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>subtitle: "대쉬보드(Dashboard)"</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>author:</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    name: "<span class="co">[</span><span class="ot">Tidyverse Korea</span><span class="co">](https://www.facebook.com/groups/tidyverse/)</span>"</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>date: "2024-02-09"</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>output:</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>  html_document: </span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    toc: yes</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>    toc_float: true</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>    highlight: tango</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>    code_folding: show</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>    number_section: true</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>    self_contained: true</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>editor_options: </span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>  chunk_output_type: console</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>전세계 {data-icon="fa-globe"}</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a><span class="fu">===================================</span></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>Row {data-width=150} </span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>--------------------------------------------</span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a><span class="fu">### 확진자수</span></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>::: {.cell}</span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a><span class="in">```{.r .cell-code}</span></span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a><span class="in">infected &lt;- 100</span></span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a><span class="in">valueBox(infected, icon = "fa-procedures")</span></span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a><span class="fu">### 사망자수</span></span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a>::: {.cell}</span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a><span class="in">```{.r .cell-code}</span></span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a><span class="in">death &lt;- 20</span></span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a><span class="in">valueBox(death, icon = "fa-skull")</span></span>
+<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a><span class="fu">### 회복자수</span></span>
+<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a>::: {.cell}</span>
+<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a><span class="in">```{.r .cell-code}</span></span>
+<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a><span class="in">recovered &lt;- 30</span></span>
+<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a><span class="in">valueBox(recovered, </span></span>
+<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a><span class="in">         icon = "fa-walking",</span></span>
+<span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a><span class="in">         color = ifelse(recovered &gt; 10, "warning", "primary"))</span></span>
+<span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb2-58"><a href="#cb2-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-59"><a href="#cb2-59" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-60"><a href="#cb2-60" aria-hidden="true" tabindex="-1"></a>Column {data-height=350}</span>
+<span id="cb2-61"><a href="#cb2-61" aria-hidden="true" tabindex="-1"></a>-------------------------------------</span>
+<span id="cb2-62"><a href="#cb2-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-63"><a href="#cb2-63" aria-hidden="true" tabindex="-1"></a><span class="fu">### Chart 1</span></span>
+<span id="cb2-64"><a href="#cb2-64" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-65"><a href="#cb2-65" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-66"><a href="#cb2-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-67"><a href="#cb2-67" aria-hidden="true" tabindex="-1"></a><span class="fu">### Chart 2</span></span>
+<span id="cb2-68"><a href="#cb2-68" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-69"><a href="#cb2-69" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-70"><a href="#cb2-70" aria-hidden="true" tabindex="-1"></a>한국 {data-icon="fa-map"}</span>
+<span id="cb2-71"><a href="#cb2-71" aria-hidden="true" tabindex="-1"></a><span class="fu">===================================</span></span>
+<span id="cb2-72"><a href="#cb2-72" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-73"><a href="#cb2-73" aria-hidden="true" tabindex="-1"></a>-- 이하 동일</span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section><section id="dashboard-graph" class="level3" data-number="12.2.3"><h3 data-number="12.2.3" class="anchored" data-anchor-id="dashboard-graph">
+<span class="header-section-number">12.2.3</span> 시각화 구성요소</h3>
+<section id="corona-19" class="level4"><h4 class="anchored" data-anchor-id="corona-19">막대그래프: 코로나19</h4>
+<p><a href="https://ramikrispin.github.io/coronavirus/"><code>coronavirus</code></a> 데이터 팩키지에서 수집한 코로나 관련 데이터를 “경주하는 막대그래프” 형태로 시각화하기 위해, 먼저 <code>gapminder</code>의 경주 막대그래프 사례를 참조한다. 이 사례를 통해 어떻게 데이터를 준비하고 그래프를 구성할지 아이디어를 얻는다. <span class="citation" data-cites="reynolds2019racing">(<strong>reynolds2019racing?</strong>)</span></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><a href="images/racing-barchart.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="gapminder: 경주하는 막대그래프"><img src="images/racing-barchart.png" class="img-fluid figure-img" alt="gapminder: 경주하는 막대그래프"></a></p>
+<figcaption><code>gapminder</code>: 경주하는 막대그래프</figcaption></figure>
+</div>
+<p>데이터 준비가 완료되면, 정적 막대그래프를 먼저 생성하고 애니메이션 기능을 추가하여 동적인 경주 막대그래프를 완성한다. 애니메이션을 작성한 후에는 <code>.gif</code> 파일 형식으로 저장하고 대시보드에 불러와 그래프 영역에 채워넣는다.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="in">library(gganimate) </span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="in">options(gganimate.nframes = 100)</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="in">## 데이터 </span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="in">corona_ranked_by_date &lt;- coronavirus %&gt;% </span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="in">  filter(type == 'confirmed') %&gt;% </span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="in">  group_by(country, date) %&gt;% </span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="in">  summarise(confirmed = sum(cases)) %&gt;% </span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="in">  ungroup() %&gt;% </span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="in">  group_by(country) %&gt;% </span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="in">  arrange(date) %&gt;% </span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="in">  mutate(cum_confirmed = cumsum(confirmed)) %&gt;% # 국가별 누적환자수</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="in">  ungroup() %&gt;% </span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="in">  group_by(date) %&gt;% </span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="in">  arrange(date, -cum_confirmed) %&gt;% # 일별 상위 국가 선정</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="in">  mutate(rank = 1:n()) %&gt;% </span></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="in">  filter(rank &lt;=7) %&gt;% </span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a><span class="in">  ungroup()</span></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a><span class="in">## 테마</span></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a><span class="in">library(extrafont)</span></span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a><span class="in">loadfonts()</span></span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a><span class="in">corona_theme &lt;- theme_classic(base_family = "NanumGothic") +</span></span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a><span class="in">  theme(legend.position = "none") +</span></span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a><span class="in">  theme(axis.text.y = element_blank()) +</span></span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a><span class="in">  theme(axis.ticks.y = element_blank()) +</span></span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a><span class="in">  theme(axis.line.y = element_blank()) +</span></span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a><span class="in">  theme(legend.background = element_rect(fill = "gainsboro")) +</span></span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a><span class="in">  theme(plot.background = element_rect(fill = "gainsboro")) +</span></span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a><span class="in">  theme(panel.background = element_rect(fill = "gainsboro"))</span></span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a><span class="in">corona_plot &lt;- corona_ranked_by_date %&gt;% </span></span>
+<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a><span class="in">  ggplot() +</span></span>
+<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a><span class="in">    aes(xmin = 0 ,  </span></span>
+<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a><span class="in">        xmax = cum_confirmed) +  </span></span>
+<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a><span class="in">    aes(ymin = rank - .45,  </span></span>
+<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a><span class="in">        ymax = rank + .45,  </span></span>
+<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a><span class="in">        y = rank) +</span></span>
+<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a><span class="in">    facet_wrap(~date) +</span></span>
+<span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a><span class="in">    geom_rect(alpha = .7) +</span></span>
+<span id="cb3-43"><a href="#cb3-43" aria-hidden="true" tabindex="-1"></a><span class="in">    aes(fill = country) +</span></span>
+<span id="cb3-44"><a href="#cb3-44" aria-hidden="true" tabindex="-1"></a><span class="in">    scale_fill_viridis_d(option = "magma",</span></span>
+<span id="cb3-45"><a href="#cb3-45" aria-hidden="true" tabindex="-1"></a><span class="in">                       direction = -1) +</span></span>
+<span id="cb3-46"><a href="#cb3-46" aria-hidden="true" tabindex="-1"></a><span class="in">    scale_x_continuous(</span></span>
+<span id="cb3-47"><a href="#cb3-47" aria-hidden="true" tabindex="-1"></a><span class="in">      limits = c(-15000, 80000)) +</span></span>
+<span id="cb3-48"><a href="#cb3-48" aria-hidden="true" tabindex="-1"></a><span class="in">    geom_text(col = "gray13",  </span></span>
+<span id="cb3-49"><a href="#cb3-49" aria-hidden="true" tabindex="-1"></a><span class="in">          hjust = "right",  </span></span>
+<span id="cb3-50"><a href="#cb3-50" aria-hidden="true" tabindex="-1"></a><span class="in">          aes(label = country),  </span></span>
+<span id="cb3-51"><a href="#cb3-51" aria-hidden="true" tabindex="-1"></a><span class="in">          x = -50) +</span></span>
+<span id="cb3-52"><a href="#cb3-52" aria-hidden="true" tabindex="-1"></a><span class="in">    labs(fill = NULL) +  </span></span>
+<span id="cb3-53"><a href="#cb3-53" aria-hidden="true" tabindex="-1"></a><span class="in">    labs(x = '감염자수') +  </span></span>
+<span id="cb3-54"><a href="#cb3-54" aria-hidden="true" tabindex="-1"></a><span class="in">    labs(y = "") +  </span></span>
+<span id="cb3-55"><a href="#cb3-55" aria-hidden="true" tabindex="-1"></a><span class="in">    scale_y_reverse() +</span></span>
+<span id="cb3-56"><a href="#cb3-56" aria-hidden="true" tabindex="-1"></a><span class="in">    corona_theme</span></span>
+<span id="cb3-57"><a href="#cb3-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-58"><a href="#cb3-58" aria-hidden="true" tabindex="-1"></a><span class="in">corona_gif &lt;- corona_plot +</span></span>
+<span id="cb3-59"><a href="#cb3-59" aria-hidden="true" tabindex="-1"></a><span class="in">  facet_null() +</span></span>
+<span id="cb3-60"><a href="#cb3-60" aria-hidden="true" tabindex="-1"></a><span class="in">  aes(group = country) +</span></span>
+<span id="cb3-61"><a href="#cb3-61" aria-hidden="true" tabindex="-1"></a><span class="in">  geom_text(x = 55000 , y = -7,  </span></span>
+<span id="cb3-62"><a href="#cb3-62" aria-hidden="true" tabindex="-1"></a><span class="in">          family = "NanumGothic",  </span></span>
+<span id="cb3-63"><a href="#cb3-63" aria-hidden="true" tabindex="-1"></a><span class="in">          aes(label = as.character(date) ),  </span></span>
+<span id="cb3-64"><a href="#cb3-64" aria-hidden="true" tabindex="-1"></a><span class="in">          size = 10, col = "grey18")  +</span></span>
+<span id="cb3-65"><a href="#cb3-65" aria-hidden="true" tabindex="-1"></a><span class="in">  gganimate::transition_time(date)</span></span>
+<span id="cb3-66"><a href="#cb3-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-67"><a href="#cb3-67" aria-hidden="true" tabindex="-1"></a><span class="in">corona_gif # anim_save("images/corona.gif", corona_gif, duration=0.1)</span></span>
+<span id="cb3-68"><a href="#cb3-68" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-69"><a href="#cb3-69" aria-hidden="true" tabindex="-1"></a><span class="in">knitr::include_graphics('images/corona.gif') </span></span>
+<span id="cb3-70"><a href="#cb3-70" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section></section><section id="corona-19-leaflet" class="level3" data-number="12.2.4"><h3 data-number="12.2.4" class="anchored" data-anchor-id="corona-19-leaflet">
+<span class="header-section-number">12.2.4</span> 공간정보 시각화</h3>
+<p><code>leaflet</code> 라이브러리를 활용하여 공간정보 시각화 작업을 수행한다. 먼저, <code>coronavirus</code> 데이터 팩키지에서 수집한 코로나 관련 데이터 중 위경도 정보를 추출하여 <code>leaflet</code>에 입력하여 지도 위에 표시한다. <code>leaflet</code>의 다양한 기능을 활용하여 <code>coronavirus</code> 데이터에 담긴 공간정보를 인터랙티브 시각화를 구현한 후 <code>leaflet</code> 지도를 대시보드 일부로 통합한다.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="in">library(leaflet)</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="in">library(janitor)</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="in">coronavirus %&gt;% </span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="in">  mutate(geo_name = glue::glue("{country} {province}")) %&gt;% </span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="in">  select(-country, -province) %&gt;% </span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="in">  group_by(geo_name, lat, long, type) %&gt;%</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="in">    summarise(cases = sum(cases, na.rm = TRUE)) %&gt;% </span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="in">    spread(type, cases, fill=0) %&gt;% </span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="in">    leaflet() %&gt;%</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="in">    addTiles() %&gt;% </span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="in">    addProviderTiles(providers$OpenStreetMap) %&gt;% </span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a><span class="in">    addMarkers(lng=~long, lat=~lat, clusterOptions = markerClusterOptions(),</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a><span class="in">                     popup = ~ as.character(paste0("&lt;strong&gt; 코로나19 현황: ", geo_name, "&lt;/strong&gt;&lt;br&gt;",</span></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a><span class="in">    "-----------------------------------------------------------&lt;br&gt;",</span></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a><span class="in">                                                   "&amp;middot; 감염: ", scales::comma(confirmed), "&lt;br&gt;",</span></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a><span class="in">                                                   "&amp;middot; 사망: ", scales::comma(death), "&lt;br&gt;",</span></span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a><span class="in">                                                   "&amp;middot; 회복: ", scales::comma(recovered), "&lt;br&gt;")))</span></span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section></section><section id="corona-korea" class="level2" data-number="12.3"><h2 data-number="12.3" class="anchored" data-anchor-id="corona-korea">
+<span class="header-section-number">12.3</span> 한국 대쉬보드</h2>
+<section id="corona-korea-dataset" class="level3" data-number="12.3.1"><h3 data-number="12.3.1" class="anchored" data-anchor-id="corona-korea-dataset">
+<span class="header-section-number">12.3.1</span> 데이터셋</h3>
+<p>한국 코로나19관련 데이터를 MBC 장슬기 기자의 도움으로 <a href="https://www.mediagotosa.com/korona19-hwagsan-ilbyeol-hyeonhwang-jeongri/">이성규, “미디어고토사”</a>에서 찾을 수 있었다. 데이터를 <code>google sheet</code>에 정리해 두어서 <a href="https://github.com/tidyverse/googlesheets4"><code>googlesheets4</code></a>의 도움으로 수월하게 입수할 수 있다.</p>
+<p>문제는 일자별로 데이터 정리가 체계적으로 되어 있지 않고, 코로나 관련 대쉬보드를 구성할 때 한계가 있다.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="in">## 데이터셋 --------------------</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="in">library(googlesheets4)</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="in">library(tidyverse)</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="in">library(lubridate)</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="in">cv_kor &lt;- read_sheet('https://docs.google.com/spreadsheets/d/1fODH5PZJw9jxwV2GRe85BRQgc3mxdyyIpQ0I6MDJKXc/edit#gid=0')</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="in">cv_kor_df &lt;- cv_kor %&gt;% </span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="in">  select(날짜, 확진자=`누적 확진자수`, 검사자 = `누적 검사자수`, 사망자, 회복자=`누적 격리해제`) %&gt;% </span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="in">  arrange(날짜) %&gt;% </span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="in">  mutate(일자 = as.Date(날짜)) %&gt;% </span></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="in">  group_by(일자) %&gt;% </span></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="in">  summarise(검사자 = last(검사자),</span></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a><span class="in">               확진자 = last(확진자),</span></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a><span class="in">               사망자 = last(사망자),</span></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a><span class="in">               회복자 = last(회복자)</span></span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a><span class="in">            )  %&gt;% </span></span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a><span class="in">  padr::pad(.)</span></span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section><section id="corona-korea-dashboard" class="level3" data-number="12.3.2"><h3 data-number="12.3.2" class="anchored" data-anchor-id="corona-korea-dashboard">
+<span class="header-section-number">12.3.2</span> 대쉬보드 구성</h3>
+<p>전세계 코로나 사례와 다르게 검사자수가 포함되어 있어 이를 <code>valueBox</code>에 포함시킨다. 지역정보가 없기 때문에 이를 <code>DT</code> 표로 대신하는데 몇가지 인터랙티브 기능을 추가해서 기본 정렬에 추가하여 칼럼별 검색 및 다양한 파일 형태로 다운로드 가능하도록 한다. 일자별로 구성된 시계열 데이터 특성을 적극 활용하여 선그래프를 인터랙티브하게 구성한다.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><a href="images/corona-korea.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="한국 대쉬보드 구성"><img src="images/corona-korea.png" class="img-fluid figure-img" alt="한국 대쉬보드 구성"></a></p>
+<figcaption>한국 대쉬보드 구성</figcaption></figure>
+</div>
+</section><section id="corona-korea-dashboard-component" class="level3" data-number="12.3.3"><h3 data-number="12.3.3" class="anchored" data-anchor-id="corona-korea-dashboard-component">
+<span class="header-section-number">12.3.3</span> 시각화 구성요소</h3>
+<p>시각화 구성요소로 <code>valueBox</code>, <code>DT</code>, <code>plotly</code>를 선택했기 때문에 이를 순차적으로 모듈화시켜 개발한 후에 대쉬보드에 적용시킨다.</p>
+</section><section id="corona-korea-valueBox" class="level3" data-number="12.3.4"><h3 data-number="12.3.4" class="anchored" data-anchor-id="corona-korea-valueBox">
+<span class="header-section-number">12.3.4</span> <code>valueBox()</code>
+</h3>
+<p>검사자, 확진자, 사망자, 회복자를 <code>valueBox</code>로 만들어 현황을 파악하기 편하게 구성한다. <code>webshot</code>을 사용하면 굳이 화면을 캡쳐하지 않아도 R마크다운 코드에서 직접 가능하게 된다.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><a href="images/korea-valueBox.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="valueBox"><img src="images/korea-valueBox.png" class="img-fluid figure-img" alt="valueBox"></a></p>
+<figcaption><code>valueBox</code></figcaption></figure>
+</div>
+</section><section id="corona-korea-table" class="level3" data-number="12.3.5"><h3 data-number="12.3.5" class="anchored" data-anchor-id="corona-korea-table">
+<span class="header-section-number">12.3.5</span> 표와 그래프</h3>
+<p>인터랙티브 표를 사용하게 되면 일단 기본기능으로 들어가 있는 정렬외에 <code>searchHighlight</code>를 사용해서 검색 기능을 넣고, <code>dom = 'Bfrtip'</code>을 통해 다양한 형태로 데이터를 내려받을 수 있도록 한다.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="in">cv_kor_df  &lt;-  </span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="in">  read_rds("data/cv_kor_df.rds")</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="in">cv_kor_df %&gt;%</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="in">  arrange(desc(일자)) %&gt;% </span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="in">  DT::datatable(filter = 'top',  </span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="in">          options = list(   searchHighlight = TRUE, pageLength = 15,</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="in">                            dom = 'Bfrtip',</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="in">                            buttons = c('copy', 'csv', 'excel', 'pdf', 'print')),</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="in">          extensions = 'Buttons') %&gt;% </span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="in">  DT::formatRound(c("검사자", "확진자", "사망자", "회복자"), digits=0)</span></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><code>plotly</code> 라이브러리를 사용하면 정적 그래프를 쉽게 인터랙티브 그래프로 변환할 수 있다. 정적 그래프의 데이터와 설정을 <code>plotly</code> 형식으로 변환시키면 기본적인 인터랙티브 기능이 적용된다. 선 그래프나 막대 그래프에서는 데이터 포인트에 마우스를 가져가면 해당 값이 표시되고, 그래프를 드래그하여 끌어 확대하거나 축소할 수도 있다.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r kor-df-viz}</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="in">korea_theme &lt;- theme_classic(base_family = "NanumGothic") +</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="in">  theme(legend.position = "none") +</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="in">  theme(legend.background = element_rect(fill = "gainsboro")) +</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="in">  theme(plot.background = element_rect(fill = "gainsboro")) +</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="in">  theme(panel.background = element_rect(fill = "gainsboro"))</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="in">cv_kor_plot &lt;- cv_kor_df %&gt;% </span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="in">  gather(유형, 사람수, -일자) %&gt;% </span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="in">  mutate(유형 = factor(유형, levels=c("검사자", "확진자", "회복자", "사망자"))) %&gt;% </span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="in">  ggplot(aes(x=일자, y=사람수, color=유형)) +</span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="in">    geom_line() +  </span></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a><span class="in">    geom_point() +</span></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a><span class="in">    facet_wrap(~유형, scale="fixed") +</span></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a><span class="in">    scale_y_continuous(labels = scales::comma_format(scale = 1)) +</span></span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a><span class="in">    korea_theme +</span></span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a><span class="in">    labs(x="", y="") +</span></span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a><span class="in">    scale_color_viridis_d(option = "magma",</span></span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a><span class="in">                     direction = -1) </span></span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a><span class="in">plotly::ggplotly(cv_kor_plot)</span></span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section></section><section id="배포-대쉬보드" class="level2" data-number="12.4"><h2 data-number="12.4" class="anchored" data-anchor-id="배포-대쉬보드">
+<span class="header-section-number">12.4</span> 배포 대쉬보드</h2>
+<p>대시보드 제작이 완료되면 인터넷에 공개하기 위해 <code>gh-pages</code>를 사용해 웹사이트에 배포한다. <code>gh-pages</code>는 <code>GitHub</code>에서 제공하는 무료 웹 호스팅 서비스로, R 마크다운 파일을 HTML 형식으로 변환해 웹사이트를 만들 수 있다. <code>gh-pages</code>를 사용하면 웹사이트를 만들기 위한 별도의 서버를 구축할 필요가 없다.</p>
+<p>배포 과정은 먼저 GitHub 저장소를 생성하고 대시보드 모든 파일을 업로드한 다음 GitHub 설정에서 <code>gh-pages</code>를 활성화하고 대시보드가 포함된 브랜치를 선택한다. 설정이 완료되면 GitHub은 자동으로 웹사이트를 생성하고 해당 URL을 제공한다.</p>
+<p>코로나19 대시보드는 인터넷에 자유롭게 접근 가능하며, 누구나 코로나19 현황을 쉽게 파악하고 이해하도록 도움을 준다. 대쉬보드는 <a href="https://statkclee.github.io/comp_document/cd-corona.html">코로나19 대쉬보드</a> 웹사이트에서 확인할 수 있다.</p>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout="[49.5, -1, 49.5]">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 49.5%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><a href="images/corona_dashboard_world.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="코로나19 전세계 현황"><img src="images/corona_dashboard_world.jpg" class="img-fluid figure-img" alt="코로나19 전세계 현황"></a></p>
+<figcaption>코로나19 전세계 현황</figcaption></figure>
+</div>
+</div>
+<div class="quarto-figure-spacer quarto-layout-cell" style="flex-basis: 1.0%;justify-content: flex-start;">
+<p>&nbsp;</p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 49.5%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><a href="images/corona_dashboard_korea.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-8" title="코로나19 한국 현황"><img src="images/corona_dashboard_korea.jpg" class="img-fluid figure-img" alt="코로나19 한국 현황"></a></p>
+<figcaption>코로나19 한국 현황</figcaption></figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 49.5%;justify-content: flex-start;">
+<p><code>flexdashboard</code> 코로나19 대쉬보드</p>
+</div>
+<div class="quarto-figure-spacer quarto-layout-cell" style="flex-basis: 1.0%;justify-content: flex-start;">
+<p>&nbsp;</p>
+</div>
+</div>
+</div>
+
+
+</section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "복사완료!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "복사완료!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script><nav class="page-navigation"><div class="nav-page nav-page-previous">
+      <a href="./dw_slideshow.html" class="pagination-link" aria-label="PPT 슬라이드">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">PPT 슬라이드</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./references.html" class="pagination-link" aria-label="참고문헌">
+        <span class="nav-page-text">참고문헌</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer"><div class="nav-footer">
+    <div class="nav-footer-left">
+<p>챗GPT 쿼토 책은 소프트웨어 카펜트리 Introduction to Reproducible Publications with Quarto 번역한 것이 포함되어 있습니다.</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/bit2r/gpt-sql/edit/main/dw_dashboard.qmd" class="toc-action"><i class="bi bi-github"></i>편집</a></li><li><a href="https://github.com/bit2r/gpt-sql/issues/new" class="toc-action"><i class="bi empty"></i>이슈 보고</a></li></ul></div></div>
+    <div class="nav-footer-right">
+<p>순수하게 <a href="https://quarto.org/">쿼토(Quarto)</a>로 제작되었습니다.</p>
+</div>
+  </div>
+</footer><script>var lightboxQuarto = GLightbox({"openEffect":"zoom","loop":false,"selector":".lightbox","descPosition":"bottom","closeEffect":"zoom"});
+window.onload = () => {
+  lightboxQuarto.on('slide_before_load', (data) => {
+    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+    const href = trigger.getAttribute('href');
+    if (href !== null) {
+      const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+      if (imgEl !== null) {
+        const srcAttr = imgEl.getAttribute("src");
+        if (srcAttr && srcAttr.startsWith("data:")) {
+          slideConfig.href = srcAttr;
+        }
+      }
+    } 
+  });
+
+  lightboxQuarto.on('slide_after_load', (data) => {
+    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+    if (window.Quarto?.typesetMath) {
+      window.Quarto.typesetMath(slideNode);
+    }
+  });
+
+};
+          </script>
+
+
+</body></html>

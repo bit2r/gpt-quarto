@@ -2,11 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://r2bit.com/gpt-sql/index.html</loc>
-    <lastmod>2024-02-15T02:11:47.679Z</lastmod>
+    <lastmod>2024-02-08T01:57:49.250Z</lastmod>
   </url>
   <url>
     <loc>https://r2bit.com/gpt-sql/dw_website.html</loc>
-    <lastmod>2024-02-15T02:42:12.488Z</lastmod>
+    <lastmod>2024-02-15T03:56:55.112Z</lastmod>
   </url>
   <url>
     <loc>https://r2bit.com/gpt-sql/references.html</loc>
@@ -14,6 +14,46 @@
   </url>
   <url>
     <loc>https://r2bit.com/gpt-sql/dw_slideshow.html</loc>
-    <lastmod>2024-02-15T02:14:43.438Z</lastmod>
+    <lastmod>2024-02-15T04:17:32.265Z</lastmod>
+  </url>
+  <url>
+    <loc>https://r2bit.com/gpt-sql/setup_quarto.html</loc>
+    <lastmod>2024-02-12T13:26:09.943Z</lastmod>
+  </url>
+  <url>
+    <loc>https://r2bit.com/gpt-sql/setup.html</loc>
+    <lastmod>2024-02-12T11:16:28.599Z</lastmod>
+  </url>
+  <url>
+    <loc>https://r2bit.com/gpt-sql/part_components.html</loc>
+    <lastmod>2024-02-13T01:58:41.755Z</lastmod>
+  </url>
+  <url>
+    <loc>https://r2bit.com/gpt-sql/part_markdown.html</loc>
+    <lastmod>2024-02-12T13:52:00.136Z</lastmod>
+  </url>
+  <url>
+    <loc>https://r2bit.com/gpt-sql/theme_fonts.html</loc>
+    <lastmod>2024-02-13T04:18:55.285Z</lastmod>
+  </url>
+  <url>
+    <loc>https://r2bit.com/gpt-sql/theme_colors.html</loc>
+    <lastmod>2024-02-13T05:35:52.919Z</lastmod>
+  </url>
+  <url>
+    <loc>https://r2bit.com/gpt-sql/theme_ggplot.html</loc>
+    <lastmod>2024-02-14T00:30:18.494Z</lastmod>
+  </url>
+  <url>
+    <loc>https://r2bit.com/gpt-sql/theme_gt.html</loc>
+    <lastmod>2024-02-14T00:30:22.975Z</lastmod>
+  </url>
+  <url>
+    <loc>https://r2bit.com/gpt-sql/dw_book.html</loc>
+    <lastmod>2024-02-14T14:57:52.045Z</lastmod>
+  </url>
+  <url>
+    <loc>https://r2bit.com/gpt-sql/dw_dashboard.html</loc>
+    <lastmod>2023-10-03T13:16:09.587Z</lastmod>
   </url>
 </urlset>

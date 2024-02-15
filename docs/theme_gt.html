@@ -1,0 +1,2268 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko-KR" xml:lang="ko-KR"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.9">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<meta name="author" content="이광춘">
+<title>챗GPT 쿼토(Quarto) – 8&nbsp; 표 테마</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./dw_book.html" rel="next">
+<link href="./theme_ggplot.html" rel="prev">
+<link href="./images/logo.png" rel="icon" type="image/png">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet"><script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "일치 없음",
+    "search-matching-documents-text": "일치된 문서",
+    "search-copy-link-title": "검색 링크 복사",
+    "search-hide-matches-text": "추가 검색 결과 숨기기",
+    "search-more-match-text": "추가 검색결과",
+    "search-more-matches-text": "추가 검색결과",
+    "search-clear-button-title": "제거",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "취소",
+    "search-submit-button-title": "검색",
+    "search-label": "검색"
+  }
+}</script><script type="text/javascript">
+
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-229551680-1', 'auto');
+
+ga('send', {
+  hitType: 'pageview',
+  'anonymizeIp': true,
+});
+</script><script defer="" data-domain="r2bit.com/gpt-quarto" src="https://plausible.io/js/script.js"></script><script src="site_libs/quarto-diagram/mermaid.min.js"></script><script src="site_libs/quarto-diagram/mermaid-init.js"></script><link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script><script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+</head>
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./theme_fonts.html">템플릿과 테마</a></li><li class="breadcrumb-item"><a href="./theme_gt.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">표 테마</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">챗GPT 쿼토(Quarto)</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/bit2r/gpt-sql/" title="소스 코드" class="quarto-navigation-tool px-1" aria-label="소스 코드"><i class="bi bi-github"></i></a>
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="리더 모드 전환">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="검색"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">서문</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">시작을 위한 준비</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="토글 섹션">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./setup_quarto.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">쿼토(Quarto)</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./setup.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">저작환경 설정</span></span></a>
+  </div>
+</li>
+      </ul>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+ <span class="menu-text">기본요소</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="토글 섹션">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./part_components.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">문서 구성요소</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./part_markdown.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">마크다운</span></span></a>
+  </div>
+</li>
+      </ul>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+ <span class="menu-text">템플릿과 테마</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="토글 섹션">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./theme_fonts.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">글꼴</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./theme_colors.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">색상</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./theme_ggplot.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">그래프 테마</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./theme_gt.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">표 테마</span></span></a>
+  </div>
+</li>
+      </ul>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+ <span class="menu-text">저작물</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="토글 섹션">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./dw_book.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">쿼토 책</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./dw_website.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">웹사이트와 블로그</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./dw_slideshow.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">PPT 슬라이드</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./dw_dashboard.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">대쉬보드</span></span></a>
+  </div>
+</li>
+      </ul>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">참고문헌</span></a>
+  </div>
+</li>
+    </ul>
+</div>
+</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">목차</h2>
+   
+  <ul>
+<li>
+<a href="#gt-%ED%91%9C-%EC%9E%91%EC%84%B1%ED%95%98%EA%B8%B0" id="toc-gt-표-작성하기" class="nav-link active" data-scroll-target="#gt-%ED%91%9C-%EC%9E%91%EC%84%B1%ED%95%98%EA%B8%B0"><span class="header-section-number">8.1</span> <code>gt</code> 표 작성하기</a>
+  <ul class="collapse">
+<li><a href="#%EA%B8%B0%EB%B3%B8-%EC%83%89%EC%83%81%EA%B3%BC-%EC%8A%A4%ED%83%80%EC%9D%BC" id="toc-기본-색상과-스타일" class="nav-link" data-scroll-target="#%EA%B8%B0%EB%B3%B8-%EC%83%89%EC%83%81%EA%B3%BC-%EC%8A%A4%ED%83%80%EC%9D%BC"><span class="header-section-number">8.1.1</span> 기본 색상과 스타일</a></li>
+  <li><a href="#%EC%8A%A4%ED%83%80%EC%9D%BC" id="toc-스타일" class="nav-link" data-scroll-target="#%EC%8A%A4%ED%83%80%EC%9D%BC"><span class="header-section-number">8.1.2</span> 스타일</a></li>
+  </ul>
+</li>
+  <li><a href="#gtextra" id="toc-gtextra" class="nav-link" data-scroll-target="#gtextra"><span class="header-section-number">8.2</span> <code>gtExtra</code></a></li>
+  <li>
+<a href="#%EC%82%AC%EC%9A%A9%EC%9E%90-%EC%A0%95%EC%9D%98-%ED%85%8C%EB%A7%88" id="toc-사용자-정의-테마" class="nav-link" data-scroll-target="#%EC%82%AC%EC%9A%A9%EC%9E%90-%EC%A0%95%EC%9D%98-%ED%85%8C%EB%A7%88"><span class="header-section-number">8.3</span> 사용자 정의 테마</a>
+  <ul class="collapse">
+<li><a href="#gtextras-%ED%99%95%EC%9E%A5" id="toc-gtextras-확장" class="nav-link" data-scroll-target="#gtextras-%ED%99%95%EC%9E%A5"><span class="header-section-number">8.3.1</span> <code>gtExtras</code> 확장</a></li>
+  <li><a href="#gt_theme_hangul-%ED%85%8C%EB%A7%88" id="toc-gt_theme_hangul-테마" class="nav-link" data-scroll-target="#gt_theme_hangul-%ED%85%8C%EB%A7%88"><span class="header-section-number">8.3.2</span> <code>gt_theme_hangul()</code> 테마</a></li>
+  </ul>
+</li>
+  <li><a href="#rprofile-%EC%84%A4%EC%A0%95%EC%9E%91%EC%97%85" id="toc-rprofile-설정작업" class="nav-link" data-scroll-target="#rprofile-%EC%84%A4%EC%A0%95%EC%9E%91%EC%97%85"><span class="header-section-number">8.4</span> <code>.Rprofile</code> 설정작업</a></li>
+  </ul><div class="toc-actions"><ul><li><a href="https://github.com/bit2r/gpt-sql/edit/main/theme_gt.qmd" class="toc-action"><i class="bi bi-github"></i>편집</a></li><li><a href="https://github.com/bit2r/gpt-sql/issues/new" class="toc-action"><i class="bi empty"></i>이슈 보고</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./theme_fonts.html">템플릿과 테마</a></li><li class="breadcrumb-item"><a href="./theme_gt.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">표 테마</span></a></li></ol></nav><div class="quarto-title">
+<h1 class="title">
+<span class="chapter-number">8</span>&nbsp; <span class="chapter-title">표 테마</span>
+</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header><p>이전 장에서 우리는 적절한 글꼴, 색상, 테마를 사용한 그래프가 데이터 시각화에서 얼마나 중요한지 살펴봤다. 이번 장에서는 문서를 구성하는 또 다른 중요한 요소인 ‘표(table)’, 특히 ‘gt’ (grammar of tables) 테마를 중심으로 살펴볼 것이다. 표는 복잡한 데이터를 정리하고 분석하는 데 없어서는 안 될 도구다. ’gt’는 표 구성과 디자인에 대한 체계적인 접근 방법을 제공함으로써 표를 통해 효과적으로 정보를 전달할 수 있을 뿐만 아니라 시각적으로 미려한 표를 만들 수 있다는 점에서 매우 유용하다.</p>
+<p>문서에 표를 넣으면 정보를 효과적으로 요약하고 가독성을 크게 높일 수 있다. 표를 만들 때 사용할 수 있는 도구로는 마크다운(Markdown), <code>gt</code> 패키지, <span class="math inline">\(\LaTeX\)</span>이 있는데, 각각 독특한 장점이 있다. 마크다운은 사용하기 쉽고 복잡한 설치나 추가 패키지 없이 기본적인 표를 신속하게 만들 수 있다. 반면 <span class="math inline">\(\LaTeX\)</span>은 논문이나 학술 자료에 적합하도록 고급 품질의 표를 만들 수 있는 전문적인 도구다. 그래프 문법이 정립된 이후 가장 최근에 소개된 <code>gt</code>는 마크다운의 간편함과 <span class="math inline">\(\LaTeX\)</span>과 같은 전문적인 표를 만들 수 있는 기능을 모두 갖추고 있다.</p>
+<p>웹과 PDF 출력, 테마 지정 등에서 <code>gt</code> 패키지가 뛰어나고 <code>gt</code> 패키지는 그래프 문법에 기초하여 고급 표제작도 수월하게 작성가능하고, 특히, 데이터 중심 표를 작성할 때 필요한 다양한 기능을 제공하기 때문에 탄탄한 표 문법에 기반한 <code>gt</code> 패키지가 여러가지 장점이 많다.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><a href="images/table_three.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="표제작 세가지 방식"><img src="images/table_three.jpg" class="img-fluid figure-img" alt="표제작 세가지 방식"></a></p>
+<figcaption>표제작 세가지 방식</figcaption></figure>
+</div>
+<section id="gt-표-작성하기" class="level2" data-number="8.1"><h2 data-number="8.1" class="anchored" data-anchor-id="gt-표-작성하기">
+<span class="header-section-number">8.1</span> <code>gt</code> 표 작성하기</h2>
+<p><code>gt</code> 패키지는 R Tidyverse 생태계에 속한 표 제작 목적으로 특별히 제작된 패키지로 그래프 문법에 기반한 <code>ggplot2</code> 패키지에 친숙하신 저자는 쉽게 표도 <code>gt</code> 패키지를 사용해서 다양한 표 제작이 가능하다. 다음 예시에서는 <code>palmerpenguins</code> 데이터 패키지 <code>penguins</code> 데이터셋을 활용하여 “남극 펭귄 서식섬과 종 빈도표”를 제작한다.</p>
+<ol type="1">
+<li>라이브러리 가져오기: <code>tidyverse</code>, <code>palmerpenguins</code>, <code>gt</code>, <code>gtExtras</code>, <code>magick</code>.</li>
+<li>
+<code>penguins</code> 데이터를 사용하여 종(species)과 서식섬(island)에 따른 빈도를 집계하고 표제작에 맞춰 피벗 테이블을 생성한다.</li>
+<li>
+<code><a href="https://gt.rstudio.com/reference/gt.html">gt()</a></code> 함수를 이용하여 <code>gt</code> 표를 초기화하고, <code>rowname_col</code> 인자로 “species”를 지정하여 행 이름을 설정한다.</li>
+<li>
+<code><a href="https://gt.rstudio.com/reference/tab_header.html">tab_header()</a></code> 함수로 표 제목과 부제목을 지정한다.</li>
+<li>
+<code><a href="https://gt.rstudio.com/reference/grand_summary_rows.html">grand_summary_rows()</a></code> 함수를 사용하여 각 서식섬(Biscoe, Dream, Torgersen) 합계를 계산한다.</li>
+<li>
+<code>cols_align("center")</code>을 통해 텍스트를 가운데 정렬한다.</li>
+<li>
+<code><a href="https://gt.rstudio.com/reference/opt_row_striping.html">opt_row_striping()</a></code> 함수로 행에 스트라이핑을 추가하여 가독성을 높인다.</li>
+<li>
+<code><a href="https://gt.rstudio.com/reference/tab_source_note.html">tab_source_note()</a></code> 함수로 표 출처를 표기한다.</li>
+</ol>
+<p><code>penguins_gt</code> 변수에 저장된 <code>gt</code> 표를 저장한다. <code>gt</code> 패키지의 다양한 기능을 활용하여 복잡한 표도 손쉽게 작성할 수 있다는 것을 다시 확인할 수 있다.</p>
+<div class="cell">
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://allisonhorst.github.io/palmerpenguins/">palmerpenguins</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://gt.rstudio.com">gt</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/jthomasmock/gtExtras">gtExtras</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://docs.ropensci.org/magick/">magick</a></span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">penguins_gt</span> <span class="op">&lt;-</span> <span class="va">penguins</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/count.html">count</a></span><span class="op">(</span><span class="va">species</span>, <span class="va">island</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://tidyr.tidyverse.org/reference/pivot_wider.html">pivot_wider</a></span><span class="op">(</span>names_from <span class="op">=</span> <span class="va">island</span>, values_from <span class="op">=</span> <span class="va">n</span>, values_fill <span class="op">=</span> <span class="fl">0</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://tibble.tidyverse.org/reference/as_tibble.html">as_tibble</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://gt.rstudio.com/reference/gt.html">gt</a></span><span class="op">(</span>rowname_col <span class="op">=</span> <span class="st">"species"</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>    <span class="fu"><a href="https://gt.rstudio.com/reference/tab_header.html">tab_header</a></span><span class="op">(</span></span>
+<span>      title <span class="op">=</span> <span class="fu"><a href="https://gt.rstudio.com/reference/md.html">md</a></span><span class="op">(</span><span class="st">"남극 펭귄 **서식섬과 종** 빈도표"</span><span class="op">)</span>,</span>
+<span>      subtitle <span class="op">=</span> <span class="fu"><a href="https://gt.rstudio.com/reference/md.html">md</a></span><span class="op">(</span><span class="st">"`palmerpenguins` 데이터 패키지"</span><span class="op">)</span></span>
+<span>    <span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>    <span class="fu"><a href="https://gt.rstudio.com/reference/grand_summary_rows.html">grand_summary_rows</a></span><span class="op">(</span></span>
+<span>      columns <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">Biscoe</span>, <span class="va">Dream</span>, <span class="va">Torgersen</span><span class="op">)</span>,</span>
+<span>      fns <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span></span>
+<span>        <span class="st">'합계'</span> <span class="op">=</span> <span class="op">~</span><span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">.</span><span class="op">)</span> </span>
+<span>      <span class="op">)</span>,</span>
+<span>      fmt <span class="op">=</span> <span class="op">~</span> <span class="fu"><a href="https://gt.rstudio.com/reference/fmt_number.html">fmt_number</a></span><span class="op">(</span><span class="va">.</span>, use_seps <span class="op">=</span> <span class="cn">FALSE</span>, decimals <span class="op">=</span> <span class="fl">0</span><span class="op">)</span>,</span>
+<span>      missing_text <span class="op">=</span> <span class="st">'-'</span></span>
+<span>    <span class="op">)</span>  <span class="op">|&gt;</span> </span>
+<span>    <span class="fu"><a href="https://gt.rstudio.com/reference/cols_align.html">cols_align</a></span><span class="op">(</span><span class="st">"center"</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>    <span class="fu"><a href="https://gt.rstudio.com/reference/opt_row_striping.html">opt_row_striping</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>    <span class="fu"><a href="https://gt.rstudio.com/reference/tab_source_note.html">tab_source_note</a></span><span class="op">(</span></span>
+<span>      source_note <span class="op">=</span> <span class="fu"><a href="https://gt.rstudio.com/reference/md.html">md</a></span><span class="op">(</span><span class="st">"자료출처: `penguins` 데이터셋"</span><span class="op">)</span></span>
+<span>  <span class="op">)</span></span>
+<span></span>
+<span><span class="va">penguins_gt</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<div id="mwlefoodfi" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#mwlefoodfi table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#mwlefoodfi thead, #mwlefoodfi tbody, #mwlefoodfi tfoot, #mwlefoodfi tr, #mwlefoodfi td, #mwlefoodfi th {
+  border-style: none;
+}
+
+#mwlefoodfi p {
+  margin: 0;
+  padding: 0;
+}
+
+#mwlefoodfi .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#mwlefoodfi .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#mwlefoodfi .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#mwlefoodfi .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#mwlefoodfi .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#mwlefoodfi .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#mwlefoodfi .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#mwlefoodfi .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#mwlefoodfi .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#mwlefoodfi .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#mwlefoodfi .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#mwlefoodfi .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#mwlefoodfi .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#mwlefoodfi .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#mwlefoodfi .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#mwlefoodfi .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#mwlefoodfi .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#mwlefoodfi .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#mwlefoodfi .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#mwlefoodfi .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#mwlefoodfi .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#mwlefoodfi .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#mwlefoodfi .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#mwlefoodfi .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#mwlefoodfi .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#mwlefoodfi .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#mwlefoodfi .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#mwlefoodfi .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#mwlefoodfi .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#mwlefoodfi .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#mwlefoodfi .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#mwlefoodfi .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#mwlefoodfi .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#mwlefoodfi .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#mwlefoodfi .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#mwlefoodfi .gt_left {
+  text-align: left;
+}
+
+#mwlefoodfi .gt_center {
+  text-align: center;
+}
+
+#mwlefoodfi .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#mwlefoodfi .gt_font_normal {
+  font-weight: normal;
+}
+
+#mwlefoodfi .gt_font_bold {
+  font-weight: bold;
+}
+
+#mwlefoodfi .gt_font_italic {
+  font-style: italic;
+}
+
+#mwlefoodfi .gt_super {
+  font-size: 65%;
+}
+
+#mwlefoodfi .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#mwlefoodfi .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#mwlefoodfi .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#mwlefoodfi .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#mwlefoodfi .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#mwlefoodfi .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#mwlefoodfi .gt_indent_5 {
+  text-indent: 25px;
+}
+</style>
+<table class="gt_table table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<thead>
+<tr class="header gt_heading">
+<th colspan="4" class="gt_heading gt_title gt_font_normal">남극 펭귄 <strong>서식섬과 종</strong> 빈도표</th>
+</tr>
+<tr class="odd gt_heading">
+<th colspan="4" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border">
+<code>palmerpenguins</code> 데이터 패키지</th>
+</tr>
+<tr class="header gt_col_headings">
+<th class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"></th>
+<th id="Biscoe" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">Biscoe</th>
+<th id="Dream" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">Dream</th>
+<th id="Torgersen" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">Torgersen</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td id="stub_1_1" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row">Adelie</td>
+<td class="gt_row gt_center" headers="stub_1_1 Biscoe">44</td>
+<td class="gt_row gt_center" headers="stub_1_1 Dream">56</td>
+<td class="gt_row gt_center" headers="stub_1_1 Torgersen">52</td>
+</tr>
+<tr class="even">
+<td id="stub_1_2" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row">Chinstrap</td>
+<td class="gt_row gt_center gt_striped" headers="stub_1_2 Biscoe">0</td>
+<td class="gt_row gt_center gt_striped" headers="stub_1_2 Dream">68</td>
+<td class="gt_row gt_center gt_striped" headers="stub_1_2 Torgersen">0</td>
+</tr>
+<tr class="odd">
+<td id="stub_1_3" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row">Gentoo</td>
+<td class="gt_row gt_center" headers="stub_1_3 Biscoe">124</td>
+<td class="gt_row gt_center" headers="stub_1_3 Dream">0</td>
+<td class="gt_row gt_center" headers="stub_1_3 Torgersen">0</td>
+</tr>
+<tr class="even">
+<td id="grand_summary_stub_1" class="gt_row gt_left gt_stub gt_grand_summary_row gt_first_grand_summary_row gt_last_summary_row" data-quarto-table-cell-role="th" scope="row">합계</td>
+<td class="gt_row gt_center gt_grand_summary_row gt_first_grand_summary_row gt_last_summary_row" headers="grand_summary_stub_1 Biscoe">168</td>
+<td class="gt_row gt_center gt_grand_summary_row gt_first_grand_summary_row gt_last_summary_row" headers="grand_summary_stub_1 Dream">124</td>
+<td class="gt_row gt_center gt_grand_summary_row gt_first_grand_summary_row gt_last_summary_row" headers="grand_summary_stub_1 Torgersen">52</td>
+</tr>
+</tbody>
+<tfoot class="gt_sourcenotes"><tr class="odd">
+<td colspan="4" class="gt_sourcenote">자료출처: <code>penguins</code> 데이터셋</td>
+</tr></tfoot>
+</table>
+</div>
+</div>
+</div>
+</div>
+<section id="기본-색상과-스타일" class="level3" data-number="8.1.1"><h3 data-number="8.1.1" class="anchored" data-anchor-id="기본-색상과-스타일">
+<span class="header-section-number">8.1.1</span> 기본 색상과 스타일</h3>
+<p>웹 프로그램을 제작할 때 HTML로 콘텐츠를 제작하고 CSS/SCSS 파일로 스타일을 적용하는 것처럼 유지보수성이 뛰어나고 가독성이 좋은 표를 제작하기 위해 저자가 익혀야 되는 필수적인 기본기 중 하나다. <code>penguins_gt</code> 표는 핵심 정보가 잘 요약되어 있지만, 색상이나 다른 외양 관련 설정은 기본설정값만 따르고 있다.</p>
+<p><code>gt</code> 패키지 <code><a href="https://gt.rstudio.com/reference/opt_stylize.html">opt_stylize()</a></code> 함수는 표 스타일링에 다양한 선택지를 제공한다. 미리 정의된 배경색, 선 색상, 선 스타일 등을 다르게 적용할 수 있어 스타일은 총 36개에 이른다. 표 테두리, 표 요약 부분과 스텁(stub)에 더 어두운 색상을 적용, 수직선 반영여부가 포함된다.</p>
+<p>R 코드 <code>opt_colors</code> 벡터에 총 6가지 색상(파란색, 청록색, 분홍색, 녹색, 붉은색, 회색) 중 5개 색상을 지정하고, <code>draw_color_gt</code> 함수를 이용하여 이 색상들을 <code>penguins_gt</code> 표에 <code>opt_stylize</code> 함수를 호출하여 표 색상을 적용한다.</p>
+<div class="cell">
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">opt_colors</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"blue"</span>, <span class="st">"cyan"</span>, <span class="st">"green"</span>, <span class="st">"red"</span>, <span class="st">"gray"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">draw_color_gt</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">gt_color</span> <span class="op">=</span> <span class="st">"blue"</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="va">penguins_gt</span> <span class="op">|&gt;</span> </span>
+<span>    <span class="fu"><a href="https://gt.rstudio.com/reference/opt_stylize.html">opt_stylize</a></span><span class="op">(</span>style <span class="op">=</span> <span class="fl">1</span>, color <span class="op">=</span> <span class="va">gt_color</span><span class="op">)</span></span>
+<span><span class="op">}</span>                </span>
+<span></span>
+<span><span class="va">gt_colors_list</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://purrr.tidyverse.org/reference/map.html">map</a></span><span class="op">(</span><span class="va">opt_colors</span>, <span class="va">draw_color_gt</span><span class="op">)</span></span>
+<span></span>
+<span></span>
+<span><span class="kw">for</span><span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">opt_colors</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="fu"><a href="https://gt.rstudio.com/reference/gtsave.html">gtsave</a></span><span class="op">(</span><span class="va">gt_colors_list</span><span class="op">[[</span><span class="va">i</span><span class="op">]</span><span class="op">]</span>, <span class="fu"><a href="https://stringr.tidyverse.org/reference/str_glue.html">str_glue</a></span><span class="op">(</span><span class="st">"images/gt_theme_{opt_colors[i]}.png"</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="op">}</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><a href="theme_gt_files/figure-html/unnamed-chunk-4-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="theme_gt_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="735"></a></p>
+</figure>
+</div>
+</div>
+</div>
+</section><section id="스타일" class="level3" data-number="8.1.2"><h3 data-number="8.1.2" class="anchored" data-anchor-id="스타일">
+<span class="header-section-number">8.1.2</span> 스타일</h3>
+<p><code>gt</code> 패키지는 <code><a href="https://gt.rstudio.com/reference/opt_stylize.html">opt_stylize()</a></code> 함수를 통해서 색상뿐만 아니라 스타일도 달리해서 표를 제작할 수 있다. <code>gt</code> 패키지 1 ~ 6까지 번호 총6가지 스타일 선택이 가능하고, 기본값은 1 로 설정되어 있고, 저자가 복잡한 설정 없이 번호를 지정함으로써 표 디자인을 빠르게 변경할 수 있다. 번호로 스타일을 선택하게 되면, 데이터 분석과정에서 다양한 표 스타일을 빠르게 시험하고 가장 적절한 표를 신속히 제작하는데 도움이 된다.</p>
+<div class="cell">
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">opt_styles</span> <span class="op">&lt;-</span> <span class="fl">1</span><span class="op">:</span><span class="fl">5</span></span>
+<span></span>
+<span><span class="va">draw_style_gt</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">opt_sytle</span>, <span class="va">gt_color</span> <span class="op">=</span> <span class="st">"blue"</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="va">penguins_gt</span> <span class="op">|&gt;</span> </span>
+<span>    <span class="fu"><a href="https://gt.rstudio.com/reference/opt_stylize.html">opt_stylize</a></span><span class="op">(</span>style <span class="op">=</span> <span class="va">opt_sytle</span>, color <span class="op">=</span> <span class="va">gt_color</span><span class="op">)</span></span>
+<span><span class="op">}</span>                </span>
+<span></span>
+<span><span class="va">gt_styles_list</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://purrr.tidyverse.org/reference/map.html">map</a></span><span class="op">(</span><span class="va">opt_sytles</span>, <span class="va">draw_style_gt</span><span class="op">)</span></span>
+<span></span>
+<span></span>
+<span><span class="kw">for</span><span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">opt_styles</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="fu"><a href="https://gt.rstudio.com/reference/gtsave.html">gtsave</a></span><span class="op">(</span><span class="va">gt_styles_list</span><span class="op">[[</span><span class="va">i</span><span class="op">]</span><span class="op">]</span>, <span class="fu"><a href="https://stringr.tidyverse.org/reference/str_glue.html">str_glue</a></span><span class="op">(</span><span class="st">"images/gt_theme_style_{opt_styles[i]}.png"</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="op">}</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><a href="theme_gt_files/figure-html/unnamed-chunk-6-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="theme_gt_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="734"></a></p>
+</figure>
+</div>
+</div>
+</div>
+</section></section><section id="gtextra" class="level2" data-number="8.2"><h2 data-number="8.2" class="anchored" data-anchor-id="gtextra">
+<span class="header-section-number">8.2</span> <code>gtExtra</code>
+</h2>
+<p><code>gtExtras</code> 패키지는 <code>gt</code> 패키지를 보완하여 더 아름다운 표를 생성할 수 있도록 도와주는 목적으로 개발되었다. <code>gt</code> 패키지에서 구현되지 않은 기능을 추가하거나, 반복되는 코드를 줄이기 위한 래퍼(wrapper) 함수로 작성되었다. <code>gt</code> 패키지를 확장한 다양한 기능이 있지만 테마와 관련된 사항을 집중적으로 살펴보자.</p>
+<p><code>ggplot2</code> 패키지를 활용하여 그래프 문법에 맞춰 그래프를 제작한 경험이 있다면, 자주 <code>theme_*()</code> 함수를 사용했을 것이다. 마찬가지로 <code>ggplot2</code> 그래프 테마 <code><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_minimal()</a></code>, <code><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_grey()</a></code>에 대응되는 테마가 <code>gtExtras</code> 패키지에 <code><a href="https://jthomasmock.github.io/gtExtras/reference/gt_theme_538.html">gt_theme_538()</a></code>, <code><a href="https://jthomasmock.github.io/gtExtras/reference/gt_theme_espn.html">gt_theme_espn()</a></code>, <code><a href="https://jthomasmock.github.io/gtExtras/reference/gt_theme_nytimes.html">gt_theme_nytimes()</a></code>, <code><a href="https://jthomasmock.github.io/gtExtras/reference/gt_theme_guardian.html">gt_theme_guardian()</a></code>, <code><a href="https://jthomasmock.github.io/gtExtras/reference/gt_theme_dot_matrix.html">gt_theme_dot_matrix()</a></code>, <code><a href="https://jthomasmock.github.io/gtExtras/reference/gt_theme_dark.html">gt_theme_dark()</a></code>, <code><a href="https://jthomasmock.github.io/gtExtras/reference/gt_theme_excel.html">gt_theme_excel()</a></code>, <code><a href="https://jthomasmock.github.io/gtExtras/reference/gt_theme_pff.html">gt_theme_pff()</a></code> 포함되어 있다. 주목할 점은 언론사와 단체에서 사용되는 스타일이 대거 포함되어 있다는 점이다.</p>
+<p><code><a href="https://jthomasmock.github.io/gtExtras/reference/gt_theme_espn.html">gt_theme_espn()</a></code> 함수는 <code>gt</code> 패키지로 생성된 표에 ESPN 테마를 적용한다. 이 함수는 <code>gt</code> 테이블 객체(<code>gt_tbl</code> 클래스)를 인자로 받으며, 선택적으로 <code>gt::table_options()</code>에 전달할 추가 인자를 받을 수 있다. 반환 값은 <code>gt_tbl</code> 클래스의 객체이다.</p>
+<p>다음은 다른 테마 함수들에 대한 간략한 설명이다:</p>
+<table class="table">
+<colgroup>
+<col style="width: 56%">
+<col style="width: 43%">
+</colgroup>
+<thead><tr class="header">
+<th>테마명</th>
+<th>테마 설명</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td><code><a href="https://jthomasmock.github.io/gtExtras/reference/gt_theme_538.html">gt_theme_538()</a></code></td>
+<td>FiveThirtyEight 스타일 테마 적용</td>
+</tr>
+<tr class="even">
+<td><code><a href="https://jthomasmock.github.io/gtExtras/reference/gt_theme_espn.html">gt_theme_espn()</a></code></td>
+<td>ESPN 스타일 테마 적용</td>
+</tr>
+<tr class="odd">
+<td><code><a href="https://jthomasmock.github.io/gtExtras/reference/gt_theme_nytimes.html">gt_theme_nytimes()</a></code></td>
+<td>New York Times 스타일 테마 적용</td>
+</tr>
+<tr class="even">
+<td><code><a href="https://jthomasmock.github.io/gtExtras/reference/gt_theme_guardian.html">gt_theme_guardian()</a></code></td>
+<td>가디언진(The Guardian) 스타일 테마 적용</td>
+</tr>
+<tr class="odd">
+<td><code><a href="https://jthomasmock.github.io/gtExtras/reference/gt_theme_dot_matrix.html">gt_theme_dot_matrix()</a></code></td>
+<td>도트 매트릭스 스타일 테마 적용</td>
+</tr>
+<tr class="even">
+<td><code><a href="https://jthomasmock.github.io/gtExtras/reference/gt_theme_dark.html">gt_theme_dark()</a></code></td>
+<td>어두운 배경 테마 적용</td>
+</tr>
+<tr class="odd">
+<td><code><a href="https://jthomasmock.github.io/gtExtras/reference/gt_theme_excel.html">gt_theme_excel()</a></code></td>
+<td>마이크로소프트 엑셀 스타일 테마 적용</td>
+</tr>
+<tr class="even">
+<td><code><a href="https://jthomasmock.github.io/gtExtras/reference/gt_theme_pff.html">gt_theme_pff()</a></code></td>
+<td>PFF(Pro Football Focus, 스포츠 분석회사) 스타일 테마 적용</td>
+</tr>
+</tbody>
+</table>
+<p>언론사와 미국 풋볼 리그 스포츠 분석에 특화된 PFF 스타일을 표에 적용해보자.</p>
+<div class="cell">
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">gtExtra_themes</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">gt_theme_538</span>, <span class="va">gt_theme_espn</span>, <span class="va">gt_theme_nytimes</span>, <span class="va">gt_theme_guardian</span>, <span class="va">gt_theme_pff</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">gtExtra_themes_names</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"gt_theme_538"</span>, <span class="st">"gt_theme_espn"</span>, <span class="st">"gt_theme_nytimes"</span>,</span>
+<span>                          <span class="st">"gt_theme_guardian"</span>,<span class="st">"gt_theme_pff"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">draw_gtExtras_theme</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">gt_theme</span>, <span class="va">gtExtra_themes_names</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="va">penguins_gt</span> <span class="op">|&gt;</span> </span>
+<span>    <span class="fu">gt_theme</span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>    <span class="fu"><a href="https://gt.rstudio.com/reference/tab_header.html">tab_header</a></span><span class="op">(</span></span>
+<span>      title <span class="op">=</span> <span class="fu"><a href="https://gt.rstudio.com/reference/md.html">md</a></span><span class="op">(</span><span class="st">"남극 펭귄 **서식섬과 종** 빈도표"</span><span class="op">)</span>,</span>
+<span>      subtitle <span class="op">=</span> <span class="va">gtExtra_themes_names</span><span class="op">)</span></span>
+<span><span class="op">}</span></span>
+<span></span>
+<span><span class="co"># draw_gtExtras_theme(gtExtra_themes[5][[1]])</span></span>
+<span><span class="co">## gtExtras 테마적용 표 -------------------</span></span>
+<span></span>
+<span><span class="va">gtExtra_styles_list</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/vector.html">vector</a></span><span class="op">(</span>mode <span class="op">=</span><span class="st">"list"</span>, length <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">gtExtra_themes</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="kw">for</span><span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">gtExtra_themes</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="va">gtExtra_styles_list</span><span class="op">[[</span><span class="va">i</span><span class="op">]</span><span class="op">]</span> <span class="op">&lt;-</span>  <span class="fu">draw_gtExtras_theme</span><span class="op">(</span><span class="va">gtExtra_themes</span><span class="op">[</span><span class="va">i</span><span class="op">]</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span>, <span class="va">gtExtra_themes_names</span><span class="op">[</span><span class="va">i</span><span class="op">]</span><span class="op">)</span></span>
+<span><span class="op">}</span></span>
+<span></span>
+<span><span class="co">## 테마 표 png 파일 저장 -------------------</span></span>
+<span></span>
+<span><span class="va">gtExtras_path_filenames</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/vector.html">vector</a></span><span class="op">(</span>mode <span class="op">=</span> <span class="st">"character"</span>, length <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">gtExtra_themes</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="kw">for</span><span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">gtExtra_themes</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="va">gtExtras_path_filenames</span><span class="op">[</span><span class="va">i</span><span class="op">]</span> <span class="op">&lt;-</span>  <span class="fu"><a href="https://stringr.tidyverse.org/reference/str_glue.html">str_glue</a></span><span class="op">(</span><span class="st">"images/gtExtras_theme_{gtExtra_themes_names[i]}.png"</span><span class="op">)</span></span>
+<span><span class="op">}</span></span>
+<span></span>
+<span><span class="kw">for</span><span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">gtExtra_themes</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="fu"><a href="https://gt.rstudio.com/reference/gtsave.html">gtsave</a></span><span class="op">(</span><span class="va">gtExtra_styles_list</span><span class="op">[[</span><span class="va">i</span><span class="op">]</span><span class="op">]</span>,</span>
+<span>         <span class="fu"><a href="https://stringr.tidyverse.org/reference/str_glue.html">str_glue</a></span><span class="op">(</span><span class="st">"images/gtExtras_theme_{gtExtra_themes_names[i]}.png"</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="op">}</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><a href="theme_gt_files/figure-html/unnamed-chunk-8-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="theme_gt_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="748"></a></p>
+</figure>
+</div>
+</div>
+</div>
+</section><section id="사용자-정의-테마" class="level2" data-number="8.3"><h2 data-number="8.3" class="anchored" data-anchor-id="사용자-정의-테마">
+<span class="header-section-number">8.3</span> 사용자 정의 테마</h2>
+<p>사용자 정의 테마가 필요한 이유는 다양하지만, 보고서나 PPT 발표에서 동일한 스타일과 구성을 가진 표를 사용하면 데이터를 더 쉽고 빠르게 이해할 수 있고 동일한 일관성은 수작없이 반영할 수 있고 독자에게는 전문성을 각인시킬 수 있는 점이 크다.</p>
+<p><code>gtExtras</code>와 같은 패키지에서 제공되는 테마는 코드 한 줄로 빠르고 깔끔한 표를 만들 수 있어 시간을 절약할 수 있다는 큰 장점이 있지만, 특정 요구사항이나 브랜딩 지침을 완전히 맞춤화하기 쉽지 않고, 복잡한 데이터 구조나 특별한 시각화 요구사항을 충족시키는 데에도 한계가 있다.</p>
+<p>사용자 정의 테마를 개발함으로써 <code>gtExtras</code>에서 제공하는 테마처럼 표 제작을 빠르고 편하게 지원할 수 있으면서도, 저자가 필요로 하는 브랜드나 스타일을 반영할 수 있다. 이렇게 하면 표가 더 전문적이면서도 개성있게 작성할 수 있다.</p>
+<section id="gtextras-확장" class="level3" data-number="8.3.1"><h3 data-number="8.3.1" class="anchored" data-anchor-id="gtextras-확장">
+<span class="header-section-number">8.3.1</span> <code>gtExtras</code> 확장</h3>
+<p><code>penguins_gt</code>라는 기존 <code>gt</code> 표 객체에 <code><a href="https://jthomasmock.github.io/gtExtras/reference/gt_theme_538.html">gt_theme_538()</a></code> 테마를 선택하고 글꼴, 색상, 정렬 등 세부적인 작업을 진행하고 그 결과를 <code>.png</code> 파일로 저장한다. <code>gt</code> 패키지는 <code>tidyverse</code> 생태계 일원으로 파이프 연산자를 통해 세부적인 기능을 긴밀히 조합하여 단순한 코드로 제작되지만 최종 결과물로 상당히 높은 난이도를 갖는 표를 제작할 수 있다.</p>
+<ol type="1">
+<li><p><strong>gt_theme_538()</strong>: FiveThirtyEight 스타일 테마 적용</p></li>
+<li><p><strong>tab_options()</strong>: 테이블의 글꼴, 제목 크기, 배경색 등 다양한 표 선택옵션 설정</p></li>
+<li><p><strong>cols_align()</strong>: 숫자형 열은 가운데 정렬하고, 문자형 열은 자동 정렬</p></li>
+<li><p><strong>tab_style()</strong>: “MaruBuri” 글꼴과 굵은 글씨체를 제목, 본문, 열에 적용</p></li>
+<li><p><strong>gtsave()</strong>: 최종적으로 작업한 표를 PNG 이미지로 저장</p></li>
+</ol>
+<div class="cell">
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">penguins_theme_gt</span> <span class="op">&lt;-</span> <span class="va">penguins_gt</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://jthomasmock.github.io/gtExtras/reference/gt_theme_538.html">gt_theme_538</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://gt.rstudio.com/reference/tab_options.html">tab_options</a></span><span class="op">(</span></span>
+<span>    <span class="co"># column_labels.background.color = '#1E61B0', # R logo 파란색</span></span>
+<span>    table.font.names <span class="op">=</span><span class="st">"NanumSquare"</span>,    </span>
+<span>    heading.title.font.size <span class="op">=</span> <span class="fu"><a href="https://gt.rstudio.com/reference/px.html">px</a></span><span class="op">(</span><span class="fl">26</span><span class="op">)</span>,</span>
+<span>    heading.subtitle.font.size <span class="op">=</span> <span class="fu"><a href="https://gt.rstudio.com/reference/px.html">px</a></span><span class="op">(</span><span class="fl">16</span><span class="op">)</span>,    </span>
+<span>    heading.background.color <span class="op">=</span> <span class="st">"transparent"</span>, </span>
+<span>    column_labels.font.weight <span class="op">=</span> <span class="st">'bold'</span>,</span>
+<span>    table_body.hlines.width <span class="op">=</span> <span class="fu"><a href="https://gt.rstudio.com/reference/px.html">px</a></span><span class="op">(</span><span class="fl">0</span><span class="op">)</span>,</span>
+<span>    data_row.padding <span class="op">=</span> <span class="fu"><a href="https://gt.rstudio.com/reference/px.html">px</a></span><span class="op">(</span><span class="fl">6</span><span class="op">)</span>,</span>
+<span>    heading.align <span class="op">=</span> <span class="st">'center'</span>,</span>
+<span>    stub.background.color <span class="op">=</span> <span class="st">"#ffffff"</span>,</span>
+<span>    stub.font.weight <span class="op">=</span> <span class="st">"bold"</span>,</span>
+<span>    source_notes.font.size <span class="op">=</span> <span class="fu"><a href="https://gt.rstudio.com/reference/px.html">px</a></span><span class="op">(</span><span class="fl">10</span><span class="op">)</span>,</span>
+<span>    row.striping.include_table_body <span class="op">=</span> <span class="cn">TRUE</span></span>
+<span>  <span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://gt.rstudio.com/reference/cols_align.html">cols_align</a></span><span class="op">(</span> align <span class="op">=</span> <span class="st">"center"</span>, columns <span class="op">=</span> <span class="fu"><a href="https://tidyselect.r-lib.org/reference/where.html">where</a></span><span class="op">(</span><span class="va">is.numeric</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://gt.rstudio.com/reference/cols_align.html">cols_align</a></span><span class="op">(</span> align <span class="op">=</span> <span class="st">"auto"</span>, columns <span class="op">=</span> <span class="fu"><a href="https://tidyselect.r-lib.org/reference/where.html">where</a></span><span class="op">(</span><span class="va">is.character</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="co">## 글꼴 달리 적용</span></span>
+<span>  <span class="fu"><a href="https://gt.rstudio.com/reference/tab_style.html">tab_style</a></span><span class="op">(</span></span>
+<span>    style <span class="op">=</span> <span class="fu"><a href="https://gt.rstudio.com/reference/cell_text.html">cell_text</a></span><span class="op">(</span></span>
+<span>      font <span class="op">=</span> <span class="st">"MaruBuri"</span>,      </span>
+<span>      weight <span class="op">=</span> <span class="st">'bold'</span> </span>
+<span>    <span class="op">)</span>,</span>
+<span>    locations <span class="op">=</span> <span class="fu"><a href="https://gt.rstudio.com/reference/cells_title.html">cells_title</a></span><span class="op">(</span>groups <span class="op">=</span> <span class="st">'subtitle'</span><span class="op">)</span></span>
+<span>  <span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://gt.rstudio.com/reference/tab_style.html">tab_style</a></span><span class="op">(</span></span>
+<span>    style <span class="op">=</span> <span class="fu"><a href="https://gt.rstudio.com/reference/cell_text.html">cell_text</a></span><span class="op">(</span></span>
+<span>      font <span class="op">=</span> <span class="st">"MaruBuri"</span>,      </span>
+<span>      weight <span class="op">=</span> <span class="st">'bold'</span> </span>
+<span>    <span class="op">)</span>,</span>
+<span>    locations <span class="op">=</span> <span class="fu"><a href="https://gt.rstudio.com/reference/cells_body.html">cells_body</a></span><span class="op">(</span><span class="op">)</span></span>
+<span>  <span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://gt.rstudio.com/reference/tab_style.html">tab_style</a></span><span class="op">(</span></span>
+<span>    style <span class="op">=</span> <span class="fu"><a href="https://gt.rstudio.com/reference/cell_text.html">cell_text</a></span><span class="op">(</span></span>
+<span>      font <span class="op">=</span> <span class="st">"MaruBuri"</span>,      </span>
+<span>      weight <span class="op">=</span> <span class="st">'bold'</span> </span>
+<span>    <span class="op">)</span>,</span>
+<span>    locations <span class="op">=</span> <span class="fu"><a href="https://gt.rstudio.com/reference/cells_column_labels.html">cells_column_labels</a></span><span class="op">(</span><span class="op">)</span></span>
+<span>  <span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://gt.rstudio.com/reference/tab_style.html">tab_style</a></span><span class="op">(</span></span>
+<span>    style <span class="op">=</span> <span class="fu"><a href="https://gt.rstudio.com/reference/cell_text.html">cell_text</a></span><span class="op">(</span></span>
+<span>      font <span class="op">=</span> <span class="st">"MaruBuri"</span>,      </span>
+<span>    <span class="op">)</span>,</span>
+<span>    locations <span class="op">=</span> <span class="fu"><a href="https://gt.rstudio.com/reference/cells_source_notes.html">cells_source_notes</a></span><span class="op">(</span><span class="op">)</span></span>
+<span>  <span class="op">)</span></span>
+<span></span>
+<span><span class="va">penguins_theme_gt</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://gt.rstudio.com/reference/gtsave.html">gtsave</a></span><span class="op">(</span>filename <span class="op">=</span> <span class="st">"images/penguins_theme_gt.png"</span><span class="op">)</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><a href="images/penguins_theme_gt.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="gt 사용자 정의 테마 적용 표"><img src="images/penguins_theme_gt.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="446" alt="gt 사용자 정의 테마 적용 표"></a></p>
+<figcaption><code>gt</code> 사용자 정의 테마 적용 표</figcaption></figure>
+</div>
+</section><section id="gt_theme_hangul-테마" class="level3" data-number="8.3.2"><h3 data-number="8.3.2" class="anchored" data-anchor-id="gt_theme_hangul-테마">
+<span class="header-section-number">8.3.2</span> <code>gt_theme_hangul()</code> 테마</h3>
+<p><code><a href="https://jthomasmock.github.io/gtExtras/reference/gt_theme_538.html">gt_theme_538()</a></code> 함수처럼 사용자 정의 함수를 <code>gt_theme_hangul()</code> 테마명을 지정해 두면 모든 표에 통일성을 유지한 테마를 간편하게 적용시킬 수 있다.</p>
+<p><code>gt_tbl</code> 데이터프레임을 입력받아 <code><a href="https://jthomasmock.github.io/gtExtras/reference/gt_theme_538.html">gt_theme_538()</a></code>을 기본표 테마로 지정하고, <code><a href="https://gt.rstudio.com/reference/tab_options.html">tab_options()</a></code> 함수를 통해 글꼴, 제목 크기, 배경색 등을 설정하고, 나눔스퀘어(NanumSquare), 마루부리(MaruBuri) 글꼴을 사용하여 한글 표에 더 적합한 스타일을 적용하고, <code><a href="https://gt.rstudio.com/reference/cols_align.html">cols_align()</a></code>과 <code><a href="https://gt.rstudio.com/reference/tab_style.html">tab_style()</a></code> 함수를 사용해서 숫자형 열(칼럼)은 가운데 정렬시키고, 문자형 열은 자동 정렬토록 하고, 특정 셀에 굵은 글씨체와 각기 다른 글꼴을 적용하여 좀더 독특하고 전문적인 느낌을 심는다. <code><a href="https://gt.rstudio.com/reference/tab_style.html">tab_style()</a></code> 기능을 이용해 표 홀수 번째 행에만 회색 배경(‘grey90’)을 적용하여 가독성을 높게 한다. 마지막으로 사용자 정의 테마 함수도 예를 들어 기억하기 좋게 <code>gt_theme_hangul()</code>으로 작명하여 문서에서 표가 필요한 부분에 별도 검색작업 없이 적용시킬 수 있도록 한다.</p>
+<div class="cell">
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">gt_theme_hangul</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">gt_tbl</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  </span>
+<span>  <span class="co"># Grab number of rows of data from gt object</span></span>
+<span>  <span class="va">n_rows</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/nrow.html">nrow</a></span><span class="op">(</span><span class="va">gt_tbl</span><span class="op">$</span><span class="va">`_data`</span><span class="op">)</span></span>
+<span>  </span>
+<span>  <span class="va">gt_tbl</span> <span class="op">|&gt;</span> </span>
+<span>    <span class="fu"><a href="https://jthomasmock.github.io/gtExtras/reference/gt_theme_538.html">gt_theme_538</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>    <span class="fu"><a href="https://gt.rstudio.com/reference/tab_options.html">tab_options</a></span><span class="op">(</span></span>
+<span>      <span class="co"># column_labels.background.color = '#1E61B0', # R logo 파란색</span></span>
+<span>      table.font.names <span class="op">=</span><span class="st">"NanumSquare"</span>,    </span>
+<span>      heading.title.font.size <span class="op">=</span> <span class="fu"><a href="https://gt.rstudio.com/reference/px.html">px</a></span><span class="op">(</span><span class="fl">26</span><span class="op">)</span>,</span>
+<span>      heading.subtitle.font.size <span class="op">=</span> <span class="fu"><a href="https://gt.rstudio.com/reference/px.html">px</a></span><span class="op">(</span><span class="fl">16</span><span class="op">)</span>,    </span>
+<span>      heading.background.color <span class="op">=</span> <span class="st">"transparent"</span>, </span>
+<span>      column_labels.font.weight <span class="op">=</span> <span class="st">'bold'</span>,</span>
+<span>      table_body.hlines.width <span class="op">=</span> <span class="fu"><a href="https://gt.rstudio.com/reference/px.html">px</a></span><span class="op">(</span><span class="fl">0</span><span class="op">)</span>,</span>
+<span>      data_row.padding <span class="op">=</span> <span class="fu"><a href="https://gt.rstudio.com/reference/px.html">px</a></span><span class="op">(</span><span class="fl">6</span><span class="op">)</span>,</span>
+<span>      heading.align <span class="op">=</span> <span class="st">'center'</span>,</span>
+<span>      stub.background.color <span class="op">=</span> <span class="st">"#ffffff"</span>,</span>
+<span>      stub.font.weight <span class="op">=</span> <span class="st">"bold"</span>,</span>
+<span>      source_notes.font.size <span class="op">=</span> <span class="fu"><a href="https://gt.rstudio.com/reference/px.html">px</a></span><span class="op">(</span><span class="fl">10</span><span class="op">)</span>,</span>
+<span>      row.striping.include_table_body <span class="op">=</span> <span class="cn">FALSE</span></span>
+<span>    <span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>    <span class="fu"><a href="https://gt.rstudio.com/reference/cols_align.html">cols_align</a></span><span class="op">(</span> align <span class="op">=</span> <span class="st">"center"</span>, columns <span class="op">=</span> <span class="fu"><a href="https://tidyselect.r-lib.org/reference/where.html">where</a></span><span class="op">(</span><span class="va">is.numeric</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>    <span class="fu"><a href="https://gt.rstudio.com/reference/cols_align.html">cols_align</a></span><span class="op">(</span> align <span class="op">=</span> <span class="st">"auto"</span>, columns <span class="op">=</span> <span class="fu"><a href="https://tidyselect.r-lib.org/reference/where.html">where</a></span><span class="op">(</span><span class="va">is.character</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>    <span class="co">## 글꼴 달리 적용</span></span>
+<span>    <span class="fu"><a href="https://gt.rstudio.com/reference/tab_style.html">tab_style</a></span><span class="op">(</span></span>
+<span>      style <span class="op">=</span> <span class="fu"><a href="https://gt.rstudio.com/reference/cell_text.html">cell_text</a></span><span class="op">(</span></span>
+<span>        font <span class="op">=</span> <span class="st">"MaruBuri"</span>,      </span>
+<span>        weight <span class="op">=</span> <span class="st">'bold'</span> </span>
+<span>      <span class="op">)</span>,</span>
+<span>      locations <span class="op">=</span> <span class="fu"><a href="https://gt.rstudio.com/reference/cells_title.html">cells_title</a></span><span class="op">(</span>groups <span class="op">=</span> <span class="st">'subtitle'</span><span class="op">)</span></span>
+<span>    <span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>    <span class="fu"><a href="https://gt.rstudio.com/reference/tab_style.html">tab_style</a></span><span class="op">(</span></span>
+<span>      style <span class="op">=</span> <span class="fu"><a href="https://gt.rstudio.com/reference/cell_text.html">cell_text</a></span><span class="op">(</span></span>
+<span>        font <span class="op">=</span> <span class="st">"MaruBuri"</span>,      </span>
+<span>        weight <span class="op">=</span> <span class="st">'bold'</span> </span>
+<span>      <span class="op">)</span>,</span>
+<span>      locations <span class="op">=</span> <span class="fu"><a href="https://gt.rstudio.com/reference/cells_body.html">cells_body</a></span><span class="op">(</span><span class="op">)</span></span>
+<span>    <span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>    <span class="fu"><a href="https://gt.rstudio.com/reference/tab_style.html">tab_style</a></span><span class="op">(</span></span>
+<span>      style <span class="op">=</span> <span class="fu"><a href="https://gt.rstudio.com/reference/cell_text.html">cell_text</a></span><span class="op">(</span></span>
+<span>        font <span class="op">=</span> <span class="st">"MaruBuri"</span>,      </span>
+<span>        weight <span class="op">=</span> <span class="st">'bold'</span> </span>
+<span>      <span class="op">)</span>,</span>
+<span>      locations <span class="op">=</span> <span class="fu"><a href="https://gt.rstudio.com/reference/cells_column_labels.html">cells_column_labels</a></span><span class="op">(</span><span class="op">)</span></span>
+<span>    <span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>    <span class="fu"><a href="https://gt.rstudio.com/reference/tab_style.html">tab_style</a></span><span class="op">(</span></span>
+<span>      style <span class="op">=</span> <span class="fu"><a href="https://gt.rstudio.com/reference/cell_text.html">cell_text</a></span><span class="op">(</span></span>
+<span>        font <span class="op">=</span> <span class="st">"MaruBuri"</span>,      </span>
+<span>      <span class="op">)</span>,</span>
+<span>      locations <span class="op">=</span> <span class="fu"><a href="https://gt.rstudio.com/reference/cells_source_notes.html">cells_source_notes</a></span><span class="op">(</span><span class="op">)</span></span>
+<span>    <span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>    <span class="fu"><a href="https://gt.rstudio.com/reference/tab_style.html">tab_style</a></span><span class="op">(</span></span>
+<span>      style <span class="op">=</span> <span class="fu"><a href="https://gt.rstudio.com/reference/cell_fill.html">cell_fill</a></span><span class="op">(</span>color <span class="op">=</span> <span class="st">'grey90'</span><span class="op">)</span>,</span>
+<span>      locations <span class="op">=</span> <span class="fu"><a href="https://gt.rstudio.com/reference/cells_body.html">cells_body</a></span><span class="op">(</span>rows <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">1</span>, <span class="va">n_rows</span>, <span class="fl">2</span><span class="op">)</span><span class="op">)</span></span>
+<span>    <span class="op">)</span>    </span>
+<span><span class="op">}</span></span>
+<span></span>
+<span><span class="va">penguins_gt</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">gt_theme_hangul</span><span class="op">(</span><span class="op">)</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<div id="eexombwkke" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>@import url("https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+#eexombwkke table {
+  font-family: NanumSquare;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#eexombwkke thead, #eexombwkke tbody, #eexombwkke tfoot, #eexombwkke tr, #eexombwkke td, #eexombwkke th {
+  border-style: none;
+}
+
+#eexombwkke p {
+  margin: 0;
+  padding: 0;
+}
+
+#eexombwkke .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: 300;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: none;
+  border-top-width: 3px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#eexombwkke .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#eexombwkke .gt_title {
+  color: #333333;
+  font-size: 26px;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#eexombwkke .gt_subtitle {
+  color: #333333;
+  font-size: 16px;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#eexombwkke .gt_heading {
+  background-color: rgba(255, 255, 255, 0);
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#eexombwkke .gt_bottom_border {
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#eexombwkke .gt_col_headings {
+  border-top-style: none;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #000000;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#eexombwkke .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 80%;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#eexombwkke .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 80%;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#eexombwkke .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#eexombwkke .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#eexombwkke .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #000000;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#eexombwkke .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#eexombwkke .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 80%;
+  font-weight: bolder;
+  text-transform: uppercase;
+  border-top-style: none;
+  border-top-width: 2px;
+  border-top-color: #000000;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#eexombwkke .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 80%;
+  font-weight: bolder;
+  border-top-style: none;
+  border-top-width: 2px;
+  border-top-color: #000000;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: #FFFFFF;
+  vertical-align: middle;
+}
+
+#eexombwkke .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#eexombwkke .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#eexombwkke .gt_row {
+  padding-top: 6px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 0px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#eexombwkke .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 80%;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-right-style: solid;
+  border-right-width: 0px;
+  border-right-color: #FFFFFF;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#eexombwkke .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#eexombwkke .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#eexombwkke .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#eexombwkke .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#eexombwkke .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#eexombwkke .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#eexombwkke .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#eexombwkke .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#eexombwkke .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#eexombwkke .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#eexombwkke .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#eexombwkke .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#eexombwkke .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#eexombwkke .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#eexombwkke .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#eexombwkke .gt_sourcenote {
+  font-size: 10px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#eexombwkke .gt_left {
+  text-align: left;
+}
+
+#eexombwkke .gt_center {
+  text-align: center;
+}
+
+#eexombwkke .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#eexombwkke .gt_font_normal {
+  font-weight: normal;
+}
+
+#eexombwkke .gt_font_bold {
+  font-weight: bold;
+}
+
+#eexombwkke .gt_font_italic {
+  font-style: italic;
+}
+
+#eexombwkke .gt_super {
+  font-size: 65%;
+}
+
+#eexombwkke .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#eexombwkke .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#eexombwkke .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#eexombwkke .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#eexombwkke .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#eexombwkke .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#eexombwkke .gt_indent_5 {
+  text-indent: 25px;
+}
+
+tbody tr:last-child {
+  border-bottom: 2px solid #ffffff00;
+}
+</style>
+<table class="gt_table table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<thead>
+<tr class="header gt_heading">
+<th colspan="4" class="gt_heading gt_title gt_font_normal">남극 펭귄 <strong>서식섬과 종</strong> 빈도표</th>
+</tr>
+<tr class="odd gt_heading">
+<th colspan="4" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border" style="font-family: MaruBuri; font-weight: bold">
+<code>palmerpenguins</code> 데이터 패키지</th>
+</tr>
+<tr class="header gt_col_headings">
+<th class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"></th>
+<th id="Biscoe" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" style="border-top-width: 0px; border-top-style: solid; border-top-color: black; font-family: MaruBuri; font-weight: bold" scope="col">Biscoe</th>
+<th id="Dream" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" style="border-top-width: 0px; border-top-style: solid; border-top-color: black; font-family: MaruBuri; font-weight: bold" scope="col">Dream</th>
+<th id="Torgersen" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" style="border-top-width: 0px; border-top-style: solid; border-top-color: black; font-family: MaruBuri; font-weight: bold" scope="col">Torgersen</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td id="stub_1_1" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row">Adelie</td>
+<td class="gt_row gt_center" headers="stub_1_1 Biscoe" style="font-family: MaruBuri; font-weight: bold; background-color: #E5E5E5">44</td>
+<td class="gt_row gt_center" headers="stub_1_1 Dream" style="font-family: MaruBuri; font-weight: bold; background-color: #E5E5E5">56</td>
+<td class="gt_row gt_center" headers="stub_1_1 Torgersen" style="font-family: MaruBuri; font-weight: bold; background-color: #E5E5E5">52</td>
+</tr>
+<tr class="even">
+<td id="stub_1_2" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row">Chinstrap</td>
+<td class="gt_row gt_center" headers="stub_1_2 Biscoe" style="font-family: MaruBuri; font-weight: bold">0</td>
+<td class="gt_row gt_center" headers="stub_1_2 Dream" style="font-family: MaruBuri; font-weight: bold">68</td>
+<td class="gt_row gt_center" headers="stub_1_2 Torgersen" style="font-family: MaruBuri; font-weight: bold">0</td>
+</tr>
+<tr class="odd">
+<td id="stub_1_3" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row">Gentoo</td>
+<td class="gt_row gt_center" headers="stub_1_3 Biscoe" style="font-family: MaruBuri; font-weight: bold; background-color: #E5E5E5">124</td>
+<td class="gt_row gt_center" headers="stub_1_3 Dream" style="font-family: MaruBuri; font-weight: bold; background-color: #E5E5E5">0</td>
+<td class="gt_row gt_center" headers="stub_1_3 Torgersen" style="font-family: MaruBuri; font-weight: bold; background-color: #E5E5E5">0</td>
+</tr>
+<tr class="even">
+<td id="grand_summary_stub_1" class="gt_row gt_left gt_stub gt_grand_summary_row gt_first_grand_summary_row gt_last_summary_row" data-quarto-table-cell-role="th" scope="row">합계</td>
+<td class="gt_row gt_center gt_grand_summary_row gt_first_grand_summary_row gt_last_summary_row" headers="grand_summary_stub_1 Biscoe">168</td>
+<td class="gt_row gt_center gt_grand_summary_row gt_first_grand_summary_row gt_last_summary_row" headers="grand_summary_stub_1 Dream">124</td>
+<td class="gt_row gt_center gt_grand_summary_row gt_first_grand_summary_row gt_last_summary_row" headers="grand_summary_stub_1 Torgersen">52</td>
+</tr>
+</tbody>
+<tfoot class="gt_sourcenotes"><tr class="odd">
+<td colspan="4" class="gt_sourcenote" style="font-family: MaruBuri">자료출처: <code>penguins</code> 데이터셋</td>
+</tr></tfoot>
+</table>
+</div>
+</div>
+</div>
+</div>
+</section></section><section id="rprofile-설정작업" class="level2" data-number="8.4"><h2 data-number="8.4" class="anchored" data-anchor-id="rprofile-설정작업">
+<span class="header-section-number">8.4</span> <code>.Rprofile</code> 설정작업</h2>
+<p><code>.Rprofile</code> 파일에 테마 함수를 반영시키면 R 세션을 시작할 때마다 테마가 자동으로 로드되어 일일이 코드를 실행할 필요가 없어 작업 효율성을 크게 높여줌은 물론, 프로젝트 간 일관된 스타일과 브랜딩을 유지할 수 있다. 코드 작성 측면에서 테마 함수를 <code>.Rprofile</code>에 추가하여 코드 재사용성을 높이고, 테마 관련 설정을 한 곳에서 관리할 수 있게 함으로써 작업 일관성과 전문성이 높아져 시간과 노력을 크게 절약할 수 있다.</p>
+<div class="cell" data-eval="false" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"></figure><p></p>
+<div>
+
+</div>
+<p></p>
+</div>
+</div>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><a href="images/gt_theme_hangul_workflow.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="gt 표 테마 적용 작업흐름"><img src="images/gt_theme_hangul_workflow.png" class="img-fluid figure-img" alt="gt 표 테마 적용 작업흐름"></a></p>
+<figcaption><code>gt</code> 표 테마 적용 작업흐름</figcaption></figure>
+</div>
+<p>작성한 테마를 매번 코드를 “복사하여 붙여넣기” 하여 사용하는 대신 <code>.Rprofile</code> 파일에 반영하여 매번 <code>gt</code> 표를 제작할 때마다 <code>gt_theme_hangul()</code> 테마를 적용하는 방법은 다음과 같다. 먼저, <code>usethis</code> 패키지 <code>edit_r_profile()</code> 함수를 호출하여 앞서 작성한 테마를 반영한다.</p>
+<div class="cell">
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">usethis</span><span class="fu">::</span><span class="fu"><a href="https://usethis.r-lib.org/reference/edit.html">edit_r_profile</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><code>gt_theme_hangul()</code> 테마를 <code>gt</code> 표 객체에 반영한다. 스크립트에서부터 시작하여 작성한 함수를 <code>.Rprofile</code> 파일에 복사하여 붙여넣는 것으로 작업은 완료된다.</p>
+<div class="cell">
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://gt.rstudio.com">gt</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/jthomasmock/gtExtras">gtExtras</a></span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">gt_theme_hangul</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">gt_tbl</span><span class="op">)</span> <span class="op">{</span></span>
+<span></span>
+<span>  <span class="co"># Grab number of rows of data from gt object</span></span>
+<span>  <span class="va">n_rows</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/nrow.html">nrow</a></span><span class="op">(</span><span class="va">gt_tbl</span><span class="op">$</span><span class="va">`_data`</span><span class="op">)</span></span>
+<span></span>
+<span>  <span class="va">gt_tbl</span> <span class="op">|&gt;</span></span>
+<span>    <span class="fu"><a href="https://jthomasmock.github.io/gtExtras/reference/gt_theme_538.html">gt_theme_538</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>    <span class="fu"><a href="https://gt.rstudio.com/reference/tab_options.html">tab_options</a></span><span class="op">(</span></span>
+<span>      <span class="co"># column_labels.background.color = '#1E61B0', # R logo 파란색</span></span>
+<span>      table.font.names <span class="op">=</span><span class="st">"NanumSquare"</span>,</span>
+<span>      heading.title.font.size <span class="op">=</span> <span class="fu"><a href="https://gt.rstudio.com/reference/px.html">px</a></span><span class="op">(</span><span class="fl">26</span><span class="op">)</span>,</span>
+<span>      heading.subtitle.font.size <span class="op">=</span> <span class="fu"><a href="https://gt.rstudio.com/reference/px.html">px</a></span><span class="op">(</span><span class="fl">16</span><span class="op">)</span>,</span>
+<span>      heading.background.color <span class="op">=</span> <span class="st">"transparent"</span>,</span>
+<span>      column_labels.font.weight <span class="op">=</span> <span class="st">'bold'</span>,</span>
+<span>      table_body.hlines.width <span class="op">=</span> <span class="fu"><a href="https://gt.rstudio.com/reference/px.html">px</a></span><span class="op">(</span><span class="fl">0</span><span class="op">)</span>,</span>
+<span>      data_row.padding <span class="op">=</span> <span class="fu"><a href="https://gt.rstudio.com/reference/px.html">px</a></span><span class="op">(</span><span class="fl">6</span><span class="op">)</span>,</span>
+<span>      heading.align <span class="op">=</span> <span class="st">'center'</span>,</span>
+<span>      stub.background.color <span class="op">=</span> <span class="st">"#ffffff"</span>,</span>
+<span>      stub.font.weight <span class="op">=</span> <span class="st">"bold"</span>,</span>
+<span>      source_notes.font.size <span class="op">=</span> <span class="fu"><a href="https://gt.rstudio.com/reference/px.html">px</a></span><span class="op">(</span><span class="fl">10</span><span class="op">)</span>,</span>
+<span>      row.striping.include_table_body <span class="op">=</span> <span class="cn">FALSE</span></span>
+<span>    <span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>    <span class="fu"><a href="https://gt.rstudio.com/reference/cols_align.html">cols_align</a></span><span class="op">(</span> align <span class="op">=</span> <span class="st">"center"</span>, columns <span class="op">=</span> <span class="fu"><a href="https://tidyselect.r-lib.org/reference/where.html">where</a></span><span class="op">(</span><span class="va">is.numeric</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>    <span class="fu"><a href="https://gt.rstudio.com/reference/cols_align.html">cols_align</a></span><span class="op">(</span> align <span class="op">=</span> <span class="st">"auto"</span>, columns <span class="op">=</span> <span class="fu"><a href="https://tidyselect.r-lib.org/reference/where.html">where</a></span><span class="op">(</span><span class="va">is.character</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>    <span class="co">## 글꼴 달리 적용</span></span>
+<span>    <span class="fu"><a href="https://gt.rstudio.com/reference/tab_style.html">tab_style</a></span><span class="op">(</span></span>
+<span>      style <span class="op">=</span> <span class="fu"><a href="https://gt.rstudio.com/reference/cell_text.html">cell_text</a></span><span class="op">(</span></span>
+<span>        font <span class="op">=</span> <span class="st">"MaruBuri"</span>,</span>
+<span>        weight <span class="op">=</span> <span class="st">'bold'</span></span>
+<span>      <span class="op">)</span>,</span>
+<span>      locations <span class="op">=</span> <span class="fu"><a href="https://gt.rstudio.com/reference/cells_title.html">cells_title</a></span><span class="op">(</span>groups <span class="op">=</span> <span class="st">'subtitle'</span><span class="op">)</span></span>
+<span>    <span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>    <span class="fu"><a href="https://gt.rstudio.com/reference/tab_style.html">tab_style</a></span><span class="op">(</span></span>
+<span>      style <span class="op">=</span> <span class="fu"><a href="https://gt.rstudio.com/reference/cell_text.html">cell_text</a></span><span class="op">(</span></span>
+<span>        font <span class="op">=</span> <span class="st">"MaruBuri"</span>,</span>
+<span>        weight <span class="op">=</span> <span class="st">'bold'</span></span>
+<span>      <span class="op">)</span>,</span>
+<span>      locations <span class="op">=</span> <span class="fu"><a href="https://gt.rstudio.com/reference/cells_body.html">cells_body</a></span><span class="op">(</span><span class="op">)</span></span>
+<span>    <span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>    <span class="fu"><a href="https://gt.rstudio.com/reference/tab_style.html">tab_style</a></span><span class="op">(</span></span>
+<span>      style <span class="op">=</span> <span class="fu"><a href="https://gt.rstudio.com/reference/cell_text.html">cell_text</a></span><span class="op">(</span></span>
+<span>        font <span class="op">=</span> <span class="st">"MaruBuri"</span>,</span>
+<span>        weight <span class="op">=</span> <span class="st">'bold'</span></span>
+<span>      <span class="op">)</span>,</span>
+<span>      locations <span class="op">=</span> <span class="fu"><a href="https://gt.rstudio.com/reference/cells_column_labels.html">cells_column_labels</a></span><span class="op">(</span><span class="op">)</span></span>
+<span>    <span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>    <span class="fu"><a href="https://gt.rstudio.com/reference/tab_style.html">tab_style</a></span><span class="op">(</span></span>
+<span>      style <span class="op">=</span> <span class="fu"><a href="https://gt.rstudio.com/reference/cell_text.html">cell_text</a></span><span class="op">(</span></span>
+<span>        font <span class="op">=</span> <span class="st">"MaruBuri"</span>,</span>
+<span>      <span class="op">)</span>,</span>
+<span>      locations <span class="op">=</span> <span class="fu"><a href="https://gt.rstudio.com/reference/cells_source_notes.html">cells_source_notes</a></span><span class="op">(</span><span class="op">)</span></span>
+<span>    <span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>    <span class="fu"><a href="https://gt.rstudio.com/reference/tab_style.html">tab_style</a></span><span class="op">(</span></span>
+<span>      style <span class="op">=</span> <span class="fu"><a href="https://gt.rstudio.com/reference/cell_fill.html">cell_fill</a></span><span class="op">(</span>color <span class="op">=</span> <span class="st">'grey90'</span><span class="op">)</span>,</span>
+<span>      locations <span class="op">=</span> <span class="fu"><a href="https://gt.rstudio.com/reference/cells_body.html">cells_body</a></span><span class="op">(</span>rows <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">1</span>, <span class="va">n_rows</span>, <span class="fl">2</span><span class="op">)</span><span class="op">)</span></span>
+<span>    <span class="op">)</span></span>
+<span><span class="op">}</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><code>.Rprofile</code> 파일에 <code>gt</code> 사용자 정의 테마가 지정되어 있기 때문에 새로 R 세션을 시작하면 <code>gt_theme_hangul()</code> 테마를 프로젝트 어디에서든지 사용할 수 있다.</p>
+<div class="cell">
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">original_penguins_gt</span> <span class="op">&lt;-</span> <span class="va">penguins</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://tidyr.tidyverse.org/reference/drop_na.html">drop_na</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/count.html">count</a></span><span class="op">(</span><span class="va">species</span>, <span class="va">sex</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://tidyr.tidyverse.org/reference/pivot_wider.html">pivot_wider</a></span><span class="op">(</span>names_from <span class="op">=</span> <span class="va">sex</span>, values_from <span class="op">=</span> <span class="va">n</span>, values_fill <span class="op">=</span> <span class="fl">0</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">janitor</span><span class="fu">::</span><span class="fu"><a href="https://sfirke.github.io/janitor/reference/adorn_totals.html">adorn_totals</a></span><span class="op">(</span>where <span class="op">=</span> <span class="st">"col"</span>, name <span class="op">=</span> <span class="st">"합계"</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/rename.html">rename</a></span><span class="op">(</span>펭귄종 <span class="op">=</span> <span class="va">species</span>, 암컷 <span class="op">=</span> <span class="va">female</span>, 수컷 <span class="op">=</span> <span class="va">male</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://tibble.tidyverse.org/reference/as_tibble.html">as_tibble</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://gt.rstudio.com/reference/gt.html">gt</a></span><span class="op">(</span>rowname_col <span class="op">=</span> <span class="st">"펭귄종"</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>    <span class="fu"><a href="https://gt.rstudio.com/reference/tab_header.html">tab_header</a></span><span class="op">(</span></span>
+<span>      title <span class="op">=</span> <span class="fu"><a href="https://gt.rstudio.com/reference/md.html">md</a></span><span class="op">(</span><span class="st">"남극 펭귄 **암수와 종** 빈도표"</span><span class="op">)</span>,</span>
+<span>      subtitle <span class="op">=</span> <span class="fu"><a href="https://gt.rstudio.com/reference/md.html">md</a></span><span class="op">(</span><span class="st">"`palmerpenguins` 데이터 패키지"</span><span class="op">)</span></span>
+<span>    <span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>    <span class="fu"><a href="https://gt.rstudio.com/reference/grand_summary_rows.html">grand_summary_rows</a></span><span class="op">(</span></span>
+<span>      columns <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">펭귄종</span>, <span class="va">암컷</span>, <span class="va">수컷</span><span class="op">)</span>,</span>
+<span>      fns <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span></span>
+<span>        <span class="st">'합계'</span> <span class="op">=</span> <span class="op">~</span><span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">.</span><span class="op">)</span> </span>
+<span>      <span class="op">)</span>,</span>
+<span>      fmt <span class="op">=</span> <span class="op">~</span> <span class="fu"><a href="https://gt.rstudio.com/reference/fmt_number.html">fmt_number</a></span><span class="op">(</span><span class="va">.</span>, use_seps <span class="op">=</span> <span class="cn">FALSE</span>, decimals <span class="op">=</span> <span class="fl">0</span><span class="op">)</span>,</span>
+<span>      missing_text <span class="op">=</span> <span class="st">'-'</span></span>
+<span>    <span class="op">)</span>  <span class="op">|&gt;</span> </span>
+<span>    <span class="fu"><a href="https://gt.rstudio.com/reference/cols_align.html">cols_align</a></span><span class="op">(</span><span class="st">"center"</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>    <span class="fu"><a href="https://gt.rstudio.com/reference/opt_row_striping.html">opt_row_striping</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>    <span class="fu"><a href="https://gt.rstudio.com/reference/tab_source_note.html">tab_source_note</a></span><span class="op">(</span></span>
+<span>      source_note <span class="op">=</span> <span class="fu"><a href="https://gt.rstudio.com/reference/md.html">md</a></span><span class="op">(</span><span class="st">"자료출처: `penguins` 데이터셋"</span><span class="op">)</span></span>
+<span>  <span class="op">)</span></span>
+<span></span>
+<span><span class="va">original_penguins_gt</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://gt.rstudio.com/reference/gtsave.html">gtsave</a></span><span class="op">(</span><span class="st">"images/rprofile_original.png"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">theme_penguins_gt</span> <span class="op">&lt;-</span> <span class="va">original_penguins_gt</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">gt_theme_hangul</span><span class="op">(</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">theme_penguins_gt</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://gt.rstudio.com/reference/gtsave.html">gtsave</a></span><span class="op">(</span><span class="st">"images/rprofile_hangul_theme.png"</span><span class="op">)</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout="[49.5, -1, 49.5]">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 49.5%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><a href="images/rprofile_original.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="gt_theme_hangul() 테마 적용 전"><img src="images/rprofile_original.png" class="img-fluid figure-img" alt="gt_theme_hangul() 테마 적용 전"></a></p>
+<figcaption><code>gt_theme_hangul()</code> 테마 적용 전</figcaption></figure>
+</div>
+</div>
+<div class="quarto-figure-spacer quarto-layout-cell" style="flex-basis: 1.0%;justify-content: flex-start;">
+<p>&nbsp;</p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 49.5%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><a href="images/rprofile_hangul_theme.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8" title="gt_theme_hangul() 테마 적용 후"><img src="images/rprofile_hangul_theme.png" class="img-fluid figure-img" alt="gt_theme_hangul() 테마 적용 후"></a></p>
+<figcaption><code>gt_theme_hangul()</code> 테마 적용 후</figcaption></figure>
+</div>
+</div>
+</div>
+</div>
+
+
+</section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "복사완료!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "복사완료!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script><nav class="page-navigation"><div class="nav-page nav-page-previous">
+      <a href="./theme_ggplot.html" class="pagination-link" aria-label="그래프 테마">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">그래프 테마</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./dw_book.html" class="pagination-link" aria-label="쿼토 책">
+        <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">쿼토 책</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer"><div class="nav-footer">
+    <div class="nav-footer-left">
+<p>챗GPT 쿼토 책은 소프트웨어 카펜트리 Introduction to Reproducible Publications with Quarto 번역한 것이 포함되어 있습니다.</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/bit2r/gpt-sql/edit/main/theme_gt.qmd" class="toc-action"><i class="bi bi-github"></i>편집</a></li><li><a href="https://github.com/bit2r/gpt-sql/issues/new" class="toc-action"><i class="bi empty"></i>이슈 보고</a></li></ul></div></div>
+    <div class="nav-footer-right">
+<p>순수하게 <a href="https://quarto.org/">쿼토(Quarto)</a>로 제작되었습니다.</p>
+</div>
+  </div>
+</footer><script>var lightboxQuarto = GLightbox({"selector":".lightbox","loop":false,"openEffect":"zoom","descPosition":"bottom","closeEffect":"zoom"});
+window.onload = () => {
+  lightboxQuarto.on('slide_before_load', (data) => {
+    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+    const href = trigger.getAttribute('href');
+    if (href !== null) {
+      const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+      if (imgEl !== null) {
+        const srcAttr = imgEl.getAttribute("src");
+        if (srcAttr && srcAttr.startsWith("data:")) {
+          slideConfig.href = srcAttr;
+        }
+      }
+    } 
+  });
+
+  lightboxQuarto.on('slide_after_load', (data) => {
+    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+    if (window.Quarto?.typesetMath) {
+      window.Quarto.typesetMath(slideNode);
+    }
+  });
+
+};
+          </script>
+
+
+</body></html>
