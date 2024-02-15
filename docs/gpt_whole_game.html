@@ -1,0 +1,2207 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko-KR" xml:lang="ko-KR"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.9">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<meta name="author" content="이광춘">
+<title>챗GPT 쿼토(Quarto) – 13&nbsp; 챗GPT 쿼토</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./references.html" rel="next">
+<link href="./dw_dashboard.html" rel="prev">
+<link href="./images/logo.png" rel="icon" type="image/png">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet"><script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "일치 없음",
+    "search-matching-documents-text": "일치된 문서",
+    "search-copy-link-title": "검색 링크 복사",
+    "search-hide-matches-text": "추가 검색 결과 숨기기",
+    "search-more-match-text": "추가 검색결과",
+    "search-more-matches-text": "추가 검색결과",
+    "search-clear-button-title": "제거",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "취소",
+    "search-submit-button-title": "검색",
+    "search-label": "검색"
+  }
+}</script><script type="text/javascript">
+
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-229551680-1', 'auto');
+
+ga('send', {
+  hitType: 'pageview',
+  'anonymizeIp': true,
+});
+</script><script defer="" data-domain="r2bit.com/gpt-quarto" src="https://plausible.io/js/script.js"></script><script src="site_libs/quarto-diagram/mermaid.min.js"></script><script src="site_libs/quarto-diagram/mermaid-init.js"></script><link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
+</head>
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./gpt_whole_game.html">챗GPT</a></li><li class="breadcrumb-item"><a href="./gpt_whole_game.html"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">챗GPT 쿼토</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">챗GPT 쿼토(Quarto)</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/bit2r/gpt-sql/" title="소스 코드" class="quarto-navigation-tool px-1" aria-label="소스 코드"><i class="bi bi-github"></i></a>
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="리더 모드 전환">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="검색"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">서문</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">시작을 위한 준비</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="토글 섹션">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./setup_quarto.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">쿼토(Quarto)</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./setup.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">저작환경 설정</span></span></a>
+  </div>
+</li>
+      </ul>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+ <span class="menu-text">기본요소</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="토글 섹션">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./part_components.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">문서 구성요소</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./part_markdown.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">마크다운</span></span></a>
+  </div>
+</li>
+      </ul>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+ <span class="menu-text">템플릿과 테마</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="토글 섹션">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./theme_fonts.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">글꼴</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./theme_colors.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">색상</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./theme_ggplot.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">그래프 테마</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./theme_gt.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">표 테마</span></span></a>
+  </div>
+</li>
+      </ul>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+ <span class="menu-text">저작물</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="토글 섹션">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./dw_book.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">쿼토 책</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./dw_website.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">웹사이트와 블로그</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./dw_slideshow.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">PPT 슬라이드</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./dw_dashboard.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">대쉬보드</span></span></a>
+  </div>
+</li>
+      </ul>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true">
+ <span class="menu-text">챗GPT</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true" aria-label="토글 섹션">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./gpt_whole_game.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">챗GPT 쿼토</span></span></a>
+  </div>
+</li>
+      </ul>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">참고문헌</span></a>
+  </div>
+</li>
+    </ul>
+</div>
+</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">목차</h2>
+   
+  <ul>
+<li><a href="#%EC%B1%97gpt-%EB%93%B1%EC%9E%A5" id="toc-챗gpt-등장" class="nav-link active" data-scroll-target="#%EC%B1%97gpt-%EB%93%B1%EC%9E%A5"><span class="header-section-number">13.1</span> 챗GPT 등장</a></li>
+  <li><a href="#%EA%B8%80%EC%93%B0%EA%B8%B0-%EC%A7%84%ED%99%94%EA%B3%BC%EC%A0%95" id="toc-글쓰기-진화과정" class="nav-link" data-scroll-target="#%EA%B8%80%EC%93%B0%EA%B8%B0-%EC%A7%84%ED%99%94%EA%B3%BC%EC%A0%95"><span class="header-section-number">13.2</span> 글쓰기 진화과정</a></li>
+  <li><a href="#%EA%B8%80%EC%93%B0%EA%B8%B0-%EC%9E%91%EC%97%85%ED%9D%90%EB%A6%84" id="toc-글쓰기-작업흐름" class="nav-link" data-scroll-target="#%EA%B8%80%EC%93%B0%EA%B8%B0-%EC%9E%91%EC%97%85%ED%9D%90%EB%A6%84"><span class="header-section-number">13.3</span> 글쓰기 작업흐름</a></li>
+  <li>
+<a href="#%EC%B1%97gpt-%EB%94%94%EC%A7%80%ED%84%B8-%EA%B8%80%EC%93%B0%EA%B8%B0-%EC%82%AC%EB%A1%80" id="toc-챗gpt-디지털-글쓰기-사례" class="nav-link" data-scroll-target="#%EC%B1%97gpt-%EB%94%94%EC%A7%80%ED%84%B8-%EA%B8%80%EC%93%B0%EA%B8%B0-%EC%82%AC%EB%A1%80"><span class="header-section-number">13.4</span> 챗GPT 디지털 글쓰기 사례</a>
+  <ul class="collapse">
+<li><a href="#%EC%B1%97gpt-%EA%B8%80%EA%B0%90-%EC%9E%91%EC%84%B1" id="toc-챗gpt-글감-작성" class="nav-link" data-scroll-target="#%EC%B1%97gpt-%EA%B8%80%EA%B0%90-%EC%9E%91%EC%84%B1"><span class="header-section-number">13.4.1</span> 챗GPT 글감 작성</a></li>
+  <li><a href="#%EA%B5%AC%EC%A1%B0%EC%99%80-%EC%99%B8%EC%96%91" id="toc-구조와-외양" class="nav-link" data-scroll-target="#%EA%B5%AC%EC%A1%B0%EC%99%80-%EC%99%B8%EC%96%91"><span class="header-section-number">13.4.2</span> 구조와 외양</a></li>
+  <li><a href="#%EB%B0%B0%ED%8F%AC%EC%99%80-%EA%B3%B5%EC%9C%A0" id="toc-배포와-공유" class="nav-link" data-scroll-target="#%EB%B0%B0%ED%8F%AC%EC%99%80-%EA%B3%B5%EC%9C%A0"><span class="header-section-number">13.4.3</span> 배포와 공유</a></li>
+  </ul>
+</li>
+  </ul><div class="toc-actions"><ul><li><a href="https://github.com/bit2r/gpt-sql/edit/main/gpt_whole_game.qmd" class="toc-action"><i class="bi bi-github"></i>편집</a></li><li><a href="https://github.com/bit2r/gpt-sql/issues/new" class="toc-action"><i class="bi empty"></i>이슈 보고</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./gpt_whole_game.html">챗GPT</a></li><li class="breadcrumb-item"><a href="./gpt_whole_game.html"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">챗GPT 쿼토</span></a></li></ol></nav><div class="quarto-title">
+<h1 class="title">
+<span class="chapter-number">13</span>&nbsp; <span class="chapter-title">챗GPT 쿼토</span>
+</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header><p>종이와 펜으로 글을 쓸 때 글쓰기는 주로 생각이나 정보, 감정을 언어의 형태로 표현하는 과정으로 가장 기본적이고 전통적인 글쓰기의 형태로 볼 수 있다. 저자가 머릿속에 있는 아이디어나 메시지를 구조화하여 문장과 단락으로 만드는 과정에서 문법, 어휘, 문장 구조 등 언어의 다양한 요소가 활용된다. 전통적인 글쓰기는 디지털 글쓰기에서 느끼기 어려운 독특한 느낌과 집중도가 있어 펜을 종이에 대고 쓰는 물리적인 행위 자체가 생각을 정리하고 창의성을 불러일으키는 경우가 많고 디지털 장비의 방해 없이 좀 더 몰입하여 글을 쓸 수 있다는 장점도 있다.</p>
+<p>전통적인 글쓰기에서 문법, 어휘, 문장 구조 등 언어의 다양한 요소에 집중하는 이유 중 하나는 인쇄출판 비용 문제가 크다. 인쇄출판을 할 경우, 재료와 인력, 시간 등 다양한 비용이 발생하기 때문에, 처음부터 정확하고 명료한 표현을 사용하여 수정이나 재인쇄 필요성을 줄여 비용을 절감해야 하기 때문에 저자가 더 신중하게 글을 쓰도록 만들며, 그 결과로 문법이나 어휘 선택, 문장 구조 등에 더 많은 주의를 기울이게 된다. 인쇄된 글은 디지털 글과 달리 쉽게 수정할 수 없기 때문에, 처음부터 높은 수준의 정확성과 명료성이 요구되기 때문에 작성자로 하여금 더 깊게 생각하고 더 철저하게 검토하는 습관을 들이게 하며, 이러한 과정을 통해 더 높은 품질의 글이 탄생하게 되었다.</p>
+<p>따라서, 글쓰기는 모든 사람이 배우는 기초적인 능력이지만, 인쇄출판의 높은 비용 때문에 실제로 글을 발표하고 널리 퍼뜨릴 수 있는 사람은 선택된 소수에 불과하기 때문에 빈익빈, 부익부 문제가 심해지고 있다. 즉, 자본과 기회가 있는 소수의 사람들만이 자신의 아이디어나 의견을 널리 알릴 수 있는 인쇄출판 플랫폼을 갖게 된 것이다. 이로 인해 정치적, 사회적, 경제적, 과학기술 격차가 더욱 심화되며, 다수의 목소리가 제대로 들리지 않는 문제가 발생한다. 이러한 상황은 인터넷과 웹의 대중화로 디지털 글쓰기가 보급됨에 따라 어느 정도 해소되고 있지만, 저작에 해당되는 디지털 글쓰기와 저작물의 인쇄출판과 유통에 대한 접근성 문제는 여전히 해결되어야 할 중요한 과제로 남아 있다.</p>
+<section id="챗gpt-등장" class="level2" data-number="13.1"><h2 data-number="13.1" class="anchored" data-anchor-id="챗gpt-등장">
+<span class="header-section-number">13.1</span> 챗GPT 등장</h2>
+<p>챗GPT 등장은 글쓰기 패러다임을 혁신적으로 바꾸고 있다. 전통적인 글쓰기는 문법, 어휘, 문장 구조 등 언어의 다양한 요소를 활용하여 아이디어나 메시지를 구조화하는 데 주력했고, 전통적인 글쓰기에서 저작은 종이와 펜, 출판은 워드 프로세서 도구로 필요한데, 디지털 도구에 익숙하지 않은 사람들에게는 글쓰기 자체가 큰 부담이 되었다.</p>
+<p>그러나 챗GPT는 뛰어난 자연어 처리 능력 덕분에 저자는 복잡한 문법이나 어휘 없이도 자신의 생각을 쉽게 표현할 수 있을 뿐만 아니라, 챗GPT는 다양한 형태의 콘텐츠, 예를 들어 수식, 표, 그래프, 다이어그램, 코드 등을 쉽게 생성하고 편집할 수 있어, 글쓰기 범위가 전통적인 텍스트를 넘어 다양한 미디어로 확장되고 있다.</p>
+<p>펜과 종이로 저작하여 종이 매체를 중심으로 인쇄출판이 주류를 이뤘던 시대를 워드 프로세서로 저작하여 웹사이트에 디지털 출판하는 시대로 바뀌었던 것에 비견될만큼 챗GPT는 디지털 글쓰기의 패러다임을 혁신적으로 바꾸고 있다. 챗GPT Text-to-X 기능은 글쓰기 가능성을 더욱 확장시켜 저자는 아이디어나 메시지를 표현하고 전달하는데 단순한 텍스트 입력을 넘어 수식, 그래프, 표, 다이어그램, 코드 등 다양한 형태의 콘텐츠를 쉽게 생성할 수 있게 됨에 따라, 글쓰기 경계를 훨씬 넓히게 되었다. 챗GPT 시대 누구나 복잡한 도구나 전문 지식 없이도 자신의 아이디어나 정보를 풍부하게 표현할 수 있게 되었다.</p>
+</section><section id="글쓰기-진화과정" class="level2" data-number="13.2"><h2 data-number="13.2" class="anchored" data-anchor-id="글쓰기-진화과정">
+<span class="header-section-number">13.2</span> 글쓰기 진화과정</h2>
+<p>글쓰기 역사는 인류 문명과 밀접하게 연결되어 있다. 고대에는 점토판과 쐐기를 사용하여 기록을 남겼다. 중세에 이르러 필경사가 등장하고, 붓과 머루, 잉크와 깃털펜이 사용되기 시작했다. 근대에 들어서면 타자기가 등장하고, 1868년에 첫 타자기가, 1902년에 전동타자기가 개발되었다.</p>
+<p>컴퓨터 등장은 글쓰기 패러다임을 또 다시 바꾸었다. 1946년에 에니악 컴퓨터가, 1964년에 IBM 워드프로세서 MT/ST가 등장했다. 이후에는 IBM 저장장치 MagCards가 1969년에, TeX가 1978년에, LaTeX이 1984년 등장하면서 디지털 글쓰기 기술적 토대가 탄탄해졌다.</p>
+<p>1983년에 마이크로소프트 워드 1.0의 출시로 개인용 컴퓨터에서도 글쓰기가 가능해지면서 디지털 글쓰기의 새로운 시대가 열렸다. 그 후로 프로그래밍 언어와 글쓰기가 통합되기 시작했고, 마크다운, R, 파이썬 등을 활용한 글쓰기가 일반화되면서 문학적 프로그래밍(Literate Programming)이라는 새로운 형태의 글쓰기를 가능하게 했다. 최근에는 챗GPT의 등장으로 문학적 프로그래밍이 한 단계 더 진화하고 있다. 챗GPT는 자연어 처리 능력을 활용하여 코드와 텍스트, 그리고 다양한 미디어 요소를 통합적으로 다룰 수 있어, 디지털 글쓰기의 패러다임을 혁신적으로 바꾸고 있다.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><a href="images/writing_history.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="챗GPT 디지털 글쓰기 진화과정"><img src="images/writing_history.jpg" class="img-fluid figure-img" alt="챗GPT 디지털 글쓰기 진화과정"></a></p>
+<figcaption>챗GPT 디지털 글쓰기 진화과정</figcaption></figure>
+</div>
+</section><section id="글쓰기-작업흐름" class="level2" data-number="13.3"><h2 data-number="13.3" class="anchored" data-anchor-id="글쓰기-작업흐름">
+<span class="header-section-number">13.3</span> 글쓰기 작업흐름</h2>
+<p>챗GPT 디지털 글쓰기의 일반적인 작업흐름은 더 세분화할 수 있지만, “디지털 글쓰기”, “구조와 외양”, “배포와 공유”로 구분할 수 있다.</p>
+<p>첫 번째 단계인 “디지털 글쓰기”에서는 글감을 시작점으로 하여 다양한 형태의 콘텐츠를 생성하는데 수식, 표, 그래프, 파이썬/R/SQL 코드, 그림, 도형 등이 포함된다. 자연어로 챗GPT를 통해 다양한 저작물 구성요소를 쉽고 빠르게 생성하고 편집할 수 있다.</p>
+<p>두 번째 단계인 “구조와 외양”에서 문서의 전반적인 구조와 서식을 결정한다. 문서의 구조, 서식, 레이아웃, 그리고 참조 등이 확립되는데 챗GPT 부조종사(Copilot)이 유령 텍스트(Ghost Text) 기능을 통해 자연어로 저자 작업을 더욱 효율적으로 지원한다.</p>
+<p>마지막 단계인 “배포와 공유”에서 작성된 저작물이 독자에게 다양한 매체를 통해 전달한다. 독자가 반듯이 사람일 필요는 없고 독자가 저작자 자신일 수도 있으며, 심지어 기계일 수도 있다. 챗GPT 배포와 공유 과정에서 발생되는 다양한 기술적 문제를 해결해주는 공동 저작자이자 동료로서 디지털 글쓰기 전체적인 흐름을 완성한다.</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"></figure><p></p>
+<div>
+<pre class="mermaid mermaid-js">graph LR
+
+    chatGPT["챗GPT"] --&gt; Contents
+
+    subgraph Contents["디지털 글쓰기"]
+        direction LR
+        Writing["글감"] --&gt; Table["표"]
+        Writing --&gt; Graph["그래프"]
+        Writing --&gt; Code["파이썬/R/SQL&lt;br&gt;코드"]
+        Writing --&gt; Figure["그림"]
+        Writing --&gt; Diagram["도형"]        
+    end
+
+    chatGPT --&gt; Format
+    Contents --&gt; Format
+
+    subgraph Format["구조와 외양"]
+        direction LR
+        Theme["구조와 외양"] --&gt; Title["문서 구조"]
+        Theme               --&gt; Formatting["문서 서식"]
+        Theme               --&gt; Layout["문서 레이아웃"]
+        Theme               --&gt; reference["문서 참조"]
+    end
+
+    chatGPT --&gt; Deployment
+    Format --&gt; Deployment
+
+    subgraph Deployment["배포와 공유"]
+        direction LR
+        Deploy --&gt; Reader["독자(사람)"]
+        Deploy --&gt; Author["독자(저작자)"]
+        Deploy --&gt; Machine["독자(기계)"]
+    end
+
+    style chatGPT fill:#f5f5f5,stroke:#333,stroke-width:3px
+
+    style Contents fill:#059fff,stroke:#333,stroke-width:1px
+    style Format fill:#fc0303,stroke:#333,stroke-width:1px
+    style Deployment fill:#03fc30,stroke:#333,stroke-width:1px
+</pre>
+</div>
+<p></p>
+</div>
+</div>
+</div>
+</section><section id="챗gpt-디지털-글쓰기-사례" class="level2" data-number="13.4"><h2 data-number="13.4" class="anchored" data-anchor-id="챗gpt-디지털-글쓰기-사례">
+<span class="header-section-number">13.4</span> 챗GPT 디지털 글쓰기 사례</h2>
+<p>사전 자료조사를 통해서 한국영화 10선 중 <strong>국제시장</strong>과 <a href="https://r2bit.com/chatGPT/palmer_penguins.html">펭귄 데이터</a>를 통해 흥행과 동시에 현재 당면한 ESG 문제를 다룬 뭉클한 감동을 주는 영화 시놉시스 작성을 목표로 하는 저작물을 작성해보자.</p>
+<p>챗GPT 디지털 글쓰기를 활용하여 영화 시놉시스를 작성하는 과정은 다음과 같다.</p>
+<ol type="1">
+<li><p><strong>디지털 글쓰기 단계</strong>: 먼저, “국제시장”과 “펭귄 데이터”를 통해 얻은 글감을 바탕으로 영화의 주제와 구조를 설정한다. 챗GPT를 사용하여 흥행 가능성과 ESG 문제에 대한 데이터를 분석하여 표와 그래프로 시각화한다.</p></li>
+<li><p><strong>구조와 외양 단계</strong>: 시놉시스 구조를 결정하고, 적절한 서식과 레이아웃을 적용한다. 문서 참조나 인용 등 챗GPT를 활용하여 자연어로 쉽게 추가할 수 있다.</p></li>
+<li><p><strong>배포와 공유 단계</strong>: 작성된 시놉시스를 다양한 플랫폼과 매체를 통해 공유한다. 디지털 출판 배포과정에서 챗GPT는 기술적 문제를 해결함은 물론 방향도 제시하여 독자가 사람이든 기계든 쉽게 출판저작물에 접근할 수 있도록 지원한다.</p></li>
+</ol>
+<p>목표한 “영화 시놉시스”를 챗GPT 디지털 글쓰기로 작업한 결과물은 다음과 같이 복잡한 데이터 분석부터 감동적인 내러티브까지 한 번에 작업할 수 있다.</p>
+<blockquote class="blockquote">
+<p>영화 제목을 “펭귄의 꿈: ESG로 미래를 바꾸다”로 설정하고, 주인공은 한국에서 ESG 문제에 관심을 가진 젊은 연구원으로 한다. 그는 남극의 펭귄 데이터를 분석하여 지구의 미래를 예측하고, 이를 통해 사람들에게 ESG의 중요성을 알리려고 한다. 영화는 그의 여정과 성장, 그리고 마침내 세계를 바꾸는 뭉클한 결말로 끝난다.</p>
+</blockquote>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"></figure><p></p>
+<div>
+<pre class="mermaid mermaid-js">graph LR
+
+    chatGPT["챗GPT"] --&gt; Survey
+
+    subgraph Survey["자료 조사"]
+        direction LR
+        Top10["한국영화&lt;br&gt;10선"] --&gt; OpenAI["챗GPT"]
+        Top10                    --&gt; Bard["구글 바드"]
+        Top10                    --&gt; KOBIS["역대&lt;br&gt;박스오피스"]
+    end
+
+    Survey --&gt; Synopsis
+
+    subgraph Synopsis["시놉시스"]
+        direction LR
+        Movie_A["명량"]     -.-&gt; New_Movie["새로운 영화&lt;br&gt;시놉시스"]
+        Movie_B["극한직업"] --&gt; New_Movie
+        Movie_C["신과함께"] -.-&gt; New_Movie
+        Market["국제시장"] --&gt; New_Movie        
+        Movie_E["..."] -.-&gt; New_Movie
+        Penguins["펭귄 데이터"] --&gt; New_Movie
+    end
+
+    Synopsis --&gt; Synopsis_fin["최종&lt;br&gt;시놉시스"]
+
+    style chatGPT fill:#f5f5f5,stroke:#333,stroke-width:3px
+
+    style Survey fill:#059fff,stroke:#333,stroke-width:1px
+    style Synopsis fill:#fc0303,stroke:#333,stroke-width:1px
+    style Synopsis_fin fill:#03fc30,stroke:#333,stroke-width:1px
+
+    style Penguins fill:#03fc30,stroke:#333,stroke-width:3px
+    style Market fill:#03fc30,stroke:#333,stroke-width:3px
+    
+</pre>
+</div>
+<p></p>
+</div>
+</div>
+</div>
+<section id="챗gpt-글감-작성" class="level3" data-number="13.4.1"><h3 data-number="13.4.1" class="anchored" data-anchor-id="챗gpt-글감-작성">
+<span class="header-section-number">13.4.1</span> 챗GPT 글감 작성</h3>
+<p>실제 데이터가 필요한 경우 영화진흥위원회에서 매년 발표하는 “한국영화연감”의 영화별 흥행기록 <a href="https://www.kobis.or.kr/kobis/business/stat/offc/findFormerBoxOfficeList.do">역대 박스오피스 (공식통계 기준)</a>에서 정확한 데이터를 확인할 수 있다. 챗GPT는 프롬프트에 대한 답변을 생성하는 언어 모형으로 챗GPT는 데이터베이스나 실시간 정보에 접근하지 않고 기존에 학습된 데이터를 기반으로 답변을 제공한다. 따라서, 100% 사실은 아니지만 빠르게 답변을 제공받아 시놉시스 제작에 활용하는 경우 대략 8~90% 정확도를 보이는 업무에 챗GPT 활용은 가능하다. 예를 들어, “관람객 기준으로 가장 많은 관람객을 갖는 한국 영화 상위 5개 알려주세요”라는 프롬프트에 대한 답변을 챗GPT로 받아 다음과 같이 마크다운 형태로 가공하여 후속 작업에 활용한다.</p>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+프롬프트
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<blockquote class="blockquote">
+<p>관람객 기준으로 가장 많은 관람객을 갖는 한국 영화 상위 5개 알려주세요 시놉시스는 200자 길이로 작성해주세요. 출력형식은 다음과 같은 형태로 마크다운 소스파일 형태로 출력해 주세요.</p>
+<p>|순위|영화명| 연도|감독|배급사|관객수|시놉시스|</p>
+</blockquote>
+<section id="출력결과" class="level4 unnumbered"><h4 class="unnumbered anchored" data-anchor-id="출력결과">출력결과</h4>
+<p>죄송합니다, 제 정보는 2021년 9월까지로 제한되어 있어서 그 이후의 데이터에 대한 정확한 정보를 제공할 수 없습니다. 그러나, 2021년 9월까지 기준으로 가장 많은 관람객을 가진 한국 영화 상위 5개는 다음과 같습니다.</p>
+<table class="table">
+<colgroup>
+<col style="width: 7%">
+<col style="width: 10%">
+<col style="width: 7%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 11%">
+<col style="width: 43%">
+</colgroup>
+<thead><tr class="header">
+<th style="text-align: center;">순위</th>
+<th style="text-align: center;">영화명</th>
+<th style="text-align: center;">연도</th>
+<th style="text-align: center;">감독</th>
+<th style="text-align: center;">배급사</th>
+<th style="text-align: center;">관객수</th>
+<th style="text-align: center;">시놉시스</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">명량</td>
+<td style="text-align: center;">2014</td>
+<td style="text-align: center;">김한민</td>
+<td style="text-align: center;">씨제이이앤엠</td>
+<td style="text-align: center;">1761만</td>
+<td style="text-align: center;">1592년 임진왜란, 이때 조선은 거대한 전쟁의 중심에 있었다. 여기에서 조선 최고의 장군 이순신이 일어나 대역적인 전투를 벌인다.</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">극한직업</td>
+<td style="text-align: center;">2019</td>
+<td style="text-align: center;">이병헌</td>
+<td style="text-align: center;">씨제이이앤엠</td>
+<td style="text-align: center;">1626만</td>
+<td style="text-align: center;">각종 범죄 현장에서 물리적인 고난과 위험을 감수하며 사건을 해결하는 특수 대원들의 이야기. 그러나 그들의 직업은 상상을 초월하는 극한의 직업, 치킨집 사장이었다.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">신과함께-인과 연</td>
+<td style="text-align: center;">2018</td>
+<td style="text-align: center;">김용화</td>
+<td style="text-align: center;">롯데엔터테인먼트</td>
+<td style="text-align: center;">1441만</td>
+<td style="text-align: center;">살아있는 동안 저지른 죄에 대해 사후세계에서 재판을 받는 과정을 그린 영화. 사망 후 49일 동안 7개의 지옥에서 7번의 재판을 받아야 하는데, 이 과정을 수행하는 천사들의 이야기.</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">국제시장</td>
+<td style="text-align: center;">2014</td>
+<td style="text-align: center;">윤제균</td>
+<td style="text-align: center;">씨제이엔터테인먼트</td>
+<td style="text-align: center;">1426만</td>
+<td style="text-align: center;">한국 전쟁을 배경으로 한 영화로, 한 남자가 가족을 지키고, 살아남기 위해 펼쳐나가는 감동적인 사랑과 희망의 이야기를 담고 있다.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">어벤져스: 엔드게임</td>
+<td style="text-align: center;">2019</td>
+<td style="text-align: center;">안소니 루소, 조 루소</td>
+<td style="text-align: center;">월트 디즈니 코리아</td>
+<td style="text-align: center;">1393만</td>
+<td style="text-align: center;">타노스에 의해 절반의 생명이 사라진 채 패배한 어벤져스. 남은 멤버들은 어떻게든 가족과 친구들을 다시 데려오기 위한 모든 것을 걸고 마지막 전투에 나선다.</td>
+</tr>
+</tbody>
+</table></section>
+</div>
+</div>
+<section id="실제-데이터" class="level4"><h4 class="anchored" data-anchor-id="실제-데이터">실제 데이터</h4>
+<p>챗GPT는 2021년 9월까지 실제 인터넷에 공개된 데이터를 바탕으로 학습한 언어모형이다. 따라서 최신 데이터는 반영하지 못하고 과거 학습한 데이터도 모든 과거를 대표하는 것도 아니다. 잘 작성된 프롬프트를 챗GPT 언어모형과 결합하여 나온 텍스트는 100% 사실이 아니지만 대략적인 흐름을 파악하는 데는 충분하다. 영화진흥위원에서 매년 발표하는 “한국영화연감”의 영화별 흥행기록 <a href="https://www.kobis.or.kr/kobis/business/stat/offc/findFormerBoxOfficeList.do">역대 박스오피스 (공식통계 기준)</a>에서 통계적으로 정확한 한국 영화 10개를 뽑아보면 대략 일치함을 확인할 수 있다. 시간이 지나면서 챗GPT에 대한 활용이 늘어나고 언어모형이 고도화되면 이러한 통계적인 정확도는 더욱 높아질 것으로 보인다.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<div id="wpeqpyyfpt" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>@import url("https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+#wpeqpyyfpt table {
+  font-family: NanumSquare;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#wpeqpyyfpt thead, #wpeqpyyfpt tbody, #wpeqpyyfpt tfoot, #wpeqpyyfpt tr, #wpeqpyyfpt td, #wpeqpyyfpt th {
+  border-style: none;
+}
+
+#wpeqpyyfpt p {
+  margin: 0;
+  padding: 0;
+}
+
+#wpeqpyyfpt .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: 300;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: none;
+  border-top-width: 3px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#wpeqpyyfpt .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#wpeqpyyfpt .gt_title {
+  color: #333333;
+  font-size: 26px;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#wpeqpyyfpt .gt_subtitle {
+  color: #333333;
+  font-size: 16px;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#wpeqpyyfpt .gt_heading {
+  background-color: rgba(255, 255, 255, 0);
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#wpeqpyyfpt .gt_bottom_border {
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#wpeqpyyfpt .gt_col_headings {
+  border-top-style: none;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #000000;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#wpeqpyyfpt .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 17px;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#wpeqpyyfpt .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 17px;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#wpeqpyyfpt .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#wpeqpyyfpt .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#wpeqpyyfpt .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #000000;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#wpeqpyyfpt .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#wpeqpyyfpt .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 80%;
+  font-weight: bolder;
+  text-transform: uppercase;
+  border-top-style: none;
+  border-top-width: 2px;
+  border-top-color: #000000;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#wpeqpyyfpt .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 80%;
+  font-weight: bolder;
+  border-top-style: none;
+  border-top-width: 2px;
+  border-top-color: #000000;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: #FFFFFF;
+  vertical-align: middle;
+}
+
+#wpeqpyyfpt .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#wpeqpyyfpt .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#wpeqpyyfpt .gt_row {
+  padding-top: 6px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 0px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#wpeqpyyfpt .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 80%;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-right-style: solid;
+  border-right-width: 0px;
+  border-right-color: #FFFFFF;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#wpeqpyyfpt .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#wpeqpyyfpt .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#wpeqpyyfpt .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#wpeqpyyfpt .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#wpeqpyyfpt .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#wpeqpyyfpt .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#wpeqpyyfpt .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#wpeqpyyfpt .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#wpeqpyyfpt .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#wpeqpyyfpt .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#wpeqpyyfpt .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#wpeqpyyfpt .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#wpeqpyyfpt .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#wpeqpyyfpt .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#wpeqpyyfpt .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#wpeqpyyfpt .gt_sourcenote {
+  font-size: 10px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#wpeqpyyfpt .gt_left {
+  text-align: left;
+}
+
+#wpeqpyyfpt .gt_center {
+  text-align: center;
+}
+
+#wpeqpyyfpt .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#wpeqpyyfpt .gt_font_normal {
+  font-weight: normal;
+}
+
+#wpeqpyyfpt .gt_font_bold {
+  font-weight: bold;
+}
+
+#wpeqpyyfpt .gt_font_italic {
+  font-style: italic;
+}
+
+#wpeqpyyfpt .gt_super {
+  font-size: 65%;
+}
+
+#wpeqpyyfpt .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#wpeqpyyfpt .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#wpeqpyyfpt .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#wpeqpyyfpt .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#wpeqpyyfpt .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#wpeqpyyfpt .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#wpeqpyyfpt .gt_indent_5 {
+  text-indent: 25px;
+}
+
+tbody tr:last-child {
+  border-bottom: 2px solid #ffffff00;
+}
+</style>
+<table class="gt_table table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<thead><tr class="header gt_col_headings">
+<th id="순위" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" style="border-top-width: 0px; border-top-style: solid; border-top-color: black; font-family: MaruBuri; font-weight: bold" scope="col">순위</th>
+<th id="영화명" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" style="border-top-width: 0px; border-top-style: solid; border-top-color: black; font-family: MaruBuri; font-weight: bold" scope="col">영화명</th>
+<th id="개봉일" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" style="border-top-width: 0px; border-top-style: solid; border-top-color: black; font-family: MaruBuri; font-weight: bold" scope="col">개봉일</th>
+<th id="매출액" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" style="border-top-width: 0px; border-top-style: solid; border-top-color: black; font-family: MaruBuri; font-weight: bold" scope="col">매출액</th>
+<th id="관객수" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" style="border-top-width: 0px; border-top-style: solid; border-top-color: black; font-family: MaruBuri; font-weight: bold" scope="col">관객수</th>
+<th id="국적" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" style="border-top-width: 0px; border-top-style: solid; border-top-color: black; font-family: MaruBuri; font-weight: bold" scope="col">국적</th>
+<th id="배급사" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" style="border-top-width: 0px; border-top-style: solid; border-top-color: black; font-family: MaruBuri; font-weight: bold" scope="col">배급사</th>
+</tr></thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_center" headers="순위" style="font-family: MaruBuri; font-weight: bold; background-color: #E5E5E5">1</td>
+<td class="gt_row gt_center" headers="영화명" style="font-family: MaruBuri; font-weight: bold; background-color: #E5E5E5">명량</td>
+<td class="gt_row gt_center" headers="개봉일" style="font-family: MaruBuri; font-weight: bold; background-color: #E5E5E5">2014-07-30</td>
+<td class="gt_row gt_center" headers="매출액" style="font-family: MaruBuri; font-weight: bold; background-color: #E5E5E5">1,357</td>
+<td class="gt_row gt_center" headers="관객수" style="font-family: MaruBuri; font-weight: bold; background-color: #E5E5E5">1,761</td>
+<td class="gt_row gt_center" headers="국적" style="font-family: MaruBuri; font-weight: bold; background-color: #E5E5E5">한국</td>
+<td class="gt_row gt_center" headers="배급사" style="font-family: MaruBuri; font-weight: bold; background-color: #E5E5E5">(주)씨제이이엔엠</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_center" headers="순위" style="font-family: MaruBuri; font-weight: bold">2</td>
+<td class="gt_row gt_center" headers="영화명" style="font-family: MaruBuri; font-weight: bold">극한직업</td>
+<td class="gt_row gt_center" headers="개봉일" style="font-family: MaruBuri; font-weight: bold">2019-01-23</td>
+<td class="gt_row gt_center" headers="매출액" style="font-family: MaruBuri; font-weight: bold">1,396</td>
+<td class="gt_row gt_center" headers="관객수" style="font-family: MaruBuri; font-weight: bold">1,626</td>
+<td class="gt_row gt_center" headers="국적" style="font-family: MaruBuri; font-weight: bold">한국</td>
+<td class="gt_row gt_center" headers="배급사" style="font-family: MaruBuri; font-weight: bold">(주)씨제이이엔엠</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_center" headers="순위" style="font-family: MaruBuri; font-weight: bold; background-color: #E5E5E5">3</td>
+<td class="gt_row gt_center" headers="영화명" style="font-family: MaruBuri; font-weight: bold; background-color: #E5E5E5">신과함께-죄와 벌</td>
+<td class="gt_row gt_center" headers="개봉일" style="font-family: MaruBuri; font-weight: bold; background-color: #E5E5E5">2017-12-20</td>
+<td class="gt_row gt_center" headers="매출액" style="font-family: MaruBuri; font-weight: bold; background-color: #E5E5E5">1,157</td>
+<td class="gt_row gt_center" headers="관객수" style="font-family: MaruBuri; font-weight: bold; background-color: #E5E5E5">1,441</td>
+<td class="gt_row gt_center" headers="국적" style="font-family: MaruBuri; font-weight: bold; background-color: #E5E5E5">한국</td>
+<td class="gt_row gt_center" headers="배급사" style="font-family: MaruBuri; font-weight: bold; background-color: #E5E5E5">롯데쇼핑㈜롯데엔터테인먼트</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_center" headers="순위" style="font-family: MaruBuri; font-weight: bold">4</td>
+<td class="gt_row gt_center" headers="영화명" style="font-family: MaruBuri; font-weight: bold">국제시장</td>
+<td class="gt_row gt_center" headers="개봉일" style="font-family: MaruBuri; font-weight: bold">2014-12-17</td>
+<td class="gt_row gt_center" headers="매출액" style="font-family: MaruBuri; font-weight: bold">1,109</td>
+<td class="gt_row gt_center" headers="관객수" style="font-family: MaruBuri; font-weight: bold">1,426</td>
+<td class="gt_row gt_center" headers="국적" style="font-family: MaruBuri; font-weight: bold">한국</td>
+<td class="gt_row gt_center" headers="배급사" style="font-family: MaruBuri; font-weight: bold">(주)씨제이이엔엠</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_center" headers="순위" style="font-family: MaruBuri; font-weight: bold; background-color: #E5E5E5">5</td>
+<td class="gt_row gt_center" headers="영화명" style="font-family: MaruBuri; font-weight: bold; background-color: #E5E5E5">어벤져스: 엔드게임</td>
+<td class="gt_row gt_center" headers="개봉일" style="font-family: MaruBuri; font-weight: bold; background-color: #E5E5E5">2019-04-24</td>
+<td class="gt_row gt_center" headers="매출액" style="font-family: MaruBuri; font-weight: bold; background-color: #E5E5E5">1,222</td>
+<td class="gt_row gt_center" headers="관객수" style="font-family: MaruBuri; font-weight: bold; background-color: #E5E5E5">1,393</td>
+<td class="gt_row gt_center" headers="국적" style="font-family: MaruBuri; font-weight: bold; background-color: #E5E5E5">미국</td>
+<td class="gt_row gt_center" headers="배급사" style="font-family: MaruBuri; font-weight: bold; background-color: #E5E5E5">월트디즈니컴퍼니코리아</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_center" headers="순위" style="font-family: MaruBuri; font-weight: bold">6</td>
+<td class="gt_row gt_center" headers="영화명" style="font-family: MaruBuri; font-weight: bold">겨울왕국 2</td>
+<td class="gt_row gt_center" headers="개봉일" style="font-family: MaruBuri; font-weight: bold">2019-11-21</td>
+<td class="gt_row gt_center" headers="매출액" style="font-family: MaruBuri; font-weight: bold">1,148</td>
+<td class="gt_row gt_center" headers="관객수" style="font-family: MaruBuri; font-weight: bold">1,375</td>
+<td class="gt_row gt_center" headers="국적" style="font-family: MaruBuri; font-weight: bold">미국</td>
+<td class="gt_row gt_center" headers="배급사" style="font-family: MaruBuri; font-weight: bold">월트디즈니컴퍼니코리아</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_center" headers="순위" style="font-family: MaruBuri; font-weight: bold; background-color: #E5E5E5">7</td>
+<td class="gt_row gt_center" headers="영화명" style="font-family: MaruBuri; font-weight: bold; background-color: #E5E5E5">아바타</td>
+<td class="gt_row gt_center" headers="개봉일" style="font-family: MaruBuri; font-weight: bold; background-color: #E5E5E5">2009-12-17</td>
+<td class="gt_row gt_center" headers="매출액" style="font-family: MaruBuri; font-weight: bold; background-color: #E5E5E5">1,284</td>
+<td class="gt_row gt_center" headers="관객수" style="font-family: MaruBuri; font-weight: bold; background-color: #E5E5E5">1,362</td>
+<td class="gt_row gt_center" headers="국적" style="font-family: MaruBuri; font-weight: bold; background-color: #E5E5E5">미국</td>
+<td class="gt_row gt_center" headers="배급사" style="font-family: MaruBuri; font-weight: bold; background-color: #E5E5E5">해리슨앤컴퍼니,이십세기폭스코리아(주)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_center" headers="순위" style="font-family: MaruBuri; font-weight: bold">8</td>
+<td class="gt_row gt_center" headers="영화명" style="font-family: MaruBuri; font-weight: bold">베테랑</td>
+<td class="gt_row gt_center" headers="개봉일" style="font-family: MaruBuri; font-weight: bold">2015-08-05</td>
+<td class="gt_row gt_center" headers="매출액" style="font-family: MaruBuri; font-weight: bold">1,052</td>
+<td class="gt_row gt_center" headers="관객수" style="font-family: MaruBuri; font-weight: bold">1,341</td>
+<td class="gt_row gt_center" headers="국적" style="font-family: MaruBuri; font-weight: bold">한국</td>
+<td class="gt_row gt_center" headers="배급사" style="font-family: MaruBuri; font-weight: bold">(주)씨제이이엔엠</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_center" headers="순위" style="font-family: MaruBuri; font-weight: bold; background-color: #E5E5E5">9</td>
+<td class="gt_row gt_center" headers="영화명" style="font-family: MaruBuri; font-weight: bold; background-color: #E5E5E5">괴물</td>
+<td class="gt_row gt_center" headers="개봉일" style="font-family: MaruBuri; font-weight: bold; background-color: #E5E5E5">2006-07-27</td>
+<td class="gt_row gt_center" headers="매출액" style="font-family: MaruBuri; font-weight: bold; background-color: #E5E5E5">0</td>
+<td class="gt_row gt_center" headers="관객수" style="font-family: MaruBuri; font-weight: bold; background-color: #E5E5E5">1,302</td>
+<td class="gt_row gt_center" headers="국적" style="font-family: MaruBuri; font-weight: bold; background-color: #E5E5E5">한국</td>
+<td class="gt_row gt_center" headers="배급사" style="font-family: MaruBuri; font-weight: bold; background-color: #E5E5E5">(주)쇼박스</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_center" headers="순위" style="font-family: MaruBuri; font-weight: bold">10</td>
+<td class="gt_row gt_center" headers="영화명" style="font-family: MaruBuri; font-weight: bold">도둑들</td>
+<td class="gt_row gt_center" headers="개봉일" style="font-family: MaruBuri; font-weight: bold">2012-07-25</td>
+<td class="gt_row gt_center" headers="매출액" style="font-family: MaruBuri; font-weight: bold">937</td>
+<td class="gt_row gt_center" headers="관객수" style="font-family: MaruBuri; font-weight: bold">1,298</td>
+<td class="gt_row gt_center" headers="국적" style="font-family: MaruBuri; font-weight: bold">한국,홍콩</td>
+<td class="gt_row gt_center" headers="배급사" style="font-family: MaruBuri; font-weight: bold">(주)쇼박스</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</section><section id="펭귄-데이터셋" class="level4"><h4 class="anchored" data-anchor-id="펭귄-데이터셋">펭귄 데이터셋</h4>
+<p>미국에서 “George Floyd”가 경찰에 의해 살해되면서 촉발된 <a href="https://ko.wikipedia.org/wiki/Black_Lives_Matter">“Black Lives Matter”</a> 운동은 아프리카계 미국인을 향한 폭력과 제도적 인종주의에 반대하는 사회운동이다. 한국에서도 소수 정당인 정의당에서 기사로 낼 정도로 적극적으로 나서고 있다.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<p>데이터 과학에서 최근 R.A. Fisher의 과거 저술한 “The genetical theory of natural selection” <span class="citation" data-cites="edwards2000genetical">(Edwards 2000)</span> 우생학(Eugenics) 대한 관점이 논란이 되면서 R 데이터 과학의 첫 데이터셋으로 그가 만들었다고 하는 붓꽃 <code>iris</code> 데이터를 대안적 데이터, 즉 펭귄 데이터로 대체하는 움직임이 활발히 전개되고 있다. <a href="https://github.com/allisonhorst/palmerpenguins"><code>palmerpenguins</code></a> <span class="citation" data-cites="penguin2020">(KB, TD, 와/과 WR 2014)</span> 데이터셋이 대안으로 많은 호응을 얻고 있다. <span class="citation" data-cites="AbdulMajedRaja2020">(AbdulMajedRaja 2020)</span>, <span class="citation" data-cites="Levy2019">(Levy 2019)</span> </p>
+</section><section id="시놉시스-생성" class="level4"><h4 class="anchored" data-anchor-id="시놉시스-생성">시놉시스 생성</h4>
+<p>챗GPT를 활용하면 더욱 정교하고 창의적인 답변 및 콘텐츠를 제작할 수 있다. 예시로 “영화의 시놉시스와 펭귄에 관한 데이터를 결합하여 새로운 영화 시놉시스를 구성해 주세요”라는 프롬프트는 챗GPT에게 서로 다른 주제를 통합해 새로운 작품 시놉시스 제작을 지시내린다. 챗GPT는 제공된 프롬프트를 분석하고 이해한 뒤 새로운 시놉시스를 만들어 낸다. 특히 눈에 띄는 점은 챗GPT가 새로운 시놉시스를 대략 10초 이내 빠르게 생성한다는 것이다.</p>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+프롬프트
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<blockquote class="blockquote">
+<p>영화 시놉시스와 펭귄 데이터가 백틱(```)으로 감싸져 있습니다. 다음 영화 시놉시스와 데이터를 하나로 합하여 전혀 새로운 영화 시놉시스를 작성해주세요.</p>
+<p>``` <br> 첫번째 영화: 국제시장 <br></p>
+<p>덕수(황정민)의 가족은 흥남 철수 때 부산 국제시장에 내려온 피난민이다. 전쟁통에 아버지를 잃은 덕수는 졸지에 어머니와 두 동생의 생계를 책임지게 됐다. 동생의 학비와 생활비를 벌기 위해 자신의 꿈을 버린 채 친구 달구(오달수)와 함께 서독의 탄광으로, 베트남전으로 뛰어들어야 했던 덕수. 덕분에 사랑하는 아내 영자(김윤진)를 만날 수 있었고, 토끼 같은 자식들을 대학에 보낼 수 있었지만, 그의 인생에서 ’그’는 한번도 없었다.</p>
+<p>데이터: 펭귄 데이터 <br></p>
+<p>이 데이터는 미국 장기 생태 연구 네트워크의 일부인 파머 스테이션 장기 생태 연구 프로그램의 크리스틴 고먼 박사가 2007년부터 2009년까지 수집한 것입니다. 이 데이터는 환경 데이터 이니셔티브(EDI) 데이터 포털에서 직접 가져온 것으로, 팔머 스테이션 데이터 정책에 따라 CC0 라이선스(“권리 없음”)로 사용할 수 있습니다. ```</p>
+<h4 id="응답" class="unnumbered anchored">응답</h4>
+<p>새로운 영화 시놉시스: <br></p>
+</blockquote>
+<section id="응답-1" class="level4 unnumbered"><h4 class="unnumbered anchored" data-anchor-id="응답-1">응답</h4>
+<p><strong>새로운 영화: “펭귄의 꿈”</strong></p>
+<p>덕수(황정민)는 부산 국제시장에서 가족을 부양하며 살아가는 평범한 사람이었다. 그러나 그의 가족은 흥남 철수 때 피난민으로 내려온 펭귄들이었다. 덕수는 아버지를 잃은 후, 어머니와 두 동생 펭귄의 생계를 책임지게 되었다.</p>
+<p>덕수는 동생 펭귄들의 학비와 생활비를 벌기 위해 자신의 꿈을 포기하고, 친구 달구(오달수)와 함께 미국 장기 생태 연구 네트워크의 일부인 파머 스테이션으로 떠나게 된다. 그곳에서 그는 크리스틴 고먼 박사와 함께 2007년부터 2009년까지 펭귄 데이터를 수집하는 일을 하게 된다.</p>
+<p>덕수의 노력 덕분에 사랑하는 아내 영자(김윤진)와 펭귄 동생들을 대학에 보낼 수 있었다. 그러나 그의 인생에서 ’그’는 한번도 없었다. 그는 항상 펭귄들을 위해 자신을 희생하며 살아갔다. 그러나 그의 꿈은 언제나 그의 마음속에 살아있었다. 그의 꿈은 펭귄들이 자유롭게 날아다닐 수 있는 세상을 만드는 것이었다. 그의 이야기는 우리에게 희망과 용기, 그리고 사랑에 대한 진정한 의미를 가르쳐준다.</p>
+<p><strong>새로운 영화: “펭귄의 꿈”</strong></p>
+<p>덕수(황정민)는 부산 국제시장에서 가족을 부양하는 평범한 사람이었다. 그는 전쟁으로 아버지를 잃고, 어머니와 두 동생의 생계를 책임지며, 친구 달구(오달수)와 함께 서독의 탄광과 베트남전으로 뛰어들어야 했다. 그럼에도 불구하고 그는 사랑하는 아내 영자(김윤진)를 만나고, 자식들을 대학에 보낼 수 있었다.</p>
+<p>그러던 어느 날, 덕수는 크리스틴 고먼 박사의 펭귄 연구 데이터를 우연히 발견하게 된다. 이 데이터는 2007년부터 2009년까지 미국 장기 생태 연구 네트워크의 일부인 파머 스테이션에서 수집된 것이었다. 덕수는 이 데이터를 통해 펭귄들의 생태와 생활 패턴에 대해 알게 되고, 그들의 삶에 깊은 관심을 갖게 된다.</p>
+<p>덕수는 자신의 삶과 펭귄들의 삶을 비교하며, 그들이 겪는 어려움과 도전에 공감하게 된다. 그는 펭귄들의 삶을 이해하고 보호하려는 새로운 꿈을 갖게 되고, 그 꿈을 이루기 위해 자신의 모든 것을 바치기로 결심한다. 이제 덕수의 새로운 도전이 시작되는데…</p>
+<p>덕수는 펭귄들의 생태를 연구하며 그들이 겪는 환경적 위협에 대해 알게 된다. 특히, 기후 변화와 인간의 활동이 펭귄들의 서식지를 위협하고 있다는 사실에 충격을 받는다. 그는 이 문제를 해결하기 위해 자신의 모든 것을 바치기로 결심한다.</p>
+<p>덕수는 달구와 함께 펭귄 보호 운동을 시작한다. 그들은 펭귄들의 서식지를 보호하고, 인간의 활동이 펭귄들에게 미치는 영향을 줄이기 위한 다양한 활동을 벌인다. 이 과정에서 덕수는 자신의 삶에 새로운 의미와 목표를 찾게 된다.</p>
+<p>덕수의 펭귄 보호 운동은 점차 사람들의 주목을 받게 된다. 그의 노력은 많은 사람들에게 영감을 주고, 점차 많은 사람들이 펭귄 보호 운동에 참여하게 된다. 그러나 동시에, 그의 활동은 기업의 이익을 위협하며, 그에게 많은 도전과 위협을 가져다준다.</p>
+<p>그러나 덕수는 자신의 꿈을 포기하지 않는다. 그는 펭귄들의 삶을 보호하기 위해 끝까지 싸우기로 결심한다. 그의 노력은 결국 성공하게 되고, 펭귄들의 서식지는 보호되게 된다.</p>
+<p>“펭귄의 꿈”은 평범한 사람이 어떻게 자신의 꿈을 이루고, 세상을 바꿀 수 있는지를 보여주는 영화다. 이 영화는 우리에게 꿈을 이루기 위한 도전과 희생, 그리고 그 과정에서 얻는 성취와 만족감에 대해 생각하게 한다.</p>
+<p><strong>영화 제목: “펭귄의 시장”</strong></p>
+<p>미국 장기 생태 연구 네트워크의 일부인 파머 스테이션에서 크리스틴 고먼 박사(김윤진)는 2007년부터 2009년까지 펭귄에 대한 연구를 수행하였다. 그녀의 연구는 펭귄의 생태계와 그들의 생존 전략에 대한 깊은 이해를 제공하였다.</p>
+<p>한편, 부산 국제시장에서 살아가는 덕수(황정민)는 전쟁으로 아버지를 잃고, 어머니와 두 동생의 생계를 책임지게 된다. 그는 동생의 학비와 생활비를 벌기 위해 자신의 꿈을 버리고 친구 달구(오달수)와 함께 미국으로 떠나게 된다. 그의 목적지는 바로 크리스틴 박사가 연구를 수행하는 파머 스테이션이다.</p>
+<p>덕수는 파머 스테이션에서 일하면서 크리스틴 박사와 사랑에 빠지게 되고, 그녀의 연구에도 도움을 주게 된다. 그는 펭귄의 생존 전략을 배우며, 그것이 자신의 삶에 어떻게 적용될 수 있는지를 깨닫게 된다. 그의 인생에서 ’그’는 한번도 없었지만, 펭귄들과의 만남을 통해 그는 새로운 꿈과 희망을 찾게 된다.</p>
+<p>“펭귄의 시장”은 생존과 사랑, 그리고 꿈을 찾아가는 이들의 이야기를 그린다.</p>
+<p><strong>영화 제목: “펭귄의 꿈”</strong></p>
+<p>2007년부터 2009년까지 미국 장기 생태 연구 네트워크의 일부인 파머 스테이션에서 활동한 크리스틴 고먼 박사(김윤진)는 펭귄의 생태계에 대한 깊은 이해를 가지고 있다. 그녀의 연구는 펭귄의 생존 전략과 그들의 환경에 대한 중요한 정보를 제공한다.</p>
+<p>한편, 부산 국제시장에서 살아가는 덕수(황정민)는 전쟁으로 아버지를 잃고, 어머니와 두 동생의 생계를 책임지게 된다. 그는 동생들의 학비와 생활비를 벌기 위해 자신의 꿈을 포기하고, 친구 달구(오달수)와 함께 미국으로 떠나게 된다. 그의 목적지는 바로 크리스틴 박사가 연구를 수행하는 파머 스테이션이다.</p>
+<p>덕수는 파머 스테이션에서 일하면서 크리스틴 박사와 사랑에 빠지게 되고, 그녀의 연구에도 도움을 주게 된다. 그는 펭귄의 생존 전략을 배우며, 그것이 자신의 삶에 어떻게 적용될 수 있는지를 깨닫게 된다. 그의 인생에서 ’그’는 한번도 없었지만, 펭귄들과의 만남을 통해 그는 새로운 꿈과 희망을 찾게 된다.</p>
+<p>“펭귄의 꿈”은 생존과 사랑, 그리고 꿈을 찾아가는 이들의 이야기를 그린다. 이 영화는 인간의 삶과 펭귄의 생존 전략 사이의 유사성을 통해 우리 모두가 어떻게 살아가야 하는지에 대한 깊은 메시지를 전달한다.</p>
+<p><strong>영화 제목: “데이터의 시장”</strong></p>
+<p>덕수(황정민)는 부산 국제시장에서 가족을 부양하며 살아가는 평범한 사람이었다. 그의 가족은 흥남 철수 때 피난민으로 내려온 사람들이었다. 아버지를 잃은 후, 어머니와 두 동생의 생계를 책임지게 된 덕수는 그들의 생활비를 벌기 위해 자신의 꿈을 포기하고, 친구 달구(오달수)와 함께 미국의 데이터 연구소로 떠나게 된다.</p>
+<p>데이터 연구소에서 그는 크리스틴 고먼 박사와 함께 2007년부터 2009년까지 펭귄 데이터를 수집하는 일을 하게 된다. 이 과정에서 덕수는 데이터 분석의 중요성과 그것이 어떻게 세상을 바꿀 수 있는지를 깨닫게 된다.</p>
+<p>덕수의 노력 덕분에 사랑하는 아내 영자(김윤진)와 동생들을 대학에 보낼 수 있었다. 그러나 그의 인생에서 ’그’는 한번도 없었다. 그는 항상 가족들을 위해 자신을 희생하며 살아갔다. 그러나 그의 꿈은 언제나 그의 마음속에 살아있었다. 그의 꿈은 데이터를 통해 세상을 바꾸는 것이었다.</p>
+<p>“데이터의 시장”은 우리에게 희망과 용기, 그리고 사랑에 대한 진정한 의미를 가르쳐준다. 이 영화는 우리에게 자신을 희생하며 가족을 위해 살아가는 덕수의 이야기를 통해, 가족의 사랑과 헌신, 그리고 데이터의 힘에 대해 생각하게 한다.</p>
+<p><strong>영화 제목: “펭귄 데이터의 미스터리”</strong></p>
+<p>덕수(황정민)는 부산 국제시장에서 가족을 부양하며 살아가는 평범한 사람이었다. 그의 가족은 흥남 철수 때 피난민으로 내려온 사람들이었다. 아버지를 잃은 후, 어머니와 두 동생의 생계를 책임지게 된 덕수는 그들의 생활비를 벌기 위해 자신의 꿈을 포기하고, 친구 달구(오달수)와 함께 미국의 데이터 연구소로 떠나게 된다.</p>
+<p>데이터 연구소에서 그는 크리스틴 고먼 박사와 함께 2007년부터 2009년까지 펭귄 데이터를 수집하는 일을 하게 된다. 이 과정에서 덕수는 펭귄 데이터의 미스터리에 푹 빠지게 되고, 그의 일상은 갑자기 펭귄들의 세상으로 변하게 된다.</p>
+<p>덕수의 노력 덕분에 사랑하는 아내 영자(김윤진)와 동생들을 대학에 보낼 수 있었다. 그러나 그의 인생에서 ’그’는 한번도 없었다. 그는 항상 가족들을 위해 자신을 희생하며 살아갔다. 그러나 그의 꿈은 언제나 그의 마음속에 살아있었다. 그의 꿈은 데이터를 통해 세상을 바꾸는 것이었다.</p>
+<p>“펭귄 데이터의 미스터리”는 우리에게 웃음과 재미, 그리고 사랑에 대한 진정한 의미를 가르쳐준다. 이 영화는 우리에게 자신을 희생하며 가족을 위해 살아가는 덕수의 이야기를 통해, 가족의 사랑과 헌신, 그리고 데이터의 힘에 대해 생각하게 한다. 그리고 무엇보다, 펭귄 데이터의 미스터리를 풀어가는 과정에서 발생하는 유머러스한 상황들은 관객들에게 웃음을 선사할 것이다.</p>
+</section>
+</div>
+</div>
+<p>챗GPT와 같은 거대 언어 모형(LLM)의 등장은 기존 저작과 창조적 작업에 대한 새로운 관점을 제공하며, 그 과정에서 저작자의 역할도 재평가되고 있다. 일반적으로 사람이 시놉시스나 창작물을 만들기 위해서 상당한 창의적 노력과 시간이 필요했지만 생성형 언어모형 기술에 대한 장벽이 크게 낮아짐에 따라, 빠르고 다양한 방식으로 콘텐츠를 생성할 수 있는 지평이 펼쳐지고 있다.</p>
+<p>이러한 변화는 단순히 작업 속도나 효율성을 높이는 것을 넘어, 기존 ‘저작자’ 개념에도 영향을 미치고 있다. 언어 모형을 활용하여 초기 아이디어나 구조를 빠르게 형성한 뒤, 이를 기반으로 사람이 더 깊고 복잡한 내용을 추가하거나 수정한다면, 새로운 형태의 공동 작업이나 협업모델이 될 것이다. 기존 저작자가 단독으로 모든 것을 창조하는 것이 아니라, 다양한 도구와 협업을 통해 더 풍부하고 다양한 저작물을 만들어낼 수 있는 새로운 길이 열리고 있다.</p>
+</section></section><section id="구조와-외양" class="level3" data-number="13.4.2"><h3 data-number="13.4.2" class="anchored" data-anchor-id="구조와-외양">
+<span class="header-section-number">13.4.2</span> 구조와 외양</h3>
+<p>챗GPT 디지털 글쓰기에서 “구조와 외양” 단계는 문서 가독성과 효과를 극대화하는 중요한 과정이다. 이 단계에서 다음과 같은 다양한 문서요소와 기능을 활용하여 저작물의 품질을 높힌다.</p>
+<ol type="1">
+<li>
+<strong>마크다운 기본 글쓰기</strong>: 대중소 제목을 설정하여 문서의 구조를 명확히 한다. 굵은 글씨, 밑줄 등의 텍스트 서식과 단락 구분을 통해 내용을 강조하고 구조화한다.</li>
+<li>
+<strong>그림 (Figure)</strong>: 복잡한 개념이나 데이터를 시각적으로 표현하여 이해를 돕는다.</li>
+<li>
+<strong>그래프 (Graph)</strong>: 데이터 분석 결과를 시각적으로 나타내어 정보의 흐름과 패턴을 쉽게 파악할 수 있게 한다.</li>
+<li>
+<strong>표 (Table)</strong>: 정보를 구조적으로 정리하여 한눈에 볼 수 있게 만든다.</li>
+<li>
+<strong>도형 (Diagrams)</strong>: 프로세스나 시스템의 구조를 시각적으로 설명한다.</li>
+<li>
+<strong>수식 (LaTeX)</strong>: 공학이나 과학 문서에서 복잡한 수학적 표현을 정확하게 나타낸다.</li>
+<li>
+<strong>호출 블록 (Callout Blocks)</strong>: 중요한 정보나 주의사항을 강조하여 독자의 주목을 끈다.</li>
+<li>
+<strong>기사 레이아웃 (Article Layout)</strong>: 전문적인 기사나 보고서 형식에 맞게 레이아웃을 설정한다.</li>
+<li>
+<strong>학술저작 (Scholarly Writing)</strong>: 논문이나 학술 문서 작성에 필요한 다양한 서식과 참조 스타일을 적용한다.</li>
+<li>
+<strong>다단편집 (Side-by-Side Layout)</strong>: 여러 내용을 병렬로 배열하여 비교와 분석을 용이하게 한다.</li>
+<li>
+<strong>색상과 시각적 효과</strong>: 다양한 색상과 시각적 효과를 활용하여 문서의 외관을 더욱 풍부하고 독특하게 만든다.</li>
+</ol>
+<p>저작물 품질을 높일 수 있는 다양한 문서요소와 기능을 모두 외우고 즉시 활용하는 것은 과거 전문적으로 인쇄출판 종사자들만이 할 수 있었던 작업이지만 챗GPT 자연어 처리 능력을 활용하여 쉽고 빠르게 적작물에 적용할 수 있는 시대가 열렸다.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><a href="images/layout_format.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="문서 구조와 문학적 프로그래밍 (쿼토)"><img src="images/layout_format.jpg" class="img-fluid figure-img" alt="문서 구조와 문학적 프로그래밍 (쿼토)"></a></p>
+<figcaption>문서 구조와 문학적 프로그래밍 (쿼토)</figcaption></figure>
+</div>
+<p>표, 그래프는 문서 구조와 문학적 프로그래밍의 중요성을 시각적으로 전달하는 중요한 매체다. R 언어 <code>tidyverse</code>, <code>palmerpenguins</code>, <code>gt</code> 패키지를 활용해 펭귄 데이터를 처리하고, 펭귄 종별 암수 개체수를 표로 정리하고 ’펭귄종별 암수 개체수’라는 제목과 함께 데이터 출처를 표기하는 각주까지 표에 꼼꼼히 표기했다. 그래프 예시는 R 언어 <code>ggplot2</code> 패키지를 사용해 펭귄 물갈퀴 길이와 체질량 사이의 관계를 그래프로 표현하고 있다. 향후 표와 그래프는 영화 시놉시스 저작물의 중요한 문서 구성요소 중 하나로 활용될 것이다.</p>
+<div>
+
+</div>
+</section><div class="quarto-layout-panel" data-layout="[[1,1]]">
+<div class="quarto-layout-row">
+<section id="표" class="level3 unnumbered cell quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;"><h3 class="unnumbered anchored" data-anchor-id="표">표</h3>
+<div class="cell-output-display">
+<div>
+<div id="fmwwslwzzt" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>@import url("https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+#fmwwslwzzt table {
+  font-family: NanumSquare;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#fmwwslwzzt thead, #fmwwslwzzt tbody, #fmwwslwzzt tfoot, #fmwwslwzzt tr, #fmwwslwzzt td, #fmwwslwzzt th {
+  border-style: none;
+}
+
+#fmwwslwzzt p {
+  margin: 0;
+  padding: 0;
+}
+
+#fmwwslwzzt .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: 300;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: none;
+  border-top-width: 3px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#fmwwslwzzt .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#fmwwslwzzt .gt_title {
+  color: #333333;
+  font-size: 26px;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#fmwwslwzzt .gt_subtitle {
+  color: #333333;
+  font-size: 16px;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#fmwwslwzzt .gt_heading {
+  background-color: rgba(255, 255, 255, 0);
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#fmwwslwzzt .gt_bottom_border {
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#fmwwslwzzt .gt_col_headings {
+  border-top-style: none;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #000000;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#fmwwslwzzt .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 17px;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#fmwwslwzzt .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 17px;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#fmwwslwzzt .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#fmwwslwzzt .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#fmwwslwzzt .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #000000;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#fmwwslwzzt .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#fmwwslwzzt .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 80%;
+  font-weight: bolder;
+  text-transform: uppercase;
+  border-top-style: none;
+  border-top-width: 2px;
+  border-top-color: #000000;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#fmwwslwzzt .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 80%;
+  font-weight: bolder;
+  border-top-style: none;
+  border-top-width: 2px;
+  border-top-color: #000000;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: #FFFFFF;
+  vertical-align: middle;
+}
+
+#fmwwslwzzt .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#fmwwslwzzt .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#fmwwslwzzt .gt_row {
+  padding-top: 6px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 0px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#fmwwslwzzt .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 80%;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-right-style: solid;
+  border-right-width: 0px;
+  border-right-color: #FFFFFF;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#fmwwslwzzt .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#fmwwslwzzt .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#fmwwslwzzt .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#fmwwslwzzt .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#fmwwslwzzt .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#fmwwslwzzt .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#fmwwslwzzt .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#fmwwslwzzt .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#fmwwslwzzt .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#fmwwslwzzt .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#fmwwslwzzt .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#fmwwslwzzt .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#fmwwslwzzt .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#fmwwslwzzt .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#fmwwslwzzt .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#fmwwslwzzt .gt_sourcenote {
+  font-size: 10px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#fmwwslwzzt .gt_left {
+  text-align: left;
+}
+
+#fmwwslwzzt .gt_center {
+  text-align: center;
+}
+
+#fmwwslwzzt .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#fmwwslwzzt .gt_font_normal {
+  font-weight: normal;
+}
+
+#fmwwslwzzt .gt_font_bold {
+  font-weight: bold;
+}
+
+#fmwwslwzzt .gt_font_italic {
+  font-style: italic;
+}
+
+#fmwwslwzzt .gt_super {
+  font-size: 65%;
+}
+
+#fmwwslwzzt .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#fmwwslwzzt .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#fmwwslwzzt .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#fmwwslwzzt .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#fmwwslwzzt .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#fmwwslwzzt .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#fmwwslwzzt .gt_indent_5 {
+  text-indent: 25px;
+}
+
+tbody tr:last-child {
+  border-bottom: 2px solid #ffffff00;
+}
+</style>
+<table class="gt_table table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<caption>문서 구성요소 <strong>표</strong> 사례</caption>
+<thead>
+<tr class="header gt_heading">
+<th colspan="3" class="gt_heading gt_title gt_font_normal gt_bottom_border" style="text-align: left;">펭귄종별 암수 개체수<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span>
+</th>
+</tr>
+<tr class="odd gt_col_headings">
+<th id="펭귄종" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" style="text-align: left; border-top-width: 0px; border-top-style: solid; border-top-color: black; font-family: MaruBuri; font-weight: bold;" scope="col">펭귄종</th>
+<th id="암컷" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" style="text-align: left; border-top-width: 0px; border-top-style: solid; border-top-color: black; font-family: MaruBuri; font-weight: bold;" scope="col">암컷</th>
+<th id="수컷" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" style="text-align: left; border-top-width: 0px; border-top-style: solid; border-top-color: black; font-family: MaruBuri; font-weight: bold;" scope="col">수컷</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_center" headers="species" style="text-align: left; font-family: MaruBuri; font-weight: bold; background-color: #E5E5E5;">Adelie</td>
+<td class="gt_row gt_center" headers="female" style="text-align: left; font-family: MaruBuri; font-weight: bold; background-color: #E5E5E5;">73</td>
+<td class="gt_row gt_center" headers="male" style="text-align: left; font-family: MaruBuri; font-weight: bold; background-color: #E5E5E5;">73</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_center" headers="species" style="text-align: left; font-family: MaruBuri; font-weight: bold;">Chinstrap</td>
+<td class="gt_row gt_center" headers="female" style="text-align: left; font-family: MaruBuri; font-weight: bold;">34</td>
+<td class="gt_row gt_center" headers="male" style="text-align: left; font-family: MaruBuri; font-weight: bold;">34</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_center" headers="species" style="text-align: left; font-family: MaruBuri; font-weight: bold; background-color: #E5E5E5;">Gentoo</td>
+<td class="gt_row gt_center" headers="female" style="text-align: left; font-family: MaruBuri; font-weight: bold; background-color: #E5E5E5;">58</td>
+<td class="gt_row gt_center" headers="male" style="text-align: left; font-family: MaruBuri; font-weight: bold; background-color: #E5E5E5;">61</td>
+</tr>
+</tbody>
+<tfoot class="gt_footnotes"><tr class="odd">
+<td colspan="3" class="gt_footnote" style="text-align: left;">
+<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span> 데이터 출처: palmerpenguins 패키지</td>
+</tr></tfoot>
+</table>
+</div>
+</div>
+</div>
+</section><section id="그래프" class="level3 unnumbered cell quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;"><h3 class="unnumbered anchored" data-anchor-id="그래프">그래프</h3>
+</section>
+</div>
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><a href="images/whole_game_penguins.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="images/whole_game_penguins.png" class="img-fluid"></a></p>
+</div>
+</div>
+</div>
+<section id="배포와-공유" class="level3" data-number="13.4.3"><h3 data-number="13.4.3" class="anchored" data-anchor-id="배포와-공유">
+<span class="header-section-number">13.4.3</span> 배포와 공유</h3>
+<p>디지털 글쓰기 저작물을 완성한 후 다음 단계로 인쇄출판과 배포를 고려해야 한다. 과거와 달리 현재는 물론 앞으로 다양한 문서 저작물을 하나의 프로젝트로 엮어 전자출판을 할 수 있는 플랫폼이 필요하다. <a href="https://quartopub.com/"><code>Quarto Pub</code></a>은 이러한 목적으로 개발되어 저자가 작성한 다양한 문서저작물을 원클릭으로 전자출판할 수 있다. 물론 <a href="https://quartopub.com/"><code>Quarto Pub</code></a> 외에도 <a href="https://netlify.com/">netlify</a>, <a href="https://github.com/">GitHub Pages</a>, <a href="https://www.rstudio.com/products/connect/">RStudio Connect</a> 등 다른 출판배포 플랫폼도 존재한다. 플랫폼들은 각각의 특성과 장점을 가지고 있어, 저자의 필요와 목적에 따라 적절한 플랫폼을 선택하여 디지털 글쓰기 저작물을 더 넓은 독자에게 전달할 수 있다.</p>
+<p>최종 출판저작물 인쇄출판과 배포를 마친 후에는 저작물 공유도 고려할 수 있다. 저작물을 공유함으로써 저자는 자신의 저작물을 다른 사람들과 공유하고, 다른 사람들은 저작물을 활용할 수 있다. 저작물을 공유하는 방법은 다양하지만, 가장 쉬운 방법은 저작물을 공유할 수 있는 플랫폼에 저작물을 공유 저작권 표기를 함께 게시하는 것이다. 소스코드를 공유하면 다른 사람들이 문서 작성에 사용된 소스코드를 쉽게 이해하고, 문서 작성에 사용된 소스코드를 활용해 자신만의 향상된 저작물을 공유함으로써 글쓰기 문화를 확산시킬 수 있다.</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"></figure><p></p>
+<div>
+<pre class="mermaid mermaid-js">graph LR
+
+    chatGPT["챗GPT"] --&gt; Document
+
+    subgraph Document["문서"]
+        direction LR
+            Contents["콘텐츠"] --&gt; HTML["HTML 웹페이지"] -.-&gt; Ad["블로그&lt;br&gt;광고"]
+            Contents --&gt; PDF["PDF 문서"] -.-&gt; Report["보고서&lt;br&gt;상급자"]
+            Contents --&gt; PPT["PPT"] -.-&gt; Slide["슬라이드&lt;br&gt;발표"]
+    end
+
+    Document --&gt; Deploy
+
+    subgraph Deploy["배포"]
+        direction LR
+        Quarto["Quarto Pub"]  -.-&gt; Web_Code["소스코드&lt;br&gt;웹페이지&lt;br&gt;공유/협업"]
+        GitHub["Github Page"] --&gt; Web_Code
+        Netlify["Netlify"]    -.-&gt; Web_Code
+        Etc["..."]    -.-&gt; Web_Code
+    end
+
+    style Document fill:#f5f5f5,stroke:#333,stroke-width:3px
+    style Ad fill:#059fff,stroke:#333,stroke-width:1px
+    style Report fill:#059fff,stroke:#333,stroke-width:1px
+    style Slide fill:#059fff,stroke:#333,stroke-width:1px
+    style Deploy fill:#03fc30,stroke:#333,stroke-width:3px
+</pre>
+</div>
+<p></p>
+</div>
+</div>
+</div>
+<p>챗GPT 디지털 글쓰기를 통해 저작한 문서는 다양한 형태로 배포될 수 있다. “국제시장과 남극 펭귄”을 모티브로 삼아 제작한 다양한 영화 시놉시스 저작물은 다음과 같이 공개되어 있다.</p>
+<ul>
+<li>
+<a href="https://statkclee.quarto.pub/writing-penguin/01_movie.html">HTML 웹페이지</a>: HTML 웹페이지 형식으로는 누구나 쉽게 접근하고 읽을 수 있으며, 웹 브라우저만 있으면 어디서든 열람이 가능하다.</li>
+<li>
+<a href="https://statkclee.quarto.pub/writing-penguin/02_movie_pdf.pdf">PDF 파일</a>: PDF 파일 형식으로는 공식 문서나 보고서로 사용할 수 있으며, 물리적인 출력이 필요할 때도 유용하다.</li>
+<li>
+<a href="https://statkclee.quarto.pub/writing-penguin/03_movie_ppt.html#/title-slide">PPT 슬라이드</a>: PPT 슬라이드 형식으로는 발표나 강의 자료로 활용할 수 있어, 다양한 상황에서 유연하게 사용할 수 있다.</li>
+</ul>
+<p>문서 저작을 넘어 다양한 형식으로 문서를 배포하면, 독자나 이용자가 자신에게 가장 편리한 방식으로 문서를 열람할 수 있다. 따라서 챗GPT 디지털 글쓰기는 단순히 텍스트를 생성하는 것을 넘어, 다양한 배포 채널과 형식을 통해 더 넓은 독자층에게 접근할 수 있는 장점도 크다.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><a href="images/chatGPT_quarto_deploy.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="웹, 문서, PPT 슬라이드 배포"><img src="images/chatGPT_quarto_deploy.jpg" class="img-fluid figure-img" alt="웹, 문서, PPT 슬라이드 배포"></a></p>
+<figcaption>웹, 문서, PPT 슬라이드 배포</figcaption></figure>
+</div>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-AbdulMajedRaja2020" class="csl-entry" role="listitem">
+AbdulMajedRaja. 2020. <span>“Penguins Dataset Overview - iris alternative in R using <span>palmerpenguins</span>”</span>. <em>Programming with R</em>. <a href="https://www.programmingwithr.com/penguins-dataset-overview-iris-alternative-in-r/">https://www.programmingwithr.com/penguins-dataset-overview-iris-alternative-in-r/</a>.
+</div>
+<div id="ref-edwards2000genetical" class="csl-entry" role="listitem">
+Edwards, Anthony W Fisher. 2000. <span>“The genetical theory of natural selection”</span>. <em>Genetics</em> 154 (4): 1419–26.
+</div>
+<div id="ref-penguin2020" class="csl-entry" role="listitem">
+KB, Gorman, Williams TD, 와/과 Fraser WR. 2014. <span>“Ecological Sexual Dimorphism and Environmental Variability within a Community of Antarctic Penguins (Genus Pygoscelis)”</span>. <em>PLoS ONE</em> 9(3) (e90081): –13. <a href="https://doi.org/10.1371/journal.pone.0090081">https://doi.org/10.1371/journal.pone.0090081</a>.
+</div>
+<div id="ref-Levy2019" class="csl-entry" role="listitem">
+Levy, Ido. 2019. <span>“Eugenics and the Ethics of Statistical Analysis”</span>. <em>GEORGETOWN PUBLIC POLICY REVIEW</em>. <a href="https://gppreview.com/2019/12/16/eugenics-ethics-statistical-analysis/">https://gppreview.com/2019/12/16/eugenics-ethics-statistical-analysis/</a>.
+</div>
+</div>
+</section></section><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><hr>
+<ol>
+<li id="fn1"><p><a href="http://www.hani.co.kr/arti/politics/assembly/949422.html">정환봉 기자 (2020-06-15), “여당 의원 176명 중 누가?…차별금지법 발의할 ’의인’을 구합니다”, 한겨레 신문</a><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol></section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "복사완료!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "복사완료!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script><nav class="page-navigation"><div class="nav-page nav-page-previous">
+      <a href="./dw_dashboard.html" class="pagination-link" aria-label="대쉬보드">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">대쉬보드</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./references.html" class="pagination-link" aria-label="참고문헌">
+        <span class="nav-page-text">참고문헌</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer"><div class="nav-footer">
+    <div class="nav-footer-left">
+<p>챗GPT 쿼토 책은 소프트웨어 카펜트리 Introduction to Reproducible Publications with Quarto 번역한 것이 포함되어 있습니다.</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/bit2r/gpt-sql/edit/main/gpt_whole_game.qmd" class="toc-action"><i class="bi bi-github"></i>편집</a></li><li><a href="https://github.com/bit2r/gpt-sql/issues/new" class="toc-action"><i class="bi empty"></i>이슈 보고</a></li></ul></div></div>
+    <div class="nav-footer-right">
+<p>순수하게 <a href="https://quarto.org/">쿼토(Quarto)</a>로 제작되었습니다.</p>
+</div>
+  </div>
+</footer><script>var lightboxQuarto = GLightbox({"descPosition":"bottom","openEffect":"zoom","selector":".lightbox","loop":false,"closeEffect":"zoom"});
+window.onload = () => {
+  lightboxQuarto.on('slide_before_load', (data) => {
+    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+    const href = trigger.getAttribute('href');
+    if (href !== null) {
+      const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+      if (imgEl !== null) {
+        const srcAttr = imgEl.getAttribute("src");
+        if (srcAttr && srcAttr.startsWith("data:")) {
+          slideConfig.href = srcAttr;
+        }
+      }
+    } 
+  });
+
+  lightboxQuarto.on('slide_after_load', (data) => {
+    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+    if (window.Quarto?.typesetMath) {
+      window.Quarto.typesetMath(slideNode);
+    }
+  });
+
+};
+          </script>
+
+
+</body></html>

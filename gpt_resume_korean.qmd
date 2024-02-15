@@ -1,0 +1,51 @@
+---
+title: CV
+format:
+  quarto-cv-pdf: default
+author: 홍길동
+date: last-modified
+phone: 010-1234-5678
+address: "서울특별시 관악구 관악로, 서울대학교 한국사학과"
+email: hong.gildong@snu.ac.kr
+fontsize: 11pt
+CJKmainfont: NotoSerifKR
+autoFakeSlant: true
+orcid: 0000-0003-1234-5678
+web: snu.ac.kr
+fontawesome: yes
+nocite: '@*'
+bibliography:
+  peer: data/peer_bib_korean.bib
+  other: data/other_bib_korean.bib
+validate-yaml: false
+csl: data/apa-cv.csl
+---
+
+# 직업 경력
+
+*서울대학교*
+
+한국 고대사 교수 \hfill 2010-현재
+
+부교수 \hfill 2005-2010
+
+# 학력
+
+하버드 대학교, 동아시아 언어 및 문명학 박사 \hfill 2005
+
+서울대학교, 역사학 학사 \hfill 2000
+
+# 주요 논문
+
+::: {#refs-peer}
+:::
+
+# 기술 보고서
+
+::: {#refs-other}
+:::
+
+# 추천인
+
+요청 시 제공 가능하며, 주요 추천인으로는 한국사 및 동아시아 연구 분야의 저명한 학자들이 포함될 것입니다.
+

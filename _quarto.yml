@@ -44,7 +44,6 @@ book:
 
     - part: "시작을 위한 준비"
       chapters:
-        # - setup_whole_game.qmd                 #
         - setup_quarto.qmd                 # OK
         - setup.qmd                    # OK
     # 
@@ -77,13 +76,18 @@ book:
       - dw_slideshow.qmd        # OK
       - dw_dashboard.qmd        # flexdashboard 변환
 
-    # - part: "챗GPT"
-    #   chapters:
-    #     - chatGPT.qmd           # OK
-    #     - prompt.qmd            # OK
-    #     - text_to_X.qmd         # OK -- 한글 깨짐
-    #     - plugin.qmd            # OK
-        
+    - part: "챗GPT"
+      chapters:
+      - gpt_writing.qmd    #
+      - gpt_resume.qmd        #
+      - gpt_case_study.qmd    #      
+    #     - chatGPT.qmd           # 
+    #     - prompt.qmd            # 
+    #     - text_to_X.qmd         # 
+    #     - plugin.qmd            # 
+    
+
+
 
     - references.qmd     # O
 

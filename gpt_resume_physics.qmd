@@ -1,0 +1,49 @@
+---
+title: CV  
+format:  
+  quarto-cv-pdf: default  
+author: William Gosset  
+date: last-modified  
+phone: 123-456-7890  
+address: "Department of Physics, University of Cambridge, Cambridge CB3 0HE, UK"  
+email: wg.physicist@cam.ac.uk  
+fontsize: 11pt  
+orcid: 0000-0002-1825-0097  
+web: cam.ac.uk  
+fontawesome: yes  
+nocite: '@*'  
+bibliography:   
+  peer: data/peer_bib.bib  
+  other: data/other_bib.bib  
+validate-yaml: false  
+csl: data/apa-cv.csl  
+---
+
+# Employment
+
+*University of Cambridge*  
+
+Professor of Theoretical Physics \hfill 2000-Present  
+
+Postdoctoral Researcher \hfill 1995-2000  
+
+# Education
+
+*Princeton University*, Ph.D. in Physics \hfill 1995  
+
+*Massachusetts Institute of Technology*, B.S. in Physics \hfill 1991  
+
+# Publications
+
+::: {#refs-peer}  
+:::  
+
+# Technical Reports
+
+::: {#refs-other}  
+:::  
+
+# References
+
+Available upon request, though likely would include notable physicists such as Stephen Hawking and Brian Greene.
+

@@ -1,0 +1,13 @@
+---
+editor_options: 
+  chunk_output_type: console
+editor: 
+  markdown: 
+    wrap: 72
+---
+
+
+# 이력서
+
+챗GPT로 이력서를 제작하는 방법을 살펴보자.
+
