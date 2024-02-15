@@ -2,18 +2,18 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://r2bit.com/gpt-sql/index.html</loc>
-    <lastmod>2024-02-08T01:57:49.250Z</lastmod>
-  </url>
-  <url>
-    <loc>https://r2bit.com/gpt-sql/dw_book.html</loc>
-    <lastmod>2024-02-14T14:57:52.045Z</lastmod>
-  </url>
-  <url>
-    <loc>https://r2bit.com/gpt-sql/references.html</loc>
-    <lastmod>2024-02-08T02:22:27.304Z</lastmod>
+    <lastmod>2024-02-15T02:11:47.679Z</lastmod>
   </url>
   <url>
     <loc>https://r2bit.com/gpt-sql/dw_website.html</loc>
-    <lastmod>2024-02-14T15:15:03.073Z</lastmod>
+    <lastmod>2024-02-15T02:42:12.488Z</lastmod>
+  </url>
+  <url>
+    <loc>https://r2bit.com/gpt-sql/references.html</loc>
+    <lastmod>2024-02-15T02:11:47.693Z</lastmod>
+  </url>
+  <url>
+    <loc>https://r2bit.com/gpt-sql/dw_slideshow.html</loc>
+    <lastmod>2024-02-15T02:14:43.438Z</lastmod>
   </url>
 </urlset>

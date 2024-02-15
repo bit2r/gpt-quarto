@@ -73,8 +73,8 @@ book:
       chapters:
     #   - dw_publishing.qmd       # X
       # - dw_book.qmd             # OK
-      - dw_website.qmd          #
-    #   - dw_slideshow.qmd        # 
+      - dw_website.qmd          # Blog 추가
+      - dw_slideshow.qmd        #
     #   - dw_dashboard.qmd        # 
 
     # - part: "챗GPT"

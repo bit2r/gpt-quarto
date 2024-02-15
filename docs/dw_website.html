@@ -65,7 +65,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./references.html" rel="next">
+<link href="./dw_slideshow.html" rel="next">
 <link href="./index.html" rel="prev">
 <link href="./images/logo.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
@@ -189,6 +189,12 @@ ga('send', {
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">웹사이트와 블로그</span></span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./dw_slideshow.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">PPT 슬라이드</span></span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item">
@@ -207,13 +213,23 @@ ga('send', {
     <h2 id="toc-title">목차</h2>
    
   <ul>
-  <li><a href="#project-setup" id="toc-project-setup" class="nav-link active" data-scroll-target="#project-setup"><span class="header-section-number">1.1</span> 프로젝트 생성</a></li>
-  <li><a href="#project-writing" id="toc-project-writing" class="nav-link" data-scroll-target="#project-writing"><span class="header-section-number">1.2</span> 웹사이트 저작</a></li>
-  <li><a href="#theme-distill" id="toc-theme-distill" class="nav-link" data-scroll-target="#theme-distill"><span class="header-section-number">1.3</span> 외양 - 폰트, 색상 등</a></li>
-  <li><a href="#deployment-setup" id="toc-deployment-setup" class="nav-link" data-scroll-target="#deployment-setup"><span class="header-section-number">1.4</span> 웹사이트 배포</a>
+  <li><a href="#웹사이트" id="toc-웹사이트" class="nav-link active" data-scroll-target="#웹사이트"><span class="header-section-number">1.1</span> 웹사이트</a></li>
+  <li><a href="#project-setup" id="toc-project-setup" class="nav-link" data-scroll-target="#project-setup"><span class="header-section-number">1.2</span> 프로젝트 생성</a></li>
+  <li><a href="#project-writing" id="toc-project-writing" class="nav-link" data-scroll-target="#project-writing"><span class="header-section-number">1.3</span> 웹사이트 저작</a></li>
+  <li><a href="#theme-distill" id="toc-theme-distill" class="nav-link" data-scroll-target="#theme-distill"><span class="header-section-number">1.4</span> 외양 - 폰트, 색상 등</a></li>
+  <li><a href="#deployment-setup" id="toc-deployment-setup" class="nav-link" data-scroll-target="#deployment-setup"><span class="header-section-number">1.5</span> 웹사이트 배포</a>
   <ul class="collapse">
-  <li><a href="#github-pages-출판" id="toc-github-pages-출판" class="nav-link" data-scroll-target="#github-pages-출판"><span class="header-section-number">1.4.1</span> <code>GitHub Pages</code> 출판</a></li>
-  <li><a href="#quarto-pub-출판" id="toc-quarto-pub-출판" class="nav-link" data-scroll-target="#quarto-pub-출판"><span class="header-section-number">1.4.2</span> Quarto Pub 출판</a></li>
+  <li><a href="#github-pages-출판" id="toc-github-pages-출판" class="nav-link" data-scroll-target="#github-pages-출판"><span class="header-section-number">1.5.1</span> <code>GitHub Pages</code> 출판</a></li>
+  <li><a href="#quarto-pub-출판" id="toc-quarto-pub-출판" class="nav-link" data-scroll-target="#quarto-pub-출판"><span class="header-section-number">1.5.2</span> Quarto Pub 출판</a></li>
+  </ul></li>
+  <li><a href="#블로그" id="toc-블로그" class="nav-link" data-scroll-target="#블로그"><span class="header-section-number">1.6</span> 블로그</a>
+  <ul class="collapse">
+  <li><a href="#블로그-시작" id="toc-블로그-시작" class="nav-link" data-scroll-target="#블로그-시작"><span class="header-section-number">1.6.1</span> 블로그 시작</a></li>
+  <li><a href="#블로그-미리보기" id="toc-블로그-미리보기" class="nav-link" data-scroll-target="#블로그-미리보기"><span class="header-section-number">1.6.2</span> 블로그 미리보기</a></li>
+  <li><a href="#quarto.yml-블로그-반영" id="toc-quarto.yml-블로그-반영" class="nav-link" data-scroll-target="#quarto.yml-블로그-반영"><span class="header-section-number">1.6.3</span> <code>_quarto.yml</code> 블로그 반영</a></li>
+  <li><a href="#quarto_blog.qmd" id="toc-quarto_blog.qmd" class="nav-link" data-scroll-target="#quarto_blog.qmd"><span class="header-section-number">1.6.4</span> <code>quarto_blog.qmd</code></a></li>
+  <li><a href="#metadata.yml-yaml" id="toc-metadata.yml-yaml" class="nav-link" data-scroll-target="#metadata.yml-yaml"><span class="header-section-number">1.6.5</span> <code>_metadata.yml</code> YAML</a></li>
+  <li><a href="#블로그-작성" id="toc-블로그-작성" class="nav-link" data-scroll-target="#블로그-작성"><span class="header-section-number">1.6.6</span> 블로그 작성</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/bit2r/gpt-sql/edit/main/dw_website.qmd" class="toc-action"><i class="bi bi-github"></i>편집</a></li><li><a href="https://github.com/bit2r/gpt-sql/issues/new" class="toc-action"><i class="bi empty"></i>이슈 보고</a></li></ul></div></nav>
@@ -240,17 +256,21 @@ ga('send', {
 </header>
 
 
-<p>저작물을 파일형태 뿐만 아니라 웹사이트에 공유하는 것은 코로나19로 촉발된 디지털 전환(Digital Transformation) 시대에 과학기술 종사자 뿐만 아니라 현대를 사는 누구나 갖춰야 하는 보편적인 기술로 자리잡아 가고 있다. 통상 <a href="http://netlify.com/" class="uri">http://netlify.com/</a> 혹은 <a href="https://github.com/" class="uri">https://github.com/</a> 웹사이트에서 제공하는 정적 웹사이트(Static Website) 기능을 활용하여 제작된 블로그를 공유하는 것이 <strong>데이터 과학자</strong> 사이에 어느새 일반화되었다.</p>
+<p>웹 출판이 데스톱 출판(DTP) 출판에 이어 인기를 끌게 된 이유는 디지털 기술의 발전과 인터넷의 보편화 때문이다. 웹 출판의 큰 장점 중 하나는 전 세계 어디에서나 콘텐츠에 접근할 수 있는 접근성과 확장성에 있다. 작가와 출판사가 더 넓은 독자층에 도달할 수 있는 기회를 제공할 뿐만 아니라, 인쇄와 배포에 드는 비용이 거의 없어 경제적이며 수정과 배포 자유롭다. 또한, 웹 출판은 독자들이 콘텐츠와 직접 상호작용하고, 댓글, 공유, 좋아요 등을 통해 참여할 수 있는 실시간 기회도 제공하여 커뮤니티 형성과 독자 참여를 촉진한다. 웹 출판은 텍스트 뿐만 아니라 비디오, 오디오, 애니메이션 등 다양한 멀티미디어 요소와 인터랙티브 기능을 통합하여 정적인 정보 전달에 최적화된 데스크 톱 출판과 비교된다.블로그나 웹사이트는 실시간으로 콘텐츠를 게시하고 연속적으로 새로운 정보를 제공할 수 있어 콘텐츠의 즉시성과 연속성도 갖추고 있다.</p>
+<section id="웹사이트" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="웹사이트"><span class="header-section-number">1.1</span> 웹사이트</h2>
+<p>저작물을 파일형태 뿐만 아니라 웹사이트에 공유하는 것은 코로나19로 촉발된 디지털 전환(Digital Transformation) 시대에 과학기술 종사자 뿐만 아니라 현대를 사는 누구나 갖춰야 하는 보편적인 기술로 자리잡아 가고 있다. 통상 <a href="http://netlify.com/" class="uri">http://netlify.com/</a> 혹은 <a href="https://github.com/" class="uri">https://github.com/</a> 웹사이트에서 제공하는 정적 웹사이트(Static Website) 기능을 활용하여 제작된 블로그나 웹사이트를 통해 공유하는 것이 <strong>데이터 과학자</strong> 사이에 어느새 일반화되었다.</p>
 <p>과학기술 저작물을 정적 웹사이트에 호스팅하여 공유한다는 것은 지금까지와는 다른 기술적 배경을 가지기 때문에 이러한 문제를 해결하기 위해 몇년전 <a href="https://rstudio.github.io/distill/"><code>distill</code></a> 팩키지가 방향을 제시했다. <a href="https://rstudio.github.io/distill/"><code>distill</code></a> 팩키지로 블로그 혹은 웹사이트 과학기술 콘텐츠 공유를 공유한 웹사이트를 종종 구글링 과정에서 살펴봤을 것이다.</p>
-<p>저작 웹사이트를 RStudio + <a href="https://quarto.org/">쿼토(<code>quarto</code>)</a> 를 조합하여 로컬에서 정적 웹사이트를 먼저 제작하고 공유와 배포는 <a href="https://pages.github.com/">GitHub Pages</a>, <a href="http://netlify.com/">Netlify</a>, <a href="https://quartopub.com/">쿼토 펍(Quarto Pub)</a> 등으로 별다른 비용없이 무료로 출판한다.</p>
+<p>저작 웹사이트를 RStudio + <a href="https://quarto.org/">쿼토(<code>quarto</code>)</a> 를 조합하여 로컬에서 정적 웹사이트를 먼저 제작하고 공유와 배포는 <a href="https://pages.github.com/">GitHub Pages</a>, <a href="http://netlify.com/">Netlify</a>, <a href="https://quartopub.com/">쿼토 펍(Quarto Pub)</a> 등으로 별다른 비용없이 무료로 출판할 수 있다.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><a href="images/dw_website.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="(정적) 웹사이트 배포"><img src="images/dw_website.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img" width="450" alt="(정적) 웹사이트 배포"></a></p>
 <figcaption>(정적) 웹사이트 배포</figcaption>
 </figure>
 </div>
-<section id="project-setup" class="level2" data-number="1.1">
-<h2 data-number="1.1" class="anchored" data-anchor-id="project-setup"><span class="header-section-number">1.1</span> 프로젝트 생성</h2>
+</section>
+<section id="project-setup" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="project-setup"><span class="header-section-number">1.2</span> 프로젝트 생성</h2>
 <p><a href="https://quarto.org/">쿼토(<code>quarto</code>)</a> 설치하고 정적 웹사이트 제작을 위한 프로젝트를 준비한다. 문서로 웹사이트 개발을 위한 RStudio IDE를 통합개발환경으로 선택한 경우 <code>File</code> → <code>New Project ...</code> → <code>Project Type</code> 에서 <strong>Quarto Website</strong>를 선택한다.</p>
 <div id="fig-website-setup" class="quarto-layout-panel">
 <figure class="quarto-float quarto-float-fig figure">
@@ -294,8 +314,8 @@ ga('send', {
 </figure>
 </div>
 </section>
-<section id="project-writing" class="level2" data-number="1.2">
-<h2 data-number="1.2" class="anchored" data-anchor-id="project-writing"><span class="header-section-number">1.2</span> 웹사이트 저작</h2>
+<section id="project-writing" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="project-writing"><span class="header-section-number">1.3</span> 웹사이트 저작</h2>
 <p>문서의 구조를 정의하는 <code>_quarto.yml</code> 파일에 웹사이트 문법을 적용하여 웹페이지는 <code>.qmd</code> 파일, 외양은 <code>.css</code> 혹은 <code>.scss</code> 파일에 정리한다. 관련하여 웹사이트를 구성하는 이미지, 동영상, 소리를 비롯한 각종 자산(assets)도 웹페이지에 잘 담기도록 저작한다.</p>
 <p>쿼토 웹사이트 프로젝트는 웹사이트 기본골격을 다음 파일과 디렉토리를 통해 제공된다. <code>_site/</code> 디렉토리는 쿼토 웹사이트를 컴파일하게 되면 자동 생성된다. <code>_site/</code> 디렉토리에 <code>index.qmd</code> 파일을 컴파일한 <code>index.html</code> 파일을 비롯한 정적 웹사이트 저작을 위한 각종 파일과 디렉토리로 채워진다.</p>
 <p>쿼토 웹사이트를 컴파일하는 방식은 <code>Ctrl + Shift + K</code> 단축키를 누르거나, 상단 <code>Render</code> 버튼을 클릭하거나, <code>CTRL + SHIFT + B</code> 단축키를 누르거나, <code>Build</code>에 <code>Render Website</code>를 클릭한다.</p>
@@ -330,23 +350,23 @@ ga('send', {
 <p>요약하면 <code>_quarto.yml</code> 파일을 열어 <code>output_dir:</code> 설정이 없는 경우 <code>output_dir: docs</code>로 지정하고, 이미 존재하는 경우 <code>output_dir:</code> 값을 <code>_site</code> → <code>docs</code>으로 변경한다. 그리고 나서 쿼토 웹사이트를 빌드시키면 웹사이트 전체가 <code>docs/</code> 디렉토리에 저장된다. 이것을 GitHub 저장소에 업로드하거나 <code>push</code> 해서 올리게 되면 블로그 웹사이트가 <code>https://&lt;사용자명&gt;.github.io/&lt;저장소명&gt;/index.html</code>을 통해 배포된다.</p>
 <div class="columns">
 <div class="column" style="width:45%;">
-<div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{yaml}</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="in">project:</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="in">  type: website</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<pre><code>``` {{yaml}}
+project:
+  type: website
+```</code></pre>
 </div><div class="column" style="width:5%;">
 
 </div><div class="column">
-<div class="sourceCode" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{yaml}</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="in">project:</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="in">  type: website</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="in">  output-dir: docs</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<pre><code>``` {{yaml}}
+project:
+  type: website
+  output-dir: docs
+```</code></pre>
 </div>
 </div>
 </section>
-<section id="theme-distill" class="level2" data-number="1.3">
-<h2 data-number="1.3" class="anchored" data-anchor-id="theme-distill"><span class="header-section-number">1.3</span> 외양 - 폰트, 색상 등</h2>
+<section id="theme-distill" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="theme-distill"><span class="header-section-number">1.4</span> 외양 - 폰트, 색상 등</h2>
 <p>지금까지 전반적인 웹사이트 생성과 웹페이지 콘텐츠 작성과 관련된 전반적인 작업흐름에 집중했다면 글꼴, 색상 등 외양을 바꾸면 근사한 웹사이트로 탈바꿈시킬 수 있다. 특히 쿼토는 부츠트랩 5(Bootstrap 5)를 지원하기 때문에 <a href="https://github.com/twbs/bootstrap/blob/main/scss/_variables.scss">SCSS 변수</a> 설정을 통해 멋진 웹사이트를 꾸밀 수 있다.</p>
 <p>글꼴만 한글로 바꿔 <code>tidyverse.css</code>를 저장한다. 기본 아이디어는 구글 글꼴 웹사이트 <a href="https://fonts.google.com/" class="uri">https://fonts.google.com/</a> 에서 한글 글꼴을 가져와서 웹사이트 제목과 텍스트에 글꼴을 저작자의 선택에 맞춰 반영한다. 수정한 <code>tidyverse.css</code> 파일 일부는 다음과 같다.</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{css}</span></span>
@@ -377,10 +397,10 @@ ga('send', {
 <span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a><span class="in">}</span></span>
 <span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="deployment-setup" class="level2" data-number="1.4">
-<h2 data-number="1.4" class="anchored" data-anchor-id="deployment-setup"><span class="header-section-number">1.4</span> 웹사이트 배포</h2>
-<section id="github-pages-출판" class="level3" data-number="1.4.1">
-<h3 data-number="1.4.1" class="anchored" data-anchor-id="github-pages-출판"><span class="header-section-number">1.4.1</span> <code>GitHub Pages</code> 출판</h3>
+<section id="deployment-setup" class="level2" data-number="1.5">
+<h2 data-number="1.5" class="anchored" data-anchor-id="deployment-setup"><span class="header-section-number">1.5</span> 웹사이트 배포</h2>
+<section id="github-pages-출판" class="level3" data-number="1.5.1">
+<h3 data-number="1.5.1" class="anchored" data-anchor-id="github-pages-출판"><span class="header-section-number">1.5.1</span> <code>GitHub Pages</code> 출판</h3>
 <p><code>https://&lt;사용자명&gt;.github.io/</code> 저장소는 매우 특별한 GitHub 저장소다. 따라서, GitHub 저장소 명칭을 <code>&lt;사용자명&gt;.github.io</code> 으로 생성해야 한다. 예를 들어, <code>statkclee.github.io</code> 와 같이 사용자계정을 <code>github.io</code>와 붙여 먼저 판다. 그리고 나서, 상단 <code>Settings</code>로 들어간 다음 <strong>GitHub Pages</strong> 설정을 한다. 이때 GitHub 저장소의 특정 디렉토리 <code>docs/</code> 디렉토리에 담긴 내용 전부가 정적 웹사이트에 게시되는 내용이 된다. 즉, <code>docs/index.html</code> → <code>https://&lt;사용자명&gt;.github.io/&lt;저장소명&gt;/index.html</code>로 바뀌어 웹사이트 생성 및 배포가 완료된다.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -389,8 +409,8 @@ ga('send', {
 </figure>
 </div>
 </section>
-<section id="quarto-pub-출판" class="level3" data-number="1.4.2">
-<h3 data-number="1.4.2" class="anchored" data-anchor-id="quarto-pub-출판"><span class="header-section-number">1.4.2</span> Quarto Pub 출판</h3>
+<section id="quarto-pub-출판" class="level3" data-number="1.5.2">
+<h3 data-number="1.5.2" class="anchored" data-anchor-id="quarto-pub-출판"><span class="header-section-number">1.5.2</span> Quarto Pub 출판</h3>
 <p><a href="https://quartopub.com/"><code>Quarto Pub</code></a> 출판과정은 Quarto CLI를 통해 이뤄진다. <code>RStudio</code>의 내부 터미널을 사용하는 것을 권장하는데, 이유는 <code>RStudio</code>와 <code>Quarto</code>가 잘 통합되어 있어, 간편하게 출판 작업을 진행할 수 있기 때문이다. <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> quarto publish quarto-pub</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="ex">?</span> Authorize <span class="er">(</span><span class="ex">Y/n</span><span class="kw">)</span> <span class="ex">›</span> </span>
@@ -407,6 +427,110 @@ ga('send', {
 <p>이제 모든 준비가 되었기 때문에 다음 명령어로 작성한 출판 문서를 포함한 웹사이트를 로컬에서 미리 확인 한 후에 <a href="https://quartopub.com/"><code>Quarto Pub</code></a>으로 전자출판한다. 윈도우에서는 <strong>RStudio 내부 Terminal CLI</strong>를 사용하는 것을 권장한다.</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> quarto preview</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> quarto publish quarto-pub</span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="블로그" class="level2" data-number="1.6">
+<h2 data-number="1.6" class="anchored" data-anchor-id="블로그"><span class="header-section-number">1.6</span> 블로그</h2>
+<p>블로그를 작성하고 운영하는 이유를 다음과 같이 들 수 있다.</p>
+<ul>
+<li><strong>학습</strong>: 강의를 듣거나 무언가 읽어 독서를 통해 학습되는 지식보다 글쓰기를 통해 축적되는 지식이 어떻게 보면 학습 효과가 더 크다. 특히, 학습한 내용을 코드로 작성하여 돌려볼 경우 학습효과를 배가시킨다.</li>
+<li><strong>지식나눔</strong>: 구글 검색엔진을 통해 검색된 블로그 게시글을 통해 짧은 시간 학습에 도움을 받지만, 마찬가지로 본인이 작성한 블로그 게시글이 다른 사람에게 도움을 주는 것도 사실이다. 한가지 명심할 사항은 본인 실력보다 한두단계 앞선 사람으로 배우는 것이 실질적으로 큰 도움이 된다. 그래서 눈높이 교육이라는 얘기도 있지 않나 싶다.</li>
+<li><strong>구인구직, 포트폴리오</strong>: 차곡차곡 누적된 블로그 게시물은 그 자체로 포트폴리오가 되고 헤드헌터를 통해 채용 인터뷰 요청을 받게 된다.</li>
+</ul>
+<section id="블로그-시작" class="level3" data-number="1.6.1">
+<h3 data-number="1.6.1" class="anchored" data-anchor-id="블로그-시작"><span class="header-section-number">1.6.1</span> 블로그 시작</h3>
+<p>Quarto 블로그 제작은 RStudio <code>hugo</code>, <code>distill</code> 블로그와 방식에서 몇가지 차이점이 있다.</p>
+<p>Quarto CLI 를 사용하는 경우 다음 명령어를 투사하게 되면 <code>myblog</code> 디렉토리 아래 블로그 기본 사항이 준비되어 블로그 제작을 시작할 수 있다.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> create-project myblog <span class="at">--type</span> website:blog</span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>다른 방식은 RStudio 에서 <code>New Project</code>를 선택한 후에 <code>Quarto Blog</code> 프로젝트를 시작하는 방식이다.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/quarto-blog-project.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9"><img src="images/quarto-blog-project.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></a></p>
+</figure>
+</div>
+</section>
+<section id="블로그-미리보기" class="level3" data-number="1.6.2">
+<h3 data-number="1.6.2" class="anchored" data-anchor-id="블로그-미리보기"><span class="header-section-number">1.6.2</span> 블로그 미리보기</h3>
+<p>Quarto CLI 를 통해 <code>quarto.cmd preview</code> 명령어를 통해 블로그를 출판하기 전에 로컬 컴퓨텅에서 확인이 가능하다. 2022년 4월 RMarkdown/Bookdown 에서 Quarto로 옮겨간 초창기 경험이 <a href="https://www.njtierney.com/post/2022/04/11/rmd-to-qmd/">Nicholas Tierney (2022-04-11), “Notes on Changing from Rmarkdown/Bookdown to Quarto”</a> 블로그에 잘 정리되어 있다.</p>
+<p><code>quarto.cmd preview</code>는 윈도우의 경우고 맥이나 리눅스 계열은 <code>quarto preview</code>로 충분하다.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto.cmd</span> preview</span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="quarto.yml-블로그-반영" class="level3" data-number="1.6.3">
+<h3 data-number="1.6.3" class="anchored" data-anchor-id="quarto.yml-블로그-반영"><span class="header-section-number">1.6.3</span> <code>_quarto.yml</code> 블로그 반영</h3>
+<p><code>_quarto.yml</code> 파일에 블로그 메뉴를 지정한다. 블로그 전용 웹사이트를 운영하는 경우 <code>_quarto.yml</code> 파일에 블로그에 맞춰 YAML 파일 구성을 하면 된다.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>website<span class="in">:</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  title<span class="in">:</span> "Quarto 데이터 사이언스"</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  site-url<span class="in">:</span> https<span class="in">:</span><span class="er">//quartopub.com/sites/statkclee/quarto-ds</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  twitter-card<span class="in">:</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>    card-style<span class="in">:</span> summary_large_image</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    description<span class="in">:</span> "한글 Quarto 첫걸음"</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>    image<span class="in">:</span> "fig/koRea_logo<span class="fu">.png</span>"</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>  page-footer<span class="in">:</span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>    left<span class="in">:</span> "<span class="ex">[</span><span class="ss">Quarto</span><span class="ex">]</span><span class="in">(</span>https<span class="in">:</span><span class="er">//quarto.org/) 로 제작"</span></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>  navbar<span class="in">:</span></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>    background<span class="in">:</span> "<span class="pp">#447099</span>"</span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>    left<span class="in">:</span></span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>      - href<span class="in">:</span> index<span class="fu">.qmd</span></span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>        text<span class="in">:</span> "Home"</span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>      - href<span class="in">:</span> quarto_blog<span class="fu">.qmd</span>     </span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>        text<span class="in">:</span> "Blog"</span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>      - text<span class="in">:</span> Quarto</span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>        menu<span class="in">:</span></span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a>        - href<span class="in">:</span> quarto_install<span class="fu">.qmd</span></span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a>          text<span class="in">:</span> "Quarto 설치/출판"</span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a>        - href<span class="in">:</span> quarto_about<span class="fu">.qmd</span></span>
+<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a>          text<span class="in">:</span> "Quarto 소개"</span>
+<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a>        - href<span class="in">:</span> quarto_slideshow<span class="fu">.qmd</span></span>
+<span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a>          text<span class="in">:</span> "Quarto 슬라이드"</span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="quarto_blog.qmd" class="level3" data-number="1.6.4">
+<h3 data-number="1.6.4" class="anchored" data-anchor-id="quarto_blog.qmd"><span class="header-section-number">1.6.4</span> <code>quarto_blog.qmd</code></h3>
+<p><code>_quarto.yml</code> 파일에 지정된 웹사이트에서 블로그로 들어가는 메뉴에 들어간 파일명이 <code>quarto_blog.qmd</code> 이라 해당 파일에 블로그 설정을 담아낸다.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Quarto 데이터 과학"</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="fu">listing</span><span class="kw">:</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">contents</span><span class="kw">:</span><span class="at"> posts</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">sort</span><span class="kw">:</span><span class="at"> </span><span class="st">"date desc"</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">type</span><span class="kw">:</span><span class="at"> default</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">categories</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">sort-ui</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">filter-ui</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a><span class="fu">page-layout</span><span class="kw">:</span><span class="at"> full</span></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a><span class="fu">title-block-banner</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="metadata.yml-yaml" class="level3" data-number="1.6.5">
+<h3 data-number="1.6.5" class="anchored" data-anchor-id="metadata.yml-yaml"><span class="header-section-number">1.6.5</span> <code>_metadata.yml</code> YAML</h3>
+<p><code>Quarto</code> 웹사이트 내부에 블로그를 내장하여 운영하는 것이기 때문에 관례상 <code>posts\</code> 디렉토리를 생성하여 관련 블로글 게시글을 각 폴더로 만들어 운영하는 것이 여러모로 유용하다.</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span><span class="dt">\</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="kw">|</span><span class="ex">--</span> posts<span class="dt">\</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">|</span><span class="ex">--</span> _metadata.yml</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">|</span><span class="ex">--</span> quarto_blog_20220815</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>        <span class="kw">|</span><span class="ex">--</span> index.qmd </span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">|</span><span class="ex">--</span> quarto_transfer_20220715</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>        <span class="kw">|</span><span class="ex">--</span> index.qmd </span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><code>_metadata.yml</code> YAML 파일에 블로그 설정을 담아낸다.</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Options specified here will apply to all posts in this folder</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="co"># freeze computational output</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="fu">freeze</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Enable banner style title blocks</span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="fu">title-block-banner</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Author name of all blog posts</span></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> </span><span class="st">'Victor Lee'</span></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Table of content settings</span></span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a><span class="fu">toc</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a><span class="fu">toc-depth</span><span class="kw">:</span><span class="at"> </span><span class="dv">3</span></span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a><span class="fu">page-layout</span><span class="kw">:</span><span class="at"> article</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="블로그-작성" class="level3" data-number="1.6.6">
+<h3 data-number="1.6.6" class="anchored" data-anchor-id="블로그-작성"><span class="header-section-number">1.6.6</span> 블로그 작성</h3>
+<p>이제 블로그에 대한 게시글 작성에 대한 모든 것이 준비되어 <code>index.qmd</code> 파일에 Quarto 블로그 게시글을 작성하면 된다.</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="ex">posts\quarto_blog_20220815\index.qmd</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
 </section>
@@ -813,8 +937,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./references.html" class="pagination-link" aria-label="참고문헌">
-        <span class="nav-page-text">참고문헌</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./dw_slideshow.html" class="pagination-link" aria-label="PPT 슬라이드">
+        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">PPT 슬라이드</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -832,7 +956,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"selector":".lightbox","loop":false,"descPosition":"bottom","closeEffect":"zoom","openEffect":"zoom"});
+<script>var lightboxQuarto = GLightbox({"openEffect":"zoom","selector":".lightbox","loop":false,"descPosition":"bottom","closeEffect":"zoom"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;
