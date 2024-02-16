@@ -55,8 +55,8 @@ book:
     - part: "기본요소"
       chapters:
         - part_components.qmd          # OK
-        - part_code.qmd          # OK        
         - part_markdown.qmd            # OK
+        - part_code.qmd          # OK        
     #     - part_computation.qmd         # New
     #     - part_document_class.qmd      # X
     #     - part_about_book.qmd          # X
