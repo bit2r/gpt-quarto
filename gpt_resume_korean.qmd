@@ -18,12 +18,12 @@ bibliography:
   peer: data/peer_bib_korean.bib
   other: data/other_bib_korean.bib
 validate-yaml: false
-csl: data/apa-cv.csl
+csl: data/elsevier-harvard.csl
 ---
 
 # 직업 경력
 
-*서울대학교*
+**서울대학교**
 
 한국 고대사 교수 \hfill 2010-현재
 

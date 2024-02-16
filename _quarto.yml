@@ -44,12 +44,13 @@ book:
 
     - part: "시작을 위한 준비"
       chapters:
-        - setup_quarto.qmd                 # OK
-        - setup.qmd                    # OK
+        - setup_reproducible.qmd    # OK
+        - setup_markdown_mess.qmd   # 
+        - setup_quarto.qmd           # OK
+        - setup.qmd                  # OK
     # 
     # # - part: "글쓰기"
     # #   chapters:
-    # #     - markdown_mess.qmd          # 
     # #     - writing.qmd                # 
     # 
     - part: "기본요소"
@@ -91,6 +92,8 @@ book:
 
 format:
   html:
+    mermaid:
+      theme: neutral # https://quarto.org/docs/authoring/diagrams.html#mermaid-theming 
     theme: 
       - cosmo
     number-depth: 3

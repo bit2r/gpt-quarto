@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko-KR" xml:lang="ko-KR"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.9">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="이광춘">
+
+<title>챗GPT 쿼토(Quarto) – 1&nbsp; 심각한 현재 상황</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./setup_quarto.html" rel="next">
+<link href="./index.html" rel="prev">
+<link href="./images/logo.png" rel="icon" type="image/png">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "일치 없음",
+    "search-matching-documents-text": "일치된 문서",
+    "search-copy-link-title": "검색 링크 복사",
+    "search-hide-matches-text": "추가 검색 결과 숨기기",
+    "search-more-match-text": "추가 검색결과",
+    "search-more-matches-text": "추가 검색결과",
+    "search-clear-button-title": "제거",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "취소",
+    "search-submit-button-title": "검색",
+    "search-label": "검색"
+  }
+}</script>
+
+<script type="text/javascript">
+
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-229551680-1', 'auto');
+
+ga('send', {
+  hitType: 'pageview',
+  'anonymizeIp': true,
+});
+</script>
+<script defer="" data-domain="r2bit.com/gpt-quarto" src="https://plausible.io/js/script.js"></script>
+
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./setup_markdown_mess.html">시작을 위한 준비</a></li><li class="breadcrumb-item"><a href="./setup_markdown_mess.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">심각한 현재 상황</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">챗GPT 쿼토(Quarto)</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/bit2r/gpt-sql/" title="소스 코드" class="quarto-navigation-tool px-1" aria-label="소스 코드"><i class="bi bi-github"></i></a>
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="리더 모드 전환">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="검색"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">서문</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">시작을 위한 준비</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="토글 섹션">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./setup_markdown_mess.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">심각한 현재 상황</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./setup_quarto.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">쿼토(Quarto)</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./setup.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">저작환경 설정</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+ <span class="menu-text">기본요소</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="토글 섹션">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./part_components.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">문서 구성요소</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./part_markdown.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">마크다운</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./part_code.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">코드</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+ <span class="menu-text">템플릿과 테마</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="토글 섹션">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./theme_fonts.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">글꼴</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./theme_colors.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">색상</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./theme_ggplot.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">그래프 테마</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./theme_gt.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">표 테마</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+ <span class="menu-text">저작물</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="토글 섹션">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./dw_book.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">쿼토 책</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./dw_website.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">웹사이트와 블로그</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./dw_slideshow.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">PPT 슬라이드</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./dw_dashboard.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">대쉬보드</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true">
+ <span class="menu-text">챗GPT</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true" aria-label="토글 섹션">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./gpt_writing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">챗GPT 쿼토</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./gpt_resume.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">이력서</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./gpt_case_study.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">국제시장과 펭귄</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">참고문헌</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">목차</h2>
+   
+  <ul>
+  <li><a href="#세가지-패러다임" id="toc-세가지-패러다임" class="nav-link active" data-scroll-target="#세가지-패러다임"><span class="header-section-number">1.1</span> 세가지 패러다임</a></li>
+  <li><a href="#패러다임의-충돌" id="toc-패러다임의-충돌" class="nav-link" data-scroll-target="#패러다임의-충돌"><span class="header-section-number">1.2</span> 패러다임의 충돌</a></li>
+  <li><a href="#엎친-데-덮친-격" id="toc-엎친-데-덮친-격" class="nav-link" data-scroll-target="#엎친-데-덮친-격"><span class="header-section-number">1.3</span> 엎친 데 덮친 격</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/bit2r/gpt-sql/edit/main/setup_markdown_mess.qmd" class="toc-action"><i class="bi bi-github"></i>편집</a></li><li><a href="https://github.com/bit2r/gpt-sql/issues/new" class="toc-action"><i class="bi empty"></i>이슈 보고</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./setup_markdown_mess.html">시작을 위한 준비</a></li><li class="breadcrumb-item"><a href="./setup_markdown_mess.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">심각한 현재 상황</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">심각한 현재 상황</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>초기 현생인류는 손가락, 물감, 동굴 벽화를 통해 자신의 생각과 감정을 표현했다. 이러한 원시적인 도구들을 활용해 사람들은 상상의 세계를 현실로 구현할 수 있었다. 시간이 흐르면서 손가락과 물감은 연필로, 동굴 벽화는 종이로 대체되었고 이렇게 진화된 도구들 덕분에 저자들은 이제 자신의 의도와 생각을 종이 위에 문자와 그림으로 자유롭게 표현할 수 있게 되었다.</p>
+<p>처음으로 인쇄기가 등장했을 때 자신의 의도를 문자와 그림으로 자유롭게 표현하는 자유는 크게 변화하지 않았다. 목판을 이용한 인쇄 방식이었지만, 작가는 여전히 원하는 내용을 원하는 위치에 놓을 수 있었고, 1370년경 한국에서 가동활자가 발명되고, 1440년경 유럽에서 구텐베르그가 금속활자가 대중화되면서 인쇄술이 급속히 확산되었다. 이로 인해 수기로 글을 쓰는 필경사에 대한 존경은 점차 감소하기 시작했다.</p>
+<p>활자를 사용하면 인쇄업자가 목판을 제작하는 것보다 훨씬 신속하게 인쇄면를 설정할 수 있는 장점이 있었지만 유연성이 떨어졌다. 이유는 조판업자는 일정한 크기 글자를 일렬로 배치해야 했기 때문이다. 필경사도 원하는 곳 어디에나 글씨를 써 넣든 그림을 그려 넣던 자유로웠던 시절은 점차 사라지기 시작했다. 도표는 여전히 가능했지만, 글자 비용이 낮아지면서 상대적으로 몇 배나 더 비쌌다.</p>
+<p>1860년대에 발명된 타자기는 중산층 수백만 명에게 ’인쇄’를 가능하게 했다. 기계식, 전기식, 전자식 컴퓨터는 모두 타자기 기술을 재활용하여 인쇄출력물을 생성했다. 1950년대 등장한 펜 플롯터 <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>는 라인 프린터를 대체하기에는 너무 느리고 비쌌다. 더 큰 문제는 두 기술 모두 완벽하게 작동하지 않았다는 것이었다. 아스키 예술로 그림을 표현하거나, 펜플롯터로 문자를 작성하는 것은 가능했지만, 어느 것도 특별히 매력적이라고 할 수 없었다.</p>
+<section id="세가지-패러다임" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="세가지-패러다임"><span class="header-section-number">1.1</span> 세가지 패러다임</h2>
+<p>문자전용 도구와 그림을 위한 도구 사이 간격을 보여주는 한가지 흔적이 문자와 그림을 제어하기 위한 별도 언어개발에서 찾아볼 수 있다. 플로터는 일반적으로 <em>제도 언어(drawing language)</em> 로 제어된다. 다음 예를 보면 이해가 쉽다.</p>
+<p>“펜을 위로, (x, y) 위치로 이동, 펜을 아래로, 다시 해당 위치만큼 이동한다”</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="at">PU;</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="at">PA200,150;</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="at">PD;</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="at">PA250,250;</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>반면에, 라인 프린터는 <strong>조판 언어(Typesetting language)</strong>를 사용하여 제어된다. 이 언어를 통해 저자는 컴퓨터에게 “두 번째 큰 제목을 설정하라”나 “특정 단어를 이탤릭체로 표시하라”와 같은 지시를 할 수 있다. 이러한 지시를 받은 컴퓨터는 단어 위치와 형식을 자동으로 결정한다. 조판 언어를 통해 문자 배치와 스타일을 정교하게 제어할 수 있게 되었다.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="at">.t2 Section Heading</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="at">Empty lines separate</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="at">.it paragraphs</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="at">and lines starting with '.' are commands.</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>이 기간 동안, 문서 <em>외양</em>이 아닌 <em>콘텐츠(content)</em>에 중점을 둔 세 번째 유형의 언어가 등장했다. 의사나 변호사들은 환자 진료기록이나 판례를 효율적으로 검색하고자 했으나, 1970년 당시 컴퓨터는 자연어 처리 능력이 턱없이 부족했다. 당시 최고의 기술력을 자랑하던 IBM과 같은 컴퓨터 기업들이 <em>마크업 언어</em>를 개발했다. 마크업 언어를 통해 사람들은 문서 의미, 즉 <em>시맨틱(semantic)</em>을 명시적으로 표현할 수 있게 되었다. 마크업 언어는 문서 내용과 구조를 명확하게 기술하게 되면서, 정보 검색과 데이터 관리에 있어 새로운 가능성을 열었다.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="at">&lt;person&gt;Derstmann&lt;/person&gt; still questions the importance of &lt;chemical&gt;methane&lt;/chemical&gt; release</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="at">in &lt;event&gt;the Fukuyama disaster&lt;/event&gt;.</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="패러다임의-충돌" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="패러다임의-충돌"><span class="header-section-number">1.2</span> 패러다임의 충돌</h2>
+<p>이 세 가지 패러다임은 1970년대 레이저 프린터 발명 이후에 충돌했고, 그 긴장감은 1980년대 고해상도 컴퓨터 화면과 1990년대 월드 와이드 웹에 의해 더욱 확대되었다. 한편으로 대부분의 사람들은 단순히 글을 저작하는 것이 목표다. 예를 들어, 이 단어는 여기에, 저 단어는 저기에 놓거나, 일부 단어는 녹색으로, 다른 단어는 이탤릭체로 만들고 싶어하는 것이 전부다. 우리나라에서 아래한글, 전세계적으로 맥사용자는 맥라이트, 윈도우 사용자는 마이크로소프트 워드, 리눅스 사용자는 리브레오피스 라이터(LibreOffice Writer)나 오픈오피스 라이터(OpenOffice Writer)와 같은 위즈윅(WYSIWIG) 편집기가 이러한 저자들의 욕구를 충족시켰지만, 이런 방식으로 만들어진 문서는 두가지 결점을 갖고 있다:</p>
+<ol type="1">
+<li><p><em>융통성이 없다(rigid)</em>. 누군가 수작업으로 배치를 바꾸고 나서, 페이지 크기를 변경하면, 수고로운 작업을 다시 해야 한다.</p></li>
+<li><p><em>불분명하다</em>. 컴퓨터에 무언가 이택릭으로 표현하도록 지시하면, 해당 문구가 책제목인지, 혹은 새로운 용어를 정의하는지 분간할 수 없다.</p></li>
+</ol>
+<p>즉, 아래한글과 워드 같은 위지윅 편집기로 생성된 문서는 종종 특정 플랫폼이나 소프트웨어에 종속되어 다른 시스템에서 문서를 편집하거나 여는 것조차 불가능하다. 이유는 위지윅 편집기가 주로 시각적인 표현에 중점을 두다보니 아래한글, 워드 문서파일 자체적으로 복잡한 내부 구조를 가지고 있고 문서 내용과 구조를 명확하게 구분하지 않아서 문서 내용을 다른 형식으로 변환하거나 자동화하는 것이 어렵다.</p>
+<p>조판 언어와 마크업 언어는 앞서 언급한 두 가지 문제를 해법을 제시한다. 저자는 텍스트나 그림 외관과 페이지 내 위치에 대한 직접적인 지시를 내리는 대신, 그것들이 어떤 유형인지—예를 들어 제목이나 새로운 용어인지—컴퓨터에게 알려준다. 컴퓨터는 입력을 받은 후에 그것들의 외관과 위치를 결정하여 표현한다. 이러한 방식으로 의미(시맨틱)와 외관을 분리하면, 저자는 “모든 두 번째 제목을 16포인트 나눔고딕체로 왼쪽 정렬하라”와 같이 지시를 내리면, 스타일도 일관되게 쉽고 빠르게 변경시킬 수 있다.</p>
+<p>하지만, 이런 접근법도 결점은 있다:</p>
+<ol type="1">
+<li><p>컴퓨터는 텍스트를 이해하지 못하기 때문에 항상 인간과 같은 방식으로 텍스트를 배치하지는 않는다. 따라서 사람들은 나중에 문서 유연성이 떨어지더라도 직접 변경하고 싶어 하는 경우가 많다. 예를 들어, 논문을 작성할 때 컴퓨터가 자동으로 생성한 목차나 참고문헌 위치가 저자 의도와 맞지 않을 수 있다. 이런 경우, 저자가 수동으로 목차를 조정하면, 나중에 문서 다른 부분을 수정할 때 목차도 다시 수동으로 조정해야 하는데 이렇게 되면 원래 자동화를 통해 얻을 수 있던 유연성이 사라지게 된다.</p></li>
+<li><p>문서의 의미를 지정하는 것은 대부분의 사람들에게 낯선 일이며 제목을 몇 번 확대하는 것보다 훨씬 더 많은 작업이 필요하다. 예를 들어, 연구 논문을 작성하고 제목과 부제목을 강조하고 싶다고 가정해 보자. 아래한글을 사용한다면 제목 텍스트를 선택하고 “굵게”와 “글자 크기 키우기” 버튼을 클릭하기만 하면 된다. 하지만, 라텍이나 마크다운 같은 마크업 언어를 사용한다면, 제목을 특정 코드로 감싸서 그것이 ’제목’임을 라텍에서 <code>\title{나의 연구 논문}</code>과 같이 작성해야 한다. 마크업 언어에 익숙하지 않은 저자는 불필요한 추가 작업처럼 느껴지고 전혀 직관적이지 않다.</p></li>
+<li><p>저자가 입력한 내용을 해석하고 표시할 내용을 파악하는 데는 컴퓨터 시간이 오래 걸린다. 왜 문서가 의도한 바를 반영하지 못하는지 알아내는데는 몇배 시간이 든다. 이것이 정확하게 프로그램을 디버깅하는 것과 같은 상황이고 디버깅은 대체로 쉽지 않은 작업이다. 예를 들어, PPT 슬라이드에 제목과 몇 개의 항목을 넣었을 때 컴퓨터가 자동으로 항목 크기를 줄인다. 이에 불만족해 수동으로 크기를 다시 조절하게 되는데, 원인은 컴퓨터가 사용자 의도를 완벽히 이해하지 못하기 때문에 발생된다.</p></li>
+</ol>
+<p>지금까지 그 누구도 상기 문제를 모두 피하는 무언가를 발명하지는 못했다. 기 때문에 저작을 할 때면 오늘날 과학기술 연구자를 비롯한 많은 저자분들이 다양하고 혼동되는 선택지를 강요받게 되었다:</p>
+<ul>
+<li><p>아래한글, 리브레오피스, 마이크로소프트 워드 같은 <strong>데스크톱 위지윅 도구</strong>: 편지와 같은 간단한 문서를 만드는 가장 쉬운 방법이지만, 유연성이 떨어지고, 수식이나 버전 관리 시스템과 호환성이 좋지 않다.</p></li>
+<li><p>구글 독스 같은 <strong>웹기반 위지윅 도구</strong>: 워드나 한글, 리브레오피스와 비슷한 신속성을 갖추면서 협업도 수월(왜냐하면 모든이가 문서 사본 하나만 공유하기 때문)하지만, 여전히 유연성이 떨어지고 개인 정보를 민간 기업에 의존하는 것에 대한 불안감이 증가하고 있다.</p></li>
+<li><p><strong>데스크톱 라텍(LaTeX)</strong>: 강력한 조판언어로 수식과 참고문헌 관리기능이 뛰어나고, 텍스트 형식으로 문서를 작성하기 때문에 버전 관리와도 잘 호환되지만, 지금까지 학습하기 가장 복잡하고, 텍스트와 그림을 원하는 곳에 배치시키는 작업에 많은 시간이 소요된다.</p></li>
+<li><p><a href="https://www.authorea.com/">Authorea</a>,<a href="https://www.overleaf.com/">Overleaf</a> 같은 웹기반 도구: 위지윅 편집 인터페이스를 저자에게 제공하지만 문서는 라텍으로 저장되고, 변경사항을 타이핑해서 넣을 때마다 실시간으로 화면에 다시 출력해서 보여준다.</p></li>
+<li><p><strong>HTML</strong>: 웹의 기본언어로 라텍보다 훨씬 (훨씬) 더 단순하지만, 훨씬 더 적은 기능을 제공한다: 주석, 참고문헌 관리, 절마다 번호매기기 같은 단순한 기능도 직접적으로 지원되지 않는다. CSS<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>는 브라우저에 어떻게 표시할지 지시하는 언어로 복잡한 것으로 유명하다.</p></li>
+</ul>
+<ul>
+<li><a href="http://daringfireball.net/projects/markdown/"><strong>마크다운</strong></a>: 일반-텍스트 전자우편 관례를 사용하여 HTML 간소화 대안으로 개발되었다. 빈줄은 문단을 구분하고, 이탤릭체로 만드는데 <code>*별표*</code>로 감싸는 등등. HTML보다 더 적은 작업을 수행하지만, 타이핑 양은 훨씬 더 적지만, 불행하게도 거의 모든 마크다운 구현결과물이 자체적인 기능이 추가되어서 “마크다운 표준”은 모순어법으로 볼 수 있다.</li>
+</ul>
+<p>마크다운은 라텍과 HTML의 중간 정도의 복잡성을 갖고 있고, 라텍과 마찬가지로 텍스트 파일로 저장되기 때문에 버전 관리 시스템과 잘 호환된다. HTML과 마크다운 모두 직접적으로 수식을 지원하지 않지만, 플러그인 혹은 팩키지가 존재해서 저자가 LaTeX-유형 수식을 문서에 삽입할 수 있다.</p>
+<p>저작 도구를 선택할 때 마지막으로 고려할 점은 LaTeX 같은 데스크톱 텍스트 기반 시스탑과 재현가능 문서저작을 지원하는 연산기능을 관리하는 다른 도구를 적절히 통합시키는 것이다. 적어도 지금으로는 전형적인 지구물리학 혹은 생물정보학 파이프라인과 구글 독스 혹은 리브레오피스를 통합하는 것이 훨씬 더 복잡하다. 예를 들어, 데이터가 변경될 때 그림이 자동으로 갱신되는 것을 들 수 있다.</p>
+</section>
+<section id="엎친-데-덮친-격" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="엎친-데-덮친-격"><span class="header-section-number">1.3</span> 엎친 데 덮친 격</h2>
+<p>위지윅과 조판/마크업 구분은 실제 파일형식보다 도구로 작업하는 것과 더 연관되어 있다. <code>.docx</code> 파일은 실제로 LaTeX, HTML, 마크다운 파일처림 조판 명령어와 텍스트가 혼재되어 있다. 차이점은 조판/마크업 언어로 작성된 명령어는 사람이 읽을 수 있는 텍스트로 저장된다는 것이다. 이것이 함의하는 바는 유닉스 명령-라인 유틸리티가 처리할 수 있다는 점이다. (<a href="http://stackoverflow.com/a/1732454/1403470">스택오버플로우</a>에서 지적한 것처럼, 실제로 얼마나 많은 작업 수행할지에 대해 한계가 존재한다) 이와 비교해서, 아래한글, 마이크로소프트 워드, 리브레오피스에 내장된 서식 명령어는 특정한 전용 프로그램을 위해, 특정 프로그램에 의해서 제작되었다. 따라서, <code>grep</code> 같은 일반-텍스트 도구로는 처리가 되지 않는다.</p>
+<p><strong>구글 독스</strong>도 마찬가지다. 서식 명령어가 문서에 내장되어서 사용자 브라우저 자바스크립트에 의해 실행되어 사용자가 상호 작용하는 렌더링 페이지를 생성한다. 저장형식이 LaTeX이라는 점을 제외하면, Authorea와 Overleaf 도 동일하다.</p>
+<p>강성 프로그래머는 위지윅 도구와 텍스트가 아닌 형식을 조롱할 수도 있지만, 그들도 완벽하지 않다. 마이크로소프트 워드와 한글과 컴퓨터 아래한글은 수십년 동안 존재해왔고, 그 기간 동안 문서 형식이 몇 번이나 바뀌었다. 그럼에도 불구하고, 명령줄을 선호하는 개발자는 이를 대체할 도구를 개발하지 못했다. 결과적으로, 버전제어 시스템 대부분은 세계에서 가장 널리 사용되는 문서 형식을 처리할 수 없다. 예를 들어, Git 같은 시스템은 두개 다른 버전의 마이크로소프트 워드 파일 혹은 아래한글 파일을 만났을 때 “차이가 있음” 정도만 제시할 수 있을 뿐이다. 이러한 상황은 미래 더 큰 생산성을 희망하며 수년 동안 효율적으로 사용해온 도구를 포기해야 한다는 것을 의미한다. 결국 버전 관리 도입은 미래의 생산성 향상을 위해 자신과 동료들이 수년간 생산적으로 사용해 온 도구를 버려야 하는 결과를 초래한다.</p>
+<p>상기 논의는 저자가 논문과 편지만 작성하다고 가정했지만, 과학연구자는 자주 본인 작업을 시연하는데, 포스터와 슬라이드를 만들어야 하는 경우가 많다. 파워포인트는 말이 필요없는 발표도구의 여왕으로 많은 사람들이 파워포인트 때문에 발표가 엉망이 되어다고 <a href="http://www.edwardtufte.com/tufte/powerpoint">비판</a>하지만, 이것은 마치 시적 표현이 좋지 못한 것을 만연필 핑계를 대는 것에 비견된다. 파워포인트와 파워포인트 유사도구는 컴퓨터 화면을 마치 칠판처럼 사람들이 쉽게 사용할 수 있게 만들었다. 글머리표 목록으로 구성된 너무나도 지루한 슬라이드를 쭉 생성할 수도 있지만, <strong>쉽고 자유롭게</strong> 이미지, 도표, 텍스트를 섞어 사용할 수도 있다. LaTeX과 HTML로 그런 작업을 수행할 수 있지만, 어느 쪽도 그다지 쉽지는 않다. 사실, LaTeX이나 HTML 모두 어려워서 대부분 사람들은 신경도 쓰지 않는다. 설사 그런 작업을 수행하더도, 그래픽적 요소는 문서의 중요부분이라기 보다 외부 삽입에 불과하다.</p>
+<p>논문과 발표자료를 함께 생각하면 다소 불편한 상황에 있음을 인지하게 된다. 다른 한편으로, 논문과 발표자료는 연구 프로젝트에서 핵심적인 부분으로 코드와 데이터처럼 공유되고 추적관리되어야 한다. 다른 한편으로 <a href="https://github.com/swcarpentry/good-enough-practices-in-scientific-computing/issues/2#issue-116784345">스테픈 터너(Stephen Turner)</a>는 다음과 같이 언급했다:</p>
+<blockquote class="blockquote">
+<p>공동작업하는 지친 물리연구원에게 문서를 컴파일하는 개념을 설명하려고 한다고 보자. 그전에 일반 텍스트와 워드 프로세싱 사이 차이점을 설명해야 된다. 그리고 텍스트 편집기도 잊으면 안된다. 그리고 나서 마크다운/LaTeX 컴파일러. 그리고 BiBTeX. Git 그리고 GitHub 등등. 그러는 동안에 연구원은 다른 곳에서 호출 연락을 받을 것이다…</p>
+<p>… 달리 설득시킬만큼 노력하지만, 과학컴퓨팅 외부 사람들과 협업할 때, 이러한 얼개를 갖고 논문 협업을 하는 장벽이 너무나도 높아서 단순히 극복이 되지 않는다. 좋은 취지는 제쳐두고, 항상 “검토 메뉴에 변경내용 추적을 갖는 워드 문서만 주세요” 혹은 그와 유사하게 끝나게 된다.</p>
+</blockquote>
+<p>가까운 장래에도 저작자 상당수는 순수 텍스트 조판 도구로 바꾸기 보다는 계속해서 위지윅 편집기를 사용할 것이다. <a href="https://www.authorea.com/">Authorea</a>와 <a href="https://www.overleaf.com/">Overleaf</a> 같은 하이브리드 시스템이 절벽을 완만한 경사로로 바꿀 것이고, 프로그래머가 궁극적으로 다른 99% 사용자가 선호하는 문서저작에 관심을 가질 것이지만 수년에 걸친 작업량이 될 것이다.</p>
+<p>저작자 대부분이 이미 아래한글, 마이크로소프트 워드 같은 데스크톱 위지윅 시스템과 구글 독스같은 클라우드 대체 소프트웨어와 친숙하기 때문에 기존 관행이 바뀌기는 어렵다. 하지만, 웹사이트와 블로그를 위한 마크다운, 논문 원고저작을 위한 라텍이 여전히 영향력이 강하다. 웹 문서작업에 마크다운으로 HTML 문서를 저작하는데 큰 어려움이 없지만, 논문 원고저작에 마크다운을 사용하면 학술지 대부분은 받아주지 않고, 이미 라텍을 사용하고 있는 동료 저작자가 라텍을 버리고 마크다운을 채택할 가능성도 낮고, 저작자들이 문서작업에서 원하는 상당수 기능(예를 들어, 참고문헌 서지관리)을 구현하지 못하고 있다. 반면에 라텍은 PDF 형식으로 컴파일할 수 있고, 그림과 표 레이아웃을 잘 처리하고 버전 제어 시스템과 호환되며, 다양한 문헌 관리 소프트웨어와도 호환되지만 블로그와 웹사이트로 대표되는 웹 출판에 적합하지 않다.</p>
+
+
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p><a href="https://ko.wikipedia.org/wiki/플로터">플로터(plotter)</a>: 그래프나 도형, CAD, 도면 등을 출력하기 위한 대형 출력장치다.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p><a href="https://ko.wikipedia.org/wiki/종속형_시트">종속형 시트, 캐스케이딩 스타일 시트(Cascading Style Sheets, CSS)</a> - 종속형 시트 또는 캐스케이딩 스타일 시트(Cascading Style Sheets, CSS)는 마크업 언어가 실제 표시되는 방법을 기술하는 언어로, W3C의 표준이며, 레이아웃과 스타일을 정의할 때의 자유도가 높다.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "복사완료!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "복사완료!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./index.html" class="pagination-link" aria-label="서문">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">서문</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./setup_quarto.html" class="pagination-link" aria-label="쿼토(Quarto)">
+        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">쿼토(Quarto)</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>챗GPT 쿼토 책은 소프트웨어 카펜트리 Introduction to Reproducible Publications with Quarto 번역한 것이 포함되어 있습니다.</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/bit2r/gpt-sql/edit/main/setup_markdown_mess.qmd" class="toc-action"><i class="bi bi-github"></i>편집</a></li><li><a href="https://github.com/bit2r/gpt-sql/issues/new" class="toc-action"><i class="bi empty"></i>이슈 보고</a></li></ul></div></div>
+    <div class="nav-footer-right">
+<p>순수하게 <a href="https://quarto.org/">쿼토(Quarto)</a>로 제작되었습니다.</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

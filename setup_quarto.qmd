@@ -7,22 +7,22 @@ editor:
     wrap: sentence
 ---
 
-
 # 쿼토(Quarto)
 
-앨리슨 호스트(Allison Horst)는 복잡하고 어려운 R 관련 그래픽을 제작해 공유하며, @fig-quarto-workflow 을 통해 쿼토 작업 흐름을 설명하고 있다. R, 파이썬, 줄리아, Observable JS 등 다양한 프로그래밍 언어를 사용하여 쿼토가 PDF, HTML, Word, 웹사이트와 같은 여러 형식의 출판물을 생성하는 방법을 직관적이고 친근한 방식으로 소개하고 있다.
+앨리슨 호스트(Allison Horst)는 복잡하고 어려운 R 관련 그래픽을 제작해 공유하며, @fig-quarto-workflow 을 통해 쿼토 작업 흐름을 설명하고 있다.
+R, 파이썬, 줄리아, Observable JS 등 다양한 프로그래밍 언어를 사용하여 쿼토가 PDF, HTML, Word, 웹사이트와 같은 여러 형식의 출판물을 생성하는 방법을 직관적이고 친근한 방식으로 소개하고 있다.
 
-![쿼토 작업흐름](images/horst_quarto_schematic.png){#fig-quarto-workflow} 
+![쿼토 작업흐름](images/horst_quarto_schematic.png){#fig-quarto-workflow}
 
 쿼토(Quarto)는 다양한 프로그래밍 언어를 지원하는 오픈소스 출판 시스템으로, [Pandoc](https://pandoc.org/)에 기반을 두고 있다.
 쿼토는 R, 파이썬, 줄리아, 자바스크립트(Observable JS) 등의 프로그래밍 언어를 지원하며, 사용자는 싱글 소싱(Single Sourcing)을 통해 신속하게 다양한 출판 저작물을 생성할 수 있다.
 "차세대 R마크다운(Next-Generation R Markdown)"이라는 별명을 가진 쿼토는 약 10년 동안의 R 마크다운의 성공과 실패 경험을 바탕으로 새로운 아키텍처로 재탄생했다.
-개발 및 유지보수 팀이 잘 구성되어 있어, 프로젝트의 지속 가능성과 신뢰성이 높고, 무료로 제공되므로 누구나 쉽게 접근할 수 있을 뿐만 아니라 누구나 오픈소스 프로젝트에 기여할 수 있다. [@hyde2021single] 디지털 글쓰기와 출판에 대한 고민은 콘텐츠, 디자인, 형식의 세 가지로 나뉜다.
+개발 및 유지보수 팀이 잘 구성되어 있어, 프로젝트의 지속 가능성과 신뢰성이 높고, 무료로 제공되므로 누구나 쉽게 접근할 수 있을 뿐만 아니라 누구나 오픈소스 프로젝트에 기여할 수 있다.
+[@hyde2021single] 디지털 글쓰기와 출판에 대한 고민은 콘텐츠, 디자인, 형식의 세 가지로 나뉜다.
 
 -   **콘텐츠(Content)**: 저작물의 실질적인 내용으로 글쓰기 핵심이며, 정보 정확성, 완전성, 통찰력을 제공해야 한다.
 -   **디자인(Design)**: 저작물의 외양이나 'Look and Feel'을 의미하며 사용자 경험에 큰 영향을 미치며, 정보를 효과적으로 전달하는 데 중요한 역할을 한다.
 -   **형식(Format)**: 저작물의 최종 형태나 산출물이 담기는 매체(디지털, 인쇄 등)를 의미하며, 어떻게 배포되고 소비될 것인지 결정한다.
-
 
 쿼토는 세 가지 요소를 충족시키기 위한 다양한 기능을 제공한다.
 팬독(Pandoc)과 마크다운을 활용해 수식, 인용, 서지 관리, 콜아웃, 고급 레이아웃 기능 등을 고품질 논문, 보고서, 발표 슬라이드(PPT), 웹사이트, 블로그, 전자책 등 다양한 형태 출판 산출물로 저작하여 인쇄매체 뿐만 아니라 HTML, PDF, MS 워드, ePub 등 다양한 디지털 매체를 통해 독자에게 전달할 수 있다.
@@ -37,14 +37,18 @@ editor:
 ## 싱글 소싱 출판저작
 
 데이터 과학을 비롯한 과학기술 분야 출판저작이 다른 분야와 약간 다를 수 있지만, 출판의 기본적인 접근 방식은 대체로 유사하다고 볼 수 있다.
-특히, 싱글 소싱(Single Sourcing)[^quarto-1] 방식을 통해 콘텐츠 저작부터 디자인, 협업, 검수, 최종 출판물 관리까지 일원화하고 자동화한다면, 중복작업과 낭비를 줄이는 동시에 재현 가능성을 높일 수 있어 과학기술 출판저작물에 있어 가장 이상적인 방법으로 평가받고 있다.
+특히, 싱글 소싱(Single Sourcing)[^setup_quarto-1] 방식을 통해 콘텐츠 저작부터 디자인, 협업, 검수, 최종 출판물 관리까지 일원화하고 자동화한다면, 중복작업과 낭비를 줄이는 동시에 재현 가능성을 높일 수 있어 과학기술 출판저작물에 있어 가장 이상적인 방법으로 평가받고 있다.
 
-[^quarto-1]: "싱글 소싱(Single Sourcing)"은 하나의 원본 콘텐츠를 여러 형식이나 채널에 적용할 수 있도록 하는 문서 작성 및 관리 방법이다.
+[^setup_quarto-1]: "싱글 소싱(Single Sourcing)"은 하나의 원본 콘텐츠를 여러 형식이나 채널에 적용할 수 있도록 하는 문서 작성 및 관리 방법이다.
     콘텐츠를 한 번만 작성하고 다양한 출력 형식(예: PDF, 웹 페이지, PPT, 모바일 앱 등)으로 변환하게 되면, 콘텐츠 일관성 유지 및 업데이트와 관리가 훨씬 효율적이다.
 
 싱글 소싱 저작 방식은 데이터, 코드, 수식, 다이어그램, 텍스트 등 다양한 저작물 구성요소를 하나의 소스에서 관리함으로써, 수정이나 업데이트가 필요할 때 일관성을 유지하면서 효율적으로 저작작업을 수행할 수 있어 연구 결과의 정확성과 신뢰성을 높이기 위한 재현가능한 글쓰기를 중시하는 과학기술 분야에서 특히 강조되고 있으며, 싱글 소싱을 통한 자동화 생산성을 중시하는 비즈니스 글쓰기에서도 점차 글로벌 표준으로 자리를 잡아가고 있다.
 
 ```{mermaid}
+%%| label: fig-single-sourcing
+%%| fig-cap: 싱글 소싱 저작 방식
+%%| fig-align: center
+
 graph LR;
     style A fill:#f9d71c,stroke:#333,stroke-width:2px;
     style B fill:#f9d71c,stroke:#333,stroke-width:2px;
@@ -82,33 +86,21 @@ graph LR;
 텍스트와 프로그래밍 코드는 팬독(pandoc)을 통해 마크다운 변환이 자동으로 이루어지기 때문에 후속 작업에 대해 걱정할 필요가 없다.
 싱글 소싱 개념이 팬독을 통해 자동화되어 원하는 저작 결과물을 효율적이고 빠르게 얻을 수 있어 저작작업 생산성을 크게 향상시키는 장점이 있다.
 
-::: {.content-visible when-format="html"}
+```{mermaid}
+%%| label: fig-quarto-mermaid
+%%| fig-cap: 단순화된 쿼토 작업흐름도
+%%| fig-align: center
 
-::: {.panel-tabset}
-### R {.unnumbered}
-
-![쿼토 - R](images/qmd-knitr.png){#fig-quarto-r}
-
-### 파이썬 {.unnumbered}
-
-![쿼토 - 파이썬](images/qmd-jupyter.png){#fig-quarto-python}
-
-:::
-
-:::
-
-
-::: {.content-visible when-format="pdf"}
-
-::: {#fig-single-sourcing layout-nrow="2"}
-![쿼토 - R](images/qmd-knitr.png)
-
-![쿼토 - 파이썬](images/qmd-jupyter.png)
-
-쿼토 R, 파이썬 싱글소싱
-:::
-
-:::
+graph LR
+    qmd -->  주피터
+    주피터 -->  마크다운
+    마크다운 -->  팬독
+    팬독 -->  pdf
+    팬독 -->  html
+    팬독 -->  docx
+    qmd -->  knitr
+    knitr --> 마크다운
+```
 
 ## 쿼토 해부
 
@@ -254,10 +246,12 @@ RStudio YAML 자동완성
 쿼토는 "차세대 R 마크다운"이라는 별명에 걸맞게 R 마크다운의 다양한 패키지와 기능을 지원하고 있다.
 그러나 쿼토의 개발 기간이 R 마크다운보다 상대적으로 짧기 때문에 아직은 R 마크다운의 모든 기능을 지원하지 않는다.
 그럼에도 불구하고, 쿼토는 지속적으로 지원 범위를 확장하고 있으며, 고유한 기능도 추가하고 있다.
-이러한 점들은 쿼토가 R 마크다운 생태계에 어떤 새로운 가치를 더하고 있는지를 잘 보여준다. 쿼토 1.4 버전에 대쉬보드(dashboards)가 추가되어 R 마크다운 기능 대부분을 지원하게 되었다. 다음 @tbl-quarto-rmarkdown 에서 쿼토와 R 마크다운을 다양한 문서 기능별로 비교하고 있다. 
+이러한 점들은 쿼토가 R 마크다운 생태계에 어떤 새로운 가치를 더하고 있는지를 잘 보여준다.
+쿼토 1.4 버전에 대쉬보드(dashboards)가 추가되어 R 마크다운 기능 대부분을 지원하게 되었다.
+다음 @tbl-quarto-rmarkdown 에서 쿼토와 R 마크다운을 다양한 문서 기능별로 비교하고 있다.
 
 |       기능        | R 마크다운                                                                                                                                                                                                                                           | 쿼토(Quarto)                                                                                                                                                                                  |
-|:-------------:|:-------------------------------|:------------------------|
+|:---------------:|:------------------------------|:-----------------------|
 |     파일형식      | [html_document](https://pkgs.rstudio.com/rmarkdown/reference/html_document.html) / [pdf_document](https://pkgs.rstudio.com/rmarkdown/reference/pdf_document.html) / [word_document](https://pkgs.rstudio.com/rmarkdown/reference/word_document.html) | [html](https://quarto.org/docs/output-formats/html-basics.html) / [pdf](https://quarto.org/docs/output-formats/pdf-basics.html) / [docx](https://quarto.org/docs/output-formats/ms-word.html) |
 |   비머(Beamer)    | [beamer_presentation](https://pkgs.rstudio.com/rmarkdown/reference/beamer_presentation.html)                                                                                                                                                         | [beamer](https://quarto.org/docs/presentations/beamer.html)                                                                                                                                   |
 |  파워포인트(PPT)  | [powerpoint_presentation](https://pkgs.rstudio.com/rmarkdown/reference/powerpoint_presentation.html)                                                                                                                                                 | [pptx](https://quarto.org/docs/presentations/powerpoint.html)                                                                                                                                 |
@@ -269,32 +263,39 @@ RStudio YAML 자동완성
 |  인터랙티브 문서  | [Shiny Documents](https://bookdown.org/yihui/rmarkdown/shiny-documents.html)                                                                                                                                                                         | [Quarto Interactive Documents](https://quarto.org/docs/interactive/shiny/)                                                                                                                    |
 |    페이지 HTML    | [pagedown](https://github.com/rstudio/pagedown)                                                                                                                                                                                                      | 출시 예정                                                                                                                                                                                     |
 |     학술 논문     | [rticles](https://pkgs.rstudio.com/rticles/)                                                                                                                                                                                                         | [Quarto Journal Articles](https://quarto.org/docs/journals/)                                                                                                                                  |
-|     대쉬보드      | [flexdashboard](https://pkgs.rstudio.com/flexdashboard/) |                                                                                                                                                                                          | [Quarto Dashboards](https://quarto.org/docs/dashboards/)                                                                                                                                                                                     |
+|     대쉬보드      | [flexdashboard](https://pkgs.rstudio.com/flexdashboard/)                                                                                                                                                                                             | [Quarto Dashboards](https://quarto.org/docs/dashboards/)                                                                                                                                      |
 | 인터랙티브 자습서 | [learnr](https://pkgs.rstudio.com/learnr/)                                                                                                                                                                                                           | 계획 없음                                                                                                                                                                                     |
 
 : R 마크다운과 쿼토 비교 {#tbl-quarto-rmarkdown}
 
-
-:::{.callout-note}
+::: callout-note
 ### 위지위그 vs 위지윔 {.unnumbered}
 
-**위지위그(WYSIWYG: What You See Is What You Get)**는 "보는 대로 얻는다"는 의미로, 사용자가 문서를 편집할 때 화면에 보이는 형태가 최종 출력물과 동일하게 나오는 편집 방식이다. 대다수 현대 워드 프로세서에서 위지위그 방식을 사용하고 있다. 사용자에게 직관적이고 쉽게 접근할 수 있는 인터페이스를 제공하기 때문이다.
+**위지위그(WYSIWYG: What You See Is What You Get)**는 "보는 대로 얻는다"는 의미로, 사용자가 문서를 편집할 때 화면에 보이는 형태가 최종 출력물과 동일하게 나오는 편집 방식이다.
+대다수 현대 워드 프로세서에서 위지위그 방식을 사용하고 있다.
+사용자에게 직관적이고 쉽게 접근할 수 있는 인터페이스를 제공하기 때문이다.
 
-그러나 위지위그 방식에도 단점은 있다. 마크다운, TeX 같은 텍스트 기반 편집 방식은 문서 호환성과 범용성을 위해 쓰이는 반면, 위지위그 저작방식은 호환성과 범용성을 다소 희생할 수 밖에 없다. 특히 복잡한 문서나 웹 페이지를 작성하는 경우, 코딩방식으로 전환하여 수작업으로 최적화를 시도하더라도 완벽한 해결이 어렵다. 예를 들어, 위지위그 편집기에서 문서를 작성하면 뒷단에 불필요한 코드나 태그가 자동으로 생성되어 문서 최적화를 방해하며, 시간이 지남에 따라 누적되어 호환성과 재현성에 심각한 문제를 야기한다. [^editor-1] [^editor-2]
+그러나 위지위그 방식에도 단점은 있다.
+마크다운, TeX 같은 텍스트 기반 편집 방식은 문서 호환성과 범용성을 위해 쓰이는 반면, 위지위그 저작방식은 호환성과 범용성을 다소 희생할 수 밖에 없다.
+특히 복잡한 문서나 웹 페이지를 작성하는 경우, 코딩방식으로 전환하여 수작업으로 최적화를 시도하더라도 완벽한 해결이 어렵다.
+예를 들어, 위지위그 편집기에서 문서를 작성하면 뒷단에 불필요한 코드나 태그가 자동으로 생성되어 문서 최적화를 방해하며, 시간이 지남에 따라 누적되어 호환성과 재현성에 심각한 문제를 야기한다.
+[^setup_quarto-2] [^setup_quarto-3]
 
-[^editor-1]: [위키백과, "위지위그"](https://ko.wikipedia.org/wiki/%EC%9C%84%EC%A7%80%EC%9C%84%EA%B7%B8)
+**위지윔(WYSIWYM: What You See Is What You Mean)**은 "당신이 보는 것은 당신이 뜻하는 것이다"라는 의미로, 위지위그(WYSIWYG) 방식의 한계를 극복하기 위해 나온 대안 편집 방식이다.
+위지윔 방식에서는 사용자가 무엇을 의미하는지를 중점으로 두어, 본래의 코드 구조를 더 명확하게 알 수 있다.
+코드 의미를 직접적으로 반영하여, 불필요한 요소 없이 효율적으로 문서를 작성할 수 있는 장점이 있다.
 
-[^editor-2]: [나무위키, "WYSIWYG"](https://namu.wiki/w/WYSIWYG)
+RStudio의 Visual 편집 기능은 위지윔 지향점을 잘 반영하고 있다.
+사용자는 복잡한 코드나 태그 없이도 의미 있는 문서 구조를 쉽게 생성하고 관리할 수 있어 문서 최적화와 호환성을 높일 수 있으며, 더욱 높은 문서 저작 생산성을 달성할 수 있다.
 
-**위지윔(WYSIWYM: What You See Is What You Mean)**은 "당신이 보는 것은 당신이 뜻하는 것이다"라는 의미로, 위지위그(WYSIWYG) 방식의 한계를 극복하기 위해 나온 대안 편집 방식이다. 위지윔 방식에서는 사용자가 무엇을 의미하는지를 중점으로 두어, 본래의 코드 구조를 더 명확하게 알 수 있다. 코드 의미를 직접적으로 반영하여, 불필요한 요소 없이 효율적으로 문서를 작성할 수 있는 장점이 있다.
-
-RStudio의 Visual 편집 기능은 위지윔 지향점을 잘 반영하고 있다. 사용자는 복잡한 코드나 태그 없이도 의미 있는 문서 구조를 쉽게 생성하고 관리할 수 있어 문서 최적화와 호환성을 높일 수 있으며, 더욱 높은 문서 저작 생산성을 달성할 수 있다.
-
-오픈 소스 LaTeX 편집기인 [LyX](https://www.lyx.org/)는 위지윔 방식을 초기부터 채택하여 사용자에게 코드 본래 구조와 의미를 명확하게 파악할 수 있는 인터페이스를 제공했다. 이러한 접근법은 복잡한 수식이나 과학적인 문서를 작성할 때 특히 유용하며, [\LaTeX](http://example.org) 복잡성을 낮추면서도 강력한 기능을 최대한 활용할 수 함으로써 위지위그 한계를 극복했다는 평가를 받고 있다.
+오픈 소스 LaTeX 편집기인 [LyX](https://www.lyx.org/)는 위지윔 방식을 초기부터 채택하여 사용자에게 코드 본래 구조와 의미를 명확하게 파악할 수 있는 인터페이스를 제공했다.
+이러한 접근법은 복잡한 수식이나 과학적인 문서를 작성할 때 특히 유용하며, [\LaTeX](http://example.org) 복잡성을 낮추면서도 강력한 기능을 최대한 활용할 수 함으로써 위지위그 한계를 극복했다는 평가를 받고 있다.
 
 |                  문서 컴파일                  |                 위지위그                 |
 |:------------------------------------:|:--------------------------------:|
 | ![](images/wyswig-wikipedia.png){width="250"} | ![](images/wyswyg-word.png){width="250"} |
-
 :::
 
+[^setup_quarto-2]: [위키백과, "위지위그"](https://ko.wikipedia.org/wiki/%EC%9C%84%EC%A7%80%EC%9C%84%EA%B7%B8)
+
+[^setup_quarto-3]: [나무위키, "WYSIWYG"](https://namu.wiki/w/WYSIWYG)

@@ -8,7 +8,7 @@
 
 <meta name="author" content="이광춘">
 
-<title>챗GPT 쿼토(Quarto) – 15&nbsp; 이력서</title>
+<title>챗GPT 쿼토(Quarto) – 17&nbsp; 이력서</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -43,6 +77,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/quarto-contrib/downloadthis-1.9.1/downloadthis.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -98,7 +133,7 @@ ga('send', {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./gpt_writing.html">챗GPT</a></li><li class="breadcrumb-item"><a href="./gpt_resume.html"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">이력서</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./gpt_writing.html">챗GPT</a></li><li class="breadcrumb-item"><a href="./gpt_resume.html"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">이력서</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -148,14 +183,26 @@ ga('send', {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./setup_reproducible.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">과학기술 위기</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./setup_markdown_mess.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">심각한 현재 상황</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./setup_quarto.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">쿼토(Quarto)</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">쿼토(Quarto)</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./setup.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">저작환경 설정</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">저작환경 설정</span></span></a>
   </div>
 </li>
       </ul>
@@ -172,19 +219,19 @@ ga('send', {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./part_components.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">문서 구성요소</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">문서 구성요소</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./part_markdown.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">마크다운</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">마크다운</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./part_code.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">코드</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">코드</span></span></a>
   </div>
 </li>
       </ul>
@@ -201,25 +248,25 @@ ga('send', {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./theme_fonts.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">글꼴</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">글꼴</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./theme_colors.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">색상</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">색상</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./theme_ggplot.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">그래프 테마</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">그래프 테마</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./theme_gt.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">표 테마</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">표 테마</span></span></a>
   </div>
 </li>
       </ul>
@@ -236,25 +283,25 @@ ga('send', {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./dw_book.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">쿼토 책</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">쿼토 책</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./dw_website.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">웹사이트와 블로그</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">웹사이트와 블로그</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./dw_slideshow.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">PPT 슬라이드</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">PPT 슬라이드</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./dw_dashboard.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">대쉬보드</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">대쉬보드</span></span></a>
   </div>
 </li>
       </ul>
@@ -271,19 +318,19 @@ ga('send', {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./gpt_writing.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">챗GPT 쿼토</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">챗GPT 쿼토</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./gpt_resume.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">이력서</span></span></a>
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">이력서</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./gpt_case_study.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">국제시장과 펭귄</span></span></a>
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">국제시장과 펭귄</span></span></a>
   </div>
 </li>
       </ul>
@@ -299,15 +346,23 @@ ga('send', {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">목차</h2>
+   
+  <ul>
+  <li><a href="#쿼토-확장기능" id="toc-쿼토-확장기능" class="nav-link active" data-scroll-target="#쿼토-확장기능"><span class="header-section-number">17.1</span> 쿼토 확장기능</a></li>
+  <li><a href="#챗gpt-이력서" id="toc-챗gpt-이력서" class="nav-link" data-scroll-target="#챗gpt-이력서"><span class="header-section-number">17.2</span> 챗GPT 이력서</a></li>
+  <li><a href="#국문-이력서" id="toc-국문-이력서" class="nav-link" data-scroll-target="#국문-이력서"><span class="header-section-number">17.3</span> 국문 이력서</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/bit2r/gpt-sql/edit/main/gpt_resume.qmd" class="toc-action"><i class="bi bi-github"></i>편집</a></li><li><a href="https://github.com/bit2r/gpt-sql/issues/new" class="toc-action"><i class="bi empty"></i>이슈 보고</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./gpt_writing.html">챗GPT</a></li><li class="breadcrumb-item"><a href="./gpt_resume.html"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">이력서</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./gpt_writing.html">챗GPT</a></li><li class="breadcrumb-item"><a href="./gpt_resume.html"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">이력서</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">이력서</span></h1>
+<h1 class="title"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">이력서</span></h1>
 </div>
 
 
@@ -324,11 +379,464 @@ ga('send', {
 </header>
 
 
-<p>챗GPT로 이력서를 제작하는 방법을 살펴보자.</p>
+<p>쿼토 이전에 R마크다운을 사용하여 이력서를 비롯한 다양한 문서가 제작되었다. 당연히 쿼토에서도 R마크다운으로 작성된 다양한 문서를 재현할 수 있다. 챗GPT로 이력서를 제작하는 방법을 살펴보자. 국문 이력서와 다소 차이가 있지만 영문 이력서를 기본으로 한글을 넣어 PDF 이력서를 제작하는 방법을 살펴보자. 이 지점에서 챗GPT 생성형 AI가 빠른 시간내에 이력서를 제작하는데 큰 도움이 된다.</p>
+<p>이력서를 제작하는 방식은 크게 보면 두가지로 나눠진다. 하나는 이력서에 담기는 당사자의 이력 콘텐츠가 있고 다른 하나는 이력 콘텐츠를 미려한 형식으로 PDF 파일에 담아내는 것이다. 이력서에 담기는 내용은 주로 당사자의 경력, 학력, 자격증, 수상경력, 논문 등을 들 수 있다. 이러한 내용을 적절한 형식으로 PDF 파일에 담아내기 위해서는 일종의 템플릿이 필요한데 쿼토로 개발되어 공개된 몇가지 템플릿을 쉽게 찾을 수 있다.</p>
+<section id="쿼토-확장기능" class="level2" data-number="17.1">
+<h2 data-number="17.1" class="anchored" data-anchor-id="쿼토-확장기능"><span class="header-section-number">17.1</span> 쿼토 확장기능</h2>
+<p><a href="https://github.com/mps9506/quarto-cv"><code>Quarto-cv</code></a>는 쿼토 확장기능(extension)으로 별도 이력서 문서로 작성할 수도 있고 작성 중인 쿼토 문서 중 하나의 페이지로 이력서를 추가할 수도 있다. 먼저, 이력서 문서를 작성하기 위해서 쿼토 확장기능을 설치한다.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> install extension mps9506/quarto-cv@v1.0.3</span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><code>quarto-cv</code> 확장기능에서 제공하는 <code>template.qmd</code> 파일명을 <code>gpt_template.qmd</code>로 바꿔 컴파일하면 깔끔한 영문 PDF 이력서를 얻을 수 있다. <code>peer_bib.bib</code>, <code>other_bib.bib</code> 참고문헌 파일을 별도 BibTex 파일로 관리하여 <code>.qmd</code> 이력서 자체는 코드가 깔끔하다.</p>
+<div class="columns">
+<div class="column" style="width:27.5%;">
+<p><a href="#dnldts12612" onclick="fetch('data:text/plain;base64,LS0tDQp0aXRsZTogQ1YNCmZvcm1hdDoNCiAgcXVhcnRvLWN2LXBkZjogZGVmYXVsdA0KYXV0aG9yOiBXaWxsaWFtIEdvc3NldA0KZGF0ZTogbGFzdC1tb2RpZmllZA0KcGhvbmU6IDEyMy00NTYtNzg5MA0KYWRkcmVzczogIkd1aW5uZXNzIEJyZXdlcnkgwrcgUGFyayBSb3lhbCDCtyBMb25kb24gTlcxMCA3UlIsIFVLIg0KZW1haWw6IGd1aW5uZXNzQGNvbnN1bWVyLWNhcmUubmV0DQpmb250c2l6ZTogMTFwdA0Kb3JjaWQ6IDAwMDAtMDAwMi0xODI1LTAwOTcgIyBvcmNpZCBpZGVudGlmaWVyDQp3ZWI6IHF1YXJ0by5vcmcNCmZvbnRhd2Vzb21lOiB5ZXMNCm5vY2l0ZTogJ0AqJw0KYmlibGlvZ3JhcGh5OiAgIA0KICBwZWVyOiBkYXRhL3BlZXJfYmliLmJpYiAgDQogIG90aGVyOiBkYXRhL290aGVyX2JpYi5iaWIgIA0KdmFsaWRhdGUteWFtbDogZmFsc2UNCmNzbDogZGF0YS9hcGEtY3YuY3NsDQotLS0NCg0KIyBFbXBsb3ltZW50DQoNCipBcnRodXIgR3Vpbm5lc3MgJiBTb24qDQoNCkNoaWVmIEJyZXdlciAoUGFyayBSb3lhbCkgXGhmaWxsIDE5MzUtMTkzNw0KDQpSZXNlYXJjaGVyIChEdWJsaW4pIFxoZmlsbCAxODk5LTE5MzUNCg0KIyBFZHVjYXRpb24NCg0KKk5ldyBDb2xsZWdlLCBPeGZvcmQgVW5pdmVyc2l0eSosIEIuQS4gQ2hlbWlzdHJ5IFxoZmlsbCAxODk5DQoNCiMgUHVibGljYXRpb25zDQoNCjo6OiB7I3JlZnMtcGVlcn0NCjo6Og0KDQojIFRlY2huaWNhbCBSZXBvcnRzDQoNCjo6OiB7I3JlZnMtb3RoZXJ9DQo6OjoNCg0KDQojIFJlZmVyZW5jZXMNCg0KQXZhaWxhYmxlIHVwb24gcmVxdWVzdCwgdGhvdWdoIGxpa2VseSB3b3VsZCBpbmNsdWRlIEthcmwgUGVhcnNvbiBhbmQgUm9uYWxkIEEuIEZpc2hlci4=').then(res => res.blob()).then(blob => {
+      const downloadURL = window.URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      document.body.appendChild(a);
+      a.href = downloadURL;
+      a.download = 'gpt_template.qmd.qmd'; a.click();
+      window.URL.revokeObjectURL(downloadURL);
+      document.body.removeChild(a);
+        });"><button class="btn btn-info downloadthis  " id="dnldts12612"><i class="bi bi-download"></i> 이력서 템플릿 </button></a></p>
+</div><div class="column" style="width:5%;">
+
+</div><div class="column" style="width:67.5%;">
+<p><object data="gpt_template.pdf" type="application/pdf" width="100%" height="300px"><p>Unable to display PDF file. <a href="gpt_template.pdf">Download</a> instead.</p></object></p>
+</div>
+</div>
+</section>
+<section id="챗gpt-이력서" class="level2" data-number="17.2">
+<h2 data-number="17.2" class="anchored" data-anchor-id="챗gpt-이력서"><span class="header-section-number">17.2</span> 챗GPT 이력서</h2>
+<p>챗GPT 생성형 AI 기능을 이용하면 이력서 콘텐츠를 빠르게 생성하여 <code>quarto-cv</code> 템플릿에 넣게 되면 PDF 이력서를 빠르게 확인할 수 있다. 템플릿 이력서 내용을 챗GPT 프롬프트에 맥락 정보로 넣어주고 물리학자 이력서 생성 요청을 프롬프트로 전달하면 그럴 듯한 물리학자로 관련 정보를 채워준다.</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" aria-current="page">프롬프트</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">실행 결과</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<div class="sourceCode" id="cb2"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="at">다음 내용을 바탕으로 물리학자 이력서 정보를 만들어줘</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> CV</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">quarto-cv-pdf</span><span class="kw">:</span><span class="at"> default</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> William Gosset</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="fu">date</span><span class="kw">:</span><span class="at"> last-modified</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="fu">phone</span><span class="kw">:</span><span class="at"> 123-456-7890</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="fu">address</span><span class="kw">:</span><span class="at"> </span><span class="st">"Guinness Brewery · Park Royal · London NW10 7RR, UK"</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="fu">email</span><span class="kw">:</span><span class="at"> guinness@consumer-care.net</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="fu">fontsize</span><span class="kw">:</span><span class="at"> 11pt</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="fu">orcid</span><span class="kw">:</span><span class="at"> 0000-0002-1825-0097</span><span class="co"> # orcid identifier</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="fu">web</span><span class="kw">:</span><span class="at"> quarto.org</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="fu">fontawesome</span><span class="kw">:</span><span class="at"> </span><span class="ch">yes</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="fu">nocite</span><span class="kw">:</span><span class="at"> </span><span class="st">'@*'</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="fu">bibliography</span><span class="kw">:</span><span class="at"> </span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">peer</span><span class="kw">:</span><span class="at"> data/peer_bib.bib</span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">other</span><span class="kw">:</span><span class="at"> data/other_bib.bib</span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a><span class="fu">validate-yaml</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a><span class="fu">csl</span><span class="kw">:</span><span class="at"> data/apa-cv.csl</span></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a><span class="co"># Employment</span></span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a><span class="ot">*Arthur</span><span class="at"> Guinness &amp; Son*</span></span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a><span class="at">Chief Brewer (Park Royal) \hfill 1935-1937</span></span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a><span class="at">Researcher (Dublin) \hfill 1899-1935</span></span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a><span class="co"># Education</span></span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a><span class="ot">*New</span><span class="at"> College, Oxford University*, B.A. Chemistry \hfill 1899</span></span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a><span class="co"># Publications</span></span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a><span class="at">:</span><span class="fu">:</span><span class="kw">:</span><span class="at"> </span><span class="kw">{</span><span class="co">#refs-peer}</span></span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a><span class="at">:</span><span class="fu">:</span><span class="kw">:</span></span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a><span class="co"># Technical Reports</span></span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a><span class="at">:</span><span class="fu">:</span><span class="kw">:</span><span class="at"> </span><span class="kw">{</span><span class="co">#refs-other}</span></span>
+<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a><span class="at">:</span><span class="fu">:</span><span class="kw">:</span></span>
+<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a><span class="co"># References</span></span>
+<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a><span class="at">Available upon request</span><span class="kw">,</span><span class="at"> though likely would include Karl Pearson and Ronald A. Fisher.</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<div class="sourceCode" id="cb3"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">To create a resume for a physicist based on the given template, we need to adjust the content to fit the background and achievements of a physicist, rather than a brewer. Here's a revised version</span><span class="kw">:</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> CV  </span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span><span class="at">  </span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">quarto-cv-pdf</span><span class="kw">:</span><span class="at"> default  </span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> William Gosset  </span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="fu">date</span><span class="kw">:</span><span class="at"> last-modified  </span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="fu">phone</span><span class="kw">:</span><span class="at"> 123-456-7890  </span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="fu">address</span><span class="kw">:</span><span class="at"> </span><span class="st">"Department of Physics, University of Cambridge, Cambridge CB3 0HE, UK"</span><span class="at">  </span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="fu">email</span><span class="kw">:</span><span class="at"> wg.physicist@cam.ac.uk  </span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="fu">fontsize</span><span class="kw">:</span><span class="at"> 11pt  </span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="fu">orcid</span><span class="kw">:</span><span class="at"> 0000-0002-1825-0097  </span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="fu">web</span><span class="kw">:</span><span class="at"> cam.ac.uk  </span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="fu">fontawesome</span><span class="kw">:</span><span class="at"> </span><span class="ch">yes</span><span class="at">  </span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="fu">nocite</span><span class="kw">:</span><span class="at"> </span><span class="st">'@*'</span><span class="at">  </span></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="fu">bibliography</span><span class="kw">:</span><span class="at">   </span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">peer</span><span class="kw">:</span><span class="at"> data/peer_bib.bib  </span></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">other</span><span class="kw">:</span><span class="at"> data/other_bib.bib  </span></span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a><span class="fu">validate-yaml</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span><span class="at">  </span></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a><span class="fu">csl</span><span class="kw">:</span><span class="at"> data/apa-cv.csl  </span></span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a><span class="co"># Employment</span></span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a><span class="ot">*University</span><span class="at"> of Cambridge*  </span></span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a><span class="at">Professor of Theoretical Physics \hfill 2000-Present  </span></span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a><span class="at">Postdoctoral Researcher \hfill 1995-2000  </span></span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a><span class="co"># Education</span></span>
+<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a><span class="ot">*Princeton</span><span class="at"> University*, Ph.D. in Physics \hfill 1995  </span></span>
+<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a><span class="ot">*Massachusetts</span><span class="at"> Institute of Technology*, B.S. in Physics \hfill 1991  </span></span>
+<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a><span class="co"># Publications</span></span>
+<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a><span class="at">:</span><span class="fu">:</span><span class="kw">:</span><span class="at"> </span><span class="kw">{</span><span class="co">#refs-peer}  </span></span>
+<span id="cb3-43"><a href="#cb3-43" aria-hidden="true" tabindex="-1"></a><span class="at">:</span><span class="fu">:</span><span class="kw">:</span><span class="at">  </span></span>
+<span id="cb3-44"><a href="#cb3-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-45"><a href="#cb3-45" aria-hidden="true" tabindex="-1"></a><span class="co"># Technical Reports</span></span>
+<span id="cb3-46"><a href="#cb3-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-47"><a href="#cb3-47" aria-hidden="true" tabindex="-1"></a><span class="at">:</span><span class="fu">:</span><span class="kw">:</span><span class="at"> </span><span class="kw">{</span><span class="co">#refs-other}  </span></span>
+<span id="cb3-48"><a href="#cb3-48" aria-hidden="true" tabindex="-1"></a><span class="at">:</span><span class="fu">:</span><span class="kw">:</span><span class="at">  </span></span>
+<span id="cb3-49"><a href="#cb3-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-50"><a href="#cb3-50" aria-hidden="true" tabindex="-1"></a><span class="co"># References</span></span>
+<span id="cb3-51"><a href="#cb3-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-52"><a href="#cb3-52" aria-hidden="true" tabindex="-1"></a><span class="at">Available upon request</span><span class="kw">,</span><span class="at"> though likely would include notable physicists such as Stephen Hawking and Brian Greene.</span></span>
+<span id="cb3-53"><a href="#cb3-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-54"><a href="#cb3-54" aria-hidden="true" tabindex="-1"></a><span class="at">---</span></span>
+<span id="cb3-55"><a href="#cb3-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-56"><a href="#cb3-56" aria-hidden="true" tabindex="-1"></a><span class="at">This resume template maintains the structure and elements of the original</span><span class="kw">,</span><span class="at"> but the content is tailored to reflect a career in physics. The employment history</span><span class="kw">,</span><span class="at"> education</span><span class="kw">,</span><span class="at"> and potential references are aligned with what might be expected of an accomplished physicist.</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+<p>연구논문에 대한 BibTex 파일에 들어갈 내용을 챗GPT 프롬프트를 작성하여 생성한다.</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true">프롬프트</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false">실행 결과</a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
+<p>물리학 논문 bibtex으로 3개, 보고서 bibtex 3개 작성해줘.</p>
+</div>
+<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
+<div class="sourceCode" id="cb4"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="at">Sure, I'll create sample BibTeX entries for three fictional physics papers and three technical reports. These entries are just examples and are not based on actual publications or reports.</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co">### Physics Papers</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="at">```bibtex</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="at">@article{Gosset2024Quantum,</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="at">  title={Quantum Entanglement in Multi-Particle Systems},</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="at">  author={William Gosset and Jane Doe},</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="at">  journal={Physical Review Letters},</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="at">  volume={132},</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="at">  number={4},</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="at">  pages={501-505},</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="at">  year={2024},</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a><span class="at">  publisher={American Physical Society}</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a><span class="at">}</span></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a><span class="at">@article{Gosset2023DarkMatter,</span></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a><span class="at">  title={Exploring the Properties of Dark Matter in the Early Universe},</span></span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a><span class="at">  author={William Gosset and John Smith},</span></span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a><span class="at">  journal={Astrophysical Journal},</span></span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a><span class="at">  volume={780},</span></span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a><span class="at">  number={1},</span></span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a><span class="at">  pages={100-115},</span></span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a><span class="at">  year={2023},</span></span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a><span class="at">  publisher={IOP Publishing}</span></span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a><span class="at">}</span></span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a><span class="at">@article{Gosset2022Neutrino,</span></span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">title={Neutrino Oscillations</span><span class="kw">:</span><span class="at"> A New Model},</span></span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a><span class="at">  author={William Gosset and Emily Turner},</span></span>
+<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a><span class="at">  journal={Journal of High Energy Physics},</span></span>
+<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a><span class="at">  volume={2022},</span></span>
+<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a><span class="at">  number={3},</span></span>
+<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a><span class="at">  pages={89-98},</span></span>
+<span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a><span class="at">  year={2022},</span></span>
+<span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a><span class="at">  publisher={Springer}</span></span>
+<span id="cb4-37"><a href="#cb4-37" aria-hidden="true" tabindex="-1"></a><span class="at">}</span></span>
+<span id="cb4-38"><a href="#cb4-38" aria-hidden="true" tabindex="-1"></a><span class="at">```</span></span>
+<span id="cb4-39"><a href="#cb4-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-40"><a href="#cb4-40" aria-hidden="true" tabindex="-1"></a><span class="co">### Technical Reports</span></span>
+<span id="cb4-41"><a href="#cb4-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-42"><a href="#cb4-42" aria-hidden="true" tabindex="-1"></a><span class="at">```bibtex</span></span>
+<span id="cb4-43"><a href="#cb4-43" aria-hidden="true" tabindex="-1"></a><span class="at">@techreport{GossetLab2024Fusion,</span></span>
+<span id="cb4-44"><a href="#cb4-44" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">title={Advancements in Controlled Nuclear Fusion</span><span class="kw">:</span><span class="at"> A Report},</span></span>
+<span id="cb4-45"><a href="#cb4-45" aria-hidden="true" tabindex="-1"></a><span class="at">  author={William Gosset and Research Team},</span></span>
+<span id="cb4-46"><a href="#cb4-46" aria-hidden="true" tabindex="-1"></a><span class="at">  year={2024},</span></span>
+<span id="cb4-47"><a href="#cb4-47" aria-hidden="true" tabindex="-1"></a><span class="at">  institution={Gosset Physics Laboratory},</span></span>
+<span id="cb4-48"><a href="#cb4-48" aria-hidden="true" tabindex="-1"></a><span class="at">  address={Cambridge, UK}</span></span>
+<span id="cb4-49"><a href="#cb4-49" aria-hidden="true" tabindex="-1"></a><span class="at">}</span></span>
+<span id="cb4-50"><a href="#cb4-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-51"><a href="#cb4-51" aria-hidden="true" tabindex="-1"></a><span class="at">@techreport{Gosset2023Particle,</span></span>
+<span id="cb4-52"><a href="#cb4-52" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">title={Particle Acceleration Techniques</span><span class="kw">:</span><span class="at"> A Comparative Study},</span></span>
+<span id="cb4-53"><a href="#cb4-53" aria-hidden="true" tabindex="-1"></a><span class="at">  author={William Gosset},</span></span>
+<span id="cb4-54"><a href="#cb4-54" aria-hidden="true" tabindex="-1"></a><span class="at">  year={2023},</span></span>
+<span id="cb4-55"><a href="#cb4-55" aria-hidden="true" tabindex="-1"></a><span class="at">  institution={Department of Physics, University of Cambridge},</span></span>
+<span id="cb4-56"><a href="#cb4-56" aria-hidden="true" tabindex="-1"></a><span class="at">  address={Cambridge, UK}</span></span>
+<span id="cb4-57"><a href="#cb4-57" aria-hidden="true" tabindex="-1"></a><span class="at">}</span></span>
+<span id="cb4-58"><a href="#cb4-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-59"><a href="#cb4-59" aria-hidden="true" tabindex="-1"></a><span class="at">@techreport{Gosset2022Gravitational,</span></span>
+<span id="cb4-60"><a href="#cb4-60" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">title={Gravitational Wave Detection in LIGO</span><span class="kw">:</span><span class="at"> An Analysis},</span></span>
+<span id="cb4-61"><a href="#cb4-61" aria-hidden="true" tabindex="-1"></a><span class="at">  author={William Gosset and Collaborative Research Group},</span></span>
+<span id="cb4-62"><a href="#cb4-62" aria-hidden="true" tabindex="-1"></a><span class="at">  year={2022},</span></span>
+<span id="cb4-63"><a href="#cb4-63" aria-hidden="true" tabindex="-1"></a><span class="at">  institution={LIGO Scientific Collaboration},</span></span>
+<span id="cb4-64"><a href="#cb4-64" aria-hidden="true" tabindex="-1"></a><span class="at">  address={Pasadena, CA, USA}</span></span>
+<span id="cb4-65"><a href="#cb4-65" aria-hidden="true" tabindex="-1"></a><span class="at">}</span></span>
+<span id="cb4-66"><a href="#cb4-66" aria-hidden="true" tabindex="-1"></a><span class="at">```</span></span>
+<span id="cb4-67"><a href="#cb4-67" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-68"><a href="#cb4-68" aria-hidden="true" tabindex="-1"></a><span class="at">These BibTeX entries can be used in a LaTeX document to cite the papers and reports in the bibliography section. Remember, these are fictional examples and do not correspond to actual publications.</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+<p>이제 참고문헌과 물리학자 이력서 콘텐츠가 작성되었으니 쿼토에서 컴파일하면 물리학자 이력서를 확인할 수 있다.</p>
+<div class="columns">
+<div class="column" style="width:27.5%;">
+<p><a href="#dnldts7678" onclick="fetch('data:text/plain;base64,LS0tDQp0aXRsZTogQ1YgIA0KZm9ybWF0OiAgDQogIHF1YXJ0by1jdi1wZGY6IGRlZmF1bHQgIA0KYXV0aG9yOiBXaWxsaWFtIEdvc3NldCAgDQpkYXRlOiBsYXN0LW1vZGlmaWVkICANCnBob25lOiAxMjMtNDU2LTc4OTAgIA0KYWRkcmVzczogIkRlcGFydG1lbnQgb2YgUGh5c2ljcywgVW5pdmVyc2l0eSBvZiBDYW1icmlkZ2UsIENhbWJyaWRnZSBDQjMgMEhFLCBVSyIgIA0KZW1haWw6IHdnLnBoeXNpY2lzdEBjYW0uYWMudWsgIA0KZm9udHNpemU6IDExcHQgIA0Kb3JjaWQ6IDAwMDAtMDAwMi0xODI1LTAwOTcgIA0Kd2ViOiBjYW0uYWMudWsgIA0KZm9udGF3ZXNvbWU6IHllcyAgDQpub2NpdGU6ICdAKicgIA0KYmlibGlvZ3JhcGh5OiAgIA0KICBwZWVyOiBkYXRhL3BlZXJfYmliLmJpYiAgDQogIG90aGVyOiBkYXRhL290aGVyX2JpYi5iaWIgIA0KdmFsaWRhdGUteWFtbDogZmFsc2UgIA0KY3NsOiBkYXRhL2FwYS1jdi5jc2wgIA0KLS0tDQoNCiMgRW1wbG95bWVudA0KDQoqVW5pdmVyc2l0eSBvZiBDYW1icmlkZ2UqICANCg0KUHJvZmVzc29yIG9mIFRoZW9yZXRpY2FsIFBoeXNpY3MgXGhmaWxsIDIwMDAtUHJlc2VudCAgDQoNClBvc3Rkb2N0b3JhbCBSZXNlYXJjaGVyIFxoZmlsbCAxOTk1LTIwMDAgIA0KDQojIEVkdWNhdGlvbg0KDQoqUHJpbmNldG9uIFVuaXZlcnNpdHkqLCBQaC5ELiBpbiBQaHlzaWNzIFxoZmlsbCAxOTk1ICANCg0KKk1hc3NhY2h1c2V0dHMgSW5zdGl0dXRlIG9mIFRlY2hub2xvZ3kqLCBCLlMuIGluIFBoeXNpY3MgXGhmaWxsIDE5OTEgIA0KDQojIFB1YmxpY2F0aW9ucw0KDQo6OjogeyNyZWZzLXBlZXJ9ICANCjo6OiAgDQoNCiMgVGVjaG5pY2FsIFJlcG9ydHMNCg0KOjo6IHsjcmVmcy1vdGhlcn0gIA0KOjo6ICANCg0KIyBSZWZlcmVuY2VzDQoNCkF2YWlsYWJsZSB1cG9uIHJlcXVlc3QsIHRob3VnaCBsaWtlbHkgd291bGQgaW5jbHVkZSBub3RhYmxlIHBoeXNpY2lzdHMgc3VjaCBhcyBTdGVwaGVuIEhhd2tpbmcgYW5kIEJyaWFuIEdyZWVuZS4NCg0K').then(res => res.blob()).then(blob => {
+      const downloadURL = window.URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      document.body.appendChild(a);
+      a.href = downloadURL;
+      a.download = 'gpt_resume_physics.qmd.qmd'; a.click();
+      window.URL.revokeObjectURL(downloadURL);
+      document.body.removeChild(a);
+        });"><button class="btn btn-info downloadthis  " id="dnldts7678"><i class="bi bi-download"></i> 물리학자 이력서 </button></a></p>
+</div><div class="column" style="width:5%;">
+
+</div><div class="column" style="width:67.5%;">
+<p><object data="gpt_resume_physics.pdf" type="application/pdf" width="100%" height="300px"><p>Unable to display PDF file. <a href="gpt_resume_physics.pdf">Download</a> instead.</p></object></p>
+</div>
+</div>
+</section>
+<section id="국문-이력서" class="level2" data-number="17.3">
+<h2 data-number="17.3" class="anchored" data-anchor-id="국문-이력서"><span class="header-section-number">17.3</span> 국문 이력서</h2>
+<p>홍길동이라는 가상의 인물에 대한 국문 이력서를 제작해보자. 먼저 챗GPT로 한국 고대사 연구학자 “홍길동” 박사에 대한 이력서를 앞서 작업한 것을 준용하여 제작하도록 프롬프트를 작성한다.</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true">프롬프트</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false">실행 결과</a></li></ul>
+<div class="tab-content">
+<div id="tabset-3-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-3-1-tab">
+<p>한국 고대사 연구학자 “홍길동” 이력서를 작성해줘 상기 CV 형식에 맞춰 한글로 작성해줘.</p>
+</div>
+<div id="tabset-3-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-2-tab">
+<div class="sourceCode" id="cb5"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="at">홍길동 씨의 이력서를 한국어로 작성해드리겠습니다. 아래에 제시된 형식은 영문 이력서 형식을 바탕으로 하되, 한국어 문맥에 맞게 조정하였습니다.</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="fu">제목</span><span class="kw">:</span><span class="at"> 이력서  </span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="fu">작성일</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">최종 수정일</span><span class="kw">]</span><span class="at">  </span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="fu">연락처</span><span class="kw">:</span><span class="at"> 010-1234-5678  </span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="fu">주소</span><span class="kw">:</span><span class="at"> </span><span class="st">"서울특별시 관악구 관악로, 서울대학교 한국사학과"</span><span class="at">  </span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="fu">이메일</span><span class="kw">:</span><span class="at"> hong.gildong@snu.ac.kr  </span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="fu">글꼴 크기</span><span class="kw">:</span><span class="at"> 11pt  </span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="fu">ORCID</span><span class="kw">:</span><span class="at"> 0000-0003-1234-5678  </span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="fu">웹사이트</span><span class="kw">:</span><span class="at"> snu.ac.kr  </span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a><span class="co"># 직업 경력</span></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a><span class="ot">*서울대학교*</span></span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a><span class="at">한국 고대사 교수 \hfill 2010-현재</span></span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a><span class="at">부교수 \hfill 2005-2010</span></span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a><span class="co"># 학력</span></span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a><span class="ot">*하버드</span><span class="at"> 대학교*, 동아시아 언어 및 문명학 박사 \hfill 2005</span></span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a><span class="ot">*서울대학교*,</span><span class="at"> 역사학 학사 \hfill 2000</span></span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a><span class="co"># 주요 논문</span></span>
+<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a><span class="at">:</span><span class="fu">:</span><span class="kw">:</span><span class="at"> </span><span class="kw">{</span><span class="co">#refs-peer}</span></span>
+<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a><span class="at">:</span><span class="fu">:</span><span class="kw">:</span></span>
+<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a><span class="co"># 기술 보고서</span></span>
+<span id="cb5-35"><a href="#cb5-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-36"><a href="#cb5-36" aria-hidden="true" tabindex="-1"></a><span class="at">:</span><span class="fu">:</span><span class="kw">:</span><span class="at"> </span><span class="kw">{</span><span class="co">#refs-other}</span></span>
+<span id="cb5-37"><a href="#cb5-37" aria-hidden="true" tabindex="-1"></a><span class="at">:</span><span class="fu">:</span><span class="kw">:</span></span>
+<span id="cb5-38"><a href="#cb5-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-39"><a href="#cb5-39" aria-hidden="true" tabindex="-1"></a><span class="co"># 추천인</span></span>
+<span id="cb5-40"><a href="#cb5-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-41"><a href="#cb5-41" aria-hidden="true" tabindex="-1"></a><span class="at">요청 시 제공 가능하며</span><span class="kw">,</span><span class="at"> 주요 추천인으로는 한국사 및 동아시아 연구 분야의 저명한 학자들이 포함될 것입니다.</span></span>
+<span id="cb5-42"><a href="#cb5-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-43"><a href="#cb5-43" aria-hidden="true" tabindex="-1"></a><span class="at">---</span></span>
+<span id="cb5-44"><a href="#cb5-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-45"><a href="#cb5-45" aria-hidden="true" tabindex="-1"></a><span class="at">이 이력서는 가상의 인물인 홍길동 교수님의 경력을 한국 고대사 연구학자로 설정하여 작성된 것입니다. 학력</span><span class="kw">,</span><span class="at"> 경력 및 기타 세부 사항은 예시로 제시된 것이며 실제와는 다를 수 있습니다.</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+<p>챗GPT가 국문으로 이력서를 작성했으나 YAML에 대한 이해가 없어 번역하지 말아야 하는 것도 번역하는 실수를 했다. 크게 타이핑을 요구하는 것이 아니라 일단 해당 내용응 바탕으로 <code>.qmd</code> 파일을 작성하여 쿼토에서 컴파일한다. <code>quarto-cv</code> 확장기능은 기울임 글꼴 제대로 처리하지 못하는 문제가 있어 이 문제 해결을 위해서 <code>apa-cv.csl</code> 파일을 <code>elsevier-harvard.csl</code>으로 교체하면 참고문헌에 나타나는 기울임 글꼴이 제대로 처리된다. <code>r latexString</code> 한글을 제대로 출력하기 위해서 한글 글꼴 설정을 주석을 해제하고 <code>CJKmainfont:</code> 에 적절한 한글글꼴로 지정한다.</p>
+<p>연구논문에 대한 BibTex 파일에 들어갈 내용을 챗GPT 프롬프트를 작성하여 생성한다.</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-4-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-1" role="tab" aria-controls="tabset-4-1" aria-selected="true">프롬프트</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-2" role="tab" aria-controls="tabset-4-2" aria-selected="false">실행 결과</a></li></ul>
+<div class="tab-content">
+<div id="tabset-4-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-4-1-tab">
+<p>주요 논문과 기술보고서에 들어갈 bibtex을 5개 3개 작성해줘.</p>
+</div>
+<div id="tabset-4-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-4-2-tab">
+<div class="sourceCode" id="cb6"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="at">홍길동 교수님의 가상의 주요 논문과 기술 보고서를 위한 BibTeX 항목을 각각 다섯 개와 세 개씩 작성하겠습니다. 이 항목들은 실제 문헌이나 보고서를 기반으로 한 것이 아니라 순전히 가상의 예시입니다.</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co">### 주요 논문</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="at">```bibtex</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="at">@article{Hong2024Baekje,</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="at">  title={백제의 정치적 구조와 문화적 교류에 관한 연구},</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="at">  author={홍길동},</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="at">  journal={한국고대사연구},</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="at">  volume={45},</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="at">  number={2},</span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="at">  pages={30-60},</span></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a><span class="at">  year={2024},</span></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a><span class="at">  publisher={한국고대사학회}</span></span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a><span class="at">}</span></span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a><span class="at">@book{Hong2023Silla,</span></span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a><span class="at">  title={신라의 불교 예술과 사회 변화},</span></span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a><span class="at">  author={홍길동},</span></span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a><span class="at">  year={2023},</span></span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a><span class="at">  publisher={서울대학교출판부}</span></span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a><span class="at">}</span></span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a><span class="at">@article{Hong2022Goguryeo,</span></span>
+<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a><span class="at">  title={고구려의 국경 정책과 동아시아 국제 관계},</span></span>
+<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a><span class="at">  author={홍길동},</span></span>
+<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a><span class="at">  journal={동아시아역사연구},</span></span>
+<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a><span class="at">  volume={38},</span></span>
+<span id="cb6-29"><a href="#cb6-29" aria-hidden="true" tabindex="-1"></a><span class="at">  number={1},</span></span>
+<span id="cb6-30"><a href="#cb6-30" aria-hidden="true" tabindex="-1"></a><span class="at">  pages={75-100},</span></span>
+<span id="cb6-31"><a href="#cb6-31" aria-hidden="true" tabindex="-1"></a><span class="at">  year={2022},</span></span>
+<span id="cb6-32"><a href="#cb6-32" aria-hidden="true" tabindex="-1"></a><span class="at">  publisher={동아시아역사학회}</span></span>
+<span id="cb6-33"><a href="#cb6-33" aria-hidden="true" tabindex="-1"></a><span class="at">}</span></span>
+<span id="cb6-34"><a href="#cb6-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-35"><a href="#cb6-35" aria-hidden="true" tabindex="-1"></a><span class="at">@inproceedings{Hong2024UnifiedSilla,</span></span>
+<span id="cb6-36"><a href="#cb6-36" aria-hidden="true" tabindex="-1"></a><span class="at">  title={통일 신라 시대의 사회적 통합과 중앙 집권화 과정},</span></span>
+<span id="cb6-37"><a href="#cb6-37" aria-hidden="true" tabindex="-1"></a><span class="at">  author={홍길동},</span></span>
+<span id="cb6-38"><a href="#cb6-38" aria-hidden="true" tabindex="-1"></a><span class="at">  booktitle={한국중세사학회 국제학술대회 논문집},</span></span>
+<span id="cb6-39"><a href="#cb6-39" aria-hidden="true" tabindex="-1"></a><span class="at">  year={2024},</span></span>
+<span id="cb6-40"><a href="#cb6-40" aria-hidden="true" tabindex="-1"></a><span class="at">  organization={한국중세사학회}</span></span>
+<span id="cb6-41"><a href="#cb6-41" aria-hidden="true" tabindex="-1"></a><span class="at">}</span></span>
+<span id="cb6-42"><a href="#cb6-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-43"><a href="#cb6-43" aria-hidden="true" tabindex="-1"></a><span class="at">@article{Hong2023Joseon,</span></span>
+<span id="cb6-44"><a href="#cb6-44" aria-hidden="true" tabindex="-1"></a><span class="at">  title={조선 초기의 정치적 안정성과 유교적 정치 철학},</span></span>
+<span id="cb6-45"><a href="#cb6-45" aria-hidden="true" tabindex="-1"></a><span class="at">  author={홍길동},</span></span>
+<span id="cb6-46"><a href="#cb6-46" aria-hidden="true" tabindex="-1"></a><span class="at">  journal={조선시대연구},</span></span>
+<span id="cb6-47"><a href="#cb6-47" aria-hidden="true" tabindex="-1"></a><span class="at">  volume={29},</span></span>
+<span id="cb6-48"><a href="#cb6-48" aria-hidden="true" tabindex="-1"></a><span class="at">  number={3},</span></span>
+<span id="cb6-49"><a href="#cb6-49" aria-hidden="true" tabindex="-1"></a><span class="at">  pages={45-70},</span></span>
+<span id="cb6-50"><a href="#cb6-50" aria-hidden="true" tabindex="-1"></a><span class="at">  year={2023},</span></span>
+<span id="cb6-51"><a href="#cb6-51" aria-hidden="true" tabindex="-1"></a><span class="at">  publisher={한국조선시대학회}</span></span>
+<span id="cb6-52"><a href="#cb6-52" aria-hidden="true" tabindex="-1"></a><span class="at">}</span></span>
+<span id="cb6-53"><a href="#cb6-53" aria-hidden="true" tabindex="-1"></a><span class="at">```</span></span>
+<span id="cb6-54"><a href="#cb6-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-55"><a href="#cb6-55" aria-hidden="true" tabindex="-1"></a><span class="co">### 기술 보고서</span></span>
+<span id="cb6-56"><a href="#cb6-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-57"><a href="#cb6-57" aria-hidden="true" tabindex="-1"></a><span class="at">```bibtex</span></span>
+<span id="cb6-58"><a href="#cb6-58" aria-hidden="true" tabindex="-1"></a><span class="at">@techreport{Hong2023AncientKoreanTechnology,</span></span>
+<span id="cb6-59"><a href="#cb6-59" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">title={고대 한국의 기술과 과학</span><span class="kw">:</span><span class="at"> 새로운 발견과 해석},</span></span>
+<span id="cb6-60"><a href="#cb6-60" aria-hidden="true" tabindex="-1"></a><span class="at">  author={홍길동},</span></span>
+<span id="cb6-61"><a href="#cb6-61" aria-hidden="true" tabindex="-1"></a><span class="at">  year={2023},</span></span>
+<span id="cb6-62"><a href="#cb6-62" aria-hidden="true" tabindex="-1"></a><span class="at">  institution={서울대학교 한국사학과},</span></span>
+<span id="cb6-63"><a href="#cb6-63" aria-hidden="true" tabindex="-1"></a><span class="at">  address={서울, 대한민국}</span></span>
+<span id="cb6-64"><a href="#cb6-64" aria-hidden="true" tabindex="-1"></a><span class="at">}</span></span>
+<span id="cb6-65"><a href="#cb6-65" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-66"><a href="#cb6-66" aria-hidden="true" tabindex="-1"></a><span class="at">@techreport{Hong2024ArchaeologicalMethods,</span></span>
+<span id="cb6-67"><a href="#cb6-67" aria-hidden="true" tabindex="-1"></a><span class="at">  title={한국 고고학에서의 현대적 발굴 기법},</span></span>
+<span id="cb6-68"><a href="#cb6-68" aria-hidden="true" tabindex="-1"></a><span class="at">  author={홍길동},</span></span>
+<span id="cb6-69"><a href="#cb6-69" aria-hidden="true" tabindex="-1"></a><span class="at">  year={2024},</span></span>
+<span id="cb6-70"><a href="#cb6-70" aria-hidden="true" tabindex="-1"></a><span class="at">  institution={한국고대사연구소},</span></span>
+<span id="cb6-71"><a href="#cb6-71" aria-hidden="true" tabindex="-1"></a><span class="at">  address={서울, 대한민국}</span></span>
+<span id="cb6-72"><a href="#cb6-72" aria-hidden="true" tabindex="-1"></a><span class="at">}</span></span>
+<span id="cb6-73"><a href="#cb6-73" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-74"><a href="#cb6-74" aria-hidden="true" tabindex="-1"></a><span class="at">@techreport{Hong2022CulturalExchange,</span></span>
+<span id="cb6-75"><a href="#cb6-75" aria-hidden="true" tabindex="-1"></a><span class="at">  title={동아시아 문화 교류에 대한 역사적 고찰},</span></span>
+<span id="cb6-76"><a href="#cb6-76" aria-hidden="true" tabindex="-1"></a><span class="at">  author={홍길동},</span></span>
+<span id="cb6-77"><a href="#cb6-77" aria-hidden="true" tabindex="-1"></a><span class="at">  year={2022},</span></span>
+<span id="cb6-78"><a href="#cb6-78" aria-hidden="true" tabindex="-1"></a><span class="at">  institution={한국역사연구회},</span></span>
+<span id="cb6-79"><a href="#cb6-79" aria-hidden="true" tabindex="-1"></a><span class="at">  address={서울, 대한민국}</span></span>
+<span id="cb6-80"><a href="#cb6-80" aria-hidden="true" tabindex="-1"></a><span class="at">}</span></span>
+<span id="cb6-81"><a href="#cb6-81" aria-hidden="true" tabindex="-1"></a><span class="at">```</span></span>
+<span id="cb6-82"><a href="#cb6-82" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-83"><a href="#cb6-83" aria-hidden="true" tabindex="-1"></a><span class="at">이 BibTeX 항목들은 LaTeX 문서에서 해당 논문과 보고서를 인용하기 위해 사용될 수 있으며, 가상의 인물인 홍길동 교수님의 한국 고대사 연구를 위한 예시적인 문헌들입니다. 실제 존재하는 문헌이나 보고서가 아님을 유념해 주시기 바랍니다.</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+<p>이제 참고문헌과 학국학 연구자 홍길동 박사에 대한 이력서 콘텐츠가 작성되었으니 쿼토에서 컴파일하면 홍길동 박사 이력서를 확인할 수 있다.</p>
+<div class="columns">
+<div class="column" style="width:27.5%;">
+<p><a href="#dnldts58049" onclick="fetch('data:text/plain;base64,LS0tDQp0aXRsZTogQ1YNCmZvcm1hdDoNCiAgcXVhcnRvLWN2LXBkZjogZGVmYXVsdA0KYXV0aG9yOiDtmY3quLjrj5kNCmRhdGU6IGxhc3QtbW9kaWZpZWQNCnBob25lOiAwMTAtMTIzNC01Njc4DQphZGRyZXNzOiAi7ISc7Jq47Yq567OE7IucIOq0gOyVheq1rCDqtIDslYXroZwsIOyEnOyauOuMgO2Vmeq1kCDtlZzqta3sgqztlZnqs7wiDQplbWFpbDogaG9uZy5naWxkb25nQHNudS5hYy5rcg0KZm9udHNpemU6IDExcHQNCkNKS21haW5mb250OiBOb3RvU2VyaWZLUg0KYXV0b0Zha2VTbGFudDogdHJ1ZQ0Kb3JjaWQ6IDAwMDAtMDAwMy0xMjM0LTU2NzgNCndlYjogc251LmFjLmtyDQpmb250YXdlc29tZTogeWVzDQpub2NpdGU6ICdAKicNCmJpYmxpb2dyYXBoeToNCiAgcGVlcjogZGF0YS9wZWVyX2JpYl9rb3JlYW4uYmliDQogIG90aGVyOiBkYXRhL290aGVyX2JpYl9rb3JlYW4uYmliDQp2YWxpZGF0ZS15YW1sOiBmYWxzZQ0KY3NsOiBkYXRhL2Vsc2V2aWVyLWhhcnZhcmQuY3NsDQotLS0NCg0KIyDsp4Hsl4Ug6rK966ClDQoNCioq7ISc7Jq464yA7ZWZ6rWQKioNCg0K7ZWc6rWtIOqzoOuMgOyCrCDqtZDsiJggXGhmaWxsIDIwMTAt7ZiE7J6sDQoNCuu2gOq1kOyImCBcaGZpbGwgMjAwNS0yMDEwDQoNCiMg7ZWZ66ClDQoNCu2VmOuyhOuTnCDrjIDtlZnqtZAsIOuPmeyVhOyLnOyVhCDslrjslrQg67CPIOusuOuqhe2VmSDrsJXsgqwgXGhmaWxsIDIwMDUNCg0K7ISc7Jq464yA7ZWZ6rWQLCDsl63sgqztlZkg7ZWZ7IKsIFxoZmlsbCAyMDAwDQoNCiMg7KO87JqUIOuFvOusuA0KDQo6OjogeyNyZWZzLXBlZXJ9DQo6OjoNCg0KIyDquLDsiKAg67O06rOg7IScDQoNCjo6OiB7I3JlZnMtb3RoZXJ9DQo6OjoNCg0KIyDstpTsspzsnbgNCg0K7JqU7LKtIOyLnCDsoJzqs7Ug6rCA64ql7ZWY66mwLCDso7zsmpQg7LaU7LKc7J247Jy866Gc64qUIO2VnOq1reyCrCDrsI8g64+Z7JWE7Iuc7JWEIOyXsOq1rCDrtoTslbzsnZgg7KCA66qF7ZWcIO2VmeyekOuTpOydtCDtj6ztlajrkKAg6rKD7J6F64uI64ukLg0KDQo=').then(res => res.blob()).then(blob => {
+      const downloadURL = window.URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      document.body.appendChild(a);
+      a.href = downloadURL;
+      a.download = 'gpt_resume_korean.qmd.qmd'; a.click();
+      window.URL.revokeObjectURL(downloadURL);
+      document.body.removeChild(a);
+        });"><button class="btn btn-info downloadthis  " id="dnldts58049"><i class="bi bi-download"></i> 홍길동 이력서 </button></a></p>
+</div><div class="column" style="width:5%;">
+
+</div><div class="column" style="width:67.5%;">
+<p><object data="gpt_resume_korean.pdf" type="application/pdf" width="100%" height="300px"><p>Unable to display PDF file. <a href="gpt_resume_korean.pdf">Download</a> instead.</p></object></p>
+</div>
+</div>
 
 
+</section>
 
-</main> <!-- /main -->
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-AbdulMajedRaja2020" class="csl-entry" role="listitem">
+AbdulMajedRaja. 2020. <span>“Penguins Dataset Overview - Iris
+Alternative in r Using <span class="nocase">palmerpenguins</span>.”</span> <em>Programming with
+R</em>. <a href="https://www.programmingwithr.com/penguins-dataset-overview-iris-alternative-in-r/">https://www.programmingwithr.com/penguins-dataset-overview-iris-alternative-in-r/</a>.
+</div>
+<div id="ref-edwards2000genetical" class="csl-entry" role="listitem">
+Edwards, Anthony W Fisher. 2000. <span>“The Genetical Theory of Natural
+Selection.”</span> <em>Genetics</em> 154 (4): 1419–26.
+</div>
+<div id="ref-hyde2021single" class="csl-entry" role="listitem">
+Hyde, Adam. 2021. <span>“Single Source Publishing - a Investigation of
+What Single Source Publishing Is and How This <span>‘Holy Grail’</span>
+Can Be Achieved.”</span> <a href="https://coko.foundation/articles/single-source-publishing.html">https://coko.foundation/articles/single-source-publishing.html</a>.
+</div>
+<div id="ref-penguin2020" class="csl-entry" role="listitem">
+KB, Gorman, Williams TD, and Fraser WR. 2014. <span>“Ecological Sexual
+Dimorphism and Environmental Variability Within a Community of Antarctic
+Penguins (Genus Pygoscelis).”</span> <em>PLoS ONE</em> 9(3) (e90081):
+–13. <a href="https://doi.org/10.1371/journal.pone.0090081">https://doi.org/10.1371/journal.pone.0090081</a>.
+</div>
+<div id="ref-Levy2019" class="csl-entry" role="listitem">
+Levy, Ido. 2019. <span>“Eugenics and the Ethics of Statistical
+Analysis.”</span> <em>GEORGETOWN PUBLIC POLICY REVIEW</em>. <a href="https://gppreview.com/2019/12/16/eugenics-ethics-statistical-analysis/">https://gppreview.com/2019/12/16/eugenics-ethics-statistical-analysis/</a>.
+</div>
+<div id="ref-rogowitz1996should" class="csl-entry" role="listitem">
+Rogowitz, Bernice E, and Lloyd A Treinish. 1996. <span>“Why Should
+Engineers and Scientists Be Worried about Color.”</span> <em>See URL
+Http://Www. Research. Ibm. Com/People/l/Lloydt/Color/Color. HTM</em>.
+</div>
+<div id="ref-wilkinson2011ggplot2" class="csl-entry" role="listitem">
+Wilkinson, Leland. 2011. <em>Ggplot2: Elegant Graphics for Data Analysis
+by WICKHAM, h.</em> Oxford University Press.
+</div>
+<div id="ref-zeileis2009escaping" class="csl-entry" role="listitem">
+Zeileis, Achim, Kurt Hornik, and Paul Murrell. 2009. <span>“Escaping
+RGBland: Selecting Colors for Statistical Graphics.”</span>
+<em>Computational Statistics &amp; Data Analysis</em> 53 (9): 3259–70.
+</div>
+<div id="ref-lee2024sql" class="csl-entry" role="listitem">
+이광춘. 2024. <em>챗gpt SQL</em>. 한국 R 사용자회.
+</div>
+</div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -719,12 +1227,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./gpt_writing.html" class="pagination-link" aria-label="챗GPT 쿼토">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">챗GPT 쿼토</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">챗GPT 쿼토</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./gpt_case_study.html" class="pagination-link" aria-label="국제시장과 펭귄">
-        <span class="nav-page-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">국제시장과 펭귄</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">국제시장과 펭귄</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -736,7 +1244,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/bit2r/gpt-sql/edit/main/gpt_resume.qmd" class="toc-action"><i class="bi bi-github"></i>편집</a></li><li><a href="https://github.com/bit2r/gpt-sql/issues/new" class="toc-action"><i class="bi empty"></i>이슈 보고</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/bit2r/gpt-sql/edit/main/gpt_resume.qmd" class="toc-action"><i class="bi bi-github"></i>편집</a></li><li><a href="https://github.com/bit2r/gpt-sql/issues/new" class="toc-action"><i class="bi empty"></i>이슈 보고</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>순수하게 <a href="https://quarto.org/">쿼토(Quarto)</a>로 제작되었습니다.</p>
 </div>
