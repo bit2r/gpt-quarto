@@ -445,6 +445,19 @@ ga('send', {
 </tr>
 </tbody>
 </table>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+쿼토(Quarto) 작명
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>RStudio(현 Posit) 쿼토(Quarto) 개발자들은 출판의 역사에서 의미 있는 이름을 선택하여 ’Quarto’라는 이름을 정했다. 쿼토는 전지에 8페이지 텍스트를 인쇄하여 한 면에 4페이지씩, 두 번 접어 네 장의 쪽을 만드는 책이나 팸플릿의 형식을 의미한다. 쿼토 한국어 번역에 기여한 한국 R 사용자회에서는 ’Quarto’를 콰르토, 쿼터, 쿼르토 등 다양한 표기법을 검토하였으나 쿼토가 원어민 발음에 가까고 의미를 잘 전달한다고 판단하여 <strong>쿼토</strong>로 통일하였다.</p>
+</div>
+</div>
 <section id="싱글-소싱-출판저작" class="level2" data-number="3.1">
 <h2 data-number="3.1" class="anchored" data-anchor-id="싱글-소싱-출판저작"><span class="header-section-number">3.1</span> 싱글 소싱 출판저작</h2>
 <p>데이터 과학을 비롯한 과학기술 분야 출판저작이 다른 분야와 약간 다를 수 있지만, 출판의 기본적인 접근 방식은 대체로 유사하다고 볼 수 있다. 특히, 싱글 소싱(Single Sourcing)<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> 방식을 통해 콘텐츠 저작부터 디자인, 협업, 검수, 최종 출판물 관리까지 일원화하고 자동화한다면, 중복작업과 낭비를 줄이는 동시에 재현 가능성을 높일 수 있어 과학기술 출판저작물에 있어 가장 이상적인 방법으로 평가받고 있다.</p>
@@ -1208,7 +1221,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"openEffect":"zoom","closeEffect":"zoom","selector":".lightbox","descPosition":"bottom","loop":false});
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","selector":".lightbox","descPosition":"bottom","loop":false,"openEffect":"zoom"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;

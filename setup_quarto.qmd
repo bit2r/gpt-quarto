@@ -34,6 +34,13 @@ R, 파이썬, 줄리아, Observable JS 등 다양한 프로그래밍 언어를 �
 
 : 쿼토를 구성하는 핵심 요소{#tbl-quarto-core-elements}
 
+:::{.callout-note}
+### 쿼토(Quarto) 작명
+
+RStudio(현 Posit) 쿼토(Quarto) 개발자들은 출판의 역사에서 의미 있는 이름을 선택하여 'Quarto'라는 이름을 정했다. 쿼토는 전지에 8페이지 텍스트를 인쇄하여 한 면에 4페이지씩, 두 번 접어 네 장의 쪽을 만드는 책이나 팸플릿의 형식을 의미한다. 
+쿼토 한국어 번역에 기여한 한국 R 사용자회에서는 'Quarto'를 콰르토, 쿼터, 쿼르토 등 다양한 표기법을 검토하였으나 쿼토가 원어민 발음에 가까고 의미를 잘 전달한다고 판단하여 **쿼토**로 통일하였다.
+:::
+
 ## 싱글 소싱 출판저작
 
 데이터 과학을 비롯한 과학기술 분야 출판저작이 다른 분야와 약간 다를 수 있지만, 출판의 기본적인 접근 방식은 대체로 유사하다고 볼 수 있다.
@@ -251,7 +258,7 @@ RStudio YAML 자동완성
 다음 @tbl-quarto-rmarkdown 에서 쿼토와 R 마크다운을 다양한 문서 기능별로 비교하고 있다.
 
 |       기능        | R 마크다운                                                                                                                                                                                                                                           | 쿼토(Quarto)                                                                                                                                                                                  |
-|:---------------:|:------------------------------|:-----------------------|
+|:----------------:|:-----------------------------|:-----------------------|
 |     파일형식      | [html_document](https://pkgs.rstudio.com/rmarkdown/reference/html_document.html) / [pdf_document](https://pkgs.rstudio.com/rmarkdown/reference/pdf_document.html) / [word_document](https://pkgs.rstudio.com/rmarkdown/reference/word_document.html) | [html](https://quarto.org/docs/output-formats/html-basics.html) / [pdf](https://quarto.org/docs/output-formats/pdf-basics.html) / [docx](https://quarto.org/docs/output-formats/ms-word.html) |
 |   비머(Beamer)    | [beamer_presentation](https://pkgs.rstudio.com/rmarkdown/reference/beamer_presentation.html)                                                                                                                                                         | [beamer](https://quarto.org/docs/presentations/beamer.html)                                                                                                                                   |
 |  파워포인트(PPT)  | [powerpoint_presentation](https://pkgs.rstudio.com/rmarkdown/reference/powerpoint_presentation.html)                                                                                                                                                 | [pptx](https://quarto.org/docs/presentations/powerpoint.html)                                                                                                                                 |
