@@ -4,9 +4,9 @@
     "href": "index.html",
     "title": "챗GPT 쿼토(Quarto)",
     "section": "",
-    "text": "서문\nThis is a Quarto book.\nTo learn more about Quarto books visit https://quarto.org/docs/books.\n\n1 + 1\n#&gt; [1] 2",
+    "text": "서문\n이 책은",
     "crumbs": [
-      "서문"
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>서문</span>"
     ]
   },
   {
