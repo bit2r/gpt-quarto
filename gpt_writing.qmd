@@ -147,9 +147,5 @@ graph LR
 
 
     style chatGPT fill:#f5f5f5,stroke:#333,stroke-width:3px
-
-    style Contents fill:#059fff,stroke:#333,stroke-width:1px
-    style Format fill:#fc0303,stroke:#333,stroke-width:1px
-    style Deployment fill:#03fc30,stroke:#333,stroke-width:1px
 ```
 

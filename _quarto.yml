@@ -17,7 +17,7 @@ lang: ko-KR
 book:
   title: "챗GPT 쿼토(Quarto)"
   reader-mode: true
-  subtitle: "인공지능 시대 저작 도구"
+  subtitle: "인공지능 시대 데이터 과학 저작 도구"
 
   page-footer:
     left: |

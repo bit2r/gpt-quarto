@@ -16,14 +16,48 @@ editor:
 파머 펭귄 데이터는 데이터 과학을 학습하기 위한 대표적인 데이터셋이다.
 챗GPT와 쿼토를 활용하여 영화 시놉시스를 작성하는 과정을 사례로 살펴보자.
 
+챗GPT 생성형 AI를 활용하여 성공가능성이 높은 영화 시놉시스를 작성하고,
+생성형 AI로 작성된 시놉시스를 다양한 독자를 대상으로 쿼토를 사용하여 
+독자들에게 수용성 높은 문서형식으로 제작하여 배포한다. 
+영화 시놉시스는 한번에 완성이 되는 과정이 아니고 여러번의 수정과 검토를 거쳐야 하기 때문에 독자의 피드백을 받아 다시 챗GPT 생성형 AI 프롬프트에 반영하고 전체과정을 다시 반복하여 최종적으로 시놉시스를 완성한다.
+
+```{mermaid}
+graph LR
+
+  chatGPT["챗GPT"] --> Survey
+
+  subgraph Survey["자료 조사"]
+      direction LR
+      Top10["한국영화<br>10선"] --> OpenAI["챗GPT"]
+      Top10                    --> Bard["구글 바드"]
+      Top10                    --> KOBIS["역대<br>박스오피스"]
+  end
+
+  Survey --> Synopsis
+
+  subgraph Synopsis["시놉시스"]
+      direction LR
+      Movie_A["명량"]     -.-> New_Movie["새로운 영화<br>시놉시스"]
+      Movie_B["극한직업"] --> New_Movie
+      Movie_C["신과함께"] -.-> New_Movie
+      Market["국제시장"] --> New_Movie        
+      Movie_E["..."] -.-> New_Movie
+      Penguins["펭귄 데이터"] --> New_Movie
+  end
+
+  Synopsis --> Synopsis_fin["최종<br>시놉시스"]
+
+  style chatGPT fill:#f5f5f5,stroke:#333,stroke-width:3px
+
+  style Penguins fill:#63a9eb,stroke:#333,stroke-width:3px
+  style Market fill:#63a9eb,stroke:#333,stroke-width:3px
+```
+
 
 사전 자료조사를 통해서 한국영화 10선 중 **국제시장**과 [펭귄
 데이터](https://r2bit.com/chatGPT/palmer_penguins.html)를 통해 흥행과
 동시에 현재 당면한 ESG 문제를 다룬 뭉클한 감동을 주는 영화 시놉시스
-작성을 목표로 하는 저작물을 작성해보자.
-
-챗GPT 디지털 글쓰기를 활용하여 영화 시놉시스를 작성하는 과정은 다음과
-같다.
+작성을 목표로 하는 저작물을 작성해보자. 챗GPT 디지털 글쓰기를 활용하여 영화 시놉시스를 작성하는 과정은 다음과 같다.
 
 1.  **디지털 글쓰기 단계**: 먼저, "국제시장"과 "펭귄 데이터"를 통해 얻은
     글감을 바탕으로 영화의 주제와 구조를 설정한다. 챗GPT를 사용하여 흥행
@@ -38,69 +72,22 @@ editor:
     물론 방향도 제시하여 독자가 사람이든 기계든 쉽게 출판저작물에 접근할
     수 있도록 지원한다.
 
-목표한 "영화 시놉시스"를 챗GPT 디지털 글쓰기로 작업한 결과물은 다음과
-같이 복잡한 데이터 분석부터 감동적인 내러티브까지 한 번에 작업할 수
-있다.
 
-> 영화 제목을 "펭귄의 꿈: ESG로 미래를 바꾸다"로 설정하고, 주인공은
-> 한국에서 ESG 문제에 관심을 가진 젊은 연구원으로 한다. 그는 남극의 펭귄
-> 데이터를 분석하여 지구의 미래를 예측하고, 이를 통해 사람들에게 ESG의
-> 중요성을 알리려고 한다. 영화는 그의 여정과 성장, 그리고 마침내 세계를
-> 바꾸는 뭉클한 결말로 끝난다.
+## 챗GPT 글감 작성
 
-```{mermaid}
-graph LR
-
-    chatGPT["챗GPT"] --> Survey
-
-    subgraph Survey["자료 조사"]
-        direction LR
-        Top10["한국영화<br>10선"] --> OpenAI["챗GPT"]
-        Top10                    --> Bard["구글 바드"]
-        Top10                    --> KOBIS["역대<br>박스오피스"]
-    end
-
-    Survey --> Synopsis
-
-    subgraph Synopsis["시놉시스"]
-        direction LR
-        Movie_A["명량"]     -.-> New_Movie["새로운 영화<br>시놉시스"]
-        Movie_B["극한직업"] --> New_Movie
-        Movie_C["신과함께"] -.-> New_Movie
-        Market["국제시장"] --> New_Movie        
-        Movie_E["..."] -.-> New_Movie
-        Penguins["펭귄 데이터"] --> New_Movie
-    end
-
-    Synopsis --> Synopsis_fin["최종<br>시놉시스"]
-
-    style chatGPT fill:#f5f5f5,stroke:#333,stroke-width:3px
-
-    style Survey fill:#059fff,stroke:#333,stroke-width:1px
-    style Synopsis fill:#fc0303,stroke:#333,stroke-width:1px
-    style Synopsis_fin fill:#03fc30,stroke:#333,stroke-width:1px
-
-    style Penguins fill:#03fc30,stroke:#333,stroke-width:3px
-    style Market fill:#03fc30,stroke:#333,stroke-width:3px
-    
-```
-
-### 챗GPT 글감 작성
-
-실제 데이터가 필요한 경우 영화진흥위원회에서 매년 발표하는
-"한국영화연감"의 영화별 흥행기록 [역대 박스오피스 (공식통계
-기준)](https://www.kobis.or.kr/kobis/business/stat/offc/findFormerBoxOfficeList.do)에서
-정확한 데이터를 확인할 수 있다. 챗GPT는 프롬프트에 대한 답변을 생성하는
+챗GPT는 프롬프트에 대한 답변을 생성하는
 언어 모형으로 챗GPT는 데이터베이스나 실시간 정보에 접근하지 않고 기존에
 학습된 데이터를 기반으로 답변을 제공한다. 따라서, 100% 사실은 아니지만
 빠르게 답변을 제공받아 시놉시스 제작에 활용하는 경우 대략 8\~90%
-정확도를 보이는 업무에 챗GPT 활용은 가능하다. 예를 들어, "관람객
+정확도를 보이는 업무에 챗GPT 활용도가 높다. 예를 들어, "관람객
 기준으로 가장 많은 관람객을 갖는 한국 영화 상위 5개 알려주세요"라는
 프롬프트에 대한 답변을 챗GPT로 받아 다음과 같이 마크다운 형태로 가공하여
-후속 작업에 활용한다.
+후속 작업에 활용한다. 실제 데이터가 필요한 경우 영화진흥위원회에서 매년 발표하는
+"한국영화연감"의 영화별 흥행기록 [역대 박스오피스 (공식통계
+기준)](https://www.kobis.or.kr/kobis/business/stat/offc/findFormerBoxOfficeList.do)에서 정확한 데이터를 확인할 수 있다. 
 
 ::: callout-note
-#### 프롬프트 {.unnumbered}
+### 프롬프트 {.unnumbered}
 
 > 관람객 기준으로 가장 많은 관람객을 갖는 한국 영화 상위 5개 알려주세요
 > 시놉시스는 200자 길이로 작성해주세요. 출력형식은 다음과 같은 형태로
@@ -108,7 +95,7 @@ graph LR
 >
 > \|순위\|영화명\| 연도\|감독\|배급사\|관객수\|시놉시스\|
 
-#### 출력결과 {.unnumbered}
+### 출력결과 {.unnumbered}
 
 죄송합니다, 제 정보는 2021년 9월까지로 제한되어 있어서 그 이후의
 데이터에 대한 정확한 정보를 제공할 수 없습니다. 그러나, 2021년 9월까지
@@ -123,21 +110,23 @@ graph LR
 |  5   | 어벤져스: 엔드게임 | 2019 | 안소니 루소, 조 루소 | 월트 디즈니 코리아 | 1393만 |           타노스에 의해 절반의 생명이 사라진 채 패배한 어벤져스. 남은 멤버들은 어떻게든 가족과 친구들을 다시 데려오기 위한 모든 것을 걸고 마지막 전투에 나선다.            |
 :::
 
-#### 실제 데이터
+### 실제 데이터
 
-챗GPT는 2021년 9월까지 실제 인터넷에 공개된 데이터를 바탕으로 학습한
-언어모형이다. 따라서 최신 데이터는 반영하지 못하고 과거 학습한 데이터도
+챗GPT3은 2021년 9월까지 실제 인터넷에 공개된 데이터를 바탕으로 학습한
+언어모형이다. 최근에 챗GPT4가 공개되면서 2023년 4월까지 데이터를 학습했다.
+따라서 실시간 데이터는 반영하지 못하고 과거 학습한 데이터도
 모든 과거를 대표하는 것도 아니다. 잘 작성된 프롬프트를 챗GPT 언어모형과
-결합하여 나온 텍스트는 100% 사실이 아니지만 대략적인 흐름을 파악하는
+결합하여 나온 텍스트는 100% 사실은 아니지만 대략적인 흐름을 파악하는
 데는 충분하다. 영화진흥위원에서 매년 발표하는 "한국영화연감"의 영화별
-흥행기록 [역대 박스오피스 (공식통계
-기준)](https://www.kobis.or.kr/kobis/business/stat/offc/findFormerBoxOfficeList.do)에서
-통계적으로 정확한 한국 영화 10개를 뽑아보면 대략 일치함을 확인할 수
+흥행기록 [역대 박스오피스 (공식통계 기준)](https://www.kobis.or.kr/kobis/business/stat/offc/findFormerBoxOfficeList.do)에서 통계적으로 정확한 한국 영화 10개를 뽑아보면 대략 일치함을 확인할 수
 있다. 시간이 지나면서 챗GPT에 대한 활용이 늘어나고 언어모형이 고도화되면
 이러한 통계적인 정확도는 더욱 높아질 것으로 보인다.
 
 ```{r}
 #| echo: false
+#| label: tbl-kobis
+#| tbl-cap: "KOBIS 2023년 5월기준 박스오피스" 
+
 library(tidyverse)
 library(readxl)
 library(gt)
@@ -171,42 +160,29 @@ kobis %>%
     )
   ) %>% 
   gt_theme_hangul()
-
 ```
 
-#### 펭귄 데이터셋
+### 펭귄 데이터셋
 
 미국에서 "George Floyd"가 경찰에 의해 살해되면서 촉발된 ["Black Lives
 Matter"](https://ko.wikipedia.org/wiki/Black_Lives_Matter) 운동은
 아프리카계 미국인을 향한 폭력과 제도적 인종주의에 반대하는 사회운동이다.
 한국에서도 소수 정당인 정의당에서 기사로 낼 정도로 적극적으로 나서고
-있다.[^whole_game-1]
+있다.[@jeong2020black]
 
-[^whole_game-1]: [정환봉 기자 (2020-06-15), "여당 의원 176명 중
-    누가?...차별금지법 발의할 '의인'을 구합니다", 한겨레
-    신문](http://www.hani.co.kr/arti/politics/assembly/949422.html)
+데이터 과학 분야에서, 피셔(R.A. Fisher)가 저술한 "The genetical theory of natural selection" 논문[@edwards2000genetical]에 나타난 우생학적 관점이 논란이 되고 있다. 논란의 여파로, 데이터 과학에서 널리 사용되던 첫 번째 데이터셋인 '붓꽃(iris)' 데이터에 대한 대체 움직임이 활발하게 전개되고 있다. '펭귄' 데이터를 대안으로 사용하는 제안이 많은 관심을 받고 있고, 특히 [`palmerpenguins`](https://github.com/allisonhorst/palmerpenguins) [@penguin2020] 데이터셋이 붓꽃 데이터 자리를 대신하고 있다. [@AbdulMajedRaja2020], [@Levy2019] \index{R.A. Fisher} \index{붓꽃 데이터셋} \index{펭귄 데이터셋}
 
-데이터 과학에서 최근 R.A. Fisher의 과거 저술한 "The genetical theory of
-natural selection" [@edwards2000genetical] 우생학(Eugenics) 대한 관점이
-논란이 되면서 R 데이터 과학의 첫 데이터셋으로 그가 만들었다고 하는 붓꽃
-`iris` 데이터를 대안적 데이터, 즉 펭귄 데이터로 대체하는 움직임이 활발히
-전개되고 있다.
-[`palmerpenguins`](https://github.com/allisonhorst/palmerpenguins)
-[@penguin2020] 데이터셋이 대안으로 많은 호응을 얻고 있다.
-[@AbdulMajedRaja2020], [@Levy2019] \index{R.A. Fisher}
-\index{붓꽃 데이터셋} \index{펭귄 데이터셋}
-
-#### 시놉시스 생성
+### 시놉시스 생성
 
 챗GPT를 활용하면 더욱 정교하고 창의적인 답변 및 콘텐츠를 제작할 수 있다.
 예시로 "영화의 시놉시스와 펭귄에 관한 데이터를 결합하여 새로운 영화
 시놉시스를 구성해 주세요"라는 프롬프트는 챗GPT에게 서로 다른 주제를
-통합해 새로운 작품 시놉시스 제작을 지시내린다. 챗GPT는 제공된 프롬프트를
+통합해 새로운 작품 시놉시스 제작 지시를 내린다. 챗GPT는 제공된 프롬프트를
 분석하고 이해한 뒤 새로운 시놉시스를 만들어 낸다. 특히 눈에 띄는 점은
-챗GPT가 새로운 시놉시스를 대략 10초 이내 빠르게 생성한다는 것이다.
+챗GPT가 새로운 시놉시스를 대략 5초 내로 빠르게 생성한다는 점이다.
 
 ::: callout-note
-#### 프롬프트 {.unnumbered}
+### 프롬프트 {.unnumbered}
 
 > 영화 시놉시스와 펭귄 데이터가 백틱(\`\`\`)으로 감싸져 있습니다. 다음
 > 영화 시놉시스와 데이터를 하나로 합하여 전혀 새로운 영화 시놉시스를
@@ -233,7 +209,7 @@ natural selection" [@edwards2000genetical] 우생학(Eugenics) 대한 관점이
 >
 > 새로운 영화 시놉시스: <br>
 
-#### 응답 {.unnumbered}
+### 응답 {.unnumbered}
 
 **새로운 영화: "펭귄의 꿈"**
 
@@ -386,6 +362,7 @@ natural selection" [@edwards2000genetical] 우생학(Eugenics) 대한 관점이
 살아가는 덕수의 이야기를 통해, 가족의 사랑과 헌신, 그리고 데이터의 힘에
 대해 생각하게 한다. 그리고 무엇보다, 펭귄 데이터의 미스터리를 풀어가는
 과정에서 발생하는 유머러스한 상황들은 관객들에게 웃음을 선사할 것이다.
+
 :::
 
 챗GPT와 같은 거대 언어 모형(LLM)의 등장은 기존 저작과 창조적 작업에 대한
@@ -398,13 +375,27 @@ natural selection" [@edwards2000genetical] 우생학(Eugenics) 대한 관점이
 '저작자' 개념에도 영향을 미치고 있다. 언어 모형을 활용하여 초기
 아이디어나 구조를 빠르게 형성한 뒤, 이를 기반으로 사람이 더 깊고 복잡한
 내용을 추가하거나 수정한다면, 새로운 형태의 공동 작업이나 협업모델이 될
-것이다. 기존 저작자가 단독으로 모든 것을 창조하는 것이 아니라, 다양한
+가능할 것이다. 기존 저작자가 단독으로 모든 것을 창조하는 것이 아니라, 다양한
 도구와 협업을 통해 더 풍부하고 다양한 저작물을 만들어낼 수 있는 새로운
 길이 열리고 있다.
 
-### 구조와 외양
 
-챗GPT 디지털 글쓰기에서 "구조와 외양" 단계는 문서 가독성과 효과를 극대화하는 중요한 과정이다. 이 단계에서 다음과 같은 다양한 문서요소와 기능을 활용하여 저작물의 품질을 높힌다.
+::: {.callout-note}
+### 영화 시놉시스 프롬프트 {.unnumbered}
+
+프롬프트 제작은 프로그래밍과 유사하게, 여러 번의 반복 작업을 통해 성과를 얻을 수 있다. 챗GPT 프롬프트를 다음과 같이 작성할 때 목표한 "영화 시놉시스" 완성도가 가장 만족스럽게 생성되었다. 
+
+> 영화 제목을 "펭귄의 꿈: ESG로 미래를 바꾸다"로 설정하고, 주인공은
+한국에서 ESG 문제에 관심을 가진 젊은 연구원으로 한다. 그는 남극의 펭귄
+데이터를 분석하여 지구의 미래를 예측하고, 이를 통해 사람들에게 ESG의
+중요성을 알리려고 한다. 영화는 그의 여정과 성장, 그리고 마침내 세계를
+바꾸는 뭉클한 결말로 끝난다.
+:::
+
+
+## 구조와 외양
+
+챗GPT 디지털 글쓰기에서 "구조와 외양" 단계는 문서 가독성과 효과를 극대화하는 중요한 과정이다. 이 단계에서 다음과 같은 다양한 문서요소와 기능을 활용하여 저작물의 품질을 높인다.
 
 1. **마크다운 기본 글쓰기**: 대중소 제목을 설정하여 문서의 구조를 명확히 한다. 굵은 글씨, 밑줄 등의 텍스트 서식과 단락 구분을 통해 내용을 강조하고 구조화한다.
 2. **그림 (Figure)**: 복잡한 개념이나 데이터를 시각적으로 표현하여 이해를 돕는다.
@@ -418,18 +409,22 @@ natural selection" [@edwards2000genetical] 우생학(Eugenics) 대한 관점이
 10. **다단편집 (Side-by-Side Layout)**: 여러 내용을 병렬로 배열하여 비교와 분석을 용이하게 한다.
 11. **색상과 시각적 효과**: 다양한 색상과 시각적 효과를 활용하여 문서의 외관을 더욱 풍부하고 독특하게 만든다.
 
-저작물 품질을 높일 수 있는 다양한 문서요소와 기능을 모두 외우고 즉시 활용하는 것은 과거 전문적으로 인쇄출판 종사자들만이 할 수 있었던 작업이지만 챗GPT 자연어 처리 능력을 활용하여 쉽고 빠르게 적작물에 적용할 수 있는 시대가 열렸다.
+과거에는 전문적인 인쇄출판 종사자들만이 문서의 다양한 요소와 기능을 외우고 활용해 저작물 품질을 높일 수 있었지만, 이제 챗GPT 자연어 처리 능력을 이용해 누구나 쉽고 빠르게 저작물에 적용할 수 있게 되었고, 쿼토는 복잡한 문서 처리 기술을 단순화하여 저자가 창작에만 집중할 수 있도록 지원함으로써, 문서 작업의 효율성과 품질을 대폭 향상시키는 중추적인 역할을 담당한다.
 
 ![문서 구조와 문학적 프로그래밍 (쿼토)](images/layout_format.jpg)
 
 표, 그래프는 문서 구조와 문학적 프로그래밍의 중요성을 시각적으로 전달하는 중요한 매체다. R 언어 `tidyverse`, `palmerpenguins`, `gt` 패키지를 활용해 펭귄 데이터를 처리하고, 펭귄 종별 암수 개체수를 표로 정리하고 '펭귄종별 암수 개체수'라는 제목과 함께 데이터 출처를 표기하는 각주까지 표에 꼼꼼히 표기했다. 그래프 예시는 R 언어 `ggplot2` 패키지를 사용해 펭귄 물갈퀴 길이와 체질량 사이의 관계를 그래프로 표현하고 있다. 향후 표와 그래프는 영화 시놉시스 저작물의 중요한 문서 구성요소 중 하나로 활용될 것이다.
 
-:::{layout=[[1,1]]}
+::::: {.columns}
 
+::: {.column width="47.5%"}
 ### 표 {.unnumbered}
 
 ```{r}
 #| echo: false
+#| label: tbl-penguins-pkg
+#| tbl-cap: 문서 구성요소 표 사례
+
 library(tidyverse); library(palmerpenguins); library(gt)
 
 penguins %>% 
@@ -446,13 +441,19 @@ penguins %>%
              female = "암컷",
              male = "수컷") |> 
   tab_header(title = "펭귄종별 암수 개체수") |>
-  tab_caption(caption = md("문서 구성요소 **표** 사례")) |> 
   tab_footnote(
     footnote = "데이터 출처: palmerpenguins 패키지",
     locations = cells_title(groups = "title")
   )  
 ```
 
+:::
+
+::: {.column width="5%"}
+
+:::
+
+::: {.column width="47.5%"}
 ### 그래프 {.unnumbered}
 
 ```{r}
@@ -481,16 +482,19 @@ mass_flipper <- penguins %>% drop_na() %>%
 mass_flipper
 ```
 
-![](images/whole_game_penguins.png)
+![문서 구성요소 그래프 사례](images/whole_game_penguins.png){#fig-penguins-ggplot}
+
 
 :::
+:::::
 
-### 배포와 공유
+
+## 배포와 공유
 
 디지털 글쓰기 저작물을 완성한 후 다음 단계로 인쇄출판과 배포를 고려해야 한다. 과거와 달리 현재는 물론 앞으로 다양한 문서 저작물을 하나의 프로젝트로 엮어 전자출판을 할 수 있는 플랫폼이 필요하다. [`Quarto Pub`](https://quartopub.com/)은 이러한 목적으로 개발되어 저자가 작성한 다양한 문서저작물을 원클릭으로 전자출판할 수 있다. 물론 [`Quarto Pub`](https://quartopub.com/) 외에도 [netlify](https://netlify.com/), [GitHub Pages](https://github.com/), [RStudio Connect](https://www.rstudio.com/products/connect/) 등 다른 출판배포 플랫폼도 존재한다. 플랫폼들은 각각의 특성과 장점을 가지고 있어, 
 저자의 필요와 목적에 따라 적절한 플랫폼을 선택하여 디지털 글쓰기 저작물을 더 넓은 독자에게 전달할 수 있다.
 
-최종 출판저작물 인쇄출판과 배포를 마친 후에는 저작물 공유도 고려할 수 있다. 저작물을 공유함으로써 저자는 자신의 저작물을 다른 사람들과 공유하고, 다른 사람들은 저작물을 활용할 수 있다. 저작물을 공유하는 방법은 다양하지만, 가장 쉬운 방법은 저작물을 공유할 수 있는 플랫폼에 저작물을 공유 저작권 표기를 함께 게시하는 것이다. 소스코드를 공유하면 다른 사람들이 문서 작성에 사용된 소스코드를 쉽게 이해하고, 문서 작성에 사용된 소스코드를 활용해 자신만의 향상된 저작물을 공유함으로써 글쓰기 문화를 확산시킬 수 있다.
+챗GPT에서 생성된 콘텐츠는 쿼토를 통해 다양한 형태의 문서로 전환되어 각각의 목적과 대상에 맞게 효과적으로 활용될 수 있다. HTML 형식 웹페이지는 불특정 다수 블로그 광고에 적합하며, PDF 문서는 상급자에게 제출하는 보고서로 유용한 반면, PPT 형태는 발표용 슬라이드로 활용될 수 있다.
 
 ```{mermaid}
 graph LR
@@ -518,7 +522,6 @@ graph LR
     style Ad fill:#059fff,stroke:#333,stroke-width:1px
     style Report fill:#059fff,stroke:#333,stroke-width:1px
     style Slide fill:#059fff,stroke:#333,stroke-width:1px
-    style Deploy fill:#03fc30,stroke:#333,stroke-width:3px
 ```
 
 챗GPT 디지털 글쓰기를 통해 저작한 문서는 다양한 형태로 배포될 수 있다. "국제시장과 남극 펭귄"을 모티브로 삼아 제작한 다양한 영화 시놉시스 저작물은 다음과 같이 공개되어 있다.
@@ -529,4 +532,7 @@ graph LR
 
 문서 저작을 넘어 다양한 형식으로 문서를 배포하면, 독자나 이용자가 자신에게 가장 편리한 방식으로 문서를 열람할 수 있다. 따라서 챗GPT 디지털 글쓰기는 단순히 텍스트를 생성하는 것을 넘어, 다양한 배포 채널과 형식을 통해 더 넓은 독자층에게 접근할 수 있는 장점도 크다.
 
-![웹, 문서, PPT 슬라이드 배포](images/chatGPT_quarto_deploy.jpg)
+![웹, 문서, PPT 슬라이드 배포](images/chatGPT_quarto_deploy.jpg){#fig-penguin-deploy}
+
+최종 출판저작물 인쇄출판과 배포를 마친 후에는 저작물 공유도 고려할 수 있다. 저작물을 공유함으로써 저자는 자신의 저작물을 다른 사람들과 공유하고, 다른 사람들은 저작권에 맞춰 저작물을 활용할 수 있다. 저작물을 공유하는 방법은 다양하지만, 가장 쉬운 방법은 저작물을 공유할 수 있는 플랫폼에 저작물을 공유 저작권 표기를 함께 게시하는 것이다. 소스코드를 공유하면 다른 사람들이 문서 작성에 사용된 소스코드를 쉽게 이해하고, 문서 작성에 사용된 소스코드를 활용해 자신만의 향상된 저작물을 공유함으로써 새로운 형태 글쓰기 문화를 확산시킬 수 있다.
+
