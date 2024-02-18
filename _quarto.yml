@@ -27,8 +27,8 @@ book:
 
   cover-image: images/book_cover.jpg
   favicon: images/logo.png
-  site-url: https://r2bit.com/gpt-sql/
-  repo-url: https://github.com/bit2r/gpt-sql/
+  site-url: https://r2bit.com/gpt-quarto/
+  repo-url: https://github.com/bit2r/gpt-quarto/
   repo-branch: main
   repo-actions: [edit, issue]
 
