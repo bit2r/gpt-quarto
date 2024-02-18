@@ -77,6 +77,7 @@ book:
       - dw_website.qmd          # Blog 추가
       - dw_slideshow.qmd        # OK
       - dw_dashboard.qmd        # flexdashboard 변환
+      - dw_params.qmd           # flexdashboard 변환      
 
     - part: "챗GPT"
       chapters:
@@ -114,7 +115,8 @@ engine: knitr
 
 filters:
    - lightbox
-   - parse-latex   
+   - parse-latex
+   - include-code-files   
 lightbox: auto
 
 knitr:

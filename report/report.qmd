@@ -1,0 +1,132 @@
+---
+title: "대통령 선거 득표 보고서"
+subtitle: "경기도 "
+author:
+    name: 이광춘
+    affilates: 한국 R 사용자회
+date: "`r Sys.Date()`"
+format:
+  pdf:
+    latex-engine: xelatex   
+    keep-tex: false          
+CJKmainfont: NanumGothic
+knitr:
+  opts_chunk:
+    message: false
+    echo: false
+    warning: false
+    collapse: true
+    code-overflow: code-overflow
+    comment: "#>"
+    R.options:
+      knitr.graphics.auto_pdf: true    
+---
+
+
+# 대선 득표 데이터 {#election-dataset}
+
+엑셀로 정리된 제19대 대통령선거 데이터를 가져와서 데이터 시각화와 표제작을 위한 적절한 형태로 정제 작업을 거친다. 
+
+```{r}
+#| label: ingest-dataset
+
+# 팩키지 가져오기
+library(tidyverse)
+library(readxl)
+library(gt)
+
+# 데이터 가져오기
+dat <- read_excel(str_glue("{here::here()}/data/@@20170510-19대선-투표구별개표자료(공개용).xlsx", sheet="19대선", skip=1))
+
+# 칼럼명 정리
+colnames_df <- c("시도명", "구시군명", "읍면동명", "투표구명", "선거인수", "투표수", 
+                 "더불어민주당\r\n문재인", "자유한국당\r\n홍준표", "국민의당\r\n안철수",
+                 "바른정당\r\n유승민", "정의당\r\n심상정", "새누리당\r\n조원진",
+                 "경제애국당\r\n오영국", "국민대통합당\r\n장성민", "늘푸른한국당\r\n이재오",
+                 "민중연합당\r\n김선동", "한국국민당\r\n이경희", "홍익당\r\n윤홍식",
+                 "무소속\r\n김민찬", "계", "무효투표수", "기권수")
+
+dat <- dat %>% 
+  set_names(colnames_df) %>% 
+    rename(문재인=`더불어민주당\r\n문재인`, 
+           홍준표=`자유한국당\r\n홍준표`, 
+           안철수=`국민의당\r\n안철수`, 
+           유승민=`바른정당\r\n유승민`, 
+           심상정=`정의당\r\n심상정`) %>% 
+  dplyr::select(`시도명`, `구시군명`, `읍면동명`, `투표구명`, `선거인수`, `투표수`, 
+                 `문재인`, `홍준표`, `안철수`, 
+                 `유승민`, `심상정`)
+
+# 행 정리
+df <- dat %>% 
+  mutate(구시군명 = ifelse(시도명 == "전국", "합계", 구시군명)) %>% 
+  mutate(읍면동명 = ifelse(구시군명 == "합계", "합계", 읍면동명)) %>% 
+  mutate(투표구명 = ifelse(is.na(투표구명), 읍면동명, 투표구명)) %>% 
+  filter(시도명 != "전국",
+            구시군명 != "합계",
+            읍면동명 !="합계",
+            투표구명 != "합계") |> 
+  filter(!str_detect(구시군명, "잘못 투입")) |> 
+  mutate(across(문재인:심상정, as.numeric))
+
+# df %>% filter(시도명 == "경기도") %>% slice_head(n = 10)
+```
+
+
+# 경기도 득표수 {#election-dataset-gg}
+
+주요 대선 후보인 5명을 추려 대통령 후보 득표수를 표로 계산을 한다.
+
+```{r}
+#| label: basic-analysis
+
+df %>% 
+  filter(시도명 == "경기도") %>% 
+  group_by(구시군명) |> 
+  summarise(
+         문재인 = sum(문재인),
+         홍준표 = sum(홍준표),
+         안철수 = sum(안철수),
+         유승민 = sum(유승민),
+         심상정 = sum(심상정)) %>% 
+  slice_head(n = 10) |>
+  gt() |> 
+  fmt_number(columns = 문재인:심상정, decimals = 0) |> 
+  cols_align(columns = 구시군명, align = "center")
+
+```
+
+
+# 득표수 시각화 {#election-dataset-gg-viz}
+
+후보별 득표수를 시각화한다.
+
+```{r}
+#| label: basic-analysis-viz
+#| fig-height: 7
+
+library(sysfonts)
+library(showtext)
+
+showtext_auto()
+
+df %>% 
+  filter(`시도명` == "경기도") %>% 
+  group_by(`구시군명`) %>% 
+  summarise(`문재인` = sum(`문재인`),
+         `홍준표` = sum(`홍준표`),
+         `안철수` = sum(`안철수`),
+         `유승민` = sum(`유승민`),
+         `심상정` = sum(`심상정`)) %>% 
+  pivot_longer(cols = -`구시군명`, names_to = "후보", values_to = "득표수") |> 
+  mutate(`후보` = factor(`후보`, levels=c("문재인", "홍준표", "안철수", "유승민", "심상정"))) %>% 
+  mutate(`구시군명` = fct_reorder(`구시군명`, 득표수)) %>% 
+  ggplot(aes(x=`구시군명`, y=`득표수`, fill=`후보`)) +
+    geom_col() + 
+    coord_flip() +
+    theme_bw() +
+    theme(legend.position = c(0.85, 0.25)) +
+    scale_y_continuous(labels=scales::comma) +
+    labs(x="", title=paste0("경기도", " 주요 후보별 득표수"))
+```
+
