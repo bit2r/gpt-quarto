@@ -88,6 +88,35 @@ ga('send', {
 </script>
 <script defer="" data-domain="r2bit.com/gpt-quarto" src="https://plausible.io/js/script.js"></script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -249,26 +278,26 @@ ga('send', {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./dw_book.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">쿼토 책</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./dw_website.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">웹사이트와 블로그</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">웹사이트와 블로그</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./dw_slideshow.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">PPT 슬라이드</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">PPT 슬라이드</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./dw_dashboard.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">대쉬보드</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">대쉬보드</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./dw_book.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">쿼토 책</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -373,7 +402,10 @@ ga('send', {
 <p><a href="images/book_cover.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="images/book_cover.jpg" title="챗GPT 쿼토(Quarto)" class="quarto-cover-image img-fluid"></a></p>
 <section id="서문" class="level1 unnumbered">
 <h1 class="unnumbered">서문</h1>
-<p>이 책은</p>
+<p>책 첫장을 펼쳐주신 여러분, 과학기술 문서 작성의 새로운 지평, <strong>쿼토(Quarto)</strong>의 세계로 오신 것을 환영합니다. (전동)타자기가 주류를 이루던 세상에서 워드프로세서(아래한글, MS 워드)는 혁신적인 변화를 가져왔다. 정적 문서 저작에 최적화된 아래한글 및 MS 워드를 대신하여 웹출판과 과학기술 저작에 강점이 있는 R마크다운이 등장하면서 과학기술 문서 작성 패러다임을 크게 변화시켰다. 이후 챗GPT 생성형 AI가 등장하면서 생산성이 비약적으로 높아지게 되었으며 차세대 R마크다운 쿼토가 꾸준히 버전을 높이면서 챗GPT와 쿼토의 조합은 과학기술 저작의 새로운 지평을 열고 있다. 이제 한국어도 문제없이 지원하게 되면서 우리곁에 성큼 다가왔다.</p>
+<p>아래한글과 마이크로소프트 워드를 대신한 저작도구로 논문 제작에 탁월한 <span class="math inline">\(\LaTeX\)</span>, R 언어로 다양한 데이터 과학 문서 저작의 신기원을 개척한 R마크다운(RMarkdown)에 대해 들어봤을 것이다. R마크다운이 R언어만 지원했다면, 쿼토는 R 언어에서만 누릴 수 있는 다양한 기능들을 엔진을 통해 파이썬, 줄리아, 자바스크립트(OJS), SQL 등 거의 모든 프로그래밍 언어로 확대했다. 10년이 넘는 기간 동안 R마크다운이 탐색한 과학기술 문서 저작의 경험을 바탕으로 더욱 편리하고 강력한 문서 저작 환경을 제공한다.</p>
+<p>이 책은 과학기술 저작 위기와 디지털 전환시대 글쓰기가 왜 쉽지 않은지에 대한 원인을 살펴보고, 재현가능한 과학기술 저작을 위한 쿼토 환경 설정부터 다루며 시작한다. 문서를 구성하는 다양한 구성요소로 표, 그래프, 수식, 다이어그램 등을 먼저 살펴보고, 서로다른 특징을 갖는 5가지 프로그래밍 언어와 문서언어 마크다운을 별도 장으로 떼서 심도 깊이 살펴본다. 다음으로 마크다운과 프로그래밍 언어, 다양한 문서 구성요소를 통해 콘텐츠가 준비되면 시각적으로 미려하고 전달력을 높일 수 있는 색상과 글꼴 등 외양에 대한 기본 내용을 다룬다. 이어서 가장 제작 난이도가 낮은 블로그/웹사이트, 슬라이드쇼(PPT), 전자책, 대시보드, 변수 설정 문서(Parameterized document) 순으로 제작하는 방법을 다루고, 마지막으로 챗GPT 생성형 AI와 쿼토를 조합하여 간단한 이력서 작성과 복잡한 영화시나리오 작성하는 방법을 소개하며 마무리한다.</p>
+<p>“챗GPT 쿼토”는 단순히 기술적 사용법을 가르치는 것을 넘어, 데이터 과학과 챗GPT AI 융합이 저작과 사고체계에 어떤 영향을 미칠 수 있는지에 대한 깊은 통찰도 함께 제공한다. 여러분이 이 책을 통해 쿼토와 챗GPT 힘을 이해하고, 자신만의 창의적이고 혁신적인 방법으로 활용하는 데 도움이 되기를 기대한다.</p>
 
 
 </section>
@@ -789,7 +821,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"openEffect":"zoom","loop":false,"closeEffect":"zoom","descPosition":"bottom","selector":".lightbox"});
+<script>var lightboxQuarto = GLightbox({"loop":false,"closeEffect":"zoom","selector":".lightbox","descPosition":"bottom","openEffect":"zoom"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;
