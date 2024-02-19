@@ -11,6 +11,9 @@ editor:
 구현할 수 있었다. 시간이 흐르면서 손가락과 물감은 연필로, 동굴 벽화는
 종이로 대체되었고 이렇게 진화된 도구들 덕분에 저자들은 이제 자신의
 의도와 생각을 종이 위에 문자와 그림으로 자유롭게 표현할 수 있게 되었다.
+[@carpentries2016author] [^authoring]
+
+[^authoring]: 카펜트리 [현대 과학기술 저작(Modern Scientific Authoring)](https://swcarpentry.github.io/modern-scientific-authoring/)을 번역한 것입니다.
 
 처음으로 인쇄기가 등장했을 때 자신의 의도를 문자와 그림으로 자유롭게
 표현하는 자유는 크게 변화하지 않았다. 목판을 이용한 인쇄 방식이었지만,
@@ -36,6 +39,8 @@ editor:
 
 [^markdown_mess-1]: [플로터(plotter)](https://ko.wikipedia.org/wiki/플로터):
     그래프나 도형, CAD, 도면 등을 출력하기 위한 대형 출력장치다.
+
+![세가지 출판 언어 패러다임](images/language_paradigm.png){#fig-lang-paradigm}
 
 ## 세가지 패러다임
 

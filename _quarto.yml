@@ -70,7 +70,7 @@ book:
       - dw_book.qmd             # OK
       - dw_params.qmd           # flexdashboard 변환      
 
-    - part: "챗GPT"
+    - part: "챗GPT 활용"
       chapters:
       - gpt_writing.qmd    #
       - gpt_resume.qmd        #
