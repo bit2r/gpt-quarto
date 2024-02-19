@@ -353,7 +353,11 @@ window.Quarto = {
     <h2 id="toc-title">목차</h2>
    
   <ul>
-  <li><a href="#서문" id="toc-서문" class="nav-link active" data-scroll-target="#서문">서문</a></li>
+  <li><a href="#서문" id="toc-서문" class="nav-link active" data-scroll-target="#서문">서문</a>
+  <ul class="collapse">
+  <li><a href="#책의-구성" id="toc-책의-구성" class="nav-link" data-scroll-target="#책의-구성">책의 구성</a></li>
+  <li><a href="#감사의-글" id="toc-감사의-글" class="nav-link" data-scroll-target="#감사의-글">감사의 글</a></li>
+  </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/bit2r/gpt-quarto/edit/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>편집</a></li><li><a href="https://github.com/bit2r/gpt-quarto/issues/new" class="toc-action"><i class="bi empty"></i>이슈 보고</a></li></ul></div></nav>
     </div>
@@ -363,7 +367,7 @@ window.Quarto = {
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">챗GPT 쿼토(Quarto)</h1>
-<p class="subtitle lead">인공지능 시대 저작 도구</p>
+<p class="subtitle lead">인공지능 시대 데이터 과학 저작 도구</p>
 </div>
 
 
@@ -387,7 +391,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">공개</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">2024년 02월 18일</p>
+      <p class="date">2024년 02월 19일</p>
     </div>
   </div>
   
@@ -406,8 +410,27 @@ window.Quarto = {
 <p>아래한글과 마이크로소프트 워드를 대신한 저작도구로 논문 제작에 탁월한 <span class="math inline">\(\LaTeX\)</span>, R 언어로 다양한 데이터 과학 문서 저작의 신기원을 개척한 R마크다운(RMarkdown)에 대해 들어봤을 것이다. R마크다운이 R언어만 지원했다면, 쿼토는 R 언어에서만 누릴 수 있는 다양한 기능들을 엔진을 통해 파이썬, 줄리아, 자바스크립트(OJS), SQL 등 거의 모든 프로그래밍 언어로 확대했다. 10년이 넘는 기간 동안 R마크다운이 탐색한 과학기술 문서 저작의 경험을 바탕으로 더욱 편리하고 강력한 문서 저작 환경을 제공한다.</p>
 <p>이 책은 과학기술 저작 위기와 디지털 전환시대 글쓰기가 왜 쉽지 않은지에 대한 원인을 살펴보고, 재현가능한 과학기술 저작을 위한 쿼토 환경 설정부터 다루며 시작한다. 문서를 구성하는 다양한 구성요소로 표, 그래프, 수식, 다이어그램 등을 먼저 살펴보고, 서로다른 특징을 갖는 5가지 프로그래밍 언어와 문서언어 마크다운을 별도 장으로 떼서 심도 깊이 살펴본다. 다음으로 마크다운과 프로그래밍 언어, 다양한 문서 구성요소를 통해 콘텐츠가 준비되면 시각적으로 미려하고 전달력을 높일 수 있는 색상과 글꼴 등 외양에 대한 기본 내용을 다룬다. 이어서 가장 제작 난이도가 낮은 블로그/웹사이트, 슬라이드쇼(PPT), 전자책, 대시보드, 변수 설정 문서(Parameterized document) 순으로 제작하는 방법을 다루고, 마지막으로 챗GPT 생성형 AI와 쿼토를 조합하여 간단한 이력서 작성과 복잡한 영화시나리오 작성하는 방법을 소개하며 마무리한다.</p>
 <p>“챗GPT 쿼토”는 단순히 기술적 사용법을 가르치는 것을 넘어, 데이터 과학과 챗GPT AI 융합이 저작과 사고체계에 어떤 영향을 미칠 수 있는지에 대한 깊은 통찰도 함께 제공한다. 여러분이 이 책을 통해 쿼토와 챗GPT 힘을 이해하고, 자신만의 창의적이고 혁신적인 방법으로 활용하는 데 도움이 되기를 기대한다.</p>
+<section id="책의-구성" class="level2">
+<h2 class="anchored" data-anchor-id="책의-구성">책의 구성</h2>
+<p>“챗GPT 쿼토”는 쿼토와 챗GPT를 활용한 문서화 기법과 응용 방법을 단계별로 소개하는 총 5부로 구성된 책이다. 쿼토의 등장 배경부터 환경 설정, 문서의 기본 요소, 템플릿과 테마, 저작물 제작, 챗GPT 활용법까지 다양한 주제를 다룬다.</p>
+<p>1부 ’시작을 위한 준비’에서는 기술적 기초를 다지는 내용으로, 재현 가능한 환경 구축, 심각한 현재 디지털 저작환경, 쿼토 소개, 쿼토 설치방법을 설명한다. 쿼토를 사용해 문서를 작성하고데 필요한 기본 지식을 제공한다.</p>
+<p>2부 ’기본요소’는 문서를 구성하는 주요 구성요소를 다루고 있다. 문서 구성요소에는 서식, 표, 그래프, 그림, 다이어그램, 수식, 프로그래밍 코드 등이 포함된다. 서식으로 마크다운 문법, 프로그래밍 코드로 과학기술에서 활용도가 높은 대표적인 프로그래밍 언어인 R, 파이썬, SQL, 자바스크립트(OJS), 줄리아를 포함했다. 다양한 문서를 작성할 때 필요한 핵심 요소들을 쿼토를 이용해 다양하고 풍성하게 콘텐츠를 제작하게 된다.</p>
+<p>3부 ’템플릿과 테마’는 문서의 시각적 요소에 초점을 두어 콘텐츠를 미려하게 만들고 전달력을 높인다. 문서의 기본이 되는 글꼴과 색상에 대해 자세히 다루고 그래프와 표를 상징하는 그래프 문법과 표 문법을 구현한 <code>ggplot</code>, <code>gt</code> 패키지를 통해 사용자 경험을 향상시키는 방법을 제시하고 있다.</p>
+<p>4부 ’저작물’에서는 앞서 제작한 문서화 구성요소와 템플릿과 테마를 통해 제작된 콘텐츠를 쿼토를 사용해 웹사이트/블로그, 슬라이드쇼(PPT), 대시보드, 책 등 다양한 매체로 제작하는 방법을 다룬다. 또한 변수 설정 문서(Parameterized Document)를 통해 입력값에 따라 달리 출력되는 문서 자동화 방법도 소개한다.</p>
+<p>마지막 5부에서 챗GPT 생성형 AI 기술을 활용한 창의적 글쓰기, 이력서 작성, 영화 시높시스 작성 등 실제 응용 사례를 다룬다. 챗GPT 생성형 AI 기술과 콘텐츠 제작에 강점이 있는 쿼토를 결합하여 다양한 문서 저작물을 효육적으로 제작하는 방법을 제시한다. 구인업체 인사담당자에게 눈길을 끌 수 있는 깔끔하면서 인상적인 이력서지만 이력서 제작자 입장에서 다양한 구인업체에 맞춰 유지보수에 강점이 있는 국영문 이력서 제작방법과 함께 챗GPT 생성형 AI 기술을 적극 활용한 영화 시놉시스 제작부터 최종 산출물에 이르는 과정을 단계별로 설명한다.</p>
+</section>
+<section id="감사의-글" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="감사의-글">감사의 글</h2>
+<p>이 책이 탄생할 수 있도록 도움을 주신 여러분께 깊은 감사의 마음을 표합니다.</p>
+<p>기술적인 부분에서 깊은 통찰력을 제공해주신 한국 R 사용자회 유충현 회장님, 챗GPT가 국내에 소개된 후 가장 먼저 챗GPT를 세밀하게 조명할 수 있도록 교육 기회를 주신 경기도의회 문승호, 이자형, 장한별 의원님, 광명시 박승원 시장님, 김종업 센터장님, 김포시 김규식 부시장님, 지방행정연구원 최인수, 전대욱, 김필, 주희진 박사님, 경기도청 AI빅데이터 산업과 이수재 과장님, 원금동, 최정환, 윤여찬 팀장님, 나이스 디앤알 박정우 대표님, 남영민 본부장님, 서울교육청 조희연 교육감님, 양신호 원장님, 김선자 장학관님, 디플래닉스 김범진 전대표님, 장석호 대표님, 이용빈님, 경기도 경제과학진흥원 임문영 상임이사님, 건국대 미래지식교육원 이영범 원장님, 세종대 곽창규, 김현정 교수님께 감사드립니다.</p>
+<p>이 책의 공개와 출판이 가능했던 것은 한국 R 사용자회의 지원 덕분입니다. 행정사법인 광화문 최순영 대표님, 한채민 과장님, 법무법인 평안 김형주 변호사님, 법률사무소 하우림 정병운 변호사님, 홍성학 감사님, 김호성님, 김현철님, 형환희님, 명지대 박순만 교수님, Macao Polytechnic University 김송규 교수님, 한국텍학회 김강수님, 배달의 민족 이봉호님, 홍익대 이현진 교수님, 경상국립대 백원희 교수님, 세종과학예술영재학교 김종헌, 곽승철 선생님께 진심으로 감사드립니다.</p>
+<p>한국 R 사용자회 활동에서 소프트웨어 카펜트리의 영향은 결코 무시할 수 없습니다. 소프트웨어 카펜트리를 설립한 Greg Wilson 박사님, 카펜트리 재단의 Kari Jordan 박사님, AsiaR 커뮤니티를 이끌고 계신 Janani Ravi 박사님, 서울 R 미트업에서 발표해주신 제빈 웨스트 교수님, 그리고 곽수영, 장연훈, 나성호, 안영찬, 박남호, 공병규, 김용우님께 감사의 말씀을 드립니다.</p>
+<p>지적 자극을 주시고 더 넓은 세상을 보게 해주신 국가교육위원회 이배용 위원장님, 정대화 상임위원님, 김수환 전문위원님, 삼정 KPMG 장지수 부대표님, 박문구 전무님, 가톨릭 의대 문건웅 교수님, 성균관대 최재성 교수님, 국무조정실 장명헌 사무관님, 제주대 안도현 교수님, 명지대 박순만 교수님, 엘릭스 이희정 전대표님, 서울대 고길곤 교수님, 한밭대 이원일 교수님에게 깊은 감사의 말씀을 전합니다.</p>
+<p>공공정책분야의 빅데이터 분석 활성화를 격려해주신 노웅래 의원님, 김병욱 의원님, 성남시의회 조정식 의원님, 환경보전협회 남광우 전 상근부회장님, 공공의창 최정묵 박사님, 조원씨앤아이 김대진 대표님, 그리고 이 책 출판에 관심이 많으신 오마이뉴스의 김지현 기자님, 나눔국민운동본부 위정희 이사님에게 감사의 인사를 전합니다.</p>
+<p>이 책이 출간되는데 있어 이들 모든 분들의 도움 없이는 어려웠을 것입니다. 그동안의 관심과 지원에 깊은 감사를 드리며, 이 책이 데이터 과학의 발전과 독자들에게 도움이 될 수 있기를 바라는 마음으로 마무리하겠습니다.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -821,7 +844,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"loop":false,"closeEffect":"zoom","selector":".lightbox","descPosition":"bottom","openEffect":"zoom"});
+<script>var lightboxQuarto = GLightbox({"selector":".lightbox","loop":false,"closeEffect":"zoom","descPosition":"bottom","openEffect":"zoom"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;

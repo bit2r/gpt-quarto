@@ -5,7 +5,7 @@
 <meta name="generator" content="quarto-1.5.9">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <meta name="author" content="이광춘">
-<title>챗GPT 쿼토(Quarto) – 9&nbsp; 쿼토 책</title>
+<title>챗GPT 쿼토(Quarto) – 15&nbsp; 쿼토 책</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -61,8 +61,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./dw_website.html" rel="next">
-<link href="./theme_gt.html" rel="prev">
+<link href="./dw_params.html" rel="next">
+<link href="./dw_dashboard.html" rel="prev">
 <link href="./images/logo.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -147,7 +147,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./dw_book.html">저작물</a></li><li class="breadcrumb-item"><a href="./dw_book.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">쿼토 책</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./dw_website.html">저작물</a></li><li class="breadcrumb-item"><a href="./dw_book.html"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">쿼토 책</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -160,7 +160,7 @@ window.Quarto = {
     <div class="sidebar-title mb-0 py-0">
       <a href="./">챗GPT 쿼토(Quarto)</a> 
         <div class="sidebar-tools-main">
-    <a href="https://github.com/bit2r/gpt-sql/" title="소스 코드" class="quarto-navigation-tool px-1" aria-label="소스 코드"><i class="bi bi-github"></i></a>
+    <a href="https://github.com/bit2r/gpt-quarto/" title="소스 코드" class="quarto-navigation-tool px-1" aria-label="소스 코드"><i class="bi bi-github"></i></a>
   <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="리더 모드 전환">
   <div class="quarto-reader-toggle-btn">
   <i class="bi"></i>
@@ -193,14 +193,26 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./setup_reproducible.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">과학기술 위기</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./setup_markdown_mess.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">심각한 현재 상황</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./setup_quarto.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">쿼토(Quarto)</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">쿼토(Quarto)</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./setup.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">저작환경 설정</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">저작환경 설정</span></span></a>
   </div>
 </li>
       </ul>
@@ -217,13 +229,19 @@ window.Quarto = {
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./part_components.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">문서 구성요소</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">문서 구성요소</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./part_markdown.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">마크다운</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">마크다운</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./part_code.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">코드</span></span></a>
   </div>
 </li>
       </ul>
@@ -240,25 +258,25 @@ window.Quarto = {
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./theme_fonts.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">글꼴</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">글꼴</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./theme_colors.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">색상</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">색상</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./theme_ggplot.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">그래프 테마</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">그래프 테마</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./theme_gt.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">표 테마</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">표 테마</span></span></a>
   </div>
 </li>
       </ul>
@@ -274,26 +292,61 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./dw_book.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">쿼토 책</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./dw_website.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">웹사이트와 블로그</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">웹사이트와 블로그</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./dw_slideshow.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">PPT 슬라이드</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">PPT 슬라이드</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./dw_dashboard.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">대쉬보드</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">대쉬보드</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./dw_book.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">쿼토 책</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./dw_params.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">변수 설정 문서</span></span></a>
+  </div>
+</li>
+      </ul>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true">
+ <span class="menu-text">챗GPT</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true" aria-label="토글 섹션">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./gpt_writing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">챗GPT 쿼토</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./gpt_resume.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">이력서</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./gpt_case_study.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">국제시장과 펭귄</span></span></a>
   </div>
 </li>
       </ul>
@@ -312,22 +365,22 @@ window.Quarto = {
         <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">목차</h2>
    
   <ul>
-<li><a href="#%EC%A0%84%EC%9E%90%EC%B1%85-%ED%97%AC%EB%A1%9C-%EC%9B%94%EB%93%9C" id="toc-전자책-헬로-월드" class="nav-link active" data-scroll-target="#%EC%A0%84%EC%9E%90%EC%B1%85-%ED%97%AC%EB%A1%9C-%EC%9B%94%EB%93%9C"><span class="header-section-number">9.1</span> 전자책 헬로 월드</a></li>
+<li><a href="#%EC%A0%84%EC%9E%90%EC%B1%85-%ED%97%AC%EB%A1%9C-%EC%9B%94%EB%93%9C" id="toc-전자책-헬로-월드" class="nav-link active" data-scroll-target="#%EC%A0%84%EC%9E%90%EC%B1%85-%ED%97%AC%EB%A1%9C-%EC%9B%94%EB%93%9C"><span class="header-section-number">15.1</span> 전자책 헬로 월드</a></li>
   <li>
-<a href="#%ED%95%9C%EA%B5%AD-%EB%8F%84%EC%84%9C-%EC%B6%9C%ED%8C%90" id="toc-한국-도서-출판" class="nav-link" data-scroll-target="#%ED%95%9C%EA%B5%AD-%EB%8F%84%EC%84%9C-%EC%B6%9C%ED%8C%90"><span class="header-section-number">9.2</span> 한국 도서 출판</a>
+<a href="#%ED%95%9C%EA%B5%AD-%EB%8F%84%EC%84%9C-%EC%B6%9C%ED%8C%90" id="toc-한국-도서-출판" class="nav-link" data-scroll-target="#%ED%95%9C%EA%B5%AD-%EB%8F%84%EC%84%9C-%EC%B6%9C%ED%8C%90"><span class="header-section-number">15.2</span> 한국 도서 출판</a>
   <ul class="collapse">
-<li><a href="#%ED%99%98%EA%B2%BD%EC%84%A4%EC%A0%95" id="toc-환경설정" class="nav-link" data-scroll-target="#%ED%99%98%EA%B2%BD%EC%84%A4%EC%A0%95"><span class="header-section-number">9.2.1</span> 환경설정</a></li>
-  <li><a href="#bitpublish-%EC%86%8C%EA%B0%9C" id="toc-bitpublish-소개" class="nav-link" data-scroll-target="#bitpublish-%EC%86%8C%EA%B0%9C"><span class="header-section-number">9.2.2</span> bitPublish 소개</a></li>
-  <li><a href="#bitpublish-%ED%8C%81" id="toc-bitpublish-팁" class="nav-link" data-scroll-target="#bitpublish-%ED%8C%81"><span class="header-section-number">9.2.3</span> bitPublish 팁</a></li>
-  <li><a href="#%EC%B0%BE%EC%95%84%EB%B3%B4%EA%B8%B0-%EB%93%B1%EB%A1%9D" id="toc-찾아보기-등록" class="nav-link" data-scroll-target="#%EC%B0%BE%EC%95%84%EB%B3%B4%EA%B8%B0-%EB%93%B1%EB%A1%9D"><span class="header-section-number">9.2.4</span> 찾아보기 등록</a></li>
+<li><a href="#%ED%99%98%EA%B2%BD%EC%84%A4%EC%A0%95" id="toc-환경설정" class="nav-link" data-scroll-target="#%ED%99%98%EA%B2%BD%EC%84%A4%EC%A0%95"><span class="header-section-number">15.2.1</span> 환경설정</a></li>
+  <li><a href="#bitpublish-%EC%86%8C%EA%B0%9C" id="toc-bitpublish-소개" class="nav-link" data-scroll-target="#bitpublish-%EC%86%8C%EA%B0%9C"><span class="header-section-number">15.2.2</span> bitPublish 소개</a></li>
+  <li><a href="#bitpublish-%ED%8C%81" id="toc-bitpublish-팁" class="nav-link" data-scroll-target="#bitpublish-%ED%8C%81"><span class="header-section-number">15.2.3</span> bitPublish 팁</a></li>
+  <li><a href="#%EC%B0%BE%EC%95%84%EB%B3%B4%EA%B8%B0-%EB%93%B1%EB%A1%9D" id="toc-찾아보기-등록" class="nav-link" data-scroll-target="#%EC%B0%BE%EC%95%84%EB%B3%B4%EA%B8%B0-%EB%93%B1%EB%A1%9D"><span class="header-section-number">15.2.4</span> 찾아보기 등록</a></li>
   </ul>
 </li>
-  </ul><div class="toc-actions"><ul><li><a href="https://github.com/bit2r/gpt-sql/edit/main/dw_book.qmd" class="toc-action"><i class="bi bi-github"></i>편집</a></li><li><a href="https://github.com/bit2r/gpt-sql/issues/new" class="toc-action"><i class="bi empty"></i>이슈 보고</a></li></ul></div></nav>
+  </ul><div class="toc-actions"><ul><li><a href="https://github.com/bit2r/gpt-quarto/edit/main/dw_book.qmd" class="toc-action"><i class="bi bi-github"></i>편집</a></li><li><a href="https://github.com/bit2r/gpt-quarto/issues/new" class="toc-action"><i class="bi empty"></i>이슈 보고</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content page-columns page-full" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./dw_book.html">저작물</a></li><li class="breadcrumb-item"><a href="./dw_book.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">쿼토 책</span></a></li></ol></nav><div class="quarto-title">
+<main class="content page-columns page-full" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./dw_website.html">저작물</a></li><li class="breadcrumb-item"><a href="./dw_book.html"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">쿼토 책</span></a></li></ol></nav><div class="quarto-title">
 <h1 class="title">
-<span class="chapter-number">9</span>&nbsp; <span class="chapter-title">쿼토 책</span>
+<span class="chapter-number">15</span>&nbsp; <span class="chapter-title">쿼토 책</span>
 </h1>
 </div>
 
@@ -343,34 +396,34 @@ window.Quarto = {
 
 
 </header><p>쿼토로 블로그 토막글, 보고서, 논문 등 다양한 형식 문서를 작성했다면 좀더 구조화되고 통합된 형태의 책 집필 및 도서출판에 대한 관심이 생길 수 있다. R마크다운 <code>bookdown</code>은 특히 복잡한 구조를 갖는 책이나 긴 문서를 효과적으로 작성하고 관리하기 위한 도구로 개발된 패키지다. R마크다운 <code>bookdown</code>을 활용하여 작성된 개별 문서들을 하나의 큰 프로젝트나 책으로 연결할 수 있으며, 교차 참조, 자동 번호 매기기, 목차 생성 등의 기능이 제공된다. 쿼토는 R마크다운 <code>bookdown</code> 기능을 별도 패키지 설치없이 내장하고 있으며 R 뿐만 아니라 파이썬, 줄리아 등 언어를 지원하며, HTML, PDF, ePub 등 다양한 출력 형식으로 책을 생성할 수 있다.</p>
-<section id="전자책-헬로-월드" class="level2" data-number="9.1"><h2 data-number="9.1" class="anchored" data-anchor-id="전자책-헬로-월드">
-<span class="header-section-number">9.1</span> 전자책 헬로 월드</h2>
+<section id="전자책-헬로-월드" class="level2" data-number="15.1"><h2 data-number="15.1" class="anchored" data-anchor-id="전자책-헬로-월드">
+<span class="header-section-number">15.1</span> 전자책 헬로 월드</h2>
 <p>쿼토에서 책을 저작하는 가장 간단한 방법은 RStudio 에서 우측 상단 ‘New Project’ 메뉴를 통해 ‘New Directory’ -&gt; ’Quarto Book’을 선택하고 책을 집필할 디렉토리를 지정한다. 버전제어를 위해 <code>Create a git repository</code>를 선택할 것을 추천한다. 책 저작환경도 버전제어로 관리하고자 할 경우 <code>Use renv with this project</code>를 선택하고 소스 코드 방식으로 저작하고자 하면 <code>Use visual markdown editor</code>를 선택하지 않고 워드나 아래한글처럼 위지윅 방식 편집기를 사용하고자 하면 <code>Use visual markdown editor</code>를 선택한다. 그리고 나서 <code>Create Project</code>를 클릭하면 쿼토 책 저작환경이 구축된다.</p>
 <p>책 저작을 위한 기본환경이 구축되어 있기 때문에 <code>_quarto.yml</code> 파일에 책 저작에 대한 모든 내용이 담겨져 있기 때문에 이를 유심히 살펴보면 대략 문서 구조를 이해할 수 있다. 그리고 나서 상단 <code>Render</code> 버튼을 클릭하면 웹사이트에 책이 생성된다.</p>
 <div id="fig-quarto-project-start" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-quarto-project-start-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="images/quarto_book_project.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="그림&nbsp;9.1: 쿼토 책(Book) 저작과정"><img src="images/quarto_book_project.jpg" class="img-fluid figure-img"></a>
+<a href="images/quarto_book_project.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="그림&nbsp;15.1: 쿼토 책(Book) 저작과정"><img src="images/quarto_book_project.jpg" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-quarto-project-start-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-그림&nbsp;9.1: 쿼토 책(Book) 저작과정
+그림&nbsp;15.1: 쿼토 책(Book) 저작과정
 </figcaption></figure>
 </div>
-</section><section id="한국-도서-출판" class="level2 page-columns page-full" data-number="9.2"><h2 data-number="9.2" class="anchored" data-anchor-id="한국-도서-출판">
-<span class="header-section-number">9.2</span> 한국 도서 출판</h2>
+</section><section id="한국-도서-출판" class="level2 page-columns page-full" data-number="15.2"><h2 data-number="15.2" class="anchored" data-anchor-id="한국-도서-출판">
+<span class="header-section-number">15.2</span> 한국 도서 출판</h2>
 <p>디지털 저작 언어 마크다운(markdown)를 기반으로 하면 증거기반 데이터 과학 글쓰기를 R과 파이썬으로 표, 그래프 등 다양한 문서 요소 통합이 수월하다. 이 과정에서 인공지능 챗GPT를 활용한 글쓰기도 다른 저작도구와 비교해도 무리없이 통합적인 글쓰기가 가능해져 저작 속도도 빨라지고, 품질은 높아지며, 대폭 비용은 절감된다.</p>
 <p>도서 집필이 마무리된 후 디지털 출판 과정이 이어진다. 쿼토 책(book)이 영문 도서출판에 초점이 맞춰져 있어 한국 R 사용자회가 개발한 <a href="https://github.com/bit2r/bitPublish">bitPublish</a> 도구를 활용하면 한글 출판에 필요한 모든 요소를 대부분 담고 있어 출판 시간을 크게 단축시킬 수 있다.</p>
 <p>최종적으로 <a href="https://github.com/bit2r/bitPublish">bitPublish</a>를 이용하여 작품을 컴파일시키면 출판 준비가 완료된 <code>.pdf</code> 파일을 즉시 얻을 수 있어, 전자책 형태로, 또는 인쇄를 통한 대량 출판으로도 즉시 활용이 가능하다.</p>
 <p>한국 R 사용자회는 쿼토로 “챗GPT 유닉스 쉘”을 2023년 7월 출판함으로써 가능성을 확인했고 이어서 축적된 경험을 바탕으로 두번째 “챗GPT SQL” 책을 2024년 2월 출판했다.</p>
 <div id="fig-quarto-book" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-quarto-book-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="images/bitPublish_workflow.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="그림&nbsp;9.2: 쿼토 도서 출판 작업흐름"><img src="images/bitPublish_workflow.jpg" class="img-fluid figure-img"></a>
+<a href="images/bitPublish_workflow.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="그림&nbsp;15.2: 쿼토 도서 출판 작업흐름"><img src="images/bitPublish_workflow.jpg" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-quarto-book-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-그림&nbsp;9.2: 쿼토 도서 출판 작업흐름
+그림&nbsp;15.2: 쿼토 도서 출판 작업흐름
 </figcaption></figure>
 </div>
-<section id="환경설정" class="level3" data-number="9.2.1"><h3 data-number="9.2.1" class="anchored" data-anchor-id="환경설정">
-<span class="header-section-number">9.2.1</span> 환경설정</h3>
+<section id="환경설정" class="level3" data-number="15.2.1"><h3 data-number="15.2.1" class="anchored" data-anchor-id="환경설정">
+<span class="header-section-number">15.2.1</span> 환경설정</h3>
 <p>최신 <a href="https://quarto.org/docs/get-started/">Download Quarto CLI</a>를 운영체제에 맞춰 설치하고, 도서출판을 위해서 <code>PDF</code> 엔진이 필요하기 때문에, <a href="https://yihui.org/tinytex/"><code>tinytex</code></a>를 설치한다. <code>tinytex</code>는 TeX Live를 기반으로 하는 경량의 크로스 플랫폼, 휴대성, 유지 관리가 용이한 라텍 배포판이다.</p>
 <p><a href="https://github.com/bit2r/bitPublish">bitPublish</a>는 <code>quarto use template bit2r/bitPublish</code> 명령어를 통해서 설치되면 <code>_extensions/bit2r</code> 디렉토리 아래 쿼토 확장프로그램으로 설치되어 디지털 도서출판을 위한 모든 사항이 준비된다.</p>
 <pre><code>$ quarto use template bit2r/bitPublish
@@ -604,8 +657,8 @@ $ quarto render --to bitPublish-pdf  # pdf 파일 생성하기</code></pre>
 </div>
 </div>
 </div>
-</section></section><section id="bitpublish-소개" class="level3 page-columns page-full" data-number="9.2.2"><h3 data-number="9.2.2" class="anchored" data-anchor-id="bitpublish-소개">
-<span class="header-section-number">9.2.2</span> <a href="https://github.com/bit2r/bitPublish">bitPublish</a> 소개</h3>
+</section></section><section id="bitpublish-소개" class="level3 page-columns page-full" data-number="15.2.2"><h3 data-number="15.2.2" class="anchored" data-anchor-id="bitpublish-소개">
+<span class="header-section-number">15.2.2</span> <a href="https://github.com/bit2r/bitPublish">bitPublish</a> 소개</h3>
 <p><code>Quarto</code>를 이용해서 책으로 만들 수 있는 포맷에는 <code>HTML</code>, <code>PDF</code>, <code>MS Word</code>, <code>EPUB</code>, <code>AsciiDoc</code>이 있습니다. <code>bitPublish</code>는 이중에서 <code>PDF</code> 포맷의 책을 생성합니다.</p>
 <p>현재 bitPublish의 기본 설정에서는 <span class="math inline">\(4\times6\)</span> 배판 판형을, 갖는 영어를 포함한 라틴계열 언어와 한국어, 중국어를 혼용한 책을 저작할 수 있습니다.</p>
 <section id="용지규격" class="level4"><h4 class="anchored" data-anchor-id="용지규격">용지규격</h4>
@@ -687,7 +740,7 @@ $ quarto render --to bitPublish-pdf  # pdf 파일 생성하기</code></pre>
 </div>
 <div id="tbl-bitpublish-fonts" class="quarto-float anchored">
 <figure class="quarto-float quarto-float-tbl figure"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-bitpublish-fonts-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-표&nbsp;9.1: bitPublish 글꼴
+표&nbsp;15.1: bitPublish 글꼴
 </figcaption><div aria-describedby="tbl-bitpublish-fonts-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="table">
 <colgroup>
@@ -762,7 +815,7 @@ $ quarto render --to bitPublish-pdf  # pdf 파일 생성하기</code></pre>
 </div>
 </figure>
 </div>
-<p><a href="#tbl-bitpublish-fonts" class="quarto-xref">표&nbsp;<span>9.1</span></a> 는 각 분류별로 추천하는 글꼴을 요약하여 나타낸다. 이를 참고하여 문서나 프로젝트에 적합한 글꼴을 선택할 수 있다.</p>
+<p><a href="#tbl-bitpublish-fonts" class="quarto-xref">표&nbsp;<span>15.1</span></a> 는 각 분류별로 추천하는 글꼴을 요약하여 나타낸다. 이를 참고하여 문서나 프로젝트에 적합한 글꼴을 선택할 수 있다.</p>
 <p>모든 글꼴은 <code>_extensions/bit2r/bitPublish/fonts</code> 디렉토리에 위치하기 때문에 별도 설치할 필요 없지만, 이미 설치된 글꼴도 중복으로 위치하게 된다. <code>KoPubWorld바탕체_Pro</code>와 <code>KoPubWorld돋움체_Pro</code> 글꼴를 사용하기 위해서는 <code>한국출판인회의</code> 홈페이지인 <a href="https://forms.gle/aQU7b3EoaF53zMKaA" class="uri">https://forms.gle/aQU7b3EoaF53zMKaA</a>에 사용자 정보를 등록 후 무료로 사용하실 수 있다. <a href="https://www.kopus.org/wp-content/uploads/2021/04/%EC%84%9C%EC%B2%B4_%EB%9D%BC%EC%9D%B4%EC%84%BC%EC%8A%A4.pdf">서체 라이선스 문서</a> 일독을 권장한다.</p>
 </section><section id="머리글-바닥글" class="level4"><h4 class="anchored" data-anchor-id="머리글-바닥글">머리글 바닥글</h4>
 <p><code>머리글</code>(<code>header</code>)과 <code>바닥글</code>(<code>footer</code>)는 <code>fancyhdr</code> 패키지를 사용해서 정의되었다.</p>
@@ -998,8 +1051,8 @@ $ quarto render --to bitPublish-pdf  # pdf 파일 생성하기</code></pre>
 <span id="cb27-14"><a href="#cb27-14" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">Exercise</span>}</span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>만약에 연습문제를 별도의 페이지에서 시각하고 싶다면 <code>\\clearpage</code> 명령어를 사용하면 됩니다.</p>
-</section></section><section id="bitpublish-팁" class="level3" data-number="9.2.3"><h3 data-number="9.2.3" class="anchored" data-anchor-id="bitpublish-팁">
-<span class="header-section-number">9.2.3</span> bitPublish 팁</h3>
+</section></section><section id="bitpublish-팁" class="level3" data-number="15.2.3"><h3 data-number="15.2.3" class="anchored" data-anchor-id="bitpublish-팁">
+<span class="header-section-number">15.2.3</span> bitPublish 팁</h3>
 <p><code>bitPublish</code>는 <code>LaTeX</code> 기반 솔루션이기 때문에, 좀더 유용하게 사용하기 위해서 <code>LaTeX</code>에 대한 지식과 R 환경에서는 <code>knitr</code> 패키지를 이용해서 쿼토 문서를 마크다운 문서로 랜더링하기 때문에 <code>knitr</code> 청크에 대한 지식도 필요하다. 하지만, 너무 걱정할 필요는 없다. 심도있는 지식이 아닌, 기초적인 지식으로도 충분하게 책을 저작할 수 있고 챗GPT에 책 저작과 관련된 요청사항을 프롬프트로 전달하면 대부분의 문제는 도움을 받을 수 있다. 필자가 책을 저작할 때 자주 사용되는 <code>LaTeX</code> 팁을 공유한다.</p>
 <section id="이미지-삽입" class="level4"><h4 class="anchored" data-anchor-id="이미지-삽입">이미지 삽입</h4>
 <p>이미지 파일을 삽입하기 위해서는 다음처럼 <code>knitr</code> 패키지의 <code>include_graphics()</code> 함수를 사용하는 것을 추천한다. 이 때, <code>knitr</code> 청크는 다음과 같이 사용한다.</p>
@@ -1096,15 +1149,15 @@ fig-pos과 label
 <div class="cell-output-display">
 <div id="fig-hist" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-hist-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="dw_book_files/figure-html/fig-hist-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-12" title="그림&nbsp;9.3: 정규분포 히스토그램"><img src="dw_book_files/figure-html/fig-hist-1.png" class="img-fluid figure-img" style="width:70.0%"></a>
+<a href="dw_book_files/figure-html/fig-hist-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-12" title="그림&nbsp;15.3: 정규분포 히스토그램"><img src="dw_book_files/figure-html/fig-hist-1.png" class="img-fluid figure-img" style="width:70.0%"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-hist-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-그림&nbsp;9.3: 정규분포 히스토그램
+그림&nbsp;15.3: 정규분포 히스토그램
 </figcaption></figure>
 </div>
 </div>
 </div>
-<p>그런데 R 플롯에 한글이 포함될 경우에 그림 <a href="#fig-hist" class="quarto-xref">그림&nbsp;<span>9.3</span></a> 처럼 한글이 출력되지 않는 문제가 발생된다.</p>
+<p>그런데 R 플롯에 한글이 포함될 경우에 그림 <a href="#fig-hist" class="quarto-xref">그림&nbsp;<span>15.3</span></a> 처럼 한글이 출력되지 않는 문제가 발생된다.</p>
 <p>한글을 정상적으로 출력하기 위해서는 문서의 맨 앞에 다음 스크립트를 추가한다.</p>
 <div class="sourceCode" id="cb30"><pre class="sourceCode md code-with-copy"><code class="sourceCode markdown"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r init, include=FALSE}</span></span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="in">source(here::here("_extensions", "bit2r", "bitPublish", "init_environments.R"))</span></span>
@@ -1126,10 +1179,10 @@ fig-pos과 label
 <div class="cell-output-display">
 <div id="fig-hist2" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-hist2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="dw_book_files/figure-html/fig-hist2-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-13" title="그림&nbsp;9.4: 정규분포 히스토그램"><img src="dw_book_files/figure-html/fig-hist2-1.png" class="img-fluid figure-img" style="width:70.0%"></a>
+<a href="dw_book_files/figure-html/fig-hist2-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-13" title="그림&nbsp;15.4: 정규분포 히스토그램"><img src="dw_book_files/figure-html/fig-hist2-1.png" class="img-fluid figure-img" style="width:70.0%"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-hist2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-그림&nbsp;9.4: 정규분포 히스토그램
+그림&nbsp;15.4: 정규분포 히스토그램
 </figcaption></figure>
 </div>
 </div>
@@ -1158,10 +1211,10 @@ fig-pos과 label
 <div class="cell-output-display">
 <div id="fig-hist3" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-hist3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="dw_book_files/figure-html/fig-hist3-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-14" title="그림&nbsp;9.5: ggplot2 정규분포 히스토그램"><img src="dw_book_files/figure-html/fig-hist3-1.png" class="img-fluid figure-img" style="width:70.0%"></a>
+<a href="dw_book_files/figure-html/fig-hist3-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-14" title="그림&nbsp;15.5: ggplot2 정규분포 히스토그램"><img src="dw_book_files/figure-html/fig-hist3-1.png" class="img-fluid figure-img" style="width:70.0%"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-hist3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-그림&nbsp;9.5: ggplot2 정규분포 히스토그램
+그림&nbsp;15.5: ggplot2 정규분포 히스토그램
 </figcaption></figure>
 </div>
 </div>
@@ -1278,8 +1331,8 @@ fig-pos과 label
 <p>누적상대도수: <span class="math display">\[
 C F_k=\sum_{i=1}^k f_i^R=\frac{F_k}{n}
 \]</span></p>
-</section></section><section id="찾아보기-등록" class="level3" data-number="9.2.4"><h3 data-number="9.2.4" class="anchored" data-anchor-id="찾아보기-등록">
-<span class="header-section-number">9.2.4</span> 찾아보기 등록</h3>
+</section></section><section id="찾아보기-등록" class="level3" data-number="15.2.4"><h3 data-number="15.2.4" class="anchored" data-anchor-id="찾아보기-등록">
+<span class="header-section-number">15.2.4</span> 찾아보기 등록</h3>
 <p>LaTeX의 찾아보기(인덱싱) 기능을 활성화하기 위해, 이미 bitPublish는 프리엠블에 다음처럼 <code>makeidx</code> 패키지를 로드하고 있다.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb38"><pre class="sourceCode tex code-with-copy"><code class="sourceCode latex"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">makeidx</span>}</span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1398,10 +1451,10 @@ C F_k=\sum_{i=1}^k f_i^R=\frac{F_k}{n}
 <p>상기 <code>YAML</code> 헤더에서 <code>chapters</code> 옵션은 책에 장을 추가하는데 ‘references.qmd’ 파일이 참고문헌 등록에 해당하는 파일이다. 이 설정은 참고문헌을 나타내는 시작 페이지의 제목을 “참고문헌”으로 표기한다.</p>
 <div id="fig-bitPublish-reference" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-bitPublish-reference-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="images/quarto_reference.png" class="lightbox" data-gallery="quarto-lightbox-gallery-17" title="그림&nbsp;9.6: bitPublish 참고문헌"><img src="images/quarto_reference.png" class="img-fluid figure-img"></a>
+<a href="images/quarto_reference.png" class="lightbox" data-gallery="quarto-lightbox-gallery-17" title="그림&nbsp;15.6: bitPublish 참고문헌"><img src="images/quarto_reference.png" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-bitPublish-reference-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-그림&nbsp;9.6: <code>bitPublish</code> 참고문헌
+그림&nbsp;15.6: <code>bitPublish</code> 참고문헌
 </figcaption></figure>
 </div>
 <p>그리고 참고문헌에 등록하기 위해서는 <code>YAML</code> 헤더에 <code>bibliography</code> 옵션에 기술된 ‘references.bib’ 파일에 참고문헌을 정의한다.</p>
@@ -1430,10 +1483,10 @@ C F_k=\sum_{i=1}^k f_i^R=\frac{F_k}{n}
 <div class="sourceCode" id="cb52"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Quarto</span> 홈페이지의 Quarto에 대한 소개<span class="pp">[</span><span class="ss">@quarto</span><span class="pp">]</span>는 다음과 같다. 이러쿵 저러쿵...</span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div id="fig-bitPublish-quote" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-bitPublish-quote-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="images/quarto_quote.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-18" title="그림&nbsp;9.7: bitPublish 인용"><img src="images/quarto_quote.jpg" class="img-fluid figure-img"></a>
+<a href="images/quarto_quote.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-18" title="그림&nbsp;15.7: bitPublish 인용"><img src="images/quarto_quote.jpg" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-bitPublish-quote-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-그림&nbsp;9.7: <code>bitPublish</code> 인용
+그림&nbsp;15.7: <code>bitPublish</code> 인용
 </figcaption></figure>
 </div>
 <div class="sourceCode" id="cb53"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="ex">\begin{shadequote}{}</span></span>
@@ -1833,13 +1886,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script><nav class="page-navigation"><div class="nav-page nav-page-previous">
-      <a href="./theme_gt.html" class="pagination-link" aria-label="표 테마">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">표 테마</span></span>
+      <a href="./dw_dashboard.html" class="pagination-link" aria-label="대쉬보드">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">대쉬보드</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./dw_website.html" class="pagination-link" aria-label="웹사이트와 블로그">
-        <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">웹사이트와 블로그</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./dw_params.html" class="pagination-link" aria-label="변수 설정 문서">
+        <span class="nav-page-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">변수 설정 문서</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -1850,12 +1903,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/bit2r/gpt-sql/edit/main/dw_book.qmd" class="toc-action"><i class="bi bi-github"></i>편집</a></li><li><a href="https://github.com/bit2r/gpt-sql/issues/new" class="toc-action"><i class="bi empty"></i>이슈 보고</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/bit2r/gpt-quarto/edit/main/dw_book.qmd" class="toc-action"><i class="bi bi-github"></i>편집</a></li><li><a href="https://github.com/bit2r/gpt-quarto/issues/new" class="toc-action"><i class="bi empty"></i>이슈 보고</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>순수하게 <a href="https://quarto.org/">쿼토(Quarto)</a>로 제작되었습니다.</p>
 </div>
   </div>
-</footer><script>var lightboxQuarto = GLightbox({"openEffect":"zoom","descPosition":"bottom","closeEffect":"zoom","loop":false,"selector":".lightbox"});
+</footer><script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","selector":".lightbox","descPosition":"bottom","loop":false,"openEffect":"zoom"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;

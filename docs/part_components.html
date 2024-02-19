@@ -5,7 +5,7 @@
 <meta name="generator" content="quarto-1.5.9">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <meta name="author" content="이광춘">
-<title>챗GPT 쿼토(Quarto) – 3&nbsp; 문서 구성요소</title>
+<title>챗GPT 쿼토(Quarto) – 5&nbsp; 문서 구성요소</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -113,7 +113,8 @@ ga('send', {
   hitType: 'pageview',
   'anonymizeIp': true,
 });
-</script><script defer="" data-domain="r2bit.com/gpt-quarto" src="https://plausible.io/js/script.js"></script><script src="site_libs/quarto-diagram/mermaid.min.js"></script><script src="site_libs/quarto-diagram/mermaid-init.js"></script><link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
+</script><script defer="" data-domain="r2bit.com/gpt-quarto" src="https://plausible.io/js/script.js"></script><meta name="mermaid-theme" content="neutral">
+<script src="site_libs/quarto-diagram/mermaid.min.js"></script><script src="site_libs/quarto-diagram/mermaid-init.js"></script><link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script><script type="text/javascript">
 const typesetMath = (el) => {
   if (window.MathJax) {
@@ -148,7 +149,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part_components.html">기본요소</a></li><li class="breadcrumb-item"><a href="./part_components.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">문서 구성요소</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part_components.html">기본요소</a></li><li class="breadcrumb-item"><a href="./part_components.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">문서 구성요소</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -161,7 +162,7 @@ window.Quarto = {
     <div class="sidebar-title mb-0 py-0">
       <a href="./">챗GPT 쿼토(Quarto)</a> 
         <div class="sidebar-tools-main">
-    <a href="https://github.com/bit2r/gpt-sql/" title="소스 코드" class="quarto-navigation-tool px-1" aria-label="소스 코드"><i class="bi bi-github"></i></a>
+    <a href="https://github.com/bit2r/gpt-quarto/" title="소스 코드" class="quarto-navigation-tool px-1" aria-label="소스 코드"><i class="bi bi-github"></i></a>
   <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="리더 모드 전환">
   <div class="quarto-reader-toggle-btn">
   <i class="bi"></i>
@@ -194,14 +195,26 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./setup_reproducible.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">과학기술 위기</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./setup_markdown_mess.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">심각한 현재 상황</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./setup_quarto.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">쿼토(Quarto)</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">쿼토(Quarto)</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./setup.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">저작환경 설정</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">저작환경 설정</span></span></a>
   </div>
 </li>
       </ul>
@@ -218,13 +231,19 @@ window.Quarto = {
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./part_components.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">문서 구성요소</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">문서 구성요소</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./part_markdown.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">마크다운</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">마크다운</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./part_code.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">코드</span></span></a>
   </div>
 </li>
       </ul>
@@ -241,25 +260,25 @@ window.Quarto = {
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./theme_fonts.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">글꼴</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">글꼴</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./theme_colors.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">색상</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">색상</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./theme_ggplot.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">그래프 테마</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">그래프 테마</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./theme_gt.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">표 테마</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">표 테마</span></span></a>
   </div>
 </li>
       </ul>
@@ -275,26 +294,61 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./dw_book.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">쿼토 책</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./dw_website.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">웹사이트와 블로그</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">웹사이트와 블로그</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./dw_slideshow.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">PPT 슬라이드</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">PPT 슬라이드</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./dw_dashboard.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">대쉬보드</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">대쉬보드</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./dw_book.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">쿼토 책</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./dw_params.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">변수 설정 문서</span></span></a>
+  </div>
+</li>
+      </ul>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true">
+ <span class="menu-text">챗GPT</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true" aria-label="토글 섹션">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./gpt_writing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">챗GPT 쿼토</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./gpt_resume.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">이력서</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./gpt_case_study.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">국제시장과 펭귄</span></span></a>
   </div>
 </li>
       </ul>
@@ -313,22 +367,22 @@ window.Quarto = {
         <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">목차</h2>
    
   <ul>
-<li><a href="#%EC%9B%B9-%EB%AC%B8%EC%84%9C" id="toc-웹-문서" class="nav-link active" data-scroll-target="#%EC%9B%B9-%EB%AC%B8%EC%84%9C"><span class="header-section-number">3.1</span> 웹 문서</a></li>
-  <li><a href="#%EA%B7%B8%EB%A6%BC" id="toc-그림" class="nav-link" data-scroll-target="#%EA%B7%B8%EB%A6%BC"><span class="header-section-number">3.2</span> 그림</a></li>
-  <li><a href="#%EC%A7%80%EB%8F%84" id="toc-지도" class="nav-link" data-scroll-target="#%EC%A7%80%EB%8F%84"><span class="header-section-number">3.3</span> 지도</a></li>
-  <li><a href="#%EA%B7%B8%EB%9E%98%ED%94%84" id="toc-그래프" class="nav-link" data-scroll-target="#%EA%B7%B8%EB%9E%98%ED%94%84"><span class="header-section-number">3.4</span> 그래프</a></li>
+<li><a href="#%EC%9B%B9-%EB%AC%B8%EC%84%9C" id="toc-웹-문서" class="nav-link active" data-scroll-target="#%EC%9B%B9-%EB%AC%B8%EC%84%9C"><span class="header-section-number">5.1</span> 웹 문서</a></li>
+  <li><a href="#%EA%B7%B8%EB%A6%BC" id="toc-그림" class="nav-link" data-scroll-target="#%EA%B7%B8%EB%A6%BC"><span class="header-section-number">5.2</span> 그림</a></li>
+  <li><a href="#%EC%A7%80%EB%8F%84" id="toc-지도" class="nav-link" data-scroll-target="#%EC%A7%80%EB%8F%84"><span class="header-section-number">5.3</span> 지도</a></li>
+  <li><a href="#%EA%B7%B8%EB%9E%98%ED%94%84" id="toc-그래프" class="nav-link" data-scroll-target="#%EA%B7%B8%EB%9E%98%ED%94%84"><span class="header-section-number">5.4</span> 그래프</a></li>
   <li>
-<a href="#%ED%91%9C" id="toc-표" class="nav-link" data-scroll-target="#%ED%91%9C"><span class="header-section-number">3.5</span> 표</a>
+<a href="#%ED%91%9C" id="toc-표" class="nav-link" data-scroll-target="#%ED%91%9C"><span class="header-section-number">5.5</span> 표</a>
   <ul class="collapse">
-<li><a href="#rmarkdown-kable-table" id="toc-rmarkdown-kable-table" class="nav-link" data-scroll-target="#rmarkdown-kable-table"><span class="header-section-number">3.5.1</span> 마크다운 표</a></li>
-  <li><a href="#rmd-gt" id="toc-rmd-gt" class="nav-link" data-scroll-target="#rmd-gt"><span class="header-section-number">3.5.2</span> <code>gt</code></a></li>
-  <li><a href="#%EB%9D%BC%ED%85%8D-%ED%91%9C" id="toc-라텍-표" class="nav-link" data-scroll-target="#%EB%9D%BC%ED%85%8D-%ED%91%9C"><span class="header-section-number">3.5.3</span> 라텍 표</a></li>
-  <li><a href="#%ED%91%9C-%EC%A0%9C%EC%9E%91-%EC%82%AC%EB%A1%80" id="toc-표-제작-사례" class="nav-link" data-scroll-target="#%ED%91%9C-%EC%A0%9C%EC%9E%91-%EC%82%AC%EB%A1%80"><span class="header-section-number">3.5.4</span> 표 제작 사례</a></li>
+<li><a href="#rmarkdown-kable-table" id="toc-rmarkdown-kable-table" class="nav-link" data-scroll-target="#rmarkdown-kable-table"><span class="header-section-number">5.5.1</span> 마크다운 표</a></li>
+  <li><a href="#rmd-gt" id="toc-rmd-gt" class="nav-link" data-scroll-target="#rmd-gt"><span class="header-section-number">5.5.2</span> <code>gt</code></a></li>
+  <li><a href="#%EB%9D%BC%ED%85%8D-%ED%91%9C" id="toc-라텍-표" class="nav-link" data-scroll-target="#%EB%9D%BC%ED%85%8D-%ED%91%9C"><span class="header-section-number">5.5.3</span> 라텍 표</a></li>
+  <li><a href="#%ED%91%9C-%EC%A0%9C%EC%9E%91-%EC%82%AC%EB%A1%80" id="toc-표-제작-사례" class="nav-link" data-scroll-target="#%ED%91%9C-%EC%A0%9C%EC%9E%91-%EC%82%AC%EB%A1%80"><span class="header-section-number">5.5.4</span> 표 제작 사례</a></li>
   </ul>
 </li>
-  <li><a href="#%EB%8B%A4%EC%9D%B4%EC%96%B4%EA%B7%B8%EB%9E%A8" id="toc-다이어그램" class="nav-link" data-scroll-target="#%EB%8B%A4%EC%9D%B4%EC%96%B4%EA%B7%B8%EB%9E%A8"><span class="header-section-number">3.6</span> 다이어그램</a></li>
+  <li><a href="#%EB%8B%A4%EC%9D%B4%EC%96%B4%EA%B7%B8%EB%9E%A8" id="toc-다이어그램" class="nav-link" data-scroll-target="#%EB%8B%A4%EC%9D%B4%EC%96%B4%EA%B7%B8%EB%9E%A8"><span class="header-section-number">5.6</span> 다이어그램</a></li>
   <li>
-<a href="#%EC%88%98%EC%8B%9D" id="toc-수식" class="nav-link" data-scroll-target="#%EC%88%98%EC%8B%9D"><span class="header-section-number">3.7</span> 수식</a>
+<a href="#%EC%88%98%EC%8B%9D" id="toc-수식" class="nav-link" data-scroll-target="#%EC%88%98%EC%8B%9D"><span class="header-section-number">5.7</span> 수식</a>
   <ul class="collapse">
 <li><a href="#%EA%B8%B0%EB%B3%B8-%EC%97%B0%EC%82%B0%EC%9E%90%EC%99%80-%EC%88%98" id="toc-기본-연산자와-수" class="nav-link" data-scroll-target="#%EA%B8%B0%EB%B3%B8-%EC%97%B0%EC%82%B0%EC%9E%90%EC%99%80-%EC%88%98">기본 연산자와 수</a></li>
   <li><a href="#%EC%A0%9C%EA%B3%B1%EA%B7%BC%EA%B3%BC-%EC%A7%80%EC%88%98" id="toc-제곱근과-지수" class="nav-link" data-scroll-target="#%EC%A0%9C%EA%B3%B1%EA%B7%BC%EA%B3%BC-%EC%A7%80%EC%88%98">제곱근과 지수</a></li>
@@ -340,21 +394,21 @@ window.Quarto = {
   <li><a href="#%ED%95%A9%EA%B3%BC-%EA%B3%B1" id="toc-합과-곱" class="nav-link" data-scroll-target="#%ED%95%A9%EA%B3%BC-%EA%B3%B1">합과 곱</a></li>
   </ul>
 </li>
-  <li><a href="#%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-%EC%BD%94%EB%93%9C" id="toc-프로그래밍-코드" class="nav-link" data-scroll-target="#%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-%EC%BD%94%EB%93%9C"><span class="header-section-number">3.8</span> 프로그래밍 코드</a></li>
+  <li><a href="#%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-%EC%BD%94%EB%93%9C" id="toc-프로그래밍-코드" class="nav-link" data-scroll-target="#%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-%EC%BD%94%EB%93%9C"><span class="header-section-number">5.8</span> 프로그래밍 코드</a></li>
   <li>
-<a href="#%EC%B0%B8%EA%B3%A0%EB%AC%B8%ED%97%8C" id="toc-참고문헌" class="nav-link" data-scroll-target="#%EC%B0%B8%EA%B3%A0%EB%AC%B8%ED%97%8C"><span class="header-section-number">3.9</span> 참고문헌</a>
+<a href="#%EC%B0%B8%EA%B3%A0%EB%AC%B8%ED%97%8C" id="toc-참고문헌" class="nav-link" data-scroll-target="#%EC%B0%B8%EA%B3%A0%EB%AC%B8%ED%97%8C"><span class="header-section-number">5.9</span> 참고문헌</a>
   <ul class="collapse">
-<li><a href="#bib-%ED%8C%8C%EC%9D%BC" id="toc-bib-파일" class="nav-link" data-scroll-target="#bib-%ED%8C%8C%EC%9D%BC"><span class="header-section-number">3.9.1</span> <code>.bib</code> 파일</a></li>
-  <li><a href="#%EC%98%81%EB%AC%B8-%EC%B0%B8%EA%B3%A0%EB%AC%B8%ED%97%8C" id="toc-영문-참고문헌" class="nav-link" data-scroll-target="#%EC%98%81%EB%AC%B8-%EC%B0%B8%EA%B3%A0%EB%AC%B8%ED%97%8C"><span class="header-section-number">3.9.2</span> 영문 참고문헌</a></li>
-  <li><a href="#%EA%B5%AD%EB%AC%B8-%EC%B0%B8%EA%B3%A0%EB%AC%B8%ED%97%8C" id="toc-국문-참고문헌" class="nav-link" data-scroll-target="#%EA%B5%AD%EB%AC%B8-%EC%B0%B8%EA%B3%A0%EB%AC%B8%ED%97%8C"><span class="header-section-number">3.9.3</span> 국문 참고문헌</a></li>
+<li><a href="#bib-%ED%8C%8C%EC%9D%BC" id="toc-bib-파일" class="nav-link" data-scroll-target="#bib-%ED%8C%8C%EC%9D%BC"><span class="header-section-number">5.9.1</span> <code>.bib</code> 파일</a></li>
+  <li><a href="#%EC%98%81%EB%AC%B8-%EC%B0%B8%EA%B3%A0%EB%AC%B8%ED%97%8C" id="toc-영문-참고문헌" class="nav-link" data-scroll-target="#%EC%98%81%EB%AC%B8-%EC%B0%B8%EA%B3%A0%EB%AC%B8%ED%97%8C"><span class="header-section-number">5.9.2</span> 영문 참고문헌</a></li>
+  <li><a href="#%EA%B5%AD%EB%AC%B8-%EC%B0%B8%EA%B3%A0%EB%AC%B8%ED%97%8C" id="toc-국문-참고문헌" class="nav-link" data-scroll-target="#%EA%B5%AD%EB%AC%B8-%EC%B0%B8%EA%B3%A0%EB%AC%B8%ED%97%8C"><span class="header-section-number">5.9.3</span> 국문 참고문헌</a></li>
   </ul>
 </li>
-  </ul><div class="toc-actions"><ul><li><a href="https://github.com/bit2r/gpt-sql/edit/main/part_components.qmd" class="toc-action"><i class="bi bi-github"></i>편집</a></li><li><a href="https://github.com/bit2r/gpt-sql/issues/new" class="toc-action"><i class="bi empty"></i>이슈 보고</a></li></ul></div></nav>
+  </ul><div class="toc-actions"><ul><li><a href="https://github.com/bit2r/gpt-quarto/edit/main/part_components.qmd" class="toc-action"><i class="bi bi-github"></i>편집</a></li><li><a href="https://github.com/bit2r/gpt-quarto/issues/new" class="toc-action"><i class="bi empty"></i>이슈 보고</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part_components.html">기본요소</a></li><li class="breadcrumb-item"><a href="./part_components.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">문서 구성요소</span></a></li></ol></nav><div class="quarto-title">
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part_components.html">기본요소</a></li><li class="breadcrumb-item"><a href="./part_components.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">문서 구성요소</span></a></li></ol></nav><div class="quarto-title">
 <h1 class="title">
-<span class="chapter-number">3</span>&nbsp; <span class="chapter-title">문서 구성요소</span>
+<span class="chapter-number">5</span>&nbsp; <span class="chapter-title">문서 구성요소</span>
 </h1>
 </div>
 
@@ -372,15 +426,15 @@ window.Quarto = {
 </header><p>디지털 문서와 글쓰기에서 시각적 요소 통합은 전통적인 글쓰기와 비교했을 때 중요한 차이점이 존재한다. 과거 글쓰기는 주로 텍스트 중심이었으나, 현대 디지털 글쓰기는 그래픽, 지도, 그래프, 표, 동영상, 애니메이션, 인터랙티브 문서와 같은 시각적 요소를 포함하여 복잡한 정보를 직관적으로 전달하고 독자의 이해를 돕고 시간을 절약한다. 그러다 보니 자연스럽게 디지털 문서의 복잡성을 극복하고 자동화하기 위해 프로그래밍 언어도 필요해졌다.</p>
 <div id="fig-docu-components" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-docu-components-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="images/writing_document.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="그림&nbsp;3.1: 디지털 문서 구성요소"><img src="images/writing_document.jpg" class="img-fluid figure-img"></a>
+<a href="images/writing_document.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="그림&nbsp;5.1: 디지털 문서 구성요소"><img src="images/writing_document.jpg" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-docu-components-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-그림&nbsp;3.1: 디지털 문서 구성요소
+그림&nbsp;5.1: 디지털 문서 구성요소
 </figcaption></figure>
 </div>
 <p>더불어, 기존 데스크톱 출판(DTP) 대신 웹 출판이 부상하면서 DTP와는 다른 중요한 차별점이 드러나고 있다. DTP는 주로 정적인 인쇄 매체를 위한 레이아웃과 디자인에 초점을 맞추는 반면, 웹 출판은 동적이고 상호작용이 가능한 디지털 콘텐츠 생성에 중점을 둔다. 웹 출판은 HTML, CSS, 자바스크립트 등을 사용해 텍스트, 이미지, 비디오, 인터랙티브 요소를 포함한 다양한 형식의 콘텐츠를 생성하고, 웹사이트나 앱을 통해 전세계에 실시간으로 배포할 수 있게 되었다.</p>
-<section id="웹-문서" class="level2" data-number="3.1"><h2 data-number="3.1" class="anchored" data-anchor-id="웹-문서">
-<span class="header-section-number">3.1</span> 웹 문서</h2>
+<section id="웹-문서" class="level2" data-number="5.1"><h2 data-number="5.1" class="anchored" data-anchor-id="웹-문서">
+<span class="header-section-number">5.1</span> 웹 문서</h2>
 <p>웹 문서 구성요소는 크게 HTML, CSS, 자바스크립트로 구분된다. HTML(HyperText Markup Language)은 웹 페이지의 기본 구조와 내용을 정의하고, 다양한 태그를 사용하여 텍스트, 이미지, 링크, 리스트, 테이블 등을 웹 페이지에 배치한다. 주요 HTML 태그로 <code>&lt;head&gt;</code>, <code>&lt;body&gt;</code>, <code>&lt;h1&gt;</code>, <code>&lt;p&gt;</code>, <code>&lt;a&gt;</code>, <code>&lt;img&gt;</code> 등을 들 수 있다. CSS(Cascading Style Sheets)는 웹 페이지 레이아웃과 디자인을 담당한다. 색상, 폰트, 여백, 정렬 등을 지정하여 웹 페이지의 외관을 꾸미는 역할을 한다. CSS는 HTML 문서 내에 <code>&lt;style&gt;</code> 태그를 사용하여 삽입할 수 있고, 외부 저장된 CSS 파일을 연결하여 사용할 수도 있다. 자바스크립트는 웹 페이지에 동적인 기능을 부여한다. 사용자와 상호작용, 데이터 처리, 동적인 요소 변경 등을 담당하고, HTML 문서 내에 <code>&lt;script&gt;</code> 태그를 사용하여 삽입할 수 있다.</p>
 <div class="cell" data-eval="false" data-layout-align="default">
 <div class="cell-output-display">
@@ -479,8 +533,8 @@ window.Quarto = {
 <td style="text-align: center;">없음</td>
 </tr>
 </tbody>
-</table></section><section id="그림" class="level2" data-number="3.2"><h2 data-number="3.2" class="anchored" data-anchor-id="그림">
-<span class="header-section-number">3.2</span> 그림</h2>
+</table></section><section id="그림" class="level2" data-number="5.2"><h2 data-number="5.2" class="anchored" data-anchor-id="그림">
+<span class="header-section-number">5.2</span> 그림</h2>
 <p>그림은 책 내용을 이해하는 데 도움을 주는 중요한 요소이다. 그림은 과거 실제 사물을 촬영한 사진과 사물이나 생각을 그려서 표현한 것이 전부였다면, 이제는 데이터를 기반으로 다양한 그래프도 만들어낼 수 있고 생성형 AI 기술을 사용해서 시각적 표현을 만들어낼 수도 있다.</p>
 <p>그림은 문서에서 텍스트만으로 설명이 어려운 개념이나 데이터를 시각적으로 표현함으로써 이해를 돕고 문서구조를 논리적으로 구성하는 데도 기여한다. 그림 위치는 그림이 설명하려는 내용과 얼마나 밀접하게 연관되어 있는지에 따라 달라지는데 일반적으로 그림은 관련된 텍스트 바로 다음이나 전에 위치하는 것이 일반적이고, 그림에 대한 참조를 본문에서 명확히 하는 것이다.</p>
 <p>그림과 같은 시각적 객체가 준비되면 문서와 조화를 이룰 수 있도록 그림 크기, 정렬, 레이아웃, 캡션, 상호참조 등을 고려해야 한다. 특히, 문서의 최종 출력 형태를 고려해야 하는데 많이 사용되는 대표적으로 HTML, PDF, 아래한글에 각각 그림이 문서에 포함되면 다음과 같다.</p>
@@ -519,8 +573,8 @@ window.Quarto = {
 <figure class="figure"><p><a href="images/dalle_mountain.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="AI 생성 이미지"><img src="images/dalle_mountain.png" class="img-fluid figure-img" width="350" alt="AI 생성 이미지"></a></p>
 <figcaption>AI 생성 이미지</figcaption></figure>
 </div>
-</section><section id="지도" class="level2" data-number="3.3"><h2 data-number="3.3" class="anchored" data-anchor-id="지도">
-<span class="header-section-number">3.3</span> 지도</h2>
+</section><section id="지도" class="level2" data-number="5.3"><h2 data-number="5.3" class="anchored" data-anchor-id="지도">
+<span class="header-section-number">5.3</span> 지도</h2>
 <p>지리학(Geography)은 가장 오래된 과학 중 하나로 꼽히며, 학생때부터 교실 여기저기에서 볼 수 있는 지도가 아마도 처음 접한 데이터 시각화 산출물일 것이다. 지리학은 지구의 곡률을 정확히 파악하여 지구의 크기와 모양, 중력에 대한 이해를 높이는 데 중요한 역할을 수행했을 뿐만 아니라 대항해 시대 지도가 매우 큰 기여를 했고, 현대에 와서 지리학 데이터 응용 범위는 더욱 확장되어, 민간과 국방 범위를 가리지 않고 상업적으로 입점위치 선정, 우주 탐사, 군사 작전, 인구이동 패턴 분석 등 다방면에서 요긴한 역할을 수행하고 있다.</p>
 <p>지도는 글쓰기에서 중요한 구성요소 중 하나로, 특히 학술 논문, 보고서, 여행기, 지리나 역사 분야에서 지도는 필수적이다. 지도는 텍스트로만 설명하기 어려운 공간적 관계나 지리적 배치를 명확하게 시각화함으로써 저자의 주장이나 설명을 더 쉽고 정확하게 이해시킬 수 있고 문서의 전문성과 신뢰성을 높힘으로서 효과적인 커뮤니케이션을 가능하게 한다.</p>
 <p>한가지 사례를 들어 보자. 2023년 7월 기준 대한민국 시도별 인구수를 문서의 한 구성요로서 글쓰기를 할 때, 텍스트로 설명하거나 표로 정리하는 방법, 막대그래프로 시각화하는 방법이 경우에 따라 유용할 수 있지만, 시도라는 지리적인 정보를 지도에 녹여 표현하는 것이 가장 효과적이다.</p>
@@ -558,8 +612,8 @@ window.Quarto = {
 <span><span class="fu"><a href="https://rdrr.io/r/grDevices/dev.html">dev.off</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><a href="images/GIS_tools.jpeg" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="images/GIS_tools.jpeg" class="img-fluid"></a></p>
-</section><section id="그래프" class="level2" data-number="3.4"><h2 data-number="3.4" class="anchored" data-anchor-id="그래프">
-<span class="header-section-number">3.4</span> 그래프</h2>
+</section><section id="그래프" class="level2" data-number="5.4"><h2 data-number="5.4" class="anchored" data-anchor-id="그래프">
+<span class="header-section-number">5.4</span> 그래프</h2>
 <p>데이터를 시각적으로 표현하는 그래프는 증거기반 문서작성에 중요한 역할을 담당한다. 데이터 시각화를 위한 그래프 생성 프로그래밍 언어는 다양한데 “방법(how)”에 초점을 둔 명령형(imperative) Processing, OpenGL, prefuse 언어 계열과 “무엇(what)”에 초점 선언형(declarative) D3, ggplot2, Protovis 등로 나뉜다. R은 통계분석을 위한 프로그래밍 언어로서 데이터 시각화에 강점을 가지고 있다.</p>
 <p>그래프는 복잡한 데이터나 패턴을 빠르고 명확하게 전달할 수 있는 수단이기 때문에 데이터를 시각적으로 표현하는 그래프는 증거기반 문서 작성에서 중요한 역할을 한다. 그래프를 생성하기 위한 프로그래밍 언어나 패키지는 크게 두 가지 접근 방식으로 나뉜다. 하나는 “방법(how)”에 초점을 둔 명령형(imperative) 언어로, Processing, OpenGL, prefuse 등으로 그래프 각 요소를 어떻게 표현할 것인지를 명시적으로 지시한다. 다른 하나는 “무엇(what)”에 초점을 둔 선언형(declarative) 언어로, D3, ggplot2, Protovis 등으로 무엇을 그릴 것인지를 중심으로 설계되어 있어, 사용자가 원하는 결과에 더 집중한다.</p>
 <p>R 언어는 통계 분석뿐만 아니라 데이터 시각화에도 강점이 있고, 크게 3가지 R 언어기반 시각화 시스템이 존재한다. Base 시각화 시스템은 R 기본 패키지에 포함되어 있는 기본적인 그래프 생성 도구다. 래티스(<code>lattice</code>) 시각화 시스템은 클리블랜드(Cleveland)의 격자 그래픽(Trellis Graphics)에서 영감을 받아 개발되어 특히, 다변량 데이터를 효과적으로 시각화할 수 있다. <code>ggplot</code> 시각화 시스템은 SPSS 윌킨스(Wilkinson)의 그래프 문법(Grammar of Graphics)에 기반하여 탄탄한 이론적 토대를 갖고 있으여 파이프 연산자를 <code>+</code>도 <code>ggplot2</code>에 도입되어 의식의 흐름에 맞춰 그래프를 생성할 수 있다는 장점이 있다.</p>
@@ -587,7 +641,7 @@ window.Quarto = {
 </div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-graphics-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-그림&nbsp;3.2: R 그래프 시스템
+그림&nbsp;5.2: R 그래프 시스템
 </figcaption></figure>
 </div>
 <p>팔머 관측소 펭귄 데이터를 시각화하는 예제를 통해 일반적인 데이터 시각화 구성요소와 작업흐름을 일별해보자. 데이터 시각화에 필요한 패키지(<code>tidyverse</code>, <code>showtext</code>, <code>palmerpenguins</code>)를 불러온다.<br>
@@ -641,15 +695,15 @@ window.Quarto = {
 </div>
 </div>
 </div>
-</section><section id="표" class="level2" data-number="3.5"><h2 data-number="3.5" class="anchored" data-anchor-id="표">
-<span class="header-section-number">3.5</span> 표</h2>
+</section><section id="표" class="level2" data-number="5.5"><h2 data-number="5.5" class="anchored" data-anchor-id="표">
+<span class="header-section-number">5.5</span> 표</h2>
 <p>문서에 표를 넣게 되면 정보를 효과적으로 요약할 뿐만 아니라 가독성을 높이는 중요한 커뮤니케이션 도구 중 하나다. 마크다운(Markdown), <code>gt</code> 패키지, 라텍는 자료를 표 형식으로 표현할 때 각각의 장점이 있다. 마크다운은 기본적이며 간단한 방법으로, 복잡한 설치나 추가 패키지 없이도 빠르게 내용에 충실한 기본표를 작성할 수 있다. <code>gt</code> 패키지는 그래프 문법을 참고하여 표문법을 충실히 준수하며 데이터에 기반한 표제작에 필요한 거의 모든 기능을 제공한다. 라텍는 가장 전문적인 표를 만들 수 있는 도구로, 논문이나 학술 자료에 적합한 고품질의 표를 제작하는데 유용하다.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure"><p><a href="images/table_three.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-9" title="표제작 세가지 방식"><img src="images/table_three.jpg" class="img-fluid figure-img" alt="표제작 세가지 방식"></a></p>
 <figcaption>표제작 세가지 방식</figcaption></figure>
 </div>
-<section id="rmarkdown-kable-table" class="level3" data-number="3.5.1"><h3 data-number="3.5.1" class="anchored" data-anchor-id="rmarkdown-kable-table">
-<span class="header-section-number">3.5.1</span> 마크다운 표</h3>
+<section id="rmarkdown-kable-table" class="level3" data-number="5.5.1"><h3 data-number="5.5.1" class="anchored" data-anchor-id="rmarkdown-kable-table">
+<span class="header-section-number">5.5.1</span> 마크다운 표</h3>
 <p><code>mtcars</code> 데이터프레임에서 시연목적으로 관측점 5개와 열 4개를 뽑아내서 <code><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable()</a></code>함수에 넣고 출력형식을 <code>markdown</code>으로 지정한다. <code>markdown</code>외에도 <code>html</code>, <code>pandoc</code>, <code>latex</code>, <code>rst</code>등으로 출력형식을 지정할 수 있다.</p>
 <div class="columns">
 <div class="column" style="width:45%;">
@@ -711,8 +765,8 @@ window.Quarto = {
 </div>
 </div>
 </div>
-</section><section id="rmd-gt" class="level3" data-number="3.5.2"><h3 data-number="3.5.2" class="anchored" data-anchor-id="rmd-gt">
-<span class="header-section-number">3.5.2</span> <code>gt</code>
+</section><section id="rmd-gt" class="level3" data-number="5.5.2"><h3 data-number="5.5.2" class="anchored" data-anchor-id="rmd-gt">
+<span class="header-section-number">5.5.2</span> <code>gt</code>
 </h3>
 <p>그래프 문법(grammar of graphics)처럼 표 문법(grammar of table) <a href="https://github.com/rstudio/gt/"><code>gt</code></a> 팩키지가 등장했다. 표를 분해하면 다음과 같고 이를 <code>tibble</code> 혹은 데이터프레임을 입력받아 GT 객체로 변환시킨 후에 GT 표를 HTML로 출력하는 작업흐름을 갖는다.</p>
 <div class="quarto-figure quarto-figure-center">
@@ -1233,8 +1287,8 @@ window.Quarto = {
 </div>
 </div>
 </div>
-</section><section id="라텍-표" class="level3" data-number="3.5.3"><h3 data-number="3.5.3" class="anchored" data-anchor-id="라텍-표">
-<span class="header-section-number">3.5.3</span> 라텍 표</h3>
+</section><section id="라텍-표" class="level3" data-number="5.5.3"><h3 data-number="5.5.3" class="anchored" data-anchor-id="라텍-표">
+<span class="header-section-number">5.5.3</span> 라텍 표</h3>
 <p>라텍은 수식 뿐만 아니라 복잡하고 미려한 표도 코드를 통해 제작할 수 있다. 쿼토에서 라텍 표를 제작하기 위해서는 먼저 표제작을 위한 라텍 표코드를 준비하고, GitHub에서 팬독-필터 <a href="https://github.com/tarleb/parse-latex">tarleb/parse-latex</a>를 다음 명령어로 설치한다.</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> quarto install extension tarleb/parse-latex</span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>쿼토 확장팩이 설치되면 YAML에 다음과 같이 <code>parse-latex</code>을 등록하여 사용한다.</p>
@@ -1308,9 +1362,9 @@ window.Quarto = {
 </table>
 </div>
 </div>
-</section><section id="표-제작-사례" class="level3" data-number="3.5.4"><h3 data-number="3.5.4" class="anchored" data-anchor-id="표-제작-사례">
-<span class="header-section-number">3.5.4</span> 표 제작 사례</h3>
-<p>펭귄 데이터를 기반으로 <code>gt</code> 패키지를 사용하여 표 제목, 칼럼명, 셀값에 다양한 글꼴, 크기, 색상, 굵기를 적용한 사례가 <a href="#tbl-gt-penguins" class="quarto-xref">표&nbsp;<span>3.1</span></a> 에 코드로 나와 있다. 미국 웨스 앤더슨 영화 색상(<code>Darjeeling1</code>)을 표에 적용하고, 글꼴로 웹글꼴 구글 글꼴을 활용하여 <code>gt</code> 패키지로 다양한 글꼴을 적용하고, <code><a href="https://gt.rstudio.com/reference/fmt_integer.html">fmt_integer()</a></code> 함수를 사용해서 숫자 가독성을 높이기 위해 천단위 구분자를 넣고 부가적인 디자인도 표에 적용한다.</p>
+</section><section id="표-제작-사례" class="level3" data-number="5.5.4"><h3 data-number="5.5.4" class="anchored" data-anchor-id="표-제작-사례">
+<span class="header-section-number">5.5.4</span> 표 제작 사례</h3>
+<p>펭귄 데이터를 기반으로 <code>gt</code> 패키지를 사용하여 표 제목, 칼럼명, 셀값에 다양한 글꼴, 크기, 색상, 굵기를 적용한 사례가 <a href="#tbl-gt-penguins" class="quarto-xref">표&nbsp;<span>5.1</span></a> 에 코드로 나와 있다. 미국 웨스 앤더슨 영화 색상(<code>Darjeeling1</code>)을 표에 적용하고, 글꼴로 웹글꼴 구글 글꼴을 활용하여 <code>gt</code> 패키지로 다양한 글꼴을 적용하고, <code><a href="https://gt.rstudio.com/reference/fmt_integer.html">fmt_integer()</a></code> 함수를 사용해서 숫자 가독성을 높이기 위해 천단위 구분자를 넣고 부가적인 디자인도 표에 적용한다.</p>
 <div class="cell">
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://gt.rstudio.com">gt</a></span><span class="op">)</span></span>
 <span></span>
@@ -1384,7 +1438,7 @@ window.Quarto = {
 <span>  <span class="fu">basic_theme</span><span class="op">(</span><span class="op">)</span> </span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div id="tbl-gt-penguins" class="cell quarto-float anchored">
 <figure class="quarto-float quarto-float-tbl figure"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-gt-penguins-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-표&nbsp;3.1: 글꼴, 색상, 서식을 반영한 표 제작 사례
+표&nbsp;5.1: 글꼴, 색상, 서식을 반영한 표 제작 사례
 </figcaption><div aria-describedby="tbl-gt-penguins-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
 <div>
@@ -1917,8 +1971,8 @@ window.Quarto = {
 </figure>
 </div>
 </div>
-</section></section><section id="다이어그램" class="level2" data-number="3.6"><h2 data-number="3.6" class="anchored" data-anchor-id="다이어그램">
-<span class="header-section-number">3.6</span> 다이어그램</h2>
+</section></section><section id="다이어그램" class="level2" data-number="5.6"><h2 data-number="5.6" class="anchored" data-anchor-id="다이어그램">
+<span class="header-section-number">5.6</span> 다이어그램</h2>
 <p>다이어그램(diagram, 도표)는 복잡한 정보나 개념을 단순화하고 시각적으로 표현하여 텍스트만으로 설명하기 어려운 복잡한 데이터나 구조, 관계를 명확히 전달할 수 있어 독자가 문서를 빠르고 정확하게 이해하는 데 도움을 준다. 학술 논문, 보고서, 설명서 등에 포함된 다이어그램은 문서 전문성과 신뢰성을 높혀 효과적인 커뮤니케이션을 가능하게 한다.</p>
 <p>다이어그램 저작 방식은 도구를 직접 사용하는 방식과 프로그래밍 언어처럼 다이어그램 전용 언어를 사용하는 방식으로 나뉜다. 잘 알려진 다이어그램 저작 도구로 마이크로소프트 비지오(Microsoft Visio), 루시드차드(Lucidchart), 드로아이오(Draw.io) 등으로 주로 GUI를 통해 다이어그램을 직관적으로 그릴 수 있고 다이어그램 전용 언어로 그래프비즈(Graphviz)와 머메이드(Mermaid)가 대표적이다. Graphviz는 DOT 언어를 사용해 다양한 네트워크 다이어그램, 플로우 차트, 조직도, 의존성 그래프를 제작하는 반면, Mermaid는 마크다운과 유사한 문법으로 웹에서 다이어그램과 차트를 생성하는 자바스크립트 라이브러리로 HTML과 자바스크립트를 사용하는 모든 웹 페이지나 앱과 쉽게 통합된다는 장점이 있다.</p>
 <p>챗GPT를 활용한 디지털 글쓰기 과정을 Mermaid 코드를 이용하여 다이어그램으로 표현하면 다음과 같다. 다이어그램은 글쓰기, 구조와 외양, 배포와 공유 세가지 영역에서 챗GPT가 부기장(Copilot)으로 역할을 수행하는 것을 명확히 보여준다. 디지털 글쓰기가 글감, 표, 그래프, 코드, 그림, 도형 등 다양한 요소로 구성되며, 구조와 외양에서는 문서의 구조, 서식, 레이아웃, 참조 등이 중요하고, 배포와 공유에서는 다양한 대상, 즉 독자, 저자, 기계에게 문서가 전달되는 과정을 빠르고 명확하게 이해할 수 있도록 도와준다.</p>
@@ -1973,8 +2027,8 @@ window.Quarto = {
 </div>
 </div>
 <p><a href="images/components_diagram.png" class="lightbox" data-gallery="quarto-lightbox-gallery-11"><img src="images/components_diagram.png" class="img-fluid"></a></p>
-</section><section id="수식" class="level2" data-number="3.7"><h2 data-number="3.7" class="anchored" data-anchor-id="수식">
-<span class="header-section-number">3.7</span> 수식</h2>
+</section><section id="수식" class="level2" data-number="5.7"><h2 data-number="5.7" class="anchored" data-anchor-id="수식">
+<span class="header-section-number">5.7</span> 수식</h2>
 <p>수학은 공학, 물리학, 컴퓨터 과학, 경제학 등 다양한 분야에서 중심 역할을 하는 학문으로 정확하고 명료한 수학적 표기는 매우 중요하다. 라텍은 수학적 표현을 깔끔하고 정확하게 표현할 수 있는 도구 중 하나로 라텍를 이용해 다양한 수학적 표현법을 살펴보자.</p>
 <p><span class="math inline">\(\LaTeX\)</span>은 기본적인 사칙연산에서부터 지수, 삼각함수, 적분, 행렬, 그리스 문자, 무한대 등 광범위한 수학적 표현이 가능하여 전문가 느낌의 문서나 논문, 프레젠테이션에 즉시 적용할 수 있는 고급스럽고 미련한 수식표현이 가능하다.</p>
 <p>기본적인 덧셈과 뺄셈은 <code>a + b = c</code>처럼 표현할 수 있고, 복잡한 적분도 <code>\int_{0}^{\infty} e^{-x^2} dx = \frac{\sqrt{\pi}}{2}</code>와 같이 명료하게 표현할 수 있을 뿐만 아니라, 행렬이나 그리스 문자도 <code>\begin{pmatrix} a &amp; b \\ c &amp; d \end{pmatrix}</code>와 <code>\alpha, \beta, \gamma, \Gamma, \pi, \Pi, \phi, \Phi, \mu</code> 등의 명령어를 통해 표현할 수 있다.</p>
@@ -2073,8 +2127,8 @@ c &amp; d
 </div>
 </div>
 <p>이 외에도 라텍으로 더 복잡한 수식표현도 얼마든지 가능하다.</p>
-</section></section><section id="프로그래밍-코드" class="level2" data-number="3.8"><h2 data-number="3.8" class="anchored" data-anchor-id="프로그래밍-코드">
-<span class="header-section-number">3.8</span> 프로그래밍 코드</h2>
+</section></section><section id="프로그래밍-코드" class="level2" data-number="5.8"><h2 data-number="5.8" class="anchored" data-anchor-id="프로그래밍-코드">
+<span class="header-section-number">5.8</span> 프로그래밍 코드</h2>
 <p>엑셀은 워드, 파워포인트와 함께 마이크로소프트 오피스에서 중요한 역할을 담당한다. 엑셀은 데이터 관리와 분석을 위한 강력한 도구로, 복잡한 수치 데이터를 정리하고 분석하는 데 주로 사용되는데, 워드 문서와 통합되어 엑셀은 표, 차트, 그래프 형태로 데이터를 시각적으로 표현하여 문서 정보 전달력을 높인다. 하지만, 워드 문서에 엑셀에서 나온 산출물을 매번 사람이 직접 복사하여 붙여넣어야 하기 때문에 번거럽고 사람이 개입되기 때문에 오류의 가능성이 상존한다.</p>
 <p>쿼토의 장점은 지난 10년간 R마크다운을 통해 입증되었다. 즉, 쿼토는 <strong>차세대 R마크다운</strong>이라는 별명이 붙어있는데 쿼토가 R마크다운의 장점을 계승하면서도 더 많은 기능을 추가했을 뿐만 아니라 R마크다운의 경험을 바탕으로 더 나은 사용자 경험을 제공한다. R마크다운이 R언어 지원에 방점을 뒀다면 쿼토는 R언어를 넘어서 파이썬, SQL, 줄리아, 자바스크립트 등 다양한 언어를 지원한다.</p>
 <p>사인 곡선을 그리는 파이썬 코드를 작성해보자. 먼저 그래프 그리는 역할을 담당하는 <code>matplotlib</code> 패키지를 로드하고, 사인 함수를 구현하기 위해 <code>numpy</code> 패키지를 이용하여 x축 데이터, <code>sin</code> 함수를 이용하여 y축 데이터를 생성한다. 마지막으로 <code>plot</code> 함수를 이용하여 그래프를 그린다. 그래프 제목과 축 제목에 한글이 들어가 한글 글꼴 설정을 추가로 해준다.</p>
@@ -2142,8 +2196,8 @@ c &amp; d
 </section>
 </div>
 </div>
-</section><section id="참고문헌" class="level2" data-number="3.9"><h2 data-number="3.9" class="anchored" data-anchor-id="참고문헌">
-<span class="header-section-number">3.9</span> 참고문헌</h2>
+</section><section id="참고문헌" class="level2" data-number="5.9"><h2 data-number="5.9" class="anchored" data-anchor-id="참고문헌">
+<span class="header-section-number">5.9</span> 참고문헌</h2>
 <p>라텍 문서 컴파일 과정은 몇 단계에 걸쳐 이뤄진다. 먼저 <code>xelatex</code> 명령을 사용하여 원본 라텍 코드를 컴파일하면 <code>.aux</code>와 <code>.log</code> 파일이 생성되고, <code>biber</code> 또는 <code>bibtex</code> 명령을 실행하여 참고문헌 정보를 처리하면서 <code>.bbl</code> 및 <code>.blg</code> 파일이 생성된다. 그 다음 다시 <code>xelatex</code>을 두 번 실행하여 참고문헌과 인용 정보를 최종적으로 처리하고 완성된 PDF 파일이 생성된다.</p>
 <div class="cell" data-eval="false" data-layout-align="default">
 <div class="cell-output-display">
@@ -2157,8 +2211,8 @@ c &amp; d
 </div>
 </div>
 <p><a href="images/mermaid_latex_workflow.png" class="lightbox" data-gallery="quarto-lightbox-gallery-14"><img src="images/mermaid_latex_workflow.png" class="img-fluid"></a></p>
-<section id="bib-파일" class="level3" data-number="3.9.1"><h3 data-number="3.9.1" class="anchored" data-anchor-id="bib-파일">
-<span class="header-section-number">3.9.1</span> <code>.bib</code> 파일</h3>
+<section id="bib-파일" class="level3" data-number="5.9.1"><h3 data-number="5.9.1" class="anchored" data-anchor-id="bib-파일">
+<span class="header-section-number">5.9.1</span> <code>.bib</code> 파일</h3>
 <p><code>.bib</code> 파일은 BibTeX “서지 데이터베이스”로 쿼토, R마크다운, 주피터 노트북, 라텍 문서에서 참고문헌을 관리하는 데 사용된다. <code>.bib</code> 파일은 다양한 참고문헌(예: 논문, 책, 인터넷 자료 등)에 대한 메타데이터를 담고 있는데 제목, 저자, 출판일 등의 정보가 담겨있다.</p>
 <p>라텍으로 작성한 <code>.tex</code> 소스파일을 <code>references.bib</code> 서지 파일과 연결시켜 컴파일하여 <code>.pdf</code> 파일로 작업한다. 한가지 여기서 다루지 않는 사항으로 <code>.csl</code> 파일이 있다. <code>.cls</code>는 인용 스타일 언어(Citation Style Language) 파일로 XML 형식으로 작성되며, 참고문헌 서식규칙을 정의한다. 학술지, 출판사마다 각기 다른 참고문헌 스타일을 요구하기 때문에, <code>.csl</code> 파일에 다양한 스타일을 표현하다. 따라서, 참고문헌 콘텐츠가 담긴 <code>.bib</code> 파일과 참고문헌 스타일이 담긴 <code>.cls</code> 두파일이 멋진 참고문헌 출력을 위해 짝꿍처럼 함께 다닌다.</p>
 <p>다음 라텍 저작 파일은 서지 데이터가 담긴 <code>references.bib</code> 파일에 <code>Kim2017</code>과 <code>xie2020r</code> 두 개의 참고문헌이 들어있다.</p>
@@ -2210,14 +2264,14 @@ c &amp; d
 </div>
 <div id="fig-bibtex" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-bibtex-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="images/bibtex_reference.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-15" title="그림&nbsp;3.3: 서식파일 참고문헌"><img src="images/bibtex_reference.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img" width="635"></a>
+<a href="images/bibtex_reference.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-15" title="그림&nbsp;5.3: 서식파일 참고문헌"><img src="images/bibtex_reference.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img" width="635"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-bibtex-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-그림&nbsp;3.3: 서식파일 참고문헌
+그림&nbsp;5.3: 서식파일 참고문헌
 </figcaption></figure>
 </div>
-</section><section id="영문-참고문헌" class="level3" data-number="3.9.2"><h3 data-number="3.9.2" class="anchored" data-anchor-id="영문-참고문헌">
-<span class="header-section-number">3.9.2</span> 영문 참고문헌</h3>
+</section><section id="영문-참고문헌" class="level3" data-number="5.9.2"><h3 data-number="5.9.2" class="anchored" data-anchor-id="영문-참고문헌">
+<span class="header-section-number">5.9.2</span> 영문 참고문헌</h3>
 <p>한글이 포함된 PDF 문서를 작성할 때 디버깅은 생각보다 복잡할 수 있다. 따라서 대개는 문서 기본 구조를 영어로 먼저 정확히 작동하는지 확인한 후, 한글로 전환하여 개발을 진행한다. 아래 라텍 문서 예시에서 전체적인 내용을 파악하기 쉽도록 <code>lipsum</code> 패키지로 텍스트를 채웠으며, 2단 편집과 참고문헌 관리 기능을 구현했다. <code>biblatex</code> 패키지와 <code>\addbibresource{references.bib}</code> 명령어를 사용하여 참고문헌파일을 지정하고, 본문에서 <code>\cite</code> 명령어를 통해 참고문헌을 인용했다. 마지막으로 <code>\printbibliography</code> 명령어로 참고문헌 목록을 출력했다.</p>
 <div class="columns">
 <div class="column" style="width:60%;">
@@ -2258,16 +2312,16 @@ c &amp; d
 </div><div class="column" style="width:35%;">
 <div id="fig-bibtex-eng" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-bibtex-eng-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="images/pdf_english_reference.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-16" title="그림&nbsp;3.4: 영문 참고문헌 사례"><img src="images/pdf_english_reference.jpg" class="img-fluid figure-img"></a>
+<a href="images/pdf_english_reference.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-16" title="그림&nbsp;5.4: 영문 참고문헌 사례"><img src="images/pdf_english_reference.jpg" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-bibtex-eng-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-그림&nbsp;3.4: 영문 참고문헌 사례
+그림&nbsp;5.4: 영문 참고문헌 사례
 </figcaption></figure>
 </div>
 </div>
 </div>
-</section><section id="국문-참고문헌" class="level3" data-number="3.9.3"><h3 data-number="3.9.3" class="anchored" data-anchor-id="국문-참고문헌">
-<span class="header-section-number">3.9.3</span> 국문 참고문헌</h3>
+</section><section id="국문-참고문헌" class="level3" data-number="5.9.3"><h3 data-number="5.9.3" class="anchored" data-anchor-id="국문-참고문헌">
+<span class="header-section-number">5.9.3</span> 국문 참고문헌</h3>
 <p>영문으로 작성한 작업 흐름을 그대로 이용할 수 있지만, 몇 가지 수정이 필요하다. 첫째, 영문 채우기 텍스트 패키지 <code>ipsum</code>을 <code>jiwonlipsum</code>으로 변경하여 한글 텍스트로 국문 문서임을 명확히 구성한다. 둘째, 라텍에서 한글 글꼴을 적용하지 않으면 한글 표현이 깨지거나 전혀 출력되지 않을 수 있으므로, 한글 글꼴 적용 절차를 포함한다. 참고문헌 부제목이 영문 ’Reference’에서 ’참고문헌’으로 변경하여 기본적인 한글문서 외양을 확인한다.</p>
 <div class="columns">
 <div class="column" style="width:60%;">
@@ -2315,10 +2369,10 @@ c &amp; d
 </div><div class="column" style="width:35%;">
 <div id="fig-bibtex-kor" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-bibtex-kor-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="images/pdf_korean_reference.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-17" title="그림&nbsp;3.5: 한글 참고문헌 사례"><img src="images/pdf_korean_reference.jpg" class="img-fluid figure-img"></a>
+<a href="images/pdf_korean_reference.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-17" title="그림&nbsp;5.5: 한글 참고문헌 사례"><img src="images/pdf_korean_reference.jpg" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-bibtex-kor-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-그림&nbsp;3.5: 한글 참고문헌 사례
+그림&nbsp;5.5: 한글 참고문헌 사례
 </figcaption></figure>
 </div>
 </div>
@@ -2716,12 +2770,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script><nav class="page-navigation"><div class="nav-page nav-page-previous">
       <a href="./setup.html" class="pagination-link" aria-label="저작환경 설정">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">저작환경 설정</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">저작환경 설정</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./part_markdown.html" class="pagination-link" aria-label="마크다운">
-        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">마크다운</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">마크다운</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -2732,12 +2786,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/bit2r/gpt-sql/edit/main/part_components.qmd" class="toc-action"><i class="bi bi-github"></i>편집</a></li><li><a href="https://github.com/bit2r/gpt-sql/issues/new" class="toc-action"><i class="bi empty"></i>이슈 보고</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/bit2r/gpt-quarto/edit/main/part_components.qmd" class="toc-action"><i class="bi bi-github"></i>편집</a></li><li><a href="https://github.com/bit2r/gpt-quarto/issues/new" class="toc-action"><i class="bi empty"></i>이슈 보고</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>순수하게 <a href="https://quarto.org/">쿼토(Quarto)</a>로 제작되었습니다.</p>
 </div>
   </div>
-</footer><script>var lightboxQuarto = GLightbox({"selector":".lightbox","descPosition":"bottom","closeEffect":"zoom","openEffect":"zoom","loop":false});
+</footer><script>var lightboxQuarto = GLightbox({"openEffect":"zoom","closeEffect":"zoom","selector":".lightbox","loop":false,"descPosition":"bottom"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;
