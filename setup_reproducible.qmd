@@ -14,7 +14,7 @@ editor:
 있어야만 된다. 따라서, 연구 참여자들은 자신(미래의 본인 포함)과 타 연구자들을 위해 자세하고 구체적인 문서를 작성하는 것이 필요하다. 과학기술 연구 과정에서 이루어진 모든 단계는 다른 연구자가 이해할 수 있고, 컴퓨터가 실행할 수 있는 형태로
 명확히 기술되어야 한다.[@carpentries2024rr] [^rr]
 
-[^rr]: [The Carpentries](https://carpentries.org/) [RStudio를 사용한 재현가능한 출판 소개(Introduction to Reproducible Publications with RStudio)](https://carpentries-incubator.github.io/rr-reproducibility/)를 번역하여 작성되었다.
+[^rr]: [The Carpentries](https://carpentries.org/)에서 인큐베이션하고 있는 [RStudio를 사용한 재현가능한 출판 소개(Introduction to Reproducible Publications with RStudio)](https://ucsbcarpentry.github.io/Reproducible-Publications-with-RStudio-Quarto/)를 번역하여 작성되었다.
 
 ## 무서운 일화
 

@@ -93,7 +93,10 @@ format:
 
     author-meta: "이광춘"
     include-in-header: "plausible.html"
-    callout-appearance: simple      
+    callout-appearance: simple
+    
+    # 마크다운 표 캡션 위치
+    tbl-cap-location: bottom
 
 bibliography: references.bib
 link-citations: false
