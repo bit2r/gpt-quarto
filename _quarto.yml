@@ -49,7 +49,7 @@ book:
         - setup_quarto.qmd           # OK
         - setup.qmd                  # OK
         
-    - part: "기본요소"
+    - part: "저작 레고 부품"
       chapters:
         - part_components.qmd          # OK
         - part_markdown.qmd            # OK
@@ -84,6 +84,7 @@ format:
       theme: neutral # https://quarto.org/docs/authoring/diagrams.html#mermaid-theming 
     theme: 
       - cosmo
+      - r2bit.scss      
     number-depth: 3
     number-sections: true
     colorlinks: true

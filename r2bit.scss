@@ -1,0 +1,112 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding');
+
+/*-- 제목 --*/
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR&display=swap');
+
+/*-- 본문 --*/
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR&display=swap');
+
+
+/*-- scss:defaults --*/
+
+/*$primary: #637238 !default;*/
+/*$font-size-root: 18px !default;*/
+
+/*-- 1. 색상정의 --*/
+$white:    #fff !default;
+$gray-100: #f8f9fa !default;
+$gray-200: #ebebeb !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #ced4da !default;
+$gray-500: #adb5bd !default;
+$gray-600: #888 !default;
+$gray-700: #444 !default;
+$gray-800: #303030 !default;
+$gray-900: #222 !default;
+$black:    #000 !default;
+
+$blue:    #375a7f !default;
+$indigo:  #6610f2 !default;
+$purple:  #6f42c1 !default;
+$pink:    #e83e8c !default;
+$red:     #e74c3c !default;
+$orange:  #fd7e14 !default;
+$yellow:  #f39c12 !default;
+$green:   #00bc8c !default;
+$teal:    #20c997 !default;
+$cyan:    #3498db !default;
+
+
+$primary: #6610f2;
+$secondary: #f39c12;
+$tertiary: #3498db;
+
+
+/* 1.1. 색상 --------------------------------------------------- */
+$body-color: $gray-800;
+
+/* 2. 글꼴 --------------------------------------------------- */
+
+$font-family-sans-serif: 'IBM Plex Sans KR', 'Noto Sans KR', 'sans-serif';
+$font-family-serif: 'Noto Serif KR', "serif";
+$font-family-monospace: 'Nanum Gothic Coding', 'monospace';
+$font-size-root: 18px !default;
+
+/*-- scss:rules --*/
+
+.sidebar-title {
+  color: #3498db;
+}
+
+div.sidebar-item-container .active {
+  font-weight: bold;
+}
+
+.sidebar nav[role=doc-toc] ul>li>a.active, .sidebar nav[role=doc-toc] ul>li>ul>li>a.active{
+  font-weight: bold;
+}
+
+img.quarto-cover-image {
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
+}
+
+/* Headings ------------------------------------------------------ */
+
+#title-block-header.quarto-title-block.default .quarto-title h1.title {
+  margin-bottom: 0.5rem;
+  font-size: 1.7rem;
+  font-family: 'Noto Sans KR';
+  color: $gray-900;
+}
+
+h2 { font-family: 'Noto Serif KR' !important; font-size: 1.4rem;font-weight: 600;
+     margin-top: 2rem; margin-bottom: 1rem; }
+h3 { font-family: 'Noto Serif KR' !important; font-size: 1.2rem;font-weight: 500;
+     margin-top: 1.5em; }
+h4 { font-family: 'Noto Serif KR' !important; font-size: 1.1rem;
+     margin-top: 1.5em; }
+h5 { font-family: 'Noto Serif KR' !important; font-size: 1.1rem;
+     margin-top: 1.5em;}
+
+.quarto-section-identifier {
+  color: #6C6C6C;
+  font-weight: normal;
+}
+
+/* Code ------------------------------------------------ */
+
+$code-block-bg: $secondary;
+$code-bg: $secondary;
+$code-color: $tertiary;
+
+code a:any-link {
+  text-decoration: underline;
+  text-decoration-color: #ccc;
+}
+
+pre {
+  background-image: linear-gradient(160deg,#f8f8f8 0,#f1f1f1 100%);
+}
