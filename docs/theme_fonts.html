@@ -113,7 +113,32 @@ ga('send', {
   hitType: 'pageview',
   'anonymizeIp': true,
 });
-</script><script defer="" data-domain="r2bit.com/gpt-quarto" src="https://plausible.io/js/script.js"></script>
+</script><script defer="" data-domain="r2bit.com/gpt-quarto" src="https://plausible.io/js/script.js"></script><script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script><script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 </head>
 <body class="nav-sidebar floating">
 
@@ -341,7 +366,7 @@ ga('send', {
    
   <ul>
 <li><a href="#%EC%9A%A9%EC%96%B4-%EC%84%A4%EB%AA%85" id="toc-용어-설명" class="nav-link active" data-scroll-target="#%EC%9A%A9%EC%96%B4-%EC%84%A4%EB%AA%85"><span class="header-section-number">9.1</span> 용어 설명</a></li>
-  <li><a href="#%EB%91%90%EA%B0%80%EC%A7%80-%ED%98%95%ED%83%9C-%EA%B8%80%EA%BC%B4" id="toc-두가지-형태-글꼴" class="nav-link" data-scroll-target="#%EB%91%90%EA%B0%80%EC%A7%80-%ED%98%95%ED%83%9C-%EA%B8%80%EA%BC%B4"><span class="header-section-number">9.2</span> 두가지 형태 글꼴</a></li>
+  <li><a href="#%EC%84%A4%EC%B9%98%ED%98%95-%EA%B8%80%EA%BC%B4%EA%B3%BC-%EC%9B%B9-%EA%B8%80%EA%BC%B4" id="toc-설치형-글꼴과-웹-글꼴" class="nav-link" data-scroll-target="#%EC%84%A4%EC%B9%98%ED%98%95-%EA%B8%80%EA%BC%B4%EA%B3%BC-%EC%9B%B9-%EA%B8%80%EA%BC%B4"><span class="header-section-number">9.2</span> 설치형 글꼴과 웹 글꼴</a></li>
   <li>
 <a href="#%EA%B8%80%EA%BC%B4-%EC%84%A4%EC%B9%98" id="toc-글꼴-설치" class="nav-link" data-scroll-target="#%EA%B8%80%EA%BC%B4-%EC%84%A4%EC%B9%98"><span class="header-section-number">9.3</span> 글꼴 설치</a>
   <ul class="collapse">
@@ -370,12 +395,13 @@ ga('send', {
   
 
 
-</header><p><strong>글꼴(font)</strong>은 디지털 광고와 마케팅에서 브랜드 아이덴티티(Brand Identity)와 메시지 강화를 위해 특정 글꼴이 사용되고, 모바일 앱에서도 글꼴은 사용자 인터페이스와 경험에 큰 축을 담당한다. 뉴스와 저널리즘에서 글꼴은 정보 신뢰성과 중요성을 강조하는 수단으로 작용할 뿐만 아니라, 뉴스 타이틀과 부제, 본문 등에서 다양한 글꼴을 조합함으로써 정보 구조를 더욱 명확히 하는데 기여한다.</p>
-<p>교육 자료와 프레젠테이션(PPT)에서도 글꼴이 특히 중요한데, 텍스트가 주는 첫 인상은 강의 효과성을 크게 좌우하고, 글꼴 선택은 복잡한 정보를 더욱 쉽게 이해하는데 도움을 준다. 영화나 유튜브 동영상 제작에서 글꼴은 자막, 크레딧, 제목 등에서 활용될 뿐만 아니라 소셜 미디어(SNS), 인쇄물, 패키지 디자인 등 다양한 매체에 글꼴은 기능적이고 미적인 요소로 가미한다.</p>
-<p>한걸음 더 들어가 과학기술 디지털 글쓰기에서 글꼴은 데이터 시각화, 표 제작, 코드 작성, 문서 작성 등 다양한 영역에서 중요한 역할을 한다.</p>
+</header><p><strong>글꼴(font)</strong>은 디지털 광고와 마케팅 분야에서 브랜드 아이덴티티(Brand Identity)와 메시지 전달을 강화하기 위해 중요한 역할을 한다. 모바일 앱에서도 글꼴은 사용자 인터페이스와 경험에 큰 축을 담당한다. 뉴스와 저널리즘에서 글꼴은 정보 신뢰성과 중요성을 강조하는 수단으로 작용할 뿐만 아니라, 뉴스 타이틀과 부제, 본문 등에서 다양한 글꼴을 조합함으로써 정보 구조를 더욱 명확히 하는데 기여한다.</p>
+<p>교육 자료와 프레젠테이션(PPT)에서도 글꼴의 중요성은 간과할 수 없다. 텍스트가 주는 첫 인상은 강의전반에 큰 영향을 미치며, 적절한 글꼴 선택은 복잡한 정보를 이해하기 쉽게 만든다. 영화나 유튜브 동영상 제작에서 글꼴은 자막, 크레딧, 제목 등에서 활용될 뿐만 아니라 소셜 미디어(SNS), 인쇄물, 패키지 디자인 등 다양한 매체에 글꼴은 기능적이고 미적인 요소로 가미된다.</p>
+<p>한걸음 더 들어가 과학기술 디지털 글쓰기에서 글꼴은 데이터 시각화, 표 제작, 코드 작성, 문서 작성 등 다양한 영역에서 필수불가결하다.</p>
 <p>데이터 과학에서 시각화는 매우 중요한데 그래프 문법(Grammar of Graphics)을 구현한 <code>ggplot</code> 패키지에서 그래프 라벨, 제목, 범례에 사용되는 글꼴을 달리 설정함으로써 시각적인 표현 정확도와 전달력을 높일 수 있다. 표 문법(Grammar of table)을 구현한 <code>gt</code> 패키지에서 표 제목, 칼럼명, 주석 등에 글꼴을 달리 적용함으로써 표를 전문적으로 보일 수 있다.</p>
-<p>코드 작성 시 개발자가 사용하는 통합개발환경(RStudio IDE)에 사용되는 코딩 전용 글꼴은 가독성을 높여 코드의 신속한 분석과 수정을 가능하게 하고, 문자와 숫자, 특수문자를 명확히 구분하여 프로그래밍 중 발생할 수 있는 실수를 줄여주고, 고정폭 글꼴과 합자(ligature) 같은 특별한 시각적 요소를 통해 코드 일관성을 유지와 눈의 피로도 줄여준다.</p>
-<p>글꼴은 데이터 과학 산출물에 해당되는 PDF, 워드 문서, 대시보드, 웹사이트, 이력서, 팜플렛 제작에도 활용된다. 보고서 PDF 문서 작성에 글꼴은 전문성을 높이고, 대쉬보드와 웹사이트 제작에 색상, 레이아웃과 함께 사용자 경험 향상에 큰 부분을 담당한다.</p>
+<p>코드 작성 시 개발자가 사용하는 통합개발환경(RStudio IDE)에 사용되는 코딩 전용 글꼴은 가독성을 높여 코드의 신속한 분석과 수정을 가능하게 하고, 문자와 숫자, 특수문자를 명확히 구분하여 프로그래밍 중 발생할 수 있는 실수를 줄여주고, 고정폭 글꼴과 합자(ligature) 같은 특별한 시각적 요소를 통해 코드 일관성 유지와 눈의 피로도 줄일 수 있다.</p>
+<p>글꼴은 데이터 과학의 산출물을 효과적으로 전달하는 데 중요한 역할을 한다. PDF 보고서, 워드 문서, 대시보드, 웹사이트, 이력서, 팜플렛 제작 등 다양한 매체에서 글꼴의 선택은 전문성을 표현하고, 정보의 명확성과 가독성을 높인다.</p>
+<p>특히, 보고서 PDF 문서에 차용된 글꼴은 전문적인 이미지를 강화하고, 내용의 신뢰성을 높이는 데 기여한다. 대시보드와 웹사이트 제작에서 글꼴은 색상, 레이아웃과 결합되어 사용자 경험을 향상시키는 중요한 요소로 자리잡고 있다.</p>
 <div id="fig-fonts-application" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-fonts-application-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <a href="images/fonts_application.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="그림&nbsp;9.1: 글꼴 적용 분야"><img src="images/fonts_application.jpg" class="img-fluid figure-img"></a>
@@ -386,11 +412,9 @@ ga('send', {
 </div>
 <section id="용어-설명" class="level2" data-number="9.1"><h2 data-number="9.1" class="anchored" data-anchor-id="용어-설명">
 <span class="header-section-number">9.1</span> 용어 설명</h2>
-<p>활자와 서체, 글꼴, 타이포그래프은 비슷한 개념처럼 느껴질 수 있으나 각각 다른 의미를 가지고 있다. <strong>활자(Type)</strong>는 글자나 기호의 물리적 형태로 본래는 글자를 만드는 데 사용된 나무 또는 금속 조각을 일컫는 말이었습니다. <strong>서체(또는 글꼴 모음, Typeface)</strong>는 글자 및 기호가 서로 비슷한 특징을 가지도록 디자인된 문자 스타일을 의미하며, ‘나눔고딕’, ‘Times New Roman’, ‘Helvetica’ 같은 이름을 가진 것이 서체다. <strong>글꼴(Font)</strong>은 서체의 여러 변형을 총칭하는 용어로, 특정 서체에서 굵고 진한 글꼴(Bold), 기울임(italic) 등 변형이 모두 포함된다. <strong>타이포그래피(Typography)</strong>는 활자 서체의 배열을 의미하며, 서체의 선택, 글자 크기, 줄 간격, 단어 간격, 문장 사이 간격과 맞춤 등을 조절하여 읽기 쉽고 미적으로 효과적인 텍스트 제작을 의미한다.</p>
-<p>전세계적으로 글꼴의 수는 무수히 많지만, 크게과 같이 크게 분류할 수 있다. 글꼴은 기본적으로 <strong>세리프(serif)</strong>와 <strong>산세리프(sans serif)</strong>의 2가지 스타일로 구분되는데 세리프는 글자의 획 끝에 작은 삐침이 있는 글꼴이며 산스(sans)는 프랑스어로 “없다”, 또는 “없이”라는 뜻이기 때문에 삐침이 없는 글꼴을 지칭한다.</p>
-<p>모노스페이스(<code>monospaced</code>) 글꼴은 코드 작성 등에서 유용하게 사용되며, 모든 글자가 같은 폭을 차지한다. <code>Consolas</code>나 <code>D2 Coding</code>은 모노스페이스 글꼴의 대표적인 예다. <strong>디스플레이(Display)</strong>와 <strong>스크립트(Script)</strong> 글꼴은 본문보다는 제목이나 강조할 부분에서 사용되며, 디자인적인 특성이 가미되어 있다. 디스플레이 글꼴은 대체로 크고 눈에 띄는 특성을, 스크립트 글꼴은 필기체나 서명 등을 모방한 스타일을 가진다.</p>
-<p>수식을 표현하는데 많이 사용되는 <a href="http://example.org">LaTeX</a>에서 기본글꼴로 <code>Computer Modern</code>, <code>AMS Euler</code>, <code>STIX</code> 같은 수식전용 글꼴이 사용되어, 수학적 표기나 공식을 명확하고 정확하게 표현할 수 있도록 설계되었다. 데이터 과학에서 그래프 문법과 표 문법을 사용하여 그래프와 표를 제작할 경우 가독성을 높이고 이목을 끌 수 있도록 색상과 더불어 적절한 글꼴 선택이 필수적으로 자리잡아가고 있다.</p>
-<p>일반적으로 본문에는 세리프나 산세리프 글꼴이 사용되고, 제목에는 더 화려하거나 눈에 띄는 글꼴이 사용되고 증거기반 문서 행정문서가 늘어나고 과학기술 문서에 필수적인 수식 등에도 타이포그래피 중요성이 늘어나고 있다.</p>
+<p>활자와 서체, 글꼴, 타이포그래프은 비슷한 개념처럼 느껴질 수 있으나 각각 다른 의미를 가지고 있다. <strong>활자(Type)</strong>는 글자나 기호의 물리적 형태로 본래는 글자를 만드는 데 사용된 나무 또는 금속 조각을 일컫는 용어다. <strong>서체(또는 글꼴 모음, Typeface)</strong>는 글자 및 기호가 서로 비슷한 특징을 가지도록 디자인된 문자 스타일을 의미하며, ‘나눔고딕’, ‘Times New Roman’, ‘Helvetica’ 같은 이름을 가진 것이 서체다. <strong>글꼴(Font)</strong>은 서체의 여러 변형을 총칭하는 용어로, 특정 서체에서 굵고 진한 글꼴(Bold), 기울임(italic) 등 변형이 모두 포함된다. <strong>타이포그래피(Typography)</strong>는 활자 서체의 배열을 의미하며, 서체의 선택, 글자 크기, 줄 간격, 단어 간격, 문장 사이 간격과 맞춤 등을 조절하여 읽기 쉽고 미적으로 효과적인 텍스트 제작을 의미한다.</p>
+<p>전세계적으로 글꼴의 수는 무수히 많지만, 크게 다음과 같이 몇가지로 분류된다. 먼저 글꼴은 기본적으로 <strong>세리프(serif)</strong>와 <strong>산세리프(sans serif)</strong>의 2가지 스타일로 구분되는데 세리프는 글자 획 끝에 작은 삐침이 있는 글꼴이며 산스(sans)는 프랑스어로 “없다”, 또는 “없이”라는 뜻이기 때문에 삐침이 없는 글꼴을 지칭한다. 모노스페이스(<code>monospaced</code>) 글꼴은 코드 작성 등에서 유용하게 사용되며, 모든 글자가 같은 폭을 차지한다. <code>Consolas</code>나 <code>D2 Coding</code>은 모노스페이스 글꼴의 대표적인 예다. <strong>디스플레이(Display)</strong>와 <strong>스크립트(Script)</strong> 글꼴은 본문보다는 제목이나 강조할 부분에서 사용되며, 디자인적인 특성이 가미되어 있다. 디스플레이 글꼴은 대체로 크고 눈에 띄는 특성을, 스크립트 글꼴은 필기체나 서명 등을 모방한 스타일을 가진다. 수식을 표현하는데 많이 사용되는 <span class="math inline">\(\LaTeX\)</span>에서 기본글꼴로 <code>Computer Modern</code>, <code>AMS Euler</code>, <code>STIX</code> 같은 수식전용 글꼴이 사용되어, 수학적 표기나 공식을 명확하고 정확하게 표현할 수 있도록 설계되었다.</p>
+<p>일반적으로 본문 작성에는 세리프나 산세리프 글꼴이 사용되며, 제목에는 더 독특하고 눈에 띄는 글꼴을 사용하는 경향이 있다. 증거 기반 문서, 행정 문서, 과학기술 문서 등에서도 이러한 경향이 나타나고 있다. 특히, 수식을 포함한 과학기술 문서에서 타이포그래피 중요성이 점점 더 커지고 있다. 이런 경향은 글꼴 선택이 갖는 문서의 전달력과 가독성에 미치는 영향을 무시 못하기 때문이다.</p>
 <div id="fig-document-fonts" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-document-fonts-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <a href="images/document_fonts.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="그림&nbsp;9.2: 문서에 담긴 디지털 글쓰기 글꼴"><img src="images/document_fonts.jpg" class="img-fluid figure-img"></a>
@@ -405,7 +429,7 @@ ga('send', {
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-서체와 글꼴
+여우와 다람쥐
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -413,27 +437,30 @@ ga('send', {
 <p><a href="https://ko.wikipedia.org/wiki/%ED%8C%AC%EA%B7%B8%EB%9E%A8"><strong>팬그램(Pangram)</strong></a>은 ’모든 글자’라는 뜻으로 주어진 모든 문자를 적어도 한 번 이상 사용하여 만든 문장을 뜻한다. 팬그램은 로렘 입숨처럼 글꼴 샘플을 보여주거나 장비를 테스트하는 데 사용된다. 영어 팬그램으로 가장 유명한 <strong>‘The quick brown fox jumps over the lazy dog’</strong>는 19세기부터 사용되어 왔다. 유사하게 한글에서는 <strong>“다람쥐 헌 쳇바퀴에 타고파”</strong>가 사용되고 있다.</p>
 </div>
 </div>
-</section><section id="두가지-형태-글꼴" class="level2" data-number="9.2"><h2 data-number="9.2" class="anchored" data-anchor-id="두가지-형태-글꼴">
-<span class="header-section-number">9.2</span> 두가지 형태 글꼴</h2>
-<p>글꼴(Fonts)은 문자나 기호를 디지털화하여 표현하는 데 사용되는 그래픽 디자인으로 주로 로컬 설치형 글꼴과 웹폰트 두가지 형태로 사용된다.</p>
-<p>로컬 설치형 글꼴은 사용자의 컴퓨터나 기기에 직접 설치되어 있는 글꼴로, 윈도우(Windows)나 맥(macOS), 리눅스(Unix/Linux)에서 기본적으로 제공되는 글꼴이나 사용자가 따로 설치하여 사용하는 글꼴을 의미한다. 인터넷 연결 없이도 사용할 수 있으며, 로컬에서 동작하므로 빠른 렌더링 속도를 제공한다는 점이 큰 장점이지만, 사용자 컴퓨터나 기기에 설치되어 있지 않은 글꼴은 보이지 않을 수 있으며, 글꼴 업데이트나 관리는 수동으로 직접해야 한다는 점은 단점이다.</p>
-<p>반면 웹폰트는 웹페이지를 로드할 때 서버에서 함께 다운로드되어 사용자의 브라우저에 표시된다. <a href="https://fonts.google.com/">구글 폰트(Google Fonts)</a>, <a href="https://noonnu.cc/">눈누</a>와 같은 웹폰트 서비스를 통해 제공되며, 웹페이지를 방문하는 모든 사용자에게 동일한 글꼴를 통해 보여준다는 점은 장점이다. 다양한 스타일과 가중치(weights) 글꼴을 쉽게 사용할 수 있으며, 글꼴 업데이트나 관리가 자동화되는 장점은 있으나, 초기 페이지 로딩 시간이 길어질 수 있으며, 서버 다운 혹은 인터넷 연결 문제로 웹폰트가 정상적으로 로드되지 않을 위험도 있고, 인터넷 통신 데이터 사용량이 증가되어 속도가 늦어지고 관련 네트워크 비용이 늘어날 수 있다.</p>
+</section><section id="설치형-글꼴과-웹-글꼴" class="level2" data-number="9.2"><h2 data-number="9.2" class="anchored" data-anchor-id="설치형-글꼴과-웹-글꼴">
+<span class="header-section-number">9.2</span> 설치형 글꼴과 웹 글꼴</h2>
+<p>디지털 시대에서 글꼴은 문자와 기호를 디지털 방식으로 표현하는 데 필수적인 요소로 다양한 형태 글꼴이 개발되었는데, 주로 사용되는 두 가지 형태는 설치형 글꼴과 웹 글꼴입니다. 설치형 글꼴은 사용자가 자신의 컴퓨터나 다른 디지털 디바이스에 직접 설치하여 사용하며, 다양한 애플리케이션에서 해당 글꼴을 활용할 수 있다. 반면에, 웹 글꼴은 웹사이트를 통해 온라인 상에서 사용되며 웹 페이지에서 해당 글꼴이 사용된다.</p>
+<p>로컬 설치형 글꼴은 사용자의 컴퓨터나 기기(디바이스)에 직접 설치되어 있는 글꼴로, 윈도우(Windows)나 맥(macOS), 리눅스(Unix/Linux)에서 기본적으로 제공되는 글꼴이나 사용자가 따로 설치하여 사용하는 글꼴을 의미한다. 인터넷 연결 없이도 사용할 수 있으며, 로컬에서 동작하므로 빠른 속도를 제공한다는 점이 큰 장점이지만, 사용자 컴퓨터나 기기에 설치되어 있지 않은 글꼴은 보이지 않을 수 있으며, 글꼴 업데이트나 관리는 수동으로 직접해야 한다는 점은 단점이다.</p>
+<p>반면 웹글꼴은 웹페이지를 로드할 때 서버에서 함께 다운로드 되어 사용자의 브라우저에 표시된다. <a href="https://fonts.google.com/">구글 글꼴(Google Fonts)</a>, <a href="https://noonnu.cc/">눈누</a>와 같은 웹글꼴 서비스를 통해 제공되며, 웹페이지를 방문하는 모든 사용자에게 동일한 글꼴로 보여준다는 점은 장점이다. 다양한 스타일과 굵기(weights) 글꼴을 쉽게 사용할 수 있으며, 글꼴 업데이트나 관리가 자동화되는 장점은 있으나, 초기 페이지 로딩 시간이 길어질 수 있으며, 서버 다운 혹은 인터넷 연결 문제로 웹글꼴이 정상적으로 로드되지 않을 위험도 있고, 인터넷 통신 데이터 사용량이 증가되어 속도가 늦어지고 관련 네트워크 비용이 늘어날 수도 있다.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure"><p><a href="images/ttf-web-fonts.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="설치형 글꼴과 웹 글꼴"><img src="images/ttf-web-fonts.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="설치형 글꼴과 웹 글꼴"></a></p>
 <figcaption>설치형 글꼴과 웹 글꼴</figcaption></figure>
 </div>
 </section><section id="글꼴-설치" class="level2" data-number="9.3"><h2 data-number="9.3" class="anchored" data-anchor-id="글꼴-설치">
 <span class="header-section-number">9.3</span> 글꼴 설치</h2>
-<p><a href="https://fonts.google.com/">구글 폰트(Google Fonts)</a>, <a href="https://noonnu.cc/">눈누</a>와 같은 웹사이트에서 <code>.ttf</code>, <code>.otf</code> 형식 글꼴파일을 다운로드 한 후에 <code>C:\Windows\Fonts\</code> 디렉토리에 복사하거나, 다운로드 받은 글꼴파일을 더블 클릭하여 설치 버튼을 눌러 자동으로 해당 디렉토리에 설치한다. 글꼴을 시스템에 설치하면 모든 사용자가 사용할 수 있도 있지만, 프로젝트 별로 <code>fonts</code> 디렉토리를 생성하여 이를 프로젝트에서 불러와서 특정 글꼴을 사용하는 것도 많이 사용된다. 두가지 접근 방법 모두 장단점이 있다.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><a href="images/font_overview.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="R 폰트/글꼴 설치"><img src="images/font_overview.png" class="img-fluid figure-img" style="width:100.0%" alt="R 폰트/글꼴 설치"></a></p>
-<figcaption>R 폰트/글꼴 설치</figcaption></figure>
+<p><a href="https://fonts.google.com/">구글 폰트(Google Fonts)</a>, <a href="https://noonnu.cc/">눈누</a>와 같은 웹사이트에서 <code>.ttf</code>, <code>.otf</code> 형식 글꼴파일을 다운로드 한 후에 <code>C:\Windows\Fonts\</code> 디렉토리에 복사하거나, 다운로드 받은 글꼴파일을 더블 클릭하여 설치 버튼을 눌러 자동으로 해당 디렉토리에 설치한다. 글꼴을 시스템에 설치하면 모든 사용자가 사용할 수 있도 있지만, 프로젝트 별로 <code>fonts</code> 디렉토리를 생성하여 이를 프로젝트에서 불러와서 특정 글꼴을 사용하는 것도 많이 사용된다. 두가지 접근 방법 모두 장단점이 있다. <a href="#fig-r-font" class="quarto-xref">그림&nbsp;<span>9.3</span></a> 에서 네이버에서 무료로 제공하는 나눔글꼴과 D2Coding 글꼴을 다운로드 받아 운영제제에 설치한 후 R에서 <code>ggplot</code> 그래프를 제작하는데 <code>extrafont</code> 패키지 <code>font_import()</code> 함수를 통해 등록한 후 사용하는 사례를 보여주고 있다. RStudio에서 코딩전용 D2Coding 글꼴 설정하는 방법도 함께 우측에 나와있다.</p>
+<div id="fig-r-font" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-r-font-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/font_overview.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="그림&nbsp;9.3: R 폰트/글꼴 설치"><img src="images/font_overview.png" class="img-fluid figure-img" style="width:100.0%"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-r-font-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+그림&nbsp;9.3: R 폰트/글꼴 설치
+</figcaption></figure>
 </div>
 <section id="글꼴-패키지" class="level3" data-number="9.3.1"><h3 data-number="9.3.1" class="anchored" data-anchor-id="글꼴-패키지">
 <span class="header-section-number">9.3.1</span> 글꼴 패키지</h3>
 <p>시스템에 글꼴이 설치되었다고 바로 문서 텍스트, 그래프, 표, 수식 등에 사용할 수 있는 것은 아니다. 이를 등록하는 절치가 필요하다. 언어마다 차이는 있지만 대체로 유사한 작업방식이기 때문에 R 언어를 사례로 살펴보자.</p>
-<p><code>extrafont</code>, <code>sysfonts</code>, <code>showtext</code>, 패키지는 글꼴을 다루기 위한 다양한 기능을 제공하기 위해 개발된 글꼴 패키지로 <code>extrafont</code>와 <code>sysfonts</code> 패키지는 로컬 설치형 글꼴을 다루는데 특화되어 있는 반면에 <code>showtext</code>는 웹글꼴 전용 패키지다. <code>sysfonts</code>가 더 낮은 수준에서 더 많은 제어기능을 제공하는 반면, <code>extrafont</code>는 높은 수준 작업에 더 초점을 맞추고 사용자 친화적인 방법으로 글꼴을 적용하는 데 특화되어 있다.</p>
-<p>먼저, 로컬 컴퓨터에 설치된 R 글꼴 패키지를 확인한다.</p>
+<p><code>extrafont</code>, <code>sysfonts</code>, <code>showtext</code>는 R에서 글꼴 처리를 위한 다양한 기능을 제공하는 패키지들이다. 여기서 <code>extrafont</code>와 <code>sysfonts</code>는 로컬에 설치된 글꼴을 다루는 데 특화되어 있는 반면, <code>showtext</code>는 웹 글꼴에 특화된 패키지다. <code>sysfonts</code>는 글꼴 관리에서 더 낮은 수준에서의 제어 기능을 제공하고, <code>extrafont</code>는 높은 수준의 작업에 집중하며 사용자 친화적인 방법으로 글꼴을 적용하는 데 특화되어 있다. 먼저, 로컬 컴퓨터에 설치된 R 글꼴 패키지를 확인한다.</p>
 <div class="cell">
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span>
 <span></span>
@@ -449,6 +476,8 @@ ga('send', {
 <span>         URL <span class="op">=</span> <span class="fu"><a href="https://purrr.tidyverse.org/reference/map.html">map</a></span><span class="op">(</span><span class="va">value</span>, <span class="st">"URL"</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://rdrr.io/r/base/character.html">as.character</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="op">-</span><span class="va">name</span>, <span class="op">-</span><span class="va">value</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu">gt</span><span class="fu">::</span><span class="fu"><a href="https://gt.rstudio.com/reference/gt.html">gt</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="tbl-font-pkg" class="cell quarto-float anchored">
+<figure class="quarto-float quarto-float-tbl figure"><div aria-describedby="tbl-font-pkg-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
 <div>
 <div id="mwlefoodfi" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
@@ -891,7 +920,7 @@ ga('send', {
   text-indent: 25px;
 }
 </style>
-<table class="gt_table table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table do-not-create-environment cell table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
 <thead><tr class="header gt_col_headings">
 <th id="패키지명" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">패키지명</th>
 <th id="버전" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">버전</th>
@@ -923,15 +952,20 @@ ga('send', {
 </div>
 </div>
 </div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-tbl" id="tbl-font-pkg-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+표&nbsp;9.1: 로컬 컴퓨터에 설치된 R 글꼴 패키지
+</figcaption></figure>
+</div>
+</div>
 </section><section id="네이버-글꼴-설치" class="level3" data-number="9.3.2"><h3 data-number="9.3.2" class="anchored" data-anchor-id="네이버-글꼴-설치">
 <span class="header-section-number">9.3.2</span> 네이버 글꼴 설치</h3>
-<p><a href="https://campaign.naver.com/nanumsquare_neo">네이버 나눔스퀘어</a> 글꼴을 로컬 컴퓨터에 다운로드 받아 설치할 수 있다. <a href="#fig-nanumsquare" class="quarto-xref">그림&nbsp;<span>9.3</span></a> 에서 “모든 사용자용으로 설치(A)”하게 되면 글꼴이 <code>C:\Windows\Fonts\</code> 디렉토리에 설치된다. 운영체제에 설치작업이 완료되면 R에서 사용할 수 있으나, 몇 가지 추가 작업이 필요하다. 우선, <code>fs</code> 패키지 <code>file_exists()</code> 함수를 사용하여 ‘NanumSquare.ttf’ 파일이 정상적으로 설치되었는지 확인한다. 만약 <code>extrafont</code> 패키지를 사용한다면 <code>font_import()</code> 명령어를 사용하여 글꼴을 등록하고, <code>path=</code>로 글꼴 파일의 경로를 직접 지정할 수 있으며, <code>pattern=</code>을 사용해서 특정 패턴에 맞는 글꼴을 일괄적으로 등록할 수도 있다. 최근에 많이 사용되고 있는 <code>sysfonts</code> 패키지를 사용한다면 <code><a href="https://rdrr.io/pkg/sysfonts/man/font_add.html">font_add()</a></code> 명령어를 사용하여 글꼴을 등록한다. 선택한 방식에 따라 글꼴을 설치하면 이후 R 프로젝트에서 네이버 나눔스퀘어 글꼴을 자유롭게 사용할 수 있다.</p>
+<p><a href="https://campaign.naver.com/nanumsquare_neo">네이버 나눔스퀘어</a> 글꼴을 로컬 컴퓨터에 다운로드 받아 설치할 수 있다. <a href="#fig-nanumsquare" class="quarto-xref">그림&nbsp;<span>9.4</span></a> 에서 “모든 사용자용으로 설치(A)”하게 되면 글꼴이 <code>C:\Windows\Fonts\</code> 디렉토리에 설치된다. 운영체제에 설치작업이 완료되면 R에서 사용할 수 있으나, 몇 가지 추가 작업이 필요하다. 우선, <code>fs</code> 패키지 <code>file_exists()</code> 함수를 사용하여 ‘NanumSquare.ttf’ 파일이 정상적으로 설치되었는지 확인한다. 만약 <code>extrafont</code> 패키지를 사용한다면 <code>font_import()</code> 명령어를 사용하여 글꼴을 등록하고, <code>path=</code>로 글꼴 파일의 경로를 직접 지정할 수 있으며, <code>pattern=</code>을 사용해서 특정 패턴에 맞는 글꼴을 일괄적으로 등록할 수도 있다. 최근에 많이 사용되고 있는 <code>sysfonts</code> 패키지를 사용한다면 <code><a href="https://rdrr.io/pkg/sysfonts/man/font_add.html">font_add()</a></code> 명령어를 사용하여 글꼴을 등록한다. 선택한 방식에 따라 글꼴을 설치하면 이후 R 프로젝트에서 네이버 나눔스퀘어 글꼴을 자유롭게 사용할 수 있다.</p>
 <div id="fig-nanumsquare" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-nanumsquare-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="images/fonts_nanumsquare.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="그림&nbsp;9.3: 윈도우 나눔스퀘어 글꼴 설치"><img src="images/fonts_nanumsquare.jpg" class="img-fluid figure-img"></a>
+<a href="images/fonts_nanumsquare.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="그림&nbsp;9.4: 윈도우 나눔스퀘어 글꼴 설치"><img src="images/fonts_nanumsquare.jpg" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-nanumsquare-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-그림&nbsp;9.3: 윈도우 나눔스퀘어 글꼴 설치
+그림&nbsp;9.4: 윈도우 나눔스퀘어 글꼴 설치
 </figcaption></figure>
 </div>
 <div class="cell">
@@ -956,7 +990,7 @@ ga('send', {
 <figure class="figure"><p><a href="images/font_d2coding.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="D2 코딩폰트 설치"><img src="images/font_d2coding.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="D2 코딩폰트 설치"></a></p>
 <figcaption>D2 코딩폰트 설치</figcaption></figure>
 </div>
-<p>글꼴 선택은 문서나 프로젝트의 특성과 목적에 따라 크게 영향을 미친다. 제목에는 삐침이 없어 깔끔한 느낌을 주기 위해 나눔스퀘어 글꼴을 설치했고, 본문에는 삐침이 있는 마루부리 글꼴을 설치하여 가독성을 높였고, 코딩 작업에 특별히 설계된 D2코딩 글꼴을 선택하여 전체적인 글쓰기 환경을 효율적이고 편안하게 준비했다.</p>
+<p>문서나 프로젝트의 특성과 목적에 따라 글꼴 선택은 큰 영향을 미친다. 예를 들어, 제목에는 깔끔한 느낌을 주기 위해 삐침이 없는 나눔스퀘어 글꼴을 적용하고, 본문에는 가독성을 높이기 위해 삐침이 있는 마루부리 글꼴을 사용하고, 프로그래밍 작업에 코딩전용 D2Coding 글꼴을 채택함으로써 전체 글쓰기 저작 환경을 설정하는 것도 방법이다.</p>
 </section></section><section id="글꼴-적용-사례" class="level2" data-number="9.4"><h2 data-number="9.4" class="anchored" data-anchor-id="글꼴-적용-사례">
 <span class="header-section-number">9.4</span> 글꼴 적용 사례</h2>
 <p>예제로 <code>ggplot2</code>와 <code>sysfonts</code> 패키지를 사용해 다른 글꼴을 그래프 주요 요소에 반영한 데이터 시각화 R 코드를 살펴보자. 먼저 <code>ggplot2</code> 데이터 시각화를 위한 패키지와 <code>sysfonts</code> 글꼴 관리를 위한 라이브러리를 가져온다. <code>font_add</code> 함수를 사용해 NanumSquare, MaruBuri-Regular, MaruBuri-Bold 글꼴을 시스템에 등록한다. 이후 <code>data.frame</code>을 사용해 x값이 1부터 10까지, y값이 정규 분포를 따르는 데이터를 생성한다. <code>ggplot</code> 함수로 기본 그래프를 설정하고 <code>geom_point</code>를 사용해 산점도를 그린다. <code>labs</code> 함수로 그래프 제목과 x, y축 레이블을 설정하고, <code>theme</code> 함수로 큰 제목에는 NanumSquare, x축과 y축 레이블에는 MaruBuri-Regular 글꼴을 적용한다. <code>annotate</code> 함수로 “다른 글꼴”이라는 텍스트를 MaruBuri-Bold 글꼴로 그래프에 추가하여 다른 글꼴을 적용한 그래프를 생성한다.</p>
@@ -998,10 +1032,10 @@ ga('send', {
 </div>
 <div id="fig-fonts-ggplot" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-fonts-ggplot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="images/fonts_example.jpeg" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="그림&nbsp;9.4: 다양한 글꼴을 적용한 ggplot 사례"><img src="images/fonts_example.jpeg" class="img-fluid figure-img"></a>
+<a href="images/fonts_example.jpeg" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="그림&nbsp;9.5: 다양한 글꼴을 적용한 ggplot 사례"><img src="images/fonts_example.jpeg" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-fonts-ggplot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-그림&nbsp;9.4: 다양한 글꼴을 적용한 <code>ggplot</code> 사례
+그림&nbsp;9.5: 다양한 글꼴을 적용한 <code>ggplot</code> 사례
 </figcaption></figure>
 </div>
 
@@ -1415,7 +1449,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <p>순수하게 <a href="https://quarto.org/">쿼토(Quarto)</a>로 제작되었습니다.</p>
 </div>
   </div>
-</footer><script>var lightboxQuarto = GLightbox({"descPosition":"bottom","openEffect":"zoom","loop":false,"selector":".lightbox","closeEffect":"zoom"});
+</footer><script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","selector":".lightbox","descPosition":"bottom","loop":false,"openEffect":"zoom"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;
