@@ -386,27 +386,23 @@ window.Quarto = {
         <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">목차</h2>
    
   <ul>
-<li>
-<a href="#color-mechanism" id="toc-color-mechanism" class="nav-link active" data-scroll-target="#color-mechanism"><span class="header-section-number">9.1</span> 시각화 메커니즘</a>
+<li><a href="#color-mechanism" id="toc-color-mechanism" class="nav-link active" data-scroll-target="#color-mechanism"><span class="header-section-number">9.1</span> 시각화 메커니즘</a></li>
+  <li><a href="#color-dataviz-mechanism-rgb" id="toc-color-dataviz-mechanism-rgb" class="nav-link" data-scroll-target="#color-dataviz-mechanism-rgb"><span class="header-section-number">9.2</span> 16진수 RGB 표색법</a></li>
+  <li><a href="#dataviz-mechanism-hcl" id="toc-dataviz-mechanism-hcl" class="nav-link" data-scroll-target="#dataviz-mechanism-hcl"><span class="header-section-number">9.3</span> <strong>HCL</strong> - RGB 대안</a></li>
+  <li><a href="#viz-printer-cmyk" id="toc-viz-printer-cmyk" class="nav-link" data-scroll-target="#viz-printer-cmyk"><span class="header-section-number">9.4</span> CMYK - 프린터 색상모형</a></li>
+  <li>
+<a href="#dataviz-color-brewer-viridis" id="toc-dataviz-color-brewer-viridis" class="nav-link" data-scroll-target="#dataviz-color-brewer-viridis"><span class="header-section-number">9.5</span> <code>RColorBrewer</code> 와 <code>viridis</code></a>
   <ul class="collapse">
-<li><a href="#color-dataviz-mechanism-rgb" id="toc-color-dataviz-mechanism-rgb" class="nav-link" data-scroll-target="#color-dataviz-mechanism-rgb"><span class="header-section-number">9.1.1</span> 16진수 RGB 표색법</a></li>
-  <li><a href="#dataviz-mechanism-hcl" id="toc-dataviz-mechanism-hcl" class="nav-link" data-scroll-target="#dataviz-mechanism-hcl"><span class="header-section-number">9.1.2</span> RGB 색상모형 대안 - <strong>HCL</strong></a></li>
-  <li><a href="#viz-printer-cmyk" id="toc-viz-printer-cmyk" class="nav-link" data-scroll-target="#viz-printer-cmyk"><span class="header-section-number">9.1.3</span> 프린터 색상모형: CMYK </a></li>
+<li><a href="#dataviz-color-brewer" id="toc-dataviz-color-brewer" class="nav-link" data-scroll-target="#dataviz-color-brewer"><span class="header-section-number">9.5.1</span> RColorBrewer</a></li>
+  <li><a href="#dataviz-viridis" id="toc-dataviz-viridis" class="nav-link" data-scroll-target="#dataviz-viridis"><span class="header-section-number">9.5.2</span> viridis</a></li>
+  <li><a href="#dataviz-viridis-blind" id="toc-dataviz-viridis-blind" class="nav-link" data-scroll-target="#dataviz-viridis-blind"><span class="header-section-number">9.5.3</span> 색각 이상</a></li>
   </ul>
 </li>
   <li>
-<a href="#dataviz-color-brewer-viridis" id="toc-dataviz-color-brewer-viridis" class="nav-link" data-scroll-target="#dataviz-color-brewer-viridis"><span class="header-section-number">9.2</span> <code>RColorBrewer</code> 와 <code>viridis</code></a>
+<a href="#%EC%83%89%EC%83%81%EC%A0%81%EC%9A%A9-%EC%82%AC%EB%A1%80" id="toc-색상적용-사례" class="nav-link" data-scroll-target="#%EC%83%89%EC%83%81%EC%A0%81%EC%9A%A9-%EC%82%AC%EB%A1%80"><span class="header-section-number">9.6</span> 색상적용 사례</a>
   <ul class="collapse">
-<li><a href="#dataviz-color-brewer" id="toc-dataviz-color-brewer" class="nav-link" data-scroll-target="#dataviz-color-brewer"><span class="header-section-number">9.2.1</span> RColorBrewer</a></li>
-  <li><a href="#dataviz-viridis" id="toc-dataviz-viridis" class="nav-link" data-scroll-target="#dataviz-viridis"><span class="header-section-number">9.2.2</span> viridis</a></li>
-  <li><a href="#dataviz-viridis-blind" id="toc-dataviz-viridis-blind" class="nav-link" data-scroll-target="#dataviz-viridis-blind"><span class="header-section-number">9.2.3</span> 색각 이상</a></li>
-  </ul>
-</li>
-  <li>
-<a href="#%EC%83%89%EC%83%81%EC%A0%81%EC%9A%A9-%EC%82%AC%EB%A1%80" id="toc-색상적용-사례" class="nav-link" data-scroll-target="#%EC%83%89%EC%83%81%EC%A0%81%EC%9A%A9-%EC%82%AC%EB%A1%80"><span class="header-section-number">9.3</span> 색상적용 사례</a>
-  <ul class="collapse">
-<li><a href="#%EC%A0%95%EB%8B%B9-%EC%83%89%EC%83%81" id="toc-정당-색상" class="nav-link" data-scroll-target="#%EC%A0%95%EB%8B%B9-%EC%83%89%EC%83%81"><span class="header-section-number">9.3.1</span> 정당 색상</a></li>
-  <li><a href="#%EC%9D%B4%EB%AF%B8%EC%A7%80-%EC%83%89%EC%83%81" id="toc-이미지-색상" class="nav-link" data-scroll-target="#%EC%9D%B4%EB%AF%B8%EC%A7%80-%EC%83%89%EC%83%81"><span class="header-section-number">9.3.2</span> 이미지 → 색상</a></li>
+<li><a href="#%EC%A0%95%EB%8B%B9-%EC%83%89%EC%83%81" id="toc-정당-색상" class="nav-link" data-scroll-target="#%EC%A0%95%EB%8B%B9-%EC%83%89%EC%83%81"><span class="header-section-number">9.6.1</span> 정당 색상</a></li>
+  <li><a href="#%EC%9D%B4%EB%AF%B8%EC%A7%80-%EC%83%89%EC%83%81" id="toc-이미지-색상" class="nav-link" data-scroll-target="#%EC%9D%B4%EB%AF%B8%EC%A7%80-%EC%83%89%EC%83%81"><span class="header-section-number">9.6.2</span> 이미지 → 색상</a></li>
   </ul>
 </li>
   </ul><div class="toc-actions"><ul><li><a href="https://github.com/bit2r/gpt-quarto/edit/main/theme_colors.qmd" class="toc-action"><i class="bi bi-github"></i>편집</a></li><li><a href="https://github.com/bit2r/gpt-quarto/issues/new" class="toc-action"><i class="bi empty"></i>이슈 보고</a></li></ul></div></nav>
@@ -429,336 +425,455 @@ window.Quarto = {
   
 
 
-</header><p>색상(Color)에 관심을 가져야하는 이유는 데이터와 정보를 시각적으로 전달하는 데 핵심적인 역할을 담당하기 때문이다. 컴퓨터는 RGB 체계로 색을 인식하고 표현하는 반면, 인간은 HCL 체계로 색을 인지하고 이해한다. 뿐만 아니라 데이터를 그래프 등을 통해 시각적으로 표현하고 문서를 인쇄 출판, 빔프로젝트, 모니터 등 다양한 매체를 통해 효율적이고 효과적으로 정보를 전달하는 데 중요하다.</p>
+</header><p>색상(Color)에 관심을 가져야하는 이유는 데이터와 정보를 시각적으로 전달하는 데 핵심적인 역할을 담당하기 때문이다. 컴퓨터는 RGB 체계로 색을 인식하고 표현하는 반면, 인간은 HCL 체계로 색을 인지하고 이해한다. 사람들 중에는 색각 이상이 있는 분들도 계시기 때문에 색상을 선택할 때는 이러한 점도 고려해야 한다. 뿐만 아니라, 시각화 그래프는 다양한 색상이 적용된 PPT 발표자료, 보고서, 웹 페이지 등에 문서의 구성요소 중 하나로 포함된다. 그리고 나서, 인쇄 출판, 빔 프로젝트, 모니터, 스마트폰, 태블릿 등 여러 매체를 통해 정보가 전달되기 때문에 이런 점까지 고려한 색상 선택과 활용전략이 필요하다.</p>
 <section id="color-mechanism" class="level2" data-number="9.1"><h2 data-number="9.1" class="anchored" data-anchor-id="color-mechanism">
 <span class="header-section-number">9.1</span> 시각화 메커니즘</h2>
 <p>크게 보면 기계 즉, 컴퓨터가 색을 이해하고 표현하는 <strong>RGB 체계</strong>와 사람이 색을 인지하고 이해하는 <strong>HCL 체계</strong>로 나누어 진다. 2진수로 표현된 시각적 데이터는 RGB 16진수로 변환되어 모니터에 표시되고, 물리적 광자(photon)로 사람눈에 위치한 망막에 꽂히게 되고, 사람은 뇌에서 인지한 후에 이를 처리하여 시각적인 정보를 인식하게 된다. 따라서, 사람뇌에 인식할 수 있는 시각적인 정보로 데이터를 구성해야만 다양한 종류의 모니터를 통해 효율적이고 효과적으로 정보가 전달될 수 있다. <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><a href="images/color-viz-mechanism.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="시각적 인지 메커니즘"><img src="images/color-viz-mechanism.png" class="img-fluid figure-img" style="width:100.0%" alt="시각적 인지 메커니즘"></a></p>
-<figcaption>시각적 인지 메커니즘</figcaption></figure>
+<div id="fig-viz-mechanism" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-viz-mechanism-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/color-viz-mechanism.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="그림&nbsp;9.1: 시각적 인지 메커니즘"><img src="images/color-viz-mechanism.png" class="img-fluid figure-img" style="width:100.0%"></a>
 </div>
-<section id="color-dataviz-mechanism-rgb" class="level3" data-number="9.1.1"><h3 data-number="9.1.1" class="anchored" data-anchor-id="color-dataviz-mechanism-rgb">
-<span class="header-section-number">9.1.1</span> 16진수 RGB 표색법</h3>
-<p>양수 숫자나 크레파스 명칭 대신에, 일반적이고 컴퓨터가 읽어들일 수 있는 색상 표색법이 16진수 팔레트다. Cynthia Brewer 는 펜실베니아 대학에서 교수로 색상이론과 시각화에 관련된 전문분야를 갖고 있으며 특히, ColorBrewer 으로 알려진 색생체계는 웹, 출판, 색맹을 고려하여 널리 쓰이고 있다. ColorBrewer 색상체계를 R에서 시각화를 할 때 사용될 수 있게 만든 것이 <a href="https://cran.r-project.org/web/packages/RColorBrewer/index.html">RColorBrewer</a> 패키지다. RColorBrewer Dark2 팔레트를 통해 실제로 구현된 색상체계를 살펴보자.</p>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-viz-mechanism-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+그림&nbsp;9.1: 시각적 인지 메커니즘
+</figcaption></figure>
+</div>
+</section><section id="color-dataviz-mechanism-rgb" class="level2" data-number="9.2"><h2 data-number="9.2" class="anchored" data-anchor-id="color-dataviz-mechanism-rgb">
+<span class="header-section-number">9.2</span> 16진수 RGB 표색법</h2>
+<p>양수 숫자나 크레파스 명칭 대신에, 일반적이고 컴퓨터가 읽어들일 수 있는 색상 표색법이 16진수 팔레트다. Cynthia Brewer 는 펜실베니아 대학에서 교수로 색상이론과 시각화에 관련된 분야를 개척했으며 특히, ColorBrewer 으로 알려진 색생체계는 가장 널리 쓰이고 있다. ColorBrewer 색상체계를 R에서 사용될 수 있게 만든 것이 <a href="https://cran.r-project.org/web/packages/RColorBrewer/index.html">RColorBrewer</a> 패키지다. RColorBrewer Dark2 팔레트를 통해 실제로 구현된 색상체계를 살펴보자.</p>
 <div class="cell">
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">RColorBrewer</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/pkg/RColorBrewer/man/ColorBrewer.html">brewer.pal</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fl">8</span>, name <span class="op">=</span> <span class="st">"Dark2"</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] "#1B9E77" "#D95F02" "#7570B3" "#E7298A" "#66A61E" "#E6AB02" "#A6761D"</span></span>
 <span><span class="co">#&gt; [8] "#666666"</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p><code>#</code> 기호는 관례로 붙이는 것이고, 16진수 문자열을 다음과 같이 파싱한다: <code>#rrggbb</code>에서 <code>rr</code>, <code>gg</code>, <code>bb</code> 각각은 적색, 녹색, 청색 채널에 대한 생상농도를 나타낸다. 각 색상은 2를 밑으로 하는 16개 숫자를 나타내고, “16진수(hexadecimal)” 혹은 줄여서 헥스(hex)로 부른다. 다음에 밑을 10으로 하는 십진수와 16진수 비교표가 다음에 나와 있다.</p>
-<div>
-<table class="table" data-quarto-postprocess="true">
-<thead><tr class="header">
-<th style="text-align: left;" data-quarto-table-cell-role="th">0</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">1</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">2</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">3</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">4</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">5</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">6</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">7</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">8</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">9</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">A</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">B</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">C</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">D</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">E</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">F</th>
+<p><code>#</code> 기호는 관례로 붙이는 것이고, 16진수 문자열을 <code>rr</code>, <code>gg</code>, <code>bb</code>로 파싱한다. <code>#rrggbb</code>에서 <code>rr</code>, <code>gg</code>, <code>bb</code> 각각은 적색, 녹색, 청색 채널에 대한 생상농도를 나타낸다. 각 색상은 2를 밑으로 하는 16개 숫자를 나타내고, “16진수(hexadecimal)” 혹은 줄여서 헥스(hex)로 부른다. 다음에 밑을 10으로 하는 십진수와 16진수 비교표가 다음에 나와 있다.</p>
+<div class="cell" data-result="asis">
+<div id="fig-rgb-table" class="cell-output-display quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-rgb-table-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="table" style="margin-left: auto; margin-right: auto;">
+<thead><tr>
+<th style="text-align:left;">
+0
+</th>
+<th style="text-align:left;">
+1
+</th>
+<th style="text-align:left;">
+2
+</th>
+<th style="text-align:left;">
+3
+</th>
+<th style="text-align:left;">
+4
+</th>
+<th style="text-align:left;">
+5
+</th>
+<th style="text-align:left;">
+6
+</th>
+<th style="text-align:left;">
+7
+</th>
+<th style="text-align:left;">
+8
+</th>
+<th style="text-align:left;">
+9
+</th>
+<th style="text-align:left;">
+A
+</th>
+<th style="text-align:left;">
+B
+</th>
+<th style="text-align:left;">
+C
+</th>
+<th style="text-align:left;">
+D
+</th>
+<th style="text-align:left;">
+E
+</th>
+<th style="text-align:left;">
+F
+</th>
 </tr></thead>
-<tbody><tr class="odd">
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: left;">2</td>
-<td style="text-align: left;">3</td>
-<td style="text-align: left;">4</td>
-<td style="text-align: left;">5</td>
-<td style="text-align: left;">6</td>
-<td style="text-align: left;">7</td>
-<td style="text-align: left;">8</td>
-<td style="text-align: left;">9</td>
-<td style="text-align: left;">10</td>
-<td style="text-align: left;">11</td>
-<td style="text-align: left;">12</td>
-<td style="text-align: left;">13</td>
-<td style="text-align: left;">14</td>
-<td style="text-align: left;">15</td>
+<tbody><tr>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:left;">
+2
+</td>
+<td style="text-align:left;">
+3
+</td>
+<td style="text-align:left;">
+4
+</td>
+<td style="text-align:left;">
+5
+</td>
+<td style="text-align:left;">
+6
+</td>
+<td style="text-align:left;">
+7
+</td>
+<td style="text-align:left;">
+8
+</td>
+<td style="text-align:left;">
+9
+</td>
+<td style="text-align:left;">
+10
+</td>
+<td style="text-align:left;">
+11
+</td>
+<td style="text-align:left;">
+12
+</td>
+<td style="text-align:left;">
+13
+</td>
+<td style="text-align:left;">
+14
+</td>
+<td style="text-align:left;">
+15
+</td>
 </tr></tbody>
 </table>
 </div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-rgb-table-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+그림&nbsp;9.2: 십진수와 16진수 비교표
+</figcaption></figure>
+</div>
+</div>
 <p>예를 들어, 팔렛트 첫 색상이 <code>#1B9E77</code>으로 명세되어 있다. 따라서, 녹색 채널 색상농도는 <code>9E</code>가 된다.</p>
-<p><span class="math display">\[ 9E = 9 * 16^1 + 14 * 16^0 = 9 * 16 + 14 = 158 \]</span></p>
+<p><span class="math display">\[ 9E = 9 \times 16^1 + 14 \times 16^0 = 9 \times 16 + 14 = 158 \]</span></p>
 <p>무슨 뜻일까? 해당 채널의 가장 낮은 값은 <code>00</code>=0 이 되고, 가장 높은 값은 <code>FF</code>=255 가 된다.</p>
-<p>도움이 되는 기억해야될 중요한 사례가 다음에 나타나 있다. 적색, 녹색, 청색에 대한 강렬한 RGB 색상은 다음과 같다.</p>
-<div>
-<table class="table" data-quarto-postprocess="true">
-<thead><tr class="header">
-<th style="text-align: left;" data-quarto-table-cell-role="th">색상</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">헥스코드</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">붉은색</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">녹색</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">파란색</th>
+<p>도움이 되는 기억해야 될 중요한 색상이 다음에 나와 있다. 적색, 녹색, 청색에 대한 강렬한 RGB 색상은 다음과 같다.</p>
+<div class="cell" data-result="asis">
+<div id="fig-rgb-colors" class="cell-output-display quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-rgb-colors-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="table" style="margin-left: auto; margin-right: auto;">
+<thead><tr>
+<th style="text-align:left;">
+색상
+</th>
+<th style="text-align:left;">
+헥스코드
+</th>
+<th style="text-align:right;">
+붉은색
+</th>
+<th style="text-align:right;">
+녹색
+</th>
+<th style="text-align:right;">
+파란색
+</th>
 </tr></thead>
 <tbody>
-<tr class="odd">
-<td style="text-align: left;">blue</td>
-<td style="text-align: left;">#0000FF</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">255</td>
+<tr>
+<td style="text-align:left;">
+blue
+</td>
+<td style="text-align:left;">
+#0000FF
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+255
+</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;">green</td>
-<td style="text-align: left;">#00FF00</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">255</td>
-<td style="text-align: right;">0</td>
+<tr>
+<td style="text-align:left;">
+green
+</td>
+<td style="text-align:left;">
+#00FF00
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+255
+</td>
+<td style="text-align:right;">
+0
+</td>
 </tr>
-<tr class="odd">
-<td style="text-align: left;">red</td>
-<td style="text-align: left;">#FF0000</td>
-<td style="text-align: right;">255</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
+<tr>
+<td style="text-align:left;">
+red
+</td>
+<td style="text-align:left;">
+#FF0000
+</td>
+<td style="text-align:right;">
+255
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
 </tr>
 </tbody>
 </table>
 </div>
-<p>다음에 흑백, 회색을 표현한 것이 나타나 있다.</p>
-<div>
-<table class="table" data-quarto-postprocess="true">
-<thead><tr class="header">
-<th style="text-align: left;" data-quarto-table-cell-role="th">색상</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">헥스코드</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">붉은색</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">녹색</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">파란색</th>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-rgb-colors-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+그림&nbsp;9.3: 주요 색상과 헥스코드
+</figcaption></figure>
+</div>
+</div>
+<p>다음에 무책색(흰색, 회색, 흑백)을 표현한 색상이 나와 있다.</p>
+<div class="cell" data-result="asis">
+<table class="table" style="margin-left: auto; margin-right: auto;">
+<thead><tr>
+<th style="text-align:left;">
+색상
+</th>
+<th style="text-align:left;">
+헥스코드
+</th>
+<th style="text-align:right;">
+붉은색
+</th>
+<th style="text-align:right;">
+녹색
+</th>
+<th style="text-align:right;">
+파란색
+</th>
 </tr></thead>
 <tbody>
-<tr class="odd">
-<td style="text-align: left;">white, gray100</td>
-<td style="text-align: left;">#FFFFFF</td>
-<td style="text-align: right;">255</td>
-<td style="text-align: right;">255</td>
-<td style="text-align: right;">255</td>
+<tr>
+<td style="text-align:left;">
+white, gray100
+</td>
+<td style="text-align:left;">
+#FFFFFF
+</td>
+<td style="text-align:right;">
+255
+</td>
+<td style="text-align:right;">
+255
+</td>
+<td style="text-align:right;">
+255
+</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;">gray67</td>
-<td style="text-align: left;">#ABABAB</td>
-<td style="text-align: right;">171</td>
-<td style="text-align: right;">171</td>
-<td style="text-align: right;">171</td>
+<tr>
+<td style="text-align:left;">
+gray67
+</td>
+<td style="text-align:left;">
+#ABABAB
+</td>
+<td style="text-align:right;">
+171
+</td>
+<td style="text-align:right;">
+171
+</td>
+<td style="text-align:right;">
+171
+</td>
 </tr>
-<tr class="odd">
-<td style="text-align: left;">gray33</td>
-<td style="text-align: left;">#545454</td>
-<td style="text-align: right;">84</td>
-<td style="text-align: right;">84</td>
-<td style="text-align: right;">84</td>
+<tr>
+<td style="text-align:left;">
+gray33
+</td>
+<td style="text-align:left;">
+#545454
+</td>
+<td style="text-align:right;">
+84
+</td>
+<td style="text-align:right;">
+84
+</td>
+<td style="text-align:right;">
+84
+</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;">black, gray0</td>
-<td style="text-align: left;">#000000</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
+<tr>
+<td style="text-align:left;">
+black, gray0
+</td>
+<td style="text-align:left;">
+#000000
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
 </tr>
 </tbody>
 </table>
+<p>무책색(흰색, 회색, 흑백) 색상표</p>
 </div>
-<p>“gray” 회색으로 치환하게 되면, “gray”를 보게되는 어느 곳에서나 동일한 결과를 얻게 됨에 주목한다. 모든 채널을 최대값으로 하면 흰색, 모든 채널을 최소값으로 하면 검정색이 된다.</p>
-<style>
-div.blue { background-color:#e6f0ff; border-radius: 5px; padding: 10px;}
-</style>
-<div class="blue">
-<p><strong>R에서 색상을 지정하는 방법</strong></p>
+<p>“gray” 회색으로 치환하게 되면, “gray”를 보게 되고 어느 곳에서나 동일한 결과를 얻게 됨에 주목한다. 모든 채널을 최대값으로 하면 흰색, 모든 채널을 최소값으로 하면 검정색이 된다.</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+R에서 색상을 지정하는 방법
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <ul>
 <li>
-<strong>양의 정수</strong>: <code><a href="https://rdrr.io/r/grDevices/palette.html">palette()</a></code>함수로 조작하거나 검색한 현재 색상 팔레트에 인덱스를 사용.</li>
+<strong>양의 정수</strong>: <code><a href="https://rdrr.io/r/grDevices/palette.html">palette()</a></code>함수를 이용하거나 색상 팔레트 인덱스를 사용하여 색상을 지정.</li>
 <li>
-<strong>색상 명칭</strong>: <code><a href="https://rdrr.io/r/grDevices/colors.html">colors()</a></code> 함수로 검색된 색상</li>
+<strong>색상 명칭</strong>: <code><a href="https://rdrr.io/r/grDevices/colors.html">colors()</a></code> 함수를 사용하여 검색된 색상 중 하나를 선택하여 적용.</li>
 <li>
-<strong>16진수 문자열</strong>: 16진수로 구성된 3개조에 추가해서, 알파 투명도를 나타내는 네번째 채널을 넣어 16진수 4개조로 구성된 생상표로 확장하기도 한다.</li>
+<strong>16진수 문자열</strong>: 16진수 코드를 사용하여 색상을 지정하며, 3개의 16진수 조합으로 색상을 만들고, 추가적으로 네 번째 채널을 통해 알파 투명도를 나타내어 4개의 16진수 조합으로 색상을 확장.</li>
 </ul>
 </div>
+</div>
 <p><code><a href="https://rdrr.io/r/grDevices/rgb.html">rgb()</a></code>, <code><a href="https://rdrr.io/r/grDevices/col2rgb.html">col2rgb()</a></code>, <code><a href="https://rdrr.io/r/grDevices/convertColor.html">convertColor()</a></code> 함수도 유용하니, 자세한 내용은 도움말을 참조한다.</p>
-</section><section id="dataviz-mechanism-hcl" class="level3" data-number="9.1.2"><h3 data-number="9.1.2" class="anchored" data-anchor-id="dataviz-mechanism-hcl">
-<span class="header-section-number">9.1.2</span> RGB 색상모형 대안 - <strong>HCL</strong>
-</h3>
-<p>RGB 색공간과 색상모형이 유일무이하고 가장 최고는 아니다. 컴퓨터 화면에 색상을 표현하는데는 자연스럽지만, 일부 영역에서 색상을 선택하는 작업에는 이런 모형을 적용하기 어렵다. 예를 들어, 사람이 구별하기는 쉽지만, 인지적으로 색상별로 비교되는 생각으로 구성된 정성적인 팔레트를 만들어 내는 방법은 명확하지 않다. 컴퓨터에 사용되는 색상을 기술하는데 RGB를 사용하지만, <strong>사람이 색상체계를 구축하는 색공간에 RGB체계만 사용할 이유는 없다.</strong> 이점은 사람과 컴퓨터가 다른 것이고, 이를 인정해야만 된다.</p>
-<p>색상모형은 일반적으로 RGB와 마찬가지로 세가지 차원으로 구성된다. 이는 망막에 세가지 다른 수용체를 인간이 갖는 생리적 사실에 기인한다. RGB와 인간 시각 체계에 대한 자세한 정보는 <a href="http://manyworldstheory.com/2013/01/15/my-favorite-rgb-color/">블로그</a>를 참고한다. 색상모형의 차원이 사람이 인식할 수 있는 식별가능한 정보량에 더 가까이 부합되면 될수록, 더욱 유용하다. 이런 부합성이 사려깊게 작성된 팔레트 생성을 가능하게 하고, 더불어 특정한 특성을 갖는 색공간에 대한 길을 연다. RGB 색체계는 인간의 인식체계와 일치성이 떨어진다. 적색, 녹색, 청색광을 탐지할 수 있는 광수용체를 갖기 때문에, 색을 <em>인지하는 체험</em>이 RGB 방식으로 분해된다는 것을 의미하지 않는다. 적색과 녹색을 섞은 것으로 황색을 인식하는 체험을 했는가? 물론 아니다. 생리학적인 현실은 그렇다. 또다른 RGB 대안 모형이 <strong>HSV(Hue-Saturation-Value, 색상-채도-명도)모형</strong>이다. 불행하게도, 색을 선택하는데 문제가 많은데, 이유는 색상이 서로 중첩되는 차원을 갖기 때문이다.</p>
-<p>사람이 인지하기 좋은 색모형은 무엇일까? CIELUV 와 CIELAB 이 가장 잘 알려진 사례다. CIELUV의 변종인 <strong>HCL(Hue-Chroma-Luminance, 색상-채도-휘도) 모형</strong>을 좀더 살펴보자. Zeileis와 동료들이 R 사용자를 위한 팩키지로 멋지게 작성했다. <span class="citation" data-cites="zeileis2009escaping">(Zeileis, Hornik, 와/과 Murrell 2009)</span> <a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> <code>colorspace</code> R 팩키지에 딸려있고, HCL 색상모형을 탐색하고 이용하는데 도움을 준다. 마지막으로, HCL 색모형이 <code>ggplot2</code>에 <code>RColorBrewer</code>와 마찬가지로 잘 녹여져있다.</p>
-<style>
-div.blue { background-color:#e6f0ff; border-radius: 5px; padding: 10px;}
-</style>
-<div class="blue">
-<p><strong>HCL 색상모형의 세가지 차원</strong></p>
+</section><section id="dataviz-mechanism-hcl" class="level2" data-number="9.3"><h2 data-number="9.3" class="anchored" data-anchor-id="dataviz-mechanism-hcl">
+<span class="header-section-number">9.3</span> <strong>HCL</strong> - RGB 대안</h2>
+<p>RGB 색공간과 색상 모형이 최고라고 볼 수 없다. 컴퓨터 화면에서 색을 표현하는 데는 적합하지만, 모든 색상 선택 작업에 이 모형을 적용하는 것은 어렵다. 예를 들어, 사람이 구별하기는 쉽지만, 인지적으로 색상별로 비교되는 색상으로 구성된 정성적인 팔레트를 만들어 내는 방법은 명확하지 않다. 컴퓨터에 사용되는 색상을 기술하는데 RGB를 사용하지만, <strong>사람이 색상체계를 구축하는 색공간에 RGB체계만 사용할 이유는 없다.</strong> 이점은 사람과 컴퓨터가 다른 것이고, 이를 인정해야만 된다.</p>
+<p>색상모형은 대개 RGB처럼 3차원으로 이루어진다. 이는 인간의 망막에 세 가지 다른 수용체가 있다는 생리학적 사실 때문이다. RGB와 인간의 시각 체계에 대한 자세한 정보는 <a href="http://manyworldstheory.com/2013/01/15/my-favorite-rgb-color/">블로그</a>에서 확인할 수 있다. 색상모형 차원이 인간이 인식할 수 있는 정보량과 더 잘 맞을수록 유용성이 커진다. 이러한 일치는 신중하게 만들어진 팔레트 생성을 가능하게 하며, 특정한 특징을 가진 색공간에 대한 이해를 넓힌다.</p>
+<p>RGB 색상체계는 인간의 인지체계와 잘 맞지 않는다. 적색, 녹색, 청색광을 탐지할 수 있는 광수용체를 갖기 때문에, 색을 <em>인지하는 체험</em>이 꼭 RGB 방식으로 분해된다는 것을 의미하지 않는다. 예를 들어, 적색과 녹색을 섞어 황색을 인지하는 체험은 생리학적 현실과 다르다. RGB의 대안 모형 중 하나는 <strong>HSV(Hue-Saturation-Value, 색상-채도-명도)모형</strong> 모형이다. 하지만 불행히도, 색상 선택에 어려움이 있는데, 이유는 색상 차원이 서로 중첩되기 때문이다.</p>
+<p>사람의 인지에 맞는 색 모형으로는 CIELUV와 CIELAB가 잘 알려져 있다. 이 중에서도 CIELUV의 변형인 <strong>HCL(Hue-Chroma-Luminance, 색상-채도-휘도) 모형</strong> 모형에 주목할 필요가 있다. Zeileis와 동료들<span class="citation" data-cites="zeileis2009escaping">(Zeileis, Hornik, 와/과 Murrell 2009)</span> <a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>이 R 사용자들을 위해 개발한 <code>colorspace</code> 패키지는 HCL 색상 모형을 탐색하고 활용하는 데 큰 도움을 준다. <code>colorspace</code> 패키지는 <code>ggplot2</code>에서 <code>RColorBrewer</code>와 마찬가지로 잘 통합되어 있어, 사용자가 HCL 색상 모형을 데이터 시각화에 효과적으로 사용될 수 있게 되었다.</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+HCL 색상모형 3차원
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <ul>
 <li>
 <strong>색상(Hue)</strong> : 색상은 일반적으로 “색상이 뭐지?”라고 생각할 때 생각나는 것이다. 이해가 바로되는 쉬운 것이다! 각도로 주어지고 따라서 0 에서 360 까지 값을 갖는데, 무지개 도넛을 상상하면 된다.</li>
 <li>
-<strong>채도(Chroma)</strong> : 채도는 색상이 얼마나 순수한지 혹은 생생한지 나타낸다. 특정 색상이 회색과 섞일 수록, 채도는 떨어진다. 가장 낮은 값은 0 으로 회색 그자체에 대응되고, 최대값은 휘도에 따라 변한다.</li>
+<strong>채도(Chroma)</strong> : 채도는 색상의 순수성이나 생생함을 나타낸다. 특정 색상이 회색과 섞일수록 채도는 낮아진다. 채도가 가장 낮을 때, 즉 0일 때는 순수한 회색을 나타낸다. 채도의 최대값은 휘도에 따라 달라진다.</li>
 <li>
-<strong>휘도(Lumiance)</strong> : 휘도는 명도(brightness), 명도(Lightness), 광도(intensity), 명도(value)와 관련된다. 낮은 휘도는 어두움을 의미하고, 진짜 검정색은 휘도가 0 이다. 높은 휘도는 밝음을 의미하고, 진짜 흰색은 휘도가 1 이다.</li>
+<strong>휘도(Lumiance)</strong> : 휘도는 명도(brightness), 명도(Lightness), 광도(intensity), 값(value)과 관련된다. 낮은 휘도는 어두움을 의미하고, 실제 검정색은 휘도가 0 이다. 높은 휘도는 밝음을 의미하고, 실제 흰색은 휘도가 1 이다.</li>
 </ul>
 </div>
-<p>저자는 채도와 휘도를 이해하고 구별하는데 힘든 시간을 보냈다. 위에서 살펴봤듯이, 색체계는 서로 독립된 것이 아니고, 3차원 HCL 공간에 기이한 모형으로 정보를 제공하고 있다. 위컴의 <code>ggplot2</code> 책<span class="citation" data-cites="wilkinson2011ggplot2">(Wilkinson 2011)</span>에 나온 <a href="#fig-hcl" class="quarto-xref">그림&nbsp;<span>9.1</span></a> 이 HCL 색공간을 이해하는데 도움이 된다.</p>
-<div id="fig-hcl" class="quarto-figure quarto-figure-center quarto-float anchored">
+</div>
+<p>저자도 채도와 휘도를 이해하고 구별하는데 힘든 시간을 보냈다. 위에서 살펴봤듯이, 색체계는 서로 독립된 것이 아니고, 3차원 HCL 공간에 기이한 모형으로 정보를 제공하고 있다. 위컴의 <code>ggplot2</code> 책<span class="citation" data-cites="wilkinson2011ggplot2">(Wilkinson 2011)</span>에 나온 <a href="#fig-hcl" class="quarto-xref">그림&nbsp;<span>9.4</span></a> 이 HCL 색공간을 이해하는데 도움이 된다.</p>
+<div id="fig-hcl" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-hcl-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="images/color-viz-ggplot2book-fig6.6.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="그림&nbsp;9.1: ggplot2 HCL 색공간"><img src="images/color-viz-ggplot2book-fig6.6.png" class="img-fluid figure-img" style="width:100.0%"></a>
+<a href="images/color-viz-ggplot2book-fig6.6.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="그림&nbsp;9.4: ggplot2 HCL 색공간"><img src="images/color-viz-ggplot2book-fig6.6.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-hcl-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-그림&nbsp;9.1: <code>ggplot2</code> HCL 색공간
+그림&nbsp;9.4: <code>ggplot2</code> HCL 색공간
 </figcaption></figure>
 </div>
-<p>위컴 책에 언급된 내용을 다시 적으면 다음과 같다: 각 측면, 창은 휘도에 따라 가장 낮은 값에서 높은 값 순으로 HCL 공간을 슬라이스로 나누어 도식화한 것을 보여주고 있다. 0 과 100 극단 휘도값은 생략되었는데, 이유는 각각 검은 점과 흰점으로 나타나기 때문이다. 슬라이스 내부에, 중심은 채도가 0 으로, 회색에 대응된다. 슬라이스 끝쪽으로 이동하면, 채도가 증가하고, 색상이 더 순색에 가까워지고 농도가 짖어진다. 색상은 각도로 매핑된다.</p>
-<p><a href="https://cran.r-project.org/web/packages/colorspace/"><code>colorspace</code></a> 팩키지에 가치있는 기여는 아마도 함수를 사용해서 색상공간을 합리적 방식으로 색공간을 이리저리 돌아다닐 수 있게 만든 것이다. 이와는 대조적으로 <code>RColorBrewer</code> 팩키지가 제공하는 팔레트는 정교하게 제작되었지만, 불행히도 고정이다. 인지기반 색상체계를 사용하는 것에 대한 옹호 사례와 더불어 색공간에 0 이 자리하는 것을 알려주는 중요성을 시연하고 있다.<span class="citation" data-cites="zeileis2009escaping">(Zeileis, Hornik, 와/과 Murrell 2009)</span></p>
-</section><section id="viz-printer-cmyk" class="level3" data-number="9.1.3"><h3 data-number="9.1.3" class="anchored" data-anchor-id="viz-printer-cmyk">
-<span class="header-section-number">9.1.3</span> 프린터 색상모형: CMYK <a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> <a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>
-</h3>
-<p>CMYK 색상표는 시안(<strong>C</strong>yan), 마젠타(<strong>M</strong>agenta), 옐로(<strong>Y</strong>ellow), 블랙(Black = <strong>K</strong>ey)를 원색으로 하여 명도가 낮아지는 감산혼합으로 주로 출력물 인쇄 혹은 사진 필림 현상에 사용되며 쿼크익스프레스, 일러스트레이터, 포토샵 등에서 CMYK 감산혼합을 지원한다. 현실적인 문제 때문에 RGB나 HSB(HSV)보다 표현 가능한 색이 적은 것으로 알려져 있다.</p>
-<p>학창시절 감산혼합의 색의 3원색은 빨강, 노랑, 파랑인데, CMYK는 생뚱맞게도 시안(<strong>C</strong>yan), 마젠타(<strong>M</strong>agenta), 옐로(<strong>Y</strong>ellow), 블랙(Black = <strong>K</strong>ey)을 원색으로 하는데 이유는 빨강은 사실 자홍색(마젠타), 파랑은 청록색(시안)이라 정확한 색상이 후자가 맞다. 우리가 잘못 배운 탓이 크다. RGB 생상과 CMYK 생상을 PDF 파일로 찍어 상호 비교해보자. <a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a></p>
+<p>위컴의 책에서 언급된 내용에 따르면, HCL 색 공간은 휘도에 따라 슬라이스로 나뉘어 도식화되어 있다. 각 슬라이스는 휘도가 낮은 값에서 높은 값 순으로 배열되며, 극단적인 휘도 값인 0과 100은 제외된다. 이는 각각 검은색과 흰색을 나타내기 때문이다.슬라이스 안에서, 중앙 부분은 채도가 0인 상태로 회색에 해당된다. 슬라이스의 가장자리로 갈수록 채도가 증가하여, 색상이 더 순수하고 진해진다. 이 때 색상은 각도로 매핑되어, 다양한 색상을 나타낼 수 있다.</p>
+<p><code>colorspace</code> 팩키지의 중요한 기여 중 하나는 사용자가 색상 공간을 합리적이고 유연하게 탐색할 수 있도록 하는 기능이다. 사용자는 패키지 함수들을 사용하여 다양한 색공간을 자유롭게 이동하고 변환할 수 있다. 반면, <code>RColorBrewer</code> 팩키지는 정교하게 제작된 팔레트를 제공하지만, 팔레트들이 고정되어 있다. 고정된 팔레트는 사용자가 특정한 요구사항이나 선호에 맞춰 색상을 조정하는 데 한계가 있다. <code>colorspace</code> 접근 방식<span class="citation" data-cites="zeileis2009escaping">(Zeileis, Hornik, 와/과 Murrell 2009)</span>은 인지 기반 색상체계 사용을 지지하고 있다. 색공간에서 0의 위치가 가지는 중요성을 시연함으로써, 색상인식과 선택에 있어서 더 넓은 이해와 유연성을 제공한다. 따라서 데이터 시각화나 디자인 작업에서 사용자는 보다 정확하고 효과적인 색상선택을 할 수 있게 되었다.</p>
+</section><section id="viz-printer-cmyk" class="level2" data-number="9.4"><h2 data-number="9.4" class="anchored" data-anchor-id="viz-printer-cmyk">
+<span class="header-section-number">9.4</span> CMYK - 프린터 색상모형</h2>
+<p>CMYK 색상표는 시안(<strong>C</strong>yan), 마젠타(<strong>M</strong>agenta), 옐로(<strong>Y</strong>ellow), 블랙(Black = <strong>K</strong>ey)를 원색으로 하여 명도가 낮아지는 감산혼합으로 주로 출력물 인쇄 혹은 사진 필림 현상에 사용되며 쿼크익스프레스, 일러스트레이터, 포토샵 등에서 CMYK 감산혼합을 지원한다. 현실적인 문제 때문에 RGB나 HSV보다 표현 가능한 색이 적은 것으로 알려져 있다. <a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> <a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></p>
+<p>학교에서 배운 감산 혼합 삼원색은 빨강, 노랑, 파랑이었지만, CMYK 색상모형은 생뚱맞게도 시안(<strong>C</strong>yan), 마젠타(<strong>M</strong>agenta), 옐로(<strong>Y</strong>ellow), 블랙(Black = <strong>K</strong>ey)을 원색으로 한다. 이유는 빨강은 사실 자홍색(마젠타), 파랑은 청록색(시안)에 더 가깝기 때문이다. 우리가 잘못 알고 있던 것이다. RGB 색상과 CMYK 색상을 PDF 파일로 찍어 상호 비교해보자. <a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a></p>
 <div class="columns">
 <div class="column">
 <p><strong>RGB 색상 출력</strong></p>
-<div class="cell">
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/grDevices/pdf.html">pdf</a></span><span class="op">(</span><span class="st">"data/color_rgb.pdf"</span><span class="op">)</span></span>
-<span><span class="fu">RColorBrewer</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/RColorBrewer/man/ColorBrewer.html">display.brewer.all</a></span><span class="op">(</span>type<span class="op">=</span><span class="st">"qual"</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/grDevices/dev.html">dev.off</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+<!--  -->
 <p><a href="data/color_rgb.pdf" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><embed src="data/color_rgb.pdf" id="id" class="class" width="300" height="300"></a></p>
 </div><div class="column">
 <p><strong>CMYK 색상 출력</strong></p>
-<div class="cell">
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/grDevices/pdf.html">pdf</a></span><span class="op">(</span><span class="st">"data/color_cmyk.pdf"</span>, colormodel <span class="op">=</span> <span class="st">"cmyk"</span><span class="op">)</span></span>
-<span><span class="fu">RColorBrewer</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/RColorBrewer/man/ColorBrewer.html">display.brewer.all</a></span><span class="op">(</span>type<span class="op">=</span><span class="st">"qual"</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/grDevices/dev.html">dev.off</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p><a href="data/color_cmyk.pdf" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><embed src="data/color_cmyk.pdf" id="id" class="class" width="300" height="300"></a></p>
+<!--  -->
+<p><a href="data/color_cmyk.pdf" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><embed src="data/color_cmyk.pdf" class="class" width="300" height="300"></a></p>
 </div>
 </div>
-</section></section><section id="dataviz-color-brewer-viridis" class="level2" data-number="9.2"><h2 data-number="9.2" class="anchored" data-anchor-id="dataviz-color-brewer-viridis">
-<span class="header-section-number">9.2</span> <code>RColorBrewer</code> 와 <code>viridis</code>
+</section><section id="dataviz-color-brewer-viridis" class="level2" data-number="9.5"><h2 data-number="9.5" class="anchored" data-anchor-id="dataviz-color-brewer-viridis">
+<span class="header-section-number">9.5</span> <code>RColorBrewer</code> 와 <code>viridis</code>
 </h2>
-<section id="dataviz-color-brewer" class="level3" data-number="9.2.1"><h3 data-number="9.2.1" class="anchored" data-anchor-id="dataviz-color-brewer">
-<span class="header-section-number">9.2.1</span> RColorBrewer</h3>
-<p>색상선택이 가장 논란이 많고, 이리저리 만지작 거리면서 정말 많은 시간을 보내는 분야다. 지리학자이며 색상 전문가 <a href="http://en.wikipedia.org/wiki/Cynthia_Brewer">Cynthia Brewer</a> 교수가 출판과 웹에서 사용되는 색상표를 제작했고, 이는 <a href="http://cran.r-project.org/web/packages/RColorBrewer/index.html">RColorBrewer</a> 팩키지에 반영되어 있다. 팩키지를 설치하고 사용하면 된다. 연관된 전체 팔레트를 살펴보는 명령어는 <code><a href="https://rdrr.io/pkg/RColorBrewer/man/ColorBrewer.html">display.brewer.all()</a></code> 이다.</p>
+<section id="dataviz-color-brewer" class="level3" data-number="9.5.1"><h3 data-number="9.5.1" class="anchored" data-anchor-id="dataviz-color-brewer">
+<span class="header-section-number">9.5.1</span> RColorBrewer</h3>
+<p>색상선택은 논란도 많고 가장 많은 시간이 소요되는 분야다. 지리학자이자 색상 전문가인 <a href="http://en.wikipedia.org/wiki/Cynthia_Brewer">Cynthia Brewer</a> 교수는 출판 및 웹용으로 사용되는 색상표를 제작했고, <a href="http://cran.r-project.org/web/packages/RColorBrewer/index.html">RColorBrewer</a> 패키지에 포함되어 있어, R 사용자들이 쉽게 접근하고 활용할 수 있다. <a href="http://cran.r-project.org/web/packages/RColorBrewer/index.html">RColorBrewer</a> 패키지를 설치하고 사용하면, 다양한 색상 조합과 팔레트를 쉽게 탐색할 수 있다. 사용자는 <code><a href="https://rdrr.io/pkg/RColorBrewer/man/ColorBrewer.html">display.brewer.all()</a></code> 명령어를 통해 전체 팔레트를 한눈에 볼 수 있다.</p>
 <div class="cell">
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">RColorBrewer</span><span class="op">)</span> <span class="co"># install.packages("RColorBrewer")</span></span>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">RColorBrewer</span><span class="op">)</span> <span class="co"># install.packages("RColorBrewer")</span></span>
 <span><span class="fu"><a href="https://rdrr.io/pkg/RColorBrewer/man/ColorBrewer.html">display.brewer.all</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div id="fig-brewer-palette" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-brewer-palette-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="images/brewer_palette.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="그림&nbsp;9.2: RColorBrewer 전체 색상표"><img src="images/brewer_palette.jpg" class="img-fluid figure-img"></a>
+<a href="images/brewer_palette.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="그림&nbsp;9.5: RColorBrewer 전체 색상표"><img src="images/brewer_palette.jpg" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-brewer-palette-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-그림&nbsp;9.2: RColorBrewer 전체 색상표
+그림&nbsp;9.5: RColorBrewer 전체 색상표
 </figcaption></figure>
 </div>
-<p>팔레트는 종류가 많지만 다음 세가지 범주에 속한다. 위에서 아래부터 다음과 같다.</p>
+<p><code><a href="https://rdrr.io/pkg/RColorBrewer/man/ColorBrewer.html">display.brewer.all()</a></code> 명령어를 통해 살펴보면 크게 세범주로 구분된 것이 먼저 눈에 띈다. 팔레트는 종류가 많지만 다음 세가지 범주에 속한다.</p>
 <ul>
 <li>
-<strong>순차적(sequential)</strong> : 낮은 것에서 높은 것으로 한쪽 극단이 흥미롭고 반대쪽 극단이 재미없는 것을 시각화하는데 매우 좋다. 예를 들어 p-값, 상관계수 (주의: 상관계수 1 이 흥미로운 것은 양수를 가정했다)</li>
+<strong>순차적(sequential)</strong> : 순차적 팔레트는 한쪽 극단이 흥미롭고 다른 쪽 극단이 상대적으로 덜 흥미로운 데이터를 시각화하는 데 적합하다. 예를 들어, p-값이나 상관계수 같은 지표에 사용된다(단, 상관계수에서 1이 흥미로운 것은 양의 값을 가정한 경우다).</li>
 <li>
-<strong>정량적(quantitative)</strong> : 순서가 없는 범주형 자료를 시각화할 때 유용하다. 예를 들어, 국가나 대륙. 특수한 “쌍을 이룬” 팔레트가 있다; 예를 들어, 곡물 밀 유형같이 실험이 아닌 요인, 실험군과 대조군 같은 이진 실험 요인.</li>
+<strong>정량적(quantitative)</strong> : 정량적 팔레트는 순서가 없는 범주형 데이터를 시각화하는 데 유용하다. 국가, 대륙 등이 이에 해당하며, 특정한 “쌍을 이루는” 팔레트도 있다. 예를 들어, 곡물의 종류나 실험군과 대조군 같은 이진 실험 요인이 이에 해당한다.</li>
 <li>
-<strong>발산하는(diverging)</strong> : 극단의 음수에서 극단의 양수까지 범위를 같는 것을 시각화하는데 유용한다. 이런 데이터는 극단의 값이 중간에 위치한 덜 흥미로운 지점을 지난다. 예를 들어, t-통계량, z-점수, 상관계수가 이에 속한다.</li>
+<strong>발산하는(diverging)</strong> : 발산하는 팔레트는 극단적인 음수에서 양수까지의 범위를 가지는 데이터를 시각화하는 데 유용하다. 이런 유형의 데이터는 중간에 덜 흥미로운 지점을 지나면서 극단적인 값을 가진다. t-통계량, z-점수, 상관계수 등이 여기에 해당한다.</li>
 </ul>
-<p>명칭을 명세해서 RColorBrewer 팔렛트 하나만 볼 수 있다.</p>
+<p><code>RColorBrewer</code>는 <a href="https://colorbrewer2.org/">ColorBrewer 2.0</a>에서 제공하는 색상 팔레트에 기반한 R 색상 패키지로, 데이터 시각화를 위한 다양한 색상 조합을 제공하며, 데이터 시각화 가독성과 해석력을 향상을 위한 발산(diverging), 연속(sequential), 범주형(qualitive) 데이터 유형에 대한 적합한 색상 팔레트가 포함되어 있다.</p>
 <div class="cell">
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/RColorBrewer/man/ColorBrewer.html">display.brewer.pal</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fl">8</span>, name <span class="op">=</span> <span class="st">'Dark2'</span><span class="op">)</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div id="fig-brewer-dark2" class="quarto-figure quarto-figure-center quarto-float anchored">
-<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-brewer-dark2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="theme_colors_files/figure-html/fig-brewer-dark2-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="그림&nbsp;9.3: RColorBrewer 중 Dark2 팔렛트"><img src="theme_colors_files/figure-html/fig-brewer-dark2-1.png" class="img-fluid figure-img" width="576"></a>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-brewer-dark2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-그림&nbsp;9.3: RColorBrewer 중 Dark2 팔렛트
-</figcaption></figure>
-</div>
-</div>
-</div>
-</section><section id="dataviz-viridis" class="level3" data-number="9.2.2"><h3 data-number="9.2.2" class="anchored" data-anchor-id="dataviz-viridis">
-<span class="header-section-number">9.2.2</span> viridis</h3>
-<p>2015년 Stéfan van der Walt 와 Nathaniel Smith는 파이썬 <code>matplotlib</code> 팩키지에 사용될 새로운 색상 지도를 설계했고, <a href="https://www.youtube.com/watch?v=xAoljeRJ3lU&amp;feature=youtu.be">SciPy 2015</a>에서 발표했다. <code>viridis</code> 팩키지로 인해 R에 4가지 신규 팔레트가 추가되었다. <a href="https://cran.r-project.org/web/packages/viridis/index.html">CRAN</a>과, <a href="https://github.com/sjmgarnier/viridis">GitHub</a>에서 팩키지를 만날 수 있다. 아직 나온지 얼마되지 않아서, 자세한 사항은 <code>viridis</code> 팩키지를 설치하고 <a href="https://cran.r-project.org/web/packages/viridis/vignettes/intro-to-viridis.html_document">소품문</a>을 읽고 직접 경험하기 바란다.</p>
-<div class="callout callout-style-simple callout-note">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-body-container">
-<p><code>viridis</code> 색상표는 완벽하게 균등하게 지각되도록 설계되었고, 정규형식에서나 흑백으로 전환되었을 때도 마찬가지다. 또한 색망을 갖는 독자도 올바르게 지각될 수 있도록 설계되었다.</p>
-</div>
-</div>
-</div>
-</section><section id="dataviz-viridis-blind" class="level3" data-number="9.2.3"><h3 data-number="9.2.3" class="anchored" data-anchor-id="dataviz-viridis-blind">
-<span class="header-section-number">9.2.3</span> 색각 이상</h3>
-<p>색각 이상은 비색각 이상자와 원추세포의 차이로 인해 색상을 잘 구분하지 못하는 증상으로 색맹과 색약으로 구분된다. 색맹은 삼원색 중 특정 색상을 완전히 감지하지 못하는 것이며, 색약은 수용체에 문제로 감지는 할 수 있지만 다르게 보이게 된다. <code>dichromat</code> 팩키지(<a href="http://cran.r-project.org/web/packages/dichromat/">CRAN</a>)는 2색시자에 대한 효과적인 색상조합을 선택하는데 도움이 된다. <code>colorschems</code> 목록에는 17 가지 색상조합이 담겨있는데, 적색과 녹색을 구별하는 능력이 없거나 예외적인 시력을 갖는 2색시자에게 적합하다.</p>
-<div class="cell">
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">dichromat</span><span class="op">)</span> <span class="co"># install.packages("dichromat")</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span></span>
-<span></span>
-<span><span class="va">x_boundaries</span> <span class="op">&lt;-</span></span>
-<span>  <span class="fu"><a href="https://rdrr.io/r/base/lapply.html">lapply</a></span><span class="op">(</span><span class="va">colorschemes</span>,</span>
-<span>         <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span>from <span class="op">=</span> <span class="fl">0</span>, to <span class="op">=</span> <span class="fl">1</span>, length <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="op">+</span> <span class="fl">1</span><span class="op">)</span><span class="op">)</span></span>
-<span></span>
-<span><span class="va">df</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span></span>
-<span>  xmin <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/unlist.html">unlist</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/lapply.html">lapply</a></span><span class="op">(</span><span class="va">x_boundaries</span>, <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/r/base/rev.html">rev</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/rev.html">rev</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span><span class="op">[</span><span class="op">-</span><span class="fl">1</span><span class="op">]</span><span class="op">)</span><span class="op">)</span><span class="op">)</span>,</span>
-<span>  xmax <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/unlist.html">unlist</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/lapply.html">lapply</a></span><span class="op">(</span><span class="va">x_boundaries</span>, <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="va">x</span><span class="op">[</span><span class="op">-</span><span class="fl">1</span><span class="op">]</span><span class="op">)</span><span class="op">)</span>,</span>
-<span>  ymax <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/rep.html">rep</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq_along</a></span><span class="op">(</span><span class="va">colorschemes</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/lapply.html">sapply</a></span><span class="op">(</span><span class="va">colorschemes</span>, <span class="va">length</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="va">anno_df</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span></span>
-<span>  scheme <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">colorschemes</span><span class="op">)</span>,</span>
-<span>  num <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq_along</a></span><span class="op">(</span><span class="va">colorschemes</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">df</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>xmin <span class="op">=</span> <span class="va">xmin</span>, xmax <span class="op">=</span> <span class="va">xmax</span>, ymin <span class="op">=</span> <span class="va">ymax</span> <span class="op">-</span> <span class="fl">0.85</span>, ymax <span class="op">=</span> <span class="va">ymax</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_tile.html">geom_rect</a></span><span class="op">(</span>fill <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/unlist.html">unlist</a></span><span class="op">(</span><span class="va">colorschemes</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/lims.html">xlim</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="op">-</span><span class="fl">0.6</span>, <span class="fl">1</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/annotate.html">annotate</a></span><span class="op">(</span><span class="st">"text"</span>, x <span class="op">=</span> <span class="op">-</span><span class="fl">0.05</span>, y <span class="op">=</span> <span class="va">anno_df</span><span class="op">$</span><span class="va">num</span> <span class="op">-</span> <span class="fl">0.5</span>, label <span class="op">=</span> <span class="va">anno_df</span><span class="op">$</span><span class="va">scheme</span>,</span>
-<span>           hjust <span class="op">=</span> <span class="fl">1</span><span class="op">)</span> <span class="op">+</span> </span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span><span class="op">(</span>panel.grid.major <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_blank</a></span><span class="op">(</span><span class="op">)</span>,</span>
-<span>        panel.grid.minor <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_blank</a></span><span class="op">(</span><span class="op">)</span>,</span>
-<span>        panel.border <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_blank</a></span><span class="op">(</span><span class="op">)</span>,</span>
-<span>        axis.text <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_blank</a></span><span class="op">(</span><span class="op">)</span>,</span>
-<span>        axis.ticks <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_blank</a></span><span class="op">(</span><span class="op">)</span>,</span>
-<span>        axis.title <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_blank</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div id="fig-dichromat-colorschemes" class="quarto-figure quarto-figure-center quarto-float anchored">
-<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-dichromat-colorschemes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="theme_colors_files/figure-html/fig-dichromat-colorschemes-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="그림&nbsp;9.4: 색각 이상 dichromat 색상표"><img src="theme_colors_files/figure-html/fig-dichromat-colorschemes-1.png" class="img-fluid figure-img" width="576"></a>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-dichromat-colorschemes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-그림&nbsp;9.4: 색각 이상 dichromat 색상표
-</figcaption></figure>
-</div>
-</div>
-</div>
-<p><code>dichmat()</code> 함수는 색상을 변환해서 다른 형태의 색맹에 근사적인 효과를 구현할 수 있어서, 후보 색상조합에 대한 효과를 평가할 수 있게 한다. <code>data("dalton")</code> 명령어는 256 색상 팔레트를 표현하는 객체를 생성하는데, 정상 시야로 표현되는 것과, 적록(red-green) 색맹과 청녹(green-blue) 생맹으로 표현되는 것이다.<span class="citation" data-cites="rogowitz1996should">(Rogowitz 와/과 Treinish 1996)</span></p>
-<p><code>RColorBrewer</code>는 <a href="https://colorbrewer2.org/">ColorBrewer 2.0</a>에서 제공하는 색상 팔레트에 기반한 R 색상 패키지다. 데이터 시각화를 위한 다양한 색상 조합을 제공하며, 데이터 시각화 가독성과 해석력을 향상을 위한 발산(diverging), 연속(sequential), 범주형(qualitive) 데이터 유형에 대한 적합한 색상 팔레트가 포함되어 있다.</p>
-<div class="cell">
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">RColorBrewer</span><span class="op">)</span></span>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">RColorBrewer</span><span class="op">)</span> </span>
 <span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/par.html">par</a></span><span class="op">(</span>mfrow<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span> ,<span class="fl">3</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/pkg/RColorBrewer/man/ColorBrewer.html">display.brewer.all</a></span><span class="op">(</span>type<span class="op">=</span><span class="st">"div"</span><span class="op">)</span>  <span class="co"># 양쪽발산(diverging)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/pkg/RColorBrewer/man/ColorBrewer.html">display.brewer.all</a></span><span class="op">(</span>type<span class="op">=</span><span class="st">"seq"</span><span class="op">)</span>  <span class="co"># 연속형(sequential)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/pkg/RColorBrewer/man/ColorBrewer.html">display.brewer.all</a></span><span class="op">(</span>type<span class="op">=</span><span class="st">"qual"</span><span class="op">)</span> <span class="co"># 범주형(qualitive)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/grDevices/dev.html">dev.off</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="co">#&gt; null device </span></span>
-<span><span class="co">#&gt;           1</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span><span class="fu"><a href="https://rdrr.io/r/base/invisible.html">invisible</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/grDevices/dev.html">dev.off</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div id="fig-brewer-type" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-brewer-type-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="theme_colors_files/figure-html/fig-brewer-type-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8" title="그림&nbsp;9.5: 유형별 색상 팔레트"><img src="theme_colors_files/figure-html/fig-brewer-type-1.png" class="img-fluid figure-img" width="576"></a>
+<a href="theme_colors_files/figure-html/fig-brewer-type-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="그림&nbsp;9.6: 유형별 색상 팔레트"><img src="theme_colors_files/figure-html/fig-brewer-type-1.png" class="img-fluid figure-img" width="576"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-brewer-type-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-그림&nbsp;9.5: 유형별 색상 팔레트
+그림&nbsp;9.6: 유형별 색상 팔레트
 </figcaption></figure>
 </div>
 </div>
 </div>
-<p><code>penguins</code> 데이터셋을 활용하여 각 섬별로 펭귄의 수를 집계한 다음, Torgersen 섬의 이름을 NA(결측값)으로 변경한다. 변경된 데이터를 바탕으로 <code>ggplot2</code> 패키지를 사용해 막대 그래프를 생성하며, 섬의 이름을 x축에, 각 섬의 펭귄 수를 y축에 배치하고, 각 막대는 해당 섬의 이름에 따라 다른 색상으로 채워운다. 결측값(여기서는 Torgersen 섬)은 회색으로 표시되며, 나머지 색상은 RColorBrewer의 “Accent” 팔레트를 사용하여 색을 채워넣는다.</p>
+<p><code>RColorBrewer</code> 패키지를 사용하면 특정한 팔레트의 이름을 명시하여 해당 팔레트만을 볼 수 있습니다. 예를 들어, <code>display.brewer.pal(n, name)</code> 함수를 사용하면, ‘n’은 색상의 수를, ’name’은 보고 싶은 팔레트의 이름을 지정하여 해당 팔레트를 볼 수 있습니다. 이를 통해 데이터 시각화에 적합한 색상 조합을 선택하고 적용할 수 있다. 예를 들어, <code>display.brewer.pal(5, "Blues")</code> 명령어는 ’Blues’ 팔레트의 5가지 색상을 선택할 수 있다.</p>
 <div class="cell">
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://allisonhorst.github.io/palmerpenguins/">palmerpenguins</a></span><span class="op">)</span></span>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/RColorBrewer/man/ColorBrewer.html">display.brewer.pal</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fl">8</span>, name <span class="op">=</span> <span class="st">'Dark2'</span><span class="op">)</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="fig-brewer-dark2" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-brewer-dark2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="theme_colors_files/figure-html/fig-brewer-dark2-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="그림&nbsp;9.7: RColorBrewer 중 Dark2 팔렛트"><img src="theme_colors_files/figure-html/fig-brewer-dark2-1.png" class="img-fluid figure-img" width="576"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-brewer-dark2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+그림&nbsp;9.7: RColorBrewer 중 Dark2 팔렛트
+</figcaption></figure>
+</div>
+</div>
+</div>
+<p><code>penguins</code> 데이터셋을 활용하여 각 섬별로 펭귄 수를 집계해본 다음, Torgersen 섬 이름을 NA(결측값)으로 바꾼다. 변경된 데이터를 가지고 <code>ggplot2</code> 패키지로 막대 그래프를 만든다. 그래프에서 x축은 섬 이름, y축은 각 섬의 펭귄 수를 나타낸다. 각 막대는 섬 이름에 따라 다른 색으로 채우고 <code>RColorBrewer</code> “Accent” 팔레트를 사용한다. 결측값인 Torgersen 섬은 회색으로 표시된다. 색상을 그래프에 반영함으로써 각 섬에서 관찰된 펭귄 수를 시각적으로 쉽게 파악하고, 결측값도 눈에 띄게 할 수 있다.</p>
+<div class="cell">
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://allisonhorst.github.io/palmerpenguins/">palmerpenguins</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">penguins</span> <span class="op">|&gt;</span> </span>
@@ -770,22 +885,82 @@ div.blue { background-color:#e6f0ff; border-radius: 5px; padding: 10px;}
 <div class="cell-output-display">
 <div id="fig-palmer-penguins" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-palmer-penguins-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="theme_colors_files/figure-html/fig-palmer-penguins-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9" title="그림&nbsp;9.6: 팔머 펭귄 데이터 RColorBrewer Accent 팔렛트 적용트"><img src="theme_colors_files/figure-html/fig-palmer-penguins-1.png" class="img-fluid figure-img" width="576"></a>
+<a href="theme_colors_files/figure-html/fig-palmer-penguins-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8" title="그림&nbsp;9.8: 팔머 펭귄 데이터 RColorBrewer Accent 팔렛트 적용트"><img src="theme_colors_files/figure-html/fig-palmer-penguins-1.png" class="img-fluid figure-img" width="576"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-palmer-penguins-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-그림&nbsp;9.6: 팔머 펭귄 데이터 RColorBrewer Accent 팔렛트 적용트
+그림&nbsp;9.8: 팔머 펭귄 데이터 RColorBrewer Accent 팔렛트 적용트
 </figcaption></figure>
 </div>
 </div>
 </div>
-</section></section><section id="색상적용-사례" class="level2" data-number="9.3"><h2 data-number="9.3" class="anchored" data-anchor-id="색상적용-사례">
-<span class="header-section-number">9.3</span> 색상적용 사례</h2>
+</section><section id="dataviz-viridis" class="level3" data-number="9.5.2"><h3 data-number="9.5.2" class="anchored" data-anchor-id="dataviz-viridis">
+<span class="header-section-number">9.5.2</span> viridis</h3>
+<p>2015년에 Stéfan van der Walt와 Nathaniel Smith는 파이썬의 <code>matplotlib</code> 패키지를 위한 새로운 색상체계를 설계했으며, 이를 <a href="https://www.youtube.com/watch?v=xAoljeRJ3lU&amp;feature=youtu.be">SciPy 2015</a>에서 발표했다. 이들의 작업 덕분에 R <code>viridis</code> 패키지에는 4가지 새로운 팔레트가 추가되었다. 이 패키지는 <a href="https://cran.r-project.org/web/packages/viridis/index.html">CRAN</a>과 <a href="https://github.com/sjmgarnier/viridis">GitHub</a>에서 이용할 수 있다. <code>viridis</code> 패키지는 상대적으로 새로 출시되어, 자세한 정보를 얻기 위해서는 직접 설치해보고 <a href="https://cran.r-project.org/web/packages/viridis/vignettes/intro-to-viridis.html">소품문</a>을 읽고 직접 경험하기 바란다.</p>
+<p><code>ggplot2</code>와 <code>viridis</code> 패키지를 사용하여 <code>palmerpenguins</code> 데이터에 대한 범주형 시각화 예시를 살펴보자. <code>palmerpenguins</code> 데이터에는 남극 펭귄의 여러 특징이 포함되어 있으며, 펭귄종(species), 부리길이(bill_length_mm), 부리깊이(bill_depth_mm) 등 다양한 변수를 포함하고 있다.</p>
+<p>펭귄종에 따른 부리길이와 깊이 관계를 범주형 색상으로 시각화하는 코드를 만들어 보자. 먼저 필요한 패키지를 준비하고, 데이터를 불러온 다음, <code>ggplot</code>을 사용하여 그래프를 제작한다. <code><a href="https://ggplot2.tidyverse.org/reference/scale_viridis.html">scale_color_viridis_d()</a></code> 함수는 범주형 변수(펭귄종, <code>species</code>)에 적합한 <code>viridis</code> 색상을 그래프에 반영했다.</p>
+<div class="cell">
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># 패키지 로드</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://sjmgarnier.github.io/viridis/">viridis</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://allisonhorst.github.io/palmerpenguins/">palmerpenguins</a></span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># 데이터 불러오기</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="va">penguins</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># ggplot을 사용한 시각화</span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">penguins</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">bill_length_mm</span>, y <span class="op">=</span> <span class="va">bill_depth_mm</span>, color <span class="op">=</span> <span class="va">species</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_viridis.html">scale_color_viridis_d</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_minimal</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"펭귄종에 따른 부리 길이와 깊이"</span>,</span>
+<span>       x <span class="op">=</span> <span class="st">"부리 길이 (mm)"</span>,</span>
+<span>       y <span class="op">=</span> <span class="st">"부리 깊이 (mm)"</span>,</span>
+<span>       color <span class="op">=</span> <span class="st">"펭귄종"</span><span class="op">)</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><a href="theme_colors_files/figure-html/unnamed-chunk-10-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9"><img src="theme_colors_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid figure-img" width="576"></a></p>
+</figure>
+</div>
+</div>
+</div>
+<p>이 코드는 <code>palmerpenguins</code> 데이터 세트에서 각 펭귄 종에 따라 부리의 길이와 깊이를 점으로 나타내고, <code>viridis</code> 팔레트로 색상을 적용한 그래프를 생성합니다. <code><a href="https://ggplot2.tidyverse.org/reference/scale_viridis.html">scale_color_viridis_d()</a></code> 함수는 범주형 변수에 적합한 <code>viridis</code> 색상을 반영했다.</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<code>viridis</code> 색상표
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><code>viridis</code> 색상표는 완벽하게 균등하게 지각되도록 설계되었고, 정규형식에서나 흑백으로 전환되었을 때도 마찬가지다. 또한 색각 이상을 갖는 독자도 올바르게 색상이 지각될 수 있도록 설계되었다.</p>
+</div>
+</div>
+</section><section id="dataviz-viridis-blind" class="level3" data-number="9.5.3"><h3 data-number="9.5.3" class="anchored" data-anchor-id="dataviz-viridis-blind">
+<span class="header-section-number">9.5.3</span> 색각 이상</h3>
+<p>색각 이상은 비색각 이상자와 원추세포의 차이로 인해 색상을 잘 구분하지 못하는 증상으로 색맹과 색약으로 구분된다. 색맹은 삼원색 중 특정 색상을 완전히 감지하지 못하는 것이며, 색약은 수용체에 문제로 감지는 할 수 있지만 다르게 보이게 된다. <code>dichromat</code> 팩키지(<a href="http://cran.r-project.org/web/packages/dichromat/">CRAN</a>)는 2색시자에 대한 효과적인 색상조합을 선택하는데 도움이 된다. <code>colorschems</code> 목록에는 17 가지 색상조합이 담겨있는데, 적색과 녹색을 구별하는 능력이 없거나 예외적인 시력을 갖는 2색시자에게 적합하다.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-dichromat-colorschemes" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-dichromat-colorschemes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="theme_colors_files/figure-html/fig-dichromat-colorschemes-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10" title="그림&nbsp;9.9: 색각 이상 dichromat 색상표"><img src="theme_colors_files/figure-html/fig-dichromat-colorschemes-1.png" class="img-fluid figure-img" width="576"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-dichromat-colorschemes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+그림&nbsp;9.9: 색각 이상 dichromat 색상표
+</figcaption></figure>
+</div>
+</div>
+</div>
+<p><code>dichromat</code> 패키지<span class="citation" data-cites="rogowitz1996should">(Rogowitz 와/과 Treinish 1996)</span> <code>dichmat()</code> 함수는 색상을 변환해서 다른 형태의 색맹에 근사적인 효과를 구현할 수 있어서, 후보 색상조합에 대한 효과를 평가할 수 있게 한다. <code>data("dalton")</code> 명령어는 256 색상 팔레트를 표현하는 객체를 생성하는데, 정상 시야로 표현되는 것과, 적록(red-green) 색맹과 청녹(green-blue) 생맹 팔레트를 제공하고 있다.</p>
+</section></section><section id="색상적용-사례" class="level2" data-number="9.6"><h2 data-number="9.6" class="anchored" data-anchor-id="색상적용-사례">
+<span class="header-section-number">9.6</span> 색상적용 사례</h2>
 <p>색상을 지정하여 그래프를 제작하는 방법과 이미지에서 색상을 추출하여 그래프에 적용하는 기법을 살펴보면, 데이터 시각화에 깊이와 매력을 더한다. 정당 로고에서 추출한 색상으로 정당별 지지율 그래프를 만드는 것과 태극기 이미지에서 추출한 색상을 사용하여 데이터 시각화를 수행하는 사례는 색상의 선택과 적용이 시각적 표현에 어떻게 영향을 미칠 수 있는지를 가늠할 수 있다.</p>
-<section id="정당-색상" class="level3" data-number="9.3.1"><h3 data-number="9.3.1" class="anchored" data-anchor-id="정당-색상">
-<span class="header-section-number">9.3.1</span> 정당 색상</h3>
+<section id="정당-색상" class="level3" data-number="9.6.1"><h3 data-number="9.6.1" class="anchored" data-anchor-id="정당-색상">
+<span class="header-section-number">9.6.1</span> 정당 색상</h3>
 <p><a href="https://www.peoplepowerparty.kr/about/logo">더블어민주당</a>, <a href="https://www.peoplepowerparty.kr/about/logo">국민의힘</a>, <a href="https://www.justice21.org/newhome/about/info021.html">정의당</a> 웹사이트에서 각 정당 로고 및 주된 로고 색상을 확인할 수 있다. 이를 바탕으로 정당별 시각화 제작에 사용될 색상으로 팔레트를 생성하여 활용한다.</p>
 <div class="cell">
-<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># 각 정당별 색상</span></span>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># 각 정당별 색상</span></span>
 <span><span class="va">민주당_2색상</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"#00A0E2"</span>, <span class="st">"#004EA1"</span><span class="op">)</span></span>
 <span><span class="va">민주당_4색상</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"#8AC452"</span>, <span class="st">"#00AA7D"</span>, <span class="st">"#008CCD"</span>, <span class="st">"#004EA1"</span><span class="op">)</span></span>
 <span></span>
@@ -816,17 +991,18 @@ div.blue { background-color:#e6f0ff; border-radius: 5px; padding: 10px;}
 <div class="cell-output-display">
 <div id="fig-party-color" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-party-color-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="theme_colors_files/figure-html/fig-party-color-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10" title="그림&nbsp;9.7: 정당별 색상 팔레트"><img src="theme_colors_files/figure-html/fig-party-color-1.png" class="img-fluid figure-img" width="576"></a>
+<a href="theme_colors_files/figure-html/fig-party-color-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-11" title="그림&nbsp;9.10: 정당별 색상 팔레트"><img src="theme_colors_files/figure-html/fig-party-color-1.png" class="img-fluid figure-img" width="576"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-party-color-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-그림&nbsp;9.7: 정당별 색상 팔레트
+그림&nbsp;9.10: 정당별 색상 팔레트
 </figcaption></figure>
 </div>
 </div>
 </div>
 <p>정당별 색상을 반영한 데이터 시각화 그래프 제작을 위해서 난수를 생성한 정당별 지지율 데이터를 만든 후에 정당색상을 반영한 그래프를 제작한다.</p>
 <div class="cell">
-<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">party_name</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"민주당"</span>, <span class="st">"국민의힘"</span>, <span class="st">"정의당"</span>, <span class="st">"무소속"</span><span class="op">)</span></span>
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">123456789</span><span class="op">)</span></span>
+<span><span class="va">party_name</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"민주당"</span>, <span class="st">"국민의힘"</span>, <span class="st">"정의당"</span>, <span class="st">"무소속"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">votes</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/Uniform.html">runif</a></span><span class="op">(</span><span class="fl">1</span>, min<span class="op">=</span><span class="fl">.4</span>, max<span class="op">=</span><span class="fl">.5</span><span class="op">)</span>,</span>
 <span>           <span class="fu"><a href="https://rdrr.io/r/stats/Uniform.html">runif</a></span><span class="op">(</span><span class="fl">1</span>, min<span class="op">=</span><span class="fl">.4</span>, max<span class="op">=</span><span class="fl">.5</span><span class="op">)</span>,</span>
@@ -846,19 +1022,19 @@ div.blue { background-color:#e6f0ff; border-radius: 5px; padding: 10px;}
 <div class="cell-output-display">
 <div id="fig-party-color-bar" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-party-color-bar-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="theme_colors_files/figure-html/fig-party-color-bar-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-11" title="그림&nbsp;9.8: 정당별 색상 팔레트를 적용한 막대 그래프"><img src="theme_colors_files/figure-html/fig-party-color-bar-1.png" class="img-fluid figure-img" width="576"></a>
+<a href="theme_colors_files/figure-html/fig-party-color-bar-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-12" title="그림&nbsp;9.11: 정당별 색상 팔레트를 적용한 막대 그래프"><img src="theme_colors_files/figure-html/fig-party-color-bar-1.png" class="img-fluid figure-img" width="576"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-party-color-bar-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-그림&nbsp;9.8: 정당별 색상 팔레트를 적용한 막대 그래프
+그림&nbsp;9.11: 정당별 색상 팔레트를 적용한 막대 그래프
 </figcaption></figure>
 </div>
 </div>
 </div>
-</section><section id="이미지-색상" class="level3" data-number="9.3.2"><h3 data-number="9.3.2" class="anchored" data-anchor-id="이미지-색상">
-<span class="header-section-number">9.3.2</span> 이미지 → 색상</h3>
-<p>이미지에서 색상을 출력한 후에 이를 팔레트로 만들어서 시각화한 사례를 만들어보자. 태극기에서 가장 많은 색상을 선택하여 16진수 색상코드를 추출한다. <code>magick</code> 패키지와 생상에서 데이터프레임 변환을 위해 <code>imager</code> 패키지를 사용해서 변환한다. <a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a></p>
+</section><section id="이미지-색상" class="level3" data-number="9.6.2"><h3 data-number="9.6.2" class="anchored" data-anchor-id="이미지-색상">
+<span class="header-section-number">9.6.2</span> 이미지 → 색상</h3>
+<p>태극기 이미지에서 색상을 추출해 팔레트를 만들고 시각화하는 작업은 여러 단계로 진행된다. 먼저, magick 패키지를 사용해 태극기 이미지를 불러온다. 이미지에서 가장 많이 사용된 색상을 골라내고, 이를 16진수 색상 코드로 변환한다. 이렇게 얻은 색상 코드를 <code>imager</code> 패키지를 사용해 데이터프레임으로 변환한다. 마지막으로, 추출된 색상으로 구성된 팔레트를 시각화한다. <a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a></p>
 <div class="cell">
-<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://scales.r-lib.org">scales</a></span><span class="op">)</span></span>
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://scales.r-lib.org">scales</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://asgr.github.io/imager/">imager</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://docs.ropensci.org/magick/">magick</a></span><span class="op">)</span></span>
 <span></span>
@@ -888,7 +1064,7 @@ div.blue { background-color:#e6f0ff; border-radius: 5px; padding: 10px;}
 </div>
 <p>태극기 이미지를 <code>ggplot</code>으로 시각화한다.</p>
 <div class="cell">
-<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/GuangchuangYu/ggimage">ggimage</a></span><span class="op">)</span></span>
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/GuangchuangYu/ggimage">ggimage</a></span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">flag_image_gg</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://rdrr.io/pkg/ggimage/man/geom_image.html">geom_image</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x<span class="op">=</span><span class="fl">0</span>, y<span class="op">=</span><span class="fl">0</span>, image<span class="op">=</span><span class="st">"images/korean_flag.svg"</span><span class="op">)</span>, size<span class="op">=</span><span class="fl">1</span><span class="op">)</span> <span class="op">+</span></span>
@@ -897,7 +1073,7 @@ div.blue { background-color:#e6f0ff; border-radius: 5px; padding: 10px;}
 </div>
 <p>태극기에서 추출한 색상을 바탕으로 막대그래프에 색상을 입혀 시각화한다.</p>
 <div class="cell">
-<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">flag_penguin_gg</span> <span class="op">&lt;-</span> <span class="va">penguins</span> <span class="op">|&gt;</span> </span>
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">flag_penguin_gg</span> <span class="op">&lt;-</span> <span class="va">penguins</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/count.html">count</a></span><span class="op">(</span><span class="va">island</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>island <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/if_else.html">if_else</a></span><span class="op">(</span><span class="va">island</span> <span class="op">==</span>  <span class="st">"Torgersen"</span>, <span class="cn">NA_character_</span>, <span class="va">island</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span> x <span class="op">=</span> <span class="va">island</span>, y <span class="op">=</span> <span class="va">n</span>, fill <span class="op">=</span> <span class="va">island</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
@@ -907,16 +1083,16 @@ div.blue { background-color:#e6f0ff; border-radius: 5px; padding: 10px;}
 </div>
 <p>태극기, 태극기 색상, 막대그래프 시각화를 한번에 요약하여 시각화한다.</p>
 <div class="cell">
-<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://patchwork.data-imaginist.com">patchwork</a></span><span class="op">)</span></span>
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://patchwork.data-imaginist.com">patchwork</a></span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="op">(</span><span class="va">flag_image_gg</span> <span class="op">+</span> <span class="va">flag_colors_gg</span><span class="op">)</span> <span class="op">/</span> <span class="va">flag_penguin_gg</span><span class="op">)</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div id="fig-color-from-image" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-color-from-image-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="theme_colors_files/figure-html/fig-color-from-image-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-12" title="그림&nbsp;9.9: 태극기 이미지에서 추출한 색상을 활용한 시각화 그래프"><img src="theme_colors_files/figure-html/fig-color-from-image-1.png" class="img-fluid figure-img" width="576"></a>
+<a href="theme_colors_files/figure-html/fig-color-from-image-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-13" title="그림&nbsp;9.12: 태극기 이미지에서 추출한 색상을 활용한 시각화 그래프"><img src="theme_colors_files/figure-html/fig-color-from-image-1.png" class="img-fluid figure-img" width="576"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-color-from-image-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-그림&nbsp;9.9: 태극기 이미지에서 추출한 색상을 활용한 시각화 그래프
+그림&nbsp;9.12: 태극기 이미지에서 추출한 색상을 활용한 시각화 그래프
 </figcaption></figure>
 </div>
 </div>
@@ -1351,7 +1527,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <p>순수하게 <a href="https://quarto.org/">쿼토(Quarto)</a>로 제작되었습니다.</p>
 </div>
   </div>
-</footer><script>var lightboxQuarto = GLightbox({"descPosition":"bottom","selector":".lightbox","loop":false,"closeEffect":"zoom","openEffect":"zoom"});
+</footer><script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","selector":".lightbox","openEffect":"zoom","descPosition":"bottom","loop":false});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;
