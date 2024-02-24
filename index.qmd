@@ -2,7 +2,7 @@
 :::{.callout-tip}
 ### 챗GPT와 쿼토 출판 경과  {.unnumbered}
 
-[공익법인 한국 R 사용자회](https://r2bit.com/)는 오픈통계패키지 후속 프로젝트로 2022년 "디지털 글쓰기"라고 읽고 "쿼토"라고 쓰는 새로운 문서 작성 패러다임을 제안하고 [서울 R 미트업](https://r2bit.com/seoul-r/)과 [블로그/웹사이트](https://r2bit.com/quarto/)를 통해 지식과 경험을 공유하였고, 쿼토 [한국어 번역](https://github.com/quarto-dev/quarto-cli/pull/2773) 기여를 통해 쿼토에서 한국어 기능을 사용할 수 있도록 했다. 이후 챗GPT 생성형 AI가 등장하면서 2023년 "챗GPT 데이터 사이언스"를 주제로 서울 R 미트업을 진행하였고, 쿼토기반 한국어 출판 [`bitPublish`](https://github.com/bit2r/bitPublish) 패키지가 개발되면서 챗GPT 쿼토 출판이 가능하게 되었다.
+[공익법인 한국 R 사용자회](https://r2bit.com/)는 오픈통계 패키지(`BitStat`) 후속 프로젝트로 2022년 "디지털 글쓰기"라고 읽고 "쿼토"라고 쓰는 새로운 문서 작성 패러다임을 제안하고 [서울 R 미트업](https://r2bit.com/seoul-r/)과 [블로그/웹사이트](https://r2bit.com/quarto/)를 통해 지식과 경험을 공유하였고, 쿼토 [한국어 번역](https://github.com/quarto-dev/quarto-cli/pull/2773) 기여를 통해 쿼토에서 한국어 기능을 사용할 수 있도록 했다. 이후 챗GPT 생성형 AI가 등장하면서 2023년 "챗GPT 데이터 사이언스"를 주제로 서울 R 미트업을 진행하였고, 쿼토기반 한국어 출판 [`bitPublish`](https://github.com/bit2r/bitPublish) 패키지가 개발되면서 챗GPT 쿼토 출판이 가능하게 되었다.
 :::
 
 # 서문 {.unnumbered}

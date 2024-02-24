@@ -391,7 +391,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">공개</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">2024년 02월 21일</p>
+      <p class="date">2024년 02월 24일</p>
     </div>
   </div>
   
@@ -414,7 +414,7 @@ window.Quarto = {
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><a href="https://r2bit.com/">공익법인 한국 R 사용자회</a>는 오픈통계패키지 후속 프로젝트로 2022년 “디지털 글쓰기”라고 읽고 “쿼토”라고 쓰는 새로운 문서 작성 패러다임을 제안하고 <a href="https://r2bit.com/seoul-r/">서울 R 미트업</a>과 <a href="https://r2bit.com/quarto/">블로그/웹사이트</a>를 통해 지식과 경험을 공유하였고, 쿼토 <a href="https://github.com/quarto-dev/quarto-cli/pull/2773">한국어 번역</a> 기여를 통해 쿼토에서 한국어 기능을 사용할 수 있도록 했다. 이후 챗GPT 생성형 AI가 등장하면서 2023년 “챗GPT 데이터 사이언스”를 주제로 서울 R 미트업을 진행하였고, 쿼토기반 한국어 출판 <a href="https://github.com/bit2r/bitPublish"><code>bitPublish</code></a> 패키지가 개발되면서 챗GPT 쿼토 출판이 가능하게 되었다.</p>
+<p><a href="https://r2bit.com/">공익법인 한국 R 사용자회</a>는 오픈통계 패키지(<code>BitStat</code>) 후속 프로젝트로 2022년 “디지털 글쓰기”라고 읽고 “쿼토”라고 쓰는 새로운 문서 작성 패러다임을 제안하고 <a href="https://r2bit.com/seoul-r/">서울 R 미트업</a>과 <a href="https://r2bit.com/quarto/">블로그/웹사이트</a>를 통해 지식과 경험을 공유하였고, 쿼토 <a href="https://github.com/quarto-dev/quarto-cli/pull/2773">한국어 번역</a> 기여를 통해 쿼토에서 한국어 기능을 사용할 수 있도록 했다. 이후 챗GPT 생성형 AI가 등장하면서 2023년 “챗GPT 데이터 사이언스”를 주제로 서울 R 미트업을 진행하였고, 쿼토기반 한국어 출판 <a href="https://github.com/bit2r/bitPublish"><code>bitPublish</code></a> 패키지가 개발되면서 챗GPT 쿼토 출판이 가능하게 되었다.</p>
 </div>
 </div>
 <section id="서문" class="level1 unnumbered">
@@ -775,25 +775,64 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         }
       };
     }
-      // Attach click handler to the DT
-      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-      for (const annoteDlNode of annoteDls) {
-        annoteDlNode.addEventListener('click', (event) => {
-          const clickedEl = event.target;
-          if (clickedEl !== selectedAnnoteEl) {
-            unselectCodeLines();
-            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-            if (activeEl) {
-              activeEl.classList.remove('code-annotation-active');
-            }
-            selectCodeLines(clickedEl);
-            clickedEl.classList.add('code-annotation-active');
-          } else {
-            // Unselect the line
-            unselectCodeLines();
-            clickedEl.classList.remove('code-annotation-active');
+      const annoteTargets = window.document.querySelectorAll('.code-annotation-anchor');
+      for (let i=0; i<annoteTargets.length; i++) {
+        const annoteTarget = annoteTargets[i];
+        const targetCell = annoteTarget.getAttribute("data-target-cell");
+        const targetAnnotation = annoteTarget.getAttribute("data-target-annotation");
+        const contentFn = () => {
+          const content = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          if (content) {
+            const tipContent = content.cloneNode(true);
+            tipContent.classList.add("code-annotation-tip-content");
+            return tipContent.outerHTML;
           }
-        });
+        }
+        const config = {
+          allowHTML: true,
+          content: contentFn,
+          onShow: (instance) => {
+            selectCodeLines(instance.reference);
+            instance.reference.classList.add('code-annotation-active');
+            window.tippy.hideAll();
+          },
+          onHide: (instance) => {
+            unselectCodeLines();
+            instance.reference.classList.remove('code-annotation-active');
+          },
+          maxWidth: 300,
+          delay: [50, 0],
+          duration: [200, 0],
+          offset: [5, 10],
+          arrow: true,
+          appendTo: function(el) {
+            return el.parentElement.parentElement.parentElement;
+          },
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'quarto',
+          placement: 'right',
+          popperOptions: {
+            modifiers: [
+            {
+              name: 'flip',
+              options: {
+                flipVariations: false, // true by default
+                allowedAutoPlacements: ['right'],
+                fallbackPlacements: ['right', 'top', 'top-start', 'top-end', 'bottom', 'bottom-start', 'bottom-end', 'left'],
+              },
+            },
+            {
+              name: 'preventOverflow',
+              options: {
+                mainAxis: false,
+                altAxis: false
+              }
+            }
+            ]        
+          }      
+        };
+        window.tippy(annoteTarget, config); 
       }
   const findCites = (el) => {
     const parentEl = el.parentElement;
@@ -857,7 +896,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"selector":".lightbox","openEffect":"zoom","closeEffect":"zoom","loop":false,"descPosition":"bottom"});
+<script>var lightboxQuarto = GLightbox({"loop":false,"selector":".lightbox","descPosition":"bottom","closeEffect":"zoom","openEffect":"zoom"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;
