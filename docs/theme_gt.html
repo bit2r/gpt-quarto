@@ -405,11 +405,15 @@ window.Quarto = {
 
 </header><p>이전 장에서 우리는 적절한 글꼴, 색상, 테마를 사용한 그래프가 데이터 시각화에서 얼마나 중요한지 살펴봤다. 이번 장에서는 문서를 구성하는 또 다른 중요한 요소인 ‘표(table)’, 특히 ‘gt’ (grammar of tables) 테마를 중심으로 살펴볼 것이다. 표는 복잡한 데이터를 정리하고 분석하는 데 없어서는 안 될 도구다. ’gt’는 표 구성과 디자인에 대한 체계적인 접근 방법을 제공함으로써 표를 통해 효과적으로 정보를 전달할 수 있을 뿐만 아니라 시각적으로 미려한 표를 만들 수 있다는 점에서 매우 유용하다.</p>
 <p>문서에 표를 넣으면 정보를 효과적으로 요약하고 가독성을 크게 높일 수 있다. 표를 만들 때 사용할 수 있는 도구로는 마크다운(Markdown), <code>gt</code> 패키지, <span class="math inline">\(\LaTeX\)</span>이 있는데, 각각 독특한 장점이 있다. 마크다운은 사용하기 쉽고 복잡한 설치나 추가 패키지 없이 기본적인 표를 신속하게 만들 수 있다. 반면 <span class="math inline">\(\LaTeX\)</span>은 논문이나 학술 자료에 적합하도록 고급 품질의 표를 만들 수 있는 전문적인 도구다. 그래프 문법이 정립된 이후 가장 최근에 소개된 <code>gt</code>는 마크다운의 간편함과 <span class="math inline">\(\LaTeX\)</span>과 같은 전문적인 표를 만들 수 있는 기능을 모두 갖추고 있다.</p>
-<p>웹과 PDF 출력, 테마 지정 등에서 <code>gt</code> 패키지가 뛰어나고 <code>gt</code> 패키지는 그래프 문법에 기초하여 고급 표제작도 수월하게 작성가능하고, 특히, 데이터 중심 표를 작성할 때 필요한 다양한 기능을 제공하기 때문에 탄탄한 표 문법에 기반한 <code>gt</code> 패키지가 여러가지 장점이 많다.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><a href="images/table_three.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="표제작 세가지 방식"><img src="images/table_three.jpg" class="img-fluid figure-img" alt="표제작 세가지 방식"></a></p>
-<figcaption>표제작 세가지 방식</figcaption></figure>
+<div id="fig-three-tables" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-three-tables-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/table_three.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="그림&nbsp;11.1: 표제작 세가지 방식"><img src="images/table_three.jpg" class="img-fluid figure-img"></a>
 </div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-three-tables-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+그림&nbsp;11.1: 표제작 세가지 방식
+</figcaption></figure>
+</div>
+<p>웹과 PDF 출력, 테마 지정 등에서 <code>gt</code> 패키지가 뛰어나고 <code>gt</code> 패키지는 그래프 문법에 기초하여 고급 표제작도 수월하게 작성가능하고, 특히, 데이터 중심 표를 작성할 때 필요한 다양한 기능을 제공하기 때문에 탄탄한 표 문법에 기반한 <code>gt</code> 패키지가 여러가지 장점이 많다.</p>
 <section id="gt-표-작성하기" class="level2" data-number="11.1"><h2 data-number="11.1" class="anchored" data-anchor-id="gt-표-작성하기">
 <span class="header-section-number">11.1</span> <code>gt</code> 표 작성하기</h2>
 <p><code>gt</code> 패키지는 R Tidyverse 생태계에 속한 표 제작 목적으로 특별히 제작된 패키지로 그래프 문법에 기반한 <code>ggplot2</code> 패키지에 친숙하신 저자는 쉽게 표도 <code>gt</code> 패키지를 사용해서 다양한 표 제작이 가능하다. 다음 예시에서는 <code>palmerpenguins</code> 데이터 패키지 <code>penguins</code> 데이터셋을 활용하여 “남극 펭귄 서식섬과 종 빈도표”를 제작한다.</p>
@@ -436,7 +440,6 @@ window.Quarto = {
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://allisonhorst.github.io/palmerpenguins/">palmerpenguins</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://gt.rstudio.com">gt</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/jthomasmock/gtExtras">gtExtras</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://docs.ropensci.org/magick/">magick</a></span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">penguins_gt</span> <span class="op">&lt;-</span> <span class="va">penguins</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/count.html">count</a></span><span class="op">(</span><span class="va">species</span>, <span class="va">island</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
@@ -462,6 +465,8 @@ window.Quarto = {
 <span>  <span class="op">)</span></span>
 <span></span>
 <span><span class="va">penguins_gt</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="tbl-penguin-table" class="cell quarto-float anchored">
+<figure class="quarto-float quarto-float-tbl figure"><div aria-describedby="tbl-penguin-table-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
 <div>
 <div id="mwlefoodfi" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
@@ -904,7 +909,7 @@ window.Quarto = {
   text-indent: 25px;
 }
 </style>
-<table class="gt_table table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table do-not-create-environment cell table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
 <thead>
 <tr class="header gt_heading">
 <th colspan="4" class="gt_heading gt_title gt_font_normal">남극 펭귄 <strong>서식섬과 종</strong> 빈도표</th>
@@ -954,6 +959,11 @@ window.Quarto = {
 </div>
 </div>
 </div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-tbl" id="tbl-penguin-table-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+표&nbsp;11.1: <code>gt</code> 패키지 활용 표 제작 사례
+</figcaption></figure>
+</div>
+</div>
 <section id="기본-색상과-스타일" class="level3" data-number="11.1.1"><h3 data-number="11.1.1" class="anchored" data-anchor-id="기본-색상과-스타일">
 <span class="header-section-number">11.1.1</span> 기본 색상과 스타일</h3>
 <p>웹 프로그램을 제작할 때 HTML로 콘텐츠를 제작하고 CSS/SCSS 파일로 스타일을 적용하는 것처럼 유지보수성이 뛰어나고 가독성이 좋은 표를 제작하기 위해 저자가 익혀야 되는 필수적인 기본기 중 하나다. <code>penguins_gt</code> 표는 핵심 정보가 잘 요약되어 있지만, 색상이나 다른 외양 관련 설정은 기본설정값만 따르고 있다.</p>
@@ -976,9 +986,13 @@ window.Quarto = {
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div>
-<figure class="figure"><p><a href="theme_gt_files/figure-html/unnamed-chunk-4-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="theme_gt_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="735"></a></p>
-</figure>
+<div id="fig-table-colors" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-table-colors-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="theme_gt_files/figure-html/fig-table-colors-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="그림&nbsp;11.2: 색상별 gt 표"><img src="theme_gt_files/figure-html/fig-table-colors-1.png" class="img-fluid figure-img" width="735"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-table-colors-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+그림&nbsp;11.2: 색상별 <code>gt</code> 표
+</figcaption></figure>
 </div>
 </div>
 </div>
@@ -1002,19 +1016,22 @@ window.Quarto = {
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div>
-<figure class="figure"><p><a href="theme_gt_files/figure-html/unnamed-chunk-6-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="theme_gt_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="734"></a></p>
-</figure>
+<div id="fig-table-styles" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-table-styles-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="theme_gt_files/figure-html/fig-table-styles-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="그림&nbsp;11.3: 스타일별 gt 표"><img src="theme_gt_files/figure-html/fig-table-styles-1.png" class="img-fluid figure-img" width="734"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-table-styles-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+그림&nbsp;11.3: 스타일별 <code>gt</code> 표
+</figcaption></figure>
 </div>
 </div>
 </div>
 </section></section><section id="gtextra" class="level2" data-number="11.2"><h2 data-number="11.2" class="anchored" data-anchor-id="gtextra">
 <span class="header-section-number">11.2</span> <code>gtExtra</code>
 </h2>
-<p><code>gtExtras</code> 패키지는 <code>gt</code> 패키지를 보완하여 더 아름다운 표를 생성할 수 있도록 도와주는 목적으로 개발되었다. <code>gt</code> 패키지에서 구현되지 않은 기능을 추가하거나, 반복되는 코드를 줄이기 위한 래퍼(wrapper) 함수로 작성되었다. <code>gt</code> 패키지를 확장한 다양한 기능이 있지만 테마와 관련된 사항을 집중적으로 살펴보자.</p>
-<p><code>ggplot2</code> 패키지를 활용하여 그래프 문법에 맞춰 그래프를 제작한 경험이 있다면, 자주 <code>theme_*()</code> 함수를 사용했을 것이다. 마찬가지로 <code>ggplot2</code> 그래프 테마 <code><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_minimal()</a></code>, <code><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_grey()</a></code>에 대응되는 테마가 <code>gtExtras</code> 패키지에 <code><a href="https://jthomasmock.github.io/gtExtras/reference/gt_theme_538.html">gt_theme_538()</a></code>, <code><a href="https://jthomasmock.github.io/gtExtras/reference/gt_theme_espn.html">gt_theme_espn()</a></code>, <code><a href="https://jthomasmock.github.io/gtExtras/reference/gt_theme_nytimes.html">gt_theme_nytimes()</a></code>, <code><a href="https://jthomasmock.github.io/gtExtras/reference/gt_theme_guardian.html">gt_theme_guardian()</a></code>, <code><a href="https://jthomasmock.github.io/gtExtras/reference/gt_theme_dot_matrix.html">gt_theme_dot_matrix()</a></code>, <code><a href="https://jthomasmock.github.io/gtExtras/reference/gt_theme_dark.html">gt_theme_dark()</a></code>, <code><a href="https://jthomasmock.github.io/gtExtras/reference/gt_theme_excel.html">gt_theme_excel()</a></code>, <code><a href="https://jthomasmock.github.io/gtExtras/reference/gt_theme_pff.html">gt_theme_pff()</a></code> 포함되어 있다. 주목할 점은 언론사와 단체에서 사용되는 스타일이 대거 포함되어 있다는 점이다.</p>
-<p><code><a href="https://jthomasmock.github.io/gtExtras/reference/gt_theme_espn.html">gt_theme_espn()</a></code> 함수는 <code>gt</code> 패키지로 생성된 표에 ESPN 테마를 적용한다. 이 함수는 <code>gt</code> 테이블 객체(<code>gt_tbl</code> 클래스)를 인자로 받으며, 선택적으로 <code>gt::table_options()</code>에 전달할 추가 인자를 받을 수 있다. 반환 값은 <code>gt_tbl</code> 클래스의 객체이다.</p>
-<p>다음은 다른 테마 함수들에 대한 간략한 설명이다:</p>
+<p><code>gtExtras</code> 패키지는 <code>gt</code> 패키지를 보완하여 더 미려한 표를 생성할 수 있도록 도와주는 목적으로 개발되었다. <code>gt</code> 패키지에서 구현되지 않은 기능을 추가하거나, 반복되는 코드를 줄이기 위한 래퍼(wrapper) 함수로 작성되었다. <code>gt</code> 패키지를 확장한 다양한 기능이 있지만 테마와 관련된 사항을 집중적으로 살펴보자.</p>
+<p><code>ggplot2</code> 패키지를 활용하여 그래프 문법에 맞춰 그래프를 제작한 경험이 있다면, 자주 <code>theme_*()</code> 함수를 사용했을 것이다. 마찬가지로 <code>ggplot2</code> 그래프 테마 <code><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_minimal()</a></code>, <code><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_grey()</a></code>에 대응되는 테마가 <code>gtExtras</code> 패키지에 <code><a href="https://jthomasmock.github.io/gtExtras/reference/gt_theme_538.html">gt_theme_538()</a></code>, <code><a href="https://jthomasmock.github.io/gtExtras/reference/gt_theme_espn.html">gt_theme_espn()</a></code>, <code><a href="https://jthomasmock.github.io/gtExtras/reference/gt_theme_nytimes.html">gt_theme_nytimes()</a></code>, <code><a href="https://jthomasmock.github.io/gtExtras/reference/gt_theme_guardian.html">gt_theme_guardian()</a></code>, <code><a href="https://jthomasmock.github.io/gtExtras/reference/gt_theme_dot_matrix.html">gt_theme_dot_matrix()</a></code>, <code><a href="https://jthomasmock.github.io/gtExtras/reference/gt_theme_dark.html">gt_theme_dark()</a></code>, <code><a href="https://jthomasmock.github.io/gtExtras/reference/gt_theme_excel.html">gt_theme_excel()</a></code>, <code><a href="https://jthomasmock.github.io/gtExtras/reference/gt_theme_pff.html">gt_theme_pff()</a></code> 포함되어 있다. 주목할 점은 언론사와 소프트웨어에서 사용되는 스타일이 대거 포함되어 있다는 점이다.</p>
+<p><code><a href="https://jthomasmock.github.io/gtExtras/reference/gt_theme_espn.html">gt_theme_espn()</a></code> 함수는 <code>gt</code> 패키지로 생성된 표에 ESPN 테마를 적용한다. 이 함수는 <code>gt</code> 테이블 객체(<code>gt_tbl</code> 클래스)를 인자로 받으며, 선택적으로 <code>gt::table_options()</code>에 전달할 추가 인자를 받을 수 있다. 반환 값은 <code>gt_tbl</code> 클래스의 객체이다. 다음은 다른 테마 함수들에 대한 간략한 설명이다:</p>
 <table class="table">
 <colgroup>
 <col style="width: 56%">
@@ -1098,15 +1115,19 @@ window.Quarto = {
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div>
-<figure class="figure"><p><a href="theme_gt_files/figure-html/unnamed-chunk-8-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="theme_gt_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="748"></a></p>
-</figure>
+<div id="fig-table-gtExtras" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-table-gtExtras-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="theme_gt_files/figure-html/fig-table-gtExtras-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="그림&nbsp;11.4: gtExtras 테마 적용 표"><img src="theme_gt_files/figure-html/fig-table-gtExtras-1.png" class="img-fluid figure-img" width="748"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-table-gtExtras-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+그림&nbsp;11.4: <code>gtExtras</code> 테마 적용 표
+</figcaption></figure>
 </div>
 </div>
 </div>
 </section><section id="사용자-정의-테마" class="level2" data-number="11.3"><h2 data-number="11.3" class="anchored" data-anchor-id="사용자-정의-테마">
 <span class="header-section-number">11.3</span> 사용자 정의 테마</h2>
-<p>사용자 정의 테마가 필요한 이유는 다양하지만, 보고서나 PPT 발표에서 동일한 스타일과 구성을 가진 표를 사용하면 데이터를 더 쉽고 빠르게 이해할 수 있고 동일한 일관성은 수작없이 반영할 수 있고 독자에게는 전문성을 각인시킬 수 있는 점이 크다.</p>
+<p>사용자 정의 테마의 필요성은 다양하며 주로 보고서나 PPT 발표에서 중요한 역할을 한다. 동일한 스타일과 구성을 가진 표를 사용하면 데이터를 쉽고 빠르게 이해할 수 있고, 일관된 스타일은 전문성을 강조하고, 독자에게 깊은 인상을 남길 수 있다.</p>
 <p><code>gtExtras</code>와 같은 패키지에서 제공되는 테마는 코드 한 줄로 빠르고 깔끔한 표를 만들 수 있어 시간을 절약할 수 있다는 큰 장점이 있지만, 특정 요구사항이나 브랜딩 지침을 완전히 맞춤화하기 쉽지 않고, 복잡한 데이터 구조나 특별한 시각화 요구사항을 충족시키는 데에도 한계가 있다.</p>
 <p>사용자 정의 테마를 개발함으로써 <code>gtExtras</code>에서 제공하는 테마처럼 표 제작을 빠르고 편하게 지원할 수 있으면서도, 저자가 필요로 하는 브랜드나 스타일을 반영할 수 있다. 이렇게 하면 표가 더 전문적이면서도 개성있게 작성할 수 있다.</p>
 <section id="gtextras-확장" class="level3" data-number="11.3.1"><h3 data-number="11.3.1" class="anchored" data-anchor-id="gtextras-확장">
@@ -1171,9 +1192,13 @@ window.Quarto = {
 <span><span class="va">penguins_theme_gt</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu"><a href="https://gt.rstudio.com/reference/gtsave.html">gtsave</a></span><span class="op">(</span>filename <span class="op">=</span> <span class="st">"images/penguins_theme_gt.png"</span><span class="op">)</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><a href="images/penguins_theme_gt.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="gt 사용자 정의 테마 적용 표"><img src="images/penguins_theme_gt.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="446" alt="gt 사용자 정의 테마 적용 표"></a></p>
-<figcaption><code>gt</code> 사용자 정의 테마 적용 표</figcaption></figure>
+<div id="fig-gt-my_theme" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-gt-my_theme-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/penguins_theme_gt.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="그림&nbsp;11.5: gt 사용자 정의 테마 적용 표"><img src="images/penguins_theme_gt.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="446"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-gt-my_theme-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+그림&nbsp;11.5: <code>gt</code> 사용자 정의 테마 적용 표
+</figcaption></figure>
 </div>
 </section><section id="gt_theme_hangul-테마" class="level3" data-number="11.3.2"><h3 data-number="11.3.2" class="anchored" data-anchor-id="gt_theme_hangul-테마">
 <span class="header-section-number">11.3.2</span> <code>gt_theme_hangul()</code> 테마</h3>
@@ -1188,7 +1213,6 @@ window.Quarto = {
 <span>  <span class="va">gt_tbl</span> <span class="op">|&gt;</span> </span>
 <span>    <span class="fu"><a href="https://jthomasmock.github.io/gtExtras/reference/gt_theme_538.html">gt_theme_538</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
 <span>    <span class="fu"><a href="https://gt.rstudio.com/reference/tab_options.html">tab_options</a></span><span class="op">(</span></span>
-<span>      <span class="co"># column_labels.background.color = '#1E61B0', # R logo 파란색</span></span>
 <span>      table.font.names <span class="op">=</span><span class="st">"NanumSquare"</span>,    </span>
 <span>      heading.title.font.size <span class="op">=</span> <span class="fu"><a href="https://gt.rstudio.com/reference/px.html">px</a></span><span class="op">(</span><span class="fl">26</span><span class="op">)</span>,</span>
 <span>      heading.subtitle.font.size <span class="op">=</span> <span class="fu"><a href="https://gt.rstudio.com/reference/px.html">px</a></span><span class="op">(</span><span class="fl">16</span><span class="op">)</span>,    </span>
@@ -1240,7 +1264,8 @@ window.Quarto = {
 <span></span>
 <span><span class="va">penguins_gt</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu">gt_theme_hangul</span><span class="op">(</span><span class="op">)</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
+<div id="fig-gt-theme-hangul" class="cell-output-display quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-gt-theme-hangul-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div>
 <div id="eexombwkke" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>@import url("https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
@@ -1736,25 +1761,35 @@ tbody tr:last-child {
 </div>
 </div>
 </div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-gt-theme-hangul-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+그림&nbsp;11.6: 사용자 정의 <code>gt</code> 테마 적용 사례
+</figcaption></figure>
+</div>
 </div>
 </section></section><section id="rprofile-설정작업" class="level2" data-number="11.4"><h2 data-number="11.4" class="anchored" data-anchor-id="rprofile-설정작업">
 <span class="header-section-number">11.4</span> <code>.Rprofile</code> 설정작업</h2>
 <p><code>.Rprofile</code> 파일에 테마 함수를 반영시키면 R 세션을 시작할 때마다 테마가 자동으로 로드되어 일일이 코드를 실행할 필요가 없어 작업 효율성을 크게 높여줌은 물론, 프로젝트 간 일관된 스타일과 브랜딩을 유지할 수 있다. 코드 작성 측면에서 테마 함수를 <code>.Rprofile</code>에 추가하여 코드 재사용성을 높이고, 테마 관련 설정을 한 곳에서 관리할 수 있게 함으로써 작업 일관성과 전문성이 높아져 시간과 노력을 크게 절약할 수 있다.</p>
-<div class="cell" data-eval="false" data-layout-align="default">
+<div class="cell" data-eval="true" data-layout-align="center">
 <div class="cell-output-display">
+<div id="fig-gt-theme-auto" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-gt-theme-auto-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div>
-<p></p><figure class="figure"></figure><p></p>
-<div>
+<pre class="mermaid mermaid-js" data-label="fig-gt-theme-auto">graph LR;
 
+  A["테마 스크립트 &lt;br&gt;생성"] --&gt; B["테마 함수&lt;br&gt; 작성"];
+  B --&gt; C[".Rprofile &lt;br&gt; 파일 반영"];
+  C --&gt; D["테마 자동 &lt;br&gt; 로딩"];
+  D --&gt; E["프로젝트 &lt;br&gt; 테마 적용"];
+</pre>
 </div>
-<p></p>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-gt-theme-auto-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+그림&nbsp;11.7: <code>gt</code> 표 테마 적용 작업흐름
+</figcaption></figure>
 </div>
 </div>
 </div>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><a href="images/gt_theme_hangul_workflow.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="gt 표 테마 적용 작업흐름"><img src="images/gt_theme_hangul_workflow.png" class="img-fluid figure-img" alt="gt 표 테마 적용 작업흐름"></a></p>
-<figcaption><code>gt</code> 표 테마 적용 작업흐름</figcaption></figure>
-</div>
+<!-- ![`gt` 표 테마 적용 작업흐름](images/gt_theme_hangul_workflow.png) -->
 <p>작성한 테마를 매번 코드를 “복사하여 붙여넣기” 하여 사용하는 대신 <code>.Rprofile</code> 파일에 반영하여 매번 <code>gt</code> 표를 제작할 때마다 <code>gt_theme_hangul()</code> 테마를 적용하는 방법은 다음과 같다. 먼저, <code>usethis</code> 패키지 <code>edit_r_profile()</code> 함수를 호출하여 앞서 작성한 테마를 반영한다.</p>
 <div class="cell">
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">usethis</span><span class="fu">::</span><span class="fu"><a href="https://usethis.r-lib.org/reference/edit.html">edit_r_profile</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1865,18 +1900,26 @@ tbody tr:last-child {
 <div class="quarto-layout-panel" data-layout="[49.5, -1, 49.5]">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 49.5%;justify-content: flex-start;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><a href="images/rprofile_original.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="gt_theme_hangul() 테마 적용 전"><img src="images/rprofile_original.png" class="img-fluid figure-img" alt="gt_theme_hangul() 테마 적용 전"></a></p>
-<figcaption><code>gt_theme_hangul()</code> 테마 적용 전</figcaption></figure>
+<div id="fig-before-theme" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-before-theme-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/rprofile_original.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="그림&nbsp;11.8: gt_theme_hangul() 테마 적용 전"><img src="images/rprofile_original.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-before-theme-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+그림&nbsp;11.8: <code>gt_theme_hangul()</code> 테마 적용 전
+</figcaption></figure>
 </div>
 </div>
 <div class="quarto-figure-spacer quarto-layout-cell" style="flex-basis: 1.0%;justify-content: flex-start;">
 <p>&nbsp;</p>
 </div>
 <div class="quarto-layout-cell" style="flex-basis: 49.5%;justify-content: flex-start;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><a href="images/rprofile_hangul_theme.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8" title="gt_theme_hangul() 테마 적용 후"><img src="images/rprofile_hangul_theme.png" class="img-fluid figure-img" alt="gt_theme_hangul() 테마 적용 후"></a></p>
-<figcaption><code>gt_theme_hangul()</code> 테마 적용 후</figcaption></figure>
+<div id="fig-after-theme" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-after-theme-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/rprofile_hangul_theme.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="그림&nbsp;11.9: gt_theme_hangul() 테마 적용 후"><img src="images/rprofile_hangul_theme.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-after-theme-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+그림&nbsp;11.9: <code>gt_theme_hangul()</code> 테마 적용 후
+</figcaption></figure>
 </div>
 </div>
 </div>
@@ -2292,7 +2335,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <p>순수하게 <a href="https://quarto.org/">쿼토(Quarto)</a>로 제작되었습니다.</p>
 </div>
   </div>
-</footer><script>var lightboxQuarto = GLightbox({"selector":".lightbox","descPosition":"bottom","loop":false,"closeEffect":"zoom","openEffect":"zoom"});
+</footer><script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","selector":".lightbox","openEffect":"zoom","loop":false,"descPosition":"bottom"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;
