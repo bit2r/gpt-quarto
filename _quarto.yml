@@ -110,6 +110,8 @@ filters:
    - include-code-files   
 lightbox: auto
 
+code-annotations: hover
+
 knitr:
   opts_chunk:
     message: false
