@@ -1,0 +1,275 @@
+---
+title: "코로나19 대쉬보드"
+format: dashboard
+editor_options: 
+  chunk_output_type: console
+---
+
+
+
+```{r}
+library(tidyverse)
+# devtools::install_github("RamiKrispin/coronavirus")
+library(coronavirus)
+library(bslib)
+library(bsicons)
+
+data("coronavirus")
+
+coronavirus <- coronavirus %>% 
+  as_tibble() %>%
+  janitor::clean_names() 
+
+valuebox_stat <- coronavirus |> 
+  filter(str_detect(country, "Korea")) |>
+  group_by(type) %>% 
+  summarise(사례수 = sum(cases)) 
+
+valuebox_world <- coronavirus |> 
+  group_by(type) %>% 
+  summarise(사례수 = sum(cases)) 
+
+
+```
+
+# 전세계
+
+## Row
+
+```{r}
+#| content: valuebox
+#| title: "확진자수"
+
+confirmed_world <- valuebox_world |> 
+  filter(type == "confirmed") |>
+  pull(사례수) 
+
+list(
+  icon = "hospital",
+  color = "yellow",
+  value = scales::comma(confirmed_world)
+)
+```
+
+
+```{r}
+#| content: valuebox
+#| title: "사망자수"
+
+death_world <- valuebox_world |> 
+  filter(type == "death") |>
+  pull(사례수) 
+
+list(
+  icon = "moon-fill",
+  color = "danger",
+  value = scales::comma(death_world)
+)
+```
+
+
+```{r}
+#| content: valuebox
+#| title: "회복자수"
+
+recovery_world <- valuebox_world |> 
+  filter(type == "recovery") |>
+  pull(사례수) 
+
+list(
+  icon = "heart-fill",
+  color = "green",
+  value = scales::comma(recovery_world)
+)
+```
+
+
+## Column
+
+### 표
+
+```{r}
+#| title: 월별 코로나 통계표
+
+coronavirus |> 
+  mutate(yearmon = floor_date(date, "month")) |> 
+  group_by(yearmon, type) |>
+  summarise(사례수 = sum(cases)) |> 
+  pivot_wider(names_from = type, values_from = 사례수) |> 
+  ungroup() |> 
+  arrange(desc(yearmon)) |> 
+  gt() |> 
+  cols_align(columns = yearmon, "center") |> 
+  cols_label(yearmon = "년월",
+             confirmed = "확진자수", 
+             death = "사망자수", 
+             recovery = "회복자수") |> 
+  fmt_number(columns = 2:4, decimals = 0) |> 
+  # gtExtras::gt_theme_538() |> 
+  opt_interactive(
+    use_filters = TRUE,
+    use_compact_mode = TRUE,
+    use_text_wrapping = FALSE
+  ) |> 
+  data_color(
+    columns = recovery,
+    palette = "Greens"
+  ) |>
+  data_color(
+    columns = death,
+    palette = "Purples"
+  ) |>
+  data_color(
+    columns = confirmed,
+    palette = "Blues"
+  )   
+```
+
+
+### 그래프
+
+```{r}
+#| title: 코로나 그래프
+
+coronavirus |> 
+  mutate(yearmon = floor_date(date, "month")) |> 
+  group_by(yearmon, type) |>
+  summarise(사례수 = sum(cases)) |> 
+  ungroup() |> 
+  ggplot(aes(x = yearmon, y = 사례수, color = type)) +
+   geom_line() +
+   geom_point() +
+   theme_minimal() +
+   theme(legend.position = "none") +
+   scale_y_sqrt(labels = scales::comma) +
+   labs(title = "전세계 코로나19 추이",
+        y = "사례수",
+        x = NULL,
+        color = "종류") +
+    facet_wrap(~type, scales = "free_y")
+```
+
+
+# 대한민국
+
+## Row
+
+```{r}
+#| content: valuebox
+#| title: "확진자수"
+
+confirmed <- valuebox_stat |> 
+  filter(type == "confirmed") |>
+  pull(사례수) 
+
+list(
+  icon = "hospital",
+  color = "yellow",
+  value = scales::comma(confirmed)
+)
+```
+
+
+```{r}
+#| content: valuebox
+#| title: "사망자수"
+
+death <- valuebox_stat |> 
+  filter(type == "death") |>
+  pull(사례수) 
+
+list(
+  icon = "moon-fill",
+  color = "danger",
+  value = scales::comma(death)
+)
+```
+
+
+```{r}
+#| content: valuebox
+#| title: "회복자수"
+
+recovery <- valuebox_stat |> 
+  filter(type == "recovery") |>
+  pull(사례수) 
+
+list(
+  icon = "heart-fill",
+  color = "green",
+  value = scales::comma(recovery)
+)
+```
+
+
+## Column
+
+### 표
+
+```{r}
+#| title: 월별 코로나 통계표
+
+coronavirus |> 
+  filter(str_detect(country, "Korea")) |> 
+  mutate(yearmon = floor_date(date, "month")) |> 
+  group_by(yearmon, type) |>
+  summarise(사례수 = sum(cases)) |> 
+  pivot_wider(names_from = type, values_from = 사례수) |> 
+  ungroup() |> 
+  arrange(desc(yearmon)) |> 
+  gt() |> 
+  cols_align(columns = yearmon, "center") |> 
+  cols_label(yearmon = "년월",
+             confirmed = "확진자수", 
+             death = "사망자수", 
+             recovery = "회복자수") |> 
+  fmt_number(columns = 2:4, decimals = 0) |> 
+  # gtExtras::gt_theme_538() |> 
+  opt_interactive(
+    use_filters = TRUE,
+    use_compact_mode = TRUE,
+    use_text_wrapping = FALSE
+  ) |> 
+  data_color(
+    columns = recovery,
+    palette = "Greens"
+  ) |>
+  data_color(
+    columns = death,
+    palette = "Purples"
+  ) |>
+  data_color(
+    columns = confirmed,
+    palette = "Blues"
+  )   
+```
+
+
+### 그래프
+
+```{r}
+#| title: 코로나 그래프
+
+coronavirus |> 
+  filter(str_detect(country, "Korea")) |> 
+  mutate(yearmon = floor_date(date, "month")) |> 
+  group_by(yearmon, type) |>
+  summarise(사례수 = sum(cases)) |> 
+  ungroup() |> 
+  ggplot(aes(x = yearmon, y = 사례수, color = type)) +
+   geom_line() +
+   geom_point() +
+   theme_minimal() +
+   theme(legend.position = "none") +
+   scale_y_sqrt(labels = scales::comma) +
+   labs(title = "대한민국 코로나19 추이",
+        y = "사례수",
+        x = NULL,
+        color = "종류") +
+    facet_wrap(~type, scales = "free_y")
+```
+
+
+
+
+

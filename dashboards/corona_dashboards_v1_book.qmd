@@ -1,0 +1,51 @@
+---
+title: "코로나19 대쉬보드"
+format: dashboard
+---
+
+# 전세계
+
+## Row
+
+```{r}
+#| content: valuebox
+#| title: "확진자수"
+
+list(
+  icon = "hospital",
+  color = "yellow",
+  value = 100
+)
+```
+
+```{r}
+#| content: valuebox
+#| title: "사망자수"
+
+list(
+  icon = "moon-fill",
+  color = "danger",
+  value = 100
+)
+```
+
+```{r}
+#| content: valuebox
+#| title: "회복자수"
+
+list(
+  icon = "heart-fill",
+  color = "green",
+  value = 100
+)
+```
+
+## Column
+
+### Chart 1
+
+\{\{< unsplash dog.jpg >\}\}
+
+### Chart 2
+
+\{\{< unsplash cat.jpg >\}\}

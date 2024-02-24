@@ -1,0 +1,26 @@
+---
+title: "코로나19 대쉬보드"
+format: dashboard
+---
+
+```{r}
+library(tidyverse)
+library(bslib); library(bsicons)
+
+coronavirus <- coronavirus::coronavirus %>% 
+  as_tibble() %>%
+  janitor::clean_names() 
+
+valuebox_stat <- coronavirus |> 
+  filter(str_detect(country, "Korea")) |>
+  group_by(type) %>% 
+  summarise(사례수 = sum(cases)) 
+
+valuebox_world <- coronavirus |> 
+  group_by(type) %>% 
+  summarise(사례수 = sum(cases)) 
+```
+
+{{< include world.qmd >}}
+
+{{< include korea.qmd >}}
