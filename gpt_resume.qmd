@@ -15,6 +15,7 @@ editor:
 국문 이력서와 다소 차이가 있지만 영문 이력서를 기본으로 한글을 넣어 PDF 이력서를 
 제작하는 방법을 살펴보자. 이 지점에서 챗GPT 생성형 AI가 빠른 시간내에 
 이력서를 제작하는데 큰 도움이 된다. 
+\index{이력서} \index{vitae} \index{쿼토} \index{R마크다운} \index{챗GPT}
 
 이력서를 제작하는 방식은 크게 보면 두가지로 나눠진다. 하나는 이력서에 담기는
 당사자 이력 콘텐츠가 있고 다른 하나는 이력 콘텐츠를 미려한 형식으로 PDF 파일이나 웹 웹사이트에 담아내는 것이다. 이력서에 담기는 내용은 주로 당사자의 경력, 학력, 자격증, 수상경력, 논문 등이 포함된다. 이러한 내용을 적절한 형식으로 PDF 파일에 담아내기 위해서는 일종의 템플릿이 필요한데 쿼토로 개발되어 공개된 몇가지 템플릿을 쉽게 찾을 수 있다.
@@ -24,6 +25,7 @@ editor:
 [`Quarto-cv`](https://github.com/mps9506/quarto-cv)는 쿼토 확장기능(extension)으로
 별도 이력서 문서로 작성할 수도 있고 작성 중인 쿼토 문서 중 하나의 페이지로 이력서를 
 추가할 수도 있다. 먼저, 이력서 문서를 작성하기 위해서 쿼토 확장기능을 설치한다.
+\index{quarto-cv} \index{quarto 확장기능} \index{이력서 템플릿}
 
 ```sh
 quarto install extension mps9506/quarto-cv@v1.0.3
@@ -241,7 +243,7 @@ These BibTeX entries can be used in a LaTeX document to cite the papers and repo
 
 ::: {.column width="37.5%"}
 
-![물리학자 영문이력서](images/resume_physics.jpg){#fig-resume_physics}
+![물리학자 영문이력서](images/resume_physics.jpg){#fig-resume-physics-eng}
 
 :::
 
@@ -385,7 +387,7 @@ ORCID: 0000-0003-1234-5678
 
 ::: {.column width="37.5%"}
 
-![홍길동 국문 이력서](images/resume_korean.jpg){#fig-resume_korean}
+![홍길동 국문 이력서](images/resume_korean.jpg){#fig-resume-korean-hong}
 
 :::
 :::::

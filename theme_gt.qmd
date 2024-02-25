@@ -21,6 +21,7 @@ source("_common.R")
 'gt'는 표 구성과 디자인에 대한 체계적인 접근 방법을 제공함으로써 
 표를 통해 효과적으로 정보를 전달할 수 있을 뿐만 아니라 
 시각적으로 미려한 표를 만들 수 있다는 점에서 매우 유용하다.
+\index{표}\index{gt 패키지}\index{표 테마} \index{표 문법}
 
 문서에 표를 넣으면 정보를 효과적으로 요약하고 가독성을 크게 높일 수 있다. 
 표를 만들 때 사용할 수 있는 도구로는 마크다운(Markdown), `gt` 패키지, 
@@ -138,6 +139,7 @@ for(i in 1:length(opt_colors)) {
 #| echo: false
 #| label: fig-table-colors
 #| fig-cap: "색상별 `gt` 표"
+#| out-width: "100%"
 
 library(magick)
 
@@ -188,6 +190,8 @@ for(i in 1:length(opt_styles)) {
 #| label: fig-table-styles
 #| fig-cap: "스타일별 `gt` 표"
 #| echo: false
+#| out-width: "100%"
+
 opt_sytles <- 1:5
 
 style_path_filenames <- vector(mode = "character", length = length(opt_sytles))
@@ -211,6 +215,7 @@ image_append(gt_style_images, stack = FALSE)
 기능을 추가하거나, 반복되는 코드를 줄이기 위한 래퍼(wrapper) 함수로
 작성되었다. `gt` 패키지를 확장한 다양한 기능이 있지만 테마와 관련된
 사항을 집중적으로 살펴보자.
+\index{gtExtras}
 
 `ggplot2` 패키지를 활용하여 그래프 문법에 맞춰 그래프를 제작한 경험이
 있다면, 자주 `theme_*()` 함수를 사용했을 것이다. 마찬가지로 `ggplot2`
@@ -283,6 +288,8 @@ for(i in 1:length(gtExtra_themes)) {
 #| label: fig-table-gtExtras
 #| fig-cap: "`gtExtras` 테마 적용 표"
 #| echo: false
+#| out-width: "100%"
+
 gtExtra_themes_names <- c("gt_theme_538", "gt_theme_espn", "gt_theme_nytimes",
                           "gt_theme_guardian", "gt_theme_pff")
 
@@ -303,6 +310,7 @@ image_append(gtExtra_style_images, stack = FALSE)
 ## 사용자 정의 테마
 
 사용자 정의 테마의 필요성은 다양하며 주로 보고서나 PPT 발표에서 중요한 역할을 한다. 동일한 스타일과 구성을 가진 표를 사용하면 데이터를 쉽고 빠르게 이해할 수 있고, 일관된 스타일은 전문성을 강조하고, 독자에게 깊은 인상을 남길 수 있다.
+\index{테마!사용자 정의}
 
 `gtExtras`와 같은 패키지에서 제공되는 테마는 코드 한 줄로 빠르고 깔끔한 표를 만들 수 있어 시간을 절약할 수 있다는 큰 장점이 있지만, 특정 요구사항이나 브랜딩 지침을 완전히 맞춤화하기 쉽지 않고, 복잡한 데이터 구조나 특별한 시각화 요구사항을 충족시키는 데에도 한계가 있다.
 
@@ -328,12 +336,13 @@ image_append(gtExtra_style_images, stack = FALSE)
 
 
 ```{r}
-#| eval: false
+#| eval: true
+#| label: tbl-theme-custom-penguins
+#| tbl-cap: "`gt` 사용자 정의 테마 적용 표"
 
 penguins_theme_gt <- penguins_gt |> 
   gt_theme_538() |> 
   tab_options(
-    # column_labels.background.color = '#1E61B0', # R logo 파란색
     table.font.names ="NanumSquare",    
     heading.title.font.size = px(26),
     heading.subtitle.font.size = px(16),    
@@ -378,18 +387,18 @@ penguins_theme_gt <- penguins_gt |>
     locations = cells_source_notes()
   )
 
-penguins_theme_gt |> 
-  gtsave(filename = "images/penguins_theme_gt.png")
+# penguins_theme_gt |> 
+#   gtsave(filename = "images/penguins_theme_gt.png")
 ```
 
-![`gt` 사용자 정의 테마 적용
-표](images/penguins_theme_gt.png){#fig-gt-my_theme fig-align="center" width="446"}
+<!-- ![`gt` 사용자 정의 테마 적용 표](images/penguins_theme_gt.png){#fig-gt-my-theme fig-align="center" width="446"} -->
 
 ### `gt_theme_hangul()` 테마
 
 `gt_theme_538()` 함수처럼 사용자 정의 함수를 
 `gt_theme_hangul()` 테마명을 지정해 두면 모든 표에 
 통일성을 유지한 테마를 간편하게 적용시킬 수 있다.
+\index{테마!한글 테마}
 
 `gt_tbl` 데이터프레임을 입력받아 `gt_theme_538()`을 기본표 테마로 지정하고,
 `tab_options()` 함수를 통해 글꼴, 제목 크기, 배경색 등을 설정하고, 나눔스퀘어(NanumSquare), 마루부리(MaruBuri) 글꼴을 사용하여 한글 표에 더 적합한 스타일을 적용하고, 
@@ -463,6 +472,7 @@ penguins_gt |>
 ## `.Rprofile` 설정작업
 
 `.Rprofile` 파일에 테마 함수를 반영시키면 R 세션을 시작할 때마다 테마가 자동으로 로드되어 일일이 코드를 실행할 필요가 없어 작업 효율성을 크게 높여줌은 물론, 프로젝트 간 일관된 스타일과 브랜딩을 유지할 수 있다. 코드 작성 측면에서 테마 함수를 `.Rprofile`에 추가하여 코드 재사용성을 높이고, 테마 관련 설정을 한 곳에서 관리할 수 있게 함으로써 작업 일관성과 전문성이 높아져 시간과 노력을 크게 절약할 수 있다.
+\index{.Rprofile}
 
 ```{mermaid}
 %%| eval: true
@@ -470,6 +480,7 @@ penguins_gt |>
 %%| label: fig-gt-theme-auto
 %%| fig-cap: "`gt` 표 테마 적용 작업흐름"
 %%| fig-align: center
+%%| fig-width: 5
 
 graph LR;
 

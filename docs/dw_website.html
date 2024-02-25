@@ -362,7 +362,7 @@ ga('send', {
   <li><a href="#웹사이트" id="toc-웹사이트" class="nav-link active" data-scroll-target="#웹사이트"><span class="header-section-number">12.1</span> 웹사이트</a></li>
   <li><a href="#project-setup" id="toc-project-setup" class="nav-link" data-scroll-target="#project-setup"><span class="header-section-number">12.2</span> 프로젝트 생성</a></li>
   <li><a href="#project-writing" id="toc-project-writing" class="nav-link" data-scroll-target="#project-writing"><span class="header-section-number">12.3</span> 웹사이트 저작</a></li>
-  <li><a href="#theme-distill" id="toc-theme-distill" class="nav-link" data-scroll-target="#theme-distill"><span class="header-section-number">12.4</span> 외양 - 폰트, 색상 등</a></li>
+  <li><a href="#theme-distill" id="toc-theme-distill" class="nav-link" data-scroll-target="#theme-distill"><span class="header-section-number">12.4</span> 외양 - 글꼴, 색상 등</a></li>
   <li><a href="#deployment-setup" id="toc-deployment-setup" class="nav-link" data-scroll-target="#deployment-setup"><span class="header-section-number">12.5</span> 웹사이트 배포</a>
   <ul class="collapse">
   <li><a href="#github-pages-출판" id="toc-github-pages-출판" class="nav-link" data-scroll-target="#github-pages-출판"><span class="header-section-number">12.5.1</span> <code>GitHub Pages</code> 출판</a></li>
@@ -407,16 +407,16 @@ ga('send', {
 </header>
 
 
-<p>웹 출판이 데스톱 출판(DTP) 출판에 이어 인기를 끌게 된 이유는 디지털 기술의 발전과 인터넷의 보편화 때문이다. 웹 출판의 큰 장점 중 하나는 전 세계 어디에서나 콘텐츠에 접근할 수 있는 접근성과 확장성에 있다. 작가와 출판사가 더 넓은 독자층에 도달할 수 있는 기회를 제공할 뿐만 아니라, 인쇄와 배포에 드는 비용이 거의 없어 경제적이며 수정과 배포 자유롭다. 또한, 웹 출판은 독자들이 콘텐츠와 직접 상호작용하고, 댓글, 공유, 좋아요 등을 통해 참여할 수 있는 실시간 기회도 제공하여 커뮤니티 형성과 독자 참여를 촉진한다. 웹 출판은 텍스트 뿐만 아니라 비디오, 오디오, 애니메이션 등 다양한 멀티미디어 요소와 인터랙티브 기능을 통합하여 정적인 정보 전달에 최적화된 데스크 톱 출판과 비교된다.블로그나 웹사이트는 실시간으로 콘텐츠를 게시하고 연속적으로 새로운 정보를 제공할 수 있어 콘텐츠의 즉시성과 연속성도 갖추고 있다.</p>
+<p>웹 출판이 데스톱 출판(DTP) 출판에 이어 인기를 끌게 된 이유는 디지털 기술의 발전과 인터넷의 보편화 때문이다. 웹 출판의 큰 장점 중 하나는 전 세계 어디에서나 콘텐츠에 접근할 수 있는 접근성과 확장성에 있다. 작가와 출판사가 더 넓은 독자층에 도달할 수 있는 기회를 제공할 뿐만 아니라, 인쇄와 배포에 드는 비용이 거의 없어 경제적이며 수정과 배포 자유롭다. 또한, 웹 출판은 독자들이 콘텐츠와 직접 상호작용하고, 댓글, 공유, 좋아요 등을 통해 참여할 수 있는 실시간 기회도 제공하여 커뮤니티 형성과 독자 참여를 촉진한다. 웹 출판은 텍스트 뿐만 아니라 비디오, 오디오, 애니메이션 등 다양한 멀티미디어 요소와 인터랙티브 기능을 통합하여 정적인 정보 전달에 최적화된 데스크 톱 출판과 비교된다.블로그나 웹사이트는 실시간으로 콘텐츠를 게시하고 연속적으로 새로운 정보를 제공할 수 있어 콘텐츠의 즉시성과 연속성도 갖추고 있다. </p>
 <section id="웹사이트" class="level2" data-number="12.1">
 <h2 data-number="12.1" class="anchored" data-anchor-id="웹사이트"><span class="header-section-number">12.1</span> 웹사이트</h2>
 <p>저작물을 파일형태 뿐만 아니라 웹사이트에 공유하는 것은 코로나19로 촉발된 디지털 전환(Digital Transformation) 시대에 과학기술 종사자 뿐만 아니라 현대를 사는 누구나 갖춰야 하는 보편적인 기술로 자리잡아 가고 있다. 통상 <a href="http://netlify.com/" class="uri">http://netlify.com/</a> 혹은 <a href="https://github.com/" class="uri">https://github.com/</a> 웹사이트에서 제공하는 정적 웹사이트(Static Website) 기능을 활용하여 제작된 블로그나 웹사이트를 통해 공유하는 것이 <strong>데이터 과학자</strong> 사이에 어느새 일반화되었다.</p>
 <p>과학기술 저작물을 정적 웹사이트에 호스팅하여 공유한다는 것은 지금까지와는 다른 기술적 배경을 가지기 때문에 이러한 문제를 해결하기 위해 몇년전 <a href="https://rstudio.github.io/distill/"><code>distill</code></a> 팩키지가 방향을 제시했다. <a href="https://rstudio.github.io/distill/"><code>distill</code></a> 팩키지로 블로그 혹은 웹사이트 과학기술 콘텐츠 공유를 공유한 웹사이트를 종종 구글링 과정에서 살펴봤을 것이다.</p>
-<p>저작 웹사이트를 RStudio + <a href="https://quarto.org/">쿼토(<code>quarto</code>)</a> 를 조합하여 로컬에서 정적 웹사이트를 먼저 제작하고 공유와 배포는 <a href="https://pages.github.com/">GitHub Pages</a>, <a href="http://netlify.com/">Netlify</a>, <a href="https://quartopub.com/">쿼토 펍(Quarto Pub)</a> 등으로 별다른 비용없이 무료로 출판할 수 있다.</p>
+<p>저작 웹사이트를 RStudio + <a href="https://quarto.org/">쿼토(<code>quarto</code>)</a> 를 조합하여 로컬에서 정적 웹사이트를 먼저 제작하고 공유와 배포는 <a href="https://pages.github.com/">GitHub Pages</a>, <a href="http://netlify.com/">Netlify</a>, <a href="https://quartopub.com/">쿼토 펍(Quarto Pub)</a> 등으로 별다른 비용없이 무료로 출판할 수 있다. </p>
 <div id="fig-dw-website" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-dw-website-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="images/dw_website.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="그림&nbsp;12.1: (정적) 웹사이트 배포"><img src="images/dw_website.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img" width="450"></a>
+<a href="images/dw_website.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="그림&nbsp;12.1: (정적) 웹사이트 배포"><img src="images/dw_website.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img" width="310"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-dw-website-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 그림&nbsp;12.1: (정적) 웹사이트 배포
@@ -518,8 +518,8 @@ ga('send', {
 </div>
 </section>
 <section id="theme-distill" class="level2" data-number="12.4">
-<h2 data-number="12.4" class="anchored" data-anchor-id="theme-distill"><span class="header-section-number">12.4</span> 외양 - 폰트, 색상 등</h2>
-<p>지금까지 전반적인 웹사이트 생성과 웹페이지 콘텐츠 작성과 관련된 전반적인 작업흐름에 집중했다면 글꼴, 색상 등 외양을 바꾸면 근사한 웹사이트로 탈바꿈시킬 수 있다. 특히 쿼토는 부츠트랩 5(Bootstrap 5)를 지원하기 때문에 <a href="https://github.com/twbs/bootstrap/blob/main/scss/_variables.scss">SCSS 변수</a> 설정을 통해 멋진 웹사이트를 꾸밀 수 있다.</p>
+<h2 data-number="12.4" class="anchored" data-anchor-id="theme-distill"><span class="header-section-number">12.4</span> 외양 - 글꼴, 색상 등</h2>
+<p>지금까지 전반적인 웹사이트 생성과 웹페이지 콘텐츠 작성과 관련된 전반적인 작업흐름에 집중했다면 글꼴, 색상 등 외양을 바꾸면 근사한 웹사이트로 탈바꿈시킬 수 있다. 특히 쿼토는 부츠트랩 5(Bootstrap 5)를 지원하기 때문에 <a href="https://github.com/twbs/bootstrap/blob/main/scss/_variables.scss">SCSS 변수</a> 설정을 통해 멋진 웹사이트를 꾸밀 수 있다. </p>
 <p>글꼴만 한글로 바꿔 <code>tidyverse.css</code>를 저장한다. 기본 아이디어는 구글 글꼴 웹사이트 <a href="https://fonts.google.com/" class="uri">https://fonts.google.com/</a> 에서 한글 글꼴을 가져와서 웹사이트 제목과 텍스트에 글꼴을 저작자의 선택에 맞춰 반영한다. 수정한 <code>tidyverse.css</code> 파일 일부는 다음과 같다.</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">@import</span> <span class="fu">url(</span><span class="st">'https://fonts.googleapis.com/css2?family=Sunflower'</span><span class="fu">)</span><span class="op">;</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">@import</span> <span class="fu">url(</span><span class="st">'https://fonts.googleapis.com/css2?family=Noto+Sans+KR'</span><span class="fu">)</span><span class="op">;</span></span>
@@ -549,7 +549,7 @@ ga('send', {
 <h2 data-number="12.5" class="anchored" data-anchor-id="deployment-setup"><span class="header-section-number">12.5</span> 웹사이트 배포</h2>
 <section id="github-pages-출판" class="level3" data-number="12.5.1">
 <h3 data-number="12.5.1" class="anchored" data-anchor-id="github-pages-출판"><span class="header-section-number">12.5.1</span> <code>GitHub Pages</code> 출판</h3>
-<p><code>https://&lt;사용자명&gt;.github.io/</code> 저장소는 매우 특별한 GitHub 저장소다. 따라서, GitHub 저장소 명칭을 <code>&lt;사용자명&gt;.github.io</code> 으로 생성해야 한다. 예를 들어, <code>statkclee.github.io</code> 와 같이 사용자계정을 <code>github.io</code>와 붙여 먼저 판다. 그리고 나서, 상단 <code>Settings</code>로 들어간 다음 <strong>GitHub Pages</strong> 설정을 한다. 이때 GitHub 저장소의 특정 디렉토리 <code>docs/</code> 디렉토리에 담긴 내용 전부가 정적 웹사이트에 게시되는 내용이 된다. 즉, <code>docs/index.html</code> → <code>https://&lt;사용자명&gt;.github.io/&lt;저장소명&gt;/index.html</code>로 바뀌어 웹사이트 생성 및 배포가 완료된다.</p>
+<p><code>https://&lt;사용자명&gt;.github.io/</code> 저장소는 매우 특별한 GitHub 저장소다. 따라서, GitHub 저장소 명칭을 <code>&lt;사용자명&gt;.github.io</code> 으로 생성해야 한다. 예를 들어, <code>statkclee.github.io</code> 와 같이 사용자계정을 <code>github.io</code>와 붙여 먼저 판다. 그리고 나서, 상단 <code>Settings</code>로 들어간 다음 <strong>GitHub Pages</strong> 설정을 한다. 이때 GitHub 저장소의 특정 디렉토리 <code>docs/</code> 디렉토리에 담긴 내용 전부가 정적 웹사이트에 게시되는 내용이 된다. 즉, <code>docs/index.html</code> → <code>https://&lt;사용자명&gt;.github.io/&lt;저장소명&gt;/index.html</code>로 바뀌어 웹사이트 생성 및 배포가 완료된다. </p>
 <div id="fig-dw-github-pages" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-dw-github-pages-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -563,7 +563,7 @@ ga('send', {
 </section>
 <section id="quarto-pub-출판" class="level3" data-number="12.5.2">
 <h3 data-number="12.5.2" class="anchored" data-anchor-id="quarto-pub-출판"><span class="header-section-number">12.5.2</span> Quarto Pub 출판</h3>
-<p><a href="https://quartopub.com/"><code>Quarto Pub</code></a> 출판과정은 Quarto CLI를 통해 이뤄진다. <code>RStudio</code>의 내부 터미널을 사용하는 것을 권장하는데, 이유는 <code>RStudio</code>와 <code>Quarto</code>가 잘 통합되어 있어, 간편하게 출판 작업을 진행할 수 있기 때문이다. <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<p><a href="https://quartopub.com/"><code>Quarto Pub</code></a> 출판과정은 Quarto CLI를 통해 이뤄진다. <code>RStudio</code>의 내부 터미널을 사용하는 것을 권장하는데, 이유는 <code>RStudio</code>와 <code>Quarto</code>가 잘 통합되어 있어, 간편하게 출판 작업을 진행할 수 있기 때문이다. <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> </p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> quarto publish quarto-pub</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ex">?</span> Authorize <span class="er">(</span><span class="ex">Y/n</span><span class="kw">)</span> <span class="ex">›</span> </span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="ex">❯</span> In order to publish to Quarto Pub you need to</span>
@@ -583,7 +583,7 @@ ga('send', {
 </section>
 <section id="블로그" class="level2" data-number="12.6">
 <h2 data-number="12.6" class="anchored" data-anchor-id="블로그"><span class="header-section-number">12.6</span> 블로그</h2>
-<p>블로그를 책 한권 집필하는 것으로 이해하면 쉽다. 책 내용을 쉽게 쓰고 편집할 수 있게 해주는 ’글쓰기 도구’가 필요하고 집필된 도서를 저장해서 수시로 꺼내볼 수 있는 책장도 필요하고 책을 찾을 수 있는 주소도 필요하다. 블로그에서 콘텐츠 관리 시스템(CMS)이 글쓰기 저작도구 역할을 하고, 블로그 글과 정보는 인터넷 상의 ’호스팅 서비스’에 저장되고 누구나 찾을 수 있도록 블로그에는 도메인 이름이 부여된다. 책의 표지와 디자인이 독자의 관심을 끄는 것처럼, 블로그 디자인과 테마도 방문자에게 중요한 첫인상을 주고, 책에 북마크나 색인을 추가하는 것처럼, 블로그에도 플러그인이나 추가 확장 기능을 부여된다.</p>
+<p>블로그를 책 한권 집필하는 것으로 이해하면 쉽다. 책 내용을 쉽게 쓰고 편집할 수 있게 해주는 ’글쓰기 도구’가 필요하고 집필된 도서를 저장해서 수시로 꺼내볼 수 있는 책장도 필요하고 책을 찾을 수 있는 주소도 필요하다. 블로그에서 콘텐츠 관리 시스템(CMS)이 글쓰기 저작도구 역할을 하고, 블로그 글과 정보는 인터넷 상의 ’호스팅 서비스’에 저장되고 누구나 찾을 수 있도록 블로그에는 도메인 이름이 부여된다. 책의 표지와 디자인이 독자의 관심을 끄는 것처럼, 블로그 디자인과 테마도 방문자에게 중요한 첫인상을 주고, 책에 북마크나 색인을 추가하는 것처럼, 블로그에도 플러그인이나 추가 확장 기능을 부여된다. </p>
 <p>블로그를 작성하고 운영하는 이유도 책을 집필하고 출판하는 이유와 비슷하다. 블로그를 통해 자신의 생각과 경험을 기록하고 공유하면서, 독자들과 소통하고 지식을 나누는 기본적인 기능 외에도 다음과 같은 이유로 과학기술 블로그를 운영한다.</p>
 <ul>
 <li><strong>학습</strong>: 강의를 듣거나 무언가 읽어 독서를 통해 학습되는 지식보다 글쓰기를 통해 축적되는 지식이 어떻게 보면 학습 효과가 더 크다. 특히, 학습한 내용을 코드로 작성하여 돌려볼 경우 학습효과를 배가시킨다.</li>
@@ -687,10 +687,10 @@ ga('send', {
 <section id="index.qmd" class="level3" data-number="12.6.4">
 <h3 data-number="12.6.4" class="anchored" data-anchor-id="index.qmd"><span class="header-section-number">12.6.4</span> <code>index.qmd</code></h3>
 <p>쿼토 블로그도 일종의 웹사이트로 <code>index.qmd</code>가 필수적이고 블로그 웹사이트 관련 기본설정이 담겨있다. 블로그는 여러 토막글로 게시되기 때문에 각 토막글이 어떻게 배치되고 토막글의 내용을 어떻게 보여줄지에 대한 설정이 담겨있다.</p>
-<div id="fig-quarto-helloworld" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-quarto-helloworld" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-quarto-helloworld-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="images/quarto_blog_helloworld.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-10" title="그림&nbsp;12.7: 기본설정 쿼토 블로그 실행화면"><img src="images/quarto_blog_helloworld.jpg" class="img-fluid figure-img"></a>
+<a href="images/quarto_blog_helloworld.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-10" title="그림&nbsp;12.7: 기본설정 쿼토 블로그 실행화면"><img src="images/quarto_blog_helloworld.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img" width="531"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-quarto-helloworld-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 그림&nbsp;12.7: 기본설정 쿼토 블로그 실행화면
@@ -731,10 +731,10 @@ ga('send', {
 <p>이제 블로그에 대한 게시글 작성에 대한 모든 것이 준비되어 <code>index.qmd</code> 파일에 Quarto 블로그 게시글을 작성하면 된다. <code>posts</code> 디렉토리 아래 블로그에 대한 슬러그(slug) 명칭을 잘 정하고 <code>index.qmd</code> 파일을 통해 블로그 토막글을 작성하면 된다.</p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">posts\quarto_blog_20220815\index.qmd</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>공익법인 한국 R 사용자회가 2022년부터 다양한 쿼토를 시범제작 운영하면서 축적한 경험이 현재도 남아 있다. <a href="https://r2bit.com/quarto/quarto_blog.html">Quarto 데이터 과학</a> 블로그로 웹사이트와 함께 다양한 가능성을 탐색하였다. 현재 쿼토 블로그는 과학기술 전문 블로거가 블로그 제작 및 사이트 운영에 필요한 거의 모든 기능을 제공하고 있다. 블로그를 처음 사용하신 분은 쿼토에서 제공하는 기본기능을 웹사이트에 연결시키는 것만으로 대략 80%의 기능을 활용한다고 볼 수 있다. 블로그가 수년동안 운영되는 것을 보면 추후 쿼토 블로그 신규 기능을 반영하거나 다른 블로거 웹사이트를 참고하여 꾸준히 관심을 가지고 블로그 저작을 한다면 빠른 시간내 성과를 낼 것으로 기대된다.</p>
-<div id="fig-quarto-r2bit" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-quarto-r2bit" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-quarto-r2bit-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="images/blog-quarto-r2bit.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-11" title="그림&nbsp;12.8: 쿼토 블로그 초창기 사례"><img src="images/blog-quarto-r2bit.jpg" class="img-fluid figure-img"></a>
+<a href="images/blog-quarto-r2bit.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-11" title="그림&nbsp;12.8: 쿼토 블로그 초창기 사례"><img src="images/blog-quarto-r2bit.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img" width="416"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-quarto-r2bit-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 그림&nbsp;12.8: 쿼토 블로그 초창기 사례
@@ -1247,7 +1247,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"selector":".lightbox","openEffect":"zoom","loop":false,"descPosition":"bottom","closeEffect":"zoom"});
+<script>var lightboxQuarto = GLightbox({"descPosition":"bottom","openEffect":"zoom","selector":".lightbox","loop":false,"closeEffect":"zoom"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;

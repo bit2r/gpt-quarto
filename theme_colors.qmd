@@ -19,17 +19,18 @@ source("_common.R")
 사람들 중에는 색각 이상이 있는 분들도 계시기 때문에 색상을 선택할 때는 이러한 점도 고려해야 한다.
 뿐만 아니라, 시각화 그래프는 다양한 색상이 적용된 PPT 발표자료, 보고서, 웹 페이지 등에 문서의 구성요소 중 하나로 포함된다.
 그리고 나서, 인쇄 출판, 빔 프로젝트, 모니터, 스마트폰, 태블릿 등 여러 매체를 통해 정보가 전달되기 때문에 이런 점까지 고려한 색상 선택과 활용전략이 필요하다.
+\index{색상}
 
 ## 시각화 메커니즘 {#color-mechanism}
 
 크게 보면 기계 즉, 컴퓨터가 색을 이해하고 표현하는 **RGB 체계**와 사람이 색을 인지하고 이해하는 **HCL 체계**로 나누어 진다.
 2진수로 표현된 시각적 데이터는 RGB 16진수로 변환되어 모니터에 표시되고, 물리적 광자(photon)로 사람눈에 위치한 망막에 꽂히게 되고, 사람은 뇌에서 인지한 후에 이를 처리하여 시각적인 정보를 인식하게 된다.
-따라서, 사람뇌에 인식할 수 있는 시각적인 정보로 데이터를 구성해야만 다양한 종류의 모니터를 통해 효율적이고 효과적으로 정보가 전달될 수 있다.
-[^theme_colors-1]
+따라서, 사람뇌에 인식할 수 있는 시각적인 정보로 데이터를 구성해야만 다양한 종류의 모니터를 통해 효율적이고 효과적으로 정보가 전달될 수 있다. [^theme_colors-1]
+\index{RGB}
 
 [^theme_colors-1]: [A Better Default Colormap for Matplotlib, SciPy 2015, Nathaniel Smith and Stéfan van der Walt](https://www.youtube.com/watch?v=xAoljeRJ3lU&feature=youtu.be)
 
-![시각적 인지 메커니즘](images/color-viz-mechanism.png){#fig-viz-mechanism width="100%"}
+![시각적 인지 메커니즘](images/color-viz-mechanism.jpg){#fig-viz-mechanisms}
 
 ## 16진수 RGB 표색법 {#color-dataviz-mechanism-rgb}
 
@@ -38,7 +39,9 @@ Cynthia Brewer 는 펜실베니아 대학에서 교수로 색상이론과 시각
 ColorBrewer 색상체계를 R에서 사용될 수 있게 만든 것이 [RColorBrewer](https://cran.r-project.org/web/packages/RColorBrewer/index.html) 패키지다.
 RColorBrewer Dark2 팔레트를 통해 실제로 구현된 색상체계를 살펴보자.
 
-```{r dataviz-rgb, echo = TRUE}
+```{r}
+#| label: fig-dataviz-rgb
+#| echo: true
 library(RColorBrewer)
 brewer.pal(n = 8, name = "Dark2")
 ```
@@ -50,9 +53,8 @@ brewer.pal(n = 8, name = "Dark2")
 
 ```{r}
 #| echo: false
-#| label: fig-rgb-table
-#| fig-cap: 십진수와 16진수 비교표
-#| result: asis
+#| label: tbl-rgb-table
+#| tbl-cap: 십진수와 16진수 비교표
 
 library(kableExtra)
 library(xtable)
@@ -66,9 +68,8 @@ hex_tbl <- hex_raw %>%
   pivot_wider(names_from = hex, values_from = decimal)
   
 hex_tbl %>% 
-  kableExtra::kbl() %>% 
-  kableExtra::kable_styling( latex_options = c("striped", "hold_position", "repeat_header"))
-
+  gt::gt() |> 
+  gtExtras::gt_theme_538()
 ```
 
 예를 들어, 팔렛트 첫 색상이 `#1B9E77`으로 명세되어 있다.
@@ -84,9 +85,8 @@ $$ 9E = 9 \times 16^1 + 14 \times 16^0 = 9 \times 16 + 14 = 158 $$
 
 ```{r}
 #| echo: false
-#| label: fig-rgb-colors
-#| fig-cap: 주요 색상과 헥스코드
-#| result: asis
+#| label: tbl-rgb-colors
+#| tbl-cap: 주요 색상과 헥스코드
 
 rgb_tbl <- tibble(색상 = c("blue", "green", "red"),
                   헥스코드 = c("#0000FF", "#00FF00", "#FF0000"),
@@ -95,17 +95,16 @@ rgb_tbl <- tibble(색상 = c("blue", "green", "red"),
                   파란색 = c(255, 0, 0))
 
 rgb_tbl %>% 
-  kableExtra::kbl() %>% 
-  kableExtra::kable_styling( latex_options = c("striped", "hold_position", "repeat_header"))
+  gt::gt() |> 
+  gtExtras::gt_theme_538()
 ```
 
 다음에 무책색(흰색, 회색, 흑백)을 표현한 색상이 나와 있다.
 
-```{r dataviz-rgb-intensity, results = 'asis', echo = FALSE}
+```{r}
 #| echo: false
-#| label: fig-rgb-intensity
-#| fig-cap: 무책색(흰색, 회색, 흑백) 색상표
-#| result: asis
+#| label: tbl-rgb-intensity
+#| tbl-cap: 무책색(흰색, 회색, 흑백) 색상표
 
 j_intensity <- c(255, 171, 84, 0)
 bw_tbl <- tibble(색상 = c("white, gray100", "gray67",
@@ -116,8 +115,8 @@ bw_tbl <- tibble(색상 = c("white, gray100", "gray67",
                   파란색 = j_intensity)
 
 bw_tbl %>% 
-  kableExtra::kbl() %>% 
-  kableExtra::kable_styling( latex_options = c("striped", "hold_position", "repeat_header"))
+  gt::gt() |> 
+  gtExtras::gt_theme_538()
 ```
 
 "gray" 회색으로 치환하게 되면, "gray"를 보게 되고 어느 곳에서나 동일한 결과를 얻게 됨에 주목한다.
@@ -139,6 +138,7 @@ RGB 색공간과 색상 모형이 최고라고 볼 수 없다.
 컴퓨터 화면에서 색을 표현하는 데는 적합하지만, 모든 색상 선택 작업에 이 모형을 적용하는 것은 어렵다.
 예를 들어, 사람이 구별하기는 쉽지만, 인지적으로 색상별로 비교되는 색상으로 구성된 정성적인 팔레트를 만들어 내는 방법은 명확하지 않다.
 컴퓨터에 사용되는 색상을 기술하는데 RGB를 사용하지만, **사람이 색상체계를 구축하는 색공간에 RGB체계만 사용할 이유는 없다.** 이점은 사람과 컴퓨터가 다른 것이고, 이를 인정해야만 된다.
+\index{HCL}
 
 색상모형은 대개 RGB처럼 3차원으로 이루어진다.
 이는 인간의 망막에 세 가지 다른 수용체가 있다는 생리학적 사실 때문이다.
@@ -183,6 +183,7 @@ Zeileis와 동료들[@zeileis2009escaping] [^theme_colors-2]이 R 사용자들�
 
 CMYK 색상표는 시안(**C**yan), 마젠타(**M**agenta), 옐로(**Y**ellow), 블랙(Black = **K**ey)를 원색으로 하여 명도가 낮아지는 감산혼합으로 주로 출력물 인쇄 혹은 사진 필림 현상에 사용되며 쿼크익스프레스, 일러스트레이터, 포토샵 등에서 CMYK 감산혼합을 지원한다.
 현실적인 문제 때문에 RGB나 HSV보다 표현 가능한 색이 적은 것으로 알려져 있다. [^theme_colors-3] [^theme_colors-4]
+\index{CMYK}
 
 [^theme_colors-3]: [위키백과, "CMYK color model"](https://en.wikipedia.org/wiki/CMYK_color_model)
 
@@ -210,7 +211,7 @@ dev.off()
 
 <!-- {{< pdf color_rgb.pdf height=300px width=300px >}} -->
 
-![](data/color_rgb.pdf){#id .class height="300px" width="300px"}
+![RGB 색상](data/color_rgb.pdf){#fig-color-rgb height="300px" width="300px"}
 :::
 
 ::: column
@@ -228,7 +229,7 @@ dev.off()
 
 <!-- {{< pdf color_cmyk.pdf height=300px width=300px >}} -->
 
-![](data/color_cmyk.pdf){.class height="300px" width="300px"}
+![CMYK 색상](data/color_cmyk.pdf){#fig-color-cmyk height="300px" width="300px"}
 :::
 :::
 
@@ -237,6 +238,9 @@ dev.off()
 ### RColorBrewer {#dataviz-color-brewer}
 
 색상선택은 논란도 많고 가장 많은 시간이 소요되는 분야다. 지리학자이자 색상 전문가인 [Cynthia Brewer](http://en.wikipedia.org/wiki/Cynthia_Brewer) 교수는 출판 및 웹용으로 사용되는 색상표를 제작했고, [RColorBrewer](http://cran.r-project.org/web/packages/RColorBrewer/index.html) 패키지에 포함되어 있어, R 사용자들이 쉽게 접근하고 활용할 수 있다. [RColorBrewer](http://cran.r-project.org/web/packages/RColorBrewer/index.html) 패키지를 설치하고 사용하면, 다양한 색상 조합과 팔레트를 쉽게 탐색할 수 있다. 사용자는 `display.brewer.all()` 명령어를 통해 전체 팔레트를 한눈에 볼 수 있다. 
+\index{RColorBrewer}
+
+
 ```{r}
 #| eval: false
 #| label: dataviz-brewer
@@ -259,6 +263,7 @@ display.brewer.all()
 ```{r}
 #| fig-cap: 유형별 색상 팔레트
 #| label: fig-brewer-type
+#| out-width: 100%
 
 library(RColorBrewer) 
 
@@ -274,7 +279,7 @@ invisible(dev.off())
 ```{r}
 #| label: fig-brewer-dark2
 #| fig-cap: "RColorBrewer 중 Dark2 팔렛트"
-#| fig-height: 1
+#| out-width: 100%
 
 display.brewer.pal(n = 8, name = 'Dark2')
 ```
@@ -285,6 +290,7 @@ display.brewer.pal(n = 8, name = 'Dark2')
 ```{r}
 #| label: fig-palmer-penguins
 #| fig-cap: 팔머 펭귄 데이터 RColorBrewer Accent 팔렛트 적용트
+#| out-width: 100%
 library(palmerpenguins)
 library(tidyverse)
 
@@ -305,6 +311,9 @@ penguins |>
 펭귄종에 따른 부리길이와 깊이 관계를 범주형 색상으로 시각화하는 코드를 만들어 보자. 먼저 필요한 패키지를 준비하고, 데이터를 불러온 다음, `ggplot`을 사용하여 그래프를 제작한다. `scale_color_viridis_d()` 함수는 범주형 변수(펭귄종, `species`)에 적합한 `viridis` 색상을 그래프에 반영했다.
 
 ```{r}
+#| out-width: 100%
+#| label: fig-viridis-penguins
+#| fig-cap: 팔머 펭귄 데이터에 viridis 팔렛트 적용
 # 패키지 로드
 library(ggplot2)
 library(viridis)
@@ -339,11 +348,13 @@ ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm, color = species)) +
 색맹은 삼원색 중 특정 색상을 완전히 감지하지 못하는 것이며, 색약은 수용체에 문제로 감지는 할 수 있지만 다르게 보이게 된다.
 `dichromat` 팩키지([CRAN](http://cran.r-project.org/web/packages/dichromat/))는 2색시자에 대한 효과적인 색상조합을 선택하는데 도움이 된다.
 `colorschems` 목록에는 `r library(dichromat); length(colorschemes)` 가지 색상조합이 담겨있는데, 적색과 녹색을 구별하는 능력이 없거나 예외적인 시력을 갖는 2색시자에게 적합하다.
+\index{색각 이상} \index{색약} \index{색맹}
 
 ```{r}
 #| label: fig-dichromat-colorschemes
 #| fig-cap: 색각 이상 dichromat 색상표
 #| echo: false
+#| out-width: 100%
 
 library(dichromat) # install.packages("dichromat")
 library(ggplot2)
@@ -373,6 +384,7 @@ ggplot(df, aes(xmin = xmin, xmax = xmax, ymin = ymax - 0.85, ymax = ymax)) +
 ```
 
 `dichromat` 패키지[@rogowitz1996should] `dichmat()` 함수는 색상을 변환해서 다른 형태의 색맹에 근사적인 효과를 구현할 수 있어서, 후보 색상조합에 대한 효과를 평가할 수 있게 한다. `data("dalton")` 명령어는 256 색상 팔레트를 표현하는 객체를 생성하는데, 정상 시야로 표현되는 것과, 적록(red-green) 색맹과 청녹(green-blue) 생맹 팔레트를 제공하고 있다. 
+\index{dichromat}
 
 ```{r}
 #| eval: false
@@ -402,10 +414,12 @@ purrr::walk(pal_name, ~ show_all_pal(pal_name = .x))
 
 [더블어민주당](https://www.peoplepowerparty.kr/about/logo), [국민의힘](https://www.peoplepowerparty.kr/about/logo), [정의당](https://www.justice21.org/newhome/about/info021.html) 웹사이트에서 각 정당 로고 및 주된 로고 색상을 확인할 수 있다.
 이를 바탕으로 정당별 시각화 제작에 사용될 색상으로 팔레트를 생성하여 활용한다.
+\index{정당 색상}
 
 ```{r}
 #| label: fig-party-color
 #| fig-cap: 정당별 색상 팔레트
+#| out-width: 100%
 
 # 각 정당별 색상
 민주당_2색상 <- c("#00A0E2", "#004EA1")
@@ -442,6 +456,7 @@ ggplot(df_colors, aes(x = 1, y = party, fill = color)) +
 ```{r}
 #| label: fig-party-color-bar
 #| fig-cap: 정당별 색상 팔레트를 적용한 막대 그래프
+#| out-width: 100%
 
 set.seed(123456789)
 party_name <- c("민주당", "국민의힘", "정의당", "무소속")
@@ -473,6 +488,7 @@ tibble(party_name, votes) |>
 [^theme_colors-6]: [extracting colours from your images with image quantization](https://chichacha.netlify.app/2019/01/19/extracting-colours-from-your-images-with-image-quantization/)
 
 ```{r}
+#| out-width: 100%
 library(scales)
 library(imager)
 library(magick)
@@ -517,6 +533,7 @@ flag_image_gg <- ggplot() +
 
 ```{r}
 #| label: fig-color_penguins
+#| out-width: 100%
 
 flag_penguin_gg <- penguins |> 
   count(island) |> 
@@ -533,6 +550,7 @@ flag_penguin_gg <- penguins |>
 #| eval: true
 #| label: fig-color-from-image
 #| fig-cap: 태극기 이미지에서 추출한 색상을 활용한 시각화 그래프
+#| out-width: 100%
 
 library(patchwork)
 

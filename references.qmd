@@ -1,4 +1,4 @@
 # 참고문헌 {.unnumbered}
 
-::: {#refs-main}
+::: {#refs}
 :::

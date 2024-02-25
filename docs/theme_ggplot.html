@@ -373,7 +373,7 @@ ga('send', {
   
 
 
-</header><p>문서 구성요소 중 하나인 그래프는 데이터를 시각화하여 복잡한 정보를 간결하고 이해하기 쉽게 전달하는데 중요한 역할을 한다. 초기 데이터를 시각화하여 전달할 수 있는 다양한 그래프가 제시되었지만, 너무나 많고 다양한 그래프가 제시되면서 이를 학술적으로 정리한 그래프 문법(grammar of graphics)이 제시되면서 큰 전환점을 맞게 되었다.</p>
+</header><p>문서 구성요소 중 하나인 그래프는 데이터를 시각화하여 복잡한 정보를 간결하고 이해하기 쉽게 전달하는데 중요한 역할을 한다. 초기 데이터를 시각화하여 전달할 수 있는 다양한 그래프가 제시되었지만, 너무나 많고 다양한 그래프가 제시되면서 이를 학술적으로 정리한 그래프 문법(grammar of graphics)이 제시되면서 큰 전환점을 맞게 되었다. </p>
 <p>SPSS 그래픽이 그 효시로 알려졌고 대략 10년 후 해들리 위컴이 <code>ggplot2</code> 패키지를 개발하여 그래픽 문법을 R에 적용하였다. 이후 <code>ggplot2</code>는 R에서 가장 많이 사용되는 그래픽 패키지로 자리매김하였다. 그래프 문법을 따르는 <code>ggplot2</code> 패키지가 데이터 시각화의 표준으로 자리매김하면서 파이썬에서도 그래프 문법을 따르는 <code>plotnine</code>가 개발되어 그래프 문법을 익히게 되면 R과 파이썬에서 동일한 그래프 문법을 사용하여 데이터 시각화를 할 수 있게 되었다.</p>
 <div id="fig-why-ggplot" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-why-ggplot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -410,9 +410,9 @@ ga('send', {
 <span></span>
 <span><span class="va">base_penguins_gg</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="fig-ggplot-default" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-ggplot-default" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-ggplot-default-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="images/penguin_ggplot_base.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="그림&nbsp;10.2: ggplot 기본 테마를 적용한 그래프"><img src="images/penguin_ggplot_base.png" class="img-fluid figure-img"></a>
+<a href="images/penguin_ggplot_base.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="그림&nbsp;10.2: ggplot 기본 테마를 적용한 그래프"><img src="images/penguin_ggplot_base.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="490"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ggplot-default-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 그림&nbsp;10.2: ggplot 기본 테마를 적용한 그래프
@@ -420,7 +420,7 @@ ga('send', {
 </div>
 <section id="내장-테마" class="level2" data-number="10.1"><h2 data-number="10.1" class="anchored" data-anchor-id="내장-테마">
 <span class="header-section-number">10.1</span> 내장 테마</h2>
-<p><code>ggplot2</code> 패키지에는 다양한 내장 테마가 있으며, 이를 활용하여 데이터를 시각화할 수 있다. <code>palmerpenguins</code> 데이터셋을 사용하여 물갈퀴 길이와 체중 사이의 관계를 앞서 작업한 기본 그래프를 바탕으로 다양한 테마를 적용하여 비교한다.</p>
+<p><code>ggplot2</code> 패키지에는 다양한 내장 테마가 있으며, 이를 활용하여 데이터를 시각화할 수 있다. <code>palmerpenguins</code> 데이터셋을 사용하여 물갈퀴 길이와 체중 사이의 관계를 앞서 작업한 기본 그래프를 바탕으로 다양한 테마를 적용하여 비교한다. </p>
 <p>펭귄 데이터셋을 사용하여 물갈퀴 길이와 체중 사이의 관계를 시각화하는 그래프를 <code>draw_themes()</code> 함수로 테마를 달리 적용하여 <code>ggplot</code> 그래프를 생성한 후에 리스트 객체로 저장한다.</p>
 <p>다양한 테마를 <code>draw_themes()</code> 함수에 인자로 넘기기 위해 <code>themes_name</code>과 <code>themes_vector</code>에 테마명과 테마 함수를 저장장 한 후 <code><a href="https://purrr.tidyverse.org/reference/map2.html">map2()</a></code> 함수로 테마를 달리한 <code>ggplot</code> 그래프를 저장한다. 마지막으로, <code><a href="https://patchwork.data-imaginist.com/reference/wrap_plots.html">patchwork::wrap_plots()</a></code> 함수를 사용하여 모든 그래프를 결합하여 하나의 그래프로 출력한다.</p>
 <div class="cell">
@@ -465,7 +465,7 @@ ga('send', {
 </section><section id="hrbrthemes" class="level2" data-number="10.2"><h2 data-number="10.2" class="anchored" data-anchor-id="hrbrthemes">
 <span class="header-section-number">10.2</span> <code>hrbrthemes</code>
 </h2>
-<p>밥 루디스(Bob Rudis)가 만든 <code>hrbrthemes</code> 패키지는 텍스트가 많은 비즈니스 프레젠테이션에 특히 적합한 테마와 테마 구성 요소를 제공한다. <code>ggplot2</code> 시각화에 세련되고 깔끔한 디자인을 추가해, 데이터 시각화가 더욱 명확하고 전문적으로 보이는 것이 특징이다.</p>
+<p>밥 루디스(Bob Rudis)가 만든 <code>hrbrthemes</code> 패키지는 텍스트가 많은 비즈니스 프레젠테이션에 특히 적합한 테마와 테마 구성 요소를 제공한다. <code>ggplot2</code> 시각화에 세련되고 깔끔한 디자인을 추가해, 데이터 시각화가 더욱 명확하고 전문적으로 보이는 것이 특징이다. </p>
 <p><code>hrbrthemes</code> 패키지는 두 가지 목표를 염두에 두고 있다. 타이포그래피 요소에 중점을 둔 기본테마를 제공하는 것으로 이를 위해서 다양한 레이블의 배치와 글꼴을 포함시켰다. 다른 한가지 목표는 생산성 향상에 중점을 둔다. 시각화 작업결과물은 블로그 게시글, 학술 논문, 프레젠테이션, 내부 보고서, 인쇄출판물 등 출판된다. 시각화 데이터 분석을 진행하는 동안 시각요소가 완벽할 필요는 없다. 작업을 확인하고 지지하는 역할을 하며, 완성된 제품에 대한 출발점에 불과하기 때문이다.</p>
 <p><code>hrbrthemes</code> 패키지에 내장된 바로 사용할 수 있는 다양한 테마를 살펴보자. 먼저, <code>hrbrthemes</code> 패키지를 로드하고, <code>hrbrthemes</code> 테마명과 함수를 리스트에 저장한다. <code>map2</code> 함수를 사용하여 각 테마에 대한 <code>ggplot</code> 객체를 생성한 후, <code><a href="https://patchwork.data-imaginist.com/reference/wrap_plots.html">patchwork::wrap_plots</a></code> 함수로 이들을 하나의 그래프로 결합한다. 이제 한눈에 <code>hrbrthemes</code> 패키지 테마를 적용한 그래프를 시각적으로 비교할 수 있다.</p>
 <div class="cell">
@@ -490,7 +490,7 @@ ga('send', {
 </section><section id="ggthemes" class="level2" data-number="10.3"><h2 data-number="10.3" class="anchored" data-anchor-id="ggthemes">
 <span class="header-section-number">10.3</span> <code>ggthemes</code>
 </h2>
-<p>제프리 아놀드(Jeffrey Arnold)가 제작한 <code>ggthemes</code> 패키지는 <code>ggplot2</code>를 위한 테마를 제공하는데, 에드워드 터프티(Edward Tufte), 스테픈 퓨(Stephen Few), ‘Fivethirtyeight’, ‘The Economist’, ‘Stata’, ‘Excel’, ‘The Wall Street Journal’ 등의 그래프 스타일을 참조한 것이다. 다양한 출처에서 영감을 받은 테마들은 데이터 시각화를 할 때 더 많은 선택지와 창의성을 제공하고, 사용자가 보다 매력적이고 명확한 시각적 표현을 만들 수 있게 도움을 준다.</p>
+<p>제프리 아놀드(Jeffrey Arnold)가 제작한 <code>ggthemes</code> 패키지는 <code>ggplot2</code>를 위한 테마를 제공하는데, 에드워드 터프티(Edward Tufte), 스테픈 퓨(Stephen Few), ‘Fivethirtyeight’, ‘The Economist’, ‘Stata’, ‘Excel’, ‘The Wall Street Journal’ 등의 그래프 스타일을 참조한 것이다. 다양한 출처에서 영감을 받은 테마들은 데이터 시각화를 할 때 더 많은 선택지와 창의성을 제공하고, 사용자가 보다 매력적이고 명확한 시각적 표현을 만들 수 있게 도움을 준다. </p>
 <p><code>ggthemes</code> 패키지에 내장된 바로 사용할 수 있는 다양한 테마를 살펴보자. 먼저, <code>ggthemes</code> 패키지를 로드하고, <code>ggthemes</code> 테마명과 함수를 리스트에 저장한다. <code>map2</code> 함수를 사용하여 각 테마에 대한 <code>ggplot</code> 객체를 생성한 후, <code><a href="https://patchwork.data-imaginist.com/reference/wrap_plots.html">patchwork::wrap_plots</a></code> 함수로 이들을 하나의 그래프로 결합한다. 이제 한눈에 <code>ggthemes</code> 패키지 테마를 적용한 그래프를 시각적으로 비교한다. 테마명에서 유명한 언론사, 소프트웨어, 시각화 유명인을 찾아볼 수 있다.</p>
 <div class="cell">
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/jrnold/ggthemes">ggthemes</a></span><span class="op">)</span></span>
@@ -532,7 +532,7 @@ ga('send', {
 </section><section id="wesanderson" class="level2" data-number="10.4"><h2 data-number="10.4" class="anchored" data-anchor-id="wesanderson">
 <span class="header-section-number">10.4</span> <code>wesanderson</code>
 </h2>
-<p>웨스 앤더슨(Wes Anderson) 영화는 독특하고 눈에 띄는 스타일로 유명하다. 앤더슨 영화 스타일을 기반으로 한 색상 팔레트를 제공하는 R 패키지가 있다. <a href="https://github.com/karthik/wesanderson"><code>wesanderson</code></a> 패키지는 웨스 앤더슨 영화의 특징적인 색채와 미적 감각을 반영한 다양한 색상 팔레트를 포함하고 있어, 데이터 시각화에 독창적이고 매력적인 색조를 추가할 수 있다. 사용자는 이 팔레트를 이용하여 그래프나 차트에 독특한 시각적 스타일을 적용할 수 있으며, 이를 통해 데이터 시각화 작업에 예술적인 터치를 가미할 수 있다.</p>
+<p>웨스 앤더슨(Wes Anderson) 영화는 독특하고 눈에 띄는 스타일로 유명하다. 앤더슨 영화 스타일을 기반으로 한 색상 팔레트를 제공하는 R 패키지가 있다. <a href="https://github.com/karthik/wesanderson"><code>wesanderson</code></a> 패키지는 웨스 앤더슨 영화의 특징적인 색채와 미적 감각을 반영한 다양한 색상 팔레트를 포함하고 있어, 데이터 시각화에 독창적이고 매력적인 색조를 추가할 수 있다. 사용자는 이 팔레트를 이용하여 그래프나 차트에 독특한 시각적 스타일을 적용할 수 있으며, 이를 통해 데이터 시각화 작업에 예술적인 터치를 가미할 수 있다. </p>
 <p><code>wesanderson</code> 패키지에 내장된 바로 사용할 수 있는 다양한 테마를 살펴보자. 먼저, <code>wesanderson</code> 패키지를 로드하고, <code>wesanderson</code> 테마명과 함수를 리스트에 저장한다. <code>map2</code> 함수를 사용하여 각 테마에 대한 <code>ggplot</code> 객체를 생성한 후, <code><a href="https://patchwork.data-imaginist.com/reference/wrap_plots.html">patchwork::wrap_plots</a></code> 함수로 이들을 하나의 그래프로 결합한다. 이제 한눈에 <code>wesanderson</code> 패키지 테마를 적용한 그래프를 시각적으로 비교한다. 다즐링 주식회사, 그랜드 부다페스트 호텔, 문라이즈 킹덤 등 영화 제목을 색상 팔레트에서 찾아볼 수 있다.</p>
 <div class="cell">
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/karthik/wesanderson">wesanderson</a></span><span class="op">)</span></span>
@@ -583,7 +583,7 @@ ga('send', {
 </div>
 </section><section id="사용자-테마" class="level2" data-number="10.5"><h2 data-number="10.5" class="anchored" data-anchor-id="사용자-테마">
 <span class="header-section-number">10.5</span> 사용자 테마</h2>
-<p>설치한 한글 글꼴을 다양한 그래프 요소에 반영한 사용자 맞춤 테마(<code>theme_penguin</code>)을 생성하고 색상은 <code>wesanderson</code> 패키지에서 <code>Darjeeling1</code> 5가지 색상을 사용하여 시각화한다. 생성된 <code>theme_penguin</code> 사용자 정의 테마로 <code><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot()</a></code> 함수를 사용하여 그래프를 만들고, <code>wesanderson</code> 패키지 다즐링 주식회사 <code>Darjeeling1</code> 팔레트 색상을 <code><a href="https://ggplot2.tidyverse.org/reference/scale_manual.html">scale_color_manual()</a></code> 함수로 반영한다.</p>
+<p>설치한 한글 글꼴을 다양한 그래프 요소에 반영한 사용자 맞춤 테마(<code>theme_penguin</code>)을 생성하고 색상은 <code>wesanderson</code> 패키지에서 <code>Darjeeling1</code> 5가지 색상을 사용하여 시각화한다. 생성된 <code>theme_penguin</code> 사용자 정의 테마로 <code><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot()</a></code> 함수를 사용하여 그래프를 만들고, <code>wesanderson</code> 패키지 다즐링 주식회사 <code>Darjeeling1</code> 팔레트 색상을 <code><a href="https://ggplot2.tidyverse.org/reference/scale_manual.html">scale_color_manual()</a></code> 함수로 반영한다. </p>
 <div class="cell">
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">extrafont</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/extrafont/man/loadfonts.html">loadfonts</a></span><span class="op">(</span><span class="st">"win"</span><span class="op">)</span></span>
 <span></span>
@@ -624,7 +624,14 @@ ga('send', {
 <span></span>
 <span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsave.html">ggsave</a></span><span class="op">(</span><span class="st">"images/ggplot_penguins_gg.png"</span><span class="op">)</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p><img src="images/ggplot_penguins_gg.png" class="img-fluid" alt="웨스 앤더스 ‘다즐링 주식회사’ 색상을 반영한 그래프">{fig-ggplot-penguins-wes}</p>
+<div id="fig-ggplot-penguins-wes" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-ggplot-penguins-wes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/ggplot_penguins_gg.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="그림&nbsp;10.6: 웨스 앤더스 ‘다즐링 주식회사’ 색상을 반영한 그래프"><img src="images/ggplot_penguins_gg.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ggplot-penguins-wes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+그림&nbsp;10.6: 웨스 앤더스 ‘다즐링 주식회사’ 색상을 반영한 그래프
+</figcaption></figure>
+</div>
 </section><section id="그래프-자동-설정" class="level2" data-number="10.6"><h2 data-number="10.6" class="anchored" data-anchor-id="그래프-자동-설정">
 <span class="header-section-number">10.6</span> 그래프 자동 설정</h2>
 <p>작성한 테마를 매번 복사하여 붙여넣지 않고 <code>.Rprofile</code> 파일에 저장해 <code>ggplot</code> 시각화 때마다 자동으로 사용하는 방법을 알아보자. 자동화 작업을 위해 <code>usethis</code> 패키지 <code>edit_r_profile()</code> 함수를 사용한다. 이 함수를 실행시켜면 <code>.Rprofile</code> 파일이 열리고, 앞서 작성한 테마 코드를 추가할 수 있다. 파일에 테마 코드를 추가하고 저장한 후 R 세션을 재시작하면, 매번 <code>ggplot</code>을 사용할 때 자동으로 사용자 정의 테마(<code>theme_penguin</code>)를 불러 사용할 수 있게 되어서 시각화 작업을 더 효율적으로 수행할 수 있다.</p>
@@ -692,10 +699,10 @@ ga('send', {
 </div>
 <div id="fig-penguins-theme-rprofile" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-penguins-theme-rprofile-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="images/penguins_theme_gg.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="그림&nbsp;10.6: 펭귄 데이터 사용자 테마 적용 그래프"><img src="images/penguins_theme_gg.jpg" class="img-fluid figure-img"></a>
+<a href="images/penguins_theme_gg.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="그림&nbsp;10.7: 펭귄 데이터 사용자 테마 적용 그래프"><img src="images/penguins_theme_gg.jpg" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-penguins-theme-rprofile-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-그림&nbsp;10.6: 펭귄 데이터 사용자 테마 적용 그래프
+그림&nbsp;10.7: 펭귄 데이터 사용자 테마 적용 그래프
 </figcaption></figure>
 </div>
 </section><section id="연습문제" class="level2 unnumbered"><h2 class="unnumbered anchored" data-anchor-id="연습문제">연습문제</h2>
@@ -1190,7 +1197,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <p>순수하게 <a href="https://quarto.org/">쿼토(Quarto)</a>로 제작되었습니다.</p>
 </div>
   </div>
-</footer><script>var lightboxQuarto = GLightbox({"loop":false,"selector":".lightbox","descPosition":"bottom","openEffect":"zoom","closeEffect":"zoom"});
+</footer><script>var lightboxQuarto = GLightbox({"openEffect":"zoom","closeEffect":"zoom","selector":".lightbox","loop":false,"descPosition":"bottom"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;

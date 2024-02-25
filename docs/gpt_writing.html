@@ -21,7 +21,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -363,7 +383,7 @@ ga('send', {
 </header>
 
 
-<p>종이와 펜으로 글을 쓸 때 글쓰기는 주로 생각이나 정보, 감정을 언어의 형태로 표현하는 과정으로 가장 기본적이고 전통적인 글쓰기의 형태로 볼 수 있다. 저자가 머릿속에 있는 아이디어나 메시지를 구조화하여 문장과 단락으로 만드는 과정에서 문법, 어휘, 문장 구조 등 언어의 다양한 요소가 활용된다. 전통적인 글쓰기는 디지털 글쓰기에서 느끼기 어려운 독특한 느낌과 집중도가 있어 펜을 종이에 대고 쓰는 물리적인 행위 자체가 생각을 정리하고 창의성을 불러일으키는 경우가 많고 디지털 장비의 방해 없이 좀 더 몰입하여 글을 쓸 수 있다는 장점도 있다.</p>
+<p>종이와 펜으로 글을 쓸 때 글쓰기는 주로 생각이나 정보, 감정을 언어의 형태로 표현하는 과정으로 가장 기본적이고 전통적인 글쓰기의 형태로 볼 수 있다. 저자가 머릿속에 있는 아이디어나 메시지를 구조화하여 문장과 단락으로 만드는 과정에서 문법, 어휘, 문장 구조 등 언어의 다양한 요소가 활용된다. 전통적인 글쓰기는 디지털 글쓰기에서 느끼기 어려운 독특한 느낌과 집중도가 있어 펜을 종이에 대고 쓰는 물리적인 행위 자체가 생각을 정리하고 창의성을 불러일으키는 경우가 많고 디지털 장비의 방해 없이 좀 더 몰입하여 글을 쓸 수 있다는 장점도 있다. </p>
 <p>전통적인 글쓰기에서 문법, 어휘, 문장 구조 등 언어의 다양한 요소에 집중하는 이유 중 하나는 인쇄출판 비용 문제가 크다. 인쇄출판을 할 경우, 재료와 인력, 시간 등 다양한 비용이 발생하기 때문에, 처음부터 정확하고 명료한 표현을 사용하여 수정이나 재인쇄 필요성을 줄여 비용을 절감해야 하기 때문에 저자가 더 신중하게 글을 쓰도록 만들며, 그 결과로 문법이나 어휘 선택, 문장 구조 등에 더 많은 주의를 기울이게 된다. 인쇄된 글은 디지털 글과 달리 쉽게 수정할 수 없기 때문에, 처음부터 높은 수준의 정확성과 명료성이 요구되기 때문에 작성자로 하여금 더 깊게 생각하고 더 철저하게 검토하는 습관을 들이게 하며, 이러한 과정을 통해 더 높은 품질의 글이 탄생하게 되었다.</p>
 <p>따라서, 글쓰기는 모든 사람이 배우는 기초적인 능력이지만, 인쇄출판의 높은 비용 때문에 실제로 글을 발표하고 널리 퍼뜨릴 수 있는 사람은 선택된 소수에 불과하기 때문에 빈익빈, 부익부 문제가 심해지고 있다. 즉, 자본과 기회가 있는 소수의 사람들만이 자신의 아이디어나 의견을 널리 알릴 수 있는 인쇄출판 플랫폼을 갖게 된 것이다. 이로 인해 정치적, 사회적, 경제적, 과학기술 격차가 더욱 심화되며, 다수의 목소리가 제대로 들리지 않는 문제가 발생한다. 이러한 상황은 인터넷과 웹의 대중화로 디지털 글쓰기가 보급됨에 따라 어느 정도 해소되고 있지만, 저작에 해당되는 디지털 글쓰기와 저작물의 인쇄출판과 유통에 대한 접근성 문제는 여전히 해결되어야 할 중요한 과제로 남아 있다.</p>
 <section id="챗gpt-등장" class="level2" data-number="17.1">
@@ -376,7 +396,7 @@ ga('send', {
 <h2 data-number="17.2" class="anchored" data-anchor-id="글쓰기-진화과정"><span class="header-section-number">17.2</span> 글쓰기 진화과정</h2>
 <p>글쓰기 역사는 인류 문명과 밀접하게 연결되어 있다. 고대에는 점토판과 쐐기를 사용하여 기록을 남겼다. 중세에 이르러 필경사가 등장하고, 붓과 머루, 잉크와 깃털펜이 사용되기 시작했다. 근대에 들어서면 타자기가 등장하고, 1868년에 첫 타자기가, 1902년에 전동타자기가 개발되었다.</p>
 <p>컴퓨터 등장은 글쓰기 패러다임을 또 다시 바꾸었다. 1946년에 에니악 컴퓨터가, 1964년에 IBM 워드프로세서 MT/ST가 등장했다. 이후에는 IBM 저장장치 MagCards가 1969년에, TeX가 1978년에, LaTeX이 1984년 등장하면서 디지털 글쓰기 기술적 토대가 탄탄해졌다.</p>
-<p>1983년에 마이크로소프트 워드 1.0의 출시로 개인용 컴퓨터에서도 글쓰기가 가능해지면서 디지털 글쓰기의 새로운 시대가 열렸다. 그 후로 프로그래밍 언어와 글쓰기가 통합되기 시작했고, 마크다운, R, 파이썬 등을 활용한 글쓰기가 일반화되면서 문학적 프로그래밍(Literate Programming)이라는 새로운 형태의 글쓰기를 가능하게 했다. 최근에는 챗GPT의 등장으로 문학적 프로그래밍이 한 단계 더 진화하고 있다. 챗GPT는 자연어 처리 능력을 활용하여 코드와 텍스트, 그리고 다양한 미디어 요소를 통합적으로 다룰 수 있어, 디지털 글쓰기의 패러다임을 혁신적으로 바꾸고 있다.</p>
+<p>1983년에 마이크로소프트 워드 1.0의 출시로 개인용 컴퓨터에서도 글쓰기가 가능해지면서 디지털 글쓰기의 새로운 시대가 열렸다. 그 후로 프로그래밍 언어와 글쓰기가 통합되기 시작했고, 마크다운, R, 파이썬 등을 활용한 글쓰기가 일반화되면서 문학적 프로그래밍(Literate Programming)<span class="citation" data-cites="knuth84">(Knuth 1984)</span>이라는 새로운 형태의 글쓰기를 가능하게 했다. 최근에는 챗GPT의 등장으로 문학적 프로그래밍이 한 단계 더 진화하고 있다. 챗GPT는 자연어 처리 능력을 활용하여 코드와 텍스트, 그리고 다양한 미디어 요소를 통합적으로 다룰 수 있어, 디지털 글쓰기의 패러다임을 혁신적으로 바꾸고 있다.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><a href="images/writing_history.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="챗GPT 디지털 글쓰기 진화과정"><img src="images/writing_history.jpg" class="img-fluid figure-img" alt="챗GPT 디지털 글쓰기 진화과정"></a></p>
@@ -390,12 +410,13 @@ ga('send', {
 <p>첫 번째 단계인 “디지털 글쓰기”에서는 글감을 시작점으로 하여 다양한 형태의 콘텐츠를 생성하는데 수식, 표, 그래프, 파이썬/R/SQL 코드, 그림, 도형 등이 포함된다. 자연어로 챗GPT를 통해 다양한 저작물 구성요소를 쉽고 빠르게 생성하고 편집할 수 있다.</p>
 <p>두 번째 단계인 “구조와 외양”에서 문서의 전반적인 구조와 서식을 결정한다. 문서의 구조, 서식, 레이아웃, 그리고 참조 등이 확립되는데 챗GPT 부조종사(Copilot)이 유령 텍스트(Ghost Text) 기능을 통해 자연어로 저자 작업을 더욱 효율적으로 지원한다.</p>
 <p>마지막 단계인 “배포와 공유”에서 작성된 저작물이 독자에게 다양한 매체를 통해 전달한다. 독자가 반듯이 사람일 필요는 없고 독자가 저작자 자신일 수도 있으며, 심지어 기계일 수도 있다. 챗GPT 배포와 공유 과정에서 발생되는 다양한 기술적 문제를 해결해주는 공동 저작자이자 동료로서 디지털 글쓰기 전체적인 흐름을 완성한다.</p>
-<div class="cell" data-layout-align="default">
+<div class="cell" data-fig-width="5" data-layout-align="default">
 <div class="cell-output-display">
+<div id="fig-chatgpt-writing" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-chatgpt-writing-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div>
-<p></p><figure class="figure"><p></p>
-<div>
-<pre class="mermaid mermaid-js">graph LR
+<pre class="mermaid mermaid-js" data-label="fig-chatgpt-writing">graph LR
 
     chatGPT["챗GPT"] --&gt; Contents
 
@@ -432,14 +453,18 @@ ga('send', {
     style chatGPT fill:#f5f5f5,stroke:#333,stroke-width:3px
 </pre>
 </div>
-<p></p></figure><p></p>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-chatgpt-writing-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+그림&nbsp;17.1: 챗GPT 디지털 글쓰기 작업흐름
+</figcaption>
+</figure>
 </div>
 </div>
 </div>
 </section>
 <section id="이력서와-영화-시놉시스" class="level2" data-number="17.4">
 <h2 data-number="17.4" class="anchored" data-anchor-id="이력서와-영화-시놉시스"><span class="header-section-number">17.4</span> 이력서와 영화 시놉시스</h2>
-<p>챗GPT와 쿼토는 각기 다른 방식으로 문서 제작에 큰 장점을 갖고 있다. 챗GPT는 자연어 처리 기술을 바탕으로 다양한 콘텐츠를 창의적으로 생성하는 데 강점이 있다. 예를 들어, 이력서 작성 시 저자로부터 기본 정보와 경력 사항을 입력받아 자연스러운 문장으로 구성된 이력서 내용을 생성한다. 챗GPT는 텍스트 문맥을 이해하고 관련 정보를 적절히 배열하여 읽기 쉽고 전문적인 이력서 콘텐츠를 생산하다.</p>
+<p>챗GPT와 쿼토는 각기 다른 방식으로 문서 제작에 큰 장점을 갖고 있다. 챗GPT는 자연어 처리 기술을 바탕으로 다양한 콘텐츠를 창의적으로 생성하는 데 강점이 있다. 예를 들어, 이력서 작성 시 저자로부터 기본 정보와 경력 사항을 입력받아 자연스러운 문장으로 구성된 이력서 내용을 생성한다. 챗GPT는 텍스트 문맥을 이해하고 관련 정보를 적절히 배열하여 읽기 쉽고 전문적인 이력서 콘텐츠를 생산하다. </p>
 <p>반면, 쿼토는 문서와 코드를 통합적으로 관리하는 데 특화되어 있다. 이력서 작성에 쿼토는 저자 학력, 경력, 자격증, 기술, 학술논문 등 데이터를 코드 블록과 연결하여 동적으로 관리할 수 있다. 예를 들어, 경력 데이터가 업데이트될 때마다 자동으로 이력서 해당 부분을 갱신하는 것이 가능하기 때문에 과학기술 중심 직업을 가진 전문직 종사자에 특히 유용하다.</p>
 <p>따라서, 챗GPT와 쿼토를 함께 사용하면 각각의 약점이 보완되어 이력서 제작이 효율적이고 정확해진다. 챗GPT는 이력서 텍스트를 자연스럽고 전문적으로 구성하는 데 기여하고, 쿼토는 이력서 데이터 관리와 업데이트를 간소화한다. 또한, 쿼토의 웹 출판 기능은 작성된 이력서를 웹상에서 쉽게 공유하고 관리할 수 있어 이력서의 활용성과 접근성이 크게 향상된다.</p>
 <p>두번째 사례로 챗GPT와 쿼토를 통해 영화 시놉시스 제작하는 사례를 살펴보자. 챗GPT는 영화 시놉시스 제작에 있어서 창의적인 콘텐츠 생성 능력을 발휘한다. 저자가 프롬프트를 통해 챗GPT는 제공한 기본 아이디어나 키워드를 바탕으로 독창적이고 매력적인 시놉시스를 만들어 낸다. 챗GPT 자연어 처리 능력은 캐릭터, 설정, 줄거리 등 다양한 요소들을 자연스럽고 흥미로운 방식으로 결합하여 새로운 영화 시놉시스를 정말 빠른 시간내에 수도 없이 만들어 낼 수 있고, 다양한 장르와 스타일에 대한 이해를 바탕으로 사용자의 요구에 맞춘 시놉시스를 맞춤형으로 제작하는데도 유용하다.</p>
@@ -488,6 +513,11 @@ ga('send', {
 </ol>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-knuth84" class="csl-entry" role="listitem">
+Knuth, Donald E. 1984. <span>“Literate Programming”</span>. <em>Comput. J.</em> 27 (2): 97–111. <a href="https://doi.org/10.1093/comjnl/27.2.97">https://doi.org/10.1093/comjnl/27.2.97</a>.
+</div>
+</div>
 </section>
 </section>
 
@@ -944,7 +974,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"selector":".lightbox","loop":false,"closeEffect":"zoom","descPosition":"bottom","openEffect":"zoom"});
+<script>var lightboxQuarto = GLightbox({"selector":".lightbox","openEffect":"zoom","descPosition":"bottom","closeEffect":"zoom","loop":false});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;

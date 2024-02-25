@@ -419,11 +419,11 @@ window.Quarto = {
   
 
 
-</header><p>마크다운(markdown)은 <em>마크다운(<code>.md</code>)</em> 형식으로, <em>아래아한글</em>, <em>MS 워드</em>, <em>리눅스 오픈 오피스</em>, <em>맥 페이퍼즈</em> 와 달리 화면에 보이는 것이 글자 그대로 텍스트다. 서식은 나중에 부가되는 소프트웨어로 입혀진다.</p>
+</header><p>마크다운(markdown)은 <em>마크다운(<code>.md</code>)</em> 형식으로, <em>아래아한글</em>, <em>MS 워드</em>, <em>리눅스 오픈 오피스</em>, <em>맥 페이퍼즈</em> 와 달리 화면에 보이는 것이 글자 그대로 텍스트다. 서식은 나중에 부가되는 소프트웨어로 입혀진다. </p>
 <p>핵심적인 마크다운 언어 구문을 살펴보자. 시작하기 전에, 몇가지 마크다운 방언(?)이 인터넷에 존재하고 있다는 점을 상기한다. <a href="http://commonmark.org/">CommonMark</a>은 표준에 기초해서 생성되었고, <a href="https://help.github.com/articles/github-flavored-markdown/">GFM</a>은 <em>GitHub</em> 에서 개발되어 너무나도 널리 사용되어 이미 표준이 되었다. 이번 학습은 두 마크다운에 <em>공통으로</em> 존재하는 구문을 소개한다. 또다른 흥미롭지만 아직 미완성인 <a href="http://scholarlymarkdown.com/">Scholarly Markdown</a>도 있는데, 학계 저작을 목표로 개발되고 있다.</p>
 <section id="메타데이터metadata" class="level2" data-number="6.1"><h2 data-number="6.1" class="anchored" data-anchor-id="메타데이터metadata">
 <span class="header-section-number">6.1</span> 메타데이터(Metadata)</h2>
-<p>마크다운 문서에서 ‘저자’, ‘문서제목’ 등은 야믈(<code>YAML</code>) 헤더를 사용하여 메타데이터를 표현할 수 있다. <code>YAML</code> 은 “Yet Another Markup Language”를 축약한 두문어지만 중요하지는 않다. <code>YAML</code> 헤더는 다음과 같다.</p>
+<p>마크다운 문서에서 ‘저자’, ‘문서제목’ 등은 야믈(<code>YAML</code>) 헤더를 사용하여 메타데이터를 표현할 수 있다. <code>YAML</code> 은 “Yet Another Markup Language”를 축약한 두문어지만 중요하지는 않다. <code>YAML</code> 헤더는 다음과 같다. </p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">---</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">title:</span> <span class="st">"마크다운과 팬독(</span><span class="kw">`</span><span class="ex">pandoc</span><span class="kw">`</span><span class="st">)을 활용한 과학기술문서 저작"</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ex">shorttitle:</span> <span class="st">"현대적인 과학기술 문서 저작"</span></span>
@@ -435,7 +435,7 @@ window.Quarto = {
 <span class="header-section-number">6.2</span> 기본 구문</h2>
 <section id="제목" class="level3" data-number="6.2.1"><h3 data-number="6.2.1" class="anchored" data-anchor-id="제목">
 <span class="header-section-number">6.2.1</span> 제목</h3>
-<p>마크다운에서는 <code>#</code> 기호를 사용하여 문서 제목 수준을 결정한다. <code>#</code> 기호를 한 개부터 여섯 개까지 사용하며, <code>#</code> 기호 개수가 많아질수록 제목 수준은 낮아지고, 텍스트 크기도 작아진다. 예를 들어, 어떤 문서가 첫 번째 큰 제목으로 <code>들어가며</code>와 <code>방법론</code>을 갖고 있고, <code>방법론</code> 아래에는 두 번째 수준 제목인 <code>동적 인구 모형</code>이 있다면, 다음과 같이 작성한다.</p>
+<p>마크다운에서는 <code>#</code> 기호를 사용하여 문서 제목 수준을 결정한다. <code>#</code> 기호를 한 개부터 여섯 개까지 사용하며, <code>#</code> 기호 개수가 많아질수록 제목 수준은 낮아지고, 텍스트 크기도 작아진다. 예를 들어, 어떤 문서가 첫 번째 큰 제목으로 <code>들어가며</code>와 <code>방법론</code>을 갖고 있고, <code>방법론</code> 아래에는 두 번째 수준 제목인 <code>동적 인구 모형</code>이 있다면, 다음과 같이 작성한다. </p>
 <div class="columns">
 <div class="column" style="width:47.5%;">
 <div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 들어가며</span></span>
@@ -452,7 +452,7 @@ window.Quarto = {
 </div>
 </section><section id="텍스트-서식" class="level3" data-number="6.2.2"><h3 data-number="6.2.2" class="anchored" data-anchor-id="텍스트-서식">
 <span class="header-section-number">6.2.2</span> 텍스트 서식</h3>
-<p>마크다운으로 쉽게 <em>이탤릭</em>, <strong>굵게</strong>, <strong><em>이탤릭 굵게</em></strong> 글씨체를 지정할 수 있다. (하지만, 모든 마크다운표준이 이러한 서식구문에 동의하지는 않는다). 글꼴에 서식 적용은 <code>*</code> 혹은 <code>_</code>을 사용해서 적용한다. 따라서 다음 명령어는 모두 동등하다:</p>
+<p>마크다운으로 쉽게 <em>이탤릭</em>, <strong>굵게</strong>, <strong><em>이탤릭 굵게</em></strong> 글씨체를 지정할 수 있다. (하지만, 모든 마크다운표준이 이러한 서식구문에 동의하지는 않는다). 글꼴에 서식 적용은 <code>*</code> 혹은 <code>_</code>을 사용해서 적용한다. 따라서 다음 명령어는 모두 동등하다. </p>
 <div class="columns">
 <div class="column" style="width:57.5%;">
 <div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">*이탤릭*</span> 그리고 _이탤릭_</span>
@@ -466,7 +466,7 @@ window.Quarto = {
 </div>
 </section><section id="코드" class="level3" data-number="6.2.3"><h3 data-number="6.2.3" class="anchored" data-anchor-id="코드">
 <span class="header-section-number">6.2.3</span> 코드</h3>
-<p>코드는 백틱으로 텍스트를 감싸 <em>인라인(inline)</em> 으로 작성하거나,</p>
+<p>코드는 백틱으로 텍스트를 감싸 <em>인라인(inline)</em> 으로 작성하거나, </p>
 <div class="columns">
 <div class="column" style="width:47.5%;">
 <div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">프로그램</span> 실행은 <span class="kw">`</span><span class="ex">python</span> helloworld.py<span class="kw">`</span>으로 프롬프트를 작성한다.</span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -514,7 +514,7 @@ window.Quarto = {
 </div>
 </section><section id="링크" class="level3" data-number="6.2.4"><h3 data-number="6.2.4" class="anchored" data-anchor-id="링크">
 <span class="header-section-number">6.2.4</span> 링크</h3>
-<p>하이퍼링크를 작성하는 방식은 두가지가 있다. 첫번째는 <em>인라인</em> 으로 작성하는 것으로 <code>[텍스트](http://link.tld)</code> 방식을 사용한다. 두번째는 명칭을 지정한 표식을 사용하는 방식이다. 예를 들어:</p>
+<p>하이퍼링크를 작성하는 방식은 두가지가 있다. 첫번째는 <em>인라인</em> 으로 작성하는 것으로 <code>[텍스트](http://link.tld)</code> 방식을 사용한다. 두번째는 명칭을 지정한 표식을 사용하는 방식이다. 예를 들어, </p>
 <div class="columns">
 <div class="column" style="width:47.5%;">
 <div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">이것은</span> [첫번째 링크], 다음은 또다른 [두번째 링크]<span class="pp">[</span><span class="ss">link2</span><span class="pp">]</span> 혹은 [세번째 링크]<span class="er">(</span><span class="ex">http://link.1</span><span class="kw">)</span></span>
@@ -530,7 +530,7 @@ window.Quarto = {
 <p>명칭을 지정한 표식을 사용하는 방식에 대한 구문은 <code>[텍스트][표식]</code> 이 먼저 나오고 나서, <code>[표식]: http://link</code> 표식링크가 문서 다음에 뒤따라 나온다. <code>[표식]</code>이 없는 경우 <code>[텍스트]: link</code> 방식으로 <em>동작하게</em> 된다.</p>
 </section></section><section id="컴파일" class="level2" data-number="6.3"><h2 data-number="6.3" class="anchored" data-anchor-id="컴파일">
 <span class="header-section-number">6.3</span> 컴파일</h2>
-<p>지금까지 작성원고는 말그대로 마크다운 자체 파일(확장자가 <code>mkd</code>, <code>.markdown</code>, <code>.pandoc</code>)이다. 마크다운을 뭔가 다른 것으로 변환할 필요가 있다. 대체로 PDF, 혹은 텍스트 프로세서에서 볼 수 있는 문서형식이 된다.</p>
+<p>지금까지 작성원고는 말그대로 마크다운 자체 파일(확장자가 <code>mkd</code>, <code>.markdown</code>, <code>.pandoc</code>)이다. 마크다운을 뭔가 다른 것으로 변환할 필요가 있다. 대체로 PDF, 혹은 텍스트 프로세서에서 볼 수 있는 문서형식이 된다. </p>
 <section id="팬독pandoc-으로-컴파일" class="level3" data-number="6.3.1"><h3 data-number="6.3.1" class="anchored" data-anchor-id="팬독pandoc-으로-컴파일">
 <span class="header-section-number">6.3.1</span> 팬독(<code>pandoc</code>) 으로 컴파일</h3>
 <p>팬독(<code>pandoc</code>) 프로그램이 이런 작업을 수행하는 나름 최적의 도구다.(물론, <code>jekyll</code> 처럼 웹에 특화된 도구도 존재한다.) 대부분의 명령-라인 도구와 마찬가지로, <code>pandoc</code>은 입력값으로 파일과 일부 선택옵션 <code>플래그</code>를 순차적으로 받는다. <code>pandoc</code>을 호출하는 기본방식은 다음과 같다:</p>
@@ -552,7 +552,7 @@ window.Quarto = {
 <p>학술 논문 작성 시, 단순 텍스트 이상의 다양한 요소들이 포함된다. 특히, 참고문헌, 표, 그림, 수식은 학술 논문에서 매우 중요한 문서구성 요소다. 이러한 요소들을 추가하는 방법을 살펴볼 때, 특히 유의해야 할 점은 팬독을 사용할 때 <code>\LaTeX</code> 명령어가 다른 형식으로 변환되는 과정에서도 그대로 적용된다는 것입니다. 이런 점이 수식 사용을 상당히 단순화시킨다.</p>
 <section id="수식" class="level3" data-number="6.4.1"><h3 data-number="6.4.1" class="anchored" data-anchor-id="수식">
 <span class="header-section-number">6.4.1</span> 수식</h3>
-<p>수식을 <span class="math inline">\(\LaTeX\)</span> 구문으로 작성할 수 있다. 예를 들어, 아래 코드 덩어리는 적법한 <code>마크다운</code> 구문이다.</p>
+<p>수식을 <span class="math inline">\(\LaTeX\)</span> 구문으로 작성할 수 있다. 예를 들어, 아래 코드 덩어리는 적법한 <code>마크다운</code> 구문이다. </p>
 <div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="ex">The</span> equation for a polynomial function is <span class="va">$y</span><span class="er">(</span><span class="ex">x</span><span class="kw">)</span> <span class="ex">=</span> ax^2 + bx +c$.</span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>그리고 다음도 마크다운과 <span class="math inline">\(\LaTeX\)</span> 코드가 섞여 있지만 적법한 구문이다.</p>
 <div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="ex">The</span> sum of a vector of numbers <span class="er">(</span><span class="ex">$\mathbf{v}$</span><span class="kw">)</span> <span class="ex">is</span> noted</span>
@@ -562,7 +562,7 @@ window.Quarto = {
 <span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="ex">\end{equation}</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section><section id="표" class="level3" data-number="6.4.2"><h3 data-number="6.4.2" class="anchored" data-anchor-id="표">
 <span class="header-section-number">6.4.2</span> 표</h3>
-<p>마크다운의 한 가지 단점은 표 생성에 대한 지원이 제한적이라는 점이다. 비록 <span class="math inline">\(\LaTeX\)</span> 구문을 사용하는 것이 가능하지만, 상대적으로 간단히 표를 표를 작성하는 방법은 있다.</p>
+<p>마크다운의 한 가지 단점은 표 생성에 대한 지원이 제한적이라는 점이다. 비록 <span class="math inline">\(\LaTeX\)</span> 구문을 사용하는 것이 가능하지만, 상대적으로 간단히 표를 표를 작성하는 방법은 있다. </p>
 <div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="kw">|</span>  <span class="ex">교과목</span>  <span class="kw">|</span>    <span class="ex">담당자</span> <span class="kw">|</span>     <span class="ex">선수</span> 교과목 <span class="kw">|</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="kw">|</span><span class="ex">:---------</span><span class="kw">|</span><span class="ex">:-----------</span><span class="kw">|</span><span class="ex">------------------:</span><span class="kw">|</span></span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="kw">|</span> <span class="ex">마크다운</span> <span class="kw">|</span> <span class="ex">홍길동</span>  <span class="kw">|</span> <span class="ex">쉘,</span> Git, Makefiles <span class="kw">|</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -607,7 +607,7 @@ window.Quarto = {
 </tr></tbody>
 </table></section><section id="그림" class="level3" data-number="6.4.3"><h3 data-number="6.4.3" class="anchored" data-anchor-id="그림">
 <span class="header-section-number">6.4.3</span> 그림</h3>
-<p>그림은 마크다운에서 잘 지원되고 있다. 표기법은 링크에 사용된 표기법을 따르지만, 느낌표(<code>!</code>)를 앞에 위치시킬 필요가 있다. 예를 들어,</p>
+<p>그림은 마크다운에서 잘 지원되고 있다. 표기법은 링크에 사용된 표기법을 따르지만, 느낌표(<code>!</code>)를 앞에 위치시킬 필요가 있다. 예를 들어, </p>
 <div class="sourceCode" id="cb17"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="ex">![소프트웨어</span> 카펜트리 로고]<span class="er">(</span><span class="ex">images/swc-logo-blue.png</span><span class="kw">)</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>상기 구문을 적용하면 다음과 같이 그림이 삽입된다.</p>
 <div id="fig-swc-logo" class="quarto-figure quarto-figure-center quarto-float anchored">
@@ -624,7 +624,7 @@ window.Quarto = {
 <p><span class="math inline">\(\LaTeX\)</span> 명령어, <code>\label{f:swc}</code> 라벨을 넣은 것에 주목한다. <code>\autoref{f:swc}</code>를 사용해서 텍스트에 그림을 참조하게 한다. <span class="math inline">\(\LaTeX\)</span> <code>autoref</code> 팩키지는 놀랍도록 유용한데, 참조하는 객체 유형을 자동 식별해서, 사람이 관여하지 않고도 <code>Fig. 1</code>, <code>Tab. 2</code>, <code>Eqn. 3</code>, 혹은 기타 필요한 것을 자동으로 완성시킨다.</p>
 </section><section id="참고문헌" class="level3" data-number="6.4.4"><h3 data-number="6.4.4" class="anchored" data-anchor-id="참고문헌">
 <span class="header-section-number">6.4.4</span> 참고문헌</h3>
-<p>학술논문에서 요구하는 최종 요건은 <strong>참고문헌</strong>이다. <code>pandoc</code>과 <code>pandoc-citeproc</code> 확장기능을 통해 마크다운은 참고문헌 기능을 매우 우아하게 처리한다. <code>pandoc</code> 서지관리 모듈은 다양한 형식으로부터 인용을 불러올 수 있다. 최초 <code>CSL JSON</code> 와 <code>CSL YAML</code>로 설계되어, <span style="font-variant: small-caps;">Bib</span><span style="letter-spacing:-2px;">T</span><sub style="font-size: inherit; letter-spacing:-1px;">E</sub>X과 <code>RIS</code>도 수용한다.</p>
+<p>학술논문에서 요구하는 최종 요건은 <strong>참고문헌</strong>이다. <code>pandoc</code>과 <code>pandoc-citeproc</code> 확장기능을 통해 마크다운은 참고문헌 기능을 매우 우아하게 처리한다. <code>pandoc</code> 서지관리 모듈은 다양한 형식으로부터 인용을 불러올 수 있다. 최초 <code>CSL JSON</code> 와 <code>CSL YAML</code>로 설계되어, <span style="font-variant: small-caps;">Bib</span><span style="letter-spacing:-2px;">T</span><sub style="font-size: inherit; letter-spacing:-1px;">E</sub>X과 <code>RIS</code>도 수용한다. </p>
 <p>참고문헌을 참조하는 방식은 인용키, <code>@CitationKey</code>를 이용한다. 예를 들어, <span style="font-variant: small-caps;">Bib</span><span style="letter-spacing:-2px;">T</span><sub style="font-size: inherit; letter-spacing:-1px;">E</sub>X 라이브러리에 다음 참고문헌이 담겨 있다면:</p>
 <div class="sourceCode" id="cb19"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="ex">@ARTICLE{thom99,</span></span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">title</span> = {The raw material for coevolution},</span>
@@ -1132,7 +1132,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <p>순수하게 <a href="https://quarto.org/">쿼토(Quarto)</a>로 제작되었습니다.</p>
 </div>
   </div>
-</footer><script>var lightboxQuarto = GLightbox({"selector":".lightbox","closeEffect":"zoom","openEffect":"zoom","descPosition":"bottom","loop":false});
+</footer><script>var lightboxQuarto = GLightbox({"openEffect":"zoom","selector":".lightbox","closeEffect":"zoom","descPosition":"bottom","loop":false});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;

@@ -55,7 +55,27 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -397,21 +417,21 @@ ga('send', {
 </header>
 
 
-<p><strong>변수 설정 문서</strong>는 <code>parameterized report</code>를 저자가 번역한 것으로 R/파이썬 프로그램을 작성할 때 입력값을 달리 받는 함수를 생각하면 이해하기 쉽다. 함수는 입력값에 따라 다른 결과를 출력하는데 변수 설정 문서도 입력값을 달리하면 다른 PDF/HTML/워드 문서가 제작되는 것으로 생각하면 된다.</p>
+<p><strong>변수 설정 문서</strong>는 <code>parameterized report</code>를 저자가 번역한 것으로 R/파이썬 프로그램을 작성할 때 입력값을 달리 받는 함수를 생각하면 이해하기 쉽다. 함수는 입력값에 따라 다른 결과를 출력하는데 변수 설정 문서도 입력값을 달리하면 다른 PDF/HTML/워드 문서가 제작되는 것으로 생각하면 된다. </p>
 <p>변수 설정 문서는 데이터 분석과 보고서 작성에서 매우 유용하다. 하나의 보고서 템플릿으로 다양한 데이터셋에 대해 개별 보고서를 생성할 수 있어 중복 작업을 크게 줄일 수 있고, 동일한 코드와 템플릿을 사용하기 때문에 보고서 간 일관성이 유지되고 오류의 가능성도 줄일 수 있다.</p>
 <p>특히, 맞춤형 보고가 필요한 경우에 유용하다. 예를 들어, 기업에서 각 지점별 월별 매출 보고서를 생성할 때 지점별 데이터만 바꿔가며 각 지점에 맞는 맞춤형 보고서를 쉽게 제작할 수 있다. 이런 방식은 의료 데이터 분석, 학술 연구, 정부 및 공공기관 데이터 보고, 마케팅 분석 등 다양한 분야에서 활용될 수 있다.</p>
 <p>변수 설정 문서는 한번 설정해두면 새로운 데이터가 들어올 때마다, 자동으로 보고서를 업데이트하거나 동일한 보고서를 HTML, PDF, 워드 등 다양한 형식으로 쉽게 변환할 수 있다는 점에서 확장성도 뛰어나다.</p>
 <section id="문서-프로그래밍" class="level2" data-number="16.1">
 <h2 data-number="16.1" class="anchored" data-anchor-id="문서-프로그래밍"><span class="header-section-number">16.1</span> 문서 프로그래밍</h2>
-<p>일반적인 보고서 작성을 위한 작업흐름과 필요한 요소는 다음과 같다. 데이터 기반 보고서를 작성할 때 데이터와 데이터를 처리하는데 필요한 R/파이썬/SAS/SPSS/파이썬 스크립트, 마크다운으로 작성한 문서가 포함된다. 즉, 데이터를 데이터베이스, 웹, 파일형태로 가져오면 R 스크립트를 통해 전처리를 하고 필요한 통계량을 뽑아내고 시각적으로 히스토그램, 막대그래프, 원그래프, 시계열 추세 선 그래프 등이 포함된다. 그리고, 데이터에서 나온 다양한 통계량 및 시각적 산출물에 대한 견해와 함께 최종 보고서 작성자의 의견을 덧붙여 마무리하고 보고서 작성자, 참고문헌, 목차, 각주 등을 붙여 보고서를 완성한다.</p>
+<p>일반적인 보고서 작성을 위한 작업흐름과 필요한 요소는 다음과 같다. 데이터 기반 보고서를 작성할 때 데이터와 데이터를 처리하는데 필요한 R/파이썬/SAS/SPSS/파이썬 스크립트, 마크다운으로 작성한 문서가 포함된다. 즉, 데이터를 데이터베이스, 웹, 파일형태로 가져오면 R 스크립트를 통해 전처리를 하고 필요한 통계량을 뽑아내고 시각적으로 히스토그램, 막대그래프, 원그래프, 시계열 추세 선 그래프 등이 포함된다. 그리고, 데이터에서 나온 다양한 통계량 및 시각적 산출물에 대한 견해와 함께 최종 보고서 작성자의 의견을 덧붙여 마무리하고 보고서 작성자, 참고문헌, 목차, 각주 등을 붙여 보고서를 완성한다. </p>
 <p>GUI가 아닌 CLI 방식으로 데이터를 분석한 후, 분석 결과를 <code>.R</code>, <code>.py</code> 파일로 저장한다. 코드와 문서가 결합된 <code>.qmd</code> 파일로 작성하여 컴퓨터 자동화를 통해 원하는 형태 문서인 <code>.pdf</code>, <code>.html</code>, <code>.docx</code> 파일을 생성한다. 생성된 문서들은 웹용, PC 기반 배포 문서, 추가 저작이 가능한 문서 형태로 배포한다.</p>
-<div id="fig-params_workflow" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-params-workflow-knuth" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-params_workflow-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="images/params_workflow.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="그림&nbsp;16.1: 문학적 프로그래밍 구성요소와 작업흐름"><img src="images/params_workflow.jpg" class="img-fluid figure-img"></a>
+<div aria-describedby="fig-params-workflow-knuth-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/params_workflow.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="그림&nbsp;16.1: 문학적 프로그래밍[@knuth84] 구성요소와 작업흐름"><img src="images/params_workflow.jpg" class="img-fluid figure-img"></a>
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-params_workflow-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-그림&nbsp;16.1: 문학적 프로그래밍 구성요소와 작업흐름
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-params-workflow-knuth-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+그림&nbsp;16.1: 문학적 프로그래밍<span class="citation" data-cites="knuth84">(Knuth 1984)</span> 구성요소와 작업흐름
 </figcaption>
 </figure>
 </div>
@@ -570,6 +590,11 @@ ga('send', {
 </ol>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-knuth84" class="csl-entry" role="listitem">
+Knuth, Donald E. 1984. <span>“Literate Programming”</span>. <em>Comput. J.</em> 27 (2): 97–111. <a href="https://doi.org/10.1093/comjnl/27.2.97">https://doi.org/10.1093/comjnl/27.2.97</a>.
+</div>
+</div>
 </section>
 </section>
 
@@ -1026,7 +1051,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"loop":false,"descPosition":"bottom","closeEffect":"zoom","openEffect":"zoom","selector":".lightbox"});
+<script>var lightboxQuarto = GLightbox({"selector":".lightbox","loop":false,"descPosition":"bottom","closeEffect":"zoom","openEffect":"zoom"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;

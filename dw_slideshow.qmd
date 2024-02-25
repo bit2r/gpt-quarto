@@ -1,65 +1,93 @@
 ---
 editor_options: 
   chunk_output_type: console
+editor: 
+  markdown: 
+    wrap: 72
 ---
 
 # PPT 슬라이드
 
-파워포인트(PPT)로 알려진 문서 형식은 슬라이드쇼(slideshow)로 
-지금까지 작성한 문서와 비교하여 다른 중요한 역할을 한다. 
-PPT는 시각적 요소를 활용해 복잡한 개념을 직관적이고 이해하기 쉬운 방식으로 전달한다. 이미지, 그래픽, 표, 애니메이션, 동영상, 오디오 등을 통해 정보를 강조하며, 단어와 문장만으로는 부족할 수 있는 설명을 보완한다. 또한, PPT는 제한된 공간 내에서 핵심 메시지를 간결하고 집중적으로 전달하기 때문에 보고서와 같은 상세하고 포괄적인 접근 방식과 다르다. 또한, PPT는 청중의 참여를 적극적으로 유도하며, 
-시각적 요소와 대화형 컨텐츠를 통해 청중의 관심을 끌고 정보 소화를 촉진한다는 면에서
-자기 주도로 독자는 스스로 정보를 찾고 해석하는 역할이 중요한 다른 문서와 대비된다.
+파워포인트(PPT)로 알려진 문서 형식은 슬라이드쇼(slideshow)로 지금까지
+작성한 문서와 비교하여 다른 중요한 역할을 한다. PPT는 시각적 요소를
+활용해 복잡한 개념을 직관적이고 이해하기 쉬운 방식으로 전달한다. 이미지,
+그래픽, 표, 애니메이션, 동영상, 오디오 등을 통해 정보를 강조하며, 단어와
+문장만으로는 부족할 수 있는 설명을 보완한다. 또한, PPT는 제한된 공간
+내에서 핵심 메시지를 간결하고 집중적으로 전달하기 때문에 보고서와 같은
+상세하고 포괄적인 접근 방식과 다르다. 또한, PPT는 청중의 참여를
+적극적으로 유도하며, 시각적 요소와 대화형 컨텐츠를 통해 청중의 관심을
+끌고 정보 소화를 촉진한다는 면에서 자기 주도로 독자는 스스로 정보를 찾고
+해석하는 역할이 중요한 다른 문서와 대비된다. \index{PPT}
+\index{슬라이드} \index{프리젠테이션} \index{쿼토 슬라이드}
+\index{revealjs}
 
-쿼토 슬라이드(Quarto Slide) 이전에 [사륜안(`xaringan`)](https://github.com/yihui/xaringan)이 마크다운으로 웹 슬라이드를 제작할 수 있었으나 `remark.js` 에 기반을 두다보니 `pandoc`과 호환성을 이유로 `reveal.js`를 기반으로 한 쿼토 슬라이드(Quarto Slide)가 새롭게 쿼토 생태계에서 웹슬라이드 PPT 부분을 담당하게 되었다.
+쿼토 슬라이드(Quarto Slide) 이전에
+[사륜안(`xaringan`)](https://github.com/yihui/xaringan)이 마크다운으로
+웹 슬라이드를 제작할 수 있었으나 `remark.js` 에 기반을 두다보니
+`pandoc`과 호환성을 이유로 `reveal.js`를 기반으로 한 쿼토
+슬라이드(Quarto Slide)가 새롭게 쿼토 생태계에서 웹슬라이드 PPT 부분을
+담당하게 되었다.
 
-쿼토는 PPT 슬라이드를 다양한 형식으로 지원한다. HTML을 위한 `reveal.js`, MS 오피스 파워포인트(PPT), 라텍(LaTeX) PDF 형식 비머(Beamer)가 포함된다. 각 형식마다 장단점을 가지고 있지만, 특별한 경우가 아니면 `reveal.js` 형식이 장점이 많아 적극 권장된다. `reveal.js`는 HTML 웹슬라이드 뿐만 아니라, 필요한 경우 PDF로도 인쇄하여 배포할 수 있다.
+쿼토는 PPT 슬라이드를 다양한 형식으로 지원한다. HTML을 위한 `reveal.js`,
+MS 오피스 파워포인트(PPT), 라텍(LaTeX) PDF 형식 비머(Beamer)가 포함된다.
+각 형식마다 장단점을 가지고 있지만, 특별한 경우가 아니면 `reveal.js`
+형식이 장점이 많아 적극 권장된다. `reveal.js`는 HTML 웹슬라이드 뿐만
+아니라, 필요한 경우 PDF로도 인쇄하여 배포할 수 있다.
 
 ## 헬로월드
 
-쿼토는 기본적으로 프로젝트를 기반으로 시작하기 때문에 프로젝트를 하나 생성한다. RStudio를 실행하고 우측 상단 `Project:(None)`을 클릭하여 `New Project`를 새로운 디렉토리를 만들어 생성한다.
+쿼토는 기본적으로 프로젝트를 기반으로 시작하기 때문에 프로젝트를 하나
+생성한다. RStudio를 실행하고 우측 상단 `Project:(None)`을 클릭하여
+`New Project`를 새로운 디렉토리를 만들어 생성한다.
 
 ::: {#fig-slide layout="[[1, 1]]"}
-![](images/dw_slide_new_project.jpg){fig-align="center" width="280"}
+![](images/dw_slide_new_project.jpg){fig-align="center" width="160"}
 
 ![](images/dw_slide_one_image.jpg)
 
 슬라이드 제작을 위한 프로젝트 생성
 :::
 
-프로젝트가 생성되면 `File` → `New File` → `Quarto Presentation...`을 클릭하여 쿼토 슬라이드 `.qmd` 문서파일을 생성한다.
+프로젝트가 생성되면 `File` → `New File` → `Quarto Presentation...`을
+클릭하여 쿼토 슬라이드 `.qmd` 문서파일을 생성한다.
 
 ::: {#fig-slide-qmd layout="[[1, 1]]"}
-![](images/dw_slide_quarto_slides.jpg){fig-align="center" width="350"}
+![](images/dw_slide_quarto_slides.jpg){fig-align="center" width="247"}
 
-![](images/dw_slide_quarto_slides_menu.jpg){fig-align="center" width="350"}
+![](images/dw_slide_quarto_slides_menu.jpg){fig-align="center"
+width="281"}
 
 쿼토 프리젠테이션 파일 생성
 :::
 
-`Ctrl` + `Shift` + `k` 단축키를 눌러 `.qmd` 파일을 웹슬라이드로 제작할 수 있다.
-웹슬라이드 파일명을 `helloworld.qmd`로 저장한다.
+`Ctrl` + `Shift` + `k` 단축키를 눌러 `.qmd` 파일을 웹슬라이드로 제작할
+수 있다. 웹슬라이드 파일명을 `helloworld.qmd`로 저장한다.
 
-![첫번째 웹슬라이드 제작과정](images/dw_slide_helloworld.jpg)
+![첫번째 웹슬라이드
+제작과정](images/dw_slide_helloworld.jpg){fig-align="center"
+width="640"}
 
 ```{r}
 #| echo: false
 xfun::embed_file('data/helloworld.qmd', text = '다운로드 예제 PPT 파일')
 ```
 
-
 ## 슬라이드 문법
 
-쿼토 슬라이드는 `pandoc`의 마크다운 문법을 기반으로 하고 있으며 `reveal.js`의 슬라이드 문법을 사용할 수 있다. `reveal.js`의 슬라이드 문법은 [쿼토 프리젠테이션](https://quarto.org/docs/presentations/)을 참고한다.
+쿼토 슬라이드는 `pandoc`의 마크다운 문법을 기반으로 하고 있으며
+`reveal.js`의 슬라이드 문법을 사용할 수 있다. `reveal.js`의 슬라이드
+문법은 [쿼토 프리젠테이션](https://quarto.org/docs/presentations/)을
+참고한다.
 
 ### 슬라이드 생성
 
-`#` 기호는 `h1` 큰제목 슬라이드, `##` 기호는 `h2` 중간제목을 갖는 슬라이드를 생성하여 하나 사고체계를 갖는 발표장표를 구성하고 마찬가지로 또다른 `#` 기호는 `h1` 큰제목 슬라이드, `##` 기호는 `h2` 중간제목을 갖는 슬라이드를 생성하면 또 다른 사고체계를 갖는 발표장표를 구성할 수 있다.
+`#` 기호는 `h1` 큰제목 슬라이드, `##` 기호는 `h2` 중간제목을 갖는
+슬라이드를 생성하여 하나 사고체계를 갖는 발표장표를 구성하고 마찬가지로
+또다른 `#` 기호는 `h1` 큰제목 슬라이드, `##` 기호는 `h2` 중간제목을 갖는
+슬라이드를 생성하면 또 다른 사고체계를 갖는 발표장표를 구성할 수 있다.
 
-
-:::::{.columns}
-:::{.column width=45%}
-
+::: columns
+::: {.column width="45%"}
 ``` markdown
 ---
 title: "습관"
@@ -91,27 +119,24 @@ format: revealjs
 - 양치질 하기
 - 잠자리에 들기
 ```
-
-
 :::
 
-:::{.column width=5%}
-
+::: {.column width="5%"}
 :::
 
-:::{.column width=50%}
-
-![](images/revealjs_create.jpg)
+::: {.column width="50%"}
+![](images/revealjs_create.jpg){fig-align="center" width="281"}
 :::
-:::::
+:::
 
 ### 2 칼럼
 
-PPT 발표자료는 가로 길이가 세로 길이보다 넓은 경우가 대부분이라 2칼럼으로 화면을 분할하는 경우가 많다. 쿼토 슬라이드는 `.columns` 클래스와 `width` 속성을 이용하여 2칼럼을 구현한다.
+PPT 발표자료는 가로 길이가 세로 길이보다 넓은 경우가 대부분이라
+2칼럼으로 화면을 분할하는 경우가 많다. 쿼토 슬라이드는 `.columns`
+클래스와 `width` 속성을 이용하여 2칼럼을 구현한다.
 
-:::::{.columns}
-:::{.column width=45%}
-
+::: columns
+::: {.column width="45%"}
 ``` markdown
 :::: {.columns}
 
@@ -131,22 +156,25 @@ PPT 발표자료는 가로 길이가 세로 길이보다 넓은 경우가 대부
 ```
 :::
 
-:::{.column width=5%}
-
+::: {.column width="5%"}
 :::
 
-:::{.column width=50%}
-![](images/revealjs_2columns.jpg)
+::: {.column width="50%"}
+![](images/revealjs_2columns.jpg){fig-align="center" width="345"}
 :::
-:::::
+:::
 
 ### 한줄씩 보여주기
 
-`incremental` 선택옵션을 사용해서 한줄씩 순차적으로 보여주는 것이 가능하다. 영어로 `increnetal reveal` 혹은 `increamental list` 기능이라고 한다. 기본설적은 슬라이드 내의 번호 및 글머리 기호 목록이 한 번에 모두 표시된다. `incremental` 옵션을 사용하면 한 번에 하나씩 표시된다. 코드에 `.nonincremental`를 넣게 되면 한줄씩 보여주는 기능을 비활성화 할 수 있다.
+`incremental` 선택옵션을 사용해서 한줄씩 순차적으로 보여주는 것이
+가능하다. 영어로 `increnetal reveal` 혹은 `increamental list` 기능이라고
+한다. 기본설적은 슬라이드 내의 번호 및 글머리 기호 목록이 한 번에 모두
+표시된다. `incremental` 옵션을 사용하면 한 번에 하나씩 표시된다. 코드에
+`.nonincremental`를 넣게 되면 한줄씩 보여주는 기능을 비활성화 할 수
+있다.
 
-:::::{.columns}
-:::{.column width=45%}
-
+::: columns
+::: {.column width="45%"}
 ``` markdown
 ---
 title: "습관"
@@ -181,28 +209,30 @@ format:
 ```
 :::
 
-:::{.column width=5%}
-
+::: {.column width="5%"}
 :::
 
-:::{.column width=50%}
-
-![](images/revealjs_incremental.jpg)
-
+::: {.column width="50%"}
+![](images/revealjs_incremental.jpg){fig-align="center" width="277"}
 :::
-:::::
+:::
 
 ### 코드와 그래프
 
-쿼토 슬라이드는 코드와 그래프를 한 슬라이드에 표시할 수 있다.
-코드와 출력결과(표, 그래프, 실행결과 등)을 나란히 표시하거나 출력을 지연하여 다른 슬라이드에 표시하는 것은 강의나 발표에 일반적으로 사용되는 기법이다. 쿼토 슬라이드는 `output-location` 선택옵션 통해 한줄로 기능 구현이 가능하다. `output-location` 선택옵션은 `fragment`, `slide`, `column`, `column-fragment`를 지원하기 때문에 필요에 맞춰 발표자료에 적용한다. `output-location: column`을 설정하면 코드와 출력결과 그래프가 한 슬라이드에 나타나는데 코드를 중복없이 깔끔하게 작성한다는 점이 큰 장점이다.
+쿼토 슬라이드는 코드와 그래프를 한 슬라이드에 표시할 수 있다. 코드와
+출력결과(표, 그래프, 실행결과 등)을 나란히 표시하거나 출력을 지연하여
+다른 슬라이드에 표시하는 것은 강의나 발표에 일반적으로 사용되는
+기법이다. 쿼토 슬라이드는 `output-location` 선택옵션 통해 한줄로 기능
+구현이 가능하다. `output-location` 선택옵션은 `fragment`, `slide`,
+`column`, `column-fragment`를 지원하기 때문에 필요에 맞춰 발표자료에
+적용한다. `output-location: column`을 설정하면 코드와 출력결과 그래프가
+한 슬라이드에 나타나는데 코드를 중복없이 깔끔하게 작성한다는 점이 큰
+장점이다.
 
-:::::{.columns}
-:::{.column width=45%}
-
+::: columns
+::: {.column width="45%"}
 ``` markdown
 ## 코드 출력결과
-
 #| output-location: column
 #| echo: true
 
@@ -215,72 +245,89 @@ ggplot(aes(x = wt, y = mpg)) +
 ```
 :::
 
-:::{.column width=5%}
-
+::: {.column width="5%"}
 :::
 
-:::{.column width=50%}
-
-![](images/revealjs_code.jpg)
+::: {.column width="50%"}
+![](images/revealjs_code.jpg){fig-align="center" width="345"}
 :::
-:::::
+:::
 
 ## 쿼토 PPT 사례
 
-가장 대표적인 마이크로소프트 파워포인트(PPT)와 비교하여 쿼토 슬라이드가 갖는 장점은 태생부터 웹 출판을 염두에 두고 설계 되어 있기 때문에 웹 기반 발표자료를 제작하기 적합하고 무엇보다 공유가 쉽다는 점이다. 쿼토 슬라이드는 마크다운 문법을 사용하기 때문에 마크다운 문법을 알고 있다면 쉽게 배울 수 있고 앞서 소개한 {{< latex >}}, R/파이썬/SQL/OJS/줄리아 등 프로그래밍 언어 임베딩, 참고문헌, 유튜브 동영상, 인터랙티브 웹 문서를 별 어려움 없이 발표자료에 넣을 수 있고 Git/GitHub 등 버전관리 시스템을 이용하여 발표자료 버전관리는 물론이고 여러 발표자와 협업도 수월하다.
+가장 대표적인 마이크로소프트 파워포인트(PPT)와 비교하여 쿼토 슬라이드가
+갖는 장점은 태생부터 웹 출판을 염두에 두고 설계 되어 있기 때문에 웹 기반
+발표자료를 제작하기 적합하고 무엇보다 공유가 쉽다는 점이다. 쿼토
+슬라이드는 마크다운 문법을 사용하기 때문에 마크다운 문법을 알고 있다면
+쉽게 배울 수 있고 앞서 소개한 {{< latex >}}, R/파이썬/SQL/OJS/줄리아 등
+프로그래밍 언어 임베딩, 참고문헌, 유튜브 동영상, 인터랙티브 웹 문서를 별
+어려움 없이 발표자료에 넣을 수 있고 Git/GitHub 등 버전관리 시스템을
+이용하여 발표자료 버전관리는 물론이고 여러 발표자와 협업도 수월하다.
 
-한국 R 사용자회 발표자료는 2022년 9월부터 모든 발표자료를 쿼토 슬라이드로 제작하여 [발표자료 웹사이트](https://r2bit.com/bitSlide/)에 게시하고 있다. 모든 발표자료는 `.qmd` 파일로 제작되었으며 발표자료가 많아져 `grid` 형식을 차용하여 한눈에 발표자료를 일별할 수 있도록 제작했다.
+한국 R 사용자회 발표자료는 2022년 9월부터 모든 발표자료를 쿼토
+슬라이드로 제작하여 [발표자료 웹사이트](https://r2bit.com/bitSlide/)에
+게시하고 있다. 모든 발표자료는 `.qmd` 파일로 제작되었으며 발표자료가
+많아져 `grid` 형식을 차용하여 한눈에 발표자료를 일별할 수 있도록
+제작했다.
 
-![한국 R 사용자회 발표자료 모음](images/slideshow_r2bit.jpg){#fig-r2bit-slideshows}
+![한국 R 사용자회 발표자료
+모음](images/slideshow_r2bit.jpg){#fig-r2bit-slideshows
+fig-align="center" width="320"}
 
 ## 연습문제 {.unnumbered}
 
 ### 객관식 {.unnumbered}
 
-1. 쿼토 슬라이드 제작에 사용되는 자바스크립트 라이브러리는 무엇인가요?
-   a) `reveal.js`
-   b) `pdf.js`
-   c) `html5.js`
-   d) `markdown.js`
+1.  쿼토 슬라이드 제작에 사용되는 자바스크립트 라이브러리는 무엇인가요?
+    a)  `reveal.js`
+    b)  `pdf.js`
+    c)  `html5.js`
+    d)  `markdown.js`
 
 ::: {.content-visible when-format="revealjs"}
-   정답: a) `reveal.js`
-   설명: 쿼토 슬라이드는 `reveal.js` 형식을 지원하여 HTML 기반의 웹 슬라이드를 제작할 수 있습니다.
-:::   
+정답: a) `reveal.js` 설명: 쿼토 슬라이드는 `reveal.js` 형식을 지원하여
+HTML 기반의 웹 슬라이드를 제작할 수 있습니다.
+:::
 
-2. `reveal.js` 기반 슬라이드의 장점은 무엇인가요?
-   a) PDF로의 쉬운 변환
-   b) 복잡한 설치 과정
-   c) 제한된 스타일링 옵션
-   d) 느린 로딩 속도
-
-::: {.content-visible when-format="revealjs"}   
-   정답: a) PDF로의 쉬운 변환
-   설명: `reveal.js` 기반 슬라이드는 필요한 경우 PDF로 쉽게 변환하여 배포할 수 있는 장점이 있습니다.
-:::   
-
-3. 쿼토 슬라이드의 슬라이드 생성 문법에는 어떤 것이 사용되나요?
-   a) HTML 태그
-   b) 파이썬 코드
-   c) `#` 기호
-   d) XML 구조
+2.  `reveal.js` 기반 슬라이드의 장점은 무엇인가요?
+    a)  PDF로의 쉬운 변환
+    b)  복잡한 설치 과정
+    c)  제한된 스타일링 옵션
+    d)  느린 로딩 속도
 
 ::: {.content-visible when-format="revealjs"}
-   정답: c) `#` 기호
-   설명: 쿼토 슬라이드에서는 `#` 기호를 사용하여 다양한 수준의 슬라이드 제목을 생성할 수 있습니다.
+정답: a) PDF로의 쉬운 변환 설명: `reveal.js` 기반 슬라이드는 필요한 경우
+PDF로 쉽게 변환하여 배포할 수 있는 장점이 있습니다.
+:::
+
+3.  쿼토 슬라이드의 슬라이드 생성 문법에는 어떤 것이 사용되나요?
+    a)  HTML 태그
+    b)  파이썬 코드
+    c)  `#` 기호
+    d)  XML 구조
+
+::: {.content-visible when-format="revealjs"}
+정답: c) `#` 기호 설명: 쿼토 슬라이드에서는 `#` 기호를 사용하여 다양한
+수준의 슬라이드 제목을 생성할 수 있습니다.
 :::
 
 ### 서술형 {.unnumbered}
 
-1. 쿼토 슬라이드에서 2칼럼 레이아웃을 구현하는 방법에 대해 설명해보세요.
+1.  쿼토 슬라이드에서 2칼럼 레이아웃을 구현하는 방법에 대해
+    설명해보세요.
 
 ::: {.content-visible when-format="revealjs"}
-   정답 및 설명: 쿼토 슬라이드에서 2칼럼 레이아웃은 `.columns` 클래스와 `width` 속성을 사용하여 구현할 수 있습니다. 이를 통해 슬라이드를 두 개의 섹션으로 나누고 각각의 내용을 독립적으로 표시할 수 있습니다.
-:::   
-
-2. `reveal.js` 기반 쿼토 슬라이드에서 한줄씩 순차적으로 내용을 표시하는 기능의 사용법에 대해 설명해보세요.
-
-::: {.content-visible when-format="revealjs"}
-   정답 및 설명: `reveal.js`를 사용한 쿼토 슬라이드에서는 `incremental` 옵션을 사용하여 슬라이드 내용을 한줄씩 순차적으로 표시할 수 있습니다. 이 옵션을 활성화하면 각 항목이 순차적으로 나타나 사용자의 주의를 집중시킬 수 있습니다.
+정답 및 설명: 쿼토 슬라이드에서 2칼럼 레이아웃은 `.columns` 클래스와
+`width` 속성을 사용하여 구현할 수 있습니다. 이를 통해 슬라이드를 두 개의
+섹션으로 나누고 각각의 내용을 독립적으로 표시할 수 있습니다.
 :::
 
+2.  `reveal.js` 기반 쿼토 슬라이드에서 한줄씩 순차적으로 내용을 표시하는
+    기능의 사용법에 대해 설명해보세요.
+
+::: {.content-visible when-format="revealjs"}
+정답 및 설명: `reveal.js`를 사용한 쿼토 슬라이드에서는 `incremental`
+옵션을 사용하여 슬라이드 내용을 한줄씩 순차적으로 표시할 수 있습니다. 이
+옵션을 활성화하면 각 항목이 순차적으로 나타나 사용자의 주의를 집중시킬
+수 있습니다.
+:::

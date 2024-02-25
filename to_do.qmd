@@ -2,6 +2,8 @@
 title: "Untitled"
 ---
 
+\index{latex@\LaTeX}
+\index{}
 
 ## 연습문제 {.unnumbered}
 

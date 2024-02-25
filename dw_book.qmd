@@ -7,6 +7,12 @@ editor:
     wrap: 72
 ---
 
+```{r}
+#| include: false
+
+source("_common.R")
+```
+
 # (전자)책 출판
 
 쿼토로 블로그 토막글, 보고서, 논문 등 다양한 형식 문서를 작성했다면 좀더 구조화되고 통합된 형태의 책 집필 및 도서출판에 대한 관심이 생길 수 있다. 
@@ -14,10 +20,12 @@ R마크다운 `bookdown`은 특히 복잡한 구조를 갖는 책이나 긴 문�
 R마크다운 `bookdown`을 활용하여 작성된 개별 문서들을 하나의 큰 프로젝트나 책으로 연결할 수 있으며, 교차 참조, 자동 번호 매기기, 목차 생성 등의 기능이 제공된다.
 쿼토는 R마크다운 `bookdown` 기능을 별도 패키지 설치없이 내장하고 있으며 
 R 뿐만 아니라 파이썬, 줄리아 등 언어를 지원하며, HTML, PDF, ePub 등 다양한  출력 형식으로 책을 생성할 수 있다.
+\index{전자책} \index{책} \index{출판}
 
 ## 전자책 헬로 월드
 
 쿼토에서 책을 저작하는 가장 간단한 방법은 RStudio 에서 우측 상단 'New Project' 메뉴를 통해 'New Directory' -> 'Quarto Book'을 선택하고 책을 집필할 디렉토리를 지정한다. 버전제어를 위해 `Create a git repository`를 선택할 것을 추천한다. 책 저작환경도 버전제어로 관리하고자 할 경우 `Use renv with this project`를 선택하고 소스 코드 방식으로 저작하고자 하면 `Use visual markdown editor`를 선택하지 않고 워드나 아래한글처럼 위지윅 방식 편집기를 사용하고자 하면 `Use visual markdown editor`를 선택한다. 그리고 나서 `Create Project`를 클릭하면 쿼토 책 저작환경이 구축된다.
+\index{쿼토!책}
 
 책 저작을 위한 기본환경이 구축되어 있기 때문에 `_quarto.yml` 파일에 책 저작에 대한 모든 내용이 담겨져 있기 때문에 이를 유심히 살펴보면 대략 문서 구조를 이해할 수 있다. 그리고 나서 상단 `Render` 버튼을 클릭하면 웹사이트에 책이 생성된다.
 
@@ -28,6 +36,7 @@ R 뿐만 아니라 파이썬, 줄리아 등 언어를 지원하며, HTML, PDF, e
 
 디지털 저작 언어인 마크다운을 사용하면, 
 R과 파이썬으로 증거에 기반한 데이터 과학 글쓰기를 할 때 표나 그래프 같은 다양한 문서 요소들을 손쉽게 통합할 수 있다. 이 과정에서 인공지능 챗GPT를 이용한 글쓰기는 다른 저작 도구들과 비교해도 손색없이 통합적으로 글을 쓸 수 있게 해준다. 이는 저작 속도를 높이고 품질을 향상시키며 비용도 대폭 절감시킨다.
+\index{한글도서출판} \index{bitPublish}
 
 도서 집필이 마무리된 후에는 디지털 출판 과정이 이어진다. 
 영문 도서 출판에 초점이 맞춰진 쿼토(book)와 달리, 한국 R 사용자회가 개발한 [`bitPublish`](https://github.com/bit2r/bitPublish) 도구를 활용하면 
@@ -164,6 +173,7 @@ Files created:
 
 `quarto preview` 명령어로 미리보기, `quarto render` 명령어로 `.pdf`
 파일을 생성하게 된다.
+\index{quarto!preview} \index{quarto!render}
 
 ```         
 $ quarto preview --to bitPublish-pdf # 미리보기 
@@ -182,113 +192,8 @@ $ quarto render --to bitPublish-pdf
 
 
 processing file: chap_exams.qmd
-                                                                                
-output file: chap_exams.knit.md
-
-[3/6] chap_intro_bitpublish.qmd
-
-
-processing file: chap_intro_bitpublish.qmd
-  |...                                                |   6% (unnamed-chunk-3)    |....................                               |  39% (unnamed-chunk-20)   |...............................                    |  61% (fig-hist2)          |................................................   |  94% (unnamed-chunk-50)                                                                                 
-output file: chap_intro_bitpublish.knit.md
-
-There were 44 warnings (use warnings() to see them)
-[4/6] chap_troubleshooting.qmd
-
-Starting python3 kernel...Done
-
-Executing 'chap_troubleshooting.ipynb'
-
-[5/6] chap_version.qmd
-  |
-
-processing file: chap_version.qmd
-                                                                                
-output file: chap_version.knit.md
-
-[6/6] references.qmd
-
-pandoc
-  to: latex
-  output-file: index.tex
-  standalone: true
-  toc: true
-  number-sections: true
-  top-level-division: chapter
-  pdf-engine: xelatex
-  variables:
-    graphics: true
-    tables: true
-  default-image-extension: pdf
-  cite-method: biblatex
-
-metadata
-  crossref:
-    chapters: true
-    fig-title: 그림
-    tbl-title: 표
-  documentclass: book
-  papersize: letter
-  block-headings: true
-  geometry:
-    - paper=a4paper
-    - layoutwidth=190mm
-    - layoutheight=260mm
-    - layouthoffset=10mm
-    - layoutvoffset=18.5mm
-    - showcrop
-    - top=20mm
-    - headsep=10mm
-    - bottom=30mm
-    - footskip=15mm
-    - left=25mm
-    - right=25mm
-    - centering
-  fig-cap-location: bottom
-  tbl-cap-location: bottom
-  toc-title: 목차
-  linkcolor: highlight
-  urlcolor: highlight
-  lang: ko-KR
-  bibliography:
-    - references.bib
-  link-citations: false
-  title: bitPublish를 이용하여 한글 책 조판하기
-
-running xelatex - 1
-  This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex)
-   restricted \write18 enabled.
-  entering extended mode
-
-  Re-compiling document for index
-  This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex)
-   restricted \write18 enabled.
-  entering extended mode
-
-making index
-  This is makeindex, version 2.17 [TeX Live 2023] (kpathsea + Thai support).
-  Scanning input file index.idx....done (99 entries accepted, 0 rejected).
-  Sorting entries....done (682 comparisons).
-  Generating output file index.ind....done (163 lines written, 0 warnings).
-  Output written in index.ind.
-  Transcript written in index.ilg.
-
-generating bibliography
-  INFO - This is Biber 2.19
-  INFO - Logfile is 'index.blg'
-  INFO - Reading 'index.bcf'
-  INFO - Found 7 citekeys in bib section 0
-  INFO - Processing section 0
-  INFO - Looking for bibtex file 'references.bib' for section 0
-  INFO - LaTeX decoding ...
-  INFO - Found BibTeX data source 'references.bib'
-  INFO - Overriding locale 'korean' defaults 'variable = shifted' with 'variable = non-ignorable'
-  INFO - Overriding locale 'korean' defaults 'normalization = NFD' with 'normalization = prenormalized'
-  INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'korean'
-  INFO - No sort tailoring available for locale 'korean'
-  INFO - Writing 'index.bbl' with encoding 'UTF-8'
-  INFO - Output to index.bbl
-
+                                                                        ... <중간 생략> ...
+                                                                        
 running xelatex - 2
   This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex)
    restricted \write18 enabled.
@@ -508,122 +413,6 @@ spacing\index{line spacing})는 1.5로 설정되어있다. 수정이 필요하�
 \command name[optional argument]{main argument} 
 ```
 
-#### 사용자 정의 블록
-
-bitPublish 서식의 대표적인 기능에
-`커스텀 블록`(`custom blocks`)\index{사용자 정의 블록}\index{custom blocks}[@rmcook]이
-있다. 사용자 정의 블록은 보고서나 책의 일부 콘텐츠를 블록으로 정의하여
-본문보다 돋보이게 하여 독자가 핵심 포인트를 쉽게 이해할 수 있도록
-주목도를 높이는 서식이다.
-
-사용자 정의 블록은 `팬독`의 `fenced Div blocks` 기능을 사용하고, 이
-기능은 Div 블록을 HTML과 LaTeX 모두로 변환시키는 역할을 한다.
-
-::: column-page
-::: columns
-::: {.column width="33%"}
-다음의 `팬독` 사용자 정의 블록은,
-
-```{md}
-::: {.verbatim data-latex=""}
-We show some _verbatim_ text here.
-:::
-```
-:::
-
-::: {.column width="34%"}
-LaTeX 출력일 경우에는 다음과 같이 변환
-
-```{tex}
-\begin{verbatim}
-We show some \emph{verbatim} text here.
-\end{verbatim}
-```
-:::
-
-::: {.column width="33%"}
-HTML 출력일 경우에는 다음과 같이 변환
-
-```{html}
-<div class="verbatim">
-We show some <em>verbatim</em> text here.
-</div>
-```
-:::
-:::
-:::
-
-#### 정보 블록
-
-정보 블록\index{정보 블록}은 멀티 아웃 포맷을 지원하는데, 다음과 같은 네
-개의 유형을 지원한다. 네 개의 유형은 HTML과 LaTeX에서 우주 똑같은 모양은
-아니지만, 거의 유사한 모습으로 출력된다.
-
-|          |    정보     |  주의   |  경고   | 팁  |
-|:--------:|:-----------:|:-------:|:-------:|:---:|
-| 정보블록 | information | caution | warning | tip |
-
-멀티 아웃 포맷을 지원하기 위한 `팬독` 사용자 정의 블록의 구문은 다음과
-같습니다. 그리고 정보 블록에 들어갈 내용은 마크다운 문법으로 기술해야
-합니다.
-
-```{md}
-::: {.infobox .<type> data-latex="{<type>}{<title>}"}
-text of infobox
-:::
-```
-
-네가지 정보블록 중 "정보 블록"만 지면관계상 살펴보자. 
-본문에서 서술하는 것보다 **유용한 정보**를 기술하는 데 사용하는
-`정보`(`information`) `블록`\index{정보 블록!정보 블록} 블록은 다음과 같이
-사용한다.
-
-블록 청크의 옵션 중에 `data-latex`는 LaTeX에 전달하는 인수입니다.
-정보(information)를 의미하는 .information와 {information}가 중복으로
-기술된 것은, 멀티 아웃 포맷을 위한 것이므로 반드시 이 형식을 따라야
-한다.
-
-::: column-page
-::: columns
-::: column
-```{md}
-::: {.infobox .information data-latex="{information}{information의 용도}"}
-information은 독자에게 전하고 싶은 정보나 아이디어를 기술하는 데 사용합니다.
-짙은 회색 테두리에 정보를 나타내는 아이콘을 배치하여 주위를 환기시킵니다.
-환경의 내부에는 **Markdown**으로 문장을 기술합니다.
-:::
-```
-:::
-
-::: column
-<br>
-
-![](images/infobox_01_title.jpg)
-:::
-:::
-:::
-
-다음은 정보 블록에서 제목을 생략한 예제다.
-
-::: column-page
-::: columns
-::: column
-```{md}
-::: {.infobox .information data-latex="{information}{}"}
-information은 독자에게 전하고 싶은 정보나 아이디어를 기술하는 데 사용합니다.
-짙은 회색 테두리에 정보를 나타내는 아이콘을 배치하여 주위를 환기시킵니다.
-환경의 내부에는 **Markdown**으로 문장을 기술합니다.
-:::
-```
-:::
-
-::: column
-<br>
-
-![](images/infobox_01_notitle.jpg)
-:::
-:::
-:::
 
 
 #### 이야기 박스
@@ -966,7 +755,7 @@ ggplot(random_norm, aes(x = rnd)) +
 #| fig-height: 4
 #| out-width: "70%"
 #| fig-cap: "ggplot2 정규분포 히스토그램"
-#| nanum: tru
+
 library(tidyverse)
 set.seed(123)
 random_norm <- data.frame(rnd = rnorm(500))
@@ -974,7 +763,8 @@ random_norm <- data.frame(rnd = rnorm(500))
 ggplot(random_norm, aes(x = rnd)) +
   geom_histogram(color = "darkblue", fill = "lightblue") +
   labs(title = "ggplot2의 히스토그램",
-       subtitle = "500개 정규분포 난수")
+       subtitle = "500개 정규분포 난수") +
+  theme_minimal(base_family = "NanumGothic")
 ```
 
 #### 표 삽입

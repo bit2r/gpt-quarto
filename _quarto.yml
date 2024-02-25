@@ -45,36 +45,36 @@ book:
     - part: "시작을 위한 준비"
       chapters:
         - setup_reproducible.qmd    # OK
-        - setup_markdown_mess.qmd   # 
+        - setup_markdown_mess.qmd   # OK
         - setup_quarto.qmd           # OK
         - setup.qmd                  # OK
-        
+
     - part: "저작 레고 부품"
       chapters:
         - part_components.qmd          # OK
         - part_markdown.qmd            # OK
-        - part_code.qmd          # OK        
+        - part_code.qmd          # OK
 
     - part: "템플릿과 테마"
       chapters:
         - theme_fonts.qmd         # OK
-        - theme_colors.qmd        # OK
+        - theme_colors.qmd        # XXXXXXX
         - theme_ggplot.qmd        # OK
         - theme_gt.qmd            # OK
 
     - part: "저작물"
       chapters:
-      - dw_website.qmd          # Blog 추가
-      - dw_slideshow.qmd        # OK
-      - dw_dashboard.qmd        # flexdashboard 변환
-      - dw_book.qmd             # OK
-      - dw_params.qmd           # flexdashboard 변환      
+        - dw_website.qmd          # OK
+        - dw_slideshow.qmd        # OK
+        - dw_dashboard.qmd        # OK
+        - dw_book.qmd             # OK
+        - dw_params.qmd           # OK
 
     - part: "챗GPT 활용"
       chapters:
-      - gpt_writing.qmd    #
-      - gpt_resume.qmd        #
-      - gpt_case_study.qmd    #      
+        - gpt_writing.qmd       # OK
+        - gpt_resume.qmd        # OK
+        - gpt_case_study.qmd    # OK
 
     - references.qmd     # O
 

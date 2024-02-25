@@ -4,6 +4,9 @@ library(gtExtras)
 library(rvest)
 library(JuliaCall)
 
+
+# 1. Julia ----------------------------------------------------------------
+
 julia_setup(JULIA_HOME="C:/Users/statkclee/AppData/Local/Programs/Julia-1.10.1/bin")
 
 set.seed(1014)
@@ -16,6 +19,18 @@ set.seed(1014)
 # } else {
 #   latexString<- r"(\LaTeX)"
 # }
+
+
+# 2. fonts ----------------------------------------------------------------
+
+library(sysfonts)
+library(showtext)
+
+extrafont::loadfonts(quiet = TRUE)
+
+showtext_auto(enable = TRUE)
+
+# 3. 코딩 -------------------------------------------------------------------
 
 
 knitr::opts_chunk$set(
