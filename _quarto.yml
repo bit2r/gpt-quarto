@@ -103,7 +103,6 @@ filters:
    - lightbox
    - parse-latex
    - include-code-files   
-   - multibib
 lightbox: auto
 
 code-annotations: hover
