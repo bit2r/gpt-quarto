@@ -427,7 +427,7 @@ window.Quarto = {
 
 
 </header><p>쿼토(Quarto)는 다양한 프로그래밍 언어를 지원하는 오픈소스 출판 시스템으로, <a href="https://pandoc.org/">Pandoc</a>에 기반을 두고 있다. 쿼토는 R, 파이썬, 줄리아, 자바스크립트(Observable JS) 등의 프로그래밍 언어를 지원하며, 사용자는 싱글 소싱(Single Sourcing)을 통해 신속하게 다양한 출판 저작물을 생성할 수 있다. “차세대 R마크다운(Next-Generation R Markdown)”이라는 별명을 가진 쿼토는 약 10년 동안의 R 마크다운의 성공과 실패 경험을 바탕으로 새로운 아키텍처로 재탄생했다. 개발 및 유지보수 팀이 잘 구성되어 있어, 프로젝트 지속 가능성과 신뢰성이 높고, 무료로 제공되므로 누구나 쉽게 접근할 수 있을 뿐만 아니라 오픈소스 프로젝트에 누구나 기여할 수 있다.</p>
-<p>앨리슨 호스트(Allison Horst)는 복잡하고 어려운 데이터 과학 및 R 관련 개념을 친근하며 쉬운 그래픽을 제작해 공유하는 것으로 유명한데, 쿼토 작업 프로세스를 <a href="#fig-quarto-workflow-horst" class="quarto-xref">그림&nbsp;<span>3.1</span></a>를 통해 설명하고 있다. R, 파이썬, 줄리아, Observable JS와 같은 다양한 프로그래밍 언어를 사용해 쿼토로 PDF, HTML, 워드, 웹사이트 등 다양한 형식의 출판저작물을 만드는 방법을 직관적이고 친근한 방식으로 소개하고 있다.</p>
+<p>앨리슨 호스트(Allison Horst)는 복잡하고 어려운 데이터 과학 및 R 관련 개념을 친근하며 쉬운 그래픽을 제작해 공유하는 것으로 유명한데, 쿼토 작업 프로세스를 <a href="#fig-quarto-workflow-horst" class="quarto-xref">그림&nbsp;<span class="quarto-unresolved-ref">fig-quarto-workflow-horst</span></a>를 통해 설명하고 있다. R, 파이썬, 줄리아, Observable JS와 같은 다양한 프로그래밍 언어를 사용해 쿼토로 PDF, HTML, 워드, 웹사이트 등 다양한 형식의 출판저작물을 만드는 방법을 직관적이고 친근한 방식으로 소개하고 있다.</p>
 <div id="fig-quarto-workflow-horst" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-quarto-workflow-horst-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <a href="images/horst_quarto_schematic.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="그림&nbsp;3.1: 쿼토 작업흐름"><img src="images/horst_quarto_schematic.png" class="img-fluid figure-img"></a>
@@ -755,7 +755,7 @@ window.Quarto = {
 <span class="header-section-number">3.4</span> R 마크다운과 쿼토</h2>
 <div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="margin-aside"><a href="https://quarto.org/docs/faq/rmarkdown.html">FAQ for R Markdown Users</a></span></div></div>
 <p>R마크다운이 파이썬(배쉬, 줄리아, C, SQL)과 호환되지만, R 마크다운은 주로 R 사용자를 위해 설계되었다. 쿼토는 꼭 R을 필요로 하지 않는다. 쿼토는 컴퓨팅을 교체 가능한 언어 “엔진(engine)”으로 실행시킴으로써 다양한 언어를 지원하기 위한 별도의 복잡한 설정이나 추가적인 시스템 구성을 최소화함으로써 사용자가 쉽게 여러 언어를 사용할 수 있게 해주는 내장 기능을 제공한다. 또한, 쿼토는 기존 형식과 호환되도록 설계되어 있기 때문에 대부분의 기존 <code>.Rmd</code> 파일과 주피터 노트북 <code>.ipynb</code> 파일을 쿼토에서 수정 없이 바로 사용할 수 있어 쿼토로의 전환을 수월하게 하고 있다.</p>
-<p>쿼토는 “차세대 R 마크다운”이라는 별명에 걸맞게 R 마크다운의 다양한 패키지와 기능을 지원하고 있다. 그러나 쿼토의 개발 기간이 R 마크다운보다 상대적으로 짧기 때문에 아직은 R 마크다운의 모든 기능을 지원하지 않는다. 그럼에도 불구하고, 쿼토는 지속적으로 지원 범위를 확장하고 있으며, 고유한 기능도 추가하고 있다. 이러한 점들은 쿼토가 R 마크다운 생태계에 어떤 새로운 가치를 더하고 있는지를 잘 보여준다. 쿼토 1.4 버전에 대쉬보드(dashboards)가 추가되어 R 마크다운 기능 대부분을 지원하게 되었다. 다음 <a href="#tbl-quarto-rmarkdown" class="quarto-xref">표&nbsp;<span>3.2</span></a> 에 쿼토와 R 마크다운을 다양한 문서 기능별로 비교되어 있다.</p>
+<p>쿼토는 “차세대 R 마크다운”이라는 별명에 걸맞게 R 마크다운의 다양한 패키지와 기능을 지원하고 있다. 그러나 쿼토의 개발 기간이 R 마크다운보다 상대적으로 짧기 때문에 아직은 R 마크다운의 모든 기능을 지원하지 않는다. 그럼에도 불구하고, 쿼토는 지속적으로 지원 범위를 확장하고 있으며, 고유한 기능도 추가하고 있다. 이러한 점들은 쿼토가 R 마크다운 생태계에 어떤 새로운 가치를 더하고 있는지를 잘 보여준다. 쿼토 1.4 버전에 대쉬보드(dashboards)가 추가되어 R 마크다운 기능 대부분을 지원하게 되었다. 다음 <a href="#tbl-quarto-rmarkdown" class="quarto-xref">표&nbsp;<span class="quarto-unresolved-ref">tbl-quarto-rmarkdown</span></a> 에 쿼토와 R 마크다운을 다양한 문서 기능별로 비교되어 있다.</p>
 <div id="tbl-quarto-rmarkdown" class="quarto-float anchored">
 <figure class="quarto-float quarto-float-tbl figure"><div aria-describedby="tbl-quarto-rmarkdown-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="table">
@@ -891,7 +891,7 @@ window.Quarto = {
 </ol>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
 <div id="ref-hyde2021single" class="csl-entry" role="listitem">
 Hyde, Adam. 2021. <span>“Single Source Publishing - A investigation of what Single Source Publishing is and how this <span>‘holy grail’</span> can be achieved”</span>. <a href="https://coko.foundation/articles/single-source-publishing.html">https://coko.foundation/articles/single-source-publishing.html</a>.
 </div>
@@ -1348,7 +1348,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <p>순수하게 <a href="https://quarto.org/">쿼토(Quarto)</a>로 제작되었습니다.</p>
 </div>
   </div>
-</footer><script>var lightboxQuarto = GLightbox({"selector":".lightbox","descPosition":"bottom","loop":false,"openEffect":"zoom","closeEffect":"zoom"});
+</footer><script>var lightboxQuarto = GLightbox({"selector":".lightbox","loop":false,"descPosition":"bottom","closeEffect":"zoom","openEffect":"zoom"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;

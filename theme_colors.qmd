@@ -539,3 +539,55 @@ library(patchwork)
 print((flag_image_gg + flag_colors_gg) / flag_penguin_gg)
 
 ```
+
+
+## 연습문제 {.unnumbered}
+
+### 객관식 {.unnumbered}
+
+1. RGB 색상 모델에서 각각의 알파벳(R, G, B)이 의미하는 것은 무엇인가요?
+   a) Red, Green, Blue
+   b) Range, Gradient, Brightness
+   c) Reflect, Gloss, Blur
+   d) Radiance, Glow, Beam
+
+::: {.content-visible when-format="revealjs"}
+   정답: a) Red, Green, Blue
+   설명: RGB 색상 모델은 Red(적색), Green(녹색), Blue(청색)의 세 가지 색을 조합하여 다양한 색을 표현합니다.
+:::   
+
+2. HCL 색상 모델에서 HCL은 무엇을 나타내나요?
+   a) Hue, Chroma, Luminance
+   b) Harmony, Contrast, Luminosity
+   c) Hue, Clarity, Lightness
+   d) High, Color, Low
+
+::: {.content-visible when-format="revealjs"}
+   정답: a) Hue, Chroma, Luminance
+   설명: HCL 색상 모델은 Hue(색상), Chroma(채도), Luminance(휘도)의 세 가지 차원을 기반으로 색상을 표현합니다.
+:::   
+
+3. CMYK 색상 모델에서 K는 무엇을 의미하나요?
+   a) Kolor
+   b) Key (Black)
+   c) Kyan (Cyan variant)
+   d) Kinetic
+
+::: {.content-visible when-format="revealjs"}
+   정답: b) Key (Black)
+   설명: CMYK 색상 모델에서 K는 Key를 의미하며, 여기서는 검정색(Black)을 나타냅니다.
+:::
+
+### 서술형 {.unnumbered}
+
+1. RGB 색상 모델의 장점과 단점에 대해 설명해보세요.
+
+::: {.content-visible when-format="revealjs"}
+   정답 및 설명: RGB 색상 모델의 장점은 간단하고 직관적인 색상 조합이 가능하다는 점입니다. 컴퓨터 화면과 같은 디지털 매체에서 효과적으로 사용됩니다. 단점은 인간의 시각 체계와 완전히 일치하지 않아, 특히 인쇄 매체에서 색상의 변환과 표현에 한계가 있을 수 있습니다.
+:::   
+
+2. 디지털 디자인에서 CMYK 색상 모델을 사용하는 이유는 무엇인가요?
+
+::: {.content-visible when-format="revealjs"}
+   정답 및 설명: CMYK 색상 모델은 주로 인쇄 매체에 사용되며, Cyan, Magenta, Yellow, Key(Black)의 네 가지 색상을 사용하여 광범위한 색상을 생성합니다. 감산혼합 방식으로 색상을 조합하므로, 인쇄 과정에서 더 정확하고 일관된 색상을 얻을 수 있습니다. 
+:::

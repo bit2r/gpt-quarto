@@ -2,16 +2,20 @@ library(tidyverse)
 library(gt)
 library(gtExtras)
 library(rvest)
+library(JuliaCall)
+
+julia_setup(JULIA_HOME="C:/Users/statkclee/AppData/Local/Programs/Julia-1.10.1/bin")
 
 set.seed(1014)
 
 # https://github.com/rstudio/rmarkdown/issues/2420
 
-if (knitr::is_html_output()){
-  latexString <- "$\\LaTeX$"
-} else {
-  latexString<- r"(\LaTeX)"
-}
+# quarto fancy-text extentions
+# if (knitr::is_html_output()){
+#   latexString <- "$\\LaTeX$"
+# } else {
+#   latexString<- r"(\LaTeX)"
+# }
 
 
 knitr::opts_chunk$set(

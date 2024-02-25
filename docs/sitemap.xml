@@ -1,87 +1,71 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://r2bit.com/gpt-quarto/index.html</loc>
-    <lastmod>2024-02-24T12:24:24.355Z</lastmod>
-  </url>
-  <url>
-    <loc>https://r2bit.com/gpt-quarto/setup_reproducible.html</loc>
-    <lastmod>2024-02-25T02:44:20.257Z</lastmod>
-  </url>
-  <url>
-    <loc>https://r2bit.com/gpt-quarto/setup_markdown_mess.html</loc>
-    <lastmod>2024-02-25T02:54:42.592Z</lastmod>
-  </url>
-  <url>
-    <loc>https://r2bit.com/gpt-quarto/setup_quarto.html</loc>
-    <lastmod>2024-02-25T03:03:31.328Z</lastmod>
-  </url>
-  <url>
-    <loc>https://r2bit.com/gpt-quarto/setup.html</loc>
-    <lastmod>2024-02-25T03:07:41.863Z</lastmod>
-  </url>
-  <url>
     <loc>https://r2bit.com/gpt-quarto/part_components.html</loc>
-    <lastmod>2024-02-20T04:10:39.157Z</lastmod>
-  </url>
-  <url>
-    <loc>https://r2bit.com/gpt-quarto/part_markdown.html</loc>
-    <lastmod>2024-02-20T05:07:37.526Z</lastmod>
+    <lastmod>2024-02-25T05:57:13.329Z</lastmod>
   </url>
   <url>
     <loc>https://r2bit.com/gpt-quarto/part_code.html</loc>
-    <lastmod>2024-02-20T05:47:58.355Z</lastmod>
+    <lastmod>2024-02-25T06:11:19.412Z</lastmod>
   </url>
   <url>
     <loc>https://r2bit.com/gpt-quarto/theme_fonts.html</loc>
-    <lastmod>2024-02-20T08:09:45.760Z</lastmod>
+    <lastmod>2024-02-25T06:17:51.776Z</lastmod>
   </url>
   <url>
     <loc>https://r2bit.com/gpt-quarto/theme_colors.html</loc>
-    <lastmod>2024-02-21T01:59:58.201Z</lastmod>
+    <lastmod>2024-02-25T06:21:31.202Z</lastmod>
   </url>
   <url>
     <loc>https://r2bit.com/gpt-quarto/theme_ggplot.html</loc>
-    <lastmod>2024-02-21T10:12:40.167Z</lastmod>
+    <lastmod>2024-02-25T06:28:18.787Z</lastmod>
   </url>
   <url>
     <loc>https://r2bit.com/gpt-quarto/theme_gt.html</loc>
-    <lastmod>2024-02-24T01:29:23.280Z</lastmod>
+    <lastmod>2024-02-25T06:33:39.054Z</lastmod>
   </url>
   <url>
     <loc>https://r2bit.com/gpt-quarto/dw_website.html</loc>
-    <lastmod>2024-02-24T03:07:36.052Z</lastmod>
+    <lastmod>2024-02-25T06:37:27.440Z</lastmod>
   </url>
   <url>
     <loc>https://r2bit.com/gpt-quarto/dw_slideshow.html</loc>
-    <lastmod>2024-02-24T12:38:00.121Z</lastmod>
+    <lastmod>2024-02-25T06:43:59.006Z</lastmod>
   </url>
   <url>
     <loc>https://r2bit.com/gpt-quarto/dw_dashboard.html</loc>
-    <lastmod>2024-02-24T14:51:22.895Z</lastmod>
+    <lastmod>2024-02-25T06:47:10.633Z</lastmod>
   </url>
   <url>
     <loc>https://r2bit.com/gpt-quarto/dw_book.html</loc>
-    <lastmod>2024-02-24T15:09:59.644Z</lastmod>
+    <lastmod>2024-02-25T06:51:09.684Z</lastmod>
   </url>
   <url>
     <loc>https://r2bit.com/gpt-quarto/dw_params.html</loc>
-    <lastmod>2024-02-25T01:00:08.222Z</lastmod>
+    <lastmod>2024-02-25T06:57:32.198Z</lastmod>
   </url>
   <url>
     <loc>https://r2bit.com/gpt-quarto/gpt_writing.html</loc>
-    <lastmod>2024-02-24T15:43:38.593Z</lastmod>
+    <lastmod>2024-02-25T07:00:59.089Z</lastmod>
   </url>
   <url>
     <loc>https://r2bit.com/gpt-quarto/gpt_resume.html</loc>
-    <lastmod>2024-02-25T02:15:54.970Z</lastmod>
+    <lastmod>2024-02-25T07:06:08.488Z</lastmod>
   </url>
   <url>
     <loc>https://r2bit.com/gpt-quarto/gpt_case_study.html</loc>
-    <lastmod>2024-02-25T02:27:35.478Z</lastmod>
+    <lastmod>2024-02-25T07:10:04.428Z</lastmod>
   </url>
   <url>
     <loc>https://r2bit.com/gpt-quarto/references.html</loc>
     <lastmod>2024-02-25T01:50:22.247Z</lastmod>
+  </url>
+  <url>
+    <loc>https://r2bit.com/gpt-quarto/index.html</loc>
+    <lastmod>2024-02-25T06:03:40.647Z</lastmod>
+  </url>
+  <url>
+    <loc>https://r2bit.com/gpt-quarto/part_markdown.html</loc>
+    <lastmod>2024-02-25T06:06:59.483Z</lastmod>
   </url>
 </urlset>
