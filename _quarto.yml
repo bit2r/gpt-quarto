@@ -99,18 +99,19 @@ format:
     # 마크다운 표 캡션 위치
     tbl-cap-location: bottom
 
-bibliography: references.bib
-link-citations: false
-
-engine: knitr
-
 filters:
    - lightbox
    - parse-latex
    - include-code-files   
+   - multibib
 lightbox: auto
 
 code-annotations: hover
+
+bibliography: references.bib
+link-citations: false
+
+engine: knitr
 
 knitr:
   opts_chunk:

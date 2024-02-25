@@ -12,11 +12,13 @@ orcid: 0000-0002-1825-0097
 web: cam.ac.uk  
 fontawesome: yes  
 nocite: '@*'  
-bibliography:   
+filters:
+  - multibib
+bibliography: 
   peer: data/peer_bib.bib  
   other: data/other_bib.bib  
 validate-yaml: false  
-csl: data/apa-cv.csl  
+csl: data/apa-cv.csl
 ---
 
 # Employment

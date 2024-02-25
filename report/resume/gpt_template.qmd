@@ -5,7 +5,7 @@ format:
 author: William Gosset
 date: last-modified
 phone: 123-456-7890
-address: "Guinness Brewery · Park Royal · London NW10 7RR, UK"
+address: "Guinness Brewery·Park Royal·London NW10 7RR, UK"
 email: guinness@consumer-care.net
 fontsize: 11pt
 orcid: 0000-0002-1825-0097 # orcid identifier
@@ -40,7 +40,6 @@ Researcher (Dublin) \hfill 1899-1935
 
 ::: {#refs-other}
 :::
-
 
 # References
 
