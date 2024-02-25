@@ -3,6 +3,21 @@ title: "Untitled"
 ---
 
 
+## 연습문제 {.unnumbered}
+
+### 객관식 {.unnumbered}
+
+::: {.content-visible when-format="revealjs"}
+
+:::
+
+### 서술형 {.unnumbered}
+
+::: {.content-visible when-format="revealjs"}
+
+:::
+
+
 ```{.python include="dashboards/corona_dashboards_v1_book.qmd" code-line-numbers="true" start-line=8 end-line=41}
 ```
 

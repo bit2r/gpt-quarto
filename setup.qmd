@@ -473,3 +473,58 @@ Connect](https://www.rstudio.com/products/connect/) 등이 있다.
 
 ![쿼토 출판배포 플랫폼](images/quarto-publishing.png){#fig-quarto-publishing
 fig-align="center" width="450"}
+
+
+
+## 연습문제 {.unnumbered}
+
+### 객관식 {.unnumbered}
+
+1. 쿼토 환경설정을 위해 필요한 첫번째 단계는 무엇인가요?
+   a) 텍스트 편집기 설치
+   b) 쿼토 CLI 다운로드
+   c) 쿼토 설치 경로 설정
+   d) IDE 선택
+
+::: {.content-visible when-format="revealjs"}   
+   정답: b) 쿼토 CLI 다운로드
+   설명: 쿼토 환경설정의 첫 단계는 쿼토 CLI를 공식 웹사이트에서 다운로드하는 것입니다.
+:::   
+
+2. RStudio IDE의 주요 특징 중 하나는 무엇인가요?
+   a) 단순한 텍스트 편집 기능만 제공
+   b) 데이터 과학을 위한 다양한 기능과 도구 제공
+   c) 오직 R 언어만 지원
+   d) 복잡한 설치 과정 필요
+
+::: {.content-visible when-format="revealjs"}   
+   정답: b) 데이터 과학을 위한 다양한 기능과 도구 제공
+   설명: RStudio IDE는 데이터 과학을 위한 다양한 기능과 도구를 제공하여 효율적인 작업 환경을 지원합니다.
+:::   
+
+3. 쿼토 프로젝트를 시작할 때 가장 먼저 수행해야 하는 단계는 무엇인가요?
+   a) 문서 형식 결정
+   b) 필요한 라이브러리 설치
+   c) 텍스트 편집기 설정
+   d) 쿼토 프로젝트 디렉토리 생성
+
+::: {.content-visible when-format="revealjs"}   
+   정답: d) 쿼토 프로젝트 디렉토리 생성
+   설명: 쿼토 프로젝트를 시작하기 위해서는 먼저 쿼토 프로젝트 디렉토리를 생성하는 것이 필수적입니다. 이는 프로젝트의 구조를 정의하고 관리하는 기본 단위가 됩니다.
+:::
+
+### 서술형 {.unnumbered}
+
+
+1. 쿼토 환경 설정에서 중요한 역할을 하는 쿼토 CLI의 기능에 대해 설명해보세요.
+
+::: {.content-visible when-format="revealjs"}
+   정답 및 설명: 쿼토 CLI는 쿼토를 실행하고 관리하는 데 사용되는 명령줄 인터페이스 도구입니다. 이를 통해 사용자는 쿼토 프로젝트를 생성, 구성 및 빌드할 수 있으며, 다양한 출력 형식으로 문서를 변환할 수 있습니다.
+:::   
+
+2. RStudio IDE가 데이터 과학자들에게 인기 있는 이유는 무엇인가요?
+
+::: {.content-visible when-format="revealjs"}
+   정답 및 설명: RStudio IDE는 데이터 과학자들에게 R 언어에 최적화된 통합 개발 환경을 제공합니다. 이를 통해 데이터 분석, 시각화 및 모형 개발 작업을 효율적으로 수행할 수 있으며, 다양한 플러그인과 통합 도구를 통해 작업의 생산성과 편의성을 높일 수 있습니다.
+
+:::
