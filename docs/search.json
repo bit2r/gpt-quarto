@@ -241,7 +241,7 @@
   {
     "objectID": "setup.html",
     "href": "setup.html",
-    "title": "\n4  저작환경 설정\n",
+    "title": "4  저작환경 설정",
     "section": "",
     "text": "4.1 쿼토 환경설정\n쿼토(Quarto) 웹사이트에서 Quarto CLI 엔진과 통합개발도구(IDE)를 설치한다. 쿼토 CLI를 지원하는 IDE는 VS Code, RStudio, 주피터(Jupyter), VIM/Emacs 와 같은 텍스트 편집기가 포함된다. IDE까지 설치를 했다면 문학적 프로그래밍(literate programming)을 통해 사람이 저작하는 마크다운(Markdown)과 기계가 저작하는 프로그래밍 언어(R/Python/SQL/줄리아/자바스크립트)를 결합한 강력한 문서저작을 시작할 수 있다.",
     "crumbs": [
@@ -252,9 +252,9 @@
   {
     "objectID": "setup.html#쿼토-환경설정",
     "href": "setup.html#쿼토-환경설정",
-    "title": "\n4  저작환경 설정\n",
+    "title": "4  저작환경 설정",
     "section": "",
-    "text": "그림 4.2: 쿼토 도구모음\n\n\n\n4.1.1 윈도우 설치\n쿼토(Quarto)는 윈도우를 비롯하여 맥, 리눅스도 지원한다. 다른 운영체제에 쿼토를 설치하는 방법도 유사하기 때문에 윈도우를 기준으로 설치방법을 살펴보자. 윈도우 운영체제에 설치하기 위해서는 몇 가지 단계를 거쳐야 한다. \n\n4.1.2 쿼토 다운로드\n먼저 쿼토 공식 웹사이트에서 윈도우용 설치 파일을 다운로드한다. 웹사이트 “Download Quarto CLI” 윈도우 버전을 선택하여 다운로드한다.\n\n\n\n\n\n그림 4.3: 쿼토 다운로드 화면\n\n\n\n4.1.3 쿼토 설치\n다운로드한 파일을 더블클릭 실행하여 설치를 진행한다. 설치 마법사가 나타나면 지시에 따라 설치를 완료하면 된다. 설치가 완료되면 환경 변수에 쿼토 설치 경로를 등록해야 한다. ‘제어판’을 열고 ’시스템과 보안’으로 이동한 다음 ’시스템’을 선택한다. ’고급 시스템 설정’을 클릭한 후 ’환경 변수’ 버튼을 누른다. ‘시스템 변수’에서 ’Path’ 변수를 찾아 쿼토 설치 경로를 추가한다. 일반적인 경로는 C:\\Users\\&lt;사용자명&gt;\\AppData\\Local\\Programs\\Quarto\\bin과 같을 수 있다. 사용자명이 한글로 되어 있다면 영문으로 수정할 것을 강력히 추천한다. RStudio 등 다른 IDE에서 한글로된 사용자명으로 인해 컴파일이 되지 않은 오류가 발생될 수 있기 때문이다.\n\n\n\n\n\n그림 4.4: 쿼토 설치완료\n\n\n\n4.1.4 쿼토 CLI\n마지막으로 환경 변수 설정이 올바르게 이루어졌는지 확인하기 위해 터미널을 열어 명령 프롬프트로 quarto --version 혹은 quarto --help 명령을 입력한다. 올바른 버전 번호가 출력되면 설치가 성공적으로 완료된 것이다.\n\n\n\n\n\n그림 4.5: 쿼토 CLI 실행화면\n\n\n\n\n\n\n\n\n윈도우 시스템의 경우 초기 윈도우에서 쿼토 실행명령이 quarto.cmd 이였으나 quarto.exe도 지원되어 확장자 없이 quarto 명령어 실행이 가능하다. 즉, 제어판 → 환경 변수 설정 … 에서 \"C:\\Users\\사용자명\\AppData\\Local\\Programs\\Quarto\\bin 디렉토리를 등록한 후 quarto 명령어를 사용한다.\n\nSys.which(\"quarto\")\n                                                                  quarto \n\"C:\\\\Users\\\\사용자명\\\\AppData\\\\Local\\\\Programs\\\\Quarto\\\\bin\\\\quarto.exe\"",
+    "text": "그림 4.2: 쿼토 도구모음\n\n\n\n\n4.1.1 윈도우 설치\n쿼토(Quarto)는 윈도우를 비롯하여 맥, 리눅스도 지원한다. 다른 운영체제에 쿼토를 설치하는 방법도 유사하기 때문에 윈도우를 기준으로 설치방법을 살펴보자. 윈도우 운영체제에 설치하기 위해서는 몇 가지 단계를 거쳐야 한다. \n\n\n4.1.2 쿼토 다운로드\n먼저 쿼토 공식 웹사이트에서 윈도우용 설치 파일을 다운로드한다. 웹사이트 “Download Quarto CLI” 윈도우 버전을 선택하여 다운로드한다.\n\n\n\n\n\n\n그림 4.3: 쿼토 다운로드 화면\n\n\n\n\n\n4.1.3 쿼토 설치\n다운로드한 파일을 더블클릭 실행하여 설치를 진행한다. 설치 마법사가 나타나면 지시에 따라 설치를 완료하면 된다. 설치가 완료되면 환경 변수에 쿼토 설치 경로를 등록해야 한다. ‘제어판’을 열고 ’시스템과 보안’으로 이동한 다음 ’시스템’을 선택한다. ’고급 시스템 설정’을 클릭한 후 ’환경 변수’ 버튼을 누른다. ‘시스템 변수’에서 ’Path’ 변수를 찾아 쿼토 설치 경로를 추가한다. 일반적인 경로는 C:\\Users\\&lt;사용자명&gt;\\AppData\\Local\\Programs\\Quarto\\bin과 같을 수 있다. 사용자명이 한글로 되어 있다면 영문으로 수정할 것을 강력히 추천한다. RStudio 등 다른 IDE에서 한글로된 사용자명으로 인해 컴파일이 되지 않은 오류가 발생될 수 있기 때문이다.\n\n\n\n\n\n\n그림 4.4: 쿼토 설치완료\n\n\n\n\n\n4.1.4 쿼토 CLI\n마지막으로 환경 변수 설정이 올바르게 이루어졌는지 확인하기 위해 터미널을 열어 명령 프롬프트로 quarto --version 혹은 quarto --help 명령을 입력한다. 올바른 버전 번호가 출력되면 설치가 성공적으로 완료된 것이다.\n\n\n\n\n\n\n그림 4.5: 쿼토 CLI 실행화면\n\n\n\n\n\n\n\n\n\n윈도우 시스템의 경우 초기 윈도우에서 쿼토 실행명령이 quarto.cmd 이였으나 quarto.exe도 지원되어 확장자 없이 quarto 명령어 실행이 가능하다. 즉, 제어판 → 환경 변수 설정 … 에서 \"C:\\Users\\사용자명\\AppData\\Local\\Programs\\Quarto\\bin 디렉토리를 등록한 후 quarto 명령어를 사용한다.\n\nSys.which(\"quarto\")\n                                                                  quarto \n\"C:\\\\Users\\\\사용자명\\\\AppData\\\\Local\\\\Programs\\\\Quarto\\\\bin\\\\quarto.exe\"",
     "crumbs": [
       "시작을 위한 준비",
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>저작환경 설정</span>"
@@ -263,9 +263,9 @@
   {
     "objectID": "setup.html#rstudio-ide",
     "href": "setup.html#rstudio-ide",
-    "title": "\n4  저작환경 설정\n",
-    "section": "\n4.2 RStudio IDE",
-    "text": "4.2 RStudio IDE\nRStudio IDE는 데이터 과학 R 프로그래밍 언어를 위한 통합개발환경으로 시작하였으나 이제는 파이썬을 비롯하여 SQL, Observable JS, 줄리아 등 데이터 과학 전분야를 담당하고 있다. 특히, 데이터 분석, 시각화 및 문서 작업을 간편하게 할 수 있도록 다양한 도구와 기능을 제공할 뿐만 아니라, Shiny 웹 애플리케이션 개발, Plumber를 통한 API 개발, 쿼토(Quarto)/R 마크다운을 활용해 다양한 데이터 과학 산출물을 편리하게 제작할 수 있다. 또한, Git 버전 관리 시스템과 통합되어 코드 이력을 쉽게 추적하고 관리할 수 있고 GitHub과 연결하여 글로벌 협업기능도 지원한다. GitHub/Microsoft 부조종사(Copilot) 유료구독을 한 경우, Rstudio와 연결하여 챗GPT로 유명한 생성형 AI를 통해 마크다운 텍스트 및 다양한 프로그래밍 언어로 코드를 생성시킬 수 있다. \n그림 4.6 에 RStudio IDE 설치과정이 나와 있다. 먼저, R 프로그래밍 언어 공식 웹사이트인 CRAN에서 R을 다운로드하여 설치한다. 그 다음, RStudio 공식 웹사이트에서 사용자의 운영 체제에 맞는 RStudio IDE 버전을 다운로드한다. 다운로드한 설치 파일을 실행하여 설치 과정을 진행하며, 일반적으로 기본 설정으로 설치하는 것이 좋다. 설치가 완료되면 RStudio를 실행하여 R과 함께 사용한다. R 설치 버전은 R 4.2버전 이상을 추천하는데 그 이전 버전은 데이터와 코드에 한글 인코딩 문제가 생길 수 있기 때문이다.\n\n\n\n\n\n그림 4.6: RStudio IDE 설치과정\n\n\nRStudio 코드 편집기는 자동 완성, 구문 강조, 맞춤법 검사 등 기능을 제공하여 개발자 편의를 향상시켰고, GUI 데이터 뷰어를 통해 데이터프레임과 데이터 객체를 직접적으로 시각적으로 살펴볼 수 있으며, 내장 패키지 관리 시스템을 통해 R 패키지도 손쉽게 설치하고 관리할 수 있다.\n웹앱 Shiny 애플리케이션 개발과 테스트도 가능하고, 문서화 프로그래밍을 차세대 R 마크다운 쿼토(Quarto)를 이용하여 코드, 데이터, 그래프를 하나의 문서로 통합하여 구현할 수 있을 뿐만 아니라 팬독(Pandoc)을 통해 다양한 형태 문서를 자동으로 생성할 수 있다.\n\n\n\n\n\n그림 4.7: RStudio 문서화 프로그래밍 사례\n\n\n\n4.2.1 비주얼 마크다운 편집기\n비주얼(visual) 마크다운 기능을 사용하게 되면 과학기술 문서 작성이 용이하다. 강력한 인용(Citation)기능과 문학적 프로그래밍(literate programming)을 통해 재현가능한 과학 문서를 수월히 구현할 수 있고, 팬독(Pandoc)을 사용하여 텍스트와 코드로 PDF, HTML, 워드 등 다양한 형식의 문서를 동시에 생성할 수도 있다. \n\n\n\n\n\n그림 4.8: RStudio 비주얼 마크다운 편집기능\n\n\n\n4.2.2 단축키\n데이터 과학에서 통합개발환경(Integrated Development Environment, IDE)은 코드 기반의 제품과 서비스 개발 효율성과 효과성을 극대화에 매우 큰 기여를 한다. IDE는 코딩, 디버깅, 컴파일, 배포 등 프로그램 개발에 필요한 다양한 작업을 한 곳에서 수행할 수 있게 통합함으로써 개발자가 보다 집중하고 효율적으로 작업할 수 있는 환경을 제공한다. 단축키를 통해 개발자는 반복적인 작업을 빠르고 효율적으로 수행함으로써 전체적인 작업 속도와 생산성을 크게 높일 수 있다. \n특히, RStudio는 데이터 과학 분야에서 널리 사용되는 프로그래밍 언어인 R을 위한 특화된 통합개발환경을 제공한다. RStudio는 R 언어 특성에 맞춰진 다양한 기능과 도구를 통합하여, 데이터 과학자와 연구자들이 데이터 분석, 시각화, 모형개발 작업을 보다 효율적으로 수행할 수 있도록 개발되었다. RStudio에서 코드 작성, 편집 및 실행을 보다 빠르고 효율적으로 수행하기 위해 많이 사용되는 단축키는 다음과 같다.\n\n\n\n\n단축키\n윈도우\n맥\n\n\n\n마지막 명령어\n↑\n↑\n\n\n마지막 매칭 명령어\n^ + ↑\n⌘ + ↑\n\n\n자동 탭완성\n↹\n↹\n\n\n\n—- 실행 —-\n\n\n\n선택영역 실행\n^ + ⏎\n⌘ + ⏎\n\n\nSource\n^ + ⇧ + S\n⌘ + ⇧ + S\n\n\nSource + 메아리(Echo)\n^ + ⇧ + ⏎\n⌘ + ⇧ + ⏎\n\n\n\n—- 화면 전환 —-\n\n\n\n코딩 패널창 전환\n^ + 1\n^ + 1\n\n\n콘솔 패널창 전환\n^ + 2\n^ + 2\n\n\n\n—- 코딩 단축키 —-\n\n\n\n&lt;-\n⎇ + -\n⌥ + -\n\n\n%&gt;%\n^ + ⇧ + M\n⌘ + ⌥ + M\n\n\n주석처리\n^ + ⇧ + C\n^ + ⌥ + C\n\n\n주석제거\n^ + ⇧ + /\n^ + ⌥ + /\n\n\n실행취소\n^ + Z\n⌘ + Z\n\n\n다시 실행\n^ + ⇧ + Z\n⌘ + ⇧ + Z\n\n\n단축키 참조\n⎇ + ⇧ + Z\n⌥ + ⇧ + Z\n\n\n다중커서\n^ +⎇ + ↑\n^ + ⌥ + ↑\n\n\n\n^ +⎇ + ↓\n^ + ⌥ + ↓\n\n\n\n^ +⎇ + 클릭\n^ + ⌥ + 클릭\n\n\n\n—- 찾기 및 바꾸기 —-\n\n\n\n줄 찾아가기\n⇧ + ⎇ + G\n⌘ + ⇧ + ⌥ + G\n\n\n찾기 바꾸기\n^ + F\n⌘ + F\n\n\n파일에서 찾기\n^ + ⇧ + F\n⌘ + ⇧ + F\n\n\n모두 접기\n⎇ + O\n⌘ + ⌥ + O\n\n\n모두 펴기\n⎇ + ⇧ + O\n⌘ + ⌥ + ⇧ + O\n\n\n\n\n\n표 4.1: RStudio에서 자주 사용되는 단축키",
+    "title": "4  저작환경 설정",
+    "section": "4.2 RStudio IDE",
+    "text": "4.2 RStudio IDE\nRStudio IDE는 데이터 과학 R 프로그래밍 언어를 위한 통합개발환경으로 시작하였으나 이제는 파이썬을 비롯하여 SQL, Observable JS, 줄리아 등 데이터 과학 전분야를 담당하고 있다. 특히, 데이터 분석, 시각화 및 문서 작업을 간편하게 할 수 있도록 다양한 도구와 기능을 제공할 뿐만 아니라, Shiny 웹 애플리케이션 개발, Plumber를 통한 API 개발, 쿼토(Quarto)/R 마크다운을 활용해 다양한 데이터 과학 산출물을 편리하게 제작할 수 있다. 또한, Git 버전 관리 시스템과 통합되어 코드 이력을 쉽게 추적하고 관리할 수 있고 GitHub과 연결하여 글로벌 협업기능도 지원한다. GitHub/Microsoft 부조종사(Copilot) 유료구독을 한 경우, Rstudio와 연결하여 챗GPT로 유명한 생성형 AI를 통해 마크다운 텍스트 및 다양한 프로그래밍 언어로 코드를 생성시킬 수 있다. \n그림 4.6 에 RStudio IDE 설치과정이 나와 있다. 먼저, R 프로그래밍 언어 공식 웹사이트인 CRAN에서 R을 다운로드하여 설치한다. 그 다음, RStudio 공식 웹사이트에서 사용자의 운영 체제에 맞는 RStudio IDE 버전을 다운로드한다. 다운로드한 설치 파일을 실행하여 설치 과정을 진행하며, 일반적으로 기본 설정으로 설치하는 것이 좋다. 설치가 완료되면 RStudio를 실행하여 R과 함께 사용한다. R 설치 버전은 R 4.2버전 이상을 추천하는데 그 이전 버전은 데이터와 코드에 한글 인코딩 문제가 생길 수 있기 때문이다.\n\n\n\n\n\n\n그림 4.6: RStudio IDE 설치과정\n\n\n\nRStudio 코드 편집기는 자동 완성, 구문 강조, 맞춤법 검사 등 기능을 제공하여 개발자 편의를 향상시켰고, GUI 데이터 뷰어를 통해 데이터프레임과 데이터 객체를 직접적으로 시각적으로 살펴볼 수 있으며, 내장 패키지 관리 시스템을 통해 R 패키지도 손쉽게 설치하고 관리할 수 있다.\n웹앱 Shiny 애플리케이션 개발과 테스트도 가능하고, 문서화 프로그래밍을 차세대 R 마크다운 쿼토(Quarto)를 이용하여 코드, 데이터, 그래프를 하나의 문서로 통합하여 구현할 수 있을 뿐만 아니라 팬독(Pandoc)을 통해 다양한 형태 문서를 자동으로 생성할 수 있다.\n\n\n\n\n\n\n그림 4.7: RStudio 문서화 프로그래밍 사례\n\n\n\n\n4.2.1 비주얼 마크다운 편집기\n비주얼(visual) 마크다운 기능을 사용하게 되면 과학기술 문서 작성이 용이하다. 강력한 인용(Citation)기능과 문학적 프로그래밍(literate programming)을 통해 재현가능한 과학 문서를 수월히 구현할 수 있고, 팬독(Pandoc)을 사용하여 텍스트와 코드로 PDF, HTML, 워드 등 다양한 형식의 문서를 동시에 생성할 수도 있다. \n\n\n\n\n\n\n그림 4.8: RStudio 비주얼 마크다운 편집기능\n\n\n\n\n\n4.2.2 단축키\n데이터 과학에서 통합개발환경(Integrated Development Environment, IDE)은 코드 기반의 제품과 서비스 개발 효율성과 효과성을 극대화에 매우 큰 기여를 한다. IDE는 코딩, 디버깅, 컴파일, 배포 등 프로그램 개발에 필요한 다양한 작업을 한 곳에서 수행할 수 있게 통합함으로써 개발자가 보다 집중하고 효율적으로 작업할 수 있는 환경을 제공한다. 단축키를 통해 개발자는 반복적인 작업을 빠르고 효율적으로 수행함으로써 전체적인 작업 속도와 생산성을 크게 높일 수 있다. \n특히, RStudio는 데이터 과학 분야에서 널리 사용되는 프로그래밍 언어인 R을 위한 특화된 통합개발환경을 제공한다. RStudio는 R 언어 특성에 맞춰진 다양한 기능과 도구를 통합하여, 데이터 과학자와 연구자들이 데이터 분석, 시각화, 모형개발 작업을 보다 효율적으로 수행할 수 있도록 개발되었다. RStudio에서 코드 작성, 편집 및 실행을 보다 빠르고 효율적으로 수행하기 위해 많이 사용되는 단축키는 다음과 같다.\n\n\n\n\n\n\n단축키\n윈도우\n맥\n\n\n\n\n마지막 명령어\n↑\n↑\n\n\n마지막 매칭 명령어\n^ + ↑\n⌘ + ↑\n\n\n자동 탭완성\n↹\n↹\n\n\n\n—- 실행 —-\n\n\n\n선택영역 실행\n^ + ⏎\n⌘ + ⏎\n\n\nSource\n^ + ⇧ + S\n⌘ + ⇧ + S\n\n\nSource + 메아리(Echo)\n^ + ⇧ + ⏎\n⌘ + ⇧ + ⏎\n\n\n\n—- 화면 전환 —-\n\n\n\n코딩 패널창 전환\n^ + 1\n^ + 1\n\n\n콘솔 패널창 전환\n^ + 2\n^ + 2\n\n\n\n—- 코딩 단축키 —-\n\n\n\n&lt;-\n⎇ + -\n⌥ + -\n\n\n%&gt;%\n^ + ⇧ + M\n⌘ + ⌥ + M\n\n\n주석처리\n^ + ⇧ + C\n^ + ⌥ + C\n\n\n주석제거\n^ + ⇧ + /\n^ + ⌥ + /\n\n\n실행취소\n^ + Z\n⌘ + Z\n\n\n다시 실행\n^ + ⇧ + Z\n⌘ + ⇧ + Z\n\n\n단축키 참조\n⎇ + ⇧ + Z\n⌥ + ⇧ + Z\n\n\n다중커서\n^ +⎇ + ↑\n^ + ⌥ + ↑\n\n\n\n^ +⎇ + ↓\n^ + ⌥ + ↓\n\n\n\n^ +⎇ + 클릭\n^ + ⌥ + 클릭\n\n\n\n—- 찾기 및 바꾸기 —-\n\n\n\n줄 찾아가기\n⇧ + ⎇ + G\n⌘ + ⇧ + ⌥ + G\n\n\n찾기 바꾸기\n^ + F\n⌘ + F\n\n\n파일에서 찾기\n^ + ⇧ + F\n⌘ + ⇧ + F\n\n\n모두 접기\n⎇ + O\n⌘ + ⌥ + O\n\n\n모두 펴기\n⎇ + ⇧ + O\n⌘ + ⌥ + ⇧ + O\n\n\n\n\n\n표 4.1: RStudio에서 자주 사용되는 단축키",
     "crumbs": [
       "시작을 위한 준비",
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>저작환경 설정</span>"
@@ -274,9 +274,9 @@
   {
     "objectID": "setup.html#프로그래밍-언어",
     "href": "setup.html#프로그래밍-언어",
-    "title": "\n4  저작환경 설정\n",
-    "section": "\n4.3 프로그래밍 언어",
-    "text": "4.3 프로그래밍 언어\n\\(\\LaTeX\\), Sweave, R마크다운을 사용한 경험이 있다면 재현가능하고 추적가능한 과학기술 문서 제작의 장점을 경험했을 것이다. 쿼토는 문서 저작으로 마크다운과 \\(\\LaTeX\\), 프로그래밍 언어로 R 언어 뿐만 아니라 파이썬, 자바스크립트(OJS), 줄리아(Julia), SQL, Tikz/mermaid 언어도 지원한다. \n\n4.3.1 R 언어\nR 언어를 공식 웹사이트인 CRAN에서 사용하는 운영 체제에 맞는 R 버전을 선택하여 다운로드 받는다. 그림 4.9 처럼 설치과정은 기본 옵션을 따르며, 필요에 따라 추가 옵션을 조정할 수 있다. 설치가 완료되면 R 언어만 사용할 수 있고, R 언어 전용 편집기 RStudio를 설치하고 엔진으로 방금 설치한 R 언어를 선택하면 수월하게 R 프로그래밍을 시작할 수 있다.\n\n\n\n\n\n그림 4.9: R 설치 과정\n\n\n\n4.3.2 파이썬\n파이썬을 설치하는 과정은 먼저 파이썬 공식 웹사이트에 접속해 운영 체제에 맞는 파이썬 설치 파일을 다운로드한다. 파이썬 버전은 RStudio에서 reticulate를 통해 검증된 파이썬 3.11 버전 사용을 권장한다. 다운로드한 설치 파일을 실행한 후, 설치 과정에서 ‘Add Python to PATH’ 옵션을 선택하는 것이 좋다. 안내에 따라 설치를 진행하면 설치를 완료할 수 있다.\n\n\n\n\n\n그림 4.10: 파이썬 설치 과정\n\n\n파이썬을 설치한 이유는 파이썬 프로그래밍 언어로 작업한 결과물을 문서에 자동으로 넣고 재현가능하고 추적가능한 과학기술 문서를 만들기 위함이다. RStudio에서 파이썬 코드를 사용하려면 코드 덩어리(code chunk)에 파이썬 코드를 작성하다. 작성된 코드를 컴파일 시키기 위해서 다음과 같이 설치한 파이썬을 Python Interpreter에 지정한다. 바닐라 파이썬 뿐만 아니라 가상환경에서 파이썬, 콘다 환경에서 파이썬을 지정할 수도 있다.\n\nTools -&gt; Global Options -&gt; Python -&gt; Python Interpreter\n\n\n\n\n\n\n그림 4.11: 파이썬 RStudio 연결\n\n\n파이썬 프로그램이 제대로 실행되는지 쿼토 문서(.qmd)를 하나 만들어 다음과 같은 파이썬 코드 덩어리를 넣고 실행해본다.\n\n\n파이썬 코드 덩어리\n```{python}\nprint(\"Hello, 파이썬!\")\n```\n\n\n실행 결과\n\n#&gt; Hello, 파이썬!",
+    "title": "4  저작환경 설정",
+    "section": "4.3 프로그래밍 언어",
+    "text": "4.3 프로그래밍 언어\n\\(\\LaTeX\\), Sweave, R마크다운을 사용한 경험이 있다면 재현가능하고 추적가능한 과학기술 문서 제작의 장점을 경험했을 것이다. 쿼토는 문서 저작으로 마크다운과 \\(\\LaTeX\\), 프로그래밍 언어로 R 언어 뿐만 아니라 파이썬, 자바스크립트(OJS), 줄리아(Julia), SQL, Tikz/mermaid 언어도 지원한다. \n\n4.3.1 R 언어\nR 언어를 공식 웹사이트인 CRAN에서 사용하는 운영 체제에 맞는 R 버전을 선택하여 다운로드 받는다. 그림 4.9 처럼 설치과정은 기본 옵션을 따르며, 필요에 따라 추가 옵션을 조정할 수 있다. 설치가 완료되면 R 언어만 사용할 수 있고, R 언어 전용 편집기 RStudio를 설치하고 엔진으로 방금 설치한 R 언어를 선택하면 수월하게 R 프로그래밍을 시작할 수 있다.\n\n\n\n\n\n\n그림 4.9: R 설치 과정\n\n\n\n\n\n4.3.2 파이썬\n파이썬을 설치하는 과정은 먼저 파이썬 공식 웹사이트에 접속해 운영 체제에 맞는 파이썬 설치 파일을 다운로드한다. 파이썬 버전은 RStudio에서 reticulate를 통해 검증된 파이썬 3.11 버전 사용을 권장한다. 다운로드한 설치 파일을 실행한 후, 설치 과정에서 ‘Add Python to PATH’ 옵션을 선택하는 것이 좋다. 안내에 따라 설치를 진행하면 설치를 완료할 수 있다.\n\n\n\n\n\n\n그림 4.10: 파이썬 설치 과정\n\n\n\n파이썬을 설치한 이유는 파이썬 프로그래밍 언어로 작업한 결과물을 문서에 자동으로 넣고 재현가능하고 추적가능한 과학기술 문서를 만들기 위함이다. RStudio에서 파이썬 코드를 사용하려면 코드 덩어리(code chunk)에 파이썬 코드를 작성하다. 작성된 코드를 컴파일 시키기 위해서 다음과 같이 설치한 파이썬을 Python Interpreter에 지정한다. 바닐라 파이썬 뿐만 아니라 가상환경에서 파이썬, 콘다 환경에서 파이썬을 지정할 수도 있다.\n\nTools -&gt; Global Options -&gt; Python -&gt; Python Interpreter\n\n\n\n\n\n\n\n그림 4.11: 파이썬 RStudio 연결\n\n\n\n파이썬 프로그램이 제대로 실행되는지 쿼토 문서(.qmd)를 하나 만들어 다음과 같은 파이썬 코드 덩어리를 넣고 실행해본다.\n\n\n\n\n파이썬 코드 덩어리\n```{python}\nprint(\"Hello, 파이썬!\")\n```\n\n\n\n실행 결과\n\n#&gt; Hello, 파이썬!",
     "crumbs": [
       "시작을 위한 준비",
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>저작환경 설정</span>"
@@ -285,8 +285,8 @@
   {
     "objectID": "setup.html#설치",
     "href": "setup.html#설치",
-    "title": "\n4  저작환경 설정\n",
-    "section": "\n4.4 \\(\\LaTeX\\) 설치",
+    "title": "4  저작환경 설정",
+    "section": "4.4 \\(\\LaTeX\\) 설치",
     "text": "4.4 \\(\\LaTeX\\) 설치\n라텍(\\(\\LaTeX\\)) 설치와 사용은 처음에는 다소 복잡하게 느껴질 수 있다. 일반적으로 \\(\\LaTeX\\) 배포판(예: TeX Live, MiKTeX)을 설치한 뒤, \\(\\LaTeX\\) 전용 편집기(예: TeXShop, TeXworks)를 선택하여 작업환경을 구성한다. 설치가 완료되면, .tex 파일을 생성하고 \\(\\LaTeX\\) 명령을 통해 PDF 문서를 컴파일한다. \n환경변수 설정, 패키지 관리, 글꼴 설정 등 세부적인 환경설정이 필요하다. 특히 한글 문서를 처리할 경우에는 ko.TeX나 CTeX와 같은 한글을 지원하는 패키지를 별도로 설치하고 한글 글꼴도 설정해야 한다.\nTinyTeX은 TeX Live를 기반으로 한 경량, 이식성 좋고, 사용하기 쉬운 \\(\\LaTeX\\) 배포판으로 \\(\\LaTeX\\) 설치와 관련된 일반적인 불편함을 해결하기 위해 만들어졌고, 특히 “이휘 쉬에(Yihui Xie)”가 개발하여 R과 R 마크다운 통합이 잘 되어 있는 것으로 평가된다.\n다른 \\(\\LaTeX\\) 배포판들이 수 기가바이트(GB)의 크기를 갖지만, TinyTeX은 설치 크기가 작고 간단한 설치 과정을 제공으로 쉽지만 미려한 문서를 원하는 사용자들에게 인기가 많다. 특히, R과의 통합도 잘 이루어져 있어, \\(\\LaTeX\\) 문서를 컴파일할 때 누락된 \\(\\LaTeX\\) 패키지도 자동으로 설치해주는 기능이 많은 사랑을 받고 있다.\n보통 Tex Live에 기반을 둔 tinytex 를 사용하는데 한글을 사용하는 입장에서는 kotex를 설치하는 방법도 모색이 필요하다. 유니코드 문자를 처리하기 위해서 xelatex을 쿼토 \\(\\LaTeX\\) 기본엔진으로 지정하면 xelatex을 통해 CJK 문자가 포함된 PDF 파일 제작이 가능하다.\n쿼토를 설치하면 quarto install tinytex 명령어로 TinyTeX을 쉽게 설치할 수 있고, 설치 정보는 quarto tools info tinytex 명령어로 파악이 가능하다.\n$ quarto install tinytex\nInstalling tinytex\n[✓] Downloading TinyTex v2023.09\n[✓] Unzipping TinyTeX-v2023.09.tar.gz\n[✓] Moving files\n[✓] Verifying tlgpg support\n[✓] Default Repository: https://mirrors.rit.edu/CTAN/systems/texlive/tlnet/\nInstallation successful\n\n$ quarto tools info tinytex\n{\n  \"name\": \"TinyTeX\",\n  \"installed\": true,\n  \"version\": \"v2023.09\",\n  \"directory\": \"/home/statkclee/.TinyTeX\",\n  \"bin-directory\": \"/home/statkclee/.TinyTeX/bin/x86_64-linux\",\n  \"configuration\": {\n    \"status\": \"ok\"\n  }\n}\nkotex 패키지 주요 장점 중 하나는 한글 관련 문제를 해결할 수 있는 다양한 \\(\\LaTeX\\) 패키지와 기본 한글 글꼴을 내장하고 있어 한글 문서 작성이 훨씬 편리하다. 하지만, tinytex를 기본 \\(\\LaTeX\\) 엔진으로 사용할 경우, 누락된 패키지로 인해 추가 작업이 어려울 수 있다. 이러한 문제를 해결하기 위해 tinytex::parse_install() 함수를 사용하면, 오류가 발생한 텍스트를 붙여넣을 때 자동으로 필요한 패키지를 설치해 준다. 설치과정에서 오류 사항이 담긴 .log 파일을 tinytex::parse_install() 함수에 인자로 넣어주면, 자동으로 필요한 패키지를 설치해 준다.\n\n# log 파일이 hello_world.log\ntinytex::parse_install(\"hello_world.log\")\n\ntinytex::parse_install(\n  text = \"! LaTeX Error: File `titlepic.sty' not found.\"\n)\n\n\n\n\n\n\n\ntinytex 설치\n\n\n\n윈도우 환경에서 쿼토로 PDF 파일 생성할 때 다음과 같은 오류가 발생하여 로그에 기록될 경우 tinytex R 패키지를 설치하고 tinytex::install_tinytex() 명령어로 tinytex를 다시 설치한다.\nrunning xelatex - 1\n\nNo TeX installation was detected.\n\nPlease run 'quarto install tinytex' to install TinyTex.\nIf you prefer, you may install TexLive or another TeX distribution.",
     "crumbs": [
       "시작을 위한 준비",
@@ -296,9 +296,9 @@
   {
     "objectID": "setup.html#부조종사",
     "href": "setup.html#부조종사",
-    "title": "\n4  저작환경 설정\n",
-    "section": "\n4.5 부조종사",
-    "text": "4.5 부조종사\nRStudio에서 GitHub 부조종사(Copilot) 기능을 활용할 수 있도록 저자를 포함하여 수많은 개발자들이 요청하여 2021년 11월 28일 최초 등록된 이슈(#10148)가 2023년 7월 18일 베타버전으로 Rstudio 일일 빌드 (Daily Builds)를 통해 첫 공개되었다. GitHub 부조종사(Copilot)를 Rstudio에서 사용하기 위해서는 특별한 버전 Rstudio, 즉 일일 빌드 (Daily Builds)가 필요하였으나 현재는 각자 운영체제에 맞는 RStudio 데스크톱 버전을 다운로드한 후 설치하게 되면 기본적으로 부조종사 기능을 사용할 수 있다. 기본적으로 GitHub 부조종사 기능은 구독서비스로 매월 일정액($10)을 지불해야 사용할 수 있다.\n\nTools -&gt; Global Options -&gt; Copilot -&gt; Enable Github Copilot\n\n최신 RStudio 설치가 완료되면 Rstudio를 실행하고 상단 메뉴에서 ‘Tools’를 선택한 다음 ’Global Options’을 클릭한다. 왼쪽 사이드바에서 ’Copilot’을 선택하고 ’Enable GitHub Copilot’ 체크박스를 선택한 다음 ’Sign In’을 클릭하고 나타나는 링크에서 인증 코드를 입력한다. ’Authorize Github Copilot Plugin’을 클릭하여 인증 과정을 완료하면 설정이 완료된다.\n\n\n\n\n\n그림 4.12: GitHub 부주종사 설치과정\n\n\nGitHub Copilot를 Rstudio에서 사용해보면, 작성하려는 유령 텍스트(Ghost Text)가 회색으로 예측되어 나타난다. 보통, # 주석에 프롬프트를 작성하거나 코드나 텍스트 작성과정에 나타나는 유령 텍스트를 ‘Tab’ 키를 눌러 탭완성(Tab Completion) 기능으로 제시된 코드를 수락하며 개발을 이어 나간다.",
+    "title": "4  저작환경 설정",
+    "section": "4.5 부조종사",
+    "text": "4.5 부조종사\nRStudio에서 GitHub 부조종사(Copilot) 기능을 활용할 수 있도록 저자를 포함하여 수많은 개발자들이 요청하여 2021년 11월 28일 최초 등록된 이슈(#10148)가 2023년 7월 18일 베타버전으로 Rstudio 일일 빌드 (Daily Builds)를 통해 첫 공개되었다. GitHub 부조종사(Copilot)를 Rstudio에서 사용하기 위해서는 특별한 버전 Rstudio, 즉 일일 빌드 (Daily Builds)가 필요하였으나 현재는 각자 운영체제에 맞는 RStudio 데스크톱 버전을 다운로드한 후 설치하게 되면 기본적으로 부조종사 기능을 사용할 수 있다. 기본적으로 GitHub 부조종사 기능은 구독서비스로 매월 일정액($10)을 지불해야 사용할 수 있다.\n\nTools -&gt; Global Options -&gt; Copilot -&gt; Enable Github Copilot\n\n최신 RStudio 설치가 완료되면 Rstudio를 실행하고 상단 메뉴에서 ‘Tools’를 선택한 다음 ’Global Options’을 클릭한다. 왼쪽 사이드바에서 ’Copilot’을 선택하고 ’Enable GitHub Copilot’ 체크박스를 선택한 다음 ’Sign In’을 클릭하고 나타나는 링크에서 인증 코드를 입력한다. ’Authorize Github Copilot Plugin’을 클릭하여 인증 과정을 완료하면 설정이 완료된다.\n\n\n\n\n\n\n그림 4.12: GitHub 부주종사 설치과정\n\n\n\nGitHub Copilot를 Rstudio에서 사용해보면, 작성하려는 유령 텍스트(Ghost Text)가 회색으로 예측되어 나타난다. 보통, # 주석에 프롬프트를 작성하거나 코드나 텍스트 작성과정에 나타나는 유령 텍스트를 ‘Tab’ 키를 눌러 탭완성(Tab Completion) 기능으로 제시된 코드를 수락하며 개발을 이어 나간다.",
     "crumbs": [
       "시작을 위한 준비",
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>저작환경 설정</span>"
@@ -307,9 +307,9 @@
   {
     "objectID": "setup.html#출판배포-플랫폼",
     "href": "setup.html#출판배포-플랫폼",
-    "title": "\n4  저작환경 설정\n",
-    "section": "\n4.6 출판배포 플랫폼",
-    "text": "4.6 출판배포 플랫폼\n마지막으로 저작물이 PDF가 아닌 웹사이트/블로그, 대쉬보드, 웹앱, API인 경우 출판배포 플랫폼에 회원가입하고 저작물을 공유하거나 출판한다. 데이터 과학 분야에서 산출물을 공유하고 출판하는 것은 매우 중요한 단계로 효과적인 출판과 비용적인 면을 고려하여 최적 플랫폼과 도구를 선정한다. 데이터 과학 분야를 개척한 RStudio IDE에서 R 마크다운 산출물을 RPubs에 출판한 경험이 있다면, Quarto Pub은 그와 유사한 경험을 제공한다. 다른 대안으로는 netlify, GitHub Pages, RStudio Connect 등이 있다. \n\n\n\n\n\n그림 4.13: 쿼토 출판배포 플랫폼",
+    "title": "4  저작환경 설정",
+    "section": "4.6 출판배포 플랫폼",
+    "text": "4.6 출판배포 플랫폼\n마지막으로 저작물이 PDF가 아닌 웹사이트/블로그, 대쉬보드, 웹앱, API인 경우 출판배포 플랫폼에 회원가입하고 저작물을 공유하거나 출판한다. 데이터 과학 분야에서 산출물을 공유하고 출판하는 것은 매우 중요한 단계로 효과적인 출판과 비용적인 면을 고려하여 최적 플랫폼과 도구를 선정한다. 데이터 과학 분야를 개척한 RStudio IDE에서 R 마크다운 산출물을 RPubs에 출판한 경험이 있다면, Quarto Pub은 그와 유사한 경험을 제공한다. 다른 대안으로는 netlify, GitHub Pages, RStudio Connect 등이 있다. \n\n\n\n\n\n\n그림 4.13: 쿼토 출판배포 플랫폼",
     "crumbs": [
       "시작을 위한 준비",
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>저작환경 설정</span>"
@@ -318,9 +318,9 @@
   {
     "objectID": "setup.html#연습문제",
     "href": "setup.html#연습문제",
-    "title": "\n4  저작환경 설정\n",
+    "title": "4  저작환경 설정",
     "section": "연습문제",
-    "text": "연습문제\n객관식\n\n쿼토 환경설정을 위해 필요한 첫번째 단계는 무엇인가요?\n\n텍스트 편집기 설치\n쿼토 CLI 다운로드\n쿼토 설치 경로 설정\nIDE 선택\n\n\n\n\nRStudio IDE의 주요 특징 중 하나는 무엇인가요?\n\n단순한 텍스트 편집 기능만 제공\n데이터 과학을 위한 다양한 기능과 도구 제공\n오직 R 언어만 지원\n복잡한 설치 과정 필요\n\n\n\n\n쿼토 프로젝트를 시작할 때 가장 먼저 수행해야 하는 단계는 무엇인가요?\n\n문서 형식 결정\n필요한 라이브러리 설치\n텍스트 편집기 설정\n쿼토 프로젝트 디렉토리 생성\n\n\n서술형\n\n쿼토 환경 설정에서 중요한 역할을 하는 쿼토 CLI의 기능에 대해 설명해보세요.\n\n\nRStudio IDE가 데이터 과학자들에게 인기 있는 이유는 무엇인가요?",
+    "text": "연습문제\n\n객관식\n\n쿼토 환경설정을 위해 필요한 첫번째 단계는 무엇인가요?\n\n텍스트 편집기 설치\n쿼토 CLI 다운로드\n쿼토 설치 경로 설정\nIDE 선택\n\n\n\nRStudio IDE의 주요 특징 중 하나는 무엇인가요?\n\n단순한 텍스트 편집 기능만 제공\n데이터 과학을 위한 다양한 기능과 도구 제공\n오직 R 언어만 지원\n복잡한 설치 과정 필요\n\n\n\n쿼토 프로젝트를 시작할 때 가장 먼저 수행해야 하는 단계는 무엇인가요?\n\n문서 형식 결정\n필요한 라이브러리 설치\n텍스트 편집기 설정\n쿼토 프로젝트 디렉토리 생성\n\n\n\n\n서술형\n\n쿼토 환경 설정에서 중요한 역할을 하는 쿼토 CLI의 기능에 대해 설명해보세요.\n\n\nRStudio IDE가 데이터 과학자들에게 인기 있는 이유는 무엇인가요?",
     "crumbs": [
       "시작을 위한 준비",
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>저작환경 설정</span>"
@@ -329,7 +329,7 @@
   {
     "objectID": "setup.html#footnotes",
     "href": "setup.html#footnotes",
-    "title": "\n4  저작환경 설정\n",
+    "title": "4  저작환경 설정",
     "section": "",
     "text": "위지임(WYSIWYM,What You See Is What You Mean)은 문서 의미와 구조에 중점을 둔 편집 방식으로, 사용자가 문서의 구조와 의미를 명시적으로 표현하고 최종 문서형식은 별도로 처리하는 방식으로 문서의 논리적 구조와 의미에 집중을 둔 학술논문 저작, 기술문서, 데이터 과학과 같은 분야에서 주로 사용되며 \\(\\LaTeX\\) LyX 를 대표적인 사례로 두고 있다.↩︎",
     "crumbs": [

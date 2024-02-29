@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ko-KR" xml:lang="ko-KR"><head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.5.9">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
 <meta name="author" content="이광춘">
+
 <title>챗GPT 쿼토 – 4&nbsp; 저작환경 설정</title>
 <style>
 code{white-space: pre-wrap;}
@@ -54,6 +57,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 </style>
 
+
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
@@ -75,7 +79,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
-<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet"><script id="quarto-search-options" type="application/json">{
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
@@ -101,7 +106,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-submit-button-title": "검색",
     "search-label": "검색"
   }
-}</script><script type="text/javascript">
+}</script>
+
+<script type="text/javascript">
 
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -113,7 +120,13 @@ ga('send', {
   hitType: 'pageview',
   'anonymizeIp': true,
 });
-</script><script defer="" data-domain="r2bit.com/gpt-quarto" src="https://plausible.io/js/script.js"></script><script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script><script type="text/javascript">
+</script>
+<script defer="" data-domain="r2bit.com/gpt-quarto" src="https://plausible.io/js/script.js"></script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
 const typesetMath = (el) => {
   if (window.MathJax) {
     // MathJax Typeset
@@ -139,11 +152,15 @@ window.Quarto = {
   typesetMath
 };
 </script>
+
 </head>
+
 <body class="nav-sidebar floating">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
@@ -154,9 +171,13 @@ window.Quarto = {
         <i class="bi bi-search"></i>
       </button>
     </div>
-  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">챗GPT 쿼토</a> 
         <div class="sidebar-tools-main">
@@ -176,7 +197,7 @@ window.Quarto = {
         </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-<li class="sidebar-item">
+        <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">서문</span></a>
@@ -190,8 +211,8 @@ window.Quarto = {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">
-<li class="sidebar-item">
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./setup_reproducible.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">과학기술 위기</span></span></a>
@@ -216,7 +237,7 @@ window.Quarto = {
   </div>
 </li>
       </ul>
-</li>
+  </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
@@ -225,8 +246,8 @@ window.Quarto = {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">
-<li class="sidebar-item">
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./part_components.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">문서 구성요소</span></span></a>
@@ -245,7 +266,7 @@ window.Quarto = {
   </div>
 </li>
       </ul>
-</li>
+  </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
@@ -254,8 +275,8 @@ window.Quarto = {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">
-<li class="sidebar-item">
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./theme_fonts.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">글꼴</span></span></a>
@@ -280,7 +301,7 @@ window.Quarto = {
   </div>
 </li>
       </ul>
-</li>
+  </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
@@ -289,8 +310,8 @@ window.Quarto = {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">
-<li class="sidebar-item">
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./dw_website.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">웹사이트와 블로그</span></span></a>
@@ -321,7 +342,7 @@ window.Quarto = {
   </div>
 </li>
       </ul>
-</li>
+  </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true">
@@ -330,8 +351,8 @@ window.Quarto = {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">
-<li class="sidebar-item">
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./gpt_writing.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">챗GPT 쿼토</span></span></a>
@@ -350,7 +371,7 @@ window.Quarto = {
   </div>
 </li>
       </ul>
-</li>
+  </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./references.html" class="sidebar-item-text sidebar-link">
@@ -358,53 +379,49 @@ window.Quarto = {
   </div>
 </li>
     </ul>
-</div>
-</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">목차</h2>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">목차</h2>
    
   <ul>
-<li>
-<a href="#%EC%BF%BC%ED%86%A0-%ED%99%98%EA%B2%BD%EC%84%A4%EC%A0%95" id="toc-쿼토-환경설정" class="nav-link active" data-scroll-target="#%EC%BF%BC%ED%86%A0-%ED%99%98%EA%B2%BD%EC%84%A4%EC%A0%95"><span class="header-section-number">4.1</span> 쿼토 환경설정</a>
+  <li><a href="#쿼토-환경설정" id="toc-쿼토-환경설정" class="nav-link active" data-scroll-target="#쿼토-환경설정"><span class="header-section-number">4.1</span> 쿼토 환경설정</a>
   <ul class="collapse">
-<li><a href="#%EC%9C%88%EB%8F%84%EC%9A%B0-%EC%84%A4%EC%B9%98" id="toc-윈도우-설치" class="nav-link" data-scroll-target="#%EC%9C%88%EB%8F%84%EC%9A%B0-%EC%84%A4%EC%B9%98"><span class="header-section-number">4.1.1</span> 윈도우 설치</a></li>
-  <li><a href="#%EC%BF%BC%ED%86%A0-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C" id="toc-쿼토-다운로드" class="nav-link" data-scroll-target="#%EC%BF%BC%ED%86%A0-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"><span class="header-section-number">4.1.2</span> 쿼토 다운로드</a></li>
-  <li><a href="#%EC%BF%BC%ED%86%A0-%EC%84%A4%EC%B9%98" id="toc-쿼토-설치" class="nav-link" data-scroll-target="#%EC%BF%BC%ED%86%A0-%EC%84%A4%EC%B9%98"><span class="header-section-number">4.1.3</span> 쿼토 설치</a></li>
-  <li><a href="#%EC%BF%BC%ED%86%A0-cli" id="toc-쿼토-cli" class="nav-link" data-scroll-target="#%EC%BF%BC%ED%86%A0-cli"><span class="header-section-number">4.1.4</span> 쿼토 CLI</a></li>
-  </ul>
-</li>
-  <li>
-<a href="#rstudio-ide" id="toc-rstudio-ide" class="nav-link" data-scroll-target="#rstudio-ide"><span class="header-section-number">4.2</span> RStudio IDE</a>
+  <li><a href="#윈도우-설치" id="toc-윈도우-설치" class="nav-link" data-scroll-target="#윈도우-설치"><span class="header-section-number">4.1.1</span> 윈도우 설치</a></li>
+  <li><a href="#쿼토-다운로드" id="toc-쿼토-다운로드" class="nav-link" data-scroll-target="#쿼토-다운로드"><span class="header-section-number">4.1.2</span> 쿼토 다운로드</a></li>
+  <li><a href="#쿼토-설치" id="toc-쿼토-설치" class="nav-link" data-scroll-target="#쿼토-설치"><span class="header-section-number">4.1.3</span> 쿼토 설치</a></li>
+  <li><a href="#쿼토-cli" id="toc-쿼토-cli" class="nav-link" data-scroll-target="#쿼토-cli"><span class="header-section-number">4.1.4</span> 쿼토 CLI</a></li>
+  </ul></li>
+  <li><a href="#rstudio-ide" id="toc-rstudio-ide" class="nav-link" data-scroll-target="#rstudio-ide"><span class="header-section-number">4.2</span> RStudio IDE</a>
   <ul class="collapse">
-<li><a href="#visual-markdown-main-features" id="toc-visual-markdown-main-features" class="nav-link" data-scroll-target="#visual-markdown-main-features"><span class="header-section-number">4.2.1</span> 비주얼 마크다운 편집기</a></li>
-  <li><a href="#%EB%8B%A8%EC%B6%95%ED%82%A4" id="toc-단축키" class="nav-link" data-scroll-target="#%EB%8B%A8%EC%B6%95%ED%82%A4"><span class="header-section-number">4.2.2</span> 단축키</a></li>
-  </ul>
-</li>
-  <li>
-<a href="#%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-%EC%96%B8%EC%96%B4" id="toc-프로그래밍-언어" class="nav-link" data-scroll-target="#%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-%EC%96%B8%EC%96%B4"><span class="header-section-number">4.3</span> 프로그래밍 언어</a>
+  <li><a href="#visual-markdown-main-features" id="toc-visual-markdown-main-features" class="nav-link" data-scroll-target="#visual-markdown-main-features"><span class="header-section-number">4.2.1</span> 비주얼 마크다운 편집기</a></li>
+  <li><a href="#단축키" id="toc-단축키" class="nav-link" data-scroll-target="#단축키"><span class="header-section-number">4.2.2</span> 단축키</a></li>
+  </ul></li>
+  <li><a href="#프로그래밍-언어" id="toc-프로그래밍-언어" class="nav-link" data-scroll-target="#프로그래밍-언어"><span class="header-section-number">4.3</span> 프로그래밍 언어</a>
   <ul class="collapse">
-<li><a href="#r-%EC%96%B8%EC%96%B4" id="toc-r-언어" class="nav-link" data-scroll-target="#r-%EC%96%B8%EC%96%B4"><span class="header-section-number">4.3.1</span> R 언어</a></li>
-  <li><a href="#%ED%8C%8C%EC%9D%B4%EC%8D%AC" id="toc-파이썬" class="nav-link" data-scroll-target="#%ED%8C%8C%EC%9D%B4%EC%8D%AC"><span class="header-section-number">4.3.2</span> 파이썬</a></li>
-  </ul>
-</li>
-  <li><a href="#%EC%84%A4%EC%B9%98" id="toc-설치" class="nav-link" data-scroll-target="#%EC%84%A4%EC%B9%98"><span class="header-section-number">4.4</span> <span class="math inline">\(\LaTeX\)</span> 설치</a></li>
-  <li><a href="#%EB%B6%80%EC%A1%B0%EC%A2%85%EC%82%AC" id="toc-부조종사" class="nav-link" data-scroll-target="#%EB%B6%80%EC%A1%B0%EC%A2%85%EC%82%AC"><span class="header-section-number">4.5</span> 부조종사</a></li>
-  <li><a href="#%EC%B6%9C%ED%8C%90%EB%B0%B0%ED%8F%AC-%ED%94%8C%EB%9E%AB%ED%8F%BC" id="toc-출판배포-플랫폼" class="nav-link" data-scroll-target="#%EC%B6%9C%ED%8C%90%EB%B0%B0%ED%8F%AC-%ED%94%8C%EB%9E%AB%ED%8F%BC"><span class="header-section-number">4.6</span> 출판배포 플랫폼</a></li>
-  <li>
-<a href="#%EC%97%B0%EC%8A%B5%EB%AC%B8%EC%A0%9C" id="toc-연습문제" class="nav-link" data-scroll-target="#%EC%97%B0%EC%8A%B5%EB%AC%B8%EC%A0%9C">연습문제</a>
+  <li><a href="#r-언어" id="toc-r-언어" class="nav-link" data-scroll-target="#r-언어"><span class="header-section-number">4.3.1</span> R 언어</a></li>
+  <li><a href="#파이썬" id="toc-파이썬" class="nav-link" data-scroll-target="#파이썬"><span class="header-section-number">4.3.2</span> 파이썬</a></li>
+  </ul></li>
+  <li><a href="#설치" id="toc-설치" class="nav-link" data-scroll-target="#설치"><span class="header-section-number">4.4</span> <span class="math inline">\(\LaTeX\)</span> 설치</a></li>
+  <li><a href="#부조종사" id="toc-부조종사" class="nav-link" data-scroll-target="#부조종사"><span class="header-section-number">4.5</span> 부조종사</a></li>
+  <li><a href="#출판배포-플랫폼" id="toc-출판배포-플랫폼" class="nav-link" data-scroll-target="#출판배포-플랫폼"><span class="header-section-number">4.6</span> 출판배포 플랫폼</a></li>
+  <li><a href="#연습문제" id="toc-연습문제" class="nav-link" data-scroll-target="#연습문제">연습문제</a>
   <ul class="collapse">
-<li><a href="#%EA%B0%9D%EA%B4%80%EC%8B%9D" id="toc-객관식" class="nav-link" data-scroll-target="#%EA%B0%9D%EA%B4%80%EC%8B%9D">객관식</a></li>
-  <li><a href="#%EC%84%9C%EC%88%A0%ED%98%95" id="toc-서술형" class="nav-link" data-scroll-target="#%EC%84%9C%EC%88%A0%ED%98%95">서술형</a></li>
+  <li><a href="#객관식" id="toc-객관식" class="nav-link" data-scroll-target="#객관식">객관식</a></li>
+  <li><a href="#서술형" id="toc-서술형" class="nav-link" data-scroll-target="#서술형">서술형</a></li>
+  </ul></li>
   </ul>
-</li>
-  </ul><div class="toc-actions"><ul><li><a href="https://github.com/bit2r/gpt-quarto/edit/main/setup.qmd" class="toc-action"><i class="bi bi-github"></i>편집</a></li><li><a href="https://github.com/bit2r/gpt-quarto/issues/new" class="toc-action"><i class="bi empty"></i>이슈 보고</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/bit2r/gpt-quarto/edit/main/setup.qmd" class="toc-action"><i class="bi bi-github"></i>편집</a></li><li><a href="https://github.com/bit2r/gpt-quarto/issues/new" class="toc-action"><i class="bi empty"></i>이슈 보고</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./setup_reproducible.html">시작을 위한 준비</a></li><li class="breadcrumb-item"><a href="./setup.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">저작환경 설정</span></a></li></ol></nav><div class="quarto-title">
-<h1 class="title">
-<span class="chapter-number">4</span>&nbsp; <span class="chapter-title">저작환경 설정</span>
-</h1>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./setup_reproducible.html">시작을 위한 준비</a></li><li class="breadcrumb-item"><a href="./setup.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">저작환경 설정</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">저작환경 설정</span></h1>
 </div>
 
 
@@ -418,14 +435,19 @@ window.Quarto = {
   
 
 
-</header><p>과거 글쓰기는 착상 후 종이와 연필로 글을 작성하고 수차례 수정작업을 거쳐 타자기로 최종탈고 후 출판사에 넘기면 인쇄출판 과정을 거쳐 문고를 통해 독자에게 전달되었다. 하지만, <strong>디지털 전환(Digital Transformation)</strong> 시대 도래로 글쓰기 방식도 크게 변화하고 있다. <a href="#fig-digital" class="quarto-xref">그림&nbsp;<span>4.1</span></a> 에 디지털 전환 전후 글쓰기 과정이 난이도와 함께 나와 있다. 위지윅 기반 아래 한글이나 마이크로소프트 워드, 리브레 Write와 같은 워드 프로세서(Word Processor)를 넘어서 Vim, Emacs, VS 코드와 같은 코딩기반 편집기를 사용하여 프로그래밍 언어를 통한 소프트웨어 개발은 물론이고 마크다운을 사용하거나 직접 HTML으로 코딩하여 저작을 할 수 있게 되었다. </p>
+</header>
+
+
+<p>과거 글쓰기는 착상 후 종이와 연필로 글을 작성하고 수차례 수정작업을 거쳐 타자기로 최종탈고 후 출판사에 넘기면 인쇄출판 과정을 거쳐 문고를 통해 독자에게 전달되었다. 하지만, <strong>디지털 전환(Digital Transformation)</strong> 시대 도래로 글쓰기 방식도 크게 변화하고 있다. <a href="#fig-digital" class="quarto-xref">그림&nbsp;<span>4.1</span></a> 에 디지털 전환 전후 글쓰기 과정이 난이도와 함께 나와 있다. 위지윅 기반 아래 한글이나 마이크로소프트 워드, 리브레 Write와 같은 워드 프로세서(Word Processor)를 넘어서 Vim, Emacs, VS 코드와 같은 코딩기반 편집기를 사용하여 프로그래밍 언어를 통한 소프트웨어 개발은 물론이고 마크다운을 사용하거나 직접 HTML으로 코딩하여 저작을 할 수 있게 되었다. </p>
 <div id="fig-digital" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
-<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-digital-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-digital-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <a href="images/ide_writing.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="그림&nbsp;4.1: 디지털 글쓰기 통합개발환경(IDE) 편집기"><img src="images/ide_writing.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img" width="500"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-digital-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 그림&nbsp;4.1: 디지털 글쓰기 통합개발환경(IDE) 편집기
-</figcaption></figure>
+</figcaption>
+</figure>
 </div>
 <div class="callout callout-style-simple callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -446,52 +468,63 @@ window.Quarto = {
 <p>쿼토 비주얼 편집기(Visual editor)는 표, 인용, 상호 참조, 각주, div/spans, 정의 목록, 속성(attributes), 원시 HTML/<span class="math inline">\(\TeX\)</span>을 포함한 팬독 마크다운을 위한 위지윔(WYSIWYM) 기능<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>을 RStudio v1.4부터 제공하고 있다.</p>
 <p>글쓰기 IDE 도구가 필요한 이유는 단순한 텍스트 작성을 넘어서 복잡하고 기능적인 문서제작을 위해서 프로그래밍 언어와 플러그인 지원이 필수적이다. 이렇게 작성된 문서는 단순한 텍스트 제한을 벗어나 더 다양한 정보와 기능을 담게된다. 자동 완성, 문법 검사, 실시간 미리보기 등의 기능을 제공하여 문서작성 속도와 효율성이 비약적으로 높아져 생산성이 크게 향상되는데, 특히 복잡한 문서나 코드가 많이 필요한 문서를 작성할 때 시간을 대폭 줄여준다.</p>
 <p>쿼토는 <code>Git</code>으로 대표되는 버전 관리 시스템과 통합도 가능하므로 국내외 협업을 통한 동시 문서 작성과 수정이 가능하다. 이전 버전과 비교, 병합, 충돌 해결 등 문서 및 코드 공동 작성에서 발생하는 문제를 쉽게 해결할 수 있다. 또한, 소스코드 문서를 웹사이트(HTML), PDF, 워드 문서, 발표자료(PPT), 대쉬보드 등 다양한 파일 형식으로 쉽게 변환할 수 있어 독자별로 차별화함으로써 문서 접근성을 높일 수 있다. 생산성을 높이는 다양한 기능을 제공하는 글쓰기 IDE 도구를 사용함으로써, 문서 작성자는 글쓰기와 고품질 문서 제작에 더 많은 시간을 할애할 수 있어 더 창의적이고 효과적인 글쓰기가 가능해진다. </p>
-<section id="쿼토-환경설정" class="level2" data-number="4.1"><h2 data-number="4.1" class="anchored" data-anchor-id="쿼토-환경설정">
-<span class="header-section-number">4.1</span> 쿼토 환경설정</h2>
+<section id="쿼토-환경설정" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="쿼토-환경설정"><span class="header-section-number">4.1</span> 쿼토 환경설정</h2>
 <p><a href="https://quarto.org/">쿼토(Quarto)</a> 웹사이트에서 Quarto CLI 엔진과 통합개발도구(IDE)를 설치한다. 쿼토 CLI를 지원하는 IDE는 VS Code, RStudio, 주피터(Jupyter), VIM/Emacs 와 같은 텍스트 편집기가 포함된다. IDE까지 설치를 했다면 문학적 프로그래밍(literate programming)을 통해 사람이 저작하는 마크다운(Markdown)과 기계가 저작하는 프로그래밍 언어(R/Python/SQL/줄리아/자바스크립트)를 결합한 강력한 문서저작을 시작할 수 있다.</p>
 <div id="fig-install-workflow" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
-<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-install-workflow-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-install-workflow-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <a href="images/quarto-toolchain.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="그림&nbsp;4.2: 쿼토 도구모음"><img src="images/quarto-toolchain.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="450"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-install-workflow-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 그림&nbsp;4.2: 쿼토 도구모음
-</figcaption></figure>
+</figcaption>
+</figure>
 </div>
-<section id="윈도우-설치" class="level3" data-number="4.1.1"><h3 data-number="4.1.1" class="anchored" data-anchor-id="윈도우-설치">
-<span class="header-section-number">4.1.1</span> 윈도우 설치</h3>
+<section id="윈도우-설치" class="level3" data-number="4.1.1">
+<h3 data-number="4.1.1" class="anchored" data-anchor-id="윈도우-설치"><span class="header-section-number">4.1.1</span> 윈도우 설치</h3>
 <p><a href="https://quarto.org/">쿼토(Quarto)</a>는 윈도우를 비롯하여 맥, 리눅스도 지원한다. 다른 운영체제에 쿼토를 설치하는 방법도 유사하기 때문에 윈도우를 기준으로 설치방법을 살펴보자. 윈도우 운영체제에 설치하기 위해서는 몇 가지 단계를 거쳐야 한다. </p>
-</section><section id="쿼토-다운로드" class="level3" data-number="4.1.2"><h3 data-number="4.1.2" class="anchored" data-anchor-id="쿼토-다운로드">
-<span class="header-section-number">4.1.2</span> 쿼토 다운로드</h3>
+</section>
+<section id="쿼토-다운로드" class="level3" data-number="4.1.2">
+<h3 data-number="4.1.2" class="anchored" data-anchor-id="쿼토-다운로드"><span class="header-section-number">4.1.2</span> 쿼토 다운로드</h3>
 <p>먼저 쿼토 공식 웹사이트에서 윈도우용 설치 파일을 다운로드한다. 웹사이트 <a href="https://quarto.org/docs/get-started/">“Download Quarto CLI”</a> 윈도우 버전을 선택하여 다운로드한다.</p>
 <div id="fig-quarto-homepage" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
-<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-quarto-homepage-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-quarto-homepage-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <a href="images/quarto-download.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="그림&nbsp;4.3: 쿼토 다운로드 화면"><img src="images/quarto-download.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="297"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-quarto-homepage-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 그림&nbsp;4.3: 쿼토 다운로드 화면
-</figcaption></figure>
+</figcaption>
+</figure>
 </div>
-</section><section id="쿼토-설치" class="level3" data-number="4.1.3"><h3 data-number="4.1.3" class="anchored" data-anchor-id="쿼토-설치">
-<span class="header-section-number">4.1.3</span> 쿼토 설치</h3>
+</section>
+<section id="쿼토-설치" class="level3" data-number="4.1.3">
+<h3 data-number="4.1.3" class="anchored" data-anchor-id="쿼토-설치"><span class="header-section-number">4.1.3</span> 쿼토 설치</h3>
 <p>다운로드한 파일을 더블클릭 실행하여 설치를 진행한다. 설치 마법사가 나타나면 지시에 따라 설치를 완료하면 된다. 설치가 완료되면 환경 변수에 쿼토 설치 경로를 등록해야 한다. ‘제어판’을 열고 ’시스템과 보안’으로 이동한 다음 ’시스템’을 선택한다. ’고급 시스템 설정’을 클릭한 후 ’환경 변수’ 버튼을 누른다. ‘시스템 변수’에서 ’Path’ 변수를 찾아 쿼토 설치 경로를 추가한다. 일반적인 경로는 <code>C:\Users\&lt;사용자명&gt;\AppData\Local\Programs\Quarto\bin</code>과 같을 수 있다. <strong>사용자명</strong>이 한글로 되어 있다면 영문으로 수정할 것을 강력히 추천한다. RStudio 등 다른 IDE에서 한글로된 사용자명으로 인해 컴파일이 되지 않은 오류가 발생될 수 있기 때문이다.</p>
 <div id="fig-quarto-setup" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
-<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-quarto-setup-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-quarto-setup-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <a href="images/quarto-install.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="그림&nbsp;4.4: 쿼토 설치완료"><img src="images/quarto-install.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="300"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-quarto-setup-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 그림&nbsp;4.4: 쿼토 설치완료
-</figcaption></figure>
+</figcaption>
+</figure>
 </div>
-</section><section id="쿼토-cli" class="level3" data-number="4.1.4"><h3 data-number="4.1.4" class="anchored" data-anchor-id="쿼토-cli">
-<span class="header-section-number">4.1.4</span> 쿼토 CLI</h3>
+</section>
+<section id="쿼토-cli" class="level3" data-number="4.1.4">
+<h3 data-number="4.1.4" class="anchored" data-anchor-id="쿼토-cli"><span class="header-section-number">4.1.4</span> 쿼토 CLI</h3>
 <p>마지막으로 환경 변수 설정이 올바르게 이루어졌는지 확인하기 위해 터미널을 열어 명령 프롬프트로 <code>quarto --version</code> 혹은 <code>quarto --help</code> 명령을 입력한다. 올바른 버전 번호가 출력되면 설치가 성공적으로 완료된 것이다.</p>
 <div id="fig-quarto-cli" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
-<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-quarto-cli-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-quarto-cli-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <a href="images/quarto-cli.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="그림&nbsp;4.5: 쿼토 CLI 실행화면"><img src="images/quarto-cli.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="450"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-quarto-cli-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 그림&nbsp;4.5: 쿼토 CLI 실행화면
-</figcaption></figure>
+</figcaption>
+</figure>
 </div>
 <div class="callout callout-style-simple callout-tip">
 <div class="callout-body d-flex">
@@ -501,58 +534,70 @@ window.Quarto = {
 <div class="callout-body-container">
 <p>윈도우 시스템의 경우 초기 윈도우에서 쿼토 실행명령이 <code>quarto.cmd</code> 이였으나 <code>quarto.exe</code>도 지원되어 확장자 없이 <code>quarto</code> 명령어 실행이 가능하다. 즉, 제어판 → 환경 변수 설정 … 에서 <code>"C:\Users\사용자명\AppData\Local\Programs\Quarto\bin</code> 디렉토리를 등록한 후 <code>quarto</code> 명령어를 사용한다.</p>
 <div class="cell">
-<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Sys.which.html">Sys.which</a></span><span class="op">(</span><span class="st">"quarto"</span><span class="op">)</span></span>
-<span>                                                                  <span class="va">quarto</span> </span>
-<span><span class="st">"C:\\Users\\사용자명\\AppData\\Local\\Programs\\Quarto\\bin\\quarto.exe"</span> </span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.which</span>(<span class="st">"quarto"</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>                                                                  quarto </span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="st">"C:</span><span class="sc">\\</span><span class="st">Users</span><span class="sc">\\</span><span class="st">사용자명</span><span class="sc">\\</span><span class="st">AppData</span><span class="sc">\\</span><span class="st">Local</span><span class="sc">\\</span><span class="st">Programs</span><span class="sc">\\</span><span class="st">Quarto</span><span class="sc">\\</span><span class="st">bin</span><span class="sc">\\</span><span class="st">quarto.exe"</span> </span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
 </div>
-</section></section><section id="rstudio-ide" class="level2" data-number="4.2"><h2 data-number="4.2" class="anchored" data-anchor-id="rstudio-ide">
-<span class="header-section-number">4.2</span> RStudio IDE</h2>
+</section>
+</section>
+<section id="rstudio-ide" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="rstudio-ide"><span class="header-section-number">4.2</span> RStudio IDE</h2>
 <p>RStudio IDE는 데이터 과학 R 프로그래밍 언어를 위한 통합개발환경으로 시작하였으나 이제는 파이썬을 비롯하여 SQL, Observable JS, 줄리아 등 데이터 과학 전분야를 담당하고 있다. 특히, 데이터 분석, 시각화 및 문서 작업을 간편하게 할 수 있도록 다양한 도구와 기능을 제공할 뿐만 아니라, Shiny 웹 애플리케이션 개발, Plumber를 통한 API 개발, 쿼토(Quarto)/R 마크다운을 활용해 다양한 데이터 과학 산출물을 편리하게 제작할 수 있다. 또한, Git 버전 관리 시스템과 통합되어 코드 이력을 쉽게 추적하고 관리할 수 있고 GitHub과 연결하여 글로벌 협업기능도 지원한다. GitHub/Microsoft 부조종사(Copilot) 유료구독을 한 경우, Rstudio와 연결하여 챗GPT로 유명한 생성형 AI를 통해 마크다운 텍스트 및 다양한 프로그래밍 언어로 코드를 생성시킬 수 있다. </p>
 <p><a href="#fig-rstudio-ide" class="quarto-xref">그림&nbsp;<span>4.6</span></a> 에 RStudio IDE 설치과정이 나와 있다. 먼저, R 프로그래밍 언어 공식 웹사이트인 <a href="https://cran.r-project.org/">CRAN</a>에서 R을 다운로드하여 설치한다. 그 다음, <a href="https://posit.co/download/rstudio-desktop/">RStudio 공식 웹사이트</a>에서 사용자의 운영 체제에 맞는 RStudio IDE 버전을 다운로드한다. 다운로드한 설치 파일을 실행하여 설치 과정을 진행하며, 일반적으로 기본 설정으로 설치하는 것이 좋다. 설치가 완료되면 RStudio를 실행하여 R과 함께 사용한다. R 설치 버전은 R 4.2버전 이상을 추천하는데 그 이전 버전은 데이터와 코드에 한글 인코딩 문제가 생길 수 있기 때문이다.</p>
 <div id="fig-rstudio-ide" class="quarto-figure quarto-figure-center quarto-float anchored">
-<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-rstudio-ide-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-rstudio-ide-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <a href="images/rstudio-ide-install.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="그림&nbsp;4.6: RStudio IDE 설치과정"><img src="images/rstudio-ide-install.png" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-rstudio-ide-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 그림&nbsp;4.6: RStudio IDE 설치과정
-</figcaption></figure>
+</figcaption>
+</figure>
 </div>
 <p>RStudio 코드 편집기는 자동 완성, 구문 강조, 맞춤법 검사 등 기능을 제공하여 개발자 편의를 향상시켰고, GUI 데이터 뷰어를 통해 데이터프레임과 데이터 객체를 직접적으로 시각적으로 살펴볼 수 있으며, 내장 패키지 관리 시스템을 통해 R 패키지도 손쉽게 설치하고 관리할 수 있다.</p>
 <p>웹앱 Shiny 애플리케이션 개발과 테스트도 가능하고, 문서화 프로그래밍을 차세대 R 마크다운 쿼토(Quarto)를 이용하여 코드, 데이터, 그래프를 하나의 문서로 통합하여 구현할 수 있을 뿐만 아니라 팬독(Pandoc)을 통해 다양한 형태 문서를 자동으로 생성할 수 있다.</p>
 <div id="fig-quarto-markdown" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
-<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-quarto-markdown-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-quarto-markdown-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <a href="images/rstudio-screenshot.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="그림&nbsp;4.7: RStudio 문서화 프로그래밍 사례"><img src="images/rstudio-screenshot.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="450"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-quarto-markdown-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 그림&nbsp;4.7: RStudio 문서화 프로그래밍 사례
-</figcaption></figure>
+</figcaption>
+</figure>
 </div>
-<section id="visual-markdown-main-features" class="level3" data-number="4.2.1"><h3 data-number="4.2.1" class="anchored" data-anchor-id="visual-markdown-main-features">
-<span class="header-section-number">4.2.1</span> 비주얼 마크다운 편집기</h3>
+<section id="visual-markdown-main-features" class="level3" data-number="4.2.1">
+<h3 data-number="4.2.1" class="anchored" data-anchor-id="visual-markdown-main-features"><span class="header-section-number">4.2.1</span> 비주얼 마크다운 편집기</h3>
 <p><a href="https://rstudio.github.io/visual-markdown-editing">비주얼(visual) 마크다운</a> 기능을 사용하게 되면 과학기술 문서 작성이 용이하다. 강력한 인용(Citation)기능과 문학적 프로그래밍(literate programming)을 통해 재현가능한 과학 문서를 수월히 구현할 수 있고, 팬독(<code>Pandoc</code>)을 사용하여 텍스트와 코드로 PDF, HTML, 워드 등 다양한 형식의 문서를 동시에 생성할 수도 있다. </p>
 <div id="fig-rstudio-visual" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
-<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-rstudio-visual-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-rstudio-visual-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <a href="images/visual-edit-execute-code.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8" title="그림&nbsp;4.8: RStudio 비주얼 마크다운 편집기능"><img src="images/visual-edit-execute-code.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="450"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-rstudio-visual-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 그림&nbsp;4.8: RStudio 비주얼 마크다운 편집기능
-</figcaption></figure>
+</figcaption>
+</figure>
 </div>
-</section><section id="단축키" class="level3" data-number="4.2.2"><h3 data-number="4.2.2" class="anchored" data-anchor-id="단축키">
-<span class="header-section-number">4.2.2</span> 단축키</h3>
+</section>
+<section id="단축키" class="level3" data-number="4.2.2">
+<h3 data-number="4.2.2" class="anchored" data-anchor-id="단축키"><span class="header-section-number">4.2.2</span> 단축키</h3>
 <p>데이터 과학에서 통합개발환경(Integrated Development Environment, IDE)은 코드 기반의 제품과 서비스 개발 효율성과 효과성을 극대화에 매우 큰 기여를 한다. IDE는 코딩, 디버깅, 컴파일, 배포 등 프로그램 개발에 필요한 다양한 작업을 한 곳에서 수행할 수 있게 통합함으로써 개발자가 보다 집중하고 효율적으로 작업할 수 있는 환경을 제공한다. 단축키를 통해 개발자는 반복적인 작업을 빠르고 효율적으로 수행함으로써 전체적인 작업 속도와 생산성을 크게 높일 수 있다. </p>
 <p>특히, RStudio는 데이터 과학 분야에서 널리 사용되는 프로그래밍 언어인 R을 위한 특화된 통합개발환경을 제공한다. RStudio는 R 언어 특성에 맞춰진 다양한 기능과 도구를 통합하여, 데이터 과학자와 연구자들이 데이터 분석, 시각화, 모형개발 작업을 보다 효율적으로 수행할 수 있도록 개발되었다. RStudio에서 코드 작성, 편집 및 실행을 보다 빠르고 효율적으로 수행하기 위해 많이 사용되는 단축키는 다음과 같다.</p>
 <div id="tbl-rstudio-shortcut" class="quarto-float anchored">
-<figure class="quarto-float quarto-float-tbl figure"><div aria-describedby="tbl-rstudio-shortcut-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figure class="quarto-float quarto-float-tbl figure">
+<div aria-describedby="tbl-rstudio-shortcut-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="table">
-<thead><tr class="header">
+<thead>
+<tr class="header">
 <th style="text-align: center;">단축키</th>
 <th style="text-align: center;">윈도우</th>
 <th style="text-align: center;">맥</th>
-</tr></thead>
+</tr>
+</thead>
 <tbody>
 <tr class="odd">
 <td style="text-align: center;">마지막 명령어</td>
@@ -694,63 +739,77 @@ window.Quarto = {
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-tbl" id="tbl-rstudio-shortcut-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 표&nbsp;4.1: RStudio에서 자주 사용되는 단축키
-</figcaption></figure>
+</figcaption>
+</figure>
 </div>
-</section></section><section id="프로그래밍-언어" class="level2" data-number="4.3"><h2 data-number="4.3" class="anchored" data-anchor-id="프로그래밍-언어">
-<span class="header-section-number">4.3</span> 프로그래밍 언어</h2>
+</section>
+</section>
+<section id="프로그래밍-언어" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="프로그래밍-언어"><span class="header-section-number">4.3</span> 프로그래밍 언어</h2>
 <p><span class="math inline">\(\LaTeX\)</span>, <code>Sweave</code>, R마크다운을 사용한 경험이 있다면 재현가능하고 추적가능한 과학기술 문서 제작의 장점을 경험했을 것이다. 쿼토는 문서 저작으로 마크다운과 <span class="math inline">\(\LaTeX\)</span>, 프로그래밍 언어로 R 언어 뿐만 아니라 파이썬, 자바스크립트(OJS), 줄리아(Julia), SQL, Tikz/mermaid 언어도 지원한다. </p>
-<section id="r-언어" class="level3" data-number="4.3.1"><h3 data-number="4.3.1" class="anchored" data-anchor-id="r-언어">
-<span class="header-section-number">4.3.1</span> R 언어</h3>
+<section id="r-언어" class="level3" data-number="4.3.1">
+<h3 data-number="4.3.1" class="anchored" data-anchor-id="r-언어"><span class="header-section-number">4.3.1</span> R 언어</h3>
 <p>R 언어를 공식 웹사이트인 <a href="https://cran.r-project.org/">CRAN</a>에서 사용하는 운영 체제에 맞는 R 버전을 선택하여 다운로드 받는다. <a href="#fig-install-r" class="quarto-xref">그림&nbsp;<span>4.9</span></a> 처럼 설치과정은 기본 옵션을 따르며, 필요에 따라 추가 옵션을 조정할 수 있다. 설치가 완료되면 R 언어만 사용할 수 있고, R 언어 전용 편집기 RStudio를 설치하고 엔진으로 방금 설치한 R 언어를 선택하면 수월하게 R 프로그래밍을 시작할 수 있다.</p>
 <div id="fig-install-r" class="quarto-figure quarto-figure-center quarto-float anchored">
-<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-install-r-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-install-r-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <a href="images/install_r.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9" title="그림&nbsp;4.9: R 설치 과정"><img src="images/install_r.png" class="img-fluid figure-img" style="width:100.0%"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-install-r-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 그림&nbsp;4.9: R 설치 과정
-</figcaption></figure>
+</figcaption>
+</figure>
 </div>
-</section><section id="파이썬" class="level3" data-number="4.3.2"><h3 data-number="4.3.2" class="anchored" data-anchor-id="파이썬">
-<span class="header-section-number">4.3.2</span> 파이썬</h3>
+</section>
+<section id="파이썬" class="level3" data-number="4.3.2">
+<h3 data-number="4.3.2" class="anchored" data-anchor-id="파이썬"><span class="header-section-number">4.3.2</span> 파이썬</h3>
 <p>파이썬을 설치하는 과정은 먼저 <a href="https://www.python.org/">파이썬 공식 웹사이트</a>에 접속해 운영 체제에 맞는 파이썬 설치 파일을 다운로드한다. 파이썬 버전은 RStudio에서 <code>reticulate</code>를 통해 검증된 <strong>파이썬 3.11 버전</strong> 사용을 권장한다. 다운로드한 설치 파일을 실행한 후, 설치 과정에서 ‘Add Python to PATH’ 옵션을 선택하는 것이 좋다. 안내에 따라 설치를 진행하면 설치를 완료할 수 있다.</p>
 <div id="fig-install-python" class="quarto-figure quarto-figure-center quarto-float anchored">
-<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-install-python-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-install-python-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <a href="images/install_python.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10" title="그림&nbsp;4.10: 파이썬 설치 과정"><img src="images/install_python.png" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-install-python-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 그림&nbsp;4.10: 파이썬 설치 과정
-</figcaption></figure>
+</figcaption>
+</figure>
 </div>
 <p>파이썬을 설치한 이유는 파이썬 프로그래밍 언어로 작업한 결과물을 문서에 자동으로 넣고 재현가능하고 추적가능한 과학기술 문서를 만들기 위함이다. RStudio에서 파이썬 코드를 사용하려면 코드 덩어리(code chunk)에 파이썬 코드를 작성하다. 작성된 코드를 컴파일 시키기 위해서 다음과 같이 설치한 파이썬을 <code>Python Interpreter</code>에 지정한다. 바닐라 파이썬 뿐만 아니라 가상환경에서 파이썬, 콘다 환경에서 파이썬을 지정할 수도 있다.</p>
 <blockquote class="blockquote">
 <p><code>Tools -&gt; Global Options -&gt; Python -&gt; Python Interpreter</code></p>
 </blockquote>
 <div id="fig-install-python-rstudio" class="quarto-figure quarto-figure-center quarto-float anchored">
-<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-install-python-rstudio-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-install-python-rstudio-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <a href="images/install_python_rstudio.png" class="lightbox" data-gallery="quarto-lightbox-gallery-11" title="그림&nbsp;4.11: 파이썬 RStudio 연결"><img src="images/install_python_rstudio.png" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-install-python-rstudio-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 그림&nbsp;4.11: 파이썬 RStudio 연결
-</figcaption></figure>
+</figcaption>
+</figure>
 </div>
 <p>파이썬 프로그램이 제대로 실행되는지 쿼토 문서(<code>.qmd</code>)를 하나 만들어 다음과 같은 파이썬 코드 덩어리를 넣고 실행해본다.</p>
-</section><div class="columns">
+</section>
+<div class="columns">
 <div class="column">
-<section id="파이썬-코드-덩어리" class="level3 unnumbered"><h3 class="unnumbered anchored" data-anchor-id="파이썬-코드-덩어리">파이썬 코드 덩어리</h3>
+<section id="파이썬-코드-덩어리" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="파이썬-코드-덩어리">파이썬 코드 덩어리</h3>
 <div class="sourceCode" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="in">print("Hello, 파이썬!")</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 </div><div class="column">
-<section id="실행-결과" class="level3 unnumbered"><h3 class="unnumbered anchored" data-anchor-id="실행-결과">실행 결과</h3>
+<section id="실행-결과" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="실행-결과">실행 결과</h3>
 <div class="cell">
 <pre><code>#&gt; Hello, 파이썬!</code></pre>
 </div>
 </section>
 </div>
 </div>
-</section><section id="설치" class="level2" data-number="4.4"><h2 data-number="4.4" class="anchored" data-anchor-id="설치">
-<span class="header-section-number">4.4</span> <span class="math inline">\(\LaTeX\)</span> 설치</h2>
+</section>
+<section id="설치" class="level2" data-number="4.4">
+<h2 data-number="4.4" class="anchored" data-anchor-id="설치"><span class="header-section-number">4.4</span> <span class="math inline">\(\LaTeX\)</span> 설치</h2>
 <p>라텍(<span class="math inline">\(\LaTeX\)</span>) 설치와 사용은 처음에는 다소 복잡하게 느껴질 수 있다. 일반적으로 <span class="math inline">\(\LaTeX\)</span> 배포판(예: TeX Live, MiKTeX)을 설치한 뒤, <span class="math inline">\(\LaTeX\)</span> 전용 편집기(예: TeXShop, TeXworks)를 선택하여 작업환경을 구성한다. 설치가 완료되면, <code>.tex</code> 파일을 생성하고 <span class="math inline">\(\LaTeX\)</span> 명령을 통해 PDF 문서를 컴파일한다. </p>
 <p>환경변수 설정, 패키지 관리, 글꼴 설정 등 세부적인 환경설정이 필요하다. 특히 한글 문서를 처리할 경우에는 <code>ko.TeX</code>나 <code>CTeX</code>와 같은 한글을 지원하는 패키지를 별도로 설치하고 한글 글꼴도 설정해야 한다.</p>
 <p><code>TinyTeX</code>은 <code>TeX Live</code>를 기반으로 한 경량, 이식성 좋고, 사용하기 쉬운 <span class="math inline">\(\LaTeX\)</span> 배포판으로 <span class="math inline">\(\LaTeX\)</span> 설치와 관련된 일반적인 불편함을 해결하기 위해 만들어졌고, 특히 “이휘 쉬에(Yihui Xie)”가 개발하여 R과 R 마크다운 통합이 잘 되어 있는 것으로 평가된다.</p>
@@ -777,14 +836,14 @@ window.Quarto = {
 <span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>    <span class="st">"status"</span><span class="ex">:</span> <span class="st">"ok"</span></span>
 <span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>  <span class="kw">}</span></span>
 <span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a><span class="er">}</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><code>kotex</code> 패키지 주요 장점 중 하나는 한글 관련 문제를 해결할 수 있는 다양한 <span class="math inline">\(\LaTeX\)</span> 패키지와 기본 한글 글꼴을 내장하고 있어 한글 문서 작성이 훨씬 편리하다. 하지만, <code>tinytex</code>를 기본 <span class="math inline">\(\LaTeX\)</span> 엔진으로 사용할 경우, 누락된 패키지로 인해 추가 작업이 어려울 수 있다. 이러한 문제를 해결하기 위해 <code><a href="https://rdrr.io/pkg/tinytex/man/parse_install.html">tinytex::parse_install()</a></code> 함수를 사용하면, 오류가 발생한 텍스트를 붙여넣을 때 자동으로 필요한 패키지를 설치해 준다. 설치과정에서 오류 사항이 담긴 <code>.log</code> 파일을 <code><a href="https://rdrr.io/pkg/tinytex/man/parse_install.html">tinytex::parse_install()</a></code> 함수에 인자로 넣어주면, 자동으로 필요한 패키지를 설치해 준다.</p>
+<p><code>kotex</code> 패키지 주요 장점 중 하나는 한글 관련 문제를 해결할 수 있는 다양한 <span class="math inline">\(\LaTeX\)</span> 패키지와 기본 한글 글꼴을 내장하고 있어 한글 문서 작성이 훨씬 편리하다. 하지만, <code>tinytex</code>를 기본 <span class="math inline">\(\LaTeX\)</span> 엔진으로 사용할 경우, 누락된 패키지로 인해 추가 작업이 어려울 수 있다. 이러한 문제를 해결하기 위해 <code>tinytex::parse_install()</code> 함수를 사용하면, 오류가 발생한 텍스트를 붙여넣을 때 자동으로 필요한 패키지를 설치해 준다. 설치과정에서 오류 사항이 담긴 <code>.log</code> 파일을 <code>tinytex::parse_install()</code> 함수에 인자로 넣어주면, 자동으로 필요한 패키지를 설치해 준다.</p>
 <div class="cell">
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># log 파일이 hello_world.log</span></span>
-<span><span class="fu">tinytex</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/tinytex/man/parse_install.html">parse_install</a></span><span class="op">(</span><span class="st">"hello_world.log"</span><span class="op">)</span></span>
-<span></span>
-<span><span class="fu">tinytex</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/tinytex/man/parse_install.html">parse_install</a></span><span class="op">(</span></span>
-<span>  text <span class="op">=</span> <span class="st">"! LaTeX Error: File `titlepic.sty' not found."</span></span>
-<span><span class="op">)</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># log 파일이 hello_world.log</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>tinytex<span class="sc">::</span><span class="fu">parse_install</span>(<span class="st">"hello_world.log"</span>)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>tinytex<span class="sc">::</span><span class="fu">parse_install</span>(</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">text =</span> <span class="st">"! LaTeX Error: File `titlepic.sty' not found."</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="callout callout-style-simple callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -796,7 +855,7 @@ window.Quarto = {
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>윈도우 환경에서 쿼토로 PDF 파일 생성할 때 다음과 같은 오류가 발생하여 로그에 기록될 경우 <code>tinytex</code> R 패키지를 설치하고 <code><a href="https://rdrr.io/pkg/tinytex/man/install_tinytex.html">tinytex::install_tinytex()</a></code> 명령어로 <code>tinytex</code>를 다시 설치한다.</p>
+<p>윈도우 환경에서 쿼토로 PDF 파일 생성할 때 다음과 같은 오류가 발생하여 로그에 기록될 경우 <code>tinytex</code> R 패키지를 설치하고 <code>tinytex::install_tinytex()</code> 명령어로 <code>tinytex</code>를 다시 설치한다.</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">running</span> xelatex <span class="at">-</span> 1</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="ex">No</span> TeX installation was detected.</span>
@@ -805,35 +864,44 @@ window.Quarto = {
 <span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="ex">If</span> you prefer, you may install TexLive or another TeX distribution.</span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
-</section><section id="부조종사" class="level2" data-number="4.5"><h2 data-number="4.5" class="anchored" data-anchor-id="부조종사">
-<span class="header-section-number">4.5</span> 부조종사</h2>
+</section>
+<section id="부조종사" class="level2" data-number="4.5">
+<h2 data-number="4.5" class="anchored" data-anchor-id="부조종사"><span class="header-section-number">4.5</span> 부조종사</h2>
 <p>RStudio에서 GitHub 부조종사(Copilot) 기능을 활용할 수 있도록 저자를 포함하여 수많은 개발자들이 요청하여 2021년 11월 28일 최초 등록된 <a href="https://github.com/rstudio/rstudio/issues/10148">이슈(<code>#10148</code>)</a>가 2023년 7월 18일 베타버전으로 Rstudio <a href="https://dailies.rstudio.com/">일일 빌드 (Daily Builds)</a>를 통해 첫 공개되었다. <a href="https://github.com/features/copilot">GitHub 부조종사(Copilot)</a>를 Rstudio에서 사용하기 위해서는 특별한 버전 Rstudio, 즉 <a href="https://dailies.rstudio.com/">일일 빌드 (Daily Builds)</a>가 필요하였으나 현재는 각자 운영체제에 맞는 RStudio 데스크톱 버전을 다운로드한 후 설치하게 되면 기본적으로 부조종사 기능을 사용할 수 있다. 기본적으로 <a href="https://github.com/features/copilot/">GitHub 부조종사</a> 기능은 구독서비스로 매월 일정액($10)을 지불해야 사용할 수 있다.</p>
 <blockquote class="blockquote">
 <p><code>Tools -&gt; Global Options -&gt; Copilot -&gt; Enable Github Copilot</code></p>
 </blockquote>
 <p>최신 RStudio 설치가 완료되면 Rstudio를 실행하고 상단 메뉴에서 ‘Tools’를 선택한 다음 ’Global Options’을 클릭한다. 왼쪽 사이드바에서 ’Copilot’을 선택하고 ’Enable GitHub Copilot’ 체크박스를 선택한 다음 ’Sign In’을 클릭하고 나타나는 링크에서 인증 코드를 입력한다. ’Authorize Github Copilot Plugin’을 클릭하여 인증 과정을 완료하면 설정이 완료된다.</p>
 <div id="fig-copilot" class="quarto-figure quarto-figure-center quarto-float anchored">
-<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-copilot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-copilot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <a href="images/rstudio_copilot.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-12" title="그림&nbsp;4.12: GitHub 부주종사 설치과정"><img src="images/rstudio_copilot.jpg" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-copilot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 그림&nbsp;4.12: GitHub 부주종사 설치과정
-</figcaption></figure>
+</figcaption>
+</figure>
 </div>
 <p>GitHub Copilot를 Rstudio에서 사용해보면, 작성하려는 유령 텍스트(Ghost Text)가 회색으로 예측되어 나타난다. 보통, <code>#</code> 주석에 프롬프트를 작성하거나 코드나 텍스트 작성과정에 나타나는 유령 텍스트를 ‘Tab’ 키를 눌러 탭완성(Tab Completion) 기능으로 제시된 코드를 수락하며 개발을 이어 나간다.</p>
-</section><section id="출판배포-플랫폼" class="level2" data-number="4.6"><h2 data-number="4.6" class="anchored" data-anchor-id="출판배포-플랫폼">
-<span class="header-section-number">4.6</span> 출판배포 플랫폼</h2>
+</section>
+<section id="출판배포-플랫폼" class="level2" data-number="4.6">
+<h2 data-number="4.6" class="anchored" data-anchor-id="출판배포-플랫폼"><span class="header-section-number">4.6</span> 출판배포 플랫폼</h2>
 <p>마지막으로 저작물이 PDF가 아닌 웹사이트/블로그, 대쉬보드, 웹앱, API인 경우 출판배포 플랫폼에 회원가입하고 저작물을 공유하거나 출판한다. 데이터 과학 분야에서 산출물을 공유하고 출판하는 것은 매우 중요한 단계로 효과적인 출판과 비용적인 면을 고려하여 최적 플랫폼과 도구를 선정한다. 데이터 과학 분야를 개척한 RStudio IDE에서 R 마크다운 산출물을 <a href="https://rpubs.com/">RPubs</a>에 출판한 경험이 있다면, <a href="https://quartopub.com/"><code>Quarto Pub</code></a>은 그와 유사한 경험을 제공한다. 다른 대안으로는 <a href="https://netlify.com/">netlify</a>, <a href="https://github.com/">GitHub Pages</a>, <a href="https://www.rstudio.com/products/connect/">RStudio Connect</a> 등이 있다. </p>
 <div id="fig-quarto-publishing" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
-<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-quarto-publishing-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-quarto-publishing-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <a href="images/quarto-publishing.png" class="lightbox" data-gallery="quarto-lightbox-gallery-13" title="그림&nbsp;4.13: 쿼토 출판배포 플랫폼"><img src="images/quarto-publishing.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="450"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-quarto-publishing-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 그림&nbsp;4.13: 쿼토 출판배포 플랫폼
-</figcaption></figure>
+</figcaption>
+</figure>
 </div>
-</section><section id="연습문제" class="level2 unnumbered"><h2 class="unnumbered anchored" data-anchor-id="연습문제">연습문제</h2>
-<section id="객관식" class="level3 unnumbered"><h3 class="unnumbered anchored" data-anchor-id="객관식">객관식</h3>
+</section>
+<section id="연습문제" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="연습문제">연습문제</h2>
+<section id="객관식" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="객관식">객관식</h3>
 <ol type="1">
 <li>쿼토 환경설정을 위해 필요한 첫번째 단계는 무엇인가요?
 <ol type="a">
@@ -841,8 +909,7 @@ window.Quarto = {
 <li>쿼토 CLI 다운로드</li>
 <li>쿼토 설치 경로 설정</li>
 <li>IDE 선택</li>
-</ol>
-</li>
+</ol></li>
 </ol>
 <ol start="2" type="1">
 <li>RStudio IDE의 주요 특징 중 하나는 무엇인가요?
@@ -851,8 +918,7 @@ window.Quarto = {
 <li>데이터 과학을 위한 다양한 기능과 도구 제공</li>
 <li>오직 R 언어만 지원</li>
 <li>복잡한 설치 과정 필요</li>
-</ol>
-</li>
+</ol></li>
 </ol>
 <ol start="3" type="1">
 <li>쿼토 프로젝트를 시작할 때 가장 먼저 수행해야 하는 단계는 무엇인가요?
@@ -861,9 +927,11 @@ window.Quarto = {
 <li>필요한 라이브러리 설치</li>
 <li>텍스트 편집기 설정</li>
 <li>쿼토 프로젝트 디렉토리 생성</li>
+</ol></li>
 </ol>
-</li>
-</ol></section><section id="서술형" class="level3 unnumbered"><h3 class="unnumbered anchored" data-anchor-id="서술형">서술형</h3>
+</section>
+<section id="서술형" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="서술형">서술형</h3>
 <ol type="1">
 <li>쿼토 환경 설정에서 중요한 역할을 하는 쿼토 CLI의 기능에 대해 설명해보세요.</li>
 </ol>
@@ -872,10 +940,17 @@ window.Quarto = {
 </ol>
 
 
-</section></section><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><hr>
+</section>
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
 <ol>
 <li id="fn1"><p>위지임(WYSIWYM,What You See Is What You Mean)은 문서 의미와 구조에 중점을 둔 편집 방식으로, 사용자가 문서의 구조와 의미를 명시적으로 표현하고 최종 문서형식은 별도로 처리하는 방식으로 문서의 논리적 구조와 의미에 집중을 둔 학술논문 저작, 기술문서, 데이터 과학과 같은 분야에서 주로 사용되며 <span class="math inline">\(\LaTeX\)</span> LyX 를 대표적인 사례로 두고 있다.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-</ol></section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+</ol>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
@@ -1300,7 +1375,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 });
-</script><nav class="page-navigation"><div class="nav-page nav-page-previous">
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
       <a href="./setup_quarto.html" class="pagination-link" aria-label="쿼토(Quarto)">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">쿼토(Quarto)</span></span>
       </a>          
@@ -1312,7 +1389,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-<footer class="footer"><div class="nav-footer">
+<footer class="footer">
+  <div class="nav-footer">
     <div class="nav-footer-left">
 <p>챗GPT 쿼토 책은 소프트웨어 카펜트리 Introduction to Reproducible Publications with Quarto 번역한 것이 포함되어 있습니다.</p>
 </div>   
@@ -1323,7 +1401,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <p>순수하게 <a href="https://quarto.org/">쿼토(Quarto)</a>로 제작되었습니다.</p>
 </div>
   </div>
-</footer><script>var lightboxQuarto = GLightbox({"selector":".lightbox","descPosition":"bottom","openEffect":"zoom","loop":false,"closeEffect":"zoom"});
+</footer>
+<script>var lightboxQuarto = GLightbox({"selector":".lightbox","closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;
@@ -1348,6 +1427,8 @@ window.onload = () => {
 
 };
           </script>
+
+
 
 
 </body></html>
