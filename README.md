@@ -1,4 +1,4 @@
-# 챗GPT SQL <img src="images/logo.png" align="right" height="150" width="150"/>
+# 챗GPT 쿼토 <img src="images/logo.png" align="right" height="150" width="150"/>
 
 **챗GPT + 쿼토 = AI 데이터 사이언스 저작 엔진**
 
