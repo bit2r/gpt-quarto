@@ -24,7 +24,7 @@
 전자책은 쿼토 책(Quarto Book)을 활용하여 제작되었으며
 PDF 파일은 한글 글꼴 및 한글 책 특성을 반영하기 위해서 
 공익법인 한국 R 사용자회에서 제작한 [`bitPublish`](https://github.com/bit2r/bitPublish)를 
-템플릿을 사용하여 챗GPT SQL 한글 책을 조판했습니다.
+템플릿을 사용하여 챗GPT 쿼토 한글 책을 조판했습니다.
 
 # 챗GPT 쿼토 책 구매 정보
 
