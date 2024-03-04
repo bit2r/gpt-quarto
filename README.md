@@ -30,10 +30,10 @@ PDF 파일은 한글 글꼴 및 한글 책 특성을 반영하기 위해서
 
 챗GPT 쿼토 책은 교보문고에서 POD 종이책과 전자책으로 구매가 가능합니다.
 
-📘 교보 POD 종이책: 추후 공개
+📘 교보 POD 종이책: [https://bit.ly/3wElKuk](https://bit.ly/3wElKuk)
 
-📗 교보 전자책: 추후 공개
+📗 교보 전자책: [https://bit.ly/3IkWE6f](https://bit.ly/3IkWE6f)
 
-🌐 웹사이트: https://r2bit.com/gpt-quarto/
+🌐 웹사이트: [https://bit.ly/3P7PVjX](https://bit.ly/3P7PVjX)
 
-💻 소스코드: https://github.com/bit2r/gpt-quarto
+💻 소스코드: [https://bit.ly/3InK46m](https://bit.ly/3InK46m)
